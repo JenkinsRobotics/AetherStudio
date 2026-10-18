@@ -7,6 +7,7 @@ file, then run build_pages.py.
 """
 
 RELEASE = "Alpha 0.1"
+TAG = "v0.1.0-alpha.1"
 ORG = "JenkinsRobotics"
 
 # Shown on every app: what being an Aether app gives you.
@@ -40,6 +41,8 @@ APPS = [
             ("Editable history", "Roll back, suppress, reorder and edit any feature; live native previews with Cancel/Apply; undo/redo; strict rebuild errors you can recover from."),
             ("Exact import and export", "Import STEP, IGES and BREP solids and STL/OBJ/PLY/OFF meshes (with closed-mesh-to-solid conversion). Export exact STEP and STL."),
             ("Inspect and analyse", "Measurements, angular inspection, capped section views and native volume interference between bodies."),
+            ("Rendering presets", "Rendering and environment presets for presenting parts in the viewport."),
+            ("Model Studio interface", "The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app."),
         ],
         progress=[
             ("Assemblies", "Mates against the native solver — fastened, revolute and prismatic today; the full joint set, limits, nested assemblies and BOM are next."),
@@ -83,6 +86,7 @@ APPS = [
             ("Headless show playback", "Scenes play without the editor: clips, poses, waits, event gates, variables and branches, loops and deterministic parallel tracks."),
             ("Hardware wire protocol", "A versioned wire protocol with a simulator and serial transport, so output can be proven before it reaches a servo."),
             ("Web workspace", "The animation workspace on the shared Aether interface: viewport, pose panel, mate and relation dialogs and a timeline."),
+            ("Model Studio interface", "The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app."),
         ],
         progress=[
             ("Rig and joint authoring", "Typed joint editing, placement and handles directly in the viewport."),
@@ -125,6 +129,7 @@ APPS = [
             ("Perform live", "Full-window performance faders with automation takeover, locks and undo, and MIDI controllers with feedback."),
             ("Raspberry Pi players", "A Wi-Fi setup wizard, pairing, authorised deployment and offline playback with atomic, retrying updates."),
             ("Exports", "Show ZIP and wireframe SVG exports with the exact document and referenced media."),
+            ("Model Studio interface", "The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app."),
         ],
         progress=[
             ("More receivers", "Android TV receiver, QR pairing and more reliable live casting."),
@@ -166,6 +171,7 @@ APPS = [
             ("Layers and groups", "Nested layers and groups, multi-path transforms and snapping."),
             ("Path operations", "Trim, offset contours, Booleans and compound shapes with holes."),
             ("Open files", "Local save and reopen, an SVG import subset and SVG export; full undo."),
+            ("Model Studio interface", "The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app."),
         ],
         progress=[
             ("Stylus and touch", "Physical stylus, touch and Safari qualification."),
@@ -202,6 +208,7 @@ APPS = [
         works=[
             ("Interface draft", "Seven workspace routes on the shared Aether interface: schematic, board, simulation setup, 3D inspection, manufacturing preparation and more."),
             ("Agent pane", "Objects and checks on the left, the design in the centre, a conversation with your agent on the right."),
+            ("Model Studio interface", "The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app."),
         ],
         progress=[
             ("Electrical document", "Symbol instances, pin maps, named nets, sheets, and separate schematic, board and assembly placement."),
@@ -237,6 +244,7 @@ APPS = [
         works=[
             ("App shell", "The application frame on the shared Aether interface, ready for the editor."),
             ("Shared vector foundation", "Paths, curves, Booleans and contours, proven in Aether Sketch."),
+            ("Model Studio interface", "The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app."),
         ],
         progress=[],
         planned=[
@@ -274,6 +282,7 @@ APPS = [
             ("AI connections", "Connect ChatGPT, Claude or Gemini once under Plugins → My connections; every app's AI advisor uses it."),
             ("CLI and MCP", "A native agent bridge with scoped grants, explicit receipts and revision-guarded commands for every app."),
             ("Player deployment", "Pairs and deploys Aether Map shows to Raspberry Pi players."),
+            ("Model Studio interface", "The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app."),
         ],
         progress=[
             ("Concurrent editing", "Real-time co-editing inside each app, with conflict handling on branches."),

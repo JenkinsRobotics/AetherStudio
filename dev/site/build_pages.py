@@ -20,7 +20,7 @@ import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from apps import APPS, ORG, RELEASE, SUITE  # noqa: E402
+from apps import APPS, ORG, RELEASE, SUITE, TAG  # noqa: E402
 
 HERE = Path(__file__).parent
 GITHUB = HERE.parents[2]  # .../GITHUB (sibling repositories)
@@ -126,19 +126,13 @@ def page(app: dict) -> str:
         f'      <a href="{pages_url(a["repo"])}"{" class=\"here\"" if a is app else ""}><img src="{suite_icon(a["id"])}" alt=""><span><b>{e(a["name"])}</b><small>{e(a["line"])}</small></span></a>'
         for a in APPS)
     milestones = "\n".join(
-        f'      <div class="milestone{" next" if i == 0 else ""}">\n        <h4>{e(v)}{" — now" if i == 0 else ""}</h4>\n        <h3>{e(t)}</h3>\n        <p>{e(d)}</p>\n      </div>'
+        f'      <div class="milestone{" done" if i == 0 else " next" if i == 1 else ""}">\n        <h4>{e(v)}{" — released" if i == 0 else ""}</h4>\n        <h3>{e(t)}</h3>\n        <p>{e(d)}</p>\n      </div>'
         for i, (v, t, d) in enumerate(app["roadmap"]))
     what = "\n".join(f'    <p class="sub"{" style=\"margin-top:18px\"" if i else ""}>{e(p)}</p>' for i, p in enumerate(app["what"]))
-    if is_studio:
-        clone = f"""<span class="cm"># Studio and the apps sit side by side.</span>
-<span class="pmt">$</span> git clone {gh("AetherStudio")}.git
-<span class="pmt">$</span> git clone {gh("Aether-CAD")}.git   <span class="cm"># and any other apps</span>
-<span class="pmt">$</span> cd AetherStudio && python3.11 bootstrap.py<span class="blink">▎</span>"""
-    else:
-        clone = f"""<span class="cm"># Clone the app beside Aether Studio, then build the suite.</span>
-<span class="pmt">$</span> git clone {gh(repo)}.git
-<span class="pmt">$</span> git clone {gh("AetherStudio")}.git
-<span class="pmt">$</span> cd AetherStudio && python3.11 bootstrap.py<span class="blink">▎</span>"""
+    clone = f"""<span class="cm"># Check out the {RELEASE} release and fetch its verified packages.</span>
+<span class="pmt">$</span> git clone --branch {TAG} --single-branch {gh(repo)}.git
+<span class="pmt">$</span> cd {repo}
+<span class="pmt">$</span> python3 tools/fetch-vendor.py<span class="blink">▎</span>"""
     studio_section = "" if is_studio else f"""
 <!-- ─────────────────────── RUN IT YOUR WAY ─────────────────────── -->
 <section id="studio">
@@ -205,7 +199,7 @@ def page(app: dict) -> str:
     <div class="dot a"></div><div class="dot b"></div><div class="dot c"></div><div class="dot d"></div><div class="dot e"></div>
   </div>
   <div class="wrap">
-    <div class="badge"><span class="dot alpha"></span> {RELEASE} · early access · Apache-2.0</div>
+    <div class="badge"><span class="dot alpha"></span> {RELEASE} · {TAG} · Apache-2.0</div>
 
     <h2 class="hero-wordmark"><img src="{wordmark(aid)}" alt="{e(name)}"></h2>
 
@@ -216,7 +210,8 @@ def page(app: dict) -> str:
     <p class="lede">{e(app["lede"])}</p>
 
     <div class="hero-cta">
-      <a class="btn primary" href="#features">See what works →</a>
+      <a class="btn primary" href="{gh(repo, "/releases/tag/" + TAG)}" target="_blank" rel="noopener">Download {RELEASE} →</a>
+      <a class="btn" href="#features">See what works</a>
       <a class="btn" href="{gh(repo)}" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.5-5.5 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
         Star on GitHub
@@ -228,7 +223,7 @@ def page(app: dict) -> str:
 <pre>{clone}</pre>
     </div>
 
-    <p class="alpha-note"><strong>{RELEASE}</strong>{e(name)} is alpha software: features are incomplete, file formats may change between alphas, and it is not yet qualified for production work. Below, every feature is marked as working today, in progress or planned.</p>
+    <p class="alpha-note"><strong>{RELEASE}</strong>{e(name)} is alpha software: features are incomplete, file formats may change between alphas, and it is not yet qualified for production work. Below, every feature is marked as working today, in progress or planned. <a href="{gh(repo, "/blob/" + TAG + "/ALPHA_0_1.md")}" target="_blank" rel="noopener">Release notes and current limits →</a></p>
   </div>
 </header>
 
@@ -412,7 +407,7 @@ server requirements. The web download is a frontend bundle, not a desktop instal
 <p align="center">{app["line"]}</p>
 
 <p align="center">
-  <img alt="{RELEASE}" src="https://img.shields.io/badge/release-{RELEASE.replace(" ", "%20")}-d29922">
+  <a href="{gh(repo, "/releases/tag/" + TAG)}"><img alt="{RELEASE}" src="https://img.shields.io/badge/release-{TAG.replace("-", "--")}-d29922"></a>
   <img alt="Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-58a6ff">
   <a href="{pages_url(repo)}"><img alt="Website" src="https://img.shields.io/badge/site-{repo.replace("-", "--")}-1f6feb"></a>
 </p>

@@ -14,7 +14,7 @@
 <p align="center">Your team's server: accounts, shared files, versions and live collaboration.</p>
 
 <p align="center">
-  <img alt="Alpha 0.1" src="https://img.shields.io/badge/release-Alpha%200.1-d29922">
+  <a href="https://github.com/JenkinsRobotics/AetherStudio/releases/tag/v0.1.0-alpha.1"><img alt="Alpha 0.1" src="https://img.shields.io/badge/release-v0.1.0--alpha.1-d29922"></a>
   <img alt="Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-58a6ff">
   <a href="https://jenkinsrobotics.github.io/AetherStudio/"><img alt="Website" src="https://img.shields.io/badge/site-AetherStudio-1f6feb"></a>
 </p>
@@ -36,6 +36,7 @@ Aether Studio runs on your own hardware — a Mac Studio in the office or a farm
 - ✅ **AI connections** — Connect ChatGPT, Claude or Gemini once under Plugins → My connections; every app's AI advisor uses it.
 - ✅ **CLI and MCP** — A native agent bridge with scoped grants, explicit receipts and revision-guarded commands for every app.
 - ✅ **Player deployment** — Pairs and deploys Aether Map shows to Raspberry Pi players.
+- ✅ **Model Studio interface** — The shared Aether interface: a transparent document header, floating resizable side cards, a separate tool tray, saved layouts and themes — the same in every app.
 
 ### In progress
 
