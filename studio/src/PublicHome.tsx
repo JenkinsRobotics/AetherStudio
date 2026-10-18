@@ -1,3 +1,7 @@
+import { APP_UPDATES } from "./app-updates";
+import { ApplicationCard } from "./ApplicationCard";
+import { ApplicationArtwork } from "@aether/session/library/ApplicationArtwork";
+import { ApplicationWelcome } from "@aether/ui";
 import { useState } from "react";
 import { AppIcon, AetherIcon, Button, ListBox } from "@aether/ui";
 import type { App } from "./main";
@@ -72,32 +76,14 @@ export function PublicHome({
                   </p>
                 </div>
               </div>
+              {page === "home" && <ApplicationWelcome updates={APP_UPDATES.studio} id="studio-public-welcome" name="Aether Studio" description="Your creative applications, together in one workspace." artwork={<ApplicationArtwork app="studio" />} />}
               <section className="section">
                 <div className="section-heading">
                   <h2>Applications</h2>
                 </div>
                 <div className="application-grid">
                   {apps.map((app) => (
-                    <a
-                      key={app.id}
-                      className={`application-card ${app.id}`}
-                      href={app.installed ? app.url : undefined} target="_blank" rel="noopener"
-                      aria-disabled={!app.installed}
-                    >
-                      <div className="application-art">
-                        <AppIcon app={app.id} size={108} />
-                        <span>{app.id === "cad" ? "DESIGN" : "CREATE"}</span>
-                      </div>
-                      <div className="application-copy">
-                        <h3>{app.name}</h3>
-                        <p>{app.description}</p>
-                        <span className="application-open">
-                          {app.installed
-                            ? "Open application ↗"
-                            : "Build required"}
-                        </span>
-                      </div>
-                    </a>
+                    <ApplicationCard key={app.id} app={app} />
                   ))}
                 </div>
                 {apps.length === 0 && (

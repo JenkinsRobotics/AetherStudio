@@ -1,0 +1,136 @@
+/* The selection command bar and the file details pane. */
+
+.aui-file-command-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--aether-space-1);
+  padding: var(--aether-space-1) 0;
+}
+
+.aui-file-command-bar .aui-file-command {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aether-space-1);
+  min-height: var(--aether-size-control);
+  padding: 0 var(--aether-space-2);
+  border: 0;
+  border-radius: var(--aether-radius-button);
+  background: none;
+  color: var(--aether-color-text);
+  font: inherit;
+  font-size: var(--aether-font-size-label);
+  cursor: pointer;
+  transition: background var(--aether-motion-fast) var(--aether-motion-ease);
+}
+
+.aui-file-command-bar .aui-file-command:hover:not(:disabled) { background: var(--aether-color-bg-hover); }
+.aui-file-command-bar .aui-file-command:disabled { color: var(--aether-color-text-faint); cursor: default; }
+.aui-file-command-bar .aui-file-command svg { width: 16px; height: 16px; }
+
+/* Past the narrowest widths the labels go, leaving the icons the bar needs. */
+@media (max-width: 640px) {
+  .aui-file-command-bar .aui-file-command { padding: 0 var(--aether-space-1); }
+  .aui-file-command-bar .aui-file-command > span { display: none; }
+}
+
+.aui-file-details { display: flex; flex-direction: column; }
+
+.aui-file-details-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--aether-space-1);
+  padding: var(--aether-space-3) var(--aether-space-2);
+  text-align: center;
+}
+
+.aui-file-details-hero h2 { overflow-wrap: anywhere; }
+
+.aui-file-details-thumb {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--aether-color-border-subtle);
+  border-radius: var(--aether-radius-panel);
+  background: var(--aether-color-bg-inset);
+  color: inherit;
+}
+
+button.aui-file-details-thumb { cursor: pointer; }
+button.aui-file-details-thumb:hover { border-color: var(--aether-color-border-control-hover); }
+
+.aui-file-details-thumb[data-image] img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.aui-file-details-thumb-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--aether-space-1);
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: var(--aether-space-1);
+  background: var(--aether-color-bg-bar);
+  color: var(--aether-color-text-dim);
+  font-size: var(--aether-font-size-micro);
+  opacity: 0;
+  transition: opacity var(--aether-motion-fast) var(--aether-motion-ease);
+}
+
+.aui-file-details-thumb-hint svg { width: 14px; height: 14px; }
+div.aui-file-details-thumb .aui-file-details-thumb-hint { display: none; }
+button.aui-file-details-thumb:hover .aui-file-details-thumb-hint,
+button.aui-file-details-thumb:focus-visible .aui-file-details-thumb-hint { opacity: 1; }
+
+.aui-file-details-people,
+.aui-file-details-activity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aether-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aui-file-details-people li,
+.aui-file-details-activity li {
+  display: flex;
+  align-items: center;
+  gap: var(--aether-space-2);
+}
+
+.aui-file-details-activity li { align-items: flex-start; }
+.aui-file-details-activity svg { flex: none; width: 16px; height: 16px; color: var(--aether-color-text-dim); }
+
+.aui-file-details-avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--aether-radius-pill);
+  background: var(--aether-color-bg-selected);
+  color: var(--aether-color-text-on-selected);
+  font-size: var(--aether-font-size-micro);
+  font-weight: var(--aether-font-weight-strong);
+}
+
+.aui-file-details-person,
+.aui-file-details-activity li > span { display: flex; flex-direction: column; min-width: 0; }
+.aui-file-details-person em,
+.aui-file-details-activity em { color: var(--aether-color-text-dim); font-size: var(--aether-font-size-micro); font-style: normal; }
+.aui-file-details-activity strong { font-weight: var(--aether-font-weight-strong); overflow-wrap: anywhere; }
+.aui-file-details-note { color: var(--aether-color-text-dim); font-size: var(--aether-font-size-caption); }
+
+/* A narrow pane stacks a section's action under its title rather than squeezing
+   the title into two words a line. */
+.aui-file-details .aui-inspector-section-heading { flex-wrap: wrap; }

@@ -1,0 +1,5 @@
+import { AetherIcon, type AetherIconName } from "./AetherIcon";
+import "./ConceptWidgets.css";
+export interface AnnouncementItem { id: string; title: string; detail: string; icon?: AetherIconName; selected?: boolean; }
+export interface AnnouncementCardProps { badge?: string; title: string; detail: string; items?: readonly AnnouncementItem[]; onDismiss?: () => void; }
+export function AnnouncementCard({ badge, title, detail, items = [], onDismiss }: AnnouncementCardProps) { return <section className="aui-announcement-card" aria-label={title}>{onDismiss ? <button className="aui-announcement-card__close" type="button" aria-label="Dismiss announcement" onClick={onDismiss}>×</button> : null}{badge ? <small>{badge}</small> : null}<strong>{title}</strong><p>{detail}</p>{items.length ? <div className="aui-announcement-card__items">{items.map((item) => <div key={item.id}><AetherIcon name={item.icon ?? "hardware"} /><span>{item.title}<small>{item.detail}</small></span>{item.selected ? <AetherIcon name="status-incomplete" /> : null}</div>)}</div> : null}</section>; }

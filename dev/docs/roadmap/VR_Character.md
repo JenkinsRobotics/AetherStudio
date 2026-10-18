@@ -24,7 +24,7 @@ a peer; the follow-up UX is collapsing Rig/2D/VR into one type-driven tab.)
 A VR character is an **avatar driven by live parameters**. Crucially, the avatar
 half is *already built*: a 2D `canvas2d` (surfaces + procedural faces + drivers)
 or a 3D rig both evaluate from a `values` dict. Face tracking just *produces that
-dict*. `animacore/tracking.py` is the contract:
+dict*. `aether_animation/tracking.py` is the contract:
 
 ```
 tracker → FaceTrackingFrame(blendshapes, head pose) → .values() → {"face.jawOpen": .., ...}

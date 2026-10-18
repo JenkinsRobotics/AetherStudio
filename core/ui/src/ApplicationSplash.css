@@ -1,0 +1,35 @@
+.aui-application-splash { container-type:inline-size; position:relative; isolation:isolate; width:min(100%,840px); min-height:560px; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; border:1px solid #ffffff26; border-radius:20px; background:#061321; color:#f5f9ff; box-shadow:0 28px 90px #0006; font-family:var(--aether-font-family,system-ui,sans-serif); --splash-accent:#78d8ff; }
+.aui-splash-art {position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 25%,#164b76,#061321 75%);}
+.aui-splash-art img {width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.aui-splash-art::after {content:'';position:absolute;inset:0;background:linear-gradient(180deg,#03101d00 30%,#06132166 55%,#061321 76%);}
+.aui-splash-brand {position:absolute;top:24px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.08em;color:#d3e7fa;}
+.aui-splash-brand span:first-child {font-weight:650;}
+.aui-splash-panel {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;padding:28px 30px;background:linear-gradient(180deg,#061321db,#061321f5);border-top:1px solid #ffffff15;margin-top:285px;}
+.aui-splash-tagline {margin:0 0 7px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#a5bed3;}
+.aui-splash-copy h1 {font-size:36px;line-height:1.12;letter-spacing:-.04em;margin:0 0 19px;font-weight:650;overflow-wrap:anywhere;}
+.aui-splash-status h2 {font-size:13px;font-weight:600;margin:0 0 6px;}
+.aui-splash-status p {font-size:12px;line-height:1.5;color:#b4c8da;margin:0;}
+.aui-splash-progress-row {display:flex;align-items:center;gap:12px;margin-top:17px;}
+.aui-splash-progress-row progress {flex:1;min-width:0;height:6px;border:0;border-radius:10px;overflow:hidden;appearance:none;background:#ffffff20;accent-color:var(--splash-accent);}
+.aui-splash-progress-row progress::-webkit-progress-bar {background:#ffffff20;border-radius:10px;}
+.aui-splash-progress-row progress::-webkit-progress-value {background:var(--splash-accent);border-radius:10px;transition:width .25s ease;}
+.aui-splash-progress-row progress::-moz-progress-bar {background:var(--splash-accent);border-radius:10px;}
+.aui-splash-progress-row progress:indeterminate {background:linear-gradient(90deg,#ffffff20,var(--splash-accent),#ffffff20);background-size:200% 100%;animation:aui-splash-progress 2s linear infinite;}
+.aui-splash-progress-row > span {min-width:30px;font-size:10px;color:#b4c8da;font-variant-numeric:tabular-nums;}
+.aui-splash-footnote {margin:13px 0 0;font-size:11px;color:#a0b8cc;line-height:1.5;}
+.aui-splash-stages {list-style:none;padding:0;margin:0;display:flex;flex-direction:column;justify-content:center;gap:15px;}
+.aui-splash-stages li {display:grid;grid-template-columns:8px minmax(0,1fr);gap:11px;align-items:start;}
+.aui-splash-dot {width:7px;height:7px;border-radius:50%;background:#668095;margin-top:4px;}
+.aui-splash-stage-title {display:flex;justify-content:space-between;gap:10px;font-size:11px;line-height:1.4;}
+.aui-splash-stage-title strong {font-weight:550;}
+.aui-splash-stage-title > span {color:#9db6ca;font-size:10px;}
+.aui-splash-stages p {font-size:10px;line-height:1.5;color:#9db6ca;margin:3px 0 0;}
+.aui-splash-stages [data-phase='running'] .aui-splash-dot {background:#78d8ff;box-shadow:0 0 10px #78d8ff80;}
+.aui-splash-stages [data-phase='done'] .aui-splash-dot {background:#8ce8be;}
+.aui-splash-stages [data-phase='failed'] .aui-splash-dot {background:#ffad9c;}
+.aui-application-splash[data-state='ready'] {--splash-accent:#8ce8be;}
+.aui-application-splash[data-state='error'],.aui-application-splash[data-state='offline'] {--splash-accent:#ffd08a;}
+.aui-splash-actions {display:flex;gap:8px;margin-top:15px;}
+@keyframes aui-splash-progress {to {background-position:200% 0;}}
+@container (max-width:560px) {.aui-splash-panel {grid-template-columns:1fr;gap:24px;padding:24px;margin-top:210px;}.aui-splash-copy h1 {font-size:30px;}.aui-splash-brand {left:24px;right:24px;}}
+@media(prefers-reduced-motion:reduce) {.aui-splash-progress-row progress:indeterminate {animation:none;}.aui-splash-progress-row progress::-webkit-progress-value {transition:none;}}

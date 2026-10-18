@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { AetherIcon } from "./AetherIcon";
 import type { ReactNode } from "react";
 
 export interface DialogProps {
@@ -7,6 +8,8 @@ export interface DialogProps {
   onClose: () => void;
   actions?: ReactNode;
   children: ReactNode;
+  /** Show the same window in document flow, without a scrim or modal focus behavior. */
+  inline?: boolean;
 }
 
 const FOCUSABLE =
@@ -15,19 +18,35 @@ const FOCUSABLE =
 /** Modal dialog with scrim. Escape or scrim click closes; focus moves
  *  into the dialog on open, Tab cycles within it, and focus returns to
  *  the opener on close. */
-export function Dialog({ open, title, onClose, actions, children }: DialogProps) {
+export function Dialog({ open, title, onClose, actions, children, inline = false }: DialogProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
+  /* Held in a ref so the effect below depends on `open` alone.
+     Every caller passes an inline arrow for `onClose`, so listing it as a
+     dependency re-ran this effect on each render: the cleanup handed focus
+     back to the opener and the setup moved it to the first focusable element.
+     With a dialog open that meant one keystroke emptied the caret out of the
+     field, which is the "deselects after every letter" Jonathan reported on
+     2026-10-03. */
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
 
   useEffect(() => {
-    if (!open) return;
+    if (!open || inline) return;
     const opener = document.activeElement as HTMLElement | null;
     const dialog = dialogRef.current;
-    dialog?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
+    /* Prefer what the content asked for. Focusing the first focusable put the
+       caret on the title bar's close button, so a dialog whose job is to take
+       a name opened with the wrong thing focused. */
+    const wanted =
+      dialog?.querySelector<HTMLElement>("[autofocus]") ??
+      dialog?.querySelector<HTMLElement>(".aui-dialog-body " + FOCUSABLE.split(", ").join(", .aui-dialog-body ")) ??
+      dialog?.querySelector<HTMLElement>(FOCUSABLE);
+    wanted?.focus();
 
     const onKey = (event: globalThis.KeyboardEvent) => {
       if (event.key === "Escape") {
         event.stopPropagation();
-        onClose();
+        closeRef.current();
         return;
       }
       if (event.key !== "Tab" || !dialog) return;
@@ -54,21 +73,21 @@ export function Dialog({ open, title, onClose, actions, children }: DialogProps)
       document.removeEventListener("keydown", onKey, true);
       opener?.focus?.();
     };
-  }, [open, onClose]);
+  }, [open, inline]);
 
   if (!open) return null;
   return (
     <div
-      className="aui-dialog-scrim"
+      className={`aui-dialog-scrim${inline ? " aui-dialog-scrim--inline" : ""}`}
       onClick={(event) => {
-        if (event.target === event.currentTarget) onClose();
+        if (!inline && event.target === event.currentTarget) onClose();
       }}
     >
       <div
         ref={dialogRef}
         className="aui-dialog"
         role="dialog"
-        aria-modal="true"
+        aria-modal={!inline}
         aria-label={title}
       >
         <div className="aui-dialog-title">
@@ -79,7 +98,7 @@ export function Dialog({ open, title, onClose, actions, children }: DialogProps)
             aria-label="Close"
             onClick={onClose}
           >
-            ✕
+            <AetherIcon name="close" />
           </button>
         </div>
         <div className="aui-dialog-body">{children}</div>

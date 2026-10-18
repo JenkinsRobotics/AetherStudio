@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" fill="#405269" color="#405269">
+	<desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/xy-in-stock.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g fill="none" stroke="#405269" stroke-width="3.5" stroke-linecap="round">
+		<path d="M14 8v48" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M32 8v48" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M50 8v48" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M8 14h48" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M8 32h48" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M8 50h48" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+	</g>
+	<circle cx="32" cy="32" r="6" fill="#405269" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

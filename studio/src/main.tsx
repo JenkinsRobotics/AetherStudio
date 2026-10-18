@@ -1,26 +1,40 @@
+import { AgentConsent } from "./AgentConsent";
+import { APP_UPDATES } from "./app-updates";
+import { PluginLibrary } from "./PluginWindow";
+import { DriveAdministration } from "./DriveAdministration";
+import { ServerManagement } from "./ServerManagement";
+import type { ServerStorage } from "./ServerStoragePanel";
+import { ApplicationCard } from "./ApplicationCard";
+import { ApplicationArtwork } from "@aether/session/library/ApplicationArtwork";
+import { ApplicationWelcome } from "@aether/ui";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import {
   AppIcon,
   AetherIcon,
   Button,
-  ListBox,
+  CollapsibleSidebar,
+  SidebarLabel,
+  SidebarRow,
+  SidebarToggle,
   SelectField,
-  AppearanceToggle,
-  StatusBar,
   StatusDot,
   TextField,
+  ThemeMenu,
 } from "@aether/ui";
 import "@aether/ui/tokens.css";
 import "@aether/ui/widgets.css";
-import "../../core/ui/tokens/home.css";
-import "./studio.css";
+import "@aether/session/library/studio.css";
+import "./StudioChrome.css";
+import { AgentWorkspace } from "./AgentWorkspace";
+import { PluginMarketplace } from "./PluginMarketplace";
 import { AdministrationPanels } from "./Administration";
 import { LibraryHome } from "./LibraryHome";
 import { PublicHome } from "./PublicHome";
 import { Recovery } from "./Recovery";
 import { EmailSettings, type MailSettings } from "./EmailSettings";
-import { api } from "./api";
+import { api } from "@aether/session/library/api";
+import { adminPages, personalPages, readStudioRoute, studioRouteURL, type StudioArea } from "./workspace-route";
 import {
   SetupWizard,
   SetupComplete,
@@ -49,6 +63,7 @@ export type App = {
   installed: boolean;
   url: string;
   admin_only: boolean;
+  coming_soon?: boolean;
 };
 type Status = {
   ready: boolean;
@@ -68,7 +83,13 @@ type Settings = {
   tls_key: string;
 };
 export type Admin = {
-  mail: MailSettings;
+  storage: ServerStorage | null;
+  mail: MailSettings | null;
+  runtime?: string;
+  public_url?: string;
+  applications?: App[];
+  service_apps?: string[];
+  capabilities?: {mail: boolean; network_settings: boolean; backups: boolean; service_accounts: boolean; maintenance: boolean};
   teams: { id: string; name: string; members: string[]; apps: string[] }[];
   access: Record<string, number>;
   services: {
@@ -77,11 +98,11 @@ export type Admin = {
     apps: string[];
     expires: number;
     active: number;
-  }[];
-  backups: { name: string; size: number; created: number }[];
+  }[] | null;
+  backups: { name: string; size: number; created: number }[] | null;
   users: User[];
-  settings: Settings;
-  running_settings: Settings;
+  settings: Settings | null;
+  running_settings: Settings | null;
   restart_required: boolean;
   uptime_s: number;
   sessions: { username: string; count: number }[];
@@ -148,12 +169,15 @@ function Authentication({
       await refresh();
       const next = new URLSearchParams(location.search).get("next");
       const current = await api<Status>("/api/status");
+      const destination = next ? new URL(next, location.origin) : null;
       if (
-        next &&
-        /^\/(cad|animation|ui)\/(?:index\.html)?(?:\?[^#]*)?$/.test(next) &&
+        destination && destination.origin === location.origin &&
+        current.apps.some(app => app.enabled && (
+          destination.pathname === app.url || destination.pathname === app.url + "index.html"
+        )) &&
         !current.user?.must_change
       )
-        location.assign(next);
+        location.assign(destination.href);
     } catch (e) {
       report((e as Error).message);
     } finally {
@@ -197,11 +221,19 @@ function Studio() {
   const [signInMode, setSignInMode] = useState(
     () =>
       new URLSearchParams(location.search).has("next") ||
-      new URLSearchParams(location.search).has("signin"),
+      new URLSearchParams(location.search).has("signin") ||
+      new URLSearchParams(location.search).has("agent-connect"),
   );
   const [status, setStatus] = useState<Status | null>(null);
-  const [admin, setAdmin] = useState<Admin | null>(null);
-  const [page, setPage] = useState(new URLSearchParams(location.search).has("account") ? "account" : "home");
+  const [adminDetails, setAdminDetails] = useState<{ owner: string; revision: number; details: Admin } | null>(null);
+  const [route, setRoute] = useState(readStudioRoute);
+  const [serviceSecret, setServiceSecret] = useState<{owner: string; value: string} | null>(null);
+  const [adminRevision, setAdminRevision] = useState(0);
+  const [adminError, setAdminError] = useState("");
+  const isAdministration = route.area === "admin" && status?.user?.role === "admin" && !status.user.must_change;
+  useEffect(() => { setServiceSecret(null); }, [isAdministration, route.page, status?.user?.id]);
+  const needsAdminDetails = isAdministration && route.page !== "organizations";
+  const admin = isAdministration && adminDetails?.owner === status?.user?.id && adminDetails?.revision === adminRevision ? adminDetails.details : null;
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [busy, setBusy] = useState(false);
@@ -211,16 +243,26 @@ function Studio() {
   const refresh = async () => {
     const current = await api<Status>("/api/status");
     setStatus(current);
-    if (location.pathname !== "/cad/" && current.user?.role === "admin" && !current.user.must_change) {
-      const details = await api<Admin>("/api/admin/state");
-      setAdmin(details);
-      setNetwork(details.settings);
-    } else {
-      setAdmin(null);
-      setNetwork(null);
-    }
-    if (current.user?.must_change) setPage("account");
+    setAdminRevision(revision => revision + 1);
   };
+  useEffect(() => {
+    const restore = () => {
+      setRoute(readStudioRoute());
+      setQuery(""); setError(""); setNotice(""); setEditUser(null);
+    };
+    window.addEventListener("popstate", restore);
+    return () => window.removeEventListener("popstate", restore);
+  }, []);
+  useEffect(() => {
+    let active = true;
+    setAdminDetails(null); setNetwork(null); setAdminError("");
+    if (location.pathname === "/" && needsAdminDetails) {
+      void api<Admin>("/api/admin/state").then(details => {
+        if (active) { setAdminDetails({ owner: status!.user!.id, revision: adminRevision, details }); setNetwork(details.settings); }
+      }).catch((e: Error) => { if (active) setAdminError(e.message); });
+    }
+    return () => { active = false; };
+  }, [needsAdminDetails, status?.user?.id, adminRevision]);
   useEffect(() => {
     refresh().catch((e: Error) => setError(e.message));
     const sync = (event: Event) => {
@@ -235,9 +277,9 @@ function Studio() {
     setError("");
     setNotice("");
     try {
-      await api(path, body);
+      const result = await api<{ warning?: string }>(path, body);
       await refresh();
-      setNotice(message);
+      setNotice(result.warning || message);
       return true;
     } catch (e) {
       setError((e as Error).message);
@@ -246,8 +288,11 @@ function Studio() {
       setBusy(false);
     }
   };
-  const navigate = (id: string) => {
-    setPage(id);
+  const navigate = (id: string, area: StudioArea = route.area) => {
+    const next = { area, page: id };
+    history.pushState(null, "", studioRouteURL(next));
+    setRoute(next);
+    setQuery("");
     setError("");
     setNotice("");
     setEditUser(null);
@@ -342,14 +387,26 @@ function Studio() {
         <Authentication status={status} refresh={refresh} report={report} onRecover={() => setRecovery("")} />
       </div>
     );
+  const connectionRequest = new URLSearchParams(location.search).get("agent-connect");
+  if (connectionRequest && !status.user.must_change) return <AgentConsent request={connectionRequest} username={status.user.username}/>;
+  const agentApp = new URLSearchParams(location.search).get("agent");
+  const pluginApp = new URLSearchParams(location.search).get("pluginApp");
+  if (pluginApp && status.apps.some(app => app.id === pluginApp && app.enabled) && !status.user.must_change) return <div className="plugin-embedded-page"><PluginLibrary app={pluginApp} canManage={status.user.role === "admin"}/></div>;
+  if (agentApp && status.apps.some(app => app.id === agentApp) && !status.user.must_change) return <AgentWorkspace app={agentApp}/>;
+  const homeApp = new URLSearchParams(location.search).get("home");
+  if ((homeApp === 'io' || homeApp === 'sketch') && status.apps.some(app => app.id === homeApp && app.enabled) && !status.user.must_change) return <LibraryHome workspace={status.name} app={homeApp}/>;
   if (location.pathname === "/cad/" && !status.user.must_change) return <LibraryHome workspace={status.name} />;
   if (location.pathname === "/animation/" && !status.user.must_change) return <LibraryHome workspace={status.name} app="animation" />;
+  if (location.pathname === "/map/" && !status.user.must_change) return <LibraryHome workspace={status.name} app="map" />;
   const user = status.user;
   const isAdmin = user.role === "admin" && !user.must_change;
-  const navigation = [
+  const navigation: { id: string; label: string; icon: ReactNode; badge?: string }[] = [
+    { id: "overview", label: "Overview", icon: <AetherIcon name="home" /> },
+    { id: "server", label: "Server management", icon: <AetherIcon name="hardware" /> },
     ...(!user.must_change
       ? [
           { id: "home", label: "Home", icon: <AetherIcon name="home" /> },
+          { id: "plugins", label: "Plugins", icon: <AetherIcon name="items" /> },
           {
             id: "apps",
             label: "Applications",
@@ -359,6 +416,7 @@ function Studio() {
       : []),
     ...(isAdmin
       ? [
+          { id: "organizations", label: "Organizations & workspaces", icon: <AetherIcon name="folder" /> },
           { id: "users", label: "Users", icon: <AetherIcon name="assembly" /> },
           { id: "email", label: "Email delivery", icon: <AetherIcon name="document" /> },
           { id: "teams", label: "Teams", icon: <AetherIcon name="assembly" /> },
@@ -374,12 +432,6 @@ function Studio() {
           },
           { id: "backups", label: "Backups", icon: <AetherIcon name="save" /> },
           { id: "themes", label: "Appearance", icon: <AetherIcon name="appearance" /> },
-          {
-            id: "plugins",
-            label: "Community plugins",
-            icon: <AetherIcon name="items" />,
-            badge: "Planned",
-          },
           {
             id: "network",
             label: "Server & network",
@@ -398,7 +450,8 @@ function Studio() {
       icon: <AetherIcon name="document" />,
     },
   ];
-  const visiblePage = user.must_change ? "account" : page;
+  const visiblePage = user.must_change ? "account" : route.area === "admin" && !isAdmin ? "denied" : route.page;
+  const visibleNavigation = navigation.filter(item => user.must_change ? item.id === "account" : (isAdministration ? adminPages : personalPages).includes(item.id));
   const submitUser = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -461,19 +514,20 @@ function Studio() {
     </form>
   );
   return (
-    <div className="studio aether-home-theme">
-      <aside className="studio-sidebar">
+    <div className="studio aether-home-theme" data-workspace={isAdministration ? "admin" : "personal"}>
+      <CollapsibleSidebar id="studio-nav" ariaLabel="Studio sidebar" className="studio-sidebar aui-application-sidebar" toggle="custom">
         <div className="workspace-identity">
           <span className="workspace-avatar">
             <AppIcon app="studio" size={34} />
           </span>
-          <div>
+          <SidebarLabel>
             <strong>{status.name}</strong>
             <small>
-              {isAdmin ? "Administrator workspace" : "Personal workspace"}
+              {isAdministration ? "Administration workspace" : "Personal workspace"}
             </small>
-          </div>
+          </SidebarLabel>
         </div>
+        <div className="aui-application-sidebar-user"><SidebarLabel>{user.full_name || user.username}</SidebarLabel><SidebarToggle /></div>
         <div className="sidebar-search">
           <TextField
             aria-label="Search navigation"
@@ -483,30 +537,30 @@ function Studio() {
           />
         </div>
         <div className="nav-heading">
-          {isAdmin ? "Administration" : "Workspace"}
+          <SidebarLabel>{isAdministration ? "Administration" : "Workspace"}</SidebarLabel>
         </div>
         <nav aria-label="Studio navigation">
-          <ListBox
-            ariaLabel="Workspace sections"
-            items={navigation.filter((item) =>
-              item.label.toLowerCase().includes(query.toLowerCase()),
-            )}
-            selectedIDs={new Set([visiblePage])}
-            onSelect={(ids) => ids[0] && navigate(ids[0])}
-          />
+          {visibleNavigation
+            .filter((item) => item.label.toLowerCase().includes(query.toLowerCase()))
+            .map((item) => (
+              <SidebarRow key={item.id} item={{id:item.id,label:item.label,icon:item.icon,badge:item.badge,current:visiblePage === item.id,onSelect:()=>navigate(item.id,isAdministration ? "admin" : "personal")}}/>
+            ))}
         </nav>
         <div className="sidebar-bottom">
-          <div className="host-label">
-            <StatusDot kind="ok" /> Local host connected
-          </div>
-          <button className="profile" onClick={() => navigate("account")}>
+          <ThemeMenu />
+          {isAdmin && <Button onClick={() => navigate(isAdministration ? "home" : "overview", isAdministration ? "personal" : "admin")} title={isAdministration ? "Back to my workspace" : "Open administration"}>
+            <AetherIcon name={isAdministration ? "home" : "settings"} />
+            <SidebarLabel>{isAdministration ? "Back to my workspace" : "Open administration"}</SidebarLabel>
+          </Button>}
+          <HostLabel />
+          <button className="profile" title={user.full_name || user.username} onClick={() => navigate("account", "personal")}>
             {user.avatar ? <img className="avatar" src={user.avatar} alt="" style={{objectFit:"cover"}} /> : <span className="avatar">{(user.full_name || user.username)[0].toUpperCase()}</span>}
-            <span>
+            <SidebarLabel>
               <strong>{user.full_name || user.username}</strong>
               <small>
                 {user.role === "admin" ? "Administrator" : "Member"}
               </small>
-            </span>
+            </SidebarLabel>
           </button>
           <Button
             onClick={() => run("/api/logout", {}, "Signed out.")}
@@ -515,16 +569,44 @@ function Studio() {
             Sign out
           </Button>
         </div>
-      </aside>
+      </CollapsibleSidebar>
       <div className="studio-body">
         <main className="studio-content">
           {banners}
+          {visiblePage === "denied" && <Section title="Administration access required">
+            <p>This workspace is available to administrators. Your personal workspace is still available.</p>
+            <Button primary onClick={() => navigate("home", "personal")}>Back to my workspace</Button>
+          </Section>}
+          {needsAdminDetails && !admin && <Section title="Administration">
+            {adminError ? <><p role="alert">{adminError}</p><Button onClick={() => void refresh().catch((e: Error) => report(e.message))}>Retry</Button></> : <p role="status">Loading administration…</p>}
+          </Section>}
+          {visiblePage === "organizations" && isAdministration && <DriveAdministration />}
+          {visiblePage === "server" && admin && (admin.capabilities?.maintenance === false ? <Section title="Native Studio server"><p>The Rust host is running at {admin.public_url}. Installation maintenance is managed from the server console while its browser controls are being migrated.</p></Section> : <ServerManagement onNavigate={navigate} />)}
+          {visiblePage === "overview" && admin && <>
+            <div className="page-heading"><div><h1>Aether Studio Admin Center</h1><p>Manage users, application access, and this Aether Studio installation.</p></div><span className="badge">Administrator access</span></div>
+            <Section title="Installation overview"><div className="overview-grid">
+              <div className="summary-card"><AetherIcon name="assembly" /><strong>{admin.users.filter(u => u.active).length}</strong><span>Active users</span></div>
+              <div className="summary-card"><AetherIcon name="items" /><strong>{(admin.applications ?? status.apps).filter(app => app.enabled).length}</strong><span>Enabled applications</span></div>
+              <div className="summary-card"><AetherIcon name="hardware" /><strong>{Math.floor(admin.uptime_s / 60)} min</strong><span>Host uptime</span></div>
+            </div></Section>
+            <Section title="Team server">
+              {admin.running_settings && <p>{admin.running_settings.bind_address === "127.0.0.1" ? "This server currently accepts connections from this device only. Configure HTTPS in Server settings to connect other team members." : `Team address: ${admin.running_settings.public_url}`}</p>}
+              {admin.storage && <><p>Data folder: <code style={{ overflowWrap: "anywhere" }}>{admin.storage.data_directory}</code></p>
+              <p>{admin.storage.interval_hours ? `Automatic backups every ${admin.storage.interval_hours} hours.` : "Automatic backups are disabled."} {admin.storage.error}</p></>}
+              <div className="actions"><Button onClick={() => navigate("network")}>Set up team access</Button><Button onClick={() => navigate("backups")}>Manage backups</Button><Button onClick={() => navigate("organizations")}>Manage organizations & workspaces</Button></div>
+              <p>Document history is always enabled. Saves are recovery history; named versions and branches are deliberate actions. No Git setup is required.</p>
+              <p className="hint">Create server accounts in Users, then assign organization and workspace membership in Organizations & workspaces. Application teams control access to apps; Drive memberships control access to files.</p>
+            </Section>
+            <Section title="Manage your installation"><div className="actions">
+              <Button onClick={() => navigate("users")}>Manage users</Button><Button onClick={() => navigate("apps")}>Manage applications</Button><Button onClick={() => navigate("plugins")}>Manage plugins</Button><Button onClick={() => navigate("network")}>Server settings</Button>
+            </div><p>Changes here affect the installation. Your account, creative applications, and agent sign-ins live in your personal workspace.</p></Section>
+          </>}
           {visiblePage === "home" && (
             <>
               <div className="page-heading">
                 <div>
                   <h1>Your workspace, together.</h1>
-                  <p>Open your tools and manage your Aether installation.</p>
+                  <p>Open your creative tools and manage your personal account.</p>
                 </div>
                 <span className="page-heading-tools">
                   <span className="badge">
@@ -544,45 +626,20 @@ function Studio() {
                   </Button>
                 </span>
               </div>
+              <ApplicationWelcome updates={APP_UPDATES.studio} id="studio-welcome" name="Aether Studio" description="Your creative applications, together in one workspace." artwork={<ApplicationArtwork app="studio" />} />
               <Section title="Your applications">
                 <div className="application-grid">
                   {status.apps
                     .filter((app) => app.enabled)
                     .map((app) => (
-                      <a
-                        key={app.id}
-                        className={`application-card ${app.id}`}
-                        href={app.installed ? app.url : undefined}
-                        target="_blank" rel="noopener"
-                        aria-disabled={!app.installed}
-                      >
-                        <div className="application-art">
-                          <AppIcon app={app.id} size={108} />
-                          <span>
-                            {app.id === "cad"
-                              ? "DESIGN"
-                              : app.id === "animation"
-                                ? "CREATE"
-                                : "EXPLORE"}
-                          </span>
-                        </div>
-                        <div className="application-copy">
-                          <h3>{app.name}</h3>
-                          <p>{app.description}</p>
-                          <span className="application-open">
-                            {app.installed
-                              ? "Open application ↗"
-                              : "Build required"}
-                          </span>
-                        </div>
-                      </a>
+                      <ApplicationCard key={app.id} app={app} />
                     ))}
                 </div>
                 {!status.apps.some((app) => app.enabled) && (
                   <div className="empty">
                     No applications are enabled.{" "}
                     {isAdmin
-                      ? "Enable one in Applications to get started."
+                      ? "Open administration to enable an application."
                       : "Ask your administrator to enable an application."}
                   </div>
                 )}
@@ -602,23 +659,13 @@ function Studio() {
                   </div>
                   <div className="summary-card">
                     <AetherIcon name="assembly" />
-                    <strong>
-                      {admin
-                        ? admin.users.filter((u) => u.active).length
-                        : "Private"}
-                    </strong>
-                    <span>
-                      {admin ? "Active users" : "Your workspace storage"}
-                    </span>
+                    <strong>Private</strong>
+                    <span>Your workspace storage</span>
                   </div>
                   <div className="summary-card">
                     <AetherIcon name="hardware" />
-                    <strong>
-                      {admin
-                        ? `${Math.floor(admin.uptime_s / 60)} min`
-                        : "Connected"}
-                    </strong>
-                    <span>{admin ? "Host uptime" : "Host connection"}</span>
+                    <strong>Connected</strong>
+                    <span>Host connection</span>
                   </div>
                 </div>
               </Section>
@@ -643,7 +690,7 @@ function Studio() {
                 <div>
                   <h1>Applications</h1>
                   <p>
-                    {isAdmin
+                    {isAdministration
                       ? "Choose the tools available on this installation."
                       : "Tools enabled by your administrator."}
                   </p>
@@ -660,7 +707,7 @@ function Studio() {
                     </tr>
                   </thead>
                   <tbody>
-                    {status.apps.map((app) => (
+                    {(admin?.applications ?? status.apps).filter(app => isAdministration || app.enabled).map((app) => (
                       <tr key={app.id}>
                         <td>
                           <div className="table-name">
@@ -686,7 +733,7 @@ function Studio() {
                                 Open ↗
                               </a>
                             )}
-                            {isAdmin && (
+                            {isAdministration && (
                               <Button
                                 active={app.enabled}
                                 disabled={
@@ -710,10 +757,10 @@ function Studio() {
                   </tbody>
                 </table>
               </div>
-              <p className="hint">
+              {isAdministration && <p className="hint">
                 Enablement controls both application pages and backend access.
                 Existing work is kept when an app is disabled.
-              </p>
+              </p>}
             </>
           )}
           {visiblePage === "users" && admin && (
@@ -898,7 +945,8 @@ function Studio() {
               </Section>
             </>
           )}
-          {visiblePage === "network" && admin && network && (
+          {visiblePage === "network" && admin?.capabilities?.network_settings === false && <Section title="Server & network"><p>Current address: {admin.public_url}</p><p>Listener and HTTPS configuration are managed by the server operator. Browser network changes and restart controls are still being migrated.</p></Section>}
+          {visiblePage === "network" && admin && network && admin.running_settings && (
             <>
               <div className="page-heading">
                 <div>
@@ -1000,6 +1048,7 @@ function Studio() {
                     <small>
                       Paths refer to files on the host. Leave both blank for
                       local HTTP.
+                      {admin.runtime === "rust" && " Choose certificates from the directory configured by your server operator. When changing the bind address, choose a free port so the replacement listener can be checked before the current one stops."}
                     </small>
                   </Field>
                   <Button primary type="submit" disabled={busy}>
@@ -1007,12 +1056,21 @@ function Studio() {
                   </Button>
                 </form>
               </Section>
+              <Section title="Connect your on-site team">
+                <ol>
+                  <li>Use aether-studio as the server name under your organization’s DNS domain. Reserve its IP address on your router and point that DNS record to this server.</li>
+                  {admin.runtime === "rust" ? <li>Ask your server operator to install a certificate for this hostname and its private key in Studio’s configured certificate directory. Team devices must trust its issuing authority.</li> : <><li>Use your organization’s TLS certificate, or generate one on the server: <code>python -m core.host certificate --hostname aether-studio.example.com --ip 192.168.1.20</code>. Replace both examples with your server’s actual address.</li><li>For a generated certificate, trust its <code>ca.pem</code> on each team device. Keep both private keys on the server.</li></>}
+                  <li>Set bind address to <code>0.0.0.0</code>, enter the HTTPS URL and certificate paths, save, then restart. Allow the selected port through the server firewall for your local network.</li>
+                  <li>Open that URL from a second device and sign in with a member account. Keep this server awake while your team works.</li>
+                </ol>
+                <p className="hint">For a small Bonjour-enabled network, aether-studio.local can be configured as the Mac’s Local Hostname in System Settings → General → Sharing. Managed DNS works across office network segments and devices without relying on Bonjour.</p>
+                <p className="hint">Back up certificate files separately and renew them before expiry. No router port forwarding is needed for an on-site team.</p>
+              </Section>
               {admin.restart_required && (
                 <div className="restart-panel">
                   <h3>Restart required</h3>
                   <p>
-                    Save open work before restarting. Engine sessions will be
-                    cleared; saved files and accounts are kept.
+                    {admin.runtime === "rust" ? "Studio will drain active connections and restart its network listener. Saved files, accounts and engine sessions are kept." : "Save open work before restarting. Engine sessions will be cleared; saved files and accounts are kept."}
                   </p>
                   <Button
                     disabled={busy}
@@ -1052,15 +1110,15 @@ function Studio() {
                   e.preventDefault();
                   const form = new FormData(e.currentTarget);
                   const apps: Record<string, string> = {};
-                  for (const id of ["studio", "cad", "animation", "ui"]) {
+                  for (const id of ["studio", ...status.apps.map(app => app.id)]) {
                     const value = String(form.get("app-" + id) ?? "").trim();
                     if (value) apps[id] = value;
                   }
                   await run("/api/admin/theme", { base: String(form.get("base") ?? ""), apps }, "Workspace theme updated.");
                 }}>
                   <Field label="Base theme id"><TextField name="base" defaultValue={status.theme?.base ?? "aether-default"} required maxLength={64} /></Field>
-                  {(["studio", "cad", "animation", "ui"] as const).map((id) => (
-                    <Field key={id} label={({ studio: "Aether Studio", cad: "Aether CAD", animation: "Aether Animation", ui: "Aether UI" } as const)[id] + " override"}>
+                  {[{ id: "studio", name: "Aether Studio" }, ...status.apps].map(({ id, name }) => (
+                    <Field key={id} label={name + " override"}>
                       <TextField name={"app-" + id} placeholder="Inherit base theme" defaultValue={status.theme?.apps?.[id] ?? ""} maxLength={64} />
                     </Field>
                   ))}
@@ -1104,9 +1162,13 @@ function Studio() {
               </div>
             </>
           )}
+          {visiblePage === "plugins" && <PluginMarketplace key={route.area} admin={isAdministration} canManage={status.user.role === "admin"}/>}
           {admin && (
             <AdministrationPanels
+              secret={serviceSecret?.owner === user.id ? serviceSecret.value : ""}
+              setSecret={value => setServiceSecret(value ? {owner: user.id, value} : null)}
               page={visiblePage}
+              apps={admin.applications ?? status.apps}
               admin={admin}
               run={run}
               refresh={refresh}
@@ -1114,7 +1176,7 @@ function Studio() {
               busy={busy}
             />
           )}
-          {visiblePage === "email" && admin && <EmailSettings key={JSON.stringify(admin.mail)} settings={admin.mail} publicURL={admin.running_settings.public_url} run={run} busy={busy} />}
+          {visiblePage === "email" && admin && (admin.mail ? <EmailSettings key={JSON.stringify(admin.mail)} settings={admin.mail} publicURL={admin.public_url ?? admin.running_settings?.public_url ?? location.origin} run={run} busy={busy} /> : <Section title="Email delivery"><p>The server operator must configure private mail credential storage before enabling email delivery.</p></Section>)}
           {visiblePage === "account" && (
             <>
               <div className="page-heading">
@@ -1173,27 +1235,86 @@ function Studio() {
     </div>
   );
 }
-/** Suite-wide bottom tray, matching the native app: shown on every Studio page. */
-function StudioTray() {
+type Connection = { kind: "ok" | "warn" | "error" | "busy"; label: string };
+
+/** How often the sidebar re-checks the server. Cheap against a local host. */
+const CONNECTION_POLL_MS = 15000;
+
+/**
+ * What the dot means. Only states the host actually reports: reachable and
+ * ready, reachable but incompletely set up or unable to write its storage, or
+ * not reachable at all. Nothing here invents a health signal the server does
+ * not send.
+ */
+function readConnection(status: Status): Connection {
+  if (!status.ready) return { kind: "warn", label: "Connected — setup is not finished" };
+  if (status.installation && status.installation.storage_ready === false)
+    return { kind: "warn", label: "Connected — the server cannot write its storage" };
+  return { kind: "ok", label: "Connected to the server" };
+}
+
+/**
+ * Live server health for the Studio sidebar.
+ */
+function useConnection(): { connection: Connection; status: Status | null } {
   const [status, setStatus] = useState<Status | null>(null);
+  const [connection, setConnection] = useState<Connection>({
+    kind: "busy",
+    label: "Connecting to the server…",
+  });
+
   useEffect(() => {
-    api<Status>("/api/status").then(setStatus).catch(() => setStatus(null));
+    let live = true;
+    const check = () =>
+      api<Status>("/api/status")
+        .then((next) => {
+          if (!live) return;
+          setStatus(next);
+          setConnection(readConnection(next));
+        })
+        .catch(() => {
+          if (!live) return;
+          setConnection({ kind: "error", label: "Cannot reach the server" });
+        });
+
+    void check();
+    const timer = setInterval(check, CONNECTION_POLL_MS);
+    // Recover promptly after a sleep or a dropped network rather than waiting
+    // out the interval.
+    const wake = () => void check();
+    addEventListener("online", wake);
+    addEventListener("offline", wake);
+    document.addEventListener("visibilitychange", wake);
+
     const sync = (event: Event) => {
       const user = (event as CustomEvent<User | null>).detail;
       setStatus((current) => (current ? { ...current, user } : current));
     };
     document.addEventListener("aether-account", sync);
-    return () => document.removeEventListener("aether-account", sync);
+    return () => {
+      live = false;
+      clearInterval(timer);
+      removeEventListener("online", wake);
+      removeEventListener("offline", wake);
+      document.removeEventListener("visibilitychange", wake);
+      document.removeEventListener("aether-account", sync);
+    };
   }, []);
+
+  return { connection, status };
+}
+
+/** The sidebar's server indicator. It used to be a hardcoded green dot that
+ *  said "connected" whether or not it was. */
+function HostLabel() {
+  const { connection } = useConnection();
   return (
-    <div className="studio-tray aether-home-theme">
-      <StatusBar
-        leading={<div role="status" aria-live="polite" aria-atomic="true"><StatusDot kind={status?.ready ? "ok" : "busy"} /><span className="studio-tray-name">Aether Studio</span><span>{status?.name ?? "Connecting…"}</span></div>}
-        center={null}
-        trailing={<><span>{status?.user ? status.user.full_name || status.user.username : "Not signed in"}</span><AppearanceToggle /></>}
-      />
+    <div className="host-label" role="status" aria-live="polite" title={connection.label}>
+      <StatusDot kind={connection.kind} /> {connection.label}
     </div>
   );
 }
 
-createRoot(document.getElementById("root")!).render(<><Studio /><StudioTray /></>);
+const agentEmbed = new URLSearchParams(location.search).has("agent");
+document.body.classList.toggle("studio-agent-embed", agentEmbed);
+createRoot(document.getElementById("root")!).render(<Studio />);

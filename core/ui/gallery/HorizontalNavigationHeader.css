@@ -1,0 +1,38 @@
+.horizontal-header-specimen { display:grid; grid-template-columns:minmax(0,1fr); gap:16px; width:100%; min-width:0; }
+.horizontal-header-specimen > p { margin:0; color:var(--aether-color-text-dim); line-height:1.6; }
+.horizontal-navigation-header {
+  display:flex; align-items:center; gap:18px; width:max-content; max-width:100%; min-width:0;
+  height:80px; padding:12px; box-sizing:border-box; border:1px solid #e9ebef; border-radius:8px;
+  background:#fff; color:#101624; font-family:var(--aether-font-family);
+}
+.horizontal-header-brand {
+  display:grid; place-items:center; flex:0 0 52px; width:52px; height:52px; padding:0;
+  border:0; border-radius:4px; background:transparent; color:inherit; cursor:pointer;
+}
+.horizontal-header-brand:hover { background:#f3f4f8; }
+.horizontal-header-content { display:flex; align-items:center; gap:26px; min-width:0; overflow-x:auto; overscroll-behavior-inline:contain; scrollbar-width:thin; }
+.horizontal-header-content[hidden] { display:none; }
+.horizontal-navigation-header .aui-application-sidebar-navigation { flex-direction:row; align-items:center; gap:26px; }
+.horizontal-navigation-header .aui-application-sidebar-section { position:relative; display:flex; flex:none; gap:2px; padding-top:16px; }
+.horizontal-navigation-header .aui-application-sidebar-caption {
+  position:absolute; top:0; left:0; width:100%; margin:0; padding:0; text-align:center;
+  font-size:7px; line-height:10px; font-weight:500; letter-spacing:.035em; text-transform:uppercase; color:inherit;
+}
+.horizontal-navigation-header .aui-sidebar-label,
+.horizontal-navigation-header .aui-application-sidebar-badge { display:none; }
+.horizontal-navigation-header .aui-application-sidebar-row {
+  display:grid; place-items:center; flex:0 0 34px; width:34px; height:34px; padding:0;
+  border:0; border-radius:4px; background:transparent; color:inherit; cursor:pointer; text-decoration:none;
+}
+.horizontal-navigation-header .aui-application-sidebar-row:hover { background:#f3f4f8; }
+.horizontal-navigation-header .aui-application-sidebar-row[aria-current="page"] { background:#f2f1fa; color:#3538cd; }
+.horizontal-navigation-header .aui-application-sidebar-icon { display:grid; place-items:center; width:20px; height:20px; }
+.horizontal-navigation-header .aui-application-sidebar-icon svg { width:18px; height:18px; }
+.horizontal-header-utilities { display:flex; align-items:center; flex:none; gap:14px; }
+.horizontal-header-divider { width:1px; height:36px; background:#e9ebef; }
+.horizontal-header-account { display:grid; place-items:center; width:28px; height:34px; padding:0; border:0; border-radius:4px; background:transparent; color:#344054; cursor:pointer; }
+.horizontal-navigation-header button:focus-visible,
+.horizontal-navigation-header a:focus-visible { outline:2px solid #3538cd; outline-offset:-2px; }
+.horizontal-header-profile { display:flex; align-items:center; gap:12px; padding:8px; }
+.horizontal-header-profile > span { display:grid; gap:4px; }
+.horizontal-header-profile small { color:var(--aether-color-text-dim); }

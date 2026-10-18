@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" fill="#405269" color="#405269">
+	<desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/model.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g fill="none" stroke="#405269" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M32 5L56 18.5V45.5L32 59L8 45.5V18.5L32 5Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M8 18.5L32 32L56 18.5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M32 32V59" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M32 17L45 24.5V39.5L32 47L19 39.5V24.5L32 17Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M19 24.5L32 32L45 24.5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M32 32V47" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M8 45.5L19 39.5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M56 45.5L45 39.5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+		<path d="M32 5V17" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+	</g>
+</svg>

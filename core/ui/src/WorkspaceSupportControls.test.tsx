@@ -1,0 +1,21 @@
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { afterEach, expect, test } from "vitest";
+import { DocumentBar } from "./DocumentBar";
+import { WorkspaceShell } from "./WorkspaceShell";
+import { readHeaderPins } from "./header-controls";
+afterEach(() => { cleanup(); localStorage.clear(); });
+test("Header settings discovers shell controls and their pinned icons retain live actions", () => {
+  render(<><DocumentBar application={{ id: "map", name: "Map" }}/><WorkspaceShell preset="floating" leftPanels={[{ id: "comments", title: "Comments", icon: "comment", content: <span>Comment contents</span> }, { id: "reminders", title: "Reminders", icon: "stopwatch", content: <span>Reminder contents</span> }]}><div>Canvas</div></WorkspaceShell></>);
+  fireEvent.click(screen.getByRole("button", { name: "Settings" }));
+  const settings = within(screen.getByRole("dialog", { name: "Map settings" }));
+  fireEvent.click(settings.getByRole("button", { name: "Header" }));
+  fireEvent.click(settings.getByRole("checkbox", { name: "Show Comments in header" }));
+  fireEvent.click(settings.getByRole("checkbox", { name: "Show Workspace layout in header" }));
+  expect(readHeaderPins("map")).toContain("comments");
+  fireEvent.click(settings.getByRole("button", { name: "Close Map settings" }));
+  const bar = within(screen.getByRole("group", { name: "User bar" }));
+  fireEvent.click(bar.getByRole("button", { name: "Comments" }));
+  expect(document.querySelector('.aui-shell-panel[data-panel-id="comments"]') ?? screen.getByText("Comment contents")).toBeTruthy();
+  fireEvent.click(bar.getByRole("button", { name: "Workspace layout" }));
+  expect(screen.getByRole("combobox", { name: "Comments placement" })).toBeTruthy();
+});

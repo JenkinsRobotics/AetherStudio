@@ -20,13 +20,14 @@ function renderRibbon(onClick = vi.fn()) {
 
 test("arrows move focus across groups, skip disabled, wrap", () => {
   renderRibbon();
-  const first = screen.getByText("Fastened");
+  const button = (name: string) => screen.getByRole("button", { name });
+  const first = button("Fastened");
   first.focus();
   fireEvent.keyDown(first.closest(".aui-ribbon")!, { key: "ArrowRight" });
-  expect(document.activeElement).toBe(screen.getByText("Revolute"));
+  expect(document.activeElement).toBe(button("Revolute"));
   // Next right skips disabled Remove, crossing the group boundary.
   fireEvent.keyDown(first.closest(".aui-ribbon")!, { key: "ArrowRight" });
-  expect(document.activeElement).toBe(screen.getByText("Copy"));
+  expect(document.activeElement).toBe(button("Copy"));
   // Right from the last wraps to the first.
   fireEvent.keyDown(first.closest(".aui-ribbon")!, { key: "ArrowRight" });
   expect(document.activeElement).toBe(first);

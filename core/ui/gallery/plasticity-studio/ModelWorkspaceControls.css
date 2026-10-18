@@ -1,0 +1,21 @@
+.ps-workspace-control .aui-floating-toolbar-trailing { border-left:1px solid var(--aether-color-border); padding-left:10px; gap:6px; }
+.ps-workspace-preview { color:var(--aether-color-text-dim); font-size:10px; padding:0 4px; white-space:nowrap; }
+.ps-workspace-popover { width:250px; max-width:calc(100vw - 32px); box-sizing:border-box; display:flex; flex-direction:column; gap:14px; font:12px var(--aether-font-family); }
+.ps-workspace-popover label:not(.aui-checkbox) { display:flex; align-items:center; justify-content:space-between; gap:14px; }
+.ps-workspace-popover .aui-number-field-wrap { width:110px; }
+.ps-workspace-popover p { margin:0; color:var(--aether-color-text-dim); line-height:1.6; }
+@container model-workspace (max-width:480px) {
+  .ps-workspace-control .aui-floating-toolbar-strip { gap:4px; }
+  .ps-workspace-control .aui-floating-toolbar-leading { padding:0 2px; }
+  .ps-workspace-control .aui-floating-toolbar-trailing { gap:4px; padding:0 2px 0 6px; }
+  .ps-workspace-control .aui-floating-toolbar-menu { padding:0 7px; font-size:11px; }
+}
+
+/* Use the approved glyph treatment: only the icon communicates a latched state. */
+.ps-workspace-control .aui-floating-toolbar-trailing > .aui-icon-button[data-appearance="glyph"] {
+  background:transparent; box-shadow:none; border:0;
+}
+.ps-workspace-control .aui-floating-toolbar-trailing > .aui-icon-button[data-active="true"],
+.ps-workspace-control .aui-floating-toolbar-trailing > .aui-icon-button[data-active="true"]:hover:not(:disabled) { color:var(--aether-color-accent); }
+.ps-workspace-control .aui-floating-toolbar-trailing > .aui-icon-button[aria-pressed="true"] { color:var(--aether-color-accent); }
+.ps-workspace-control [data-display="wireframe"] > svg { stroke-dasharray:2 1; }

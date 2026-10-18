@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="32" width="32" id="svg10" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_Create_ArcOfParabola.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="symbol" style="fill:none;stroke:#5bbdff;stroke-width:1.1" transform="rotate(-20 41 45)">
+    <g id="g2" transform="translate(2.6483269,-3.7711964)">
+      <ellipse cx="30.753206" cy="26.371912" id="circle4-5" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <ellipse cx="53.305832" cy="34.580399" id="circle4-5-8" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <ellipse cx="32.388832" cy="56.963718" id="circle4-5-8-4" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path2" d="m 53.305828,34.580395 c 0,0 -11.150783,25.937934 -20.916995,22.383323 -9.766212,-3.554611 -1.635627,-30.591806 -1.635627,-30.591806" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <ellipse cx="37.861153" cy="41.928623" id="ellipse2" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  <g id="crosshair" style="stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter">
+    <path d="m16,3v9m0,8v9m-13-13h9m8,0h9" id="path7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

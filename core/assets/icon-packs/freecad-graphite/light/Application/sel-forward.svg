@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg6248" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/sel-forward.svg. Authors: [WandererFan], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html; https://www.gnu.org/licenses/lgpl-3.0.en.html</desc><defs id="defs6250">
+    <linearGradient id="linearGradient3806">
+      <stop id="stop3808" offset="0" style="stop-color:#d3dde7;stop-opacity:1" />
+      <stop id="stop3810" offset="1" style="stop-color:#b4c2d3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient y2="19.265453" x2="40.373039" y1="44.981819" x1="42.755482" gradientTransform="matrix(-1.4500001,0,0,-1.4705882,91.45,79.05882)" gradientUnits="userSpaceOnUse" id="linearGradient3012" xlink:href="#linearGradient3806" />
+  </defs>
+  <g id="layer1">
+    <g id="g4219" transform="matrix(-1,0,0,1,63.871506,0)">
+      <path id="path3343" d="M 38.642366,57.51426 32.834887,39.026071 60.74287,39.071526 60.871435,24.799907 32.985511,24.671342 38.385236,6.6143054 3,32 Z" style="fill:url(#linearGradient3012);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3343-2" d="M 34.927851,52.377897 30.210891,36.916335 59,37.200091 59,26.928472 30.342686,26.542777 34.585327,11.710728 6,32 Z" style="fill:none;stroke:#7c8fa5;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.80000019;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

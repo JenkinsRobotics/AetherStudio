@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+ <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Tux/Resources/icons/NavigationOpenInventor_light.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g transform="translate(0 -988.36)">
+  <g transform="matrix(.93333 0 0 .92593 2.1334 75.583)" fill="#dbe3ec" fill-rule="evenodd">
+   <path d="m9.5 1006.9v27l22.5 13.5 22.5-13.5v-27l-22.5 13.5-22.5-13.5z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+   <path d="m9.5 1006.9 22.5-13.54 22.5 13.54-22.5 13.5z" fill-opacity=".58824" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+ </g>
+</svg>

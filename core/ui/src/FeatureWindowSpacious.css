@@ -1,0 +1,41 @@
+/* Optional feature-editor presentation. Uses the same controls and behavior. */
+.aui-feature-window.aui-feature-window--spacious {
+  width: 360px;
+  max-width: 100%;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--aether-color-bg-panel), color-mix(in srgb, var(--aether-color-bg-panel) 90%, var(--aether-color-bg-control)));
+}
+.aui-feature-window--spacious .aui-float-panel-header {
+  padding: 14px 14px 8px;
+  color: var(--aether-color-text);
+  font-size: 20px;
+  letter-spacing: -.3px;
+  text-transform: none;
+}
+.aui-feature-window--spacious .aui-float-panel-actions { gap: 8px; }
+.aui-feature-window--spacious .aui-feature-accept { width: 36px; height: 30px; border-radius: 7px; font-size: 18px; }
+.aui-feature-window--spacious .aui-feature-discard { width: 28px; height: 30px; font-size: 18px; }
+.aui-feature-window.aui-feature-window--spacious .aui-float-panel-body { padding: 12px 14px 14px; gap: 10px; }
+.aui-feature-window--spacious .aui-feature-tabs { gap: 0; }
+.aui-feature-window--spacious .aui-feature-tabs button { padding: 8px 3px; font-size: 14px; }
+.aui-feature-window--spacious .aui-feature-entities { padding: 6px; border-radius: 8px; gap: 4px; }
+.aui-feature-window--spacious .aui-feature-entities-caption { font-size: 12px; font-weight: 500; }
+.aui-feature-window--spacious .aui-feature-entity { padding: 2px 0; font-size: 14px; }
+.aui-feature-window--spacious .aui-feature-entity > span {
+  padding: 2px 8px;
+  border: 1px solid var(--aether-color-border);
+  border-radius: 999px;
+  background: var(--aether-color-bg-control);
+}
+.aui-feature-window--spacious .aui-feature-entity > button {
+  min-width: 28px;
+  height: 24px;
+  border: 1px solid var(--aether-color-border);
+  border-radius: 8px;
+  background: var(--aether-color-bg-control);
+  font-size: 16px;
+}
+.aui-feature-window--spacious .aui-feature-row { min-height: 28px; gap: 10px; font-size: 14px; }
+.aui-feature-window--spacious .aui-feature-picker-trigger { min-height: 30px; padding: 4px 9px; border-radius: 8px; font-size: 14px; }
+.aui-feature-window--spacious .aui-feature-row input[type="checkbox"] { width: 15px; height: 15px; margin: 0 2px; accent-color: var(--aether-color-accent); }
+.aui-feature-window--spacious .aui-feature-footer { padding: 6px 10px; }

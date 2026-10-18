@@ -1,0 +1,7 @@
+.aui-feature-tree { display:flex; flex:1 1 auto; min-height:0; min-width:0; height:100%; }
+.aui-feature-tree-item--suppressed .aui-tree-label { text-decoration:line-through; font-style:italic; }
+.aui-feature-tree-item--rolled-back .aui-tree-label { font-style:italic; }
+.aui-feature-tree-item .aui-tree-icon .aui-tool-icon { width:16px; height:16px; }
+.aui-feature-tree-rollback { min-height:18px; }
+.aui-feature-tree-rollback::after { height:5px; background:var(--aether-color-text-dim); }
+.aui-feature-tree-rollback:focus-visible::after { background:var(--aether-color-accent); }

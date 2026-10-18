@@ -1,0 +1,86 @@
+@import "./IconButtonSizes.css";
+
+.aui-floating-toolbar {
+  --aui-floating-tool-size: var(--aui-icon-large-size);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+  color: var(--aether-color-text);
+  font: 12px var(--aether-font-family);
+}
+.aui-floating-toolbar-command,
+.aui-floating-toolbar-strip {
+  box-sizing: border-box;
+  border: 1px solid var(--aether-color-border);
+  background: var(--aether-color-bg-panel);
+  box-shadow: var(--aether-shadow-1);
+}
+.aui-floating-toolbar-command {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  min-height: 36px;
+  padding: 4px 9px;
+  border-radius: 7px;
+  background: var(--aether-color-bg-app);
+}
+.aui-floating-toolbar-input { flex: 1 1 150px; min-width: 0; display: flex; align-items: center; gap: 8px; }
+.aui-floating-toolbar-input > svg { width: 20px; height: 20px; flex: none; }
+.aui-floating-toolbar .aui-floating-toolbar-input > input {
+  width: 100%; min-width: 0; height: 26px; padding: 0 2px; border: 0; border-radius: 3px;
+  background: transparent; box-shadow: none; font-size: 12px;
+}
+.aui-floating-toolbar-input:focus-within { outline: 2px solid var(--aether-color-accent); outline-offset: 2px; border-radius: 3px; }
+.aui-floating-toolbar .aui-floating-toolbar-input > input:focus { outline: none; }
+.aui-floating-toolbar-shortcuts { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.aui-floating-toolbar-shortcuts > button {
+  --aui-command-tint: var(--aether-color-text-dim);
+  border: 0; border-radius: 4px; padding: 4px 8px; color: var(--aui-command-tint);
+  background: color-mix(in srgb, var(--aui-command-tint) 12%, transparent);
+  font: inherit; cursor: pointer;
+}
+.aui-floating-toolbar-shortcuts > [data-tone="amber"] { --aui-command-tint: var(--aether-color-warning, #b58a24); }
+.aui-floating-toolbar-shortcuts > [data-tone="blue"] { --aui-command-tint: var(--aether-color-accent); }
+.aui-floating-toolbar-shortcuts > [data-tone="green"] { --aui-command-tint: var(--aether-color-success, #309850); }
+.aui-floating-toolbar-shortcuts > button:hover:not(:disabled) { background: color-mix(in srgb, var(--aui-command-tint) 22%, transparent); }
+.aui-floating-toolbar-strip {
+  display: flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%;
+  padding: 8px; border-radius: 12px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin;
+  min-height: 60px;
+}
+.aui-floating-toolbar-group, .aui-floating-toolbar-leading, .aui-floating-toolbar-trailing { display: flex; align-items: center; gap: 4px; flex: none; }
+/* Spread fixed-size tools across the command tray without stretching their highlights. */
+.aui-floating-toolbar[data-variant="tools"] .aui-floating-toolbar-group:not([data-capsule]) { flex: 1 0 auto; justify-content: space-between; }
+.aui-floating-toolbar-group[data-separated] { border-left: 1px solid var(--aether-color-border); padding-left: 8px; }
+.aui-floating-toolbar-group[data-capsule] { padding: 2px; border-radius: 999px; background: color-mix(in srgb, var(--aether-color-text) 6%, transparent); }
+.aui-floating-toolbar .aui-floating-toolbar-group > .aui-icon-button {
+  --aui-icon-button-size: var(--aui-floating-tool-size);
+  --aui-icon-button-glyph-size: var(--aui-icon-large-glyph);
+}
+.aui-floating-toolbar .aui-floating-toolbar-group[data-capsule] > .aui-icon-button { --aui-icon-button-size: var(--aui-icon-small-size); --aui-icon-button-glyph-size: var(--aui-icon-small-glyph); --aui-icon-button-radius: 999px; }
+.aui-floating-toolbar :is(button, input):focus-visible { outline: 2px solid var(--aether-color-accent); outline-offset: -2px; }
+.aui-floating-toolbar button:disabled { opacity: .4; cursor: default; }
+.aui-floating-toolbar[data-variant="document"] { --aui-floating-tool-size: var(--aui-icon-small-size); }
+.aui-floating-toolbar[data-variant="document"] .aui-floating-toolbar-strip { gap: 6px; padding: 4px; border-radius: 11px; min-height: 42px; }
+.aui-floating-toolbar[data-variant="document"] .aui-floating-toolbar-group > .aui-icon-button { --aui-icon-button-radius: 8px; --aui-icon-button-glyph-size: var(--aui-icon-small-glyph); }
+.aui-floating-toolbar .aui-floating-toolbar-menu {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  max-width: 210px; min-width: 0; height: 30px; padding: 0 9px;
+  border: 1px solid var(--aether-color-border); border-radius: 8px;
+  background: var(--aether-color-bg-app); color: var(--aether-color-text); box-shadow: none;
+  font: inherit; cursor: pointer;
+}
+.aui-floating-toolbar-menu > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.aui-floating-toolbar-menu > svg { width: 14px; height: 14px; flex: none; }
+.aui-floating-toolbar .aui-floating-toolbar-menu[data-icon-only] { width: 25px; height: 28px; padding: 4px; border: 0; background: transparent; }
+.aui-floating-toolbar .aui-floating-toolbar-menu:hover { background: var(--aether-color-bg-hover); }
+@media (pointer: coarse) {
+  .aui-floating-toolbar .aui-floating-toolbar-group > .aui-icon-button,
+  .aui-floating-toolbar .aui-floating-toolbar-menu { min-width: 44px; min-height: 44px; }
+}
+
+.aui-floating-toolbar-leading, .aui-floating-toolbar-trailing { align-items: center; padding-inline: 6px; }

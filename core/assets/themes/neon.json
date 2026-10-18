@@ -1,0 +1,35 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "neon",
+  "name": "Neon",
+  "description": "Midnight with a neon teal accent and ink-dark text on selection.",
+  "extends": "midnight",
+  "modes": {
+    "dark": {
+      "color-bg-app": "#05070a",
+      "color-bg-shell": "#0a0f16",
+      "color-bg-bar": "#0a0f16",
+      "color-bg-panel": "#0a0f16",
+      "color-bg-rail": "#0a0f16",
+      "color-accent": "#0ce6c5",
+      "color-accent-strong": "#0ab8a0",
+      "color-accent-icon": "#0ce6c5",
+      "color-bg-selected": "#0ce6c5",
+      "color-text-on-selected": "#03120f",
+      "color-border-focus": "#0ce6c5",
+      "color-border-control-hover": "#0ce6c5",
+      "color-selection-edge": "#0ce6c5",
+      "viewport-selection": "#0ce6c5"
+    },
+    "light": {
+      "color-accent": "#0a9c88",
+      "color-accent-strong": "#087d6d",
+      "color-accent-icon": "#0a9c88",
+      "color-bg-selected": "#0a9c88",
+      "color-border-focus": "#0a9c88",
+      "color-border-control-hover": "#0a9c88",
+      "color-selection-edge": "#0a9c88",
+      "viewport-selection": "#0a9c88"
+    }
+  }
+}

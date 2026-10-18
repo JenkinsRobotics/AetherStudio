@@ -1,0 +1,7 @@
+{
+  "tool": "built-in imagegen",
+  "prompts": [
+    "Use case: stylized-concept. Asset type: original character cutout for an interactive avatar studio demo. Create a polished anime-inspired cel-shaded adult virtual presenter, gender-neutral young adult, warm ivory skin, short tousled silver hair, expressive amber eyes, warm subtle smile, charcoal crewneck shirt with a small teal seam detail. Frontal waist-up composition, both shoulders and torso entirely in frame, centered, head has comfortable margin, arms relaxed. Contemporary game character 3D-toon illustration with refined warm lighting and clean silhouette. Genuinely transparent background with alpha, no backdrop, no floor or cast shadow, no UI, no text, no logos. Original design, not an existing character. Portrait aspect ratio.",
+    "Use case: stylized-concept. Asset type: environment backdrop for an avatar studio preview. A tranquil stylized fantasy forest, ancient tall tree trunks, mossy rocks framing a distant woodland path, muted teal-blue depth and soft warm shafts of light, painterly polished game environment. Wide 16:9 composition, center deliberately soft and uncluttered for a presenter overlay, darker detailed edges, cinematic but calm. Environment only, no people, no creatures, no text, no UI, no watermarks."
+  ]
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/Arch_Profile.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient3071">
+      <stop id="stop3073" offset="0" style="stop-color:#48596e;stop-opacity:1" />
+      <stop id="stop3075" offset="1" style="stop-color:#61758c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3071" id="linearGradient1065" gradientUnits="userSpaceOnUse" gradientTransform="translate(71)" x1="-44.80624" y1="48.42857" x2="-44.80624" y2="12.523807" />
+  </defs>
+  <g id="layer1">
+    <path style="color:#e5edf7;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#e5edf7;solid-opacity:1;vector-effect:none;fill:url(#linearGradient1065);fill-opacity:1;fill-rule:nonzero;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" d="M 13,5 V 15 H 27 V 49 H 13 V 59 H 51 V 49 H 37 V 15 H 51 V 5 Z" id="rect873" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 14,7 h 35 v 6 H 35 v 38 h 14 v 7" id="path943" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 14,51 H 27" id="path959" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

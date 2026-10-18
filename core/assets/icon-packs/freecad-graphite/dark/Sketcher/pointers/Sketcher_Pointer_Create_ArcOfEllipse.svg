@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="32" width="32" id="svg10" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_Create_ArcOfEllipse.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="symbol" style="fill:none;stroke:#5bbdff;stroke-width:1.1">
+    <path d="M 41.272834,25.607073 C 4.7480784,50.897163 10.628042,66.094259 44.624247,55.810832" id="path2" style="stroke-width:1.1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="50.368847" cy="37.983585" id="circle4" style="stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="16.93918" cy="55.306599" id="circle4-8" style="fill:none;stroke:#5bbdff;stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="44.624249" cy="55.421989" id="circle4-8-7" style="fill:none;stroke:#5bbdff;stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="41.272835" cy="25.607073" id="circle4-8-5" style="fill:none;stroke:#5bbdff;stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="crosshair" style="stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter">
+    <path d="m16,3v9m0,8v9m-13-13h9m8,0h9" id="path7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

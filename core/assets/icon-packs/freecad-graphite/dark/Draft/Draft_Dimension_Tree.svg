@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2735" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Dimension_Tree.svg. Authors: [vocx], [agryson] Alexander Gryson, [yorikvanhavre]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2737">
+    <linearGradient id="linearGradient5127">
+      <stop id="stop5129" offset="0" style="stop-color:#61758c;stop-opacity:1" />
+      <stop id="stop5131" offset="1" style="stop-color:#48596e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientTransform="matrix(0,0.59069328,-0.37332419,0,46.495675,-286.65322)" gradientUnits="userSpaceOnUse" y2="-14.744089" x2="566.54315" y1="6.6850076" x1="515.75537" id="linearGradient5133" xlink:href="#linearGradient5127" />
+    <linearGradient y2="97.758667" x2="566.54315" y1="70.972298" x1="515.75537" gradientTransform="matrix(0,0.59069328,0.37332419,0,17.504325,-286.65322)" gradientUnits="userSpaceOnUse" id="linearGradient1022" xlink:href="#linearGradient5127" />
+    </defs>
+  <g id="layer1">
+    <g id="g1014">
+      <path style="display:inline;overflow:visible;visibility:visible;fill:url(#linearGradient5133);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate;stroke-dasharray:none" d="M 61,32 41.888729,51.000139 V 12.999857 Z" id="path2644-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="display:inline;overflow:visible;visibility:visible;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" d="M 58.132908,32.00363 43.85,46.210559 V 17.796701 Z" id="path2644-2-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g transform="matrix(-1,0,0,1,64,0)" id="g1020">
+      <path id="path1016" d="M 61,32 41.888729,51.000139 V 12.999857 Z" style="display:inline;overflow:visible;visibility:visible;fill:url(#linearGradient1022);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path1018" d="M 58.132908,32.00363 43.85,46.210559 V 17.796701 Z" style="display:inline;overflow:visible;visibility:visible;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g style="fill:#e5edf7;fill-opacity:1" id="g3856" transform="translate(-105.44439,-136.22016)">
+      <rect y="163.22015" x="131.4444" height="8.999999" width="11.999999" id="rect3852" style="fill:none;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <rect style="fill:none;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect1320" width="7.9999971" height="5.0000086" x="133.4444" y="165.22015" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

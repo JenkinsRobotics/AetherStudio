@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#405269" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<desc>FreeCAD Graphite extension: push-pull. Original illustration by Aether Studio contributors, 2026-09-24; not upstream FreeCAD artwork.</desc><defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="#f3f7fc" /><stop offset="1" stop-color="#7c8fa5" /></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="#7c8fa5" /><stop offset="1" stop-color="#879db5" /></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="#879db5" /><stop offset="1" stop-color="#7c8fa5" /></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="#37a8fa" /><stop offset="1" stop-color="#076cb8" /></linearGradient>
+</defs>
+<path d="M5 12 16 6 27 12 16 18Z" fill="url(#metalTop)" stroke="#405269" /><path d="M5 12 16 18V29L5 23Z" fill="url(#metalFace)" stroke="#405269" /><path d="M16 18 27 12V23L16 29Z" fill="url(#metalSide)" stroke="#405269" /><path d="M5 12 16 18V29L5 23Z" fill="url(#blueFeature)" stroke="#37a8fa" /><path d="M16 2V13M16 2 13 5M16 2 19 5M16 13 13 10M16 13 19 10" fill="none" stroke="#37a8fa" />
+</svg>

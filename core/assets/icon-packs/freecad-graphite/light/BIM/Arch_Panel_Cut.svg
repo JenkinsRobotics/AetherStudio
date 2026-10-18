@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2985" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/Arch_Panel_Cut.svg. Authors: [Yorik van Havre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2987">
+    <linearGradient id="linearGradient3793">
+      <stop style="stop-color:#c4d0dd;stop-opacity:1;" offset="0" id="stop3795" />
+      <stop style="stop-color:#c4d0dd;stop-opacity:0;" offset="1" id="stop3797" />
+    </linearGradient>
+    <linearGradient id="linearGradient3765">
+      <stop style="stop-color:#c4d0dd;stop-opacity:1" offset="0" id="stop3767" />
+      <stop style="stop-color:#e5ecf3;stop-opacity:1" offset="1" id="stop3769" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3765" id="linearGradient3771" x1="40" y1="68" x2="34" y2="12" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient3793" id="linearGradient3799" x1="32" y1="18" x2="32" y2="48" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <g id="g3223-6" style="color:#405269;fill:#405269;fill-opacity:1;fill-rule:nonzero;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <g id="g3237-6" style="color:#405269;fill:#405269;fill-opacity:1;fill-rule:nonzero;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path style="color:#405269;fill:url(#linearGradient3771);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" d="m 3,3 0,58 24,0 0,-10 10,0 0,10 24.000001,0 0,-58 L 37,3 37,13 27,13 27,3 z m 6,6 12,0 0,4 c 0,4 2,6 6,6 l 10,0 c 4,0 6,-2 6,-6 l 0,-4 12,0 0,46 -12,0 0,-4 c 0,-4 -2,-6 -6,-6 l -10,0 c -4,0 -6,2 -6,6 l 0,4 -12,0 z" id="path4207" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 7,7 0,50 16,0 0,-6 c 0,-3 1,-4 4,-4 l 10,0 c 3,0 4,1 4,4 l 0,6 16,0 0,-50" id="path3773" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:url(#linearGradient3799);stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 7,57 0,-50 16,0 0,6 c 0,3 1,4 4,4 l 10,0 c 3,0 4,-1 4,-4 l 0,-6 16,0 0,50" id="path3773-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

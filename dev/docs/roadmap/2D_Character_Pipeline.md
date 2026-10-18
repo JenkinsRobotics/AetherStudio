@@ -7,7 +7,7 @@ model that unifies how *any* evaluated output (3D joints or 2D frames) drives
 real hardware.
 
 Nothing here is built into the app yet. A first engine foundation ships
-alongside this doc (`animacore/canvas2d.py` + tests); see "Build status" at the
+alongside this doc (`aether_animation/canvas2d.py` + tests); see "Build status" at the
 bottom.
 
 ---
@@ -43,7 +43,7 @@ DOF / parameter value  ──OutputMapping──►  normalized channel target  
         (evaluated state)                        (per-channel scalar)              (hardware node)
 ```
 
-`OutputAdapter` (`animacore/outputs.py`) is *already* the "hardware node": it
+`OutputAdapter` (`aether_animation/outputs.py`) is *already* the "hardware node": it
 consumes **evaluated targets only** (normalized 0..1 per channel) and drives a
 device; `SimulatorOutput`, `SerialWireOutput`, and the UDP extension are its
 backends. The 2D pipeline adds the **frame-stream analog**:
@@ -67,7 +67,7 @@ transform, opacity, visibility — and **never produces pixels**. Rasterization
 (compositing surfaces into an RGBA frame) and LED downsampling live in a
 separate rasterizer: the Swift/RealityKit (or a headless) renderer for preview,
 and the same headless rasterizer feeding a frame hardware node for output. This
-keeps `animacore` UI/renderer/hardware-independent exactly like the motion side.
+keeps `aether_animation` UI/renderer/hardware-independent exactly like the motion side.
 
 ## 3. The 2D asset evolution
 
@@ -167,7 +167,7 @@ workspace) is where outputs live:
 
 ## 7. Fit to AnimaCore (module plan)
 
-- `animacore/canvas2d.py` — `VisualSource`, `Surface`, `SurfaceDriver`,
+- `aether_animation/canvas2d.py` — `VisualSource`, `Surface`, `SurfaceDriver`,
   `Canvas2D`, and `evaluate_surfaces(canvas, values) -> tuple[SurfaceState, …]`.
   Renderer-independent; **stdlib only**. (First slice ships with this doc.)
 - Character format: optional top-level `canvas2d:` block (loader + serializer),
@@ -175,12 +175,12 @@ workspace) is where outputs live:
   `rig:`, `canvas2d:`, or both.
 - Evaluation reuse: surface drivers resolve their value through the *same*
   `evaluate_pose`/parameter/clip path DOFs use — no second animation engine.
-- `animacore/frame_output.py` (later) — `FrameOutput` protocol +
+- `aether_animation/frame_output.py` (later) — `FrameOutput` protocol +
   `LedMatrixTarget` + `downsample_canvas`; a `SimulatorFrameOutput` first
   consumer, mirroring `SimulatorOutput`.
 - Bridge verbs (later, for the Swift front end): `load`/`describe` a canvas,
   `evaluate_surfaces`, `led_preview` (returns the small buffer for the sim).
-- Rasterizer: **not** in `animacore` — a headless rasterizer (Swift, or a small
+- Rasterizer: **not** in `aether_animation` — a headless rasterizer (Swift, or a small
   Python/Pillow one strictly for the hardware-output path and tests) composits
   SurfaceState → RGBA. The engine hands out state; pixels are downstream.
 
@@ -191,7 +191,7 @@ workspace) is where outputs live:
    preview and a 64² matrix. Agree?
 2. **Where compositing lives** — I keep the engine pixel-free and put the
    rasterizer in Swift for preview + a small headless one for hardware/tests.
-   Alternative: a pixel path inside `animacore` (Pillow dep). I lean pixel-free.
+   Alternative: a pixel path inside `aether_animation` (Pillow dep). I lean pixel-free.
 3. **Frame index driver units** — a sprite frame is chosen by a **parameter**
    (0..1 → 0..N-1) or by an explicit **integer index DOF**? I lean parameter
    (reuses everything); flag if you want first-class integer tracks.
@@ -204,15 +204,15 @@ workspace) is where outputs live:
 
 ## 9. Build status (shipped with this doc)
 
-- `animacore/canvas2d.py` — data model + `evaluate_surfaces` (renderer-neutral).
+- `aether_animation/canvas2d.py` — data model + `evaluate_surfaces` (renderer-neutral).
   Source kinds now include `PROCEDURAL` (a parametric face; see below).
-- `animacore/frame_output.py` — `LedMatrixTarget` + `downsample_canvas` (the
+- `aether_animation/frame_output.py` — `LedMatrixTarget` + `downsample_canvas` (the
   64×64 simulation math), pure/stdlib.
-- `animacore/raster/` — the host-side rasterizer with **real** media decoders
+- `aether_animation/raster/` — the host-side rasterizer with **real** media decoders
   ported from Mochi (see §10).
-- `animacore/frame_serial.py` — `SerialFrameOutput`, real LED-matrix serial.
-- `animacore/raster/mscript.py` — the ported Mscript timeline language.
-- Tests in `animacore/tests/` covering source-kind frame resolution,
+- `aether_animation/frame_serial.py` — `SerialFrameOutput`, real LED-matrix serial.
+- `aether_animation/raster/mscript.py` — the ported Mscript timeline language.
+- Tests in `aether_animation/tests/` covering source-kind frame resolution,
   driver-driven surface state, the LED downsample, real media decode, the serial
   matrix output, and the Mscript engine.
 
@@ -222,16 +222,16 @@ Rather than re-implement, we **ported Mochi's actual working code** (both repos
 are Apache-2.0; provenance headers preserved on each file). Three real pipelines
 now live in the engine, tested against real generated media:
 
-- **Media rendering** — `animacore/raster/` decoders (`image`, `bitmap`,
+- **Media rendering** — `aether_animation/raster/` decoders (`image`, `bitmap`,
   `sprite`, `gif`, `video`) on Mochi's `open`/`close`/`next_frame(t)` contract +
   the RGBA8 `FrameBuffer`. `ImageAdapter`/`GifAdapter` use Pillow;
   `BitmapAdapter`/`SpriteAdapter` use numpy/Pillow; `VideoAdapter` uses
   imageio+ffmpeg. `CanvasPlayer` opens one adapter per surface and
   alpha-composites them. Media deps are the optional `media` extra.
-- **Playing hardware** — `animacore/frame_serial.py` `SerialFrameOutput` speaks
+- **Playing hardware** — `aether_animation/frame_serial.py` `SerialFrameOutput` speaks
   Mochi's matrix protocol (`MM`/`BM`/`FM`) over pyserial, implementing the
   existing `FrameOutput` contract; verified on a `loop://` loopback.
-- **Scripting** — `animacore/raster/mscript.py` is Mochi's Mscript engine
+- **Scripting** — `aether_animation/raster/mscript.py` is Mochi's Mscript engine
   (sectioned `.mscript` parser + `update(t)` WAIT/duration flow control, GIF/video
   auto-duration). One safety change from Mochi: the procedural path is a
   registry of named faces, **not** an `importlib` load of arbitrary Python
@@ -241,7 +241,7 @@ The review of that repo also confirmed the architecture and answered open
 decisions:
 
 - **Decision #2 (where compositing lives) — resolved as planned.** The engine
-  stays pixel-free (`canvas2d` evaluates *which* frame); `animacore/raster/` is
+  stays pixel-free (`canvas2d` evaluates *which* frame); `aether_animation/raster/` is
   the "small headless rasterizer" — `FrameBuffer` (one canonical RGB frame), a
   `SurfaceAdapter` seam + `AdapterRegistry` (one file per media kind, mirroring
   Mochi's per-decoder files), and `render_canvas` compositing back-to-front. Its
@@ -267,19 +267,19 @@ hardware. AnimaStudio becomes the *create* method; Mochi eventually becomes the
 conventions are the portable interchange format — AnimaStudio authors them, the
 playback middleware consumes them. All ported (Apache-2.0), stdlib + pyyaml:
 
-- **`animacore/asset_props.py`** — the `.props.yaml` sidecar (`asset-props/v1`):
+- **`aether_animation/asset_props.py`** — the `.props.yaml` sidecar (`asset-props/v1`):
   per-asset name/mood/tags/hint, `ideal_size`, `framing`, `playback_speed`,
   `loop`, and `type_props` (sprite grid, gif/video fps, trim). `load_props`
   (sidecar wins, else file-derived defaults), `write_props` (author the sidecar),
   and `visual_source_from_asset` (props → a `VisualSource`, incl. sprite grid).
-- **`animacore/asset_catalog.py`** — `build_catalog` walks a media folder into a
+- **`aether_animation/asset_catalog.py`** — `build_catalog` walks a media folder into a
   flat, JSON-round-trippable index (Mochi's `build_catalog.py`).
-- **`animacore/pack.py`** — packs (`pack/v1`): emotion/action **slots** → asset
+- **`aether_animation/pack.py`** — packs (`pack/v1`): emotion/action **slots** → asset
   files (`slot_file` resolves str/list/dict), the "character animation pack."
-- **`animacore/skin.py`** + **`animacore/raster/skin_compositor.py`** — skins
+- **`aether_animation/skin.py`** + **`aether_animation/raster/skin_compositor.py`** — skins
   (`skin/v1`): a `body.png` bezel + `screen_bbox`; `apply_skin` paints an evaluated
   frame into the cutout (the physical-device face).
-- **`animacore/raster/mscript_runner.py`** — `MscriptRunner` / `render_mscript`
+- **`aether_animation/raster/mscript_runner.py`** — `MscriptRunner` / `render_mscript`
   play the Mscript command stream into real frames (opens the media adapter per
   `MEDIA` command). The engine's create-side play; the middleware plays the same
   stream on hardware.

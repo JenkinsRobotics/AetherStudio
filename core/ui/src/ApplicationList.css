@@ -1,0 +1,12 @@
+.aui-application-list-heading { margin:0 0 16px; }
+.aui-application-list-heading h2 { font-size:16px; margin:0; color:var(--aether-color-text); }
+.aui-application-list-heading p { margin:8px 0 0; color:var(--aether-color-text-dim); }
+.aui-application-list-controls { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; min-width:0; }
+.aui-application-list-filters,.aui-application-list-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
+.aui-application-list-search { flex:0 1 235px; margin-left:auto; min-width:120px; }
+.aui-application-list-search input { width:100%; box-sizing:border-box; border:1px solid var(--aether-color-border); border-radius:999px; background:var(--aether-color-bg-panel); color:var(--aether-color-text); padding:6px 12px; font:inherit; }
+.aui-application-list-actions { margin-left:auto; }
+
+.aui-list-tool-menu.aui-menu-trigger {display:inline-flex;align-items:center;gap:8px;background:transparent;border:0;padding:6px 8px;color:var(--aether-color-text);font:inherit;}
+.aui-list-tool-menu.aui-menu-trigger svg {width:16px;height:16px;flex:none;}
+.aui-list-tool-menu.aui-menu-trigger:hover {background:var(--aether-color-bg-hover);}

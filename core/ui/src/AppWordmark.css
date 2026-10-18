@@ -1,0 +1,7 @@
+.aether-light-theme,.aether-theme-light,[data-aether-appearance="light"] { --aui-wordmark-appearance:light; }
+.aether-dark-theme,.aether-theme-dark,[data-aether-appearance="dark"] { --aui-wordmark-appearance:dark; }
+.aui-app-wordmark { display:block; max-width:100%; flex-shrink:0; overflow:visible; color-scheme:var(--aui-wordmark-appearance,dark); --aui-wordmark-ink:var(--aether-color-text,#061b3e); --aui-wordmark-start:light-dark(var(--aui-wordmark-light-start),var(--aui-wordmark-dark-start)); --aui-wordmark-end:light-dark(var(--aui-wordmark-light-end),var(--aui-wordmark-dark-end)); }
+.aui-app-wordmark[data-appearance="light"] { --aui-wordmark-ink:#061b3e; --aui-wordmark-start:var(--aui-wordmark-light-start); --aui-wordmark-end:var(--aui-wordmark-light-end); }
+.aui-app-wordmark[data-appearance="dark"] { --aui-wordmark-ink:#edf4fb; --aui-wordmark-start:var(--aui-wordmark-dark-start); --aui-wordmark-end:var(--aui-wordmark-dark-end); }
+.aui-app-wordmark-name { fill:var(--aui-wordmark-ink); }.aui-app-wordmark-accent-start { stop-color:var(--aui-wordmark-start); }.aui-app-wordmark-accent-end { stop-color:var(--aui-wordmark-end); }
+.aui-application-identity--wordmark { gap:12px; }.aui-application-identity--wordmark > a { align-items:center; min-width:0; }

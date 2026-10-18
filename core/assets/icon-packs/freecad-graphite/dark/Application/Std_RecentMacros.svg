@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/Std_RecentMacros.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2871">
+    <linearGradient xlink:href="#linearGradient3765" id="linearGradient3771" x1="98" y1="1047.3622" x2="81" y2="993.36218" gradientUnits="userSpaceOnUse" gradientTransform="translate(-60,-988.36218)" />
+    <linearGradient id="linearGradient3765">
+      <stop style="stop-color:#5d7086;stop-opacity:1;" offset="0" id="stop3767" />
+      <stop style="stop-color:#6c8098;stop-opacity:1" offset="1" id="stop3769" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3765" id="linearGradient9" gradientUnits="userSpaceOnUse" gradientTransform="translate(-60,-988.36218)" x1="98" y1="1047.3622" x2="81" y2="993.36218" />
+  </defs>
+  <g id="layer3" style="display:inline">
+    <g id="g5" transform="matrix(0.88681323,0,0,0.88889159,10.527509,0.33465048)" style="stroke-width:1.1;opacity:0.6">
+      <path style="fill:url(#linearGradient3771);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 11,3 v 58.00002 h 42 v -48 L 43,3 Z" id="path2991" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 13,5 V 59.00002 H 51 V 13.81392 L 41.99741,5 Z" id="path3763" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:#e5edf7;fill-opacity:0.392157;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 43,3 V 13.00002 H 53 Z" id="path2993" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g9" transform="matrix(0.88681323,0,0,0.88889159,-3.283556,6.77627)" style="stroke-width:1.1">
+      <path style="fill:url(#linearGradient9);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 11,3 v 58.00002 h 42 v -48 L 43,3 Z" id="path7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 13,5 V 59.00002 H 51 V 13.81392 L 41.99741,5 Z" id="path8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:#e5edf7;fill-opacity:0.392157;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 43,3 V 13.00002 H 53 Z" id="path9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  <path d="m 19.957882,42.816248 -9.863414,-6.16143 v -2.360283 l 9.863414,-6.943617 v 4.075603 l -6.04878,3.883484 6.04878,3.458086 z m 9.531706,-17.907946 -5.317072,20.625015 h -3.375609 l 5.317072,-20.625015 z m 0.741465,13.85979 6.04878,-3.458085 -6.04878,-3.883485 v -4.075603 l 9.863414,6.943618 v 2.360282 l -9.863414,6.161431 z" id="text1" style="font-weight:800;font-size:25.2764px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Ultra-Bold';display:inline;fill:#e5edf7;fill-rule:evenodd;stroke:none;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" aria-label="&lt;/&gt;" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <g id="g1" transform="translate(32.669235,33.796449)">
+    <g id="g3" transform="translate(16.727535,4.2195563)">
+      <circle style="fill:#667991;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" id="path968" cx="2.3967707" cy="8.9839945" transform="scale(-1,1)" r="13.999995" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#5d7086;fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#e5edf7;stop-opacity:1" id="circle2" transform="scale(-1,1)" d="m 2.3964844,-3.015625 c 6.6173018,0 11.9999996,5.3826982 11.9999996,12 0,6.617302 -5.3826978,12 -11.9999996,12 -6.6173018,0 -12,-5.382698 -12,-12 0,-6.6173018 5.3826982,-12 12,-12 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 3.3502036,8.984375 h -5.746688 V 0.58691898" id="path966" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

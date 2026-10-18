@@ -1,0 +1,68 @@
+.aui-comments-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  color: var(--aether-color-text);
+  font: 12px/1.4 var(--aether-font-family);
+}
+.aui-shell-panel-host:has(> .aui-comments-panel),
+.aui-shell-panel-body:has(> .aui-comments-panel) { display: flex; flex-direction: column; }
+.aui-comments-header { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border-bottom: 1px solid var(--aether-color-border); }
+.aui-comments-header h3 { flex: 1; margin: 0; font-size: 12px; }
+.aui-comments-panel .aui-icon-button { width: 26px; height: 26px; min-height: 0; padding: 4px; border-radius: var(--aether-radius-field); }
+.aui-comments-panel .aui-icon-button svg { width: 16px; height: 16px; }
+.aui-comments-panel .aui-icon-button:hover:not(:disabled) { color: var(--aether-color-accent); }
+.aui-comments-header .aui-icon-button { border: 0; background: transparent; }
+.aui-comments-header .aui-icon-button[aria-pressed="true"] { color: var(--aether-color-accent); background: var(--aether-color-bg-control); }
+.aui-comments-filters { display: flex; gap: 10px; padding: 10px 10px 8px; }
+/* The fields own their icon and their padding now (SelectField), so this row
+   only has to say how they share the width. */
+.aui-comments-filters > .aui-select-field-wrap { flex: 1 1 0; min-width: 0; }
+.aui-comments-panel :is(select, textarea), .aui-comment-tag-picker select {
+  font: inherit;
+  color: inherit;
+  background: var(--aether-color-bg-panel);
+  border: 1px solid var(--aether-color-border);
+  border-radius: var(--aether-radius-field);
+  box-sizing: border-box;
+  min-width: 0;
+}
+.aui-comments-composer { display: flex; flex-direction: column; gap: 6px; padding: 0 10px 12px; flex: none; }
+.aui-comments-composer textarea { display: block; width: 100%; min-height: 74px; resize: vertical; border-radius: 0; padding: 6px; }
+.aui-comments-composer textarea:focus { outline: 1px solid var(--aether-color-accent); border-color: var(--aether-color-accent); }
+.aui-comments-compose-tools { display: flex; justify-content: flex-end; gap: 4px; }
+.aui-comments-compose-tools .aui-icon-button { border: 0; background: transparent; border-radius: 8px; }
+.aui-comments-submit { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; padding-top: 3px; }
+.aui-comments-submit .aui-button { min-height: 24px; padding: 3px 10px; font-size: 12px; }
+.aui-comments-list { flex: 1 1 auto; min-height: 0; overflow: auto; list-style: none; padding: 8px 10px; margin: 0; }
+.aui-comments-list ol { list-style: none; padding: 0; margin: 0; }
+.aui-comments-list li { border: 0; border-radius: 0; background: transparent; padding: 0; margin: 0 0 22px; }
+.aui-comment-author { display: flex; align-items: flex-start; gap: 5px; }
+.aui-comment-avatar { flex: none; width: 24px; height: 24px; object-fit: cover; display: grid; place-items: center; background: var(--aether-color-bg-control); font-size: 10px; }
+.aui-comment-author > div { flex: 1; min-width: 0; }
+.aui-comment-author strong { display: block; overflow-wrap: anywhere; font-weight: var(--aether-font-weight-strong); }
+.aui-comment-author time { display: block; font-size: 10px; color: var(--aether-color-text-dim); }
+.aui-comment-author input[type="checkbox"] { width: 13px; height: 13px; margin: 2px 0; accent-color: var(--aether-color-accent); flex: none; cursor: pointer; }
+.aui-comment-author .aui-comment-more { width: 18px; height: 18px; padding: 2px; border: 0; background: transparent; }
+.aui-comment-text { margin: 10px 0 18px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.aui-comment-footer { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.aui-comment-link { font: inherit; color: var(--aether-color-accent); border: 0; background: transparent; cursor: pointer; padding: 0; }
+.aui-comment-link:hover { text-decoration: underline; }
+.aui-comment-workspace { display: flex; align-items: center; gap: 3px; margin-left: auto; color: var(--aether-color-text-dim); font-size: 11px; }
+.aui-comment-workspace svg { width: 14px; height: 14px; }
+.aui-comments-list .aui-comment-reply { margin-left: 12px; padding-left: 8px; border-left: 1px solid var(--aether-color-border); }
+.aui-comments-list [data-resolved="true"] > article .aui-comment-text { color: var(--aether-color-text-dim); }
+.aui-comment-images, .aui-comment-draft-images { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
+.aui-comment-images img, .aui-comment-draft-images img { max-width: 100%; width: 80px; max-height: 80px; object-fit: contain; border: 1px solid var(--aether-color-border); }
+.aui-comment-draft-images > div { position: relative; }
+.aui-comment-draft-images .aui-icon-button { position: absolute; right: 0; top: 0; background: var(--aether-color-bg-panel); }
+.aui-comment-reference { display: flex; align-items: center; gap: 4px; color: var(--aether-color-text-dim); font-size: 11px; }
+.aui-comment-reference > svg { width: 14px; height: 14px; }
+.aui-comment-reference .aui-icon-button { margin-left: auto; }
+.aui-comment-tag-picker { display: grid; gap: 10px; padding: 12px; max-width: min(300px, 90vw); }
+.aui-comment-tag-picker label { display: grid; gap: 6px; }
+.aui-comment-tag-picker select { width: 100%; padding: 6px; }
+.aui-comments-error { margin: 4px 10px; color: var(--aether-color-error); }
+.aui-comments-panel > [role="group"] { padding: 10px; }

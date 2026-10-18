@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="svg2963" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/IFC/IfcPlate.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer1">
+    <g id="g4351" transform="matrix(0.13740309,0,0,0.13737791,-215.9435,-133.55847)" style="stroke-width:1.1" />
+    <path style="opacity:1;fill:#6c8098;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 4.4163985,45.440477 17.0835685,-32.957318 37,3 -17.083571,32.957318 z" id="path3027" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  </svg>

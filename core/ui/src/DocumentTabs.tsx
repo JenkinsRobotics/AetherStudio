@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { AetherIcon } from "./AetherIcon";
 import type { DragEvent, KeyboardEvent, ReactNode } from "react";
 import { MenuButton } from "./Menu";
 
@@ -6,6 +7,11 @@ export interface DocumentTab {
   id: string;
   label: string;
   icon?: ReactNode;
+  /** Optional document kind/subtitle. Unlike status, this is not a live update. */
+  detail?: string;
+  /** Document-specific status, rendered inside its tab rather than the global strip. */
+  status?: string;
+  statusTitle?: string;
   dirty?: boolean;
   pinned?: boolean;
   preview?: boolean;
@@ -26,11 +32,13 @@ export interface DocumentTabsProps {
   allowClosePinned?: boolean;
   ariaLabel?: string;
   className?: string;
+  /** Product-owned actions beside each tab, outside its selection button. */
+  renderTabActions?: (tab: DocumentTab) => ReactNode;
 }
 
 /** Controlled document strip. Products own document lifecycle and split layout;
  * the widget emits stable tab IDs and presentation intent only. */
-export function DocumentTabs({ tabs, activeID, onSelect, onClose, onPinToggle, onReorder, onSplit, maxVisible = Number.POSITIVE_INFINITY, allowClosePinned = false, ariaLabel = "Open documents", className }: DocumentTabsProps) {
+export function DocumentTabs({ tabs, activeID, onSelect, onClose, onPinToggle, onReorder, onSplit, maxVisible = Number.POSITIVE_INFINITY, allowClosePinned = false, ariaLabel = "Open documents", className, renderTabActions }: DocumentTabsProps) {
   const refs = useRef(new Map<string, HTMLButtonElement>());
   const enabled = tabs.filter((tab) => !tab.disabled);
   const bounded = Math.max(1, Math.floor(maxVisible));
@@ -81,20 +89,23 @@ export function DocumentTabs({ tabs, activeID, onSelect, onClose, onPinToggle, o
           onClick={() => onSelect(tab.id)}
           onKeyDown={(event) => key(event, tab.id)}
         >
-          {tab.pinned ? <span aria-label="Pinned">●</span> : tab.icon ? <span aria-hidden>{tab.icon}</span> : null}
+          {tab.pinned ? <span className="aui-document-tab-icon" aria-label="Pinned"><AetherIcon name="pin" /></span> : tab.icon ? <span className="aui-document-tab-icon" aria-hidden>{tab.icon}</span> : null}
           <span className="aui-document-tab-label">{tab.label}</span>
-          {tab.dirty ? <span className="aui-document-tab-dirty" aria-label="Unsaved changes">●</span> : null}
+          {tab.detail ? <span className="aui-document-tab-detail">{tab.detail}</span> : null}
+          {tab.status ? <span className="aui-document-tab-status" role="status" data-save-tone={/^(Saved|Downloaded|All changes saved)/i.test(tab.status) ? "saved" : /error|fail|unavailable/i.test(tab.status) ? "error" : "pending"} title={tab.statusTitle ?? tab.status}>{tab.status}</span> : null}
+          {tab.dirty ? <span className="aui-document-tab-dirty" aria-label="Unsaved changes"><AetherIcon name="circle-filled" /></span> : null}
         </button>
+        {renderTabActions?.(tab)}
         {onClose && tab.id === activeID ? <button type="button" className="aui-document-tab-close" aria-label={`Close ${tab.label}`} disabled={tab.pinned && !allowClosePinned} title={tab.pinned && !allowClosePinned ? "Unpin before closing." : undefined} onClick={() => onClose(tab.id)}>×</button> : null}
       </div>)}
     </div>
     {overflow.length > 0 ? <MenuButton
       className="aui-document-tabs-overflow"
       label="More documents"
-      items={overflow.map((tab) => ({ id: tab.id, label: tab.label, icon: tab.pinned ? "●" : tab.dirty ? "•" : undefined, disabled: tab.disabled }))}
+      items={overflow.map((tab) => ({ id: tab.id, label: tab.label, icon: tab.pinned ? <AetherIcon name="pin" /> : tab.dirty ? "•" : undefined, disabled: tab.disabled }))}
       onSelect={onSelect}
     >+{overflow.length}</MenuButton> : null}
-    {onPinToggle ? <button type="button" className="aui-document-tabs-action" aria-label={tabs.find((tab) => tab.id === activeID)?.pinned ? "Unpin active document" : "Pin active document"} onClick={() => { const tab = tabs.find((candidate) => candidate.id === activeID); if (tab) onPinToggle(tab.id, !tab.pinned); }}>⌖</button> : null}
+    {onPinToggle ? <button type="button" className="aui-document-tabs-action" aria-label={tabs.find((tab) => tab.id === activeID)?.pinned ? "Unpin active document" : "Pin active document"} onClick={() => { const tab = tabs.find((candidate) => candidate.id === activeID); if (tab) onPinToggle(tab.id, !tab.pinned); }}><AetherIcon name="pin" /></button> : null}
     {onSplit ? <MenuButton
       className="aui-document-tabs-action"
       label="Split active document"

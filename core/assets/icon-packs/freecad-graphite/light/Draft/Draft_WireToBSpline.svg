@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg3612" height="32" width="32" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_WireToBSpline.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs3614">
+    <linearGradient id="linearGradient3955">
+      <stop id="stop3957" offset="0" style="stop-color:#9caec3;stop-opacity:1" />
+      <stop id="stop3959" offset="1" style="stop-color:#c3cfdc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="164.2444" x2="348.04712" y1="175.2444" x1="353.04712" id="linearGradient3961" xlink:href="#linearGradient3955" />
+  </defs>
+  <g id="layer1">
+    <g id="g4664" transform="translate(-320.04711,-131.2444)">
+      <path transform="translate(320.04711,131.2444)" id="path3063" d="m 6,58 c 0,0 6,-12 14,-12 8,0 10,12 20,12 10,0 17,-13 17,-13" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3063-3" d="m 326.04711,189.2444 c 0,0 6,-12 14,-12 8,0 10,12 20,12 10,0 17,-13 17,-13" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3063-3-6" d="m 325.04711,189.2444 c 0,0 6.16356,-13.19681 15,-13 8.83644,0.19681 10.59043,12 20,12 9.40957,0 16.12301,-12.55718 16.12301,-12.55718" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3893" d="m 326.04711,156.2444 15,-18 20,16 17,-17" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3893-5" d="m 326.04711,156.2444 15,-18 20,16 17,-17" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3893-5-6" d="m 325.2416,155.70833 15.70114,-18.81184 20,16 16.40855,-16.33896" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3935" d="m 337.04711,162.2444 30,0 -15,14 z" style="fill:url(#linearGradient3961);stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3935-2" d="m 342.04711,164.2444 20,0 -10.0492,9.29522 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

@@ -1,0 +1,18 @@
+{
+  "generator": "Built-in image_gen",
+  "date": "2026-10-11",
+  "images": [
+    {
+      "file": "precision.png",
+      "prompt": "Use case: stylized-concept. Asset type: production background artwork for the Aether creative engineering suite startup splash. Wide landscape 16:9. Cinematic premium 3D illustration, refined materials, deep midnight navy, luminous blue and cyan accents, restrained detail. Full bleed artwork ONLY: absolutely no words, letters, logos, loading bars, panels, borders, UI or watermarks. Composition: focal subject in upper two thirds, lower third fades naturally to very dark quiet navy with generous empty space to receive separately rendered app name, progress bar and startup-stage text. No baked-in overlay. Theme: Precision. A beautiful suspended exploded arrangement of machined titanium rings, a polished sphere and a few beveled geometric solids, appearing like an elegant engineering sculpture in a dark studio, precise cyan rim light and subtle floor reflections. Balanced composition, polished and calm rather than industrial clutter."
+    },
+    {
+      "file": "flow.png",
+      "prompt": "Use case: stylized-concept. Asset type: production background artwork for the Aether creative engineering suite startup splash. Wide landscape 16:9. Cinematic premium 3D illustration, refined materials, deep midnight navy, luminous blue and cyan accents, restrained detail. Full bleed artwork ONLY: absolutely no words, letters, logos, loading bars, panels, borders, UI or watermarks. Composition: focal subject in upper two thirds, lower third fades naturally to very dark quiet navy with generous empty space to receive separately rendered app name, progress bar and startup-stage text. No baked-in overlay. Theme: Flow. Sculptural translucent glass ribbons and flowing light paths sweeping across a deep blue spatial field, cyan into restrained violet, suggesting animation and creative motion. One graceful looping form high in frame, soft volumetric light, rich glass refraction, elegant atmospheric depth, not a busy particle field."
+    },
+    {
+      "file": "spatial.png",
+      "prompt": "Use case: stylized-concept. Asset type: production background artwork for the Aether creative engineering suite startup splash. Wide landscape 16:9. Cinematic premium 3D illustration, refined materials, deep midnight navy, luminous blue and cyan accents, restrained detail. Full bleed artwork ONLY: absolutely no words, letters, logos, loading bars, panels, borders, UI or watermarks. Composition: focal subject in upper two thirds, lower third fades naturally to very dark quiet navy with generous empty space to receive separately rendered app name, progress bar and startup-stage text. No baked-in overlay. Theme: Spatial. A miniature architectural terrain composed of layered translucent blue glass contour surfaces and a few crisp luminous paths, floating in a dark expansive environment. Sophisticated topographic geometry suggesting mapping and spatial design, slightly elevated camera, cyan edge lighting, calm negative space, no labels or grid numbers."
+    }
+  ]
+}

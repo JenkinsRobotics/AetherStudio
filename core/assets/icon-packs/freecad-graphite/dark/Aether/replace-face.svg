@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#e5edf7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<desc>FreeCAD Graphite extension: replace-face. Original illustration by Aether Studio contributors, 2026-09-24; not upstream FreeCAD artwork.</desc><defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="#6c8098" /><stop offset="1" stop-color="#91a4bb" /></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="#91a4bb" /><stop offset="1" stop-color="#192636" /></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="#192636" /><stop offset="1" stop-color="#91a4bb" /></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="#5bbdff" /><stop offset="1" stop-color="#0876d5" /></linearGradient>
+</defs>
+<path d="M4 13 14 7 23 12 14 17Z" fill="url(#metalTop)" stroke="#e5edf7" /><path d="M4 13 14 17V28L4 23Z" fill="url(#metalFace)" stroke="#e5edf7" /><path d="M14 17 23 12V23L14 28Z" fill="url(#metalSide)" stroke="#e5edf7" /><path d="M26 11 30 9V22L26 24Z" fill="url(#blueFeature)" stroke="#5bbdff" /><path d="M19 4H28M28 4 25 1M28 4 25 7" fill="none" stroke="#5bbdff" />
+</svg>

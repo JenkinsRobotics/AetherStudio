@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="32" width="32" id="svg10" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_InsertKnot.svg. Authors: bitacovir. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="g1">
+    <path style="display:inline;fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 53.080401,28.249148 c -1.43085,26.470727 -26.470692,0 -28.616967,28.617002" id="path3266-9-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="46.92411" cy="40.59425" id="circle8-8" style="fill:#4aaff7;stroke:#5bbdff;stroke-width:1.1;fill-opacity:1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="crosshair" style="stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;">
+    <path d="m16,3v9m0,8v9m-13-13h9m8,0h9" id="path7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <path id="path1" style="fill:none;stroke:#5bbdff;stroke-width:1.1" d="m 55.92411,40.59425 a 9,9 0 0 1 -9,9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path id="path1-4" style="fill:none;stroke:#5bbdff;stroke-width:1.1" d="M 38.230778,38.264878 A 9,9 0 0 1 49.253482,31.900917" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

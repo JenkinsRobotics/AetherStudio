@@ -55,7 +55,9 @@ export function RibbonTool({ icon, label, active, disabled, onClick, ...buttonPr
       <span className="aui-ribbon-tool-icon" aria-hidden>
         {icon}
       </span>
-      {label}
+      {/* Wrapped so a long name can be clipped rather than widening the
+          button. The full text stays in the tooltip. */}
+      <span className="aui-ribbon-tool-label">{label}</span>
     </button>
   );
 }

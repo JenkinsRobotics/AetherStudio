@@ -28,6 +28,7 @@ def restore(archive_path: Path, directory: Path):
                 or not (
                     item.filename in ("backup.json", "studio.sqlite3")
                     or item.filename.startswith("workspaces/")
+                    or (item.filename.startswith("drive/blobs/") and len(path.parts) == 3 and len(path.name) == 64 and all(c in "0123456789abcdef" for c in path.name))
                 )
             ):
                 raise Problem(400, "Backup contains an invalid path.")
@@ -43,9 +44,11 @@ def restore(archive_path: Path, directory: Path):
         r[0]
         for r in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")
     }
-    for table in ("setup_sessions", "recovery_tokens"):
+    for table in ("setup_sessions", "recovery_tokens", "drive_uploads", "drive_link_visits", "automation_grants"):
         if table in tables:
             connection.execute(f"DELETE FROM {table}")
+    if "host_storage" in tables:
+        connection.execute("DROP TABLE host_storage")  # Old server paths must never be reused.
     connection.execute("UPDATE services SET active=0,token=''")
     for key, value in DEFAULT_SETTINGS.items():
         if key != "name":

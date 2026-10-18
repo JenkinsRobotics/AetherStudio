@@ -1,0 +1,72 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "aether-commerce",
+  "name": "Aether Commerce",
+  "description": "Soft neutral dashboard surfaces with violet accents, in light and dark.",
+  "extends": "aether-studio",
+  "modes": {
+    "light": {
+      "color-bg-app": "#fafafa",
+      "color-bg-bar": "#f0f0f1",
+      "color-bg-panel": "#ffffff",
+      "color-bg-inset": "#fafafa",
+      "color-bg-control": "#f4f4f5",
+      "color-bg-control-hover": "#eeeaf8",
+      "color-bg-hover": "#f4f1fb",
+      "color-text": "#19191d",
+      "color-text-soft": "#55555b",
+      "color-text-dim": "#808087",
+      "color-text-faint": "#929299",
+      "color-border": "#f0eff2",
+      "color-border-control": "#ebe9ef",
+      "color-accent": "#8160ef",
+      "color-accent-strong": "#6b49d3",
+      "color-accent-icon": "#8160ef",
+      "color-bg-selected": "#f1ebff",
+      "color-border-focus": "#8160ef",
+      "color-selection-edge": "#8160ef",
+      "color-ok": "#248f69",
+      "color-warn": "#d8a300",
+      "color-error": "#e74b55",
+      "color-shadow": "#292435",
+      "color-text-on-selected": "#ffffff"
+    },
+    "dark": {
+      "color-bg-app": "#141418",
+      "color-bg-bar": "#19191f",
+      "color-bg-panel": "#222229",
+      "color-bg-inset": "#25252d",
+      "color-bg-control": "#303039",
+      "color-bg-control-hover": "#3a344b",
+      "color-bg-hover": "#35303f",
+      "color-text": "#f1eff7",
+      "color-text-soft": "#d1cddc",
+      "color-text-dim": "#a6a1b4",
+      "color-text-faint": "#918c9f",
+      "color-border": "#34313c",
+      "color-border-control": "#494351",
+      "color-accent": "#a58aff",
+      "color-accent-strong": "#9370ee",
+      "color-accent-icon": "#a58aff",
+      "color-bg-selected": "#39304f",
+      "color-border-focus": "#a58aff",
+      "color-selection-edge": "#a58aff",
+      "color-ok": "#5aca9f",
+      "color-warn": "#e9bd52",
+      "color-error": "#ff848f",
+      "color-shadow": "#000000",
+      "color-text-on-selected": "#171320"
+    }
+  },
+  "geometry": {
+    "radius-control": "9px",
+    "radius-button": "9px"
+  },
+  "font": {
+    "font-size-body": "13px",
+    "font-weight-strong": "500"
+  },
+  "effects": {
+    "control-shadow": "0 2px 5px color-mix(in srgb, var(--aether-color-shadow) 4%, transparent)"
+  }
+}

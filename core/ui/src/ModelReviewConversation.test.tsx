@@ -1,0 +1,157 @@
+import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { afterEach, expect, test, vi } from "vitest";
+import { DemoReviewPanel } from "../gallery/demo-review/DemoReviewPanel";
+
+afterEach(cleanup);
+const open = () => render(<DemoReviewPanel variant="conversation" documentName="Scifirobot" selectedName="Cooling tubes" onClose={vi.fn()}/>);
+const tab = (name: string) => fireEvent.click(screen.getByRole('radio', { name }));
+const click = (name: string) => fireEvent.click(screen.getByRole('button', { name }));
+const text = (name: string, value: string) => fireEvent.change(screen.getByRole('textbox', { name }), { target: { value } });
+
+test('reference comments and task examples use shared controls without a document title or close row', () => {
+  const { container } = open();
+  expect(screen.queryByText('Scifirobot', { exact: true })).toBeNull();
+  expect(screen.queryByRole('button', { name: 'Close comments and tasks' })).toBeNull();
+  expect(screen.getByText('Can we reduce this wall thickness to 2.5 mm?')).toBeTruthy();
+  expect(screen.getByRole('img', { name: /Housing wall review/ })).toBeTruthy();
+  expect(screen.getByRole('img', { name: /Bracket clearance review/ })).toBeTruthy();
+  expect(screen.getByText('Scifirobot_Main v12')).toBeTruthy();
+  expect(screen.getByRole('form', { name: 'Comment composer' }).classList.contains('aui-agent-chat__composer')).toBe(true);
+  tab('Tasks');
+  expect(screen.getByText('3 active cards · 1 completed')).toBeTruthy();
+  expect(screen.getByRole('region', { name: 'Main body tasks' })).toBeTruthy();
+  expect(screen.getByRole('region', { name: 'Analysis tasks' })).toBeTruthy();
+  expect(screen.queryByRole('region', { name: 'Release checks tasks' })).toBeNull();
+  expect(screen.getByText('Run thermal analysis')).toBeTruthy();
+  expect(screen.getAllByRole('checkbox', { name: /^Complete / })).toHaveLength(5);
+  expect(screen.getByRole('form', { name: 'Task composer' }).classList.contains('aui-agent-chat__composer')).toBe(true);
+  expect(screen.queryByRole('button', { name: 'New task' })).toBeNull();
+  expect(screen.queryByText('Created a new task.')).toBeNull();
+  expect(container.querySelectorAll('[data-icon-missing]')).toHaveLength(0);
+});
+test('the bottom input adds a ticket and retains a separate draft from Comments', async () => {
+  open(); text('Write a comment', 'Inspect the cooling tubes'); tab('Tasks');
+  text('New task', 'Check tube clearance'); tab('Comments');
+  expect(screen.getByRole('textbox', { name: 'Write a comment' })).toHaveProperty('value', 'Inspect the cooling tubes');
+  await act(async () => click('Send comment'));
+  expect(screen.getByText('Inspect the cooling tubes')).toBeTruthy();
+  tab('Tasks');
+  expect(screen.getByRole('textbox', { name: 'New task' })).toHaveProperty('value', 'Check tube clearance');
+  await act(async () => click('Add task'));
+  expect(within(screen.getByRole('region', { name: 'Main body tasks' })).getByText('Check tube clearance')).toBeTruthy();
+  expect(within(screen.getByRole('region', { name: 'Main body tasks' })).getByText('2 Open · 1 In progress')).toBeTruthy();
+  expect(screen.getByRole('textbox', { name: 'New task' })).toHaveProperty('value', '');
+  expect(screen.queryByText('Created a new task.')).toBeNull();
+});
+test('completed tasks have their own section; completed cards hide and can be revealed or reopened', async () => {
+  open(); tab('Tasks');
+  await act(async () => fireEvent.click(screen.getByRole('checkbox', { name: 'Complete Reduce wall thickness' })));
+  const body = screen.getByRole('region', { name: 'Main body tasks' });
+  expect(within(body).getByText('0 Open · 1 In progress')).toBeTruthy();
+  expect(body.querySelector('details')?.textContent).toContain('Completed 1');
+  await act(async () => fireEvent.click(screen.getByRole('checkbox', { name: 'Complete Check bracket clearance' })));
+  expect(screen.queryByRole('region', { name: 'Main body tasks' })).toBeNull();
+  expect(screen.getByText('2 active cards · 2 completed')).toBeTruthy();
+  click('Review filters'); fireEvent.click(screen.getByRole('checkbox', { name: 'Show completed cards' }));
+  expect(screen.getByRole('region', { name: 'Main body tasks' })).toBeTruthy();
+  expect(screen.getByRole('region', { name: 'Release checks tasks' })).toBeTruthy();
+  await act(async () => fireEvent.click(screen.getByRole('checkbox', { name: 'Complete Reduce wall thickness' })));
+  fireEvent.click(screen.getByRole('checkbox', { name: 'Show completed cards' }));
+  expect(screen.getByRole('region', { name: 'Main body tasks' })).toBeTruthy();
+  expect(screen.queryByRole('region', { name: 'Release checks tasks' })).toBeNull();
+  fireEvent.change(screen.getByLabelText('Task status filter'), { target: { value: 'done' } });
+  expect(screen.getByText('Check bracket clearance')).toBeTruthy(); expect(screen.queryByText('Run thermal analysis')).toBeNull();
+  expect(screen.getByRole('region', { name: 'Release checks tasks' })).toBeTruthy();
+  click('Status for Check bracket clearance');
+  await act(async () => fireEvent.click(screen.getByRole('menuitemradio', { name: 'In progress' })));
+  expect(screen.queryByText('Check bracket clearance')).toBeNull();
+});
+test('create and rename a task card, add with the bottom input, and move a ticket between cards', async () => {
+  open(); tab('Tasks'); click('New task card'); text('Task card name', 'Cooling system'); click('Create card');
+  expect(screen.getByLabelText('Add task to card')).toHaveProperty('selectedOptions');
+  expect(screen.getByRole('region', { name: 'Cooling system tasks' })).toBeTruthy();
+  text('New task', 'Check coolant routing'); await act(async () => click('Add task'));
+  expect(within(screen.getByRole('region', { name: 'Cooling system tasks' })).getByText('Check coolant routing')).toBeTruthy();
+  click('Card actions: Cooling system'); fireEvent.click(screen.getByRole('menuitem', { name: 'Rename card' }));
+  text('Task card name', 'Cooling components'); click('Save name');
+  expect(screen.getByRole('region', { name: 'Cooling components tasks' })).toBeTruthy();
+  click('Edit task: Check coolant routing'); fireEvent.change(screen.getByLabelText('Task card'), { target: { value: 'analysis' } });
+  await act(async () => click('Save changes'));
+  expect(within(screen.getByRole('region', { name: 'Analysis tasks' })).getByText('Check coolant routing')).toBeTruthy();
+  expect(within(screen.getByRole('region', { name: 'Cooling components tasks' })).queryByText('Check coolant routing')).toBeNull();
+  fireEvent.change(screen.getByLabelText('Add task to card'), { target: { value: 'release' } });
+  text('New task', 'Final tolerance check'); await act(async () => click('Add task'));
+  expect(within(screen.getByRole('region', { name: 'Release checks tasks' })).getByText('Final tolerance check')).toBeTruthy();
+});
+test('task edit updates its assignee and due date, then filters the same canonical item', async () => {
+  open(); tab('Tasks'); click('Actions for Check bracket clearance'); fireEvent.click(screen.getByRole('menuitem', { name: 'Edit task' }));
+  fireEvent.change(screen.getByLabelText('Task assignee'), { target: { value: 'devon' } });
+  fireEvent.input(screen.getByLabelText('Task due date'), { target: { value: '2026-10-28' } });
+  await act(async () => click('Save changes'));
+  expect(screen.getByText('Oct 28')).toBeTruthy(); click('Review filters');
+  fireEvent.change(screen.getByLabelText('Task assignee filter'), { target: { value: 'devon' } });
+  expect(screen.getByText('Check bracket clearance')).toBeTruthy(); expect(screen.queryByText('Update drawing views')).toBeNull();
+  text('Search tasks', 'bracket'); expect(screen.queryByText('Run FEA on new design')).toBeNull();
+});
+test('comments reply and resolve locally without removing the original discussion', async () => {
+  open(); click('Comment actions: Can we reduce this wall thickness to 2.5 mm?'); fireEvent.click(screen.getByRole('menuitem', { name: 'Reply' }));
+  text('Write a comment', 'Keep the mounting flange'); await act(async () => click('Send reply'));
+  expect(screen.getByText('Keep the mounting flange').closest('article')?.classList.contains('ps-review-message-reply')).toBe(true);
+  click('Comment actions: Can we reduce this wall thickness to 2.5 mm?');
+  await act(async () => fireEvent.click(screen.getByRole('menuitem', { name: 'Resolve discussion' })));
+  click('Review filters'); fireEvent.change(screen.getByLabelText('Comment filter'), { target: { value: 'resolved' } });
+  expect(screen.getByText('Can we reduce this wall thickness to 2.5 mm?')).toBeTruthy();
+  expect(screen.queryByText('Looks good. Check clearance with the bracket.')).toBeNull();
+});
+test('seeded local review is independent of other demo sessions', async () => {
+  const first = open(); text('Write a comment', 'Only in this window'); await act(async () => click('Send comment')); first.unmount();
+  open(); expect(screen.queryByText('Only in this window')).toBeNull();
+  expect(within(screen.getByRole('log', { name: 'Design comments' })).getAllByRole('article')).toHaveLength(4);
+});
+
+
+test('review filters combine status and tags across version references and retain thread replies', async () => {
+  open();
+  expect(screen.queryByLabelText('Comment workspace')).toBeNull();
+  expect(screen.queryByLabelText('Review part scope')).toBeNull();
+  fireEvent.change(screen.getByLabelText('Review tag filter'), { target: { value: 'Review' } });
+  expect(screen.getByText('Updated. Here’s the new version.')).toBeTruthy();
+  expect(screen.getByText('Perfect. Ready for the next review.')).toBeTruthy();
+  expect(screen.queryByText('Can we reduce this wall thickness to 2.5 mm?')).toBeNull();
+  fireEvent.change(screen.getByLabelText('Review tag filter'), { target: { value: 'Design' } });
+  click('Comment actions: Can we reduce this wall thickness to 2.5 mm?');
+  fireEvent.click(screen.getByRole('menuitem', { name: 'Reply' }));
+  text('Write a comment', 'Retain the mounting flange'); await act(async () => click('Send reply'));
+  click('Review filters'); text('Search comments', 'mounting flange');
+  expect(within(screen.getByRole('log', { name: 'Design comments' })).getAllByRole('article')).toHaveLength(2);
+  click('Comment actions: Can we reduce this wall thickness to 2.5 mm?');
+  await act(async () => fireEvent.click(screen.getByRole('menuitem', { name: 'Resolve discussion' })));
+  fireEvent.change(screen.getByLabelText('Comment filter'), { target: { value: 'open' } });
+  expect(screen.getByText('No comments in this view.')).toBeTruthy();
+  fireEvent.change(screen.getByLabelText('Comment filter'), { target: { value: 'resolved' } });
+  expect(screen.getByText('Retain the mounting flange')).toBeTruthy();
+  tab('Tasks');
+  expect(screen.getByText('Reduce wall thickness')).toBeTruthy();
+  expect(screen.queryByText('Check bracket clearance')).toBeNull();
+  fireEvent.change(screen.getByLabelText('Task status filter'), { target: { value: 'done' } });
+  expect(screen.queryByText('Reduce wall thickness')).toBeNull();
+});
+
+test('tags can be edited and new tickets inherit the active tag without a branch scope', async () => {
+  open(); tab('Tasks'); click('Edit task: Reduce wall thickness');
+  text('Review item tags', 'Design, Urgent, urgent, , Clearance');
+  await act(async () => click('Save changes'));
+  fireEvent.change(screen.getByLabelText('Review tag filter'), { target: { value: 'Urgent' } });
+  expect(screen.getByText('Reduce wall thickness')).toBeTruthy();
+  expect(screen.queryByText('Run thermal analysis')).toBeNull();
+  text('New task', 'Check fastener access'); await act(async () => click('Add task'));
+  expect(screen.getByText('Check fastener access')).toBeTruthy();
+  click('Edit task: Check fastener access');
+  expect(screen.getByRole('textbox', { name: 'Review item tags' })).toHaveProperty('value', 'Urgent');
+  text('Review item tags', 'Access'); await act(async () => click('Save changes'));
+  expect(screen.queryByText('Check fastener access')).toBeNull();
+  fireEvent.change(screen.getByLabelText('Review tag filter'), { target: { value: 'Access' } });
+  expect(screen.getByText('Check fastener access')).toBeTruthy();
+  click('Clear tag filter: Access');
+  expect(screen.getByText('Run thermal analysis')).toBeTruthy();
+});

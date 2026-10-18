@@ -1,0 +1,10 @@
+.aui-comparison-chart { width:100%; min-width:0; }
+.aui-comparison-chart > svg { display:block; width:100%; height:auto; overflow:visible; }
+.aui-comparison-axis line { stroke:var(--aether-color-border-subtle); stroke-width:.8; }
+.aui-comparison-axis text, .aui-comparison-label { fill:var(--aether-color-text-faint); font:10px var(--aether-font-family); }
+.aui-comparison-hit { fill:transparent; cursor:pointer; outline:none; }
+.aui-comparison-hit:focus-visible { fill:color-mix(in srgb,var(--aether-color-accent) 10%,transparent); stroke:var(--aether-color-border-focus); }
+.aui-comparison-inspection { pointer-events:none; }
+.aui-comparison-inspection > line { stroke:var(--aether-color-text-faint); stroke-dasharray:3 4; opacity:.5; }
+.aui-comparison-inspection rect { fill:var(--aether-color-bg-control); }
+.aui-comparison-inspection text { fill:var(--aether-color-text); font:10px var(--aether-font-family); }

@@ -1,0 +1,22 @@
+.drive-workspace-directory { display: flex; flex-direction: column; gap: 16px; }
+.drive-workspace-heading, .drive-workspace-filters { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.drive-workspace-heading h2 { margin: 0; font-size: 16px; }
+.drive-workspace-heading p { margin: 8px 0 0; color: var(--aether-color-text-dim); font-size: 12px; }
+.drive-workspace-heading svg { width: 16px; height: 16px; }
+.drive-workspace-filters input { margin-left: auto; flex: 0 1 240px; }
+.drive-workspace-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); gap: 16px; }
+.drive-workspace-card { display: flex; align-items: center; gap: 8px; padding: 12px; border: 1px solid var(--aether-color-border); border-radius: 10px; background: var(--aether-color-bg-panel); min-width: 0; }
+.drive-workspace-open { display: flex; align-items: center; gap: 12px; text-align: left; padding: 0; background: none; border: 0; color: inherit; cursor: pointer; flex: 1; min-width: 0; }
+.drive-workspace-open > span:last-child { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.drive-workspace-open strong { overflow-wrap: anywhere; font-size: 13px; }
+.drive-workspace-open small { font-size: 11px; color: var(--aether-color-text-dim); }
+.drive-workspace-avatar { width: 56px; height: 56px; display: grid; place-items: center; flex: none; border-radius: 8px; background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); font: 500 20px system-ui; }
+.drive-workspace-open:focus-visible { outline: 2px solid var(--aether-color-accent); outline-offset: 4px; border-radius: 4px; }
+.drive-workspace-actions { display: flex; flex-direction: column; gap: 4px; }
+.drive-workspace-empty { padding: 60px 16px; text-align: center; color: var(--aether-color-text-dim); }
+.drive-workspace-empty > svg { width: 48px; height: 48px; }
+
+.drive-organization-heading { font-size:13px; margin:0 0 12px; }
+
+.drive-workspace-directory > .aui-application-list-heading,
+.drive-workspace-directory > .aui-application-list-controls {margin-bottom:0;}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" version="1.1" id="svg390" width="32" height="32" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/set-origin.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g fill="none" stroke="#e5edf7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" id="g386">
+    <path id="circle376" d="M 46,32 A 14,14 0 0 1 32,46 14,14 0 0 1 18,32 14,14 0 0 1 32,18 14,14 0 0 1 46,32 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 32,6 V 22" id="path378" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 32,42 V 58" id="path380" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 6,32 H 22" id="path382" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 42,32 H 58" id="path384" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <path id="circle388" style="fill:#e5edf7" d="m 37,32 a 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 5,5 0 0 1 5,5 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

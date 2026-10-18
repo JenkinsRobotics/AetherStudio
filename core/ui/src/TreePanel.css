@@ -1,0 +1,37 @@
+.aui-tree-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.aui-tree-panel-content { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 4px; }
+.aui-tree-panel-secondary { flex: none; max-height: 34%; overflow: auto; border-top: 1px solid var(--aether-color-border); }
+.aui-tree-panel .aui-tree-row:not(.aui-tree-row--divider) { min-height: 24px; padding-block: 0; border-radius: var(--aether-radius-row); }
+.aui-tree-panel .aui-tree-icon { display: flex; align-items: center; justify-content: center; width: 18px; height: 18px; }
+/* Browsers and layer lists use quiet, equally sized type glyphs. Selection
+   supplies the accent; the icons should not turn every row into a blue tool. */
+.aui-tree-panel .aui-tree-icon { color: var(--aether-color-text-dim); }
+.aui-tree-panel .aui-tree-icon > svg { width: 16px; height: 16px; }
+.aui-tree-panel .aui-tree-disclosure { font-size: 12px; }
+.aui-tree-panel .aui-tree-row--selected.aui-tree-row--dimmed { opacity: 1; }
+.aui-tree-panel .aui-tree-row--selected .aui-tree-badge,
+.aui-tree-panel .aui-tree-row--selected .aui-tree-action { color: inherit; }
+.aui-tree-panel .aui-tree-actions { gap: 4px; }
+.aui-tree-toolbar { display: flex; flex: none; align-items: center; flex-wrap: wrap; gap: 2px; padding: 4px; border-top: 1px solid var(--aether-color-border); background: var(--aether-color-bg-panel); }
+.aui-tree-toolbar .aui-icon-button { border: 0; background: transparent; }
+.aui-tree-toolbar .aui-icon-button:hover:not(:disabled) { background: var(--aether-color-bg-hover); color: var(--aether-color-text); }
+.aui-tree-control { display: inline-flex; }
+.aui-tree-control--separated { border-left: 1px solid var(--aether-color-border); margin-left: 3px; padding-left: 4px; }
+
+.aui-tree-panel .aui-tree-badge { display: inline-flex; align-items: center; gap: 4px; }
+.aui-tree-status { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; }
+.aui-tree-status > svg { width: 16px; height: 16px; }
+.aui-tree-panel .aui-tree-row--selected:hover:not(.aui-tree-row--disabled) { background: var(--aether-color-bg-selected); color: var(--aether-color-text-on-selected); }
+
+.aui-tree-panel .aui-tree-row--selected .aui-tree-icon { color: inherit; }
+
+.aui-tree-panel-header-actions { display:inline-flex; align-items:center; gap:4px; }
+.aui-tree-panel-header-actions .aui-icon-button { width:24px; height:24px; min-height:0; padding:4px; border:0; background:transparent; }

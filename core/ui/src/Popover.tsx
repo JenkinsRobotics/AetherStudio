@@ -1,4 +1,5 @@
 import { createPortal } from "react-dom";
+import { useOverlayHost } from "./OverlayScope";
 import { useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 import {
@@ -22,6 +23,8 @@ export interface PopoverProps {
   closeOnOutsidePress?: boolean;
   returnFocus?: boolean;
   className?: string;
+  /** Show the shared surface in document flow; no anchor, portal or dismissal listeners. */
+  inline?: boolean;
 }
 
 /** Anchored nonmodal surface shared by compact editors and explanatory cards. */
@@ -36,21 +39,20 @@ export function Popover({
   closeOnOutsidePress = true,
   returnFocus = true,
   className,
+  inline = false,
 }: PopoverProps) {
+  const overlayHost = useOverlayHost();
   const popoverRef = useRef<HTMLDivElement>(null);
   const position = useOverlayPosition({
-    open,
+    open: open && !inline,
     overlayRef: popoverRef,
     anchor,
     placement,
   });
 
   useEffect(() => {
-    if (!open) return;
+    if (!open || inline) return;
     const opener = document.activeElement as HTMLElement | null;
-    if (focus === "first") {
-      popoverRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
-    }
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       event.stopPropagation();
@@ -70,22 +72,31 @@ export function Popover({
       document.removeEventListener("pointerdown", onPointerDown, true);
       if (returnFocus) opener?.focus?.();
     };
-  }, [anchor, closeOnOutsidePress, focus, onClose, open, returnFocus]);
+  }, [anchor, closeOnOutsidePress, focus, onClose, open, returnFocus, inline]);
 
-  if (!open || !anchor || typeof document === "undefined") return null;
+  // Positioning initially hides the portal while measuring it. A browser cannot
+  // focus a visibility:hidden item (jsdom can), so wait for visible placement.
+  useEffect(() => {
+    if (open && !inline && focus === "first" && position.visibility === "visible") {
+      popoverRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
+    }
+  }, [open, focus, position.visibility, inline]);
+
+  if (!open || (!inline && !anchor) || typeof document === "undefined") return null;
   const classes = ["aui-popover"];
   if (className) classes.push(className);
-  return createPortal(
+  if (inline) classes.push("aui-popover--inline");
+  const surface = (
     <div
       ref={popoverRef}
       className={classes.join(" ")}
       role="dialog"
       aria-modal="false"
       aria-label={ariaLabel}
-      style={position}
+      style={inline ? undefined : position}
     >
       {children}
-    </div>,
-    document.body,
+    </div>
   );
+  return inline ? surface : createPortal(surface, overlayHost ?? document.body);
 }

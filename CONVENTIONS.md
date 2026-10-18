@@ -1,6 +1,23 @@
+## Local repository structure — 2026-10-09
+
+Use this repository for platform work and the sibling app repositories for product
+work. See LOCAL_DEVELOPMENT.md and AGENTS.md. The original monorepo paths below
+are historical context; semantic ownership rules remain applicable.
+
 # Conventions
 
 ## Current suite direction — 2026-09-08
+
+**Shared sketch foundation — 2026-09-29 (Jonathan).** `core/sketch/`
+(`@aether/sketch`) is the explicitly authorized cross-product exception for
+unit-neutral 2D drawing geometry and gestures. Sketch and Map consume its tools;
+CAD currently consumes picking and SVG arc presentation helpers. It imports no
+product, UI, renderer, DOM or solver. Develop common behavior there and exercise
+it in Aether Sketch; keep CAD constraints/exact entities, Map projection and
+product persistence in their owning products. This does not authorize consumers
+of CAD's parked `@aether/core` outside CAD. See
+`dev/docs/roadmap/Aether_Sketch_Standard.md` for current coverage and planned work.
+
 
 Aether Studio is the umbrella suite; the animation product is **Aether Animation**.
 The primary applications are web-based React/TypeScript: `Aether CAD/` and
@@ -12,7 +29,7 @@ Claude owns the Python backend/protocol. Older Swift lane/path instructions belo
 are historical and superseded: Swift is archived at `aether-animation/archive/`.
 The `core/` parent groups shared infrastructure: `core/ui/` is `@aether/ui`,
 the design system, and `core/assets/` holds shared artwork. The CAD engine
-(`@aether/core`) moved to `Aether CAD/engine/` on 2026-09-11 — a product owns
+(`@aether/core`) moved to `Aether CAD/aether-engine/` (2026-09-11, renamed 2026-09-12) — a product owns
 its kernel binding, solver and feature layer; only one product used it. The
 server (accounts, sessions, documents) is `core/host/` + `core/session/`.
 Existing semantic ownership and file-claim rules still apply.
@@ -61,7 +78,7 @@ ecosystem's rules, trimmed to what Anima Studio actually uses.
 
 ## Where things live
 
-- **`animacore/` (Python) — AnimaCore, the engine** — the headless
+- **`aether_animation/` (Python) — AnimaCore, the engine** — the headless
   animation core: `.anima` loading, rig/DOF evaluation, relations,
   scene execution, wire protocol host, simulator, extensions.
   Mechanism-agnostic: domain vocabulary (faces, cars, arms) appears
@@ -74,7 +91,7 @@ ecosystem's rules, trimmed to what Anima Studio actually uses.
   `dev/docs/roadmap/Wire_Protocol.md`.
 ## AnimaCore is the one engine (canonical)
 
-`animacore/` is the **single canonical implementation** of animation
+`aether_animation/` is the **single canonical implementation** of animation
 meaning: typed mates/DOF/limits/relations, validation, keyframe and
 scene evaluation, mate alignment + kinematic pose resolution, `.anima`
 parsing/writing, output mapping, transport, hardware safety, and

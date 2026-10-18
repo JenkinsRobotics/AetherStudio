@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2860" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_ResultShow.svg. Authors: [Przemo Firszt], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2862">
+    <linearGradient id="linearGradient4033">
+      <stop style="stop-color:#2f9dee;stop-opacity:1" offset="0" id="stop4035" />
+      <stop id="stop4041" offset="0.5" style="stop-color:#c3cfdc;stop-opacity:1" />
+      <stop style="stop-color:#2d9ced;stop-opacity:1" offset="1" id="stop4037" />
+    </linearGradient>
+    <linearGradient id="linearGradient3980">
+      <stop id="stop3982" offset="0" style="stop-color:#32a1f2;stop-opacity:1" />
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="0.5" id="stop3994" />
+      <stop id="stop3984" offset="1" style="stop-color:#34a4f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="linearGradient3779">
+      <stop style="stop-color:#405269;stop-opacity:1" offset="0" id="stop3781" />
+      <stop style="stop-color:#405269;stop-opacity:1" offset="1" id="stop3783" />
+    </linearGradient>
+    <linearGradient id="linearGradient3003">
+      <stop id="stop3005" offset="0" style="stop-color:#405269;stop-opacity:1" />
+      <stop style="stop-color:#405269;stop-opacity:1" offset="0.5" id="stop3007" />
+      <stop style="stop-color:#405269;stop-opacity:1" offset="1" id="stop3009" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3003" id="linearGradient3816" x1="10.280797" y1="29.320814" x2="52.293621" y2="35.926281" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.01608802,-1.2714027,0.54360467,0.03762725,12.762336,71.034446)" spreadMethod="pad" />
+    <linearGradient xlink:href="#linearGradient3779" id="linearGradient3785" x1="28.866665" y1="59.066673" x2="33.133331" y2="5.9000025" gradientUnits="userSpaceOnUse" />
+    <linearGradient gradientTransform="translate(-1,-2e-7)" y2="6" x2="34" y1="59" x1="30" gradientUnits="userSpaceOnUse" id="linearGradient3181" xlink:href="#linearGradient3980" />
+    <linearGradient xlink:href="#linearGradient4033" id="linearGradient4039" x1="29" y1="59" x2="33" y2="6" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:url(#linearGradient3816);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient3785);stroke-width:1.1;stroke-linejoin:round;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" d="m 46.999999,61.000006 -31.999999,0 0,-58.0000058 31.999999,0 z" id="rect3520-7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 13.110404,79.471866 c 0.09167,0 0.183347,0 0,0 z" id="path2394" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient3181);stroke-width:1.1;stroke-linejoin:miter;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" d="M 45,59 17,59 17,5 45,5 z" id="rect3520-7-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient4039);stroke:none;stroke-width:1.1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1" d="M 44,58 18,58 18,6 44,6 z" id="rect3520-7-1-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { AetherIcon } from "./AetherIcon";
 import { MenuButton, type MenuItem } from "./Menu";
 
 export type PanelPlacement = "docked" | "floating" | "hidden";
@@ -22,7 +23,7 @@ const placementItems = (placement: PanelPlacement): readonly MenuItem[] => [
   {
     id: "floating",
     label: "Float",
-    icon: "□",
+    icon: <AetherIcon name="rectangle" />,
     kind: "radio",
     checked: placement === "floating",
   },

@@ -1,0 +1,25 @@
+/* Content only: DockPanel owns the sidebar frame, shared widgets own behavior. */
+.ps-document-review { display:flex; flex:1; flex-direction:column; min-width:0; min-height:0; gap:12px; padding:6px 8px; }
+.ps-review-context { display:flex; align-items:center; justify-content:space-between; gap:8px; color:var(--aether-color-text-dim); font-size:11px; }
+.ps-review-context > span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ps-review-context > .aui-icon-button { flex:none; }
+.ps-review-tabs.aui-segmented-control { flex:none; min-height:28px; padding:2px; background:var(--aether-color-bg-inset); }
+.ps-review-tabs.aui-segmented-control > button { min-height:24px; padding:3px 6px; font-size:11px; }
+.ps-review-tabs.aui-segmented-control > button[aria-checked="true"] { background:#34383b; color:#f0f2f2; }
+.ps-review-page { display:flex; flex:1; min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; }
+.ps-review-page[hidden] { display:none; }
+.ps-review-page > :is(.aui-comments-panel,.aui-action-items) { flex:1; height:auto; min-height:min-content; }
+.ps-document-review :is(.aui-comments-header,.aui-action-items-header) { padding:0 0 10px; border:0; }
+.ps-document-review :is(.aui-comments-filters,.aui-action-items-tools) { padding:0 0 12px; border:0; }
+.ps-document-review :is(.aui-comments-composer,.aui-comments-list) { padding:0 0 12px; }
+.ps-document-review .aui-comments-list { overflow:visible; }
+.ps-document-review .aui-action-items-body { overflow:visible; }
+.ps-document-review :is(.aui-comments-panel textarea,.aui-action-items select) { background:var(--aether-color-bg-inset); border-color:var(--aether-color-border); border-radius:var(--aether-radius-field); }
+.ps-document-review .aui-comments-composer textarea { min-height:88px; max-height:160px; padding:10px; }
+.ps-document-review .aui-comments-filters { gap:8px; }
+.ps-document-review .aui-comment-avatar { border-radius:50%; }
+.ps-document-review .aui-comments-list > li { margin:0; padding:16px 0; border-top:1px solid var(--aether-color-border); }
+.ps-document-review .aui-action-items-body li { padding:14px 0; }
+.ps-document-review .aui-action-items-empty { padding:48px 12px; gap:18px; }
+.ps-document-review .aui-action-items-empty > svg { width:80px; }
+.ps-review-local { flex:none; color:var(--aether-color-text-dim); font-size:10px; line-height:1.5; }

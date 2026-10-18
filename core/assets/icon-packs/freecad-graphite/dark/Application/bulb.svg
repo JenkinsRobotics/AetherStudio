@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg1307" version="1.0" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/bulb.svg. Authors: Lapo Calamandrei, Jakub Steiner. Rights: . Source and license notices: http://creativecommons.org/licenses/by-sa/2.0/</desc><defs id="defs1309">
+    <linearGradient id="linearGradient3972">
+      <stop style="stop-color:#6c8098;stop-opacity:1" offset="0" id="stop3974" />
+      <stop style="stop-color:#5d7086;stop-opacity:1" offset="1" id="stop3976" />
+    </linearGradient>
+    <linearGradient id="linearGradient3881">
+      <stop style="stop-color:#61758c;stop-opacity:1;" offset="0" id="stop3883" />
+      <stop style="stop-color:#596b81;stop-opacity:1" offset="1" id="stop3885" />
+    </linearGradient>
+    <radialGradient xlink:href="#linearGradient3881" id="radialGradient3887" cx="40.042122" cy="10.743272" fx="40.042122" fy="10.743272" r="19.595521" gradientTransform="matrix(0.61110248,0.72257754,-1.2926279,1.0943161,29.459335,-29.950443)" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient3972" id="linearGradient3978" x1="25" y1="6" x2="37" y2="36" gradientUnits="userSpaceOnUse" />
+    </defs>
+  <g id="layer1" style="display:inline" transform="translate(0,16)">
+    <path style="display:inline;fill:#54667b;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 31.622185,-1.1400895 55.140097,21.22405 33.229457,45.140099 8.8598994,21.932333 Z" id="path3869-0" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:url(#linearGradient3978);stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;font-variation-settings:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-dashoffset:0;-inkscape-stroke:none;stop-color:#e5edf7;stop-opacity:1" d="M 31.667969,1.6621094 52.339844,21.320312 33.130859,42.285156 11.712891,21.886719 Z" id="path2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="g1" style="display:inline" transform="translate(1.0002527)">
+      <path style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Nimbus Roman No9 L';-inkscape-font-specification:'Nimbus Roman No9 L Bold';letter-spacing:0px;word-spacing:0px;display:inline;fill:#415266;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 23,18 2,17 c 5,3 9,3 14,0 l 2,-17" id="path3896" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="display:inline;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 24,19 c 4,4 10,4 16,4" id="path3916-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <ellipse style="fill:url(#radialGradient3887);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="path3904" transform="matrix(0.91859021,0,0,0.91812541,-10.782302,-12.860326)" cx="46.573872" cy="18.363859" rx="18.50662" ry="18.515989" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <ellipse style="display:inline;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="path3904-3" transform="matrix(0.81052076,0,0,0.81011065,-5.7490898,-10.876758)" cx="46.573872" cy="18.363859" rx="18.50662" ry="18.515989" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <g style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Nimbus Roman No9 L';-inkscape-font-specification:'Nimbus Roman No9 L Bold';letter-spacing:0px;word-spacing:0px;fill:#e5edf7;fill-opacity:1;stroke:none" id="text3889" transform="translate(0.040001,-0.0799994)">
+        <path d="m 31.959999,11.133845 c -1.839998,0 -3.36,1.560002 -3.36,3.36 0,1.919998 1.440002,3.4 3.32,3.4 1.919998,0 3.44,-1.480001 3.44,-3.32 0,-1.879998 -1.520002,-3.44 -3.4,-3.44 m 1,-3.0538456 c 0.52,-4.9199951 0.800001,-6.1600039 2,-10 0.56,-1.7599983 1,-3.0800009 1,-4 0,-2.5999974 -1.880002,-4 -4,-4 -2.159998,0 -4,1.4800025 -4,4 0,0.999999 0.440001,2.2000018 1,4 1.159999,3.7999962 1.480001,5.0800049 2,10 h 2" style="font-family:'Nimbus Roman No9 L';-inkscape-font-specification:'Nimbus Roman No9 L Bold'" id="path3894" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 24,40 c 4,4 10,4 16,4" id="path3916" transform="translate(0,-16)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="display:inline;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 24.211538,30 C 28.211538,34 34,34 40,34" id="path3916-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

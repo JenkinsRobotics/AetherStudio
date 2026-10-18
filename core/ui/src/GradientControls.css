@@ -1,0 +1,15 @@
+.aui-gradient-controls, .aui-gradient-stop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--aether-color-border);
+  border-radius: 6px;
+  color: inherit;
+}
+.aui-gradient-controls legend, .aui-gradient-stop legend { font-size: 11px; padding: 0 4px; }
+
+/* The editor inherits its host; stop fieldsets remain internal groups. */
+.aui-gradient-controls { padding:0; border:0; border-radius:0; background:transparent; }

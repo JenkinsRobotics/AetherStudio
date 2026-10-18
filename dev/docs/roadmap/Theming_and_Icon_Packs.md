@@ -82,23 +82,81 @@ it instantly; `registerIconPack({...})` re-renders every mounted icon
 immediately via the pack store. Both paths are unit-tested; READMEs in the
 asset directories carry the contributor recipes.
 
+## Shipped 2026-09-28: one theme engine, the pack consolidated
+
+Jonathan: *"standardize the theme pack to a single type and consolidate the
+current list of themes we developed for different demo apps — most apps
+wouldn't have five different theme engines."* Before this the showcase had
+four self-driving theme systems beside the manifest: the demo kit's `--ad-*`
+tokens with appearance/accent/variant attributes, the Atlas demo's seven
+attribute combinations, the ported studio session's hand-written
+`AnimaTheme.css` overrides, and the UI Dev theme lab's five literal classes,
+plus `tokens/home.css`. None read the manifest; the kit even overrode the
+shared tokens inside its scope.
+
+- **One type.** `core/assets/themes/*.json` (`aether-theme/v1`) now carries
+  colour modes, geometry, type, **effects** (shadow levels, material, motion)
+  and the **viewport** look (`viewport-*` tokens: stage gradient, grid,
+  part, cavity, sketch, selection). A manifest may `extends` another and may
+  declare `aliases`. The build and the runtime share one resolver; every
+  theme resolves to the default's full token set or the build fails.
+- **The pack.** Aether Default, Aether Studio, Aether Teal, Aether Indigo,
+  Aether Orange, Graphite, Midnight, Neon, Studio Home — every look the demo
+  apps had, under Aether names. Viewport themes Midnight, Graphite,
+  Blueprint, Paper (`themes/viewports/`, `aether-viewport/v1`) set the stage
+  alone and are chosen independently, persisted under their own key.
+- **Widgets read tokens only.** The kit's `--ad-*` family is gone (615
+  references rewritten to `--aether-*`; `theme.css` deleted); `AD` constants
+  map to tokens; the shared stylesheet's drifted names (`color-danger`,
+  `color-warning`, `color-focus`) now hit real tokens; 98 literal colour
+  lines in `core/ui/src` went to tokens or `color-mix` on `--aether-color-shadow`
+  / `--aether-color-text` (three `literal-ok` lines remain: macOS traffic
+  lights, a hue wheel, a material render). The guard now covers `core/ui/src`
+  and fails on a token no theme defines.
+- **Selection.** `ThemeMenu` in the header (interface theme + viewport
+  theme), `setAetherTheme` / `setAetherViewportTheme` / `setAetherAppearance`
+  persisted and cross-tab, `useScopedAetherTheme` for a concept app that
+  presents in its own theme. The demo apps use it: the studio session scopes
+  Aether Studio or Midnight (High Contrast), the Anima demo maps its accents
+  to the pack, the Atlas demo's seven themes are pack ids and its tiles read
+  the resolved tokens.
+- **Showcase.** Icons & Assets → *Themes — the theme pack*: tiles in both
+  modes, viewport tiles, the active theme's token table by category, and the
+  shared widgets once per theme. The UI Dev theme lab picks from the pack.
+
+**How the neighbours do it, for the record.** Blender keeps one theme file
+with a section per editor (the 3D viewport's colours included) and lets a
+viewport override its background locally; SolidWorks has one colour scheme
+for interface and viewport colours, with render *scenes* separate; Rhino's
+display modes are viewport themes chosen per view; Adobe has an interface
+brightness plus a per-document canvas colour; Onshape only light/dark plus
+per-account viewport colours. The convergence is two layers — interface
+theme, viewport look — with the viewport overridable without touching the
+chrome, which is what the `viewport-*` category plus viewport themes gives.
+Render environment (lights, HDRI, matcaps) stays app render settings.
+
 ## Scope split: suite themes vs app render settings
 
-Universal themes (this document) style the interface chrome of every app.
-The 3D **viewport render themes** (Midnight / Graphite / CAD Light /
-Blueprint, ported from the native PreviewAppearance) are **Aether CAD app
-settings** — CAD owns the WebGPU/OCCT viewport — stored per device in
-`aether-cad-appearance`, controlled from CAD's Appearance panel, and
-deliberately outside the suite theme manifests.
+Interface themes style the chrome of every app. The viewport look is a
+category of the theme (`viewport-*` tokens) that a **viewport theme**
+(`themes/viewports/*.json`) can override on its own — since 2026-09-28 the
+native PreviewAppearance stages (Midnight / Graphite / Blueprint / Paper)
+are viewport themes in the pack. Aether CAD's renderer still reads its own
+`aether-cad-appearance` setting today; pointing it at the `viewport-*`
+tokens is the open item below. Render environment (lights, HDRI, matcaps)
+stays app render settings, never a theme.
 
 ## Open items
 
 - Tokenize `Aether CAD/src` and `aether-animation/web/src` stylesheets, then
   add them to the checker roots.
 - Light palette polish pass (decorative overlays, chip tints) with Jonathan.
-- Adaptive renderer palette so the 3D viewport can follow themes.
-- A second theme manifest to prove the pipeline end-to-end; VS Code-style
-  selection UI once more than one theme/pack exists.
+- Point Aether CAD's renderer and the kit's viewport mock at the
+  `viewport-*` tokens so a viewport theme reaches the real stage.
+- Discrete control styles (flat / raised / outline) as a theme field the
+  widget CSS branches on, if a theme needs more than tokens can express.
+- Tokenise the gallery's remaining literal lines (`AnimationStudioDemo.css` 43,
+  `AnimaUIDevSpecimens.css` 19) and add `core/ui/gallery` to the guard.
 - Icon-pack codegen for the AetherIcon registry (today the registry is the
   hand-maintained seam; the checker keeps it honest).
 - Adopt the geometry tokens in the CAD workspace toolbar/panels and the

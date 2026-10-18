@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16.933333 16.933333" version="1.1" id="svg5" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Measure/Gui/Resources/icons/COG-Icon.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer1">
+    <circle style="fill:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round" id="path236-7" cx="8.4666662" cy="8.4666662" r="7.9375" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle style="fill:#6c8098;stroke:none;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round" id="path398-5" cx="8.4666662" cy="8.4666662" r="6.8791666" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path398-6-3" style="fill:#e5edf7;stroke:none;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round" d="m 2.6502333,8.4666668 a 5.8208015,5.7088944 0 0 0 -0.0044,0.111939 A 5.8208015,5.7088944 0 0 0 8.4666346,14.2875 V 8.4666668 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="rect452-5" style="fill:#e5edf7;stroke:none;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round" d="M 8.4666668,2.6458333 V 8.4666667 H 14.2875 A 5.822146,5.9372499 0 0 0 8.4666668,2.6458333 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

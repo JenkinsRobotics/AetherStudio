@@ -1,0 +1,9 @@
+.transparent-header-utilities { display:flex; align-items:center; min-width:0; }
+.aui-document-bar .transparent-header-utilities :is(.aui-icon-button, .aui-app-launcher-button, .aui-appearance-toggle) {
+  display:inline-flex; align-items:center; justify-content:center; flex:none;
+  width:28px; min-width:28px; height:28px; padding:4px; border:0;
+  background:transparent; box-shadow:none; color:var(--aether-color-text-dim);
+}
+.aui-document-bar .transparent-header-utilities :is(.aui-icon-button, .aui-app-launcher-button, .aui-appearance-toggle):hover:not(:disabled) { background:var(--aether-color-bg-hover); }
+.aui-document-bar .transparent-header-utilities :is(.aui-icon-button, .aui-app-launcher-button, .aui-appearance-toggle) svg { width:16px; height:16px; }
+.transparent-header-share { display:grid; gap:12px; width:min(440px,65vw); }

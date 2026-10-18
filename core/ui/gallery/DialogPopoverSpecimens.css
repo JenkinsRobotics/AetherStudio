@@ -1,0 +1,11 @@
+/* Placement only; shared Dialog/Popover/ProgressOverlay supply every window frame. */
+.dialog-window-specimens, .popover-window-specimen, .progress-window-specimen { display: grid; align-content: start; gap: 20px; width: 320px; max-width: 100%; min-width: 0; }
+.popover-window-specimen { width: 250px; }
+.popover-window-content { display: grid; gap: 8px; }
+.progress-window-specimen > .aui-progress-surface--inline { min-height: 0; padding: 0; z-index: auto; }
+.progress-window-specimen .aui-progress-card { box-sizing: border-box; }
+:is(.dialog-window-specimens, .popover-window-specimen, .progress-window-specimen) > small { color: var(--aether-color-text-dim); font-size: 11px; }
+.showcase-sections[data-comparison="dialogs-overlays"] { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; }
+.showcase-sections[data-comparison="dialogs-overlays"] > section { flex: 1 1 300px; align-content: start; }
+.showcase-sections[data-comparison="dialogs-overlays"] > section:first-child { flex-basis: 620px; }
+.showcase-sections[data-comparison="dialogs-overlays"] > section + section { border-top: 0; padding-top: 0; }

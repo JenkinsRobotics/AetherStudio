@@ -1,0 +1,120 @@
+[
+  {
+    "id": "editor.list",
+    "title": "Find shared editors",
+    "description": "Find explicitly shared live CAD/Map editors owned by your signed-in user. Requires content-edit permission. No access to other users or unshared tabs.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "writes": false,
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "id": "editor.inspect",
+    "title": "Inspect editor tools",
+    "description": "Read the product-owned tool catalog for a shared editor. Use the exact editor ID. Tools operate on unsaved current state and normal undo.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "editor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "editor"
+      ],
+      "additionalProperties": false
+    },
+    "writes": false,
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "id": "editor.invoke",
+    "title": "Run an editor tool",
+    "description": "Queue one tool from editor.inspect. Supply a unique operation ID in the operation argument; keep it for editor.result and retries. If _meta.aether/operationId is also provided it must match. Acceptance is not completion. Never retry outcome_unknown under a new ID.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "editor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "arguments": {
+          "type": "object"
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "editor",
+        "name",
+        "arguments",
+        "operation"
+      ],
+      "additionalProperties": false
+    },
+    "writes": true,
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "id": "editor.result",
+    "title": "Read editor receipt",
+    "description": "Read a queued live operation. Completed includes the product reply; running means wait; outcome_unknown means inspect before any further edit. No command is automatically replayed.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "editor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "editor",
+        "operation"
+      ],
+      "additionalProperties": false
+    },
+    "writes": false,
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  }
+]

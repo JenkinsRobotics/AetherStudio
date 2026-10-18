@@ -1,0 +1,29 @@
+name: Independent application checks
+on: [push, pull_request]
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: studio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: python3 ../tools/fetch-vendor.py
+      - run: npm ci
+      - run: npm run test --if-present
+      - run: npm run build
+  shared-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: python3 tools/fetch-vendor.py
+      - run: node --test dev/project-boundaries.test.mjs
+      - run: node dev/projects.mjs install
+      - run: node dev/projects.mjs test
+      - run: node dev/projects.mjs build

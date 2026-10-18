@@ -38,7 +38,7 @@ test("single click replaces, cmd toggles, shift range-selects visible order", ()
 
 test("disclosure collapses without selecting", () => {
   const { onSelect } = renderTree();
-  fireEvent.click(screen.getByText("▾"));
+  fireEvent.click(screen.getByRole("button", { name: "Collapse Group" }));
   expect(screen.queryByText("Alpha")).toBeNull();
   expect(onSelect).not.toHaveBeenCalled();
 });
@@ -55,7 +55,7 @@ test("controlled expansion follows expandedIDs and reports onToggle", () => {
     />
   );
   expect(screen.queryByText("Alpha")).toBeNull();
-  fireEvent.click(screen.getByText("▸"));
+  fireEvent.click(screen.getByRole("button", { name: "Expand Group" }));
   expect(onToggle).toHaveBeenCalledWith("group", true);
   rerender(
     <Tree
@@ -67,6 +67,21 @@ test("controlled expansion follows expandedIDs and reports onToggle", () => {
     />
   );
   expect(screen.queryByText("Alpha")).not.toBeNull();
+});
+
+test("a selected descendant is revealed through a collapsed parent", () => {
+  const { rerender } = renderTree({
+    selectedIDs: new Set(["a"]),
+    defaultCollapsedIDs: ["group"],
+    revealSelection: true,
+  });
+  expect(screen.getByText("Alpha")).not.toBeNull();
+  expect(screen.getByText("Group").closest('[role="treeitem"]')?.getAttribute("aria-expanded"))
+    .toBe("true");
+
+  rerender(<Tree nodes={nodes} selectedIDs={new Set(["solo"])} onSelect={() => {}}
+    defaultCollapsedIDs={["group"]} revealSelection />);
+  expect(screen.queryByText("Alpha")).toBeNull();
 });
 
 test("filter keeps matches and ancestors, reveals collapsed branches", () => {
@@ -264,4 +279,46 @@ test("row className lands on the row element and pinned actions carry the pinned
   const pinned = screen.getByLabelText("Show Top Plane");
   expect(pinned.className).toContain("aui-tree-action--pinned");
   expect(screen.getByLabelText("Edit Top Plane").className).toBe("aui-tree-action");
+});
+
+test("selection reveal respects explicit collapse until the selection changes", () => {
+  const nodes = [{ id: 'folder', label: 'Folder', children: [{ id: 'a', label: 'Alpha' }, { id: 'b', label: 'Beta' }] }];
+  const tree = (selected: string) => <Tree nodes={nodes} selectedIDs={new Set([selected])} onSelect={() => {}} revealSelection defaultCollapsedIDs={['folder']}/>;
+  const { rerender } = render(tree('a'));
+  expect(screen.getByText('Alpha')).not.toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Collapse Folder' }));
+  expect(screen.queryByText('Alpha')).toBeNull();
+  rerender(tree('a'));
+  expect(screen.queryByText('Alpha')).toBeNull();
+  rerender(tree('b'));
+  expect(screen.getByText('Beta')).not.toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Collapse Folder' }));
+  rerender(tree('a'));
+  expect(screen.getByText('Alpha')).not.toBeNull();
+});
+
+test("states use labeled icons, keyboard context targets the focused row, and deletion retains a tab stop", () => {
+  const context = vi.fn();
+  const list = [{id:'a',label:'Alpha',status:[{id:'hidden',label:'Hidden',icon:<svg data-testid="hidden-icon"/>}]},{id:'b',label:'Beta'}];
+  const { rerender } = render(<Tree nodes={list} selectedIDs={new Set(['b'])} onSelect={()=>{}} onContextMenu={context}/>);
+  expect(screen.getByRole('img',{name:'Hidden'}).textContent).toBe('');
+  expect(screen.getByText('Beta').closest('[role="treeitem"]')?.getAttribute('tabindex')).toBe('0');
+  const alpha = screen.getByText('Alpha').closest('[role="treeitem"]')!;
+  fireEvent.keyDown(alpha,{key:'F10',shiftKey:true}); expect(context).toHaveBeenCalledWith('a',24,0);
+  fireEvent.focus(alpha);
+  rerender(<Tree nodes={[list[1]]} selectedIDs={new Set()} onSelect={()=>{}}/>);
+  expect(screen.getByText('Beta').closest('[role="treeitem"]')?.getAttribute('tabindex')).toBe('0');
+});
+
+test("ordered leaf drops use before/after and revalidate document permissions on drop", () => {
+  const onMove=vi.fn(), canMove=vi.fn(()=>true);
+  renderTree({nodes:[{id:"a",label:"First",dropMode:"reorder"},{id:"b",label:"Second",dropMode:"reorder"},{id:"ref",label:"Reference",draggable:false}],onMove,canMove});
+  const first=screen.getByText("First").closest('[role="treeitem"]')!, second=screen.getByText("Second").closest('[role="treeitem"]')!;
+  vi.spyOn(second,"getBoundingClientRect").mockReturnValue({top:0,height:24,bottom:24,left:0,right:200,width:200,x:0,y:0,toJSON:()=>({})});
+  const dataTransfer={setData:vi.fn(),effectAllowed:"",dropEffect:""};
+  const over=(y:number)=>{const event=new MouseEvent("dragover",{bubbles:true,clientY:y});Object.defineProperty(event,"dataTransfer",{value:dataTransfer});fireEvent(second,event);};
+  fireEvent.dragStart(first,{dataTransfer});over(10);fireEvent.drop(second,{dataTransfer});
+  expect(onMove).toHaveBeenCalledWith("a","b","before");onMove.mockClear();
+  fireEvent.dragStart(first,{dataTransfer});over(15);canMove.mockReturnValue(false);fireEvent.drop(second,{dataTransfer});
+  expect(onMove).not.toHaveBeenCalled();expect(screen.getByText("Reference").closest('[role="treeitem"]')?.getAttribute("draggable")).toBe("false");
 });

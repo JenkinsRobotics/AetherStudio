@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "projects": {
+    "cad": "../Aether-CAD",
+    "map": "../Aether-Map",
+    "animation": "../Aether-Animation",
+    "sketch": "../Aether-Sketch",
+    "vector": "../Aether-Vector",
+    "io": "../Aether-IO",
+    "drive": "drive"
+  }
+}

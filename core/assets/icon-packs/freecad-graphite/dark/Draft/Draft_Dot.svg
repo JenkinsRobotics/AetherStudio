@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2869" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Dot.svg. Authors: [yorikvanhavre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2871">
+    <linearGradient y2="485.54004" x2="54.509644" y1="453.55045" x1="11.390151" gradientTransform="matrix(1.1733561,0.02175327,0.02175328,1.1801291,55.592501,-17.013229)" gradientUnits="userSpaceOnUse" id="linearGradient3922" xlink:href="#linearGradient3836" />
+    <linearGradient id="linearGradient3836">
+      <stop id="stop3838" offset="0" style="stop-color:#324154;stop-opacity:1;" />
+      <stop id="stop3840" offset="1" style="stop-color:#47586c;stop-opacity:1;" />
+    </linearGradient>
+  </defs>
+  <g id="layer1">
+    <g transform="matrix(2.0537159,0.03151362,-0.03151503,2.0536223,-245.35223,-484.91119)" id="g4312" style="stroke:#91a4bb;stroke-width:1.1">
+      <g id="g4248" transform="matrix(-0.1153544,-0.09575809,0.09575809,-0.1153544,98.667777,319.83687)" style="stroke:#91a4bb;stroke-width:1.1">
+        <g style="stroke-width:1.1" id="g3906" transform="translate(-3.7314339,-3.2817175)">
+          <path d="m 145.08885,535.18229 a 48.571431,48.571431 0 1 1 -97.142854,0 48.571431,48.571431 0 1 1 97.142854,0 z" id="path4250" style="fill:#324154;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="m 138.55997,535.14385 a 42.216398,42.21834 49.289969 1 1 -84.435028,0.002 42.216398,42.21834 49.289969 0 1 84.435028,-0.002 z" id="path4250-7" style="fill:url(#linearGradient3922);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        </g>
+      </g>
+    </g>
+  </g>
+  </svg>

@@ -1,0 +1,46 @@
+[
+  {
+    "path": "Aether CAD/aether-engine",
+    "label": "CAD engine"
+  },
+  {
+    "path": "core/sketch",
+    "label": "Shared sketch"
+  },
+  {
+    "path": "core/session",
+    "label": "Document session"
+  },
+  {
+    "path": "core/ui",
+    "label": "Aether UI"
+  },
+  {
+    "path": "Aether CAD",
+    "label": "Aether CAD"
+  },
+  {
+    "path": "aether-map",
+    "label": "Aether Map"
+  },
+  {
+    "path": "aether-sketch",
+    "label": "Aether Sketch"
+  },
+  {
+    "path": "aether-io",
+    "label": "Aether IO"
+  },
+  {
+    "path": "aether-animation/web",
+    "label": "Aether Animation"
+  },
+  {
+    "path": "studio",
+    "label": "Aether Studio / Drive"
+  },
+  {
+    "path": "aether-vector",
+    "label": "Aether Vector"
+  }
+]

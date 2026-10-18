@@ -43,9 +43,18 @@ export function Tooltip({
     clearTimer();
     setOpen(false);
   };
+  const show = () => {
+    document.dispatchEvent(new CustomEvent("aether-tooltip-open", { detail: id }));
+    setOpen(true);
+  };
+  useEffect(() => {
+    const otherOpened = (event: Event) => { if ((event as CustomEvent).detail !== id) hide(); };
+    document.addEventListener("aether-tooltip-open", otherOpened);
+    return () => document.removeEventListener("aether-tooltip-open", otherOpened);
+  }, [id]);
   const showAfterDelay = () => {
     clearTimer();
-    timerRef.current = setTimeout(() => setOpen(true), delayMilliseconds);
+    timerRef.current = setTimeout(show, delayMilliseconds);
   };
 
   useEffect(() => {
@@ -71,7 +80,7 @@ export function Tooltip({
         onPointerLeave={hide}
         onFocusCapture={() => {
           clearTimer();
-          setOpen(true);
+          show();
         }}
         onBlurCapture={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget as Node | null)) hide();

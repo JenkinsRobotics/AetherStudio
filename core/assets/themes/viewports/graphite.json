@@ -1,0 +1,20 @@
+{
+  "$schema": "aether-viewport/v1",
+  "id": "graphite",
+  "name": "Graphite",
+  "description": "Mid-grey studio stage, the native PreviewAppearance default.",
+  "modes": {
+    "dark": {
+      "viewport-bg-top": "#3a3f47",
+      "viewport-bg-bottom": "#1f2329",
+      "viewport-grid": "rgba(255, 255, 255, 0.06)",
+      "viewport-grid-axis": "rgba(255, 255, 255, 0.18)"
+    },
+    "light": {
+      "viewport-bg-top": "#d9dde3",
+      "viewport-bg-bottom": "#b9bfc8",
+      "viewport-grid": "rgba(0, 0, 0, 0.08)",
+      "viewport-grid-axis": "rgba(0, 0, 0, 0.2)"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2860" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_Analysis.svg. Authors: [Przemo Firszt], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2862">
+    <linearGradient id="linearGradient3784">
+      <stop style="stop-color:#596b81;stop-opacity:1" offset="0" id="stop3786" />
+      <stop style="stop-color:#596b81;stop-opacity:0" offset="1" id="stop3788" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3784" id="linearGradient3790" x1="48" y1="56" x2="32" y2="8" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <g transform="scale(0.99351891,1.0065234)" style="font-size:79.04496765px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#61758c;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dashoffset:4.1;font-family:DejaVu Serif;-inkscape-font-specification:DejaVu Serif" id="text3014">
+      <path d="m 19.307156,39.724118 21.150704,0 L 29.882508,12.320833 19.307156,39.724118 m -16.2875859,20.880531 0,-4.091195 5.056099,0 20.5331659,-53.5328956 6.484157,0 20.571762,53.5328956 5.673637,0 0,4.091195 -20.957723,0 0,-4.091195 6.406965,0 -4.824522,-12.659546 -24.238398,0 -4.824522,12.659546 6.329773,0 0,4.091195 -16.2103939,0" style="fill:#61758c" id="path3762" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <path style="fill:none;stroke:url(#linearGradient3790);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="M 32,7 51,57" id="path3782" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

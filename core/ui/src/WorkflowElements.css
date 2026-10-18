@@ -1,0 +1,32 @@
+.aui-avatar { display:inline-grid; place-items:center; flex:none; width:32px; height:32px; overflow:hidden; border-radius:50%; color:var(--aether-color-text-soft); background:var(--aether-color-bg-control); font:11px var(--aether-font-family); }
+.aui-avatar[data-size=small] { width:24px; height:24px; font-size:9px; }
+.aui-avatar img { width:100%; height:100%; object-fit:cover; }
+.aui-password-field { display:flex; position:relative; width:100%; min-width:0; }
+.aui-password-field > input { padding-right:36px; }
+.aui-password-field > button { position:absolute; right:2px; top:50%; transform:translateY(-50%); }
+.aui-choice-card { border:1px solid var(--aether-color-border); border-radius:var(--aether-radius-control); padding:12px; min-width:0; }
+.aui-choice-card[data-selected=true] { border-color:var(--aether-color-border-focus); }
+.aui-choice-card[data-disabled=true] { opacity:.5; }
+.aui-choice-card > label { display:flex; align-items:flex-start; gap:8px; cursor:pointer; font:12px var(--aether-font-family); }
+.aui-choice-card input { margin:2px 0 0; accent-color:var(--aether-color-accent); }
+.aui-choice-card strong,.aui-settings-link strong,.aui-structure-step strong { display:block; font-weight:500; }
+.aui-choice-card small,.aui-settings-link small,.aui-structure-step small { display:block; color:var(--aether-color-text-dim); font-size:11px; line-height:1.5; margin-top:3px; }
+.aui-choice-card-detail { margin-left:auto; flex:none; text-align:right; }
+.aui-choice-card-content { padding:12px 0 0 21px; }
+.aui-settings-link { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; padding:12px 0; border:0; border-radius:var(--aether-radius-row); text-align:left; cursor:pointer; background:transparent; color:var(--aether-color-text); font:12px var(--aether-font-family); }
+.aui-settings-link:hover { background:var(--aether-color-bg-hover); }
+.aui-settings-link:disabled { opacity:.5; cursor:default; }
+.aui-settings-link[data-destructive=true] strong { color:var(--aether-color-error); }
+.aui-settings-link svg { width:14px; height:14px; flex:none; color:var(--aether-color-text-dim); }
+/* The card owns its radio's keyboard focus. Nested content retains its own
+   indicator; pointer selection never adds a second frame around the card. */
+.aui-choice-card > label > input:focus { outline:none; box-shadow:none; }
+.aui-choice-card:has(> label > input:focus-visible) {
+  border-color:transparent;
+  outline:2px solid var(--aether-color-border-focus);
+  outline-offset:-2px;
+  box-shadow:none;
+}
+.aui-settings-link:focus-visible { outline:2px solid var(--aether-color-border-focus); outline-offset:-2px; box-shadow:none; }
+.aui-structure-step { display:flex; align-items:flex-start; gap:10px; font:12px var(--aether-font-family); }
+.aui-structure-step-marker { display:grid; place-items:center; flex:none; width:16px; height:16px; border:1px solid var(--aether-color-border-control); border-radius:50%; color:var(--aether-color-text-dim); font-size:9px; }

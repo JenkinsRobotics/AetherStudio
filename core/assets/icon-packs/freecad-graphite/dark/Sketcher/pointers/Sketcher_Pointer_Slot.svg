@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32" id="svg12" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_Slot.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g style="fill:none;stroke:#5bbdff;stroke-width:1.1" id="g6">
+    <path d="m 49.111349,34.862955 c 14,0 14,20 0,20 h -20 c -14,0 -14,-20 0,-20 z" id="path2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="29.111349" cy="44.862953" id="circle4" style="stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="49.111347" cy="44.862953" id="circle4-1" style="fill:none;stroke:#5bbdff;stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g style="stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter" id="g10">
+    <path d="m 16,3 v 9 m 0,8 v 9 M 3,16 h 9 m 8,0 h 9" id="path8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

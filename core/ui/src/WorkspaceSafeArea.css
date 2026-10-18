@@ -1,0 +1,97 @@
+/* The workspace background always fills the available area. Docked bars
+   participate in layout; floating bars overlay it. */
+.aui-shell > .aui-shell-body > .aui-shell-area > .aui-shell-main {
+  box-sizing: border-box;
+  min-height: 0;
+  padding: 0;
+}
+.aui-shell > .aui-shell-body > .aui-shell-area > .aui-shell-side[hidden] { display: none; }
+/* Tables, galleries and forms use an inner safe rectangle, leaving the canvas
+   background full size. Absolute children remain relative to this rectangle. */
+.aui-shell-center > .aui-shell-content,
+.aui-shell-center-canvas > .aui-shell-content {
+  position: absolute;
+  inset: var(--aui-workspace-inset-top, 10px) var(--aui-workspace-inset-right, 10px)
+    max(var(--aui-workspace-inset-bottom, 10px), var(--aui-bottom-dock-clearance, 0px)) var(--aui-workspace-inset-left, 10px);
+  min-width: 0;
+  min-height: 0;
+  transition: inset var(--aui-shell-motion-duration, var(--aether-motion-base)) var(--aui-shell-motion-easing, var(--aether-motion-ease));
+}
+/* Shared HUD anchors consume safety measurements without resizing a renderer.
+   Products only identify the edge; the shell supplies measured clearance. */
+.aui-shell [data-workspace-overlay~="top"] { top: max(16px, var(--aui-workspace-inset-top, 10px)); }
+.aui-shell [data-workspace-overlay~="right"] { right: max(16px, var(--aui-workspace-inset-right, 10px)); }
+.aui-shell [data-workspace-overlay~="bottom"] { bottom: max(16px, var(--aui-workspace-inset-bottom, 10px)); }
+.aui-shell [data-workspace-overlay~="left"] { left: max(16px, var(--aui-workspace-inset-left, 10px)); }
+/* Tall floating sidebars must also clear the toolbar. Their available height
+   starts below its measured footprint, so long inspectors scroll instead of
+   covering toolbar commands. Canvas-revealed sidebars use the same region. */
+.aui-shell > .aui-shell-body > .aui-shell-area > .aui-shell-fledge,
+.aui-shell > .aui-shell-body > .aui-shell-area > .aui-shell-edge > .aui-shell-fledge {
+  top: var(--aui-workspace-inset-top, 10px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .aui-shell-center > .aui-shell-content,
+.aui-shell-center-canvas > .aui-shell-content { transition: none; }
+}
+
+/* Bottom tools belong to the middle column; docked chrome participates in flow. */
+.aui-shell-center[data-has-bottom-dock] { display: flex; flex-direction: column; }
+.aui-shell-center-canvas { position: relative; flex: 1; min-width: 0; min-height: 0; }
+
+/* Framed content has already cleared the chrome. Its own canvas HUDs use local
+   edges, and its bottom editor stays between the same side panels. */
+.aui-shell-content > * {
+  --aui-workspace-inset-top: 0px;
+  --aui-workspace-inset-right: 0px;
+  --aui-workspace-inset-bottom: 0px;
+  --aui-workspace-inset-left: 0px;
+  --aui-bottom-dock-clearance: 0px;
+}
+.aui-shell-center:has(> .aui-shell-center-canvas > .aui-shell-content) > .aui-workspace-bottom-dock[data-layout="floating"] {
+  left: var(--aui-workspace-inset-left, 10px);
+  right: var(--aui-workspace-inset-right, 10px);
+}
+
+/* Three-column body (Jonathan, 2026-10-11): floating side columns run the full
+   height, level with the toolbar, and the floating toolbar centres in the
+   middle column between them. Overrides the earlier clear-the-toolbar rule. */
+.aui-shell > .aui-shell-body > .aui-shell-area > .aui-shell-fledge { top: 14px; }
+.aui-shell > .aui-shell-body > .aui-shell-area > .aui-shell-fltoolbar {
+  left: var(--aui-workspace-inset-left, 0px);
+  right: var(--aui-workspace-inset-right, 0px);
+}
+/* Column accessories (WorkspaceShell sideTop/sideBottom). */
+.aui-shell-side-accessory { flex: none; display: flex; pointer-events: auto; }
+.aui-shell-fledge--right > .aui-shell-side-accessory { justify-content: flex-end; }
+.aui-shell-side-accessory--bottom { margin-top: auto; }
+.aui-shell-fledge > .aui-shell-side-accessory + .aui-tabbed-sidebar { margin-top: 10px; }
+.aui-shell-fledge > .aui-tabbed-sidebar { flex-shrink: 1; min-height: 0; }
+.aui-shell-fledge > .aui-tabbed-sidebar + .aui-shell-side-accessory--bottom { padding-top: 10px; }
+.aui-shell-edge-accessory { position: absolute; z-index: 6; }
+.aui-shell-edge-accessory--left { left: 16px; }
+.aui-shell-edge-accessory--right { right: 16px; }
+.aui-shell-edge-accessory--top { top: 16px; }
+.aui-shell-edge-accessory--bottom { bottom: max(16px, var(--aui-bottom-dock-clearance, 0px)); }
+/* With column widgets the column can be wider than the sidebar (the selection
+   filter is); the sidebar hugs its own outer edge, never floating mid-column. */
+.aui-shell-fledge--right:has(> .aui-shell-side-accessory) > .aui-tabbed-sidebar { align-self: flex-end; }
+.aui-shell-fledge--left:has(> .aui-shell-side-accessory) > .aui-tabbed-sidebar { align-self: flex-start; }
+
+/* Side anchors centre along their edge; horizontal anchors stay at their named
+   edge throughout collapse. Column accessories keep their own edge slots. */
+.aui-shell .aui-shell-fledge[data-sidebar-tabs] > .aui-tabbed-sidebar {
+  margin-block: auto;
+}
+.aui-shell .aui-shell-fledge[data-sidebar-anchor="top"] > .aui-tabbed-sidebar {
+  margin-block: 0 auto;
+}
+.aui-shell .aui-shell-fledge[data-sidebar-anchor="bottom"] > .aui-tabbed-sidebar {
+  margin-block: auto 0;
+}
+.aui-shell .aui-shell-fledge[data-sidebar-anchor="left"] > .aui-tabbed-sidebar { align-self: flex-start; }
+.aui-shell .aui-shell-fledge[data-sidebar-anchor="right"] > .aui-tabbed-sidebar { align-self: flex-end; }
+.aui-shell .aui-shell-fledge[data-sidebar-tabs] > .aui-tabbed-sidebar + .aui-shell-side-accessory--bottom {
+  margin-top: 0;
+  padding-top: 0;
+}

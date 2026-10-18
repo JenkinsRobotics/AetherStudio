@@ -1,0 +1,9 @@
+.aui-thumbnail-picker { min-width:0; font:12px var(--aether-font-family); color:var(--aether-color-text); }
+.aui-thumbnail-picker h3 { margin:0 0 12px; font-size:12px; font-weight:600; }
+.aui-thumbnail-picker__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.aui-thumbnail-picker__grid > .aui-button { display:flex; flex-direction:column; align-items:stretch; gap:6px; min-width:0; text-align:left; padding:5px 5px 9px; white-space:normal; border:0; border-radius:8px; background:var(--aether-color-bg-control); }
+.aui-thumbnail-picker__grid > .aui-button[aria-pressed="true"] { background:var(--aether-color-accent); color:var(--aether-color-text-on-selected); }
+.aui-thumbnail-picker__preview { display:block; aspect-ratio:16/10; overflow:hidden; border-radius:5px; background:var(--aether-color-bg-inset); }
+.aui-thumbnail-picker__preview > * { width:100%; height:100%; object-fit:cover; }
+.aui-thumbnail-picker__label, .aui-thumbnail-picker small { padding:0 3px; font-size:11px; }
+.aui-thumbnail-picker small { opacity:.7; font-size:10px; font-weight:400; }

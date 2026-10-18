@@ -1,16 +1,27 @@
 /** The suite-standard floating feature window (Onshape-anatomy):
- * header = title + green ✓ accept + red ✕ discard, draggable; body takes an
+ * standard header = icon/title + green ✓ accept + red ✕ discard; compact keeps
+ * icon/title above a shared body and bottom Cancel/Apply. Headers drag. Body takes an
  * entities box, inline parameter rows, and a status line. Every feature
  * editor (plane, extrude, mirror, mates…) mounts through this one module. */
+import { createFeatureWindowAccessories, type FeatureWindowHelp } from "./FeatureWindowAccessories";
 
 export interface FeatureWindowOptions {
   viewport: HTMLElement;
   className: string;
   title: string;
+  /** Presentation only; every variant uses the same body builders and validation. */
+  variant?: "standard" | "spacious" | "compact";
+  /** Optional shared artwork node, displayed beside the title. */
+  headerIcon?: HTMLElement;
   acceptLabel: string;
   discardLabel: string;
   onAccept: () => void | Promise<void>;
   onDiscard: () => void | Promise<void>;
+  /** Legacy help metadata. No content is rendered inside the accessory row. */
+  help?: FeatureWindowHelp;
+  /** Initial icon state; the Help toggle never expands the editor. */
+  helpActive?: boolean;
+  onHelpToggle?: (active: boolean) => void;
 }
 
 export interface FeatureWindow {
@@ -44,6 +55,10 @@ export interface FeatureWindow {
     label: string,
     options?: { kind?: "checkbox" | "disclosure"; open?: boolean; onToggle?: (open: boolean) => void },
   ) => FeatureSubsection;
+  /** Add an icon toggle before Help. Callback receives its new on/off state. */
+  actionIcon: (iconSvg: string, title: string, onToggle: (active: boolean) => void, active?: boolean) => HTMLElement;
+  /** Synchronize app-owned Help mode without firing onHelpToggle. */
+  setHelpActive: (active: boolean) => void;
 }
 
 export interface FeaturePicker {
@@ -62,32 +77,51 @@ export interface FeatureSubsection {
 }
 
 export function openFeatureWindow(options: FeatureWindowOptions): FeatureWindow {
+  const compact = options.variant === "compact";
+  const lifetime = new (document.defaultView?.AbortController ?? AbortController)();
   const panel = document.createElement("aside");
   panel.className = `aui-float-panel aui-feature-window ${options.className}`;
-  const header = document.createElement("div");
+  if (options.variant === "spacious") panel.classList.add("aui-feature-window--spacious");
+  if (compact) panel.classList.add("aui-feature-window--compact");
+  else if (options.variant !== "spacious") panel.classList.add("aui-feature-window--standard");
+  const header: HTMLElement = document.createElement(compact ? "header" : "div");
   header.className = "aui-float-panel-header";
   const title = document.createElement("span");
   title.className = "aui-float-panel-title";
   title.textContent = options.title;
+  title.title = options.title;
+  if (options.headerIcon) {
+    options.headerIcon.classList.add("aui-feature-header-icon");
+    options.headerIcon.setAttribute("aria-hidden", "true");
+    header.append(options.headerIcon);
+  }
   header.append(title);
   const actions = document.createElement("span");
   actions.className = "aui-float-panel-actions";
   const accept = document.createElement("button");
   accept.type = "button";
-  accept.className = "aui-feature-accept";
-  accept.textContent = "✓";
+  accept.className = compact ? "aui-button aui-button--primary" : "aui-feature-accept";
+  accept.textContent = compact ? options.acceptLabel : "✓";
   accept.setAttribute("aria-label", options.acceptLabel);
   const discard = document.createElement("button");
   discard.type = "button";
-  discard.className = "aui-feature-discard";
-  discard.textContent = "✕";
+  discard.className = compact ? "aui-button aui-button--flat" : "aui-feature-discard";
+  discard.textContent = compact ? options.discardLabel : "✕";
   discard.setAttribute("aria-label", options.discardLabel);
-  actions.append(accept, discard);
-  header.append(actions);
+  if (compact) {
+    actions.className = "aui-feature-commit-actions";
+    actions.append(discard, accept);
+  } else {
+    actions.append(accept, discard);
+    header.append(actions);
+  }
   panel.append(header);
   const body = document.createElement("div");
   body.className = "aui-float-panel-body";
   panel.append(body);
+  if (compact) panel.append(actions);
+  const accessories = createFeatureWindowAccessories(options);
+  panel.append(accessories.element);
   const status = document.createElement("p");
   status.setAttribute("role", "status");
 
@@ -117,12 +151,14 @@ export function openFeatureWindow(options: FeatureWindowOptions): FeatureWindow 
   panel.addEventListener("keydown", (e) => {
     const target = e.target as HTMLElement | null;
     if (e.key !== "Enter" || target?.tagName === "TEXTAREA") return;
+    // Buttons and selection controls keep their own keyboard activation.
+    if (target?.closest("button, a, input[type=checkbox], input[type=radio]")) return;
     // Inside a form, native implicit submission already handles Enter.
     if (target?.closest?.("form")) return;
     e.preventDefault();
-    void options.onAccept();
+    if (!accept.disabled) void options.onAccept();
   });
-  const close = () => panel.remove();
+  const close = () => { lifetime.abort(); panel.remove(); };
   const error = document.createElement("p");
   error.className = "aui-feature-error";
   error.hidden = true;
@@ -173,6 +209,9 @@ export function openFeatureWindow(options: FeatureWindowOptions): FeatureWindow 
     element.className = "aui-feature-row";
     const caption = document.createElement("span");
     caption.textContent = label;
+    for (const control of controls) {
+      if (control.matches("input, select, textarea") && !control.hasAttribute("aria-label")) control.setAttribute("aria-label", label);
+    }
     element.append(caption, ...controls);
     body.append(element);
     body.append(status);
@@ -249,7 +288,7 @@ export function openFeatureWindow(options: FeatureWindowOptions): FeatureWindow 
     };
     document.addEventListener("pointerdown", (event) => {
       if (!element.contains(event.target as Node)) close();
-    });
+    }, { signal: lifetime.signal });
     element.addEventListener("keydown", (event) => {
       if (event.key === "Escape") close();
     });
@@ -326,7 +365,9 @@ export function openFeatureWindow(options: FeatureWindowOptions): FeatureWindow 
     };
   };
 
+  const actionIcon: FeatureWindow["actionIcon"] = accessories.actionIcon;
+
   options.viewport.append(panel);
   body.append(status);
-  return { panel, body, status, close, setError, entitiesBox, row, tabs, picker, subsection };
+  return { panel, body, status, close, setError, entitiesBox, row, tabs, picker, subsection, actionIcon, setHelpActive: accessories.setHelpActive };
 }

@@ -2,16 +2,16 @@
 
 Reference implementation (working, in the demo app — read these before coding):
 
-- `dev/AnimaStudio Demo/Sources/AnimaStudioDemo/WorkspaceShell.swift`
+- `dev/AnimaStudio Demo/Sources/AnimationStudioDemo/WorkspaceShell.swift`
   — `WorkspaceScaffold`, `ToolSidebar`, `ToolDensity`, `ToolGroup`,
   `ToolCategory`, `PromptBar`.
-- `dev/AnimaStudio Demo/Sources/AnimaStudioDemo/Sidebars.swift`
+- `dev/AnimaStudio Demo/Sources/AnimationStudioDemo/Sidebars.swift`
   — `WorkspaceSidebar`, `SidebarRail`, `SidebarTab`, `ViewSidebar`, `ViewPanel`,
   `ViewRail`, `ViewSidebarState`, `SidebarChrome`.
-- `dev/AnimaStudio Demo/Sources/AnimaStudioDemo/Layout.swift`
+- `dev/AnimaStudio Demo/Sources/AnimationStudioDemo/Layout.swift`
   — `LayoutState`, `LayoutPreset` (`floating`/`docked`/`canvas`),
   `apply(_:)`, `detectedPreset`.
-- `dev/AnimaStudio Demo/Sources/AnimaStudioDemo/Workspaces/DesignWorkspace.swift`
+- `dev/AnimaStudio Demo/Sources/AnimationStudioDemo/Workspaces/DesignWorkspace.swift`
   — the canonical adoption. Copy this shape.
 
 ---

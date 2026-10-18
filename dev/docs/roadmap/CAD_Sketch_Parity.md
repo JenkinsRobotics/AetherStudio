@@ -1,8 +1,66 @@
 # CAD sketch parity acceptance ledger
 
-Updated 2026-09-09. This is an implementation ledger, not a claim of complete parity.
+Updated 2026-10-14. This is an implementation ledger, not a claim of complete parity.
+
+Current finish gates and architecture: [CAD_Sketch_Parity_Gates.md](CAD_Sketch_Parity_Gates.md). Older dated rows are historical checkpoints, not the current completion checklist.
 
 Reference inventory: [Onshape sketch tools](https://cad.onshape.com/help/Content/Sketch/sketch_tools.htm), [official icon glossary](https://cad.onshape.com/help/Content/Home/icon_glossary.htm).
+
+## CAD sketch tools and handoff — installed 2026-10-14
+
+`cad-sketch-tool-first-20261014-r1` adds persistent canvas-first constraint
+picking, retries/cancellation/one-step undo, complete Coincident point sets,
+and automatic all-region handoff from an open sketch into Extrude. Explicit
+A/B editing and approved shared feature windows remain. Whole-entity Fix,
+conics, Pierce and broader spline/reference parity remain open; the explicit
+sketch-parity goal is active. Current finish gates are in
+`dev/docs/roadmap/CAD_Sketch_Parity_Gates.md`.
+
+341 distinct focused tests, types/build and real built-browser/FreeCAD
+create/constrain/extrude/reopen/dimension/rebuild checks pass. Three R7 × 10mm
+cylinders each measure1539.380400mm³ within0.00001mm³. All3507 CAD assets and59
+worker modules match; current UI showcase/Map/session/native/other apps/data
+are preserved. Store counts remain32 documents,609 operations/revisions,
+442 blobs and6 uploads; PostgreSQL not restarted. Installed entry verified
+through sign-in only; native modeling proof uses the matching isolated fixture.
+Evidence: `../Aether-CAD/.verification/sketch-tool-first-2026-10-14/RESULTS.md`.
+
+## Selection constraint workflow — 2026-10-13 (installed)
+
+Constraint commands now preserve and consume complete selections. Horizontal/Vertical
+cover multiple lines or point sets; Equal/Parallel/Concentric link compatible sets;
+Fix handles editable points. Midpoint accepts either pick order. Canonical solves
+commit atomically with one Undo, preserve existing dimension drivers, reject mixed
+or conflicting sets without partial mutation, and avoid repeated group relations.
+The approved feature editor exposes a selected-geometry count/toggle and retains
+manual A/B and sequential projected picking. No new parked-engine algorithms.
+
+215 focused tests, full types/build and real browser/FreeCAD checks pass: three
+circles constrained, undone/redone, resized, extruded, reopened and resized again
+with three correct downstream solids. Generation `cad-sketch-constraints-20261013-r1`
+is installed;3507 hashes/59 worker matches verified, Map/native/session/data preserved.
+The disposable browser session is not signed into the installation; installed
+entry-point authentication is verified, modeling proof uses the matching fixture.
+Full parity remains open, including whole-curve Fix/unfix, tool-first constraints,
+Pierce/conic and broader spline/reference/native-solver acceptance. Evidence:
+`../Aether-CAD/.verification/sketch-constraints-2026-10-13/RESULTS.md`.
+
+## Rectangle creation and center-node interaction — 2026-10-13
+
+Qualified and installed in `cad-sketch-creation-20261013-r2`: explicit center node
+presentation/picking/snap names, two-click and click-drag rectangle placement,
+Alt-square Equal relationship, immediate driving width/height with unit conversion,
+external initial dimension labels, mixed pointer/typed origin retention, and
+editable/reopenable constraints. Existing canonical relations/solver were reused;
+no new parked-engine algorithms.217 distinct focused tests, source/candidate types,
+build and real native-browser sketch/edit/extrude/reopen checks pass. Native solid:
+60×30×10mm, volume17,999.999998889394mm³. See the CAD verification RESULTS file.
+
+Remaining acceptance: dedicated Pierce and conic tools are absent from the current
+catalogs. Do not infer parity from tool names: qualify all supported pairings,
+external-reference updates, spline editing, large constrained sketches and native
+solver behavior independently. Also repair the standalone imported-file Show code
+case found in the fixture (hosted tab actions already have separate coverage).
 
 ## Reflected editable text frames — 2026-09-09
 

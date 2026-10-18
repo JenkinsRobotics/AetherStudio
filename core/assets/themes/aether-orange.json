@@ -1,0 +1,29 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "aether-orange",
+  "name": "Aether Orange",
+  "description": "Aether Studio with the orange accent.",
+  "extends": "aether-studio",
+  "modes": {
+    "dark": {
+      "color-accent": "#ff9a4d",
+      "color-accent-strong": "#ff9a4d",
+      "color-accent-icon": "#ff9a4d",
+      "color-bg-selected": "#ff9a4d",
+      "color-border-focus": "#ff9a4d",
+      "color-border-control-hover": "#ff9a4d",
+      "color-selection-edge": "#ff9a4d",
+      "viewport-selection": "#ff9a4d"
+    },
+    "light": {
+      "color-accent": "#ec6d1f",
+      "color-accent-strong": "#ec6d1f",
+      "color-accent-icon": "#ec6d1f",
+      "color-bg-selected": "#ec6d1f",
+      "color-border-focus": "#ec6d1f",
+      "color-border-control-hover": "#ec6d1f",
+      "color-selection-edge": "#ec6d1f",
+      "viewport-selection": "#ec6d1f"
+    }
+  }
+}

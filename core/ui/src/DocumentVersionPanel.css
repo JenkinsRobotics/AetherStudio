@@ -1,0 +1,384 @@
+.aui-version-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: var(--aether-color-text);
+  font: 12px/1.45 var(--aether-font-family);
+}
+.aui-shell-panel-body:has(> .aui-version-panel),
+.aui-shell-panel-host:has(> .aui-version-panel) {
+  display: flex;
+  flex-direction: column;
+}
+.aui-version-head {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 8px 4px;
+  flex: none;
+}
+.aui-version-head h3 {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  margin: 0;
+  font-weight: var(--aether-font-weight-strong);
+}
+.aui-version-head-actions,
+.aui-version-tools {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.aui-version-panel .aui-icon-button {
+  height: 24px;
+  width: 24px;
+  min-height: 0;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--aether-color-text-dim);
+}
+.aui-version-panel .aui-icon-button:hover:not(:disabled) {
+  background: var(--aether-color-bg-hover);
+}
+.aui-version-panel .aui-icon-button svg {
+  width: 16px;
+  height: 16px;
+}
+.aui-version-tools {
+  padding: 0 8px 6px;
+  flex: none;
+}
+.aui-version-tools > span {
+  margin-left: auto;
+  color: var(--aether-color-text-dim);
+  font-size: 10px;
+}
+.aui-version-search {
+  margin: 4px 8px;
+  position: relative;
+  flex: none;
+}
+.aui-version-search > svg {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  color: var(--aether-color-text-dim);
+  pointer-events: none;
+}
+.aui-version-panel input,
+.aui-version-panel textarea,
+.aui-version-panel select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  border: 1px solid var(--aether-color-border);
+  border-radius: var(--aether-radius-field);
+  background: var(--aether-color-bg-control);
+  color: inherit;
+  padding: 5px 6px;
+}
+.aui-version-search input {
+  height: 28px;
+  padding-right: 26px;
+}
+.aui-version-columns,
+.aui-version-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 44%);
+  column-gap: 8px;
+}
+.aui-version-columns {
+  flex: none;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--aether-color-border);
+  color: var(--aether-color-text-dim);
+  font-size: 11px;
+  font-weight: var(--aether-font-weight-strong);
+}
+.aui-version-graph-scroll {
+  flex: 1 1 auto;
+  min-height: 80px;
+  overflow: auto;
+}
+.aui-version-graph-content {
+  position: relative;
+}
+.aui-version-links {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+.aui-version-links path {
+  stroke: var(--aether-color-accent);
+  stroke-width: 1.5;
+  fill: none;
+}
+.aui-version-graph-content ol,
+.aui-version-recovery ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.aui-version-row {
+  position: relative;
+  width: 100%;
+  height: 52px;
+  box-sizing: border-box;
+  align-items: start;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.aui-version-row:hover {
+  background: var(--aether-color-bg-hover);
+}
+.aui-version-row[aria-pressed="true"] {
+  background: var(--aether-color-bg-selected);
+  color: var(--aether-color-text-on-selected);
+}
+.aui-version-row:focus-visible {
+  outline: 2px solid var(--aether-color-accent);
+  outline-offset: -2px;
+}
+.aui-version-marker {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 9px;
+  width: 16px;
+  height: 16px;
+  z-index: 2;
+  background: var(--aether-color-bg-panel);
+  color: var(--aether-color-accent);
+}
+.aui-version-marker svg {
+  width: 14px;
+  height: 14px;
+}
+.aui-version-row[aria-pressed="true"] .aui-version-marker {
+  background: var(--aether-color-bg-selected);
+  color: var(--aether-color-text-on-selected);
+}
+.aui-version-name,
+.aui-version-modified {
+  min-width: 0;
+}
+.aui-version-name strong,
+.aui-version-name small,
+.aui-version-modified span,
+.aui-version-modified small {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.aui-version-modified,
+.aui-version-name small {
+  font-size: 10px;
+  opacity: 0.8;
+}
+.aui-version-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  flex: none;
+  margin: 0;
+  padding: 10px;
+  color: var(--aether-color-text-dim);
+  font-size: 11px;
+}
+.aui-version-legend div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.aui-version-legend dt {
+  display: flex;
+}
+.aui-version-legend svg {
+  width: 14px;
+  height: 14px;
+}
+.aui-version-legend dd {
+  margin: 0;
+}
+.aui-version-foot {
+  flex: none;
+  padding: 5px 8px;
+  border-top: 1px solid var(--aether-color-border);
+  color: var(--aether-color-text-faint);
+  font-size: 10px;
+}
+.aui-version-error {
+  margin: 4px 8px;
+  color: var(--aether-color-error);
+}
+.aui-version-operation {
+  position: relative;
+  flex: 0 1 auto;
+  overflow: auto;
+  max-height: 60%;
+  margin: 4px 8px 8px;
+  padding: 28px 0 8px;
+  border-bottom: 1px solid var(--aether-color-border);
+}
+.aui-version-operation > .aui-version-dismiss {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.aui-version-operation form,
+.aui-version-operation label {
+  display: grid;
+  gap: 6px;
+}
+.aui-version-operation > *,
+.aui-version-operation form > * {
+  margin-bottom: 6px;
+}
+.aui-version-operation pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.aui-version-recovery {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 8px;
+}
+.aui-version-recovery h4 {
+  margin: 12px 0 4px;
+}
+.aui-version-recovery p {
+  margin: 0 0 10px;
+  color: var(--aether-color-text-dim);
+  font-size: 11px;
+}
+.aui-version-recovery li > button {
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  padding: 6px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid var(--aether-color-border);
+  background: transparent;
+}
+.aui-version-recovery button[aria-pressed="true"] {
+  background: var(--aether-color-bg-selected);
+  color: var(--aether-color-text-on-selected);
+}
+.aui-version-recovery small {
+  opacity: 0.7;
+}
+.aui-version-panel:is([aria-label="Create version"], [aria-label="Create branch"]) {
+  height: auto;
+}
+.aui-version-panel:is([aria-label="Create version"], [aria-label="Create branch"]) .aui-version-operation {
+  max-height: none;
+  padding-top: 4px;
+}
+.aui-version-head-actions .aui-icon-button {
+  width: 20px;
+  padding: 3px;
+}
+.aui-version-panel .aui-version-graph-content li {
+  padding: 0;
+  border: 0;
+}
+.aui-version-panel .aui-version-operation form {
+  display: grid;
+}
+
+.aui-version-create-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.aui-version-dialog .aui-dialog { width: min(640px, 92vw); }
+.aui-version-dialog .aui-version-operation { margin: 0; padding: 0; border: 0; }
+.aui-version-dialog .aui-version-operation form { gap: 14px; }
+.aui-version-dialog textarea { min-height: 110px; resize: vertical; }
+.aui-version-dialog .aui-version-create-actions {
+  margin: 2px -14px -13px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--aether-color-border);
+}
+
+.aui-version-tools .aui-icon-button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--aether-color-border);
+  border-radius: var(--aether-radius-field);
+}
+.aui-version-tools .aui-icon-button[aria-pressed="true"] {
+  color: var(--aether-color-text);
+  background: var(--aether-color-bg-control);
+}
+.aui-version-entry { position: relative; }
+.aui-version-expand, .aui-version-no-changes {
+  position: absolute;
+  top: 28px;
+  max-width: 52%;
+  color: var(--aether-color-text-dim);
+  font: inherit;
+  font-size: 10px;
+}
+.aui-version-expand {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.aui-version-expand svg { width: 11px; height: 11px; }
+.aui-version-entry:has(.aui-version-row[aria-pressed="true"]) :is(.aui-version-expand, .aui-version-no-changes) { color: var(--aether-color-text-on-selected); }
+.aui-version-changes button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.aui-version-changes button:hover { background: var(--aether-color-bg-hover); }
+.aui-version-changes button[aria-pressed="true"] { background: var(--aether-color-bg-selected); color: var(--aether-color-text-on-selected); }
+.aui-version-changes button > svg { flex: none; width: 14px; height: 14px; }
+.aui-version-changes button > span { min-width: 0; }
+.aui-version-changes :is(strong, small) { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.aui-version-changes strong { font-weight: normal; }
+.aui-version-changes small { font-size: 10px; opacity: .8; }
+.aui-version-legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; }
+.aui-version-legend div:last-child { grid-column: 1 / -1; }
+.aui-version-legend svg { flex: none; }
+.aui-version-create-actions svg, .aui-version-operation .aui-button svg { width: 15px; height: 15px; flex: none; }

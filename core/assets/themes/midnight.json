@@ -1,0 +1,25 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "midnight",
+  "name": "Midnight",
+  "description": "Aether Studio pushed down: near-black surfaces, stronger borders, the same blue accent (the native High Contrast preset).",
+  "extends": "aether-studio",
+  "modes": {
+    "dark": {
+      "color-bg-app": "#06090f",
+      "color-bg-shell": "#0d121b",
+      "color-bg-bar": "#0d121b",
+      "color-bg-panel": "#0d121b",
+      "color-bg-rail": "#0d121b",
+      "color-bg-inset": "#151c28",
+      "color-bg-control": "#151c28",
+      "color-bg-control-hover": "#1c2636",
+      "color-border": "rgba(255, 255, 255, 0.11)",
+      "color-border-control": "rgba(255, 255, 255, 0.2)",
+      "color-text-dim": "#b4bcc8",
+      "viewport-bg-top": "#0f1520",
+      "viewport-bg-bottom": "#05070b"
+    },
+    "light": {}
+  }
+}

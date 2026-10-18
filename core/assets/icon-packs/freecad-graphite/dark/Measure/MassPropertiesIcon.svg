@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 16.933333 16.933333" version="1.1" id="svg5" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Measure/Gui/Resources/icons/MassPropertiesIcon.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2">
+    <linearGradient id="linearGradient5">
+      <stop style="stop-color:#48596e;stop-opacity:1" offset="0" id="stop5" />
+      <stop style="stop-color:#61758c;stop-opacity:1" offset="1" id="stop6" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient5" id="linearGradient6" x1="14.816666" y1="7.1542969" x2="8.4667969" y2="7.1542969" gradientUnits="userSpaceOnUse" spreadMethod="reflect" gradientTransform="translate(0,0.79375016)" />
+  </defs>
+  <g id="g3" transform="translate(0,-1.0583333)">
+    <path style="fill:#596b81;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="M 3.9687383,15.875 H 12.964595 L 11.747505,7.408332 H 5.1858272 Z" id="path2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient6);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" d="M 5.6484375,7.9480471 4.5976562,15.336589 H 12.335938 L 11.285156,7.9480471 Z" id="path4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle style="mix-blend-mode:normal;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" id="circle1" cx="8.4666662" cy="4.7624993" r="2.1166666" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#61758c;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#e5edf7;stop-opacity:1" d="m 8.4667969,2.3914064 c -1.3028191,10e-8 -2.3710938,1.0682747 -2.3710938,2.3710938 0,1.3028191 1.0682747,2.3710937 2.3710938,2.3710937 1.3028192,0 2.3710941,-1.0682746 2.3710941,-2.3710937 0,-1.3028191 -1.0682749,-2.3710937 -2.3710941,-2.3710938 z m 0,0.5097657 c 1.0388127,0 1.8613281,0.8225154 1.8613281,1.8613281 0,1.0388127 -0.8225154,1.8613281 -1.8613281,1.8613281 -1.0388127,0 -1.8613282,-0.8225154 -1.8613282,-1.8613281 0,-1.0388127 0.8225155,-1.8613281 1.8613282,-1.8613281 z" id="circle3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

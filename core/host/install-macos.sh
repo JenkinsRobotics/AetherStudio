@@ -24,50 +24,40 @@ if [[ "${1:-}" == "--check" ]]; then
   print "Prerequisites passed. Ready to install."
   exit 0
 fi
+install_args=("$@")
+if [[ $# -eq 0 && -t 0 ]]; then
+  current_data=$("$studio_python" -c 'from core.host.installation import default_directory; print(default_directory())')
+  print "Live server data must be on a local disk. Cloud folders can receive backup archives."
+  read "selected_data?Server data folder [$current_data]: "
+  install_args=(--data "${selected_data:-$current_data}")
+fi
+# Validate arguments and storage before the application build.
+"$studio_python" - "${install_args[@]}" <<'PY'
+import argparse
+from pathlib import Path
+from core.host.installation import local_directory, default_directory
+parser = argparse.ArgumentParser()
+parser.add_argument('--data', type=Path)
+parser.add_argument('--backup-directory')
+args = parser.parse_args()
+print('Server data:', local_directory(args.data or default_directory()))
+PY
 print "[2/5] Preparing the engine and web applications"
 if [[ ! -x .venv/bin/python ]]; then
   "$studio_python" -m venv .venv
 fi
 .venv/bin/python -m pip install -e .
-for package in core/ui studio 'Aether CAD' aether-animation/web; do
+.venv/bin/python core/host/build-favicons.py
+npm ci --prefix core/session --no-audit --no-fund
+for package in core/ui studio 'Aether CAD' aether-animation/web aether-map aether-sketch aether-vector aether-io; do
   print "Preparing $package"
   npm ci --prefix "$package" --no-audit --no-fund
   npm run build --prefix "$package"
 done
 print "[3/5] Installing the background host"
-.venv/bin/python - <<'PY'
-import os
-import plistlib
-import subprocess
-from pathlib import Path
-from core.host.__main__ import default_directory
-from core.host.state import Store
-root = Path.cwd()
-directory = default_directory()
-Store(directory)
-logs = directory / 'logs'
-logs.mkdir(exist_ok=True)
-plist = Path.home() / 'Library/LaunchAgents/studio.aether.host.plist'
-plist.parent.mkdir(parents=True, exist_ok=True)
-with plist.open('wb') as file:
-    plistlib.dump({
-        'Label': 'studio.aether.host',
-        'ProgramArguments': [str(root / '.venv/bin/python'), '-m', 'core.host', 'serve'],
-        'WorkingDirectory': str(root), 'RunAtLoad': True, 'KeepAlive': True,
-        'ThrottleInterval': 10, 'Umask': 63,
-        'StandardOutPath': str(logs / 'host.log'),
-        'StandardErrorPath': str(logs / 'host-error.log'),
-    }, file)
-plist.chmod(0o600)
-domain = f'gui/{os.getuid()}'
-existing = subprocess.run(['launchctl', 'print', domain + '/studio.aether.host'], capture_output=True)
-if existing.returncode == 0:
-    print('Host already installed and running; saved work has not been interrupted.')
-else:
-    subprocess.run(['launchctl', 'bootstrap', domain, str(plist)], check=True)
-PY
+.venv/bin/python -m core.host.install_macos "${install_args[@]}"
 print "[4/5] Creating browser shortcuts"
-for application in studio cad animation ui; do
+for application in studio cad animation ui map sketch vector io drive; do
   .venv/bin/python core/host/build-browser-launcher.py "$application"
 done
 print "[5/5] Opening guided setup"

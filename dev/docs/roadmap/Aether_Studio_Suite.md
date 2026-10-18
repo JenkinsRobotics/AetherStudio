@@ -7,6 +7,10 @@ Community plugin support remains explicitly future work.
 
 ## Identity and principle
 
+The [Aether branding guide](Aether_Branding.md) records Jonathan's updated
+2026-09-13 visual identity and the generated Studio, CAD, Sketch, Vector and
+Animate application marks, with links to their shared artwork masters.
+
 Aether Studio is the umbrella collection of high-quality open-source software.
 Aether CAD, Aether Animation (formerly Anima Studio), and future Aether Dynamics
 are application packages. Users should install once on their own host and open
@@ -18,7 +22,7 @@ The local repository directory is `Aether Studio`, and **Aether Studio is the
 server** — accounts, sessions, documents and protocol in `core/host/` and
 `core/session/`. The one genuinely shared package is `core/ui/` (`@aether/ui`),
 with shared artwork in `core/assets/`. The CAD engine (`@aether/core`) is
-product-owned at `Aether CAD/engine/` as of 2026-09-11; the import name is
+product-owned at `Aether CAD/aether-engine/` (2026-09-11; renamed 2026-09-12); the import name is
 unchanged. Product paths and engine protocol/format
 names remain unchanged. The remote is still
 `JenkinsRobotics/AnimaStudio`. A compatibility symlink at the old local directory
@@ -30,9 +34,9 @@ preserves existing development paths and Python virtual-environment entry points
 | --- | --- | --- |
 | CAD | `Aether CAD/package.json`, `src/`, `core/engine/src/` | Already React 19/TypeScript/Vite with Three.js and OCCT/Replicad WASM; preserve real Part and Assembly workflows |
 | Animation | `aether-animation/web/src/{App,TimelinePanel,PosePanel,MateDialog}.tsx`, `engine.ts` | Already React with shared UI and Python RPC; includes rig load/save, mate editing, posing and playback; not full archived-app parity |
-| Native UI | `aether-animation/archive/` | Swift application is archived; current web product manifests do not use PySide6 |
+| Native UI | removed 2026-09-23 (git history) | Swift application archived 2026-08-01 and deleted from the tree; current web product manifests do not use PySide6 |
 | Core | `core/engine/package.json`, `ARCHITECTURE.md` | Real shared TS modules already extracted; not yet one fully consolidated server engine |
-| Python | `animacore/bridge.py`, `aether_workspace.py`, `httpbridge.py` | Animation and persistent Assembly semantic authority remains here |
+| Python | `aether_animation/bridge.py`, `aether_workspace.py`, `httpbridge.py` | Animation and persistent Assembly semantic authority remains here |
 | Shared UI | `core/ui/src/` | Existing production controls and dock/float/canvas shell; extend these rather than fork a second suite widget system |
 | Mockup | `onshape mockup/README.md`, `components/`, `package.json` | React/TS/Vite/Tailwind/Three.js, adaptive panels and fixture modeling; useful UX reference, no exact kernel integration |
 | Dynamics | `aether-dynamics/README.md` | Scaffold only |
@@ -105,7 +109,7 @@ Cross-device sequential use comes first; concurrent editing is separate work.
    start Dynamics only when a real simulation workflow needs it.
 
 No new PySide6/Swift product rewrite is needed. Keep optional native launchers thin.
-Do not rename Python `animacore`, `.anima`, or `.animastudio` identifiers as part
+Do not rename Python `aether_animation`, `.anima`, or `.animastudio` identifiers as part
 of branding: engine consolidation and format migration need their own atomic work.
 
 

@@ -1,0 +1,92 @@
+/* The two registers read as one panel: the document's own contents, then the
+   folder it lives in. Rows are the same object in both, so moving between
+   them does not feel like moving between two widgets. */
+.aui-file-manager {
+  display: flex; flex-direction: column; gap: 8px;
+  min-height: 0; height: 100%; box-sizing: border-box;
+  padding: 10px 12px; font-size: 12px;
+}
+.aui-file-manager-head { display: flex; align-items: center; gap: 6px; }
+.aui-file-manager-head h2 { flex: 1; min-width: 0; margin: 0; font-size: 13px; font-weight: var(--aether-font-weight-strong); }
+.aui-file-manager-error { margin: 0; color: var(--aether-color-error); }
+.aui-file-manager-dim { margin: 2px 0; color: var(--aether-color-text-dim); }
+
+.aui-file-manager-search { position: relative; }
+.aui-file-manager-search input {
+  box-sizing: border-box; width: 100%; height: var(--aether-size-control);
+  padding: 0 30px 0 10px; border: 1px solid var(--aether-color-border);
+  border-radius: var(--aether-radius-field); background: var(--aether-color-bg-control);
+  color: var(--aether-color-text); font: inherit;
+}
+.aui-file-manager-search > svg { position: absolute; top: 50%; right: 9px; width: 14px; height: 14px; transform: translateY(-50%); color: var(--aether-color-text-faint); pointer-events: none; }
+
+.aui-file-manager-document { display: flex; flex-direction: column; gap: 6px; }
+.aui-file-manager-document > h3 {
+  display: flex; align-items: center; gap: 6px; margin: 0; min-width: 0;
+  color: var(--aether-color-text-dim); font-size: 12px; font-weight: var(--aether-font-weight-strong);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.aui-file-manager-document > h3 svg { flex: none; width: 13px; height: 13px; }
+.aui-file-manager-group h4 {
+  margin: 0 0 2px; font-size: 10px; font-weight: var(--aether-font-weight-strong);
+  letter-spacing: var(--aether-font-letter-caps); text-transform: uppercase;
+  color: var(--aether-color-text-faint);
+}
+/* Both registers scroll together, with the selected preview kept below. */
+.aui-file-manager-library { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+
+.aui-file-manager-group ul { list-style: none; margin: 0; padding: 0; }
+
+.aui-file-manager-path { display: flex; align-items: center; flex-wrap: wrap; gap: 1px; margin-bottom: 4px; font-size: 11px; }
+.aui-file-manager-path span { display: inline-flex; align-items: center; gap: 1px; min-width: 0; }
+.aui-file-manager-path svg { width: 10px; height: 10px; color: var(--aether-color-text-faint); }
+.aui-file-manager-path button {
+  padding: 1px 4px; border: 0; border-radius: 4px; background: none;
+  color: var(--aether-color-accent); font: inherit; cursor: pointer;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 14ch;
+}
+.aui-file-manager-path button:disabled { color: var(--aether-color-text); cursor: default; }
+.aui-file-manager-path button:hover:not(:disabled) { background: var(--aether-color-bg-hover); }
+
+.aui-file-row {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  padding: 5px 6px; border: 0; border-radius: var(--aether-radius-row);
+  background: none; color: var(--aether-color-text); font: inherit; text-align: left;
+  cursor: pointer; min-height: var(--aether-size-row);
+  transition: background-color var(--aether-motion-fast) var(--aether-motion-ease);
+}
+.aui-file-row:hover:not(:disabled):not([data-active]) { background: var(--aether-color-bg-hover); }
+.aui-file-row[data-active] { background: var(--aether-color-bg-selected); color: var(--aether-color-text-on-selected); }
+.aui-file-row:disabled { opacity: .5; cursor: default; }
+.aui-file-row-icon { display: grid; place-items: center; flex: none; width: 26px; height: 26px; color: var(--aether-color-accent); }
+.aui-file-row-icon svg { width: 17px; height: 17px; }
+.aui-file-row-icon img, .aui-file-row-icon canvas { width: 26px; height: 26px; object-fit: contain; }
+.aui-file-row[data-kind="folder"] .aui-file-row-icon { color: var(--aether-color-text-dim); }
+.aui-file-row[data-active] .aui-file-row-icon { color: inherit; }
+.aui-file-row-text { flex: 1; min-width: 0; }
+.aui-file-row-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aui-file-row-text small { display: block; color: var(--aether-color-text-faint); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aui-file-row[data-active] .aui-file-row-text small { color: inherit; opacity: .8; }
+.aui-file-row-badge {
+  flex: none; padding: 1px 6px; border: 1px solid var(--aether-color-border);
+  border-radius: var(--aether-radius-pill); color: var(--aether-color-text-dim); font-size: 10px;
+}
+.aui-file-row[data-active] .aui-file-row-badge { border-color: currentColor; color: inherit; }
+.aui-file-row-into { flex: none; width: 11px; height: 11px; color: var(--aether-color-text-faint); }
+
+.aui-file-manager-head { gap: 2px; flex-wrap: wrap; }
+.aui-file-manager-head .aui-icon-button, .aui-file-manager-head .aui-menu-button { flex: none; }
+.aui-file-manager-contents { flex: 1; min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 12px; }
+.aui-file-manager-library { flex: none; }
+.aui-file-manager-clear { align-self: flex-end; border: 0; background: none; color: var(--aether-color-accent); font: inherit; cursor: pointer; }
+.aui-file-manager-preview { flex: none; max-height: 32%; overflow: auto; border-top: 1px solid var(--aether-color-border); padding-top: 10px; }
+.aui-file-manager-preview strong { display: flex; gap: 6px; align-items: center; overflow-wrap: anywhere; }
+.aui-file-manager-preview strong svg { width: 16px; height: 16px; flex: none; }
+.aui-file-manager-preview-art { height: 112px; display: grid; place-items: center; color: var(--aether-color-text-dim); }
+.aui-file-manager-preview-art > * { max-width: 100%; max-height: 108px; object-fit: contain; }
+.aui-file-manager-preview-art > svg { width: 72px; height: 72px; }
+.aui-file-manager-preview small { color: var(--aether-color-text-dim); }
+.aui-file-manager[data-compact] .aui-file-row-text small { display: none; }
+.aui-file-manager[data-compact] .aui-file-row-icon { width: 18px; height: 18px; }
+.aui-file-manager[data-compact] .aui-file-row-icon img { width: 18px; height: 18px; }
+.aui-file-manager-scope { width: 100%; background: var(--aether-color-bg-control); color: var(--aether-color-text); border: 1px solid var(--aether-color-border); border-radius: var(--aether-radius-field); font: inherit; padding: 4px; }

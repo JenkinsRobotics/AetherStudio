@@ -1,0 +1,5 @@
+/* Shared toolbars own their material, bounds, shadow and overflow. Plain
+   command rows still receive the shell's frame. Consumers need no opt-in. */
+.aui-shell-fltoolbar[data-toolbar-frame="auto"] > .aui-float:has(.aui-workspace-ribbon, .aui-kit-tool-sidebar) {
+  display: contents;
+}

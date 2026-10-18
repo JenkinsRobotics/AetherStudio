@@ -1,0 +1,15 @@
+.overlay-container-overview { width: 100%; min-width: 0; }
+.overlay-container-overview > p, .overlay-container-intro { color: var(--aether-color-text-dim); font-size: 13px; line-height: 1.5; margin: 0 0 18px; }
+.overlay-container-intro { flex-basis: 100%; }
+.overlay-container-contract { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; margin: 24px 0; }
+.overlay-container-contract dt { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.overlay-container-contract dd { margin: 0; color: var(--aether-color-text-dim); font-size: 12px; line-height: 1.5; }
+.overlay-container-specimen { width: 340px; max-width: 100%; min-width: 0; display: grid; align-content: start; gap: 12px; }
+.overlay-container-specimen > small { color: var(--aether-color-text-dim); font-size: 11px; }
+/* Positioning only: frame, header, actions and Help come from the shared container. */
+.overlay-floating-specimen > .aui-float-panel { position: relative; max-width: 100%; max-height: none; }
+.overlay-editing-host > .aui-feature-window { position: relative; inset: auto; max-width: 100%; max-height: none; }
+.overlay-sample-content { display: grid; gap: 12px; padding: 12px; }
+.overlay-sample-content p { margin: 0; color: var(--aether-color-text-dim); font-size: 12px; line-height: 1.5; }
+.overlay-content-choice { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 11px; color: var(--aether-color-text-dim); }
+.overlay-content-choice .aui-select { width: 150px; }

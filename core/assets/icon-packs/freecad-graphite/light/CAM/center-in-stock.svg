@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" version="1.1" id="svg1820" width="32" height="32" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/center-in-stock.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g fill="none" stroke="#405269" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" id="g1816" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1">
+    <path d="M12 12h10" id="path1792" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M42 12h10" id="path1794" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M12 52h10" id="path1796" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M42 52h10" id="path1798" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M12 12v10" id="path1800" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M52 12v10" id="path1802" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M12 42v10" id="path1804" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M52 42v10" id="path1806" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M32 8v14" id="path1808" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M32 42v14" id="path1810" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M8 32h14" id="path1812" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M42 32h14" id="path1814" style="stroke-width:1.1;stroke-dasharray:none;stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <path id="circle1818" style="fill:#405269;fill-opacity:1" d="m 37,32 a 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 5,5 0 0 1 5,5 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

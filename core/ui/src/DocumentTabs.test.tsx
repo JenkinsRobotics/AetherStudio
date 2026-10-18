@@ -50,3 +50,22 @@ describe("DocumentTabs", () => {
     expect(onSelect).toHaveBeenCalledWith("two");
   });
 });
+
+it("keeps save status inside its owning tab without changing document labels", () => {
+  render(<DocumentTabs tabs={[{id:'saved',label:'Show A',status:'Saved'},{id:'pending',label:'Show B',status:'Saving…'}]} activeID="saved" onSelect={()=>{}} onClose={()=>{}} />);
+  expect(screen.getByText('Saved').closest('[role="tab"]')?.textContent).toBe('Show ASaved');
+  expect(screen.getByText('Saving…').closest('[role="tab"]')?.textContent).toBe('Show BSaving…');
+  expect(screen.getByRole('button',{name:'Close Show A'})).toBeTruthy();
+});
+
+
+it('places product actions outside selection buttons without selecting the tab', () => {
+  const select = vi.fn(), action = vi.fn();
+  render(<DocumentTabs tabs={tabs} activeID="one" onSelect={select}
+    renderTabActions={tab => <button aria-label={`Options for ${tab.label}`} onClick={() => action(tab.id)}>Options</button>} />);
+  const button = screen.getByRole('button', {name:'Options for Bracket'});
+  expect(button.closest('[role="tab"]')).toBeNull();
+  fireEvent.click(button);
+  expect(action).toHaveBeenCalledWith('two');
+  expect(select).not.toHaveBeenCalled();
+});

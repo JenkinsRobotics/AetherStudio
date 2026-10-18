@@ -1,0 +1,75 @@
+{
+  "release": "v0.1.0-alpha.1",
+  "packages": [
+    {
+      "path": "core/files/vendor/aether-protocol-0.1.0-alpha.9.tgz",
+      "sha256": "09e4aec3d8597ab3010560d714fb9a86f3dab0c7dc56c48c67d020b6d5e4ce64",
+      "asset": "09e4aec3d859-aether-protocol-0.1.0-alpha.9.tgz",
+      "bytes": 4731,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/09e4aec3d859-aether-protocol-0.1.0-alpha.9.tgz"
+    },
+    {
+      "path": "core/session/vendor/aether-assets-0.2.0-alpha.8.tgz",
+      "sha256": "ba8ac877b0d73841151be4eb752897d84a3252ceba9aecbfe98d6109508abf43",
+      "asset": "ba8ac877b0d7-aether-assets-0.2.0-alpha.8.tgz",
+      "bytes": 76449751,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/ba8ac877b0d7-aether-assets-0.2.0-alpha.8.tgz"
+    },
+    {
+      "path": "core/session/vendor/aether-ui-0.2.0-alpha.86.tgz",
+      "sha256": "a33ea0a17f8bc135e79b7cc4fbed6f2141e300038b6f9868a37849e624282777",
+      "asset": "a33ea0a17f8b-aether-ui-0.2.0-alpha.86.tgz",
+      "bytes": 371596,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/a33ea0a17f8b-aether-ui-0.2.0-alpha.86.tgz"
+    },
+    {
+      "path": "core/ui/vendor/aether-assets-0.2.0-alpha.27.tgz",
+      "sha256": "4da03e06909bd6b4a8a3d6f5241995ae9e0fd959d0e71496f26798a7c5e989e0",
+      "asset": "4da03e06909b-aether-assets-0.2.0-alpha.27.tgz",
+      "bytes": 125176682,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/4da03e06909b-aether-assets-0.2.0-alpha.27.tgz"
+    },
+    {
+      "path": "drive/vendor/aether-assets-0.2.0-alpha.27.tgz",
+      "sha256": "4da03e06909bd6b4a8a3d6f5241995ae9e0fd959d0e71496f26798a7c5e989e0",
+      "asset": "4da03e06909b-aether-assets-0.2.0-alpha.27.tgz",
+      "bytes": 125176682,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/4da03e06909b-aether-assets-0.2.0-alpha.27.tgz"
+    },
+    {
+      "path": "drive/vendor/aether-session-0.2.0-alpha.154.tgz",
+      "sha256": "f3438f5b658ded32cb07f6a6def4bd267b7f8bb94e1326059ac23c5b2b51e1d5",
+      "asset": "f3438f5b658d-aether-session-0.2.0-alpha.154.tgz",
+      "bytes": 32630,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/f3438f5b658d-aether-session-0.2.0-alpha.154.tgz"
+    },
+    {
+      "path": "drive/vendor/aether-ui-0.2.0-alpha.145.tgz",
+      "sha256": "d95a543d1590117d6aadd82788b5576397497c6d04fdac3e68e3d88c93636055",
+      "asset": "d95a543d1590-aether-ui-0.2.0-alpha.145.tgz",
+      "bytes": 432914,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/d95a543d1590-aether-ui-0.2.0-alpha.145.tgz"
+    },
+    {
+      "path": "studio/vendor/aether-assets-0.2.0-alpha.27.tgz",
+      "sha256": "4da03e06909bd6b4a8a3d6f5241995ae9e0fd959d0e71496f26798a7c5e989e0",
+      "asset": "4da03e06909b-aether-assets-0.2.0-alpha.27.tgz",
+      "bytes": 125176682,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/4da03e06909b-aether-assets-0.2.0-alpha.27.tgz"
+    },
+    {
+      "path": "studio/vendor/aether-session-0.2.0-alpha.155.tgz",
+      "sha256": "503be4d117f29713578164b30a8233a3bafdd8c8be4258d112ca2798a651901e",
+      "asset": "503be4d117f2-aether-session-0.2.0-alpha.155.tgz",
+      "bytes": 33158,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/503be4d117f2-aether-session-0.2.0-alpha.155.tgz"
+    },
+    {
+      "path": "studio/vendor/aether-ui-0.2.0-alpha.145.tgz",
+      "sha256": "d95a543d1590117d6aadd82788b5576397497c6d04fdac3e68e3d88c93636055",
+      "asset": "d95a543d1590-aether-ui-0.2.0-alpha.145.tgz",
+      "bytes": 432914,
+      "url": "https://github.com/JenkinsRobotics/AetherStudio/releases/download/v0.1.0-alpha.1/d95a543d1590-aether-ui-0.2.0-alpha.145.tgz"
+    }
+  ]
+}

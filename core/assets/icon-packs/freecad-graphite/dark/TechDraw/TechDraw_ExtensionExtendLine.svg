@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 16.933333 16.933334" version="1.1" id="svg1760" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/TechDraw_ExtensionExtendLine.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs1754">
+    <linearGradient id="linearGradient30">
+      <stop style="stop-color:#293749;stop-opacity:1;" offset="0" id="stop30" />
+      <stop style="stop-color:#324154;stop-opacity:1;" offset="1" id="stop31" />
+    </linearGradient>
+    <linearGradient id="linearGradient28">
+      <stop style="stop-color:#293749;stop-opacity:1;" offset="0" id="stop28" />
+      <stop style="stop-color:#324154;stop-opacity:1;" offset="1" id="stop29" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient28" id="linearGradient29" x1="1.4444204" y1="8.4667969" x2="5.026302" y2="8.4667969" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient30" id="linearGradient31" x1="14.365852" y1="8.6204567" x2="12.171875" y2="8.7433853" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="g25">
+    <g id="g29">
+      <path style="fill:#47586c;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:4.65667;paint-order:normal" d="M 0.79375001,8.4666669 5.2916667,5.2916667 v 6.3500003 z" id="path13" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:url(#linearGradient29);stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:4.65667;paint-order:normal" d="M 4.7617187,6.3105469 V 10.623047 L 1.7089844,8.4667969 Z" id="path28" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g31">
+      <path style="fill:#47586c;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:4.65667;paint-order:normal" d="M 16.139584,8.4666669 11.641667,5.2916667 v 6.3500003 z" id="path25" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:url(#linearGradient31);stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:4.65667;paint-order:normal" d="m 12.171875,6.3125 3.050781,2.1542969 -3.050781,2.1542971 z" id="path29" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  <path style="fill:#54667b;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:5.4;paint-order:stroke fill markers" d="M 6.0854167,8.4666669 H 10.847917" id="path26" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="fill:#54667b;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:5.4;paint-order:stroke fill markers" d="M 6.0854167,8.4666669 H 10.847917" id="path27" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

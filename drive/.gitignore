@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+test-results/
+playwright-report/
+.env*
+.DS_Store
+dist-lib/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Local verification, generated packages and preserved reference checkouts
+.verification/
+dist-library/
+build/
+*.egg-info/
+ REFERENCE CAD/

@@ -1,0 +1,43 @@
+[package]
+name = "aether-store"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[features]
+default = ["hosted"]
+hosted = ["dep:tokio", "dep:tokio-postgres", "dep:object_store", "dep:deadpool-postgres"]
+
+sqlite-reference = ["dep:rusqlite", "dep:tempfile"]
+
+[[bin]]
+name = "aether-store-fixture"
+path = "src/bin/aether-store-fixture.rs"
+required-features = ["sqlite-reference"]
+
+[[test]]
+name = "cli"
+required-features = ["sqlite-reference"]
+
+[[test]]
+name = "hosted"
+required-features = ["hosted", "sqlite-reference"]
+
+[dependencies]
+aether-protocol-core = { path = "../protocol-core" }
+serde.workspace = true
+serde_json.workspace = true
+rusqlite = { workspace = true, optional = true }
+sha2.workspace = true
+base64.workspace = true
+thiserror.workspace = true
+
+tempfile = { workspace = true, optional = true }
+tokio = { workspace = true, optional = true }
+tokio-postgres = { workspace = true, optional = true }
+object_store = { workspace = true, optional = true }
+deadpool-postgres = { workspace = true, optional = true }
+
+[dev-dependencies]
+tempfile.workspace = true

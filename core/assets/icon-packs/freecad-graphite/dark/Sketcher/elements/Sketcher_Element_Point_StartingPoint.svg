@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/elements/Sketcher_Element_Point_StartingPoint.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2871">
+    <linearGradient id="linearGradient3836-9-3">
+      <stop style="stop-color:#3da4f0;stop-opacity:1" offset="0" id="stop3838-8-5" />
+      <stop style="stop-color:#56b9fc;stop-opacity:1" offset="1" id="stop3840-1-6" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3836-9-3" id="linearGradient3922" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.20770928,-0.18465137,0.17787713,-0.21561979,-45.700119,137.6269)" x1="11.390151" y1="453.55045" x2="54.509644" y2="485.54004" />
+    </defs>
+  <g id="layer3" style="display:inline">
+    <g id="g40" transform="matrix(0.86962493,0,0,0.86962474,4.1720044,4.1720253)" style="stroke-width:1.1">
+      <path style="fill:#e5edf7;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path4250" d="M 23.263097,24.518251 A 11.502815,11.502299 0.0048887 1 1 40.736898,39.48171 11.502815,11.502299 0.0048887 1 1 23.263097,24.518251 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:url(#linearGradient3922);fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path4250-7" d="M 24.431573,25.530845 A 9.9973513,9.9982591 89.934477 1 1 39.619832,38.536487 9.9973513,9.9982591 89.934477 0 1 24.431573,25.530845 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

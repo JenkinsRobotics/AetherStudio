@@ -25,6 +25,22 @@ function PopoverHarness({ onClose = () => {} }: { onClose?: () => void }) {
   );
 }
 
+test("inline popovers render without an anchor or portal and leave page focus and dismissal alone", () => {
+  const close = vi.fn();
+  const { rerender, container } = render(<button>Outside</button>);
+  const outside = screen.getByText("Outside");
+  outside.focus();
+  rerender(<><button>Outside</button><Popover inline open anchor={null} focus="first" ariaLabel="Preview" onClose={close}><input aria-label="Value" /></Popover></>);
+  const surface = screen.getByRole("dialog", { name: "Preview" });
+  expect(container.contains(surface)).toBe(true);
+  expect(surface.classList.contains("aui-popover--inline")).toBe(true);
+  expect(surface.getAttribute("style")).toBeNull();
+  expect(document.activeElement).toBe(outside);
+  fireEvent.pointerDown(outside);
+  fireEvent.keyDown(document, { key: "Escape" });
+  expect(close).not.toHaveBeenCalled();
+});
+
 test("renders only while open and focuses the first control", () => {
   render(<PopoverHarness />);
   expect(screen.queryByRole("dialog")).toBeNull();

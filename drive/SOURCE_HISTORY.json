@@ -1,0 +1,24 @@
+{
+  "origin_repository": "../aether-drive",
+  "origin_commit": "817f937052bafac33dba92107d2f606dbbb43f47",
+  "integrated_into": "aether-platform/drive",
+  "date": "2026-10-10",
+  "reason": "Drive is a built-in Aether Studio server service, not a standalone application.",
+  "previous_source_history": {
+    "source": "/Users/jonathanjenkins/GITHUB/Aether Studio",
+    "sourceRevision": "cebdbec87576b24050f627008252be0e833c25be",
+    "filteredCommits": 63,
+    "paths": [
+      [
+        "studio/",
+        ""
+      ],
+      [
+        "LICENSE",
+        "LICENSE"
+      ]
+    ],
+    "note": "Filtered current-branch history; current uncommitted source snapshot is preserved in the migration commit. Drive retains Studio ancestry because it was developed there. All original branches/tags remain in the original repository."
+  },
+  "preserved_repository": "The former sibling checkout retains its complete Git history as an inactive backup."
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/breakpoint.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient3094">
+      <stop id="stop3096" offset="0" style="stop-color:#2693e2;stop-opacity:1" />
+      <stop id="stop3098" offset="1" style="stop-color:#34a4f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient y2="22.615412" x2="21.860462" y1="57.301327" x1="37.758171" gradientUnits="userSpaceOnUse" id="linearGradient3096" xlink:href="#linearGradient3094" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:url(#linearGradient3096);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" id="path4042" d="m 48.597521,39.95837 a 20.956074,20.956074 0 1 1 -41.9121477,0 20.956074,20.956074 0 1 1 41.9121477,0 z" transform="matrix(1.383847,0,0,1.383847,-6.2515342,-23.29627)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" id="path4042-0" d="m 48.597521,39.95837 a 20.956074,20.956074 0 1 1 -41.9121477,0 20.956074,20.956074 0 1 1 41.9121477,0 z" transform="matrix(1.2884093,0,0,1.2884093,-3.6134972,-19.482733)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" id="path4042-3" d="m 48.597521,39.95837 a 20.956074,20.956074 0 1 1 -41.9121477,0 20.956074,20.956074 0 1 1 41.9121477,0 z" transform="matrix(1.383847,0,0,1.383847,-6.2515342,-23.29627)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

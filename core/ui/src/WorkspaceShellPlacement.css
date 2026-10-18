@@ -1,0 +1,9 @@
+/* Keep the divider between a docked panel stack and its inboard icon rail. */
+.aui-shell--panels-outer-edge .aui-shell-side:not(.aui-shell-side--right) .aui-rail {
+  border-right: 0;
+  border-left: 1px solid var(--aether-color-border);
+}
+.aui-shell--panels-outer-edge .aui-shell-side--right .aui-rail {
+  border-left: 0;
+  border-right: 1px solid var(--aether-color-border);
+}

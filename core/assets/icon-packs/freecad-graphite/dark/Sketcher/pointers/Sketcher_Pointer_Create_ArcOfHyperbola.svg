@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="32" width="32" id="svg10" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_Create_ArcOfHyperbola.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="symbol" style="fill:none;stroke:#5bbdff;stroke-width:1.1" transform="rotate(-20 41 45)">
+    <ellipse cx="35.280918" cy="23.28476" id="circle4-5" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <ellipse cx="54.074772" cy="30.125162" id="circle4-5-8" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <ellipse cx="38.457359" cy="43.795589" id="circle4-5-8-4" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <ellipse cx="33.937374" cy="56.214138" id="circle4-5-8-4-1" style="fill:none;stroke:#5bbdff;stroke-width:1.1" rx="4.0014977" ry="4.0015597" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path2" d="M 54.074783,30.125162 C 50.639305,39.564061 43.647152,45.684524 38.457374,43.795599 33.267595,41.906674 31.845453,32.723658 35.280931,23.284759" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="crosshair" style="stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter">
+    <path d="m16,3v9m0,8v9m-13-13h9m8,0h9" id="path7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

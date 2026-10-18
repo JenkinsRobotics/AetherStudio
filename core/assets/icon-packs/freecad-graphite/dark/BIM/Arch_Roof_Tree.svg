@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/Arch_Roof_Tree.svg. Authors: [Yorik van Havre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient3036">
+      <stop style="stop-color:#6c8098;stop-opacity:1" offset="0" id="stop3038" />
+      <stop id="stop3040" offset="1" style="stop-color:#54667b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3036" id="linearGradient3695" x1="48.516094" y1="30.705254" x2="34.122555" y2="57.533604" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.24227019,-0.62451792,0.66563096,0.22730625,5.6049058,42.273138)" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:#415266;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 3,45 42.809595,23.125501 49,9 21,25 z" id="path2900" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" d="M 27.450448,29.208558 12.524919,37.454129 22.44048,26.390452" id="path3042" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3695);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 49,9 61,27 35,53 21,25 z" id="path2896" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 23.625992,25.782553 48.382706,11.660783 58.434893,26.756714 35.521618,49.643642 z" id="path3034" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

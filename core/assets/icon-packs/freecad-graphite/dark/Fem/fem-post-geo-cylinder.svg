@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2821" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/fem-post-geo-cylinder.svg. Authors: [Stefan Tröger], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2823">
+    <linearGradient xlink:href="#linearGradient3801" id="linearGradient3807" x1="110" y1="35" x2="85" y2="35" gradientUnits="userSpaceOnUse" spreadMethod="reflect" gradientTransform="translate(-62.087394,-0.169889)" />
+    <linearGradient id="linearGradient3801">
+      <stop style="stop-color:#293749;stop-opacity:1" offset="0" id="stop3803" />
+      <stop style="stop-color:#47586c;stop-opacity:1" offset="1" id="stop3805" />
+    </linearGradient>
+  </defs>
+  <g id="layer1">
+    <path style="fill:#47586c;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.5;stroke-opacity:1;stroke-dashoffset:20.4" d="m 54.912607,52.830111 c 0,4.418278 -10.745166,8 -24,8 -13.254833,0 -23.9999991,-3.581722 -23.9999991,-8 l -1.9e-6,-42 47.999999,0 z" id="path2994-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3807);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.5;stroke-opacity:1;stroke-dashoffset:20.4" d="m 52.912606,51.557384 c 0,4.016616 -9.84973,7.272727 -22,7.272727 -12.150264,0 -21.999999,-3.256111 -21.999999,-7.272727 l -2e-6,-38 44.000001,0 z" id="path2994-3-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.5;stroke-opacity:1;stroke-dashoffset:20.4" d="m 52.912606,15.557384 c -2,3.272727 -9.84973,5.272727 -22,5.272727 -12.150264,0 -19,-2 -21.999999,-5.272727" id="path2994-3-6-9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#47586c;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.5;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:20.4" id="path2994" d="m -14,25 a 21,7 0 1 1 -42,0 21,7 0 1 1 42,0 z" transform="matrix(1.1428571,0,0,1.1428571,70.912606,-17.741317)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

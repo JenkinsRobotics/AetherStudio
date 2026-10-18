@@ -1,0 +1,12 @@
+.ribbon-demo { width: 100%; min-width: 0; }
+.ribbon-demo--fullscreen { position: fixed; inset: 0; height: 100%; overflow: hidden; background: var(--aether-color-bg-app); }
+.ribbon-demo--fullscreen .ribbon-demo-frame { height: 100%; border: 0; border-radius: 0; }
+.ribbon-demo-description { margin: 0 0 14px; color: var(--aether-color-text-dim); }
+.ribbon-demo-frame { height: 660px; border: 1px solid var(--aether-color-border); border-radius: var(--aether-radius-control); }
+.ribbon-demo-muted { color: var(--aether-color-text-dim); }
+.ribbon-demo-divider { height: 22px; border-left: 1px solid var(--aether-color-border); margin-inline: var(--aether-space-2); }
+.ribbon-demo-properties { display: grid; gap: var(--aether-space-5); padding: var(--aether-space-5); }
+.ribbon-demo-viewport { position: absolute; inset: 0; overflow: hidden; }
+.ribbon-demo-viewport > .aui-viewport-canvas { position: absolute; inset: 0; }
+.ribbon-demo-feature-window { --aether-feature-window-left: 18px; --aether-feature-window-right: auto; --aether-feature-window-top: 18px; max-width: calc(100% - 36px); }
+.ribbon-demo-renderer-message { position: absolute; left: 20px; bottom: 20px; color: var(--aether-color-text-dim); }

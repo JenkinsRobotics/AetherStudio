@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2860" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_EquationHeat.svg. Authors: [vdwalts], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2862">
+    <linearGradient id="linearGradient3929">
+      <stop id="stop3931" offset="0" style="stop-color:#3da4f0;stop-opacity:1" />
+      <stop id="stop3933" offset="1" style="stop-color:#56b9fc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="51.200001" x2="4.8000002" y1="60.799999" x1="9.6000004" id="linearGradient3935" xlink:href="#linearGradient3929" />
+  </defs>
+  <g id="layer1">
+    <g transform="matrix(1.569104,0,0,1.569104,16.30896,-37.780432)" id="g6350">
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="M 10,31 V 57" id="path3083" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <circle r="8" cy="56" cx="8" style="fill:#4aaff7;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none" id="path3909" transform="matrix(0.875,0,0,0.875,3,5)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="M 10,31 V 57" id="path3083-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="M 10,40 V 56" id="path3083-3-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="M 9,40 V 50" id="path3083-3-6-7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <circle r="8" cy="56" cx="8" style="fill:url(#linearGradient3935);fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none" id="path3909-5" transform="matrix(0.625,0,0,0.625,5,19)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 11,33 h 2" id="path3937" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 11,39 h 2" id="path3937-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 11,45 h 2" id="path3937-5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

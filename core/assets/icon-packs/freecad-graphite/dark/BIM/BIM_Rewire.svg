@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2772" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/BIM_Rewire.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2774">
+    <linearGradient id="linearGradient3895">
+      <stop id="stop3897" offset="0" style="stop-color:#47586c;stop-opacity:1;" />
+      <stop id="stop3899" offset="1" style="stop-color:#293749;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3895" id="linearGradient3025" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.82726526,0,0,0.85294121,-58.79444,3.5222357)" x1="42.758076" y1="23.526644" x2="45.615246" y2="39.514103" />
+    </defs>
+  <g id="layer1">
+    <path style="fill:url(#linearGradient3025);stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;font-variant-east_asian:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" d="M 50.40625,8.2226562 37.458984,46.033203 25.693359,24.736328 c 0,0 -1.502338,-3.216848 -3.863991,-2.942784 -2.361653,0.274065 -3.423118,3.97794 -3.423118,3.97794 l -9.6152344,28.128907 5.7949224,1.552734 8.11914,-23.75 12.320313,22.302734 c 0,0 1.234555,2.746235 2.944869,3.010344 1.710313,0.264109 2.830521,-2.270109 2.830521,-2.270109 L 56.201172,9.7753906 Z" id="path3061-2-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3063" style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 10.990652,53.158002 8.939981,-25.6087 c 0,0 1.204477,-3.455692 2.119486,-3.664207 0.915009,-0.208515 2.396955,2.856318 2.396955,2.856318 l 11.419247,20.408155 c -0.01525,0.0083 0.750282,1.280975 2.046345,0.863785 1.296062,-0.41719 1.408692,-1.245369 1.408692,-1.245369 L 52,10" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  </svg>

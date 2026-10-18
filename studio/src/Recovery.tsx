@@ -1,7 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Button, TextField } from "@aether/ui";
 import { SignInFrame } from "./SetupWizard";
-import { api } from "./api";
+import { api } from "@aether/session/library/api";
 
 export function Recovery({ token, available, onBack }: { token: string; available: boolean; onBack: () => void }) {
   const [done, setDone] = useState(false);

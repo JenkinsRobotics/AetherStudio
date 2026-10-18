@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg2" height="32" viewBox="0 0 63.999999 63.999999" width="32" version="1.1" fill="#e5edf7" color="#e5edf7">
+ <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Tux/Resources/icons/NavigationBlender_dark.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer1-7" transform="translate(0 -988.86)" stroke="#e5edf7" stroke-width="6" fill="none">
+  <path id="path4144" d="m16 1028.4v-20c0-8 4-12 16-12s16 4 16 12v20c0 8-4 17-16 17s-16-9-16-17z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path id="path4209" d="m32 1004.4v12" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+ </g>
+ <g id="Ortho_0_-1" stroke-linejoin="round" transform="matrix(-1.0445 0 0 -1.0419 30.547 32.04)" stroke="#e5edf7" stroke-linecap="round" stroke-width="5.7515">
+  <g id="g4192" stroke-linejoin="round" transform="scale(1,-1)" stroke="#e5edf7" stroke-linecap="round" stroke-width="5.7515" fill="none">
+   <path id="path4194" stroke-linejoin="round" d="m13.917 7.4999c-0.454-2.6666-1.713-5.2777-3.917-7.4999 2.2038-2.2224 3.4631-4.8335 3.9168-7.5001" stroke="#e5edf7" stroke-linecap="round" stroke-width="1.1" vector-effect="non-scaling-stroke" />
+  </g>
+ </g>
+ <g id="g4153" stroke-linejoin="round" transform="matrix(1.0445 0 0 -1.0419 33.453 32.04)" stroke="#e5edf7" stroke-linecap="round" stroke-width="5.7517">
+  <g id="g4155" stroke-linejoin="round" transform="scale(1,-1)" stroke="#e5edf7" stroke-linecap="round" stroke-width="5.7517" fill="none">
+   <path id="path4157" stroke-linejoin="round" d="m13.917 7.4999c-0.454-2.6666-1.713-5.2777-3.917-7.4999 2.2038-2.2224 3.4631-4.8335 3.9168-7.5001" stroke="#e5edf7" stroke-linecap="round" stroke-width="1.1" vector-effect="non-scaling-stroke" />
+  </g>
+ </g>
+</svg>

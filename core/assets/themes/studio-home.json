@@ -1,0 +1,28 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "studio-home",
+  "name": "Studio Home",
+  "description": "The library and admin home surfaces: warm neutral greys from the Studio workspace reference, applied to a subtree by the alias class.",
+  "extends": "aether-default",
+  "modes": {
+    "dark": {
+      "color-bg-app": "#1e1e1e",
+      "color-bg-shell": "#262829",
+      "color-bg-bar": "#262829",
+      "color-bg-panel": "#2b2d30",
+      "color-bg-inset": "#333537",
+      "color-bg-control": "#333537",
+      "color-bg-control-hover": "#3c3e42",
+      "color-border": "#414345",
+      "color-text": "#f0f0f1",
+      "color-text-dim": "#a6a9ae",
+      "color-accent": "#3269ff",
+      "color-accent-strong": "#2454d6",
+      "color-border-control-hover": "#7198ff"
+    },
+    "light": {}
+  },
+  "aliases": [
+    ".aether-home-theme"
+  ]
+}

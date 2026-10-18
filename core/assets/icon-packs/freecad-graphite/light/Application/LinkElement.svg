@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg5821" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/LinkElement.svg. Authors: [yorikvanhavre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs5823">
+    <linearGradient id="linearGradient3791-2">
+      <stop style="stop-color:#9caec3;stop-opacity:1" offset="0" id="stop3793-9" />
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="1" id="stop3795-3" />
+    </linearGradient>
+    <linearGradient id="linearGradient3774">
+      <stop style="stop-color:#2490e0;stop-opacity:1" offset="0" id="stop3776" />
+      <stop style="stop-color:#32a1f2;stop-opacity:1" offset="1" id="stop3778" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3791-2" id="linearGradient4234" x1="1121.3153" y1="1297.5" x2="1062.83" y2="1107.4225" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.99999995,0,0,1.0769231,-1.6476784,-89.65025)" />
+    <linearGradient xlink:href="#linearGradient3791-2" id="linearGradient4249" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.99999995,0,0,1.0769231,-1.6476784,-89.65025)" x1="1121.3153" y1="1297.5" x2="1062.83" y2="1107.4225" />
+    <linearGradient xlink:href="#linearGradient3791-2" id="linearGradient4257" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.99999995,0,0,1.0769231,-1.6476784,-89.65025)" x1="1121.3153" y1="1297.5" x2="1062.83" y2="1107.4225" />
+    <linearGradient xlink:href="#linearGradient3774" id="linearGradient4274" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.99999995,0,0,1.0769231,-1.6476784,-89.65025)" x1="1095.1246" y1="1279.0176" x2="1065.8818" y2="1088.9401" />
+  </defs>
+  <g id="layer1">
+    <g id="g3360" transform="matrix(0.1367863,0,0,0.1367863,-119.15519,-134.86962)">
+      <g id="g4239" transform="translate(-105.40136,-53.202593)">
+        <rect y="1051.7839" x="988.0755" height="255.87358" width="255.87358" id="rect4224" style="opacity:1;fill:#c3cfdc;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <rect y="1077.3712" x="1013.6628" height="204.69887" width="204.69887" id="rect4226" style="opacity:1;fill:url(#linearGradient4234);fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <g transform="translate(-11.042048,44.16819)" id="g4243" style="opacity:1">
+        <rect style="opacity:1;fill:#c3cfdc;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect4245" width="255.87358" height="255.87358" x="988.0755" y="1051.7839" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <rect style="opacity:1;fill:url(#linearGradient4249);fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect4247" width="204.69887" height="204.69887" x="1013.6628" y="1077.3712" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <g id="g4251" transform="translate(85.324913,137.52368)" style="opacity:1">
+        <rect y="1051.7839" x="988.0755" height="255.87358" width="255.87358" id="rect4253" style="opacity:1;fill:#c3cfdc;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <rect y="1077.3712" x="1013.6628" height="204.69887" width="204.69887" id="rect4255" style="opacity:1;fill:url(#linearGradient4257);fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <g transform="translate(-11.706479,43.331526)" id="g4259">
+        <rect style="opacity:1;fill:#32a1f2;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect4261" width="255.87358" height="255.87358" x="988.0755" y="1051.7839" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <rect style="opacity:1;fill:url(#linearGradient4274);fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect4263" width="204.69887" height="204.69887" x="1013.6628" y="1077.3712" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+    </g>
+  </g>
+  </svg>

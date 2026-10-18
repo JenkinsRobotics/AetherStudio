@@ -1,50 +1,38 @@
-import { useState } from "react";
+import { ServerStoragePanel } from "./ServerStoragePanel";
+import { useEffect, useState } from "react";
 import { AetherIcon, Button, Checkbox, TextField } from "@aether/ui";
-import type { Admin } from "./main";
-import { api } from "./api";
+import type { Admin, App } from "./main";
+import { api } from "@aether/session/library/api";
 
 type Props = {
   page: string;
   admin: Admin;
+  apps: App[];
   busy: boolean;
   run: (path: string, data: object, message: string) => Promise<boolean>;
   refresh: () => Promise<void>;
   report: (message: string) => void;
+  secret: string;
+  setSecret: (value: string) => void;
 };
 export function AdministrationPanels({
   page,
   admin,
+  apps,
   busy,
   run,
   refresh,
-  report,
+  report, secret, setSecret,
 }: Props) {
+  const memberApps = apps.filter(app => !app.admin_only);
   const [team, setTeam] = useState<Admin["teams"][number] | null>(null);
-  const [secret, setSecret] = useState("");
   const [working, setWorking] = useState(false);
   const [confirmation, setConfirmation] = useState("");
-  if (page === "plugins")
-    return (
-      <>
-        <div className="page-heading">
-          <div>
-            <h1>Community plugins</h1>
-            <p>Future support</p>
-          </div>
-          <span className="badge">Planned</span>
-        </div>
-        <div className="welcome-panel">
-          <AetherIcon name="items" width={36} height={36} />
-          <div>
-            <h3>A place for community-built tools</h3>
-            <p>
-              Community plugin discovery, installation and updates are planned.
-              Bundled Aether applications are managed in Applications today.
-            </p>
-          </div>
-        </div>
-      </>
-    );
+  useEffect(() => {
+    if (page !== "backups" || !admin.storage?.in_progress) return;
+    const timer = window.setTimeout(() => { void refresh().catch((error: Error) => report(error.message)); }, 2000);
+    return () => window.clearTimeout(timer);
+  }, [page, admin.storage?.in_progress, refresh, report]);
   if (page === "teams")
     return (
       <>
@@ -131,10 +119,10 @@ export function AdministrationPanels({
             </fieldset>
             <fieldset>
               <legend>Application grants</legend>
-              {["cad", "animation"].map((id) => (
+              {memberApps.map(({ id, name }) => (
                 <Checkbox
                   key={id}
-                  label={id === "cad" ? "Aether CAD" : "Aether Animation"}
+                  label={name}
                   checked={team.apps.includes(id)}
                   onChange={(e) =>
                     setTeam({
@@ -235,10 +223,10 @@ export function AdministrationPanels({
             matching team grant when restricted access is enabled.
           </p>
           <div className="policy-list">
-            {["cad", "animation"].map((id) => (
+            {memberApps.map(({ id, name }) => (
               <Checkbox
                 key={id}
-                label={`${id === "cad" ? "Aether CAD" : "Aether Animation"}: require team membership`}
+                label={`${name}: require team membership`}
                 description="Uncheck to allow all active members."
                 checked={Boolean(admin.access[id])}
                 disabled={busy}
@@ -255,7 +243,8 @@ export function AdministrationPanels({
         </section>
       </>
     );
-  if (page === "services")
+  if (page === "services" && !admin.services) return <section className="section"><h2>Service accounts</h2><p>Service-account administration is still being migrated. Existing agent connections remain available through the agent command interface.</p></section>;
+  if (page === "services" && admin.services)
     return (
       <>
         <div className="page-heading">
@@ -340,6 +329,7 @@ export function AdministrationPanels({
               const result = await api<{ token: string }>(
                 "/api/admin/service",
                 {
+                  ...(admin.runtime === "rust" ? {can_write: data.get("write") === "on", can_edit_content: data.get("edit") === "on"} : {}),
                   name: data.get("name"),
                   days: Number(data.get("days")),
                   apps: data.getAll("apps"),
@@ -356,6 +346,7 @@ export function AdministrationPanels({
           }}
         >
           <h2>Create a service account</h2>
+          {admin.runtime === "rust" && <><p>Use these tokens with the command API or CLI/MCP. Each token uses its creator’s current file permissions. Resetting the creator’s password revokes it.</p><Checkbox name="write" label="Allow document changes and Animation RPC" /><Checkbox name="edit" label="Allow saved content editing (also requires document changes)" /></>}
           <label className="field">
             <span>Name</span>
             <TextField name="name" required maxLength={80} />
@@ -373,8 +364,7 @@ export function AdministrationPanels({
           </label>
           <fieldset>
             <legend>Application scopes</legend>
-            <Checkbox name="apps" value="cad" label="Aether CAD" />
-            <Checkbox name="apps" value="animation" label="Aether Animation" />
+            {memberApps.filter(app => !admin.service_apps || admin.service_apps.includes(app.id)).map(app => <Checkbox key={app.id} name="apps" value={app.id} label={app.name} />)}
           </fieldset>
           <Button primary type="submit" disabled={working}>
             Create token
@@ -382,7 +372,8 @@ export function AdministrationPanels({
         </form>
       </>
     );
-  if (page === "backups")
+  if (page === "backups" && (!admin.storage || !admin.backups)) return <section className="section"><h2>Backups</h2><p>Browser backup controls are still being migrated. Use the server's verified database and object-store backup procedure until those controls are available.</p></section>;
+  if (page === "backups" && admin.storage && admin.backups)
     return (
       <>
         <div className="page-heading">
@@ -392,14 +383,15 @@ export function AdministrationPanels({
           </div>
           <Button
             primary
-            disabled={busy}
+            disabled={busy || admin.storage.in_progress}
             onClick={() =>
-              run("/api/admin/backup", {}, "Backup created. Download it below.")
+              run("/api/admin/backup", {}, admin.runtime === "rust" ? "Backup started. Its download appears when verification finishes." : "Backup created. Download it below.")
             }
           >
             Create backup
           </Button>
         </div>
+        <ServerStoragePanel storage={admin.storage} busy={busy} run={run} />
         <div className="table-wrap">
           <table>
             <thead>
@@ -437,7 +429,7 @@ export function AdministrationPanels({
           <AetherIcon name="save" width={32} height={32} />
           <div>
             <h3>Restore from the host console</h3>
-            <p>
+            {admin.runtime === "rust" ? <p>Extract the archive into a new private folder and verify every file against <code>manifest.json</code>. Restore <code>native.sql</code> into an empty PostgreSQL database, then run the native host’s <code>verify-store</code> command against its <code>objects</code> folder before starting it. Restore credentials and operator configuration separately. Follow the native host recovery guide; the Python restore command cannot read this format.</p> : <><p>
               Restore into an empty data directory with the Studio CLI. Existing
               installations are never overwritten. Restore clears sign-ins,
               revokes service tokens and resets the network to local-only
@@ -447,6 +439,7 @@ export function AdministrationPanels({
               python -m core.host restore --archive backup.zip --data
               /path/to/empty-directory
             </code>
+            </>}
             <p className="hint">
               Backups include password hashes and project files; keep them
               private. They exclude browser-local unsaved work, TLS files and

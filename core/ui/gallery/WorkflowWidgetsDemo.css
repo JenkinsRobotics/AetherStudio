@@ -1,0 +1,9 @@
+.workflow-demo { --workflow-demo-caption-color:var(--aether-color-text-dim); width:100%; min-width:0; }
+.workflow-demo > header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px; }
+.workflow-demo > header p { margin:0; max-width:640px; color:var(--aether-color-text-dim); font-size:12px; }
+.workflow-demo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:20px; align-items:start; }
+.workflow-demo-specimen { min-width:0; max-width:360px; }
+.workflow-demo-specimen > h3 { font:11px var(--aether-font-family); color:var(--aether-color-text-dim); margin:0 0 10px; }
+.workflow-demo-feedback { font:11px/1.5 var(--aether-font-family); color:var(--workflow-demo-caption-color); margin:8px 0 0; min-height:0; }
+.workflow-demo-feedback:empty { display:none; }
+.workflow-element-demo { width:320px; max-width:100%; }

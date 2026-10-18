@@ -1,0 +1,268 @@
+{
+  "icons": [
+    {
+      "id": "Aether/ai-generate",
+      "name": "ai-generate",
+      "workbench": "Aether",
+      "master": "masters/ai-generate.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/circumscribed-polygon",
+      "name": "circumscribed-polygon",
+      "workbench": "Aether",
+      "master": "masters/circumscribed-polygon.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/commit",
+      "name": "commit",
+      "workbench": "Aether",
+      "master": "masters/commit.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/connector",
+      "name": "connector",
+      "workbench": "Aether",
+      "master": "masters/connector.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/emboss",
+      "name": "emboss",
+      "workbench": "Aether",
+      "master": "masters/emboss.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/fill",
+      "name": "fill",
+      "workbench": "Aether",
+      "master": "masters/fill.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/freehand",
+      "name": "freehand",
+      "workbench": "Aether",
+      "master": "masters/freehand.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/history",
+      "name": "history",
+      "workbench": "Aether",
+      "master": "masters/history.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/map-box",
+      "name": "map-box",
+      "workbench": "Aether",
+      "master": "masters/map-box.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/map-cube",
+      "name": "map-cube",
+      "workbench": "Aether",
+      "master": "masters/map-cube.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/mask",
+      "name": "mask",
+      "workbench": "Aether",
+      "master": "masters/mask.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/mass",
+      "name": "mass",
+      "workbench": "Aether",
+      "master": "masters/mass.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/midpoint-line",
+      "name": "midpoint-line",
+      "workbench": "Aether",
+      "master": "masters/midpoint-line.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/normal",
+      "name": "normal",
+      "workbench": "Aether",
+      "master": "masters/normal.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/pen",
+      "name": "pen",
+      "workbench": "Aether",
+      "master": "masters/pen.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/push-pull",
+      "name": "push-pull",
+      "workbench": "Aether",
+      "master": "masters/push-pull.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/replace-face",
+      "name": "replace-face",
+      "workbench": "Aether",
+      "master": "masters/replace-face.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/smart-shape",
+      "name": "smart-shape",
+      "workbench": "Aether",
+      "master": "masters/smart-shape.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/tangent-arc",
+      "name": "tangent-arc",
+      "workbench": "Aether",
+      "master": "masters/tangent-arc.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/thread",
+      "name": "thread",
+      "workbench": "Aether",
+      "master": "masters/thread.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/tracker",
+      "name": "tracker",
+      "workbench": "Aether",
+      "master": "masters/tracker.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/transparent-png",
+      "name": "transparent-png",
+      "workbench": "Aether",
+      "master": "masters/transparent-png.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/webcam",
+      "name": "webcam",
+      "workbench": "Aether",
+      "master": "masters/webcam.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    },
+    {
+      "id": "Aether/weld",
+      "name": "weld",
+      "workbench": "Aether",
+      "master": "masters/weld.svg",
+      "origin": "Aether original",
+      "authors": [
+        "Aether Studio contributors"
+      ],
+      "description": "Original illustration extending the FreeCAD Graphite theme; not upstream FreeCAD artwork."
+    }
+  ]
+}

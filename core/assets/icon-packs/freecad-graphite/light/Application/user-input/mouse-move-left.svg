@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" version="1.1" id="svg2" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/user-input/mouse-move-left.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><path stroke="#405269" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" d="M12 3v7m-6 0h12M6 7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V7Z" id="path1" vector-effect="non-scaling-stroke" />
+  <path fill="#f3f7fc" d="M12 3v7H6V6l3-3h3Z" id="path2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path stroke="#405269" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" d="M 20.574797,13.992053 V 4.2471443 L 18.576124,1.9358131" id="path3" style="stroke-width:1.1;stroke-dasharray:none;stroke-linejoin:round" vector-effect="non-scaling-stroke" />
+  <path stroke="#405269" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" d="M 22.388051,11.802062 V 5.507949" id="path4" style="stroke-width:1.1;stroke-dasharray:none" vector-effect="non-scaling-stroke" />
+</svg>

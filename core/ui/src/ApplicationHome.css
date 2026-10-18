@@ -1,0 +1,53 @@
+.aui-application-home {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: var(--aether-size-topbar) minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  background: var(--aether-color-bg-app);
+  color: var(--aether-color-text);
+}
+.aui-application-home-header {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+  padding: 0 20px;
+  background: var(--aether-color-bg-bar);
+  border-bottom: 1px solid var(--aether-color-border);
+}
+.aui-application-home-brand { display: flex; flex: none; }
+.aui-application-home-header > input {
+  margin-left: auto;
+  width: min(35vw, 450px);
+  min-width: 70px;
+}
+.aui-application-home-header [data-aether-account] { margin-left: auto; }
+@media (max-width: 680px) {
+  .aui-application-home-header { gap: 8px; padding: 0 10px; }
+  .aui-application-home-header > input { flex: 1; width: 0; }
+  .aui-application-home-header > strong { font-size: 11px; }
+}
+
+/* Sidebar layout: the sidebar spans the full height and carries identity and
+   account and app launcher; the header holds only search, centred. */
+.aui-application-home.aui-application-home--sidebar { grid-template-columns: auto minmax(0, 1fr); }
+.aui-application-home--sidebar > .aui-sidebar { grid-column: 1; grid-row: 1 / -1; }
+.aui-application-home--sidebar > .aui-application-home-header { grid-column: 2; }
+/* Two classes: product header classes (e.g. .library-top > input) push search right. */
+.aui-application-home-header.aui-application-home-header--search { justify-content: center; }
+.aui-application-home-header.aui-application-home-header--search > input { margin-left: 0; }
+
+/* Legacy session styles reserve body space for a fixed Studio status tray.
+   Home pages without that tray must fill the viewport, including the sidebar.
+   Keep the reservation when a real tray is mounted. */
+body:has(.aui-application-home):not(:has(.studio-tray)) { padding-bottom: 0; }
+
+/* Library/home variant of the same Alpha studio frame; content remains in flow. */
+.aui-application-home.aui-application-home--studio { grid-template-rows: 56px minmax(0, 1fr); gap: 0 12px; padding: 0 20px 20px; box-sizing: border-box; }
+.aui-application-home--studio > .aui-studio-document-bar { height: 56px; padding: 0; background: transparent; border: 0; }
+.aui-application-home--studio > .aui-sidebar { grid-row: 2; grid-column: 1; border: 1px solid var(--aether-color-border); border-radius: 10px; width: 216px; min-height: 0; }
+.aui-application-home--studio > main { grid-row: 2; grid-column: 2; min-height: 0; }
+.aui-application-home--studio .aui-studio-document-bar input { width: min(30vw, 400px); }
+@media(max-width: 740px) { .aui-application-home.aui-application-home--studio { padding: 0 12px 12px; } }

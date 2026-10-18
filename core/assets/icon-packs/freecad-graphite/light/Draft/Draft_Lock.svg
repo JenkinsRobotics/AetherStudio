@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg3612" height="32" width="32" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Lock.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs3614">
+    <linearGradient y2="485.54004" x2="54.509644" y1="453.55045" x1="11.390151" gradientTransform="matrix(0.98353665,0.01809546,0.01809547,0.98917081,-277.8307,253.19027)" gradientUnits="userSpaceOnUse" id="linearGradient3922" xlink:href="#linearGradient3836" />
+    <linearGradient id="linearGradient3836">
+      <stop id="stop3838" offset="0" style="stop-color:#a8b8cb;stop-opacity:1;" />
+      <stop id="stop3840" offset="1" style="stop-color:#c3cfdc;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient y2="485.54004" x2="54.509644" y1="453.55045" x1="11.390151" gradientTransform="matrix(0.98353663,0.01809542,0.01809549,0.98917077,-58.285859,270.17568)" gradientUnits="userSpaceOnUse" id="linearGradient3922-3" xlink:href="#linearGradient3836-6" />
+    <linearGradient id="linearGradient3836-6">
+      <stop id="stop3838-7" offset="0" style="stop-color:#a8b8cb;stop-opacity:1;" />
+      <stop id="stop3840-5" offset="1" style="stop-color:#c3cfdc;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient y2="485.54004" x2="54.509644" y1="453.55045" x1="11.390151" gradientTransform="matrix(0.98353663,0.01809542,0.01809549,0.98917077,-75.27572,489.72902)" gradientUnits="userSpaceOnUse" id="linearGradient3922-6" xlink:href="#linearGradient3836-2" />
+    <linearGradient id="linearGradient3836-2">
+      <stop id="stop3838-9" offset="0" style="stop-color:#a8b8cb;stop-opacity:1;" />
+      <stop id="stop3840-1" offset="1" style="stop-color:#c3cfdc;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient y2="483.99524" x2="56.319412" y1="453.77875" x1="10.387" gradientTransform="matrix(-0.24930482,-0.22162964,0.21349852,-0.2587998,-46.291565,159.73992)" gradientUnits="userSpaceOnUse" id="linearGradient3922-0" xlink:href="#linearGradient3836-9" />
+    <linearGradient id="linearGradient3836-9">
+      <stop id="stop3838-3" offset="0" style="stop-color:#c4d0dd;stop-opacity:1" />
+      <stop id="stop3840-6" offset="1" style="stop-color:#e5ecf3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientTransform="translate(0,-1)" gradientUnits="userSpaceOnUse" y2="49" x2="84" y1="67" x1="89" id="linearGradient3979" xlink:href="#linearGradient3836-9" />
+  </defs>
+  <g id="layer1">
+    <path id="path3981" d="M 10,32 32,10 54,32 32,54 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3981-1" d="M 10,32 32,10 54,32 32,54 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g transform="matrix(0.94235513,0.01446014,-0.01446079,0.94231206,-148.41745,-195.06938)" id="g4312" style="stroke:#7c8fa5;stroke-width:1.1">
+      <g id="g4248" transform="matrix(-0.1153544,-0.09575809,0.09575809,-0.1153544,98.667777,319.83687)" style="stroke:#7c8fa5;stroke-width:1.1">
+        <g style="stroke-width:1.1" id="g3906" transform="translate(-3.7314339,-3.2817175)">
+          <path d="m -194.20237,715.99918 a 49.534277,49.533378 49.435534 1 1 -99.06751,-8.9e-4 49.534277,49.533378 49.435534 1 1 99.06751,8.9e-4 z" id="path4250" style="fill:#a8b8cb;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="m -208.35,715.9935 a 35.38115,35.392822 49.405722 0 1 -70.77576,0.0116 35.38115,35.392822 49.405722 0 1 70.77576,-0.0116 z" id="path4250-7" style="fill:url(#linearGradient3922);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="m 25.342481,732.98458 a 49.534277,49.533376 49.485683 1 1 -99.06751,-8.9e-4 49.534277,49.533376 49.485683 1 1 99.06751,8.9e-4 z" id="path4250-3" style="fill:#a8b8cb;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="m 11.194851,732.9789 a 35.381151,35.392823 49.402956 1 1 -70.77576,0.0116 35.381151,35.392823 49.402956 0 1 70.77576,-0.0116 z" id="path4250-7-5" style="fill:url(#linearGradient3922-3);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="m 8.3526097,952.53792 a 49.534277,49.533376 49.485683 1 1 -99.0674997,-8.9e-4 49.534277,49.533376 49.485683 1 1 99.0674997,8.9e-4 z" id="path4250-2" style="fill:#a8b8cb;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path d="m -5.7950203,952.53224 a 35.381151,35.392823 49.402956 1 1 -70.7757597,0.0116 35.381151,35.392823 49.402956 0 1 70.7757597,-0.0116 z" id="path4250-7-7" style="fill:url(#linearGradient3922-6);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        </g>
+      </g>
+    </g>
+    <path d="M 36.368516,23.900386 A 13.995767,13.996164 89.972205 1 1 57.629937,42.107623 13.995767,13.996164 89.972205 1 1 36.368516,23.900386 z" id="path4250-0" style="fill:#a8b8cb;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 37.884589,25.1955 A 11.999423,12.000495 89.925918 1 1 56.114427,40.805652 11.999423,12.000495 89.925918 0 1 37.884589,25.1955 z" id="path4250-7-6" style="fill:url(#linearGradient3922-0);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g style="fill:#ebf0f7;stroke:#405269;stroke-linejoin:round" transform="translate(-41,-27)" id="g3201">
+      <path style="fill:#ebf0f7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 97,68 0,-10 -2,0 0,-3 c 0,0 0,-6 -7,-6 -7,0 -7,6 -7,6 l 0,3 -2,0 0,10 z" id="path3195" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:url(#linearGradient3979);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 85,58 6,0 0,-3 c 0,0 0,-2 -3,-2 -3,0 -3,2 -3,2 z" id="path3199" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

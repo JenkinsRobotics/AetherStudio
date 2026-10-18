@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="32" height="32" id="svg3085" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/actions/TechDraw_ShowAll.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs3087">
+    <linearGradient id="linearGradient3836-0-3-3">
+      <stop style="stop-color:#324154;stop-opacity:1" offset="0" id="stop3838-2" />
+      <stop style="stop-color:#6c8098;stop-opacity:1" offset="1" id="stop3840-5" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3836-0-3-3" id="linearGradient1731" x1="56.876698" y1="50.441162" x2="17.784973" y2="23.323475" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <text x="13.788582" y="46.145554" id="text3130" xml:space="preserve" style="color:#e5edf7;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#e5edf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.1;marker:none;enable-background:accumulate"><tspan x="13.788582" y="46.145554" id="tspan3132" /></text>
+  <g id="g1745">
+    <path id="path141" d="m 32.000002,13.794027 c -11.725754,0 -21.831802,7.245326 -26.4741964,17.700833 -0.14258,0.316832 -0.14258,0.687468 0,1.010281 4.6423944,10.455507 14.7484424,17.700832 26.4741964,17.700832 11.725753,0 21.831801,-7.245325 26.474197,-17.700832 0.14257,-0.316833 0.14257,-0.687469 0,-1.010281 C 53.831803,21.039353 43.725755,13.794027 32.000002,13.794027" style="fill:url(#linearGradient1731);stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle r="12" cy="32" cx="32" id="path1738" style="opacity:1;vector-effect:none;fill:#293749;fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle r="4" cy="32" cx="32" id="path1740" style="opacity:1;vector-effect:none;fill:#e5edf7;fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+.aui-workbench-window {
+  width: 100%; height: 100%; min-width: 0; min-height: 0;
+  color: var(--aether-color-text); background: var(--aether-color-bg-app);
+  border: 1px solid var(--aether-color-border); border-radius: 10px; overflow: hidden;
+  font-family: var(--aether-font-family); font-size: 13px;
+}
+.aui-workbench-window > .aui-split-pane { height: 100%; min-height: 0; }
+.aui-workbench-sidebar { height: 100%; display: flex; flex-direction: column; background: var(--aether-color-bg-panel); min-width: 0; }
+.aui-workbench-sidebar > header { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 58px; padding: 10px 14px; border-bottom: 1px solid var(--aether-color-border); }
+.aui-workbench-sidebar-content { flex: 1; min-height: 0; overflow: auto; padding: 10px; }
+.aui-workbench-sidebar > footer { padding: 10px; border-top: 1px solid var(--aether-color-border); }
+.aui-workbench-detail { height: 100%; min-height: 0; display: flex; flex-direction: column; }
+.aui-workbench-toolbar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; min-height: 58px; flex-shrink: 0; border-bottom: 1px solid var(--aether-color-border); background: var(--aether-color-bg-panel); overflow-x: auto; }
+.aui-workbench-heading { display: grid; gap: 2px; min-width: 120px; }
+.aui-workbench-heading small { color: var(--aether-color-text-dim); font-size: 11px; }
+.aui-workbench-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-shrink: 0; }
+.aui-workbench-canvas { position: relative; flex: 1; min-height: 0; min-width: 0; isolation: isolate; }
+.aui-workbench-content { height: 100%; overflow: auto; }
+.aui-workbench-overlay { position: absolute; top: 14px; right: 14px; max-width: calc(100% - 28px); }
+.aui-workbench-canvas-footer { position: absolute; bottom: 14px; left: 14px; max-width: calc(100% - 28px); }
+.aui-workbench-status { display: flex; align-items: center; gap: 12px; min-height: 28px; padding: 4px 12px; border-top: 1px solid var(--aether-color-border); color: var(--aether-color-text-dim); background: var(--aether-color-bg-panel); font-size: 11px; flex-shrink: 0; }

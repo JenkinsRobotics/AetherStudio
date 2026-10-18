@@ -2,7 +2,7 @@ import base64
 import pytest
 from core.host.state import Problem
 from core.host.tests.test_library import create
-from animacore.aether_workspace import AetherWorkspace
+from aether_animation.aether_workspace import AetherWorkspace
 
 pytest_plugins = ["core.host.tests.test_library"]
 
@@ -213,3 +213,105 @@ def test_standalone_assembly_uses_same_container_and_explicit_link_update(librar
         "parts"
     ][0]
     assert old["document"]["name"] == "Original"
+
+
+def test_project_edits_on_a_branch_leave_main_unchanged(library):
+    _, _, _, _, call = library
+    file = call('project_create', {'name': 'Branch project'})
+    call('branch_create', {'id': file['id'], 'name': 'Design B', 'expected_revision': 1})
+    changed = call('project_edit', {'id': file['id'], 'branch': 'Design B', 'expected_revision': 1, 'operation': 'add_part', 'name': 'Branch-only bracket'})
+    assert changed['revision'] == 2
+    main = call('project_read', {'id': file['id']})
+    branch = call('project_read', {'id': file['id'], 'branch': 'Design B'})
+    assert len(main['project']['parts']) == 1
+    assert len(branch['project']['parts']) == 2
+    assert branch['revision'] == 2 and main['revision'] == 1
+    with pytest.raises(Problem) as exc:
+        call('project_edit', {'id': file['id'], 'branch': 'Design B', 'expected_revision': 1, 'operation': 'add_part', 'name': 'Stale part'})
+    assert exc.value.status == 409
+
+
+def test_branch_description_persists_without_creating_a_version(library):
+    host, _, _, _, call = library
+    f = create(call)
+    call("branch_create", {"id": f["id"], "name": "Experiment", "message": "  Try new mounting  ", "expected_revision": 1, "from_revision": 1})
+    history = call("history", {"id": f["id"]})
+    assert history["versions"] == []
+    assert len(history["revisions"]) == 1
+    assert next(b for b in history["branches"] if b["name"] == "Experiment")["message"] == "Try new mounting"
+    call("branch_rename", {"id": f["id"], "name": "Experiment", "new_name": "Mounting", "expected_revision": 1})
+    assert next(b for b in call("history", {"id": f["id"]})["branches"] if b["name"] == "Mounting")["message"] == "Try new mounting"
+    with pytest.raises(Problem) as error:
+        call("branch_create", {"id": f["id"], "name": "Too long", "message": "x" * 501, "expected_revision": 1})
+    assert error.value.status == 400
+
+
+def test_document_release_states_are_guarded_and_do_not_make_saves(library):
+    _, _, _, _, call = library
+    f = create(call)
+    fid = f["id"]
+    call("version", {"id": fid, "expected_revision": 1, "name": "Reviewed"})
+    def version():
+        return call("history", {"id": fid})["versions"][0]
+    def transition(status, note="", **extra):
+        current = version()
+        return call("version_status", {"id": fid, "name": "Reviewed", "expected_revision": 1,
+                    "expected_status": current["status"], "expected_status_updated": current["status_updated"],
+                    "status": status, "note": note, **extra})
+    with pytest.raises(Problem):
+        transition("released")
+    transition("candidate")
+    candidate = version()
+    for action in ("version_delete", "version_update"):
+        with pytest.raises(Problem) as error:
+            call(action, {"id": fid, "name": "Reviewed", "new_name": "Wrong", "expected_revision": 1})
+        assert error.value.status == 409
+    transition("version")
+    transition("candidate")
+    with pytest.raises(Problem) as error:
+        transition("released", expected_status_updated=candidate["status_updated"])
+    assert error.value.status == 409
+    transition("released")
+    with pytest.raises(Problem):
+        transition("obsolete")
+    transition("obsolete", "Superseded by a new connector")
+    assert version()["status_note"] == "Superseded by a new connector"
+    with pytest.raises(Problem):
+        transition("version")
+    history = call("history", {"id": fid})
+    assert len(history["revisions"]) == len(history["versions"]) == 1
+    assert history["versions"][0]["revision"] == 1
+
+
+def test_release_state_requires_owner_and_current_head(library):
+    _, _, _, _, call = library
+    fid = create(call)["id"]
+    call("version", {"id": fid, "name": "V1", "expected_revision": 1})
+    call("share", {"id": fid, "scope": "workspace", "expected_revision": 1})
+    head = call("history", {"id": fid})["branches"][0]["head_revision"]
+    request = {"id": fid, "name": "V1", "expected_revision": head, "expected_status": "version", "expected_status_updated": 0, "status": "candidate"}
+    with pytest.raises(Problem) as error:
+        call("version_status", request, who=1)
+    assert error.value.status == 403
+    call("save", {"id": fid, "expected_revision": head, "data_base64": "bmV3"})
+    with pytest.raises(Problem) as error:
+        call("version_status", request)
+    assert error.value.status == 409
+
+
+def test_explicit_merge_checkpoints_are_distinct_from_autosaves(library):
+    _, _, _, _, call = library
+    fid = create(call)["id"]
+    call("branch_create", {"id": fid, "name": "Experiment", "expected_revision": 1})
+    # A named version at a fork belongs to the new branch even before its first save.
+    call("version", {"id": fid, "name": "Fork", "branch": "Experiment", "expected_revision": 1})
+    assert call("history", {"id": fid})["versions"][0]["branch"] == "Experiment"
+    call("save", {"id": fid, "branch": "Experiment", "expected_revision": 1, "data_base64": "bmV3"})
+    assert len(call("history", {"id": fid})["versions"]) == 1
+    result = call("merge", {"id": fid, "source": "Experiment", "expected_revision": 1})
+    h = call("history", {"id": fid})
+    automatic = [v for v in h["versions"] if v["origin"] == "automatic"]
+    assert len(automatic) == 1
+    assert automatic[0]["revision"] == result["revision"]
+    call("merge", {"id": fid, "source": "Experiment", "expected_revision": result["revision"]})
+    assert len(call("history", {"id": fid})["versions"]) == 2

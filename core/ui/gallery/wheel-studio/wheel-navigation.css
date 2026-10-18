@@ -1,0 +1,65 @@
+/* Alternative app composition: shared navigation + Left / Center / Right.
+   Header/footer are absent; both toolbars belong to Center. */
+.wn-app-scroll { width: 100%; height: 100dvh; overflow: auto; background: #11181e; }
+.wheel-reference.wheel-navigation {
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-width: 1140px;
+  min-height: 600px;
+  padding: 8px;
+  gap: 12px;
+}
+.wheel-navigation .wn-navigation { border-radius: 12px; overflow: hidden; }
+.wheel-navigation .wr-workspace {
+  grid-template-columns: clamp(220px, 17vw, 280px) minmax(360px, 1fr) clamp(280px, 20vw, 330px);
+  gap: 8px;
+  padding: 0;
+  height: 100%;
+}
+.wheel-navigation .wr-left, .wheel-navigation .wr-right {
+  position: static;
+  display: flex;
+  width: auto;
+  height: 100%;
+}
+.wheel-navigation .wr-left .aui-dock-panel-body { padding: 0 10px 10px; }
+.wheel-navigation .wr-left .aui-panel-heading { min-height: 42px; }
+.wheel-navigation .wn-model-tabs { width: 100%; flex: none; margin-bottom: 12px; }
+.wheel-navigation .wn-model-tabs button { padding: 6px 3px; font-size: 10px; }
+.wheel-navigation .wn-variables { padding-top: 12px; }
+.wheel-navigation .wn-variables h3 { font-size: 12px; margin: 0 0 18px; }
+.wheel-navigation .wn-variables .wr-field { grid-template-columns: minmax(0, 1fr) 100px; }
+.wheel-navigation .wr-doc-card { gap: 8px; padding-inline: 6px; }
+.wheel-navigation .wr-toolbar { min-height: 70px; }
+.wheel-navigation .wr-toolbar .aui-ribbon-tool { width: 57px; min-width: 51px; }
+.wheel-navigation .wr-toolbar .wr-create { padding-inline: 12px; }
+.wheel-navigation .wr-shading { top: 12px; left: 10px; }
+.wheel-navigation .wr-cube { top: 14px; right: 57px; }
+.wheel-navigation .wr-camera-tools { top: 12px; right: 8px; }
+.wheel-navigation .wn-center-bottom {
+  display: flex; align-items: center; gap: 6px; flex: none;
+  min-height: 44px; padding: 4px 7px; margin-top: 6px;
+}
+.wheel-navigation .wn-center-bottom .aui-search-field { flex: 1; min-width: 100px; }
+.wheel-navigation .wn-center-bottom input { width: 100%; font-size: 11px; }
+.wheel-navigation .wn-center-bottom .aui-select-field-wrap { width: 62px; flex: none; }
+.wheel-navigation .wn-center-bottom .aui-icon-button { flex: none; }
+.wheel-navigation .wn-document-context { width: 100%; display: grid; gap: 14px; }
+.wheel-navigation .wn-document-context .aui-menu-trigger {
+  display: flex; align-items: center; gap: 10px; width: 100%; min-width: 0;
+  padding: 4px 0; text-align: left; background: transparent; border: 0;
+}
+.wheel-navigation .wn-document-context .aui-tool-icon,
+.wheel-navigation .wn-local-status > svg { width: 22px; height: 22px; flex: none; }
+.wheel-navigation .wn-document-context strong { font-size: 12px; font-weight: 500; }
+.wheel-navigation .wn-document-context small { display: flex; gap: 4px; align-items: center; margin-top: 5px; font-size: 10px; color: var(--aether-color-text-dim); }
+.wheel-navigation .wn-document-context small svg { width: 12px; height: 12px; }
+.wheel-navigation .wn-local-status { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+.wheel-navigation .wn-local-status > svg { color: var(--aether-color-accent); }
+.wheel-navigation .aui-sidebar--collapsed .wn-document-context .aui-menu-trigger,
+.wheel-navigation .aui-sidebar--collapsed .wn-local-status { justify-content: center; }
+.wheel-navigation .wn-navigation .aui-application-sidebar-tools { padding: 12px 0 0; margin: 0; border-top: 1px solid var(--aether-color-border); }
+.wheel-navigation .wn-navigation .aui-application-sidebar-section + .aui-application-sidebar-section { padding-top: 14px; border-top: 1px solid var(--aether-color-border); }
+.wheel-reference.wheel-navigation .wn-navigation.aui-sidebar { --aether-list-navigation-height: 40px; }

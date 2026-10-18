@@ -1,0 +1,29 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "aether-teal",
+  "name": "Aether Teal",
+  "description": "Aether Studio with the teal accent.",
+  "extends": "aether-studio",
+  "modes": {
+    "dark": {
+      "color-accent": "#36d6c3",
+      "color-accent-strong": "#36d6c3",
+      "color-accent-icon": "#36d6c3",
+      "color-bg-selected": "#36d6c3",
+      "color-border-focus": "#36d6c3",
+      "color-border-control-hover": "#36d6c3",
+      "color-selection-edge": "#36d6c3",
+      "viewport-selection": "#36d6c3"
+    },
+    "light": {
+      "color-accent": "#11a594",
+      "color-accent-strong": "#11a594",
+      "color-accent-icon": "#11a594",
+      "color-bg-selected": "#11a594",
+      "color-border-focus": "#11a594",
+      "color-border-control-hover": "#11a594",
+      "color-selection-edge": "#11a594",
+      "viewport-selection": "#11a594"
+    }
+  }
+}

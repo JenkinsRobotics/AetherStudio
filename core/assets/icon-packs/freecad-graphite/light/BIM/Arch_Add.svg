@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2985" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/Arch_Add.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2987">
+    <linearGradient id="linearGradient2091">
+      <stop style="stop-color:#405269;stop-opacity:1;" offset="0" id="stop2093" />
+      <stop style="stop-color:#405269;stop-opacity:0;" offset="1" id="stop2095" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3057" id="linearGradient3053" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.9455392,0,0,1.9455392,-47.998185,-58.673094)" x1="41.511921" y1="26.271811" x2="42.984806" y2="49.460072" />
+    <linearGradient id="linearGradient3057">
+      <stop style="stop-color:#c3cfdc" offset="0.0000000" id="stop3059" />
+      <stop style="stop-color:#a8b8cb;stop-opacity:1" offset="1.0000000" id="stop3061" />
+    </linearGradient>
+    <radialGradient r="10.31934" fy="35.127438" fx="23.070683" cy="35.127438" cx="23.070683" gradientTransform="matrix(0.914812,0.01265023,-0.00821502,0.213562,2.253914,27.18889)" gradientUnits="userSpaceOnUse" id="radialGradient3071" xlink:href="#linearGradient2091" />
+  </defs>
+  <g id="layer1">
+    <path style="opacity:0.10824741;fill:url(#radialGradient3071);fill-opacity:1;stroke:none" id="path1361" d="m 33.278212,34.94062 a 10.31934,2.320194 0 1 1 -20.63868,0 10.31934,2.320194 0 1 1 20.63868,0 z" transform="matrix(2.9071627,0,0,2.1549921,-34.745177,-18.296761)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="g3048" transform="matrix(1.0469189,0,0,1.0861452,-3.3021786,15.211538)">
+      <path id="text1314" d="m 40.406357,40.315477 0,-18.413744 19.103676,0 0,-12.8896209 -19.103676,0 0,-18.4137443 -13.372574,0 1e-6,18.4137443 -19.1036765,0 -1e-6,12.8896209 19.1036765,0 -1e-6,18.413744 z" style="font-size:59.90107727px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#a8b8cb;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;font-family:Bitstream Vera Sans" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path7076" d="m 38.495989,38.474103 0,-18.413744 19.103676,0 0,-9.206872 -19.103676,0 0,-18.4137448 -9.551838,0 4e-6,18.4137448 -19.1036768,0 -4e-6,9.206872 19.1036768,0 1.3e-5,18.413744 9.551838,0 z" style="font-size:59.90107727px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3053);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

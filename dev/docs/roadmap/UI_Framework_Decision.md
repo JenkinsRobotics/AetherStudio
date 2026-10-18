@@ -12,7 +12,7 @@ from it.
 
 ## The three UI tiers
 
-1. **The product engine (`Aether CAD/engine/`) — no UI, ever.** In-world tools (gizmos, triads, snap
+1. **The product engine (`Aether CAD/aether-engine/`) — no UI, ever.** In-world tools (gizmos, triads, snap
    nodes) are engine-drawn 3D geometry, not UI; their line lists live at the
    engine layer and renderers only upload them.
 2. **`core/ui/` — the shared design system.** Framework-neutral **design

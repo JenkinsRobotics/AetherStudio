@@ -1,0 +1,4 @@
+.aui-gauge-chart { width:100%; max-width:290px; margin:0 auto; }
+.aui-gauge-chart svg { display:block; width:100%; height:auto; }
+.aui-gauge-value { fill:var(--aether-color-text-soft); font:600 20px var(--aether-font-family); }
+.aui-gauge-detail { fill:var(--aether-color-text-dim); font:13px var(--aether-font-family); }

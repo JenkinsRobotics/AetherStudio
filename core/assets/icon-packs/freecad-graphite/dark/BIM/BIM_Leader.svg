@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2772" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/BIM_Leader.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2774">
+    <linearGradient y2="5" x2="-22" y1="18" x1="-18" gradientUnits="userSpaceOnUse" id="linearGradient3801-1" xlink:href="#linearGradient3836-0-0" />
+    <linearGradient id="linearGradient3836-0-0">
+      <stop id="stop3838-2-9" offset="0" style="stop-color:#48596e;stop-opacity:1;" />
+      <stop id="stop3840-5-3" offset="1" style="stop-color:#61758c;stop-opacity:1;" />
+    </linearGradient>
+  </defs>
+  <g id="layer1">
+    <g id="g3244" transform="matrix(0.9205539,0,0,0.9205539,1.1497621,0.9652214)">
+      <path id="path3061-2" style="fill:#5d7086;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 60,18 21,18 10.791016,46.351562 16.585938,47.904297 24.734375,24.066406 60,24 Z" transform="matrix(1.0863025,0,0,1.0863025,-1.2489894,-1.0485224)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3063-7-2" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 12.938145,48.496323 9.71152,-27.818795 40.193193,0" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <g id="g3797-9-1" transform="matrix(1.0863025,0,0,1.0863025,34.200959,39.260266)">
+        <path d="M -26.156204,5.582626 A 8.993818,8.9934077 0.02042283 1 1 -12.493793,17.282241 8.993818,8.9934077 0.02042283 1 1 -26.156204,5.582626 Z" id="path4250-71-1" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="M -24.633588,6.893588 A 6.9999997,7.0000001 0 1 1 -14,16 6.9999997,7.0000001 0 0 1 -24.633588,6.893588 Z" id="path4250-7-3-5" style="fill:url(#linearGradient3801-1);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+    </g>
+  </g>
+</svg>

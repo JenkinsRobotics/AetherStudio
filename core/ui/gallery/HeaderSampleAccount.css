@@ -1,0 +1,11 @@
+.header-sample-account-trigger .aui-avatar { width:20px; height:20px; font-size:7px; }
+.header-sample-account { box-sizing:border-box; width:314px; max-width:calc(100vw - 24px); padding:12px; }
+.header-sample-account .aui-button { background:transparent; border:0; box-shadow:none; }
+.header-sample-account .aui-button:hover:not(:disabled) { background:var(--aether-color-bg-hover); }
+.header-sample-account-top { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 2px 8px; font-size:12px; }
+.header-sample-account-top .aui-button { font-weight:400; }
+.header-sample-account-identity { display:grid; justify-items:center; gap:3px; padding:6px 0 4px; text-align:center; }
+.header-sample-account-identity > .aui-avatar { width:76px; height:76px; font-size:28px; margin-bottom:6px; }
+.header-sample-account-identity > strong { font-size:15px; }
+.header-sample-account-identity > small { color:var(--aether-color-text-dim); overflow-wrap:anywhere; }
+.header-sample-account-identity > .aui-button { color:var(--aether-color-accent); margin-top:4px; font-weight:400; }

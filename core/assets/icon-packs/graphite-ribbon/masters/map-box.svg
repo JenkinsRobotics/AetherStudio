@@ -1,0 +1,1 @@
+<path d="M4 4H28V28H4Z" fill="url(#front)" stroke="edge" /><path d="M4 4 11 11H21L28 4Z" fill="url(#top)" stroke="edge" /><path d="M4 4 11 11V21L4 28Z" fill="url(#side)" stroke="edge" /><path d="M28 4 21 11V21L28 28Z" fill="url(#side)" stroke="edge" /><path d="M4 28 11 21H21L28 28Z" fill="url(#top)" stroke="edge" /><path d="M11 11H21V21H11Z" fill="url(#accent)" stroke="edge" />

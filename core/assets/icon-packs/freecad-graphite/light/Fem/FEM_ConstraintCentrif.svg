@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1.1" id="svg1739" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_ConstraintCentrif.svg. Authors: [Przemo Firszt], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs1685">
+    <linearGradient id="linearGradient3367" x1="-11" x2="-18" y1="26" y2="14" gradientTransform="translate(-20 -6)" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+      <stop stop-color="#c4d0dd" offset="0" id="stop1675" />
+      <stop stop-color="#e5ecf3" offset="1" id="stop1677" />
+    </linearGradient>
+    <linearGradient id="linearGradient3369" x1="32.558" x2="26.302" y1="32.918" y2="12.207" gradientTransform="translate(10.413 -18.142)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dae2ec" offset="0" id="stop1680" />
+      <stop stop-color="#e5ecf3" offset="1" id="stop1682" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(87.958,2.1036)" id="g1737">
+    <g stroke-width="2" id="g1701">
+      <path d="m-69.198 25.198 16.221-10.644c11.343-4.6433 24.729 13.209 12.401 22.256l-15.696 9.8408z" color="#405269" fill="#dae2ec" stroke="#405269" stroke-linejoin="round" id="path1689" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linecap="round" />
+      <path d="m-70.279 28.105 15.947-10.448c10.365-7.6968 23.946 10.626 12.01 17.872l-15.696 9.8408z" color="#405269" fill="url(#linearGradient3367)" stroke="#405269" stroke-linejoin="round" id="path1691" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linecap="round" />
+      <g fill="none" stroke="#405269" id="g1699">
+        <path d="m-59.9 18.9c12-1 18.571 11 14.571 21" color="#405269" id="path1693" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="m-60.7 25.9 17-11" color="#405269" id="path1695" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="m-52.7 34.9 17-11" color="#405269" id="path1697" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+    </g>
+    <g transform="matrix(.92148 .21648 -.046568 .97753 -75.828 17.995)" color="#405269" stroke-linecap="round" stroke-linejoin="round" id="g1707">
+      <path transform="translate(-17,-7)" d="m44 22c0 6.6274-5.3726 12-12 12s-12-5.3726-12-12 5.3726-12 12-12 12 5.3726 12 12z" fill="#34a4f6" stroke="#405269" stroke-width="1.1" id="path1703" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+      <path transform="matrix(.83333 0 0 .83333 -11.667 -3.3333)" d="m44 22c0 6.6274-5.3726 12-12 12s-12-5.3726-12-12 5.3726-12 12-12 12 5.3726 12 12z" fill="url(#linearGradient3369)" stroke="#405269" stroke-width="1.1" id="path1705" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g fill="none" id="g1735">
+      <g transform="matrix(.92148 .21648 -.046568 .97753 -75.896 17.973)" color="#405269" id="g1713">
+        <path transform="translate(-17,-7)" d="m44 22c0 6.6274-5.3726 12-12 12s-12-5.3726-12-12 5.3726-12 12-12 12 5.3726 12 12z" stroke-width="1.1" id="path1709" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+        <path transform="matrix(.83333 0 0 .83333 -11.667 -3.3333)" d="m44 22c0 6.6274-5.3726 12-12 12s-12-5.3726-12-12 5.3726-12 12-12 12 5.3726 12 12z" stroke-width="1.1" id="path1711" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <g stroke="#405269" stroke-width="2" id="g1723">
+        <path d="m-59.7 24.9v23" color="#405269" id="path1715" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="m-66.7 24.9v21" color="#405269" id="path1717" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="m-72.7 28.9 21 7" color="#405269" id="path1719" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="m-73.7 35.9 21 7" color="#405269" id="path1721" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <g fill="none" stroke-linecap="round" id="g1733">
+        <path d="m -47.212954,52.44643 c 0,0 -6.315046,4.35217 -12.548046,4.25917 -10.517,-0.157 -18.194,-6.7834 -21.485,-16.773 -2.5664,-7.7898 0.33383,-18.519 6.7154,-23.671 4.9087,-3.9629 9.4238,-4.8603 9.4238,-4.8603" fill="none" stroke="#405269" stroke-linecap="round" stroke-width="1.1" id="path1729" style="stroke:#405269;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+        <path d="m -47.212954,52.44643 c 0,0 -6.315046,4.35217 -12.548046,4.25917 -10.517,-0.157 -18.194,-6.7834 -21.485,-16.773 -2.5664,-7.7898 0.33383,-18.519 6.7154,-23.671 4.9087,-3.9629 9.4238,-4.8603 9.4238,-4.8603" fill="none" stroke="#37a8fa" stroke-linecap="round" stroke-width="1.1" id="path1731" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+        <path id="path1" style="fill:#34a4f6;stroke:#405269;stroke-width:1.1;stroke-linejoin:round" d="M -63.587346,18.182513 -65.725708,4.0540294 -48.221792,7.9881495 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+    </g>
+  </g>
+</svg>

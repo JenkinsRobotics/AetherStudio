@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg1307" version="1.0" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/button_left.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs1309">
+    <linearGradient id="linearGradient3895">
+      <stop style="stop-color:#c3cfdc;stop-opacity:1;" offset="0" id="stop3897" />
+      <stop style="stop-color:#9caec3;stop-opacity:1;" offset="1" id="stop3899" />
+    </linearGradient>
+    <linearGradient y2="44.919998" x2="38.93103" y1="23.159998" x1="43.758617" gradientTransform="matrix(-1.4481105,0,0,1.4682264,91.372525,-30.982541)" gradientUnits="userSpaceOnUse" id="linearGradient3012" xlink:href="#linearGradient3895" />
+  </defs>
+  <g id="layer1" style="display:inline" transform="matrix(0.99994991,0,0,0.92311013,0.00157172,17.229591)">
+    <path style="fill:#c3cfdc;fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 34.996089,-8.959147 V 5.0183684 h 25.96612 V 26.983036 H 34.996089 V 40.960551 L 3.0377899,16.000701 Z" id="path3343" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3012);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 32.914062,-4.6914062 V 7.0996094 H 58.880859 V 24.900391 H 32.914062 V 36.693359 L 6.4199219,16 Z" id="path1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

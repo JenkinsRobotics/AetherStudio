@@ -1,0 +1,4 @@
+.aui-file-icon { position: relative; display: inline-block; flex: none; vertical-align: middle; }
+.aui-file-icon > svg { display: block; width: 100%; height: 100%; }
+.aui-file-icon-badge { position: absolute; left: 0; bottom: 0; display: flex; }
+.aui-file-icon--illustrated .aui-file-icon-badge { left: 1%; bottom: 1%; }

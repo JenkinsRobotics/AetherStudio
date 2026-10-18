@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" version="1.1" id="svg2" height="32" width="32" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Stylesheets/overlay/icons/float.svg. Authors: Pablo Gil. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g transform="translate(-1074.0663,-344.59799)" id="layer1">
+    <rect y="349.09799" x="1075.5664" height="6.0000062" width="6.0000587" id="rect4200" style="opacity:1;fill:none;fill-opacity:0.50196078;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:63;stroke-opacity:0.50196078" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="rect4200-1" d="m 1078.5663,348.09799 0,-2 6,0 0,6 -2,0" style="opacity:1;fill:none;fill-opacity:0.50196078;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:63;stroke-opacity:0.50196078" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

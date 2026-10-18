@@ -1,15 +1,57 @@
-import {useEffect,useRef,useState} from 'react';
-import {AetherIcon,Button,SidebarLabel} from '@aether/ui';
-export type CreateChoice='project'|'folder'|'part'|'assembly'|'import'|'character';
-const defaultChoices=[['project','Project document','document'],['folder','Folder','folder'],['part','Part','design'],['assembly','Assembly','assembly'],['import','Import file…','import']] as const;
-export type CreateMenuChoices=readonly (readonly [CreateChoice,string,Parameters<typeof AetherIcon>[0]['name']])[];
-export function CreateMenu({onChoose,disabled,items=defaultChoices}:{onChoose:(choice:CreateChoice)=>void;disabled:boolean;items?:CreateMenuChoices}){
- const [open,setOpen]=useState(false);const root=useRef<HTMLDivElement>(null);
- const focusItem=(index:number)=>{const items=root.current?.querySelectorAll<HTMLButtonElement>('[role=menuitem]');if(items?.length)items[(index+items.length)%items.length].focus();};
- useEffect(()=>{if(!open)return;focusItem(0);const outside=(e:PointerEvent)=>{if(!root.current?.contains(e.target as Node))setOpen(false);};document.addEventListener('pointerdown',outside);return()=>document.removeEventListener('pointerdown',outside);},[open]);
- return <div ref={root} className="library-create" onKeyDown={e=>{
-  if(e.key==='Escape'){setOpen(false);root.current?.querySelector<HTMLButtonElement>('[aria-haspopup]')?.focus();e.preventDefault();}
-  if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();if(!open){setOpen(true);return;}const items=Array.from(root.current?.querySelectorAll('[role=menuitem]')??[]);const current=items.indexOf(document.activeElement!);focusItem(e.key==='Home'?0:e.key==='End'?items.length-1:current+(e.key==='ArrowDown'?1:-1));}
- }}><Button primary aria-haspopup="menu" aria-expanded={open} aria-controls="cad-create-menu" disabled={disabled} onClick={()=>setOpen(!open)}><span className="library-create-plus" aria-hidden="true">+</span><SidebarLabel>Create <span aria-hidden="true">▾</span></SidebarLabel></Button>
- {open&&<div id="cad-create-menu" role="menu" aria-label="Create" className="library-create-menu">{items.map(([id,label,icon])=><button type="button" role="menuitem" key={id} onClick={()=>{setOpen(false);onChoose(id);}}><AetherIcon name={icon}/>{label}</button>)}</div>}</div>;
+import { FileIcon, MenuButton, SidebarLabel, type AetherIconName, type MenuItem } from '@aether/ui';
+
+export type CreateChoice =
+  | 'design' | 'project' | 'folder' | 'part' | 'assembly' | 'import' | 'character' | 'show' | 'circuit' | 'sketch';
+
+/** `[id, label, icon]`, in the order an app wants its creatable kinds listed. */
+export type CreateMenuChoices = readonly (readonly [CreateChoice, string, AetherIconName])[];
+
+const defaultChoices: CreateMenuChoices = [
+  ['design', 'New design…', 'file-part'],
+  ['project', 'Project document', 'file-project'],
+  ['part', 'Part', 'file-part'],
+  ['assembly', 'Assembly', 'file-assembly'],
+];
+
+/**
+ * Create, grouped the way Jonathan asked for on 2026-10-04 from OneDrive's
+ * menu: somewhere to put things, then ways to bring things in, then the things
+ * this application can make. Folder and Import are supplied here rather than by
+ * each app, because every library has them and their position is the structure.
+ *
+ * It draws the shared MenuButton rather than its own dropdown — this used to be
+ * a hand-rolled menu with its own roving focus and outside-click handling, none
+ * of which differed from the shared one, and which had no way to show the
+ * separators this grouping needs.
+ */
+export function CreateMenu({ onChoose, disabled, items = defaultChoices }: {
+  onChoose: (choice: CreateChoice) => void;
+  disabled: boolean;
+  items?: CreateMenuChoices;
+}) {
+  // An app may still pass folder or import in its own list; they belong to the
+  // groups below, so they are not repeated among the document kinds.
+  const kinds = items.filter(([id]) => id !== 'folder' && id !== 'import');
+  const menu: MenuItem[] = [
+    { id: 'folder', label: 'Folder', icon: <FileIcon icon="file-folder" size={18} /> },
+    { id: 'import', label: 'Files upload', icon: <FileIcon icon="import" size={18} />, separatorBefore: true },
+    ...kinds.map(([id, label, icon], index) => ({
+      id, label, icon: <FileIcon icon={icon} size={18} />,
+      separatorBefore: index === 0,
+    })),
+  ];
+  return (
+    <MenuButton
+      density="comfortable"
+      className="library-create"
+      label="Create or upload"
+      disabled={disabled}
+      placement="bottom-start"
+      items={menu}
+      onSelect={(id) => onChoose(id as CreateChoice)}
+    >
+      <span className="library-create-plus" aria-hidden="true">+</span>
+      <SidebarLabel>Create or upload</SidebarLabel>
+    </MenuButton>
+  );
 }

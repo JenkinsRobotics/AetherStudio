@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg6248" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/arrow-down.svg. Authors: [WandererFan], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html; https://www.gnu.org/licenses/lgpl-3.0.en.html</desc><defs id="defs6250">
+    <linearGradient id="linearGradient3806">
+      <stop id="stop3808" offset="0" style="stop-color:#54667b;stop-opacity:1" />
+      <stop id="stop3810" offset="1" style="stop-color:#3c4b5f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient y2="29.156361" x2="58.053288" y1="36.080002" x1="21.940434" gradientTransform="matrix(0,1.4500001,-1.4705882,0,79.05882,-27.45)" gradientUnits="userSpaceOnUse" id="linearGradient3012" xlink:href="#linearGradient3806" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:url(#linearGradient3012);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 57,35 -16.000001,0 0,-32 -18,0 0,32 L 7,35 32,61 z" id="path3343" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="m 52.25713,37 -13.257131,0 0,-32 -14,0 0,32 L 11.710728,37 32,58 z" id="path3343-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

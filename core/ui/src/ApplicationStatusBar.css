@@ -1,0 +1,58 @@
+.aui-application-status {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 12px;
+  width: 100%;
+  height: var(--aether-size-statusbar, 24px);
+  padding: 0 12px;
+  border-top: 1px solid var(--aether-color-border, #dce2e9);
+  background: var(--aether-color-bg-bar, var(--aether-color-bg-panel, #f4f6f8));
+  color: var(--aether-color-text-dim, #536275);
+  font: 11px var(--aether-font-family, system-ui);
+}
+.aui-application-status__identity {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+.aui-application-status__connection {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}
+.aui-application-status__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--aether-color-warn, #c58b24);
+}
+.aui-application-status[data-connection="connected"] .aui-application-status__dot { background: var(--aether-color-ok, #28a66b); }
+.aui-application-status[data-connection="offline"] .aui-application-status__dot { background: var(--aether-color-error, #d15353); }
+.aui-application-status[data-connection="local"] .aui-application-status__dot { background: var(--aether-color-text-dim, #536275); }
+.aui-application-status__name { font-weight: 600; }
+.aui-application-status__name,
+.aui-application-status__message,
+.aui-application-status__company {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.aui-application-status__message { flex: 1; text-align: center; }
+.aui-application-status__company { flex: 0 1 auto; max-width: 45%; margin-left: auto; text-align: right; }
+.aui-application-status__connection-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .aui-application-status { gap: 8px; padding-inline: 8px; }
+  .aui-application-status__message:empty { flex: 0; }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#e5edf7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<desc>FreeCAD Graphite extension: thread. Original illustration by Aether Studio contributors, 2026-09-24; not upstream FreeCAD artwork.</desc><defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="#6c8098" /><stop offset="1" stop-color="#91a4bb" /></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="#91a4bb" /><stop offset="1" stop-color="#192636" /></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="#192636" /><stop offset="1" stop-color="#91a4bb" /></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="#5bbdff" /><stop offset="1" stop-color="#0876d5" /></linearGradient>
+</defs>
+<path d="M10 6Q16 2 22 6V25Q16 29 10 25Z" fill="url(#metalFace)" stroke="#e5edf7" /><path d="M10 6Q16 10 22 6M9 11 23 7M9 16 23 12M9 21 23 17M10 26 23 22" fill="none" stroke="#5bbdff" />
+</svg>

@@ -1,7 +1,7 @@
 # 2D Character workspace (groundwork)
 
 **Status:** groundwork spec, 2026-07-23. The engine pipelines it stands on are
-built (`animacore/raster/`, `animacore/frame_serial.py`, `animacore/raster/mscript.py`
+built (`aether_animation/raster/`, `aether_animation/frame_serial.py`, `aether_animation/raster/mscript.py`
 — see `2D_Character_Pipeline.md`). This doc lays out the app workspace + the
 Studio↔AnimaCore bridge contract it needs. Refine freely.
 
@@ -53,11 +53,11 @@ Add to `centeredNavigation` as a top tab (Character · Rig · Animate · 2D · S
 
 An **output node** attaches to the canvas (your "hardware node" idea): its input
 is the canvas frame stream, its output drives a real panel. Backed by
-`animacore/frame_serial.SerialFrameOutput` (real serial `MM`/`BM`/`FM`) or
+`aether_animation/frame_serial.SerialFrameOutput` (real serial `MM`/`BM`/`FM`) or
 `SimulatorFrameOutput` (the on-screen matrix sim). The Output tab configures the
 matrix target + port and shows live status.
 
-## Bridge contract (engine side — `animacore/bridge.py`, Claude's lane)
+## Bridge contract (engine side — `aether_animation/bridge.py`, Claude's lane)
 
 The workspace calls these; the engine owns all meaning. New `canvas2d.*` verb
 family on the existing `Session`/`handle_request` bridge:
@@ -82,8 +82,8 @@ family on the existing `Session`/`handle_request` bridge:
 
 1. ✅ **`canvas2d.*` bridge verbs** (`describe`/`new`/`load`/`save`/`get`/
    `evaluate`/`render_frame`/`matrix_preview`/`release`) + the headless preview
-   tool (`animacore/raster/preview.py`) + **`.character.anima` `canvas2d:`
-   serialization** (`animacore/canvas2d_io.py`, loader accepts the block, example
+   tool (`aether_animation/raster/preview.py`) + **`.character.anima` `canvas2d:`
+   serialization** (`aether_animation/canvas2d_io.py`, loader accepts the block, example
    `examples/pixel_face_2d.character.anima`) — landed 2026-07-23 (Claude), tested.
 2. ✅ **Workspace scaffold** — `StudioWorkspaceKind.canvas2d` (⌘8, tab after
    Animate) registered across every switch; Surfaces/Media/Faces/Output sidebar

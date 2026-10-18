@@ -1,0 +1,176 @@
+AETHER REBUILD — PHASE 0 REVIEW AND STARTING CONTRACTS
+2026-10-10 / Codex
+
+Status: review and as-built inventory completed. Phase 0 remains in progress.
+No server, engine, UI, database, deployment, release scope or policy was changed.
+The other contributor's framework and runtime decision drafts are preserved.
+
+DIRECTION
+Jonathan agrees with a staged company-platform rebuild: a central work server
+(Mac Studio-class initially), workstations, later farm scale and independent
+offline apps. Rust is the server/new engine direction; React/TypeScript and
+shared Aether UI stay. Working FreeCAD remains until replacement parity.
+Use the already recorded Map/CAD-first priority, with platform/document storage
+support. Animation and Sketch are not silently promoted to release blockers by
+the broader proposed default in framework section7. Their development may
+continue independently. An expanded release lineup, pilot date and signing
+identities remain open; none blocks this inventory or protocol specification.
+
+REVIEW ITEMS TO RESOLVE IN THE FRAMEWORK
+1. DATABASE TRANSITION
+   Phase1 says Postgres and also says the Rust hub runs beside the Python host
+   on the same database. The current host uses SQLite. Define an explicit
+   sequence: Rust calls the current authoritative document API initially, OR
+   first build/qualify the Postgres adapter used by both servers. Choose one
+   write authority per operation and one schema migration owner. Do not connect
+   the new hub to an independently populated Postgres store and call it shared
+   truth. Require repeatable migration, row/blob/revision integrity checks,
+   backup, restore and rollback before cutover. Farm state needs durable shared
+   event delivery as well as a relational/blob store.
+
+2. OFFLINE AND LOCAL CAD
+   Workstation-first is a target, not today's behavior for FreeCAD-backed
+   browser modeling. Current native CAD depends on an available worker. Until
+   Rust/native/WASM parity is verified, show an honest capability matrix:
+   browser local/remote, desktop native, offline, and server job. Do not promise
+   every CAD edit is local or that a Tauri wrapper supplies missing geometry.
+   Keep native process isolation available for crash-prone/heavy kernels even
+   if light engines later run in-process. Local-first file storage does not
+   itself provide local modeling capability.
+
+3. CONCURRENT EDIT MEANING
+   An operation log/CRDT handles replication; product owners must define merge
+   semantics. CAD feature reorder/delete/reference edits can conflict even when
+   every byte is replicated correctly. Start with explicit document revisions,
+   stable IDs, dependency checks and deterministic conflict reporting. Approve
+   mergeable text/metadata separately from modeling operations. Test two offline
+   users editing/deleting the same upstream feature, reconnect, duplicate/reordered
+   delivery, rejected operations and recovery without losing either user's work.
+
+4. COMMAND PROTOCOL MIGRATION
+   Inventory existing commands first (attached JSON). A new Rust canonical
+   schema should generate TypeScript and adapter bindings, replacing today's
+   handwritten registries in an explicit slice. Do not leave two authorities
+   maintained indefinitely. Keep existing request IDs, units, refusal rules,
+   authorization, revision guards, preview immutability and saved history behind
+   compatibility adapters. Version protocol, documents and engine capabilities
+   independently. UI/tool coverage is incomplete today; acknowledge it.
+
+5. PERFORMANCE TARGETS
+   The initial numeric budgets need fixture/hardware/workload definitions,
+   sample counts and percentiles. Distinguish cold startup from document-ready,
+   command acknowledgement from modeling completion, 500 connected sessions
+   from 500 actively editing users, and frame delivery from GPU timing.
+   Use16.67ms/8.33ms if the nominal targets are60/120Hz; tighter16/8ms budgets
+   are valid but should be described as headroom targets. Define idle app memory
+   across all app/native-worker/GPU processes, not just JavaScript heap.
+   Current200-body rebuild is~4s; synchronous completion under16ms cannot be
+   applied to every modeling operation. Long jobs need progress/cancellation.
+
+6. DATA SAFETY AS TESTABLE BEHAVIOR
+   Preserve the 'never lose work' objective with explicit durable-ack rules,
+   local offline journals, retention, backup verification, restore exercises,
+   fault injection and agreed recovery objectives. A two-week pilot without a
+   reported incident does not prove immunity to loss. Require known-failure
+   recovery tests before and during the pilot. Operation retries must not
+   accidentally duplicate a save, version, feature or hardware command.
+
+7. CAD AND RELEASE GATES
+   No FreeCAD retirement on a calendar. Require native-format compatibility,
+   stable reference behavior, sketch constraints, core feature/history outcomes,
+   undo/redo, exact topology/export and malformed-input recovery before switching
+   the default. Numeric tolerances and deterministic ordering must be defined;
+   cross-platform floating-point output need not be blindly bit-identical.
+   Release-critical feature work may continue on the existing adapter. A fixed
+   'no Python' date must not force an incomplete CAD release or disable offline
+   workflows without a working replacement.
+
+8. SPECIFIC FAILURES ALREADY MEASURED
+   Carry the audit into Phase0 baseline/Phase1 acceptance:
+   - Host global lock: unrelated file list waits~3.9s during a CAD rebuild.
+     Same-Python scheduling experiment lowered its median to34ms.
+   - 100 concurrent file-list burst: p95~2.8s, no failures.
+   - Map100 surfaces/1000clips: ~29rAF/s, scripting saturation. Cache/index
+     timeline evaluation; keep static UI/icon/tray work off per-frame paths.
+   - Map32 shaders: WebGL context limit produces blank surfaces. Fix shared
+     renderer ownership and test visual completeness, not FPS alone.
+   - CAD already uses WebGPU.200 simple bodies orbit~60rAF/s; do not claim
+     complex production assembly or Pi qualification from that workload.
+   Full report from repository root:
+   .verification/platform-audit-2026-10-10/REPORT.txt
+
+AS-BUILT COMMAND BASELINE
+Source-backed inventory: command-inventory.json. This is a dated snapshot,
+not a new runtime registry or the finished Rust protocol specification.
+
+Platform:5 commands
+  document.list, document.inspect, document.history, document.rename,
+  document.version.create.
+CAD:11 commands
+  cad.part.inspect/evaluate/topology; cad.extrude.preview/setdepth;
+  cad.extrude.previewoffset/setoffset; cad.revolve.preview/setextent;
+  cad.feature.suppress/move.
+Map:4 commands
+  map.show.inspect/evaluate, map.clip.move/edit.
+Animation:58 bridge capabilities, protocol_version1. These are a separate
+session-based bridge, not58 already integrated platform/MCP commands.
+Capability names exactly match the existing dispatch keys in this snapshot.
+
+Current platform command discovery:
+  POST /api/automation/commands/list
+  Response declares schema_version1 and grant-filtered command descriptors.
+Current command execution:
+  POST /api/automation/commands/run
+  Request: {"id":"cad.part.inspect","arguments":{"app":"cad","id":"FILE_ID"}}
+  Success: {"command":"cad.part.inspect","result":{...}}
+Each command's exact inputSchema is exported in the inventory. Mutations
+require expected_revision. The grant must permit the app and the operation;
+product saved-content edits also require edit-content permission. User document
+ACL/entitlement checks still apply. Product code proposes a changed document;
+the platform owns persistence/history. Preview does not save. Saved history
+recovery is NOT the open editor's Undo stack. Open editors currently reload
+after external saved edits and reject stale revisions.
+
+Current Animation bridge shape:
+  Request: {"id":<request identity>,"method":"<capability>","params":{...}}
+  Success/error envelope includes ok and result/error; handles bind session
+  state. Complete per-verb argument/result/effect mapping is still outstanding.
+  Do not expose path/session/hardware capabilities through MCP automatically.
+  Inventorying a capability does not grant permission to invoke it remotely.
+
+Missing from the existing shared descriptors:
+  - Typed result and structured error schemas per command.
+  - Explicit undo/redo, preview vs mutation, and external-effect categories.
+  - Durable idempotency/retry/result-replay rules.
+  - Uniform cancellation, progress, worker lifetime and job completion rules.
+  - Declared revision/stable-reference invalidation and conflict semantics.
+  - Complete interface-command/CLI/MCP coverage, including live editor state.
+  - A clearly versioned execution envelope across all transports/products.
+Existing schemas and compatibility behavior remain authoritative until an
+explicit versioned migration; the gaps are not permission to loosen validation.
+
+NEXT BOUNDED PHASE 0 PACKET
+Protocol author should consume this snapshot and existing bridge/format docs.
+For each command, classify: inputs/units, output, errors, read/preview/write,
+undo/history, file/engine revision assumptions, allowed execution targets,
+idempotency, required grants, cancellation and any external effects. Preserve
+source ownership: products define meaning; platform defines authority/storage.
+Begin with document.inspect and a saved CAD preview/edit pair plus Map clip
+move as vertical slices. Include a refused/stale edit and replay after a dropped
+response, not only happy-path command execution.
+
+Then create shared fixture-based contract tests that run unchanged against the
+old adapter and new implementation. Qualify the generator and adapter before
+moving a UI call. Add engine capability negotiation so unavailable local/WASM
+features report clearly rather than silently changing behavior.
+
+PHASE 0 EXIT STATUS
+  Framework reviewed: yes; the above reconciliation remains to be incorporated.
+  Performance baseline: broad local baseline exists; S7 full hardware/load
+    qualification remains open.
+  Command snapshot:20 platform/product descriptors plus58 bridge capabilities;
+    source hashes, versions and validation included.
+  Complete command/native-format specifications: not complete.
+  All-repository CI gate for the final Phase0 revision: not run in this review.
+  Rust hub, Postgres migration, Tauri shell or engine replacement: not implemented.
+  Dates: estimates only until the platform and CAD spikes establish scope.

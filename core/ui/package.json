@@ -1,37 +1,885 @@
 {
   "name": "@aether/ui",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.145",
   "description": "Aether design system: framework-neutral tokens + one-React-widget-per-file library shared by every Aether product UI.",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "./dist-lib/index.js",
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "types": "./dist-lib/index.d.ts",
+      "default": "./dist-lib/index.js"
+    },
+    "./concept-widgets": {
+      "types": "./dist-lib/ConceptWidgets.d.ts",
+      "default": "./dist-lib/ConceptWidgets.js"
+    },
+    "./file-details": {
+      "types": "./dist-lib/FileDetails.d.ts",
+      "default": "./dist-lib/FileDetails.js"
+    },
+    "./file-manager": {
+      "types": "./dist-lib/FileManagerPanel.d.ts",
+      "default": "./dist-lib/FileManagerPanel.js"
+    },
+    "./file-preview": {
+      "types": "./dist-lib/FilePreview.d.ts",
+      "default": "./dist-lib/FilePreview.js"
+    },
+    "./file-types": {
+      "types": "./dist-lib/file-types.d.ts",
+      "default": "./dist-lib/file-types.js"
+    },
+    "./kit": {
+      "types": "./dist-lib/Kit.d.ts",
+      "default": "./dist-lib/Kit.js"
+    },
+    "./new-design": {
+      "types": "./dist-lib/NewDesignDialog.d.ts",
+      "default": "./dist-lib/NewDesignDialog.js"
+    },
     "./tokens.css": "./tokens/tokens.css",
-    "./widgets.css": "./src/widgets.css"
+    "./widgets.css": "./dist-lib/widgets.css",
+    "./package.json": "./package.json",
+    "./viewport-cube-geometry": {
+      "types": "./dist-lib/viewport-cube-geometry.d.ts",
+      "default": "./dist-lib/viewport-cube-geometry.js"
+    },
+    "./DocumentCreateDialog": {
+      "types": "./dist-lib/DocumentCreateDialog.d.ts",
+      "default": "./dist-lib/DocumentCreateDialog.js"
+    },
+    "./ApplicationFileTable": {
+      "types": "./dist-lib/ApplicationFileTable.d.ts",
+      "default": "./dist-lib/ApplicationFileTable.js"
+    },
+    "./FileField": {
+      "types": "./dist-lib/FileField.d.ts",
+      "default": "./dist-lib/FileField.js"
+    },
+    "./FreeCADIcon": {
+      "types": "./dist-lib/FreeCADIcon.d.ts",
+      "default": "./dist-lib/FreeCADIcon.js"
+    },
+    "./ToolIconTheme": {
+      "types": "./dist-lib/ToolIconTheme.d.ts",
+      "default": "./dist-lib/ToolIconTheme.js"
+    },
+    "./SpecimenBoard": {
+      "types": "./dist-lib/SpecimenBoard.d.ts",
+      "default": "./dist-lib/SpecimenBoard.js"
+    },
+    "./InspectorContext": {
+      "types": "./dist-lib/InspectorContext.d.ts",
+      "default": "./dist-lib/InspectorContext.js"
+    },
+    "./FlowDiagram": {
+      "types": "./dist-lib/FlowDiagram.d.ts",
+      "default": "./dist-lib/FlowDiagram.js"
+    },
+    "./FlowDiagramEditor": {
+      "types": "./dist-lib/FlowDiagramEditor.d.ts",
+      "default": "./dist-lib/FlowDiagramEditor.js"
+    },
+    "./flow-diagram-model": {
+      "types": "./dist-lib/flow-diagram-model.d.ts",
+      "default": "./dist-lib/flow-diagram-model.js"
+    },
+    "./SignalMonitor": {
+      "types": "./dist-lib/SignalMonitor.d.ts",
+      "default": "./dist-lib/SignalMonitor.js"
+    },
+    "./FileDetails": {
+      "types": "./dist-lib/FileDetails.d.ts",
+      "default": "./dist-lib/FileDetails.js"
+    },
+    "./WorkspaceBottomDock": {
+      "types": "./dist-lib/WorkspaceBottomDock.d.ts",
+      "default": "./dist-lib/WorkspaceBottomDock.js"
+    },
+    "./StylePropertiesPanel": {
+      "types": "./dist-lib/StylePropertiesPanel.d.ts",
+      "default": "./dist-lib/StylePropertiesPanel.js"
+    },
+    "./MaterialEditor": {
+      "types": "./dist-lib/MaterialEditor.d.ts",
+      "default": "./dist-lib/MaterialEditor.js"
+    },
+    "./WorkbenchWindow": {
+      "types": "./dist-lib/WorkbenchWindow.d.ts",
+      "default": "./dist-lib/WorkbenchWindow.js"
+    },
+    "./SharedChromeSettings": {
+      "types": "./dist-lib/SharedChromeSettings.d.ts",
+      "default": "./dist-lib/SharedChromeSettings.js"
+    },
+    "./Tabs": {
+      "types": "./dist-lib/Tabs.d.ts",
+      "default": "./dist-lib/Tabs.js"
+    },
+    "./ListBox": {
+      "types": "./dist-lib/ListBox.d.ts",
+      "default": "./dist-lib/ListBox.js"
+    },
+    "./PanelPlacementMenu": {
+      "types": "./dist-lib/PanelPlacementMenu.d.ts",
+      "default": "./dist-lib/PanelPlacementMenu.js"
+    },
+    "./NotificationCenter": {
+      "types": "./dist-lib/NotificationCenter.d.ts",
+      "default": "./dist-lib/NotificationCenter.js"
+    },
+    "./FilePreview": {
+      "types": "./dist-lib/FilePreview.d.ts",
+      "default": "./dist-lib/FilePreview.js"
+    },
+    "./NewDesignDialog": {
+      "types": "./dist-lib/NewDesignDialog.d.ts",
+      "default": "./dist-lib/NewDesignDialog.js"
+    },
+    "./Slider": {
+      "types": "./dist-lib/Slider.d.ts",
+      "default": "./dist-lib/Slider.js"
+    },
+    "./WorkspaceLayoutContext": {
+      "types": "./dist-lib/WorkspaceLayoutContext.d.ts",
+      "default": "./dist-lib/WorkspaceLayoutContext.js"
+    },
+    "./Popover": {
+      "types": "./dist-lib/Popover.d.ts",
+      "default": "./dist-lib/Popover.js"
+    },
+    "./CommandPalette": {
+      "types": "./dist-lib/CommandPalette.d.ts",
+      "default": "./dist-lib/CommandPalette.js"
+    },
+    "./DashboardShell": {
+      "types": "./dist-lib/DashboardShell.d.ts",
+      "default": "./dist-lib/DashboardShell.js"
+    },
+    "./PanelHeading": {
+      "types": "./dist-lib/PanelHeading.d.ts",
+      "default": "./dist-lib/PanelHeading.js"
+    },
+    "./WorkspaceRibbon": {
+      "types": "./dist-lib/WorkspaceRibbon.d.ts",
+      "default": "./dist-lib/WorkspaceRibbon.js"
+    },
+    "./viewport-cube-scene": {
+      "types": "./dist-lib/viewport-cube-scene.d.ts",
+      "default": "./dist-lib/viewport-cube-scene.js"
+    },
+    "./RibbonWorkspaceShell": {
+      "types": "./dist-lib/RibbonWorkspaceShell.d.ts",
+      "default": "./dist-lib/RibbonWorkspaceShell.js"
+    },
+    "./HarnessWidgets": {
+      "types": "./dist-lib/HarnessWidgets.d.ts",
+      "default": "./dist-lib/HarnessWidgets.js"
+    },
+    "./PanelResizeHandle": {
+      "types": "./dist-lib/PanelResizeHandle.d.ts",
+      "default": "./dist-lib/PanelResizeHandle.js"
+    },
+    "./TreeRename": {
+      "types": "./dist-lib/TreeRename.d.ts",
+      "default": "./dist-lib/TreeRename.js"
+    },
+    "./LayoutStyleControls": {
+      "types": "./dist-lib/LayoutStyleControls.d.ts",
+      "default": "./dist-lib/LayoutStyleControls.js"
+    },
+    "./ViewportNavigationCube": {
+      "types": "./dist-lib/ViewportNavigationCube.d.ts",
+      "default": "./dist-lib/ViewportNavigationCube.js"
+    },
+    "./AnnouncementCard": {
+      "types": "./dist-lib/AnnouncementCard.d.ts",
+      "default": "./dist-lib/AnnouncementCard.js"
+    },
+    "./WorkspaceChromePreferences": {
+      "types": "./dist-lib/WorkspaceChromePreferences.d.ts",
+      "default": "./dist-lib/WorkspaceChromePreferences.js"
+    },
+    "./DashboardCharts": {
+      "types": "./dist-lib/DashboardCharts.d.ts",
+      "default": "./dist-lib/DashboardCharts.js"
+    },
+    "./PropertyGrid": {
+      "types": "./dist-lib/PropertyGrid.d.ts",
+      "default": "./dist-lib/PropertyGrid.js"
+    },
+    "./ApplicationContextMenu": {
+      "types": "./dist-lib/ApplicationContextMenu.d.ts",
+      "default": "./dist-lib/ApplicationContextMenu.js"
+    },
+    "./TabbedSidebar": {
+      "types": "./dist-lib/TabbedSidebar.d.ts",
+      "default": "./dist-lib/TabbedSidebar.js"
+    },
+    "./Inspector": {
+      "types": "./dist-lib/Inspector.d.ts",
+      "default": "./dist-lib/Inspector.js"
+    },
+    "./SearchField": {
+      "types": "./dist-lib/SearchField.d.ts",
+      "default": "./dist-lib/SearchField.js"
+    },
+    "./viewport-cube-occlusion": {
+      "types": "./dist-lib/viewport-cube-occlusion.d.ts",
+      "default": "./dist-lib/viewport-cube-occlusion.js"
+    },
+    "./Breadcrumbs": {
+      "types": "./dist-lib/Breadcrumbs.d.ts",
+      "default": "./dist-lib/Breadcrumbs.js"
+    },
+    "./ErrorState": {
+      "types": "./dist-lib/ErrorState.d.ts",
+      "default": "./dist-lib/ErrorState.js"
+    },
+    "./RelationEditor": {
+      "types": "./dist-lib/RelationEditor.d.ts",
+      "default": "./dist-lib/RelationEditor.js"
+    },
+    "./WorkspaceSwitcher": {
+      "types": "./dist-lib/WorkspaceSwitcher.d.ts",
+      "default": "./dist-lib/WorkspaceSwitcher.js"
+    },
+    "./ImportWorkflow": {
+      "types": "./dist-lib/ImportWorkflow.d.ts",
+      "default": "./dist-lib/ImportWorkflow.js"
+    },
+    "./document-history-graph": {
+      "types": "./dist-lib/document-history-graph.d.ts",
+      "default": "./dist-lib/document-history-graph.js"
+    },
+    "./ColorField": {
+      "types": "./dist-lib/ColorField.d.ts",
+      "default": "./dist-lib/ColorField.js"
+    },
+    "./comment-images": {
+      "types": "./dist-lib/comment-images.d.ts",
+      "default": "./dist-lib/comment-images.js"
+    },
+    "./ApplicationWelcome": {
+      "types": "./dist-lib/ApplicationWelcome.d.ts",
+      "default": "./dist-lib/ApplicationWelcome.js"
+    },
+    "./ProgressOverlay": {
+      "types": "./dist-lib/ProgressOverlay.d.ts",
+      "default": "./dist-lib/ProgressOverlay.js"
+    },
+    "./Tooltip": {
+      "types": "./dist-lib/Tooltip.d.ts",
+      "default": "./dist-lib/Tooltip.js"
+    },
+    "./DocumentFileManager": {
+      "types": "./dist-lib/DocumentFileManager.d.ts",
+      "default": "./dist-lib/DocumentFileManager.js"
+    },
+    "./WorkspaceSpacing": {
+      "types": "./dist-lib/WorkspaceSpacing.d.ts",
+      "default": "./dist-lib/WorkspaceSpacing.js"
+    },
+    "./useSidebarSizes": {
+      "types": "./dist-lib/useSidebarSizes.d.ts",
+      "default": "./dist-lib/useSidebarSizes.js"
+    },
+    "./ComingSoonHome": {
+      "types": "./dist-lib/ComingSoonHome.d.ts",
+      "default": "./dist-lib/ComingSoonHome.js"
+    },
+    "./ApplicationSidebar": {
+      "types": "./dist-lib/ApplicationSidebar.d.ts",
+      "default": "./dist-lib/ApplicationSidebar.js"
+    },
+    "./DocumentBar": {
+      "types": "./dist-lib/DocumentBar.d.ts",
+      "default": "./dist-lib/DocumentBar.js"
+    },
+    "./AssistantPanel": {
+      "types": "./dist-lib/AssistantPanel.d.ts",
+      "default": "./dist-lib/AssistantPanel.js"
+    },
+    "./IconPackToggle": {
+      "types": "./dist-lib/IconPackToggle.d.ts",
+      "default": "./dist-lib/IconPackToggle.js"
+    },
+    "./WorkspaceShellMotion": {
+      "types": "./dist-lib/WorkspaceShellMotion.d.ts",
+      "default": "./dist-lib/WorkspaceShellMotion.js"
+    },
+    "./NumberField": {
+      "types": "./dist-lib/NumberField.d.ts",
+      "default": "./dist-lib/NumberField.js"
+    },
+    "./DockPanel": {
+      "types": "./dist-lib/DockPanel.d.ts",
+      "default": "./dist-lib/DockPanel.js"
+    },
+    "./FeatureWindow": {
+      "types": "./dist-lib/FeatureWindow.d.ts",
+      "default": "./dist-lib/FeatureWindow.js"
+    },
+    "./Timeline": {
+      "types": "./dist-lib/Timeline.d.ts",
+      "default": "./dist-lib/Timeline.js"
+    },
+    "./Tree": {
+      "types": "./dist-lib/Tree.d.ts",
+      "default": "./dist-lib/Tree.js"
+    },
+    "./DocumentCommentsView": {
+      "types": "./dist-lib/DocumentCommentsView.d.ts",
+      "default": "./dist-lib/DocumentCommentsView.js"
+    },
+    "./useInitialLayoutReady": {
+      "types": "./dist-lib/useInitialLayoutReady.d.ts",
+      "default": "./dist-lib/useInitialLayoutReady.js"
+    },
+    "./MaterialBrowser": {
+      "types": "./dist-lib/MaterialBrowser.d.ts",
+      "default": "./dist-lib/MaterialBrowser.js"
+    },
+    "./SharedWorkspaceSettings": {
+      "types": "./dist-lib/SharedWorkspaceSettings.d.ts",
+      "default": "./dist-lib/SharedWorkspaceSettings.js"
+    },
+    "./ConceptWidgets": {
+      "types": "./dist-lib/ConceptWidgets.d.ts",
+      "default": "./dist-lib/ConceptWidgets.js"
+    },
+    "./workspace-panel-selection": {
+      "types": "./dist-lib/workspace-panel-selection.d.ts",
+      "default": "./dist-lib/workspace-panel-selection.js"
+    },
+    "./ViewportCanvas": {
+      "types": "./dist-lib/ViewportCanvas.d.ts",
+      "default": "./dist-lib/ViewportCanvas.js"
+    },
+    "./FileManagerPanel": {
+      "types": "./dist-lib/FileManagerPanel.d.ts",
+      "default": "./dist-lib/FileManagerPanel.js"
+    },
+    "./DimensionedSketch": {
+      "types": "./dist-lib/DimensionedSketch.d.ts",
+      "default": "./dist-lib/DimensionedSketch.js"
+    },
+    "./DocumentList": {
+      "types": "./dist-lib/DocumentList.d.ts",
+      "default": "./dist-lib/DocumentList.js"
+    },
+    "./DocumentRevisionTree": {
+      "types": "./dist-lib/DocumentRevisionTree.d.ts",
+      "default": "./dist-lib/DocumentRevisionTree.js"
+    },
+    "./DocumentHistoryGraph": {
+      "types": "./dist-lib/DocumentHistoryGraph.d.ts",
+      "default": "./dist-lib/DocumentHistoryGraph.js"
+    },
+    "./context-commands": {
+      "types": "./dist-lib/context-commands.d.ts",
+      "default": "./dist-lib/context-commands.js"
+    },
+    "./AppIcon": {
+      "types": "./dist-lib/AppIcon.d.ts",
+      "default": "./dist-lib/AppIcon.js"
+    },
+    "./DashboardCards": {
+      "types": "./dist-lib/DashboardCards.d.ts",
+      "default": "./dist-lib/DashboardCards.js"
+    },
+    "./TextField": {
+      "types": "./dist-lib/TextField.d.ts",
+      "default": "./dist-lib/TextField.js"
+    },
+    "./SplitPane": {
+      "types": "./dist-lib/SplitPane.d.ts",
+      "default": "./dist-lib/SplitPane.js"
+    },
+    "./AppLauncher": {
+      "types": "./dist-lib/AppLauncher.d.ts",
+      "default": "./dist-lib/AppLauncher.js"
+    },
+    "./DocumentCollaborationPanel": {
+      "types": "./dist-lib/DocumentCollaborationPanel.d.ts",
+      "default": "./dist-lib/DocumentCollaborationPanel.js"
+    },
+    "./OverlayScope": {
+      "types": "./dist-lib/OverlayScope.d.ts",
+      "default": "./dist-lib/OverlayScope.js"
+    },
+    "./DocumentTabs": {
+      "types": "./dist-lib/DocumentTabs.d.ts",
+      "default": "./dist-lib/DocumentTabs.js"
+    },
+    "./SettingsWindow": {
+      "types": "./dist-lib/SettingsWindow.d.ts",
+      "default": "./dist-lib/SettingsWindow.js"
+    },
+    "./StatusBar": {
+      "types": "./dist-lib/StatusBar.d.ts",
+      "default": "./dist-lib/StatusBar.js"
+    },
+    "./DataTable": {
+      "types": "./dist-lib/DataTable.d.ts",
+      "default": "./dist-lib/DataTable.js"
+    },
+    "./TreePanelSplit": {
+      "types": "./dist-lib/TreePanelSplit.d.ts",
+      "default": "./dist-lib/TreePanelSplit.js"
+    },
+    "./WorkspaceAgent": {
+      "types": "./dist-lib/WorkspaceAgent.d.ts",
+      "default": "./dist-lib/WorkspaceAgent.js"
+    },
+    "./Ribbon": {
+      "types": "./dist-lib/Ribbon.d.ts",
+      "default": "./dist-lib/Ribbon.js"
+    },
+    "./DocumentNotesView": {
+      "types": "./dist-lib/DocumentNotesView.d.ts",
+      "default": "./dist-lib/DocumentNotesView.js"
+    },
+    "./WorkspaceShell": {
+      "types": "./dist-lib/WorkspaceShell.d.ts",
+      "default": "./dist-lib/WorkspaceShell.js"
+    },
+    "./CollectionFilter": {
+      "types": "./dist-lib/CollectionFilter.d.ts",
+      "default": "./dist-lib/CollectionFilter.js"
+    },
+    "./document-history-view": {
+      "types": "./dist-lib/document-history-view.d.ts",
+      "default": "./dist-lib/document-history-view.js"
+    },
+    "./Dialog": {
+      "types": "./dist-lib/Dialog.d.ts",
+      "default": "./dist-lib/Dialog.js"
+    },
+    "./Menu": {
+      "types": "./dist-lib/Menu.d.ts",
+      "default": "./dist-lib/Menu.js"
+    },
+    "./FileTypeFilters": {
+      "types": "./dist-lib/FileTypeFilters.d.ts",
+      "default": "./dist-lib/FileTypeFilters.js"
+    },
+    "./BottomPanel": {
+      "types": "./dist-lib/BottomPanel.d.ts",
+      "default": "./dist-lib/BottomPanel.js"
+    },
+    "./overlay-position": {
+      "types": "./dist-lib/overlay-position.d.ts",
+      "default": "./dist-lib/overlay-position.js"
+    },
+    "./SidebarDesignMenu": {
+      "types": "./dist-lib/SidebarDesignMenu.d.ts",
+      "default": "./dist-lib/SidebarDesignMenu.js"
+    },
+    "./SequenceEditor": {
+      "types": "./dist-lib/SequenceEditor.d.ts",
+      "default": "./dist-lib/SequenceEditor.js"
+    },
+    "./GradientControls": {
+      "types": "./dist-lib/GradientControls.d.ts",
+      "default": "./dist-lib/GradientControls.js"
+    },
+    "./IconButton": {
+      "types": "./dist-lib/IconButton.d.ts",
+      "default": "./dist-lib/IconButton.js"
+    },
+    "./ToolIcon": {
+      "types": "./dist-lib/ToolIcon.d.ts",
+      "default": "./dist-lib/ToolIcon.js"
+    },
+    "./SelectField": {
+      "types": "./dist-lib/SelectField.d.ts",
+      "default": "./dist-lib/SelectField.js"
+    },
+    "./index": {
+      "types": "./dist-lib/index.d.ts",
+      "default": "./dist-lib/index.js"
+    },
+    "./Rail": {
+      "types": "./dist-lib/Rail.d.ts",
+      "default": "./dist-lib/Rail.js"
+    },
+    "./ParameterRow": {
+      "types": "./dist-lib/ParameterRow.d.ts",
+      "default": "./dist-lib/ParameterRow.js"
+    },
+    "./ApplicationHome": {
+      "types": "./dist-lib/ApplicationHome.d.ts",
+      "default": "./dist-lib/ApplicationHome.js"
+    },
+    "./DocumentServices": {
+      "types": "./dist-lib/DocumentServices.d.ts",
+      "default": "./dist-lib/DocumentServices.js"
+    },
+    "./CircuitSymbol": {
+      "types": "./dist-lib/CircuitSymbol.d.ts",
+      "default": "./dist-lib/CircuitSymbol.js"
+    },
+    "./ConfigurationInspector": {
+      "types": "./dist-lib/ConfigurationInspector.d.ts",
+      "default": "./dist-lib/ConfigurationInspector.js"
+    },
+    "./StandardWorkspacePanels": {
+      "types": "./dist-lib/StandardWorkspacePanels.d.ts",
+      "default": "./dist-lib/StandardWorkspacePanels.js"
+    },
+    "./Button": {
+      "types": "./dist-lib/Button.d.ts",
+      "default": "./dist-lib/Button.js"
+    },
+    "./ActionItemsView": {
+      "types": "./dist-lib/ActionItemsView.d.ts",
+      "default": "./dist-lib/ActionItemsView.js"
+    },
+    "./CompactActionPanel": {
+      "types": "./dist-lib/CompactActionPanel.d.ts",
+      "default": "./dist-lib/CompactActionPanel.js"
+    },
+    "./AdvisorWelcome": {
+      "types": "./dist-lib/AdvisorWelcome.d.ts",
+      "default": "./dist-lib/AdvisorWelcome.js"
+    },
+    "./CollapsibleSidebar": {
+      "types": "./dist-lib/CollapsibleSidebar.d.ts",
+      "default": "./dist-lib/CollapsibleSidebar.js"
+    },
+    "./Toast": {
+      "types": "./dist-lib/Toast.d.ts",
+      "default": "./dist-lib/Toast.js"
+    },
+    "./ViewportCubeHome": {
+      "types": "./dist-lib/ViewportCubeHome.d.ts",
+      "default": "./dist-lib/ViewportCubeHome.js"
+    },
+    "./TreePanel": {
+      "types": "./dist-lib/TreePanel.d.ts",
+      "default": "./dist-lib/TreePanel.js"
+    },
+    "./StudioChrome": {
+      "types": "./dist-lib/StudioChrome.d.ts",
+      "default": "./dist-lib/StudioChrome.js"
+    },
+    "./ViewportCubeScene": {
+      "types": "./dist-lib/ViewportCubeScene.d.ts",
+      "default": "./dist-lib/ViewportCubeScene.js"
+    },
+    "./SharedAppearanceSettings": {
+      "types": "./dist-lib/SharedAppearanceSettings.d.ts",
+      "default": "./dist-lib/SharedAppearanceSettings.js"
+    },
+    "./Checkbox": {
+      "types": "./dist-lib/Checkbox.d.ts",
+      "default": "./dist-lib/Checkbox.js"
+    },
+    "./NewFileDialog": {
+      "types": "./dist-lib/NewFileDialog.d.ts",
+      "default": "./dist-lib/NewFileDialog.js"
+    },
+    "./RadioGroup": {
+      "types": "./dist-lib/RadioGroup.d.ts",
+      "default": "./dist-lib/RadioGroup.js"
+    },
+    "./EmptyState": {
+      "types": "./dist-lib/EmptyState.d.ts",
+      "default": "./dist-lib/EmptyState.js"
+    },
+    "./AppearanceInspector": {
+      "types": "./dist-lib/AppearanceInspector.d.ts",
+      "default": "./dist-lib/AppearanceInspector.js"
+    },
+    "./viewport-theme": {
+      "types": "./dist-lib/viewport-theme.d.ts",
+      "default": "./dist-lib/viewport-theme.js"
+    },
+    "./number-expression": {
+      "types": "./dist-lib/number-expression.d.ts",
+      "default": "./dist-lib/number-expression.js"
+    },
+    "./SegmentedControl": {
+      "types": "./dist-lib/SegmentedControl.d.ts",
+      "default": "./dist-lib/SegmentedControl.js"
+    },
+    "./CollectionView": {
+      "types": "./dist-lib/CollectionView.d.ts",
+      "default": "./dist-lib/CollectionView.js"
+    },
+    "./FieldRow": {
+      "types": "./dist-lib/FieldRow.d.ts",
+      "default": "./dist-lib/FieldRow.js"
+    },
+    "./DocumentVersionPanel": {
+      "types": "./dist-lib/DocumentVersionPanel.d.ts",
+      "default": "./dist-lib/DocumentVersionPanel.js"
+    },
+    "./FileIcon": {
+      "types": "./dist-lib/FileIcon.d.ts",
+      "default": "./dist-lib/FileIcon.js"
+    },
+    "./Kit": {
+      "types": "./dist-lib/Kit.d.ts",
+      "default": "./dist-lib/Kit.js"
+    },
+    "./ThemeMenu": {
+      "types": "./dist-lib/ThemeMenu.d.ts",
+      "default": "./dist-lib/ThemeMenu.js"
+    },
+    "./AetherIcon": {
+      "types": "./dist-lib/AetherIcon.d.ts",
+      "default": "./dist-lib/AetherIcon.js"
+    },
+    "./themes": {
+      "types": "./dist-lib/themes.d.ts",
+      "default": "./dist-lib/themes.js"
+    },
+    "./context-text": {
+      "types": "./dist-lib/context-text.d.ts",
+      "default": "./dist-lib/context-text.js"
+    },
+    "./ApplicationChrome": {
+      "types": "./dist-lib/ApplicationChrome.d.ts",
+      "default": "./dist-lib/ApplicationChrome.js"
+    },
+    "./kit/state": {
+      "types": "./dist-lib/kit/state.d.ts",
+      "default": "./dist-lib/kit/state.js"
+    },
+    "./kit/shell": {
+      "types": "./dist-lib/kit/shell.d.ts",
+      "default": "./dist-lib/kit/shell.js"
+    },
+    "./kit/widgets": {
+      "types": "./dist-lib/kit/widgets.d.ts",
+      "default": "./dist-lib/kit/widgets.js"
+    },
+    "./kit/viewport": {
+      "types": "./dist-lib/kit/viewport.d.ts",
+      "default": "./dist-lib/kit/viewport.js"
+    },
+    "./kit/tree": {
+      "types": "./dist-lib/kit/tree.d.ts",
+      "default": "./dist-lib/kit/tree.js"
+    },
+    "./kit/graph": {
+      "types": "./dist-lib/kit/graph.d.ts",
+      "default": "./dist-lib/kit/graph.js"
+    },
+    "./kit/icons": {
+      "types": "./dist-lib/kit/icons.d.ts",
+      "default": "./dist-lib/kit/icons.js"
+    },
+    "./AgentServices": {
+      "types": "./dist-lib/AgentServices.d.ts",
+      "default": "./dist-lib/AgentServices.js"
+    },
+    "./AgentToolResult": {
+      "types": "./dist-lib/AgentToolResult.d.ts",
+      "default": "./dist-lib/AgentToolResult.js"
+    },
+    "./application-status": {
+      "types": "./dist-lib/application-status.d.ts",
+      "default": "./dist-lib/application-status.js"
+    },
+    "./ApplicationStatusBar": {
+      "types": "./dist-lib/ApplicationStatusBar.d.ts",
+      "default": "./dist-lib/ApplicationStatusBar.js"
+    },
+    "./application-status.css": "./dist-lib/ApplicationStatusBar.css",
+    "./AppMark": {
+      "types": "./dist-lib/AppMark.d.ts",
+      "default": "./dist-lib/AppMark.js"
+    },
+    "./FeatureWindowAccessories": {
+      "types": "./dist-lib/FeatureWindowAccessories.d.ts",
+      "default": "./dist-lib/FeatureWindowAccessories.js"
+    },
+    "./FloatingToolbar": {
+      "types": "./dist-lib/FloatingToolbar.d.ts",
+      "default": "./dist-lib/FloatingToolbar.js"
+    },
+    "./Avatar": {
+      "types": "./dist-lib/Avatar.d.ts",
+      "default": "./dist-lib/Avatar.js"
+    },
+    "./PasswordField": {
+      "types": "./dist-lib/PasswordField.d.ts",
+      "default": "./dist-lib/PasswordField.js"
+    },
+    "./ChoiceCard": {
+      "types": "./dist-lib/ChoiceCard.d.ts",
+      "default": "./dist-lib/ChoiceCard.js"
+    },
+    "./StructureStep": {
+      "types": "./dist-lib/StructureStep.d.ts",
+      "default": "./dist-lib/StructureStep.js"
+    },
+    "./AuthenticationForm": {
+      "types": "./dist-lib/AuthenticationForm.d.ts",
+      "default": "./dist-lib/AuthenticationForm.js"
+    },
+    "./PersonalizationForm": {
+      "types": "./dist-lib/PersonalizationForm.d.ts",
+      "default": "./dist-lib/PersonalizationForm.js"
+    },
+    "./BatchActionReview": {
+      "types": "./dist-lib/BatchActionReview.d.ts",
+      "default": "./dist-lib/BatchActionReview.js"
+    },
+    "./TemplateEditor": {
+      "types": "./dist-lib/TemplateEditor.d.ts",
+      "default": "./dist-lib/TemplateEditor.js"
+    },
+    "./AccountProfile": {
+      "types": "./dist-lib/AccountProfile.d.ts",
+      "default": "./dist-lib/AccountProfile.js"
+    },
+    "./SubscriptionPicker": {
+      "types": "./dist-lib/SubscriptionPicker.d.ts",
+      "default": "./dist-lib/SubscriptionPicker.js"
+    },
+    "./FieldMappingForm": {
+      "types": "./dist-lib/FieldMappingForm.d.ts",
+      "default": "./dist-lib/FieldMappingForm.js"
+    },
+    "./TeamMembersPanel": {
+      "types": "./dist-lib/TeamMembersPanel.d.ts",
+      "default": "./dist-lib/TeamMembersPanel.js"
+    },
+    "./TextVariants": {
+      "types": "./dist-lib/TextVariants.d.ts",
+      "default": "./dist-lib/TextVariants.js"
+    },
+    "./SequenceBrowser": {
+      "types": "./dist-lib/SequenceBrowser.d.ts",
+      "default": "./dist-lib/SequenceBrowser.js"
+    },
+    "./SettingsLink": {
+      "types": "./dist-lib/SettingsLink.d.ts",
+      "default": "./dist-lib/SettingsLink.js"
+    },
+    "./StatusBadge": {
+      "types": "./dist-lib/StatusBadge.d.ts",
+      "default": "./dist-lib/StatusBadge.js"
+    },
+    "./ChartLegend": {
+      "types": "./dist-lib/ChartLegend.d.ts",
+      "default": "./dist-lib/ChartLegend.js"
+    },
+    "./ComparisonChart": {
+      "types": "./dist-lib/ComparisonChart.d.ts",
+      "default": "./dist-lib/ComparisonChart.js"
+    },
+    "./GaugeChart": {
+      "types": "./dist-lib/GaugeChart.d.ts",
+      "default": "./dist-lib/GaugeChart.js"
+    },
+    "./RankedList": {
+      "types": "./dist-lib/RankedList.d.ts",
+      "default": "./dist-lib/RankedList.js"
+    },
+    "./DashboardNavigation": {
+      "types": "./dist-lib/DashboardNavigation.d.ts",
+      "default": "./dist-lib/DashboardNavigation.js"
+    },
+    "./AppNavigationBar": {
+      "types": "./dist-lib/AppNavigationBar.d.ts",
+      "default": "./dist-lib/AppNavigationBar.js"
+    },
+    "./MediaPreview": {
+      "types": "./dist-lib/MediaPreview.d.ts",
+      "default": "./dist-lib/MediaPreview.js"
+    },
+    "./ThumbnailPicker": {
+      "types": "./dist-lib/ThumbnailPicker.d.ts",
+      "default": "./dist-lib/ThumbnailPicker.js"
+    },
+    "./MaterialSwatch": {
+      "types": "./dist-lib/MaterialSwatch.d.ts",
+      "default": "./dist-lib/MaterialSwatch.js"
+    },
+    "./AppWordmark": {
+      "types": "./dist-lib/AppWordmark.d.ts",
+      "default": "./dist-lib/AppWordmark.js"
+    },
+    "./AppLayout": {
+      "types": "./dist-lib/AppLayout.d.ts",
+      "default": "./dist-lib/AppLayout.js"
+    },
+    "./model-studio-presets": {
+      "types": "./dist-lib/model-studio-presets.d.ts",
+      "default": "./dist-lib/model-studio-presets.js"
+    },
+    "./TransformFields": {
+      "types": "./dist-lib/TransformFields.d.ts",
+      "default": "./dist-lib/TransformFields.js"
+    },
+    "./SurfacePresetPicker": {
+      "types": "./dist-lib/SurfacePresetPicker.d.ts",
+      "default": "./dist-lib/SurfacePresetPicker.js"
+    },
+    "./viewport-pointer-actions": {
+      "types": "./dist-lib/viewport-pointer-actions.d.ts",
+      "default": "./dist-lib/viewport-pointer-actions.js"
+    },
+    "./model-studio-assets": {
+      "types": "./dist-lib/model-studio-assets.d.ts",
+      "default": "./dist-lib/model-studio-assets.js"
+    },
+    "./VersionControl": {
+      "types": "./dist-lib/VersionControl.d.ts",
+      "default": "./dist-lib/VersionControl.js"
+    },
+    "./StudioAppFrame": {
+      "types": "./dist-lib/StudioAppFrame.d.ts",
+      "default": "./dist-lib/StudioAppFrame.js"
+    },
+    "./StudioDocumentBar": {
+      "types": "./dist-lib/StudioDocumentBar.d.ts",
+      "default": "./dist-lib/StudioDocumentBar.js"
+    },
+    "./StudioWorkspace": {
+      "types": "./dist-lib/StudioWorkspace.d.ts",
+      "default": "./dist-lib/StudioWorkspace.js"
+    }
   },
   "scripts": {
     "gallery": "vite",
     "build": "vite build",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:package": "node emit-library.mjs"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@aether/assets": "file:vendor/aether-assets-0.2.0-alpha.27.tgz",
     "@testing-library/react": "^16.1.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.25.0",
     "jsdom": "^25.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
-    "vitest": "^3.2.4",
-    "three": "^0.180.0",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
     "@types/three": "^0.180.0",
-    "@aether/core": "file:../../Aether CAD/engine"
-  }
+    "three": "^0.180.0",
+    "@aether/assets": "0.2.0-alpha.27"
+  },
+  "private": true,
+  "files": [
+    "dist-lib",
+    "tokens"
+  ],
+  "types": "./dist-lib/index.d.ts"
 }

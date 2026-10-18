@@ -1,0 +1,50 @@
+.aui-flow-editor { display: grid; gap: 12px; min-width: 0; width: 100%; color: var(--aether-color-text); font: 12px var(--aether-font-family); container-type: inline-size; }
+.aui-flow-editor-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.aui-flow-editor-toolbar .aui-segmented-control { width: auto; }
+.aui-flow-editor-toolbar .aui-segmented-control button { white-space: nowrap; }
+.aui-flow-editor-toolbar > .aui-select-field-wrap { width: 112px; }
+.aui-flow-editor-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 264px; gap: 16px; align-items: start; }
+.aui-flow-editor .aui-flow-diagram { border-radius: 14px; }
+.aui-flow-editor .aui-flow-diagram svg { touch-action: none; user-select: none; width: var(--flow-editor-canvas-width); min-width: 0; }
+.aui-flow-editor[data-zoom="fit"] .aui-flow-diagram svg { width: 100%; }
+.aui-flow-editor-inspector { display: grid; gap: 12px; padding: 16px;    max-height: 560px; overflow: auto; min-width: 0;  border:0; border-radius:0; box-shadow:none; background:transparent; }
+.aui-flow-editor-inspector header { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 28px; }
+.aui-flow-editor-inspector p, .aui-flow-editor-inspector small { margin: 0; color: var(--aether-color-text-dim); line-height: 1.55; }
+.aui-flow-editor-field { display: grid; gap: 6px; min-width: 0; color: var(--aether-color-text-dim); }
+.aui-flow-editor-field textarea { width: 100%; box-sizing: border-box; resize: vertical; min-height: 64px; line-height: 1.5; padding: 8px; }
+.aui-flow-editor-field input, .aui-flow-editor-field .aui-select-field-wrap { width: 100%; min-width: 0; box-sizing: border-box; }
+.aui-flow-editor-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.aui-flow-editor-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.aui-flow-editor-delete { color: var(--aether-color-error); justify-self: start; }
+.aui-flow-editor-port-list { display: grid; gap: 4px; max-height: 160px; overflow: auto; }
+.aui-flow-editor-port-list button { display: flex; justify-content: space-between; gap: 8px; text-align: left; }
+.aui-flow-editor-port-list span { color: var(--aether-color-text-dim); }
+.aui-flow-editor-bend { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 26px; gap: 5px; }
+.aui-flow-editor-bend input { min-width: 0; width: 100%; }
+.aui-flow-editor-status { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--aether-color-text-dim); line-height: 1.4; }
+.aui-flow-node-drag { cursor: grab; outline: none; }
+.aui-flow-node-drag:active { cursor: grabbing; }
+.aui-flow-node-hit { fill: transparent; stroke: transparent; stroke-width: 1; }
+.aui-flow-editable-node[data-selected="true"] .aui-flow-node-hit, .aui-flow-node-drag:focus-visible .aui-flow-node-hit { stroke: var(--aether-color-accent); stroke-dasharray: 4 4; }
+.aui-flow-route-hit { stroke: transparent; stroke-width: 14; cursor: pointer; pointer-events: stroke; }
+.aui-flow-route[data-selected="true"] .aui-flow-route-clearance, .aui-flow-route:focus-visible .aui-flow-route-clearance { stroke: var(--aether-color-accent); stroke-width: 9; stroke-opacity: .3; }
+.aui-flow-route:focus-visible { outline: none; }
+.aui-flow-editable-node[data-tone="green"] { color: var(--flow-green); }
+.aui-flow-editable-node[data-tone="violet"] { color: var(--flow-violet); }
+.aui-flow-editable-node[data-tone="red"] { color: var(--flow-red); }
+.aui-flow-editable-node[data-tone="neutral"] { color: var(--flow-neutral); }
+.aui-flow-editable-node[data-tone="teal"] { color: var(--flow-teal); }
+.aui-flow-editable-node[data-tone="blue"] { color: var(--flow-blue); }
+.aui-flow-editable-node[data-tone="amber"] { color: var(--flow-amber); }
+.aui-flow-editable-port { cursor: crosshair; outline: none; }
+.aui-flow-point-hit { fill: transparent; stroke: none; }
+.aui-flow-point-label { fill: var(--aether-color-text-dim); font: 11px var(--aether-font-mono); }
+.aui-flow-editable-port[data-selected="true"] .aui-flow-port, .aui-flow-editable-port:focus-visible .aui-flow-port { stroke: var(--aether-color-accent); stroke-width: 4; }
+.aui-flow-pending-ring { fill: none; stroke: var(--aether-color-accent); stroke-width: 1; }
+.aui-flow-bend-handle { cursor: move; outline: none; }
+.aui-flow-bend-handle rect { fill: var(--flow-surface); stroke: var(--aether-color-accent); stroke-width: 2; }
+.aui-flow-bend-handle:focus-visible rect { stroke-width: 4; }
+@container (max-width: 1100px) {
+  .aui-flow-editor-workspace { grid-template-columns: minmax(0, 1fr); }
+  .aui-flow-editor-inspector { max-height: 340px;  border:0; border-radius:0; box-shadow:none; background:transparent; }
+}

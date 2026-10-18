@@ -1,0 +1,30 @@
+.aui-revision-tree { --revision-accent: var(--aether-color-accent); color: var(--aether-color-text); font: 12px/1.5 var(--aether-font-mono); width: 100%; min-width: 0; }
+.aui-revision-tree-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding-bottom: 15px; border-bottom: 1px solid var(--aether-color-border); }
+.aui-revision-tree-branches { display: flex; flex-wrap: wrap; border: 1px solid var(--aether-color-border); border-radius: 7px; background: var(--aether-color-bg-control); padding: 2px; }
+.aui-revision-tree-branches button { display: inline-flex; gap: 8px; align-items: center; padding: 5px 10px; border: 1px solid transparent; border-radius: 5px; background: transparent; font: inherit; color: var(--aether-color-text-dim); cursor: pointer; }
+.aui-revision-tree-branches button[aria-pressed=true] { background: var(--aether-color-bg-panel); border-color: var(--aether-color-border); color: var(--aether-color-text); box-shadow: 0 1px 2px #0000000d; }
+.aui-revision-tree-draft { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.aui-revision-tree code { font: inherit; }
+.aui-revision-tree-draft code, .aui-revision-tree-row code { background: var(--aether-color-bg-control); border: 1px solid var(--aether-color-border); border-radius: 5px; padding: 2px 7px; white-space: nowrap; }
+.aui-revision-tree-muted { color: var(--aether-color-text-dim); }
+.aui-revision-tree-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 14px 0 38px; }
+.aui-revision-tree-action.aui-button { font: inherit; display: inline-flex; align-items: center; gap: 8px; min-height: 30px; padding: 4px 12px; }
+.aui-revision-tree-action--version.aui-button { background: var(--revision-action-bg, var(--revision-accent)); border-color: var(--revision-action-bg, var(--revision-accent)); color: var(--aether-color-text-on-selected); text-transform: uppercase; letter-spacing: 1px; font-size: 11px; }
+.aui-revision-tree-action--branch { margin-left: 8px; }
+.aui-revision-tree-scroll { overflow-x: auto; padding-bottom: 8px; }
+.aui-revision-tree-graph { position: relative; }
+.aui-revision-tree-lines { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; }
+.aui-revision-tree-lines path { stroke: var(--aether-color-text-faint); stroke-width: 1.2; fill: none; }
+.aui-revision-tree-lines .is-merge { stroke-dasharray: 4 3; }
+.aui-revision-tree-lines .aui-revision-tree-continuation { stroke: var(--aether-color-border); stroke-dasharray: 2 4; }
+.aui-revision-tree-lines circle { stroke: var(--aether-color-text-dim); fill: var(--aether-color-bg-panel); stroke-width: 1.5; }
+.aui-revision-tree-lines .aui-revision-tree-dot { fill: var(--aether-color-text); stroke: none; }
+.aui-revision-tree-lines .is-current circle { stroke: var(--revision-accent); }
+.aui-revision-tree-row { margin-left: var(--revision-gutter); width: calc(100% - var(--revision-gutter)); height: 40px; display: flex; gap: 10px; align-items: center; border: none; border-radius: 8px; padding: 0 10px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.aui-revision-tree-row[aria-pressed=true], .aui-revision-tree-row:hover { background: color-mix(in srgb, var(--aether-color-text) 4%, transparent); }
+.aui-revision-tree-row code.is-branch { border-radius: 12px; }
+.aui-revision-tree-message { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aui-revision-tree-state { color: var(--aether-color-text-dim); font-size: 10px; text-transform: uppercase; letter-spacing: .5px; }
+.aui-revision-tree-here { margin-left: auto; color: var(--revision-accent); white-space: nowrap; font-size: 10px; letter-spacing: .5px; }
+.aui-revision-tree button:focus-visible { outline: 2px solid var(--revision-accent); outline-offset: -2px; }
+.aui-revision-tree button:disabled { cursor: default; opacity: .45; }

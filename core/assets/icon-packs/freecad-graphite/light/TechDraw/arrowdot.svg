@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32" id="svg4024" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/arrowdot.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer1" transform="matrix(1.6983356,0,0,1.6983387,-7.6446704,-8.7601245)">
+    <g transform="translate(-1.0575472,0.61016946)" id="g4020">
+      <path d="m -18.999999,35.857143 a 11.714286,11.428572 0 1 1 -23.428572,0 11.714286,11.428572 0 1 1 23.428572,0 z" transform="matrix(0.74568413,0,0,0.76432623,53.996092,-4.0167247)" id="path3769" style="color:#405269;display:inline;overflow:visible;visibility:visible;fill:#405269;fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:5.4;stroke-opacity:1;marker:none;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <rect width="24.142857" height="8.7142859" rx="1.4997782" ry="1.7378116" x="6.8774428" y="19.809925" id="rect3805" style="color:#405269;display:inline;overflow:visible;visibility:visible;fill:#405269;fill-opacity:1;fill-rule:nonzero;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

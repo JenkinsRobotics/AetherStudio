@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="32" width="32" id="svg12" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_Oblong_Frame_Center.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="symbol" style="fill:none;stroke:#37a8fa;stroke-width:1.1" transform="matrix(1.0366786,0,0,1.0366786,-0.1467704,-6.1737144)">
+    <path id="rect3" d="m 33.903245,32 h 11.575434 c 4.27519,0 7.71695,3.44176 7.71695,7.71695 v 11.575434 c 0,4.275191 -3.44176,7.716951 -7.71695,7.716951 H 33.903245 c -4.275191,0 -7.71695,-3.44176 -7.71695,-7.716951 V 39.71695 C 26.186295,35.44176 29.628054,32 33.903245,32 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="rect3-1" d="m 34.867862,36.823097 h 9.646198 c 2.137593,0 3.858472,1.720879 3.858472,3.858473 v 9.646197 c 0,2.137594 -1.720879,3.858472 -3.858472,3.858472 h -9.646198 c -2.137593,0 -3.858472,-1.720878 -3.858472,-3.858472 V 40.68157 c 0,-2.137594 1.720879,-3.858473 3.858472,-3.858473 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="39.69096" cy="45.504665" id="circle6" style="fill:none;stroke:#37a8fa;stroke-width:1.1" r="3.8584757" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="crosshair" style="stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter">
+    <path d="m16,3v9m0,8v9m-13-13h9m8,0h9" id="path9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

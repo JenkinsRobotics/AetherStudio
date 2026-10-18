@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg3612" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Slope.svg. Authors: [Yorik van Havre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs3614">
+    <linearGradient id="linearGradient3880">
+      <stop id="stop3882" offset="0" style="stop-color:#6c8098;stop-opacity:1" />
+      <stop id="stop3884" offset="1" style="stop-color:#5d7086;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="linearGradient3895">
+      <stop id="stop3897" offset="0" style="stop-color:#47586c;stop-opacity:1;" />
+      <stop id="stop3899" offset="1" style="stop-color:#293749;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3895" id="linearGradient3023" gradientUnits="userSpaceOnUse" x1="43" y1="22" x2="48" y2="44" gradientTransform="matrix(0.93570344,0.35278756,-0.35278756,0.93570344,13.795598,-24.167017)" />
+    <linearGradient gradientTransform="matrix(0.99519621,0.09790048,-0.09790048,0.99519621,4.3300722,-2.6052795)" gradientUnits="userSpaceOnUse" y2="54" x2="34" y1="30" x1="31" id="linearGradient3886" xlink:href="#linearGradient3880" />
+  </defs>
+  <g id="layer1">
+    <path id="path3343" d="M 48.739034,5.0383997 45.211158,14.395434 24.625682,6.6341071 19.686656,19.733957 l 20.585476,7.761326 -3.527876,9.357036 22.840055,-9.556784 z" style="fill:url(#linearGradient3023);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3343-2" d="M 48.978634,10.090777 46.37699,16.972417 25.791513,9.21109 22.263638,18.568126 42.849115,26.329451 40.24748,33.211095 56.777189,26.237172 z" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3074" d="M 5.6837355,34.706483 58.053724,53.925856" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3074-1" d="M 5.6837355,34.706483 58.053724,53.925856" style="fill:none;stroke:url(#linearGradient3886);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3074-1-7" d="M 5.781636,33.711287 58.151625,52.93066" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  </svg>

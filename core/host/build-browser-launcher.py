@@ -10,13 +10,18 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 parser = argparse.ArgumentParser()
-parser.add_argument("app", choices=["studio", "cad", "animation", "ui"])
+parser.add_argument("app", choices=["studio", "cad", "animation", "ui", "map", "sketch", "vector", "io", "drive"])
 args = parser.parse_args()
 names = {
     "studio": "Aether Studio",
     "cad": "Aether CAD",
     "animation": "Aether Animation",
     "ui": "Aether UI",
+    "map": "Aether Map",
+    "sketch": "Aether Sketch",
+    "vector": "Aether Vector",
+    "io": "Aether IO",
+    "drive": "Aether Drive",
 }
 name = names[args.app]
 bundle = REPO / f"{name}.app"

@@ -1,0 +1,7 @@
+.aui-transform-fields { display:grid; gap:4px; }
+.aui-transform-fields h3 { margin:0 0 5px; font-size:var(--aether-font-size-small, 11px); font-weight:500; color:var(--aether-color-text); }
+.aui-transform-axis { display:flex; gap:4px; align-items:center; }
+.aui-transform-axis > span { color:var(--aether-color-text-dim); font-size:11px; width:12px; }
+.aui-transform-axis .aui-number-field-wrap { min-width:0; flex:1; }
+.aui-transform-axis .aui-number-field { width:100%; text-align:center; }
+.aui-transform-axis .aui-number-field { min-height:24px; height:24px; font-size:11px; }

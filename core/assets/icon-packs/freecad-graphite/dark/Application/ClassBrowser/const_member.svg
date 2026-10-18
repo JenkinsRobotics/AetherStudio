@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/ClassBrowser/const_member.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs4">
+    <linearGradient id="linearGradient3093">
+      <stop id="stop3095" offset="0" style="stop-color:#324154;stop-opacity:1" />
+      <stop id="stop3097" offset="1" style="stop-color:#47586c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="linearGradient3850">
+      <stop id="stop3852" offset="0" style="stop-color:#293749;stop-opacity:1" />
+      <stop id="stop3854" offset="1" style="stop-color:#324154;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient y2="1015.3622" x2="40" y1="1025.3622" x1="37" gradientUnits="userSpaceOnUse" id="linearGradient3827" xlink:href="#linearGradient3850" />
+    <linearGradient xlink:href="#linearGradient3093" id="linearGradient3856" gradientUnits="userSpaceOnUse" x1="37" y1="1025.3622" x2="36" y2="1012.3622" />
+    <linearGradient xlink:href="#linearGradient3838" id="linearGradient3199" gradientUnits="userSpaceOnUse" x1="2802.9631" y1="538.36249" x2="2859.7263" y2="786.05646" />
+    <linearGradient id="linearGradient3838">
+      <stop style="stop-color:#5d7086;stop-opacity:1" offset="0" id="stop3840" />
+      <stop style="stop-color:#415266;stop-opacity:1" offset="1" id="stop3842" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3166" id="linearGradient3197" gradientUnits="userSpaceOnUse" x1="2802.9631" y1="626.0874" x2="2849.4058" y2="822.17853" gradientTransform="translate(61.257658,0)" />
+    <linearGradient id="linearGradient3166">
+      <stop id="stop3168" offset="0" style="stop-color:#5d7086;stop-opacity:1" />
+      <stop id="stop3170" offset="1" style="stop-color:#415266;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <g id="layer1" transform="translate(0,-988.36218)">
+    <rect style="fill:#47586c;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:6.00000035999999959" id="rect2990" width="19.99999" height="19.99999" x="-818.0108" y="854.2608" transform="matrix(0.80000036,-0.59999953,0.80000036,0.59999953,0,0)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="g3806">
+      <path transform="translate(0,988.36218)" id="path3778" d="m 29,15 0,20 16,12 0,-20 z" style="fill:#47586c;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3778-6" d="m 31,1007.3622 0,15 12,9 0,-15 z" style="fill:url(#linearGradient3856);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g transform="matrix(-1,0,0,1,90,0)" id="g3806-6">
+      <path transform="translate(0,988.36218)" id="path3778-2" d="m 29,15 0,20 16,12 0,-20 z" style="fill:#40a6f1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3778-6-9" d="m 31,1007.3622 0,15 12,9 0,-15 z" style="fill:url(#linearGradient3827);fill-opacity:1;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g3188" transform="translate(33.999984,990.36218)">
+      <g style="font-size:54.21519089px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#e5edf7;fill:url(#linearGradient3199);fill-opacity:1;fill-rule:nonzero;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" id="g2385" transform="matrix(0.13059592,0,0,0.13506401,-395.42513,-48.743698)">
+        <path id="path2387" d="m 2805.793,620.0297 0,0 0,0 0,59.23117 30.6289,0 0,-59.23117 0,0 c 0.2977,-25.0696 27.7989,-44.42339 53.6004,-44.42339 25.8014,0 53.601,18.62193 53.6005,44.42339 l 0,0 0,59.23117 30.6288,0 0,-59.23117 0,0 c 5e-4,-41.28234 -32.6264,-74.03897 -84.2293,-74.03897 -51.6029,0 -84.2293,32.75663 -84.2293,74.03897 z" style="fill:#415266;fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <rect y="649.64526" x="2790.4788" height="148.07797" width="199.08757" id="rect2389" style="fill:url(#linearGradient3197);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <rect y="664.45306" x="2805.7932" height="118.46237" width="168.45859" id="rect2389-0" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <path id="path3777-7" d="M -25.000001,45 -11,45" style="font-size:54.21519089000000236px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#e5edf7;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3777-3-5" d="m -25,49 14,0" style="font-size:54.21519089000000236px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#e5edf7;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3777-6-3" d="m -25,53 14,0" style="font-size:54.21519089000000236px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#e5edf7;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

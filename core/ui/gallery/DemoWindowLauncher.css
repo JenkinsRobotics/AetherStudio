@@ -1,0 +1,4 @@
+/* App and workspace entries use the same card and full-width grid. */
+.concept-app-directory.demo-launch-directory,
+.workspace-demo-directory.demo-launch-directory { width: 100%; min-width: 0; }
+.demo-launch-directory .aui-link-card { height: 100%; }

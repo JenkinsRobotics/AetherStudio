@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2726" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Snap_Intersection.svg. Authors: [Yorik van Havre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2728">
+    <linearGradient id="linearGradient3782">
+      <stop id="stop3784" offset="0" style="stop-color:#3c4b5f;stop-opacity:1" />
+      <stop id="stop3786" offset="1" style="stop-color:#54667b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="13" x2="30" y1="56" x1="36" id="linearGradient3788" xlink:href="#linearGradient3782" />
+  </defs>
+  <g id="layer1">
+    <g transform="matrix(0.1621282,0,0,0.1621282,6.3605986,-66.108806)" id="g4289">
+      <path id="rect3942-4-9" transform="matrix(6.1679584,0,0,6.1679584,-39.231908,407.75637)" d="M 15,4.9999997 5.0000001,15 22,32 5.0000001,49 15,59 32,42 49,59 59,49 42,32 59,15 49,4.9999997 32,22 z" style="color:#e5edf7;fill:url(#linearGradient3788);fill-opacity:1;fill-rule:nonzero;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="rect3942-4-9-1" d="m 53.287469,457.10004 -43.175709,43.1757 104.85529,104.8553 -104.85529,104.85529 43.175709,43.17571 104.855291,-104.85529 104.8553,104.85529 43.1757,-43.17571 -104.85529,-104.85529 104.85529,-104.8553 -43.1757,-43.1757 -104.8553,104.85529 z" style="color:#e5edf7;fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/Std_PrintPdf.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2871">
+    <linearGradient xlink:href="#linearGradient3765" id="linearGradient3771" x1="98" y1="1047.3622" x2="81" y2="993.36218" gradientUnits="userSpaceOnUse" gradientTransform="translate(-60,-988.36218)" />
+    <linearGradient id="linearGradient3765">
+      <stop style="stop-color:#5d7086;stop-opacity:1;" offset="0" id="stop3767" />
+      <stop style="stop-color:#6c8098;stop-opacity:1" offset="1" id="stop3769" />
+    </linearGradient>
+    </defs>
+  <g id="layer3" style="display:inline">
+    <g id="layer3-3" style="display:inline">
+      <path style="fill:url(#linearGradient3771);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 11,3 v 58.00002 h 42 v -48 L 43,3 Z" id="path2991" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 13,5 V 59.00002 H 51 V 13.81392 L 41.99741,5 Z" id="path3763" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:#e5edf7;fill-opacity:0.392157;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 43,3 V 13.00002 H 53 Z" id="path2993" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  <g id="layer4" style="display:inline;stroke-width:1.1" transform="matrix(0.80709805,0,0,0.78953592,7.0030889,2.0691109)">
+    <g id="g962" transform="rotate(-6.8384364,21.868543,48.868543)" style="stroke-width:1.1">
+      <path style="display:inline;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 39,38 C 25.090803,32.791154 19,17 19,12 18.878688,7.456725 22.909964,6.0811556 25,11 28,19 15,41 15,41" id="path928-4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path928" d="M 38,39 C 24.090803,33.791154 18,16 18,11 17.878688,6.4567246 21.909964,5.0811555 24,10 27,18 14,40 14,40" style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  <path d="m 24.853593,44.685977 q 0,2.275334 -1.346627,3.519803 -1.33734,1.235182 -3.807704,1.235182 h -1.030865 v 4.504234 H 15 V 40.367484 h 4.699262 q 2.572522,0 3.863426,1.123737 1.290905,1.123737 1.290905,3.194756 z m -6.185196,1.764544 h 0.668669 q 0.826551,0 1.309479,-0.464353 0.492215,-0.464354 0.492215,-1.281618 0,-1.374487 -1.523082,-1.374487 h -0.947281 z m 19.874352,0.417919 q 0,3.399071 -1.875991,5.237913 -1.866703,1.838843 -5.256487,1.838843 H 27.017482 V 40.367484 h 4.699263 q 3.269051,0 5.042884,1.671675 1.78312,1.671674 1.78312,4.829281 z m -3.807704,0.13002 q 0,-1.866703 -0.742966,-2.76755 -0.733679,-0.900847 -2.238186,-0.900847 h -1.068015 v 7.606119 h 0.817264 q 1.671674,0 2.451789,-0.965857 0.780114,-0.975143 0.780114,-2.971865 z m 9.853592,6.946736 H 40.975962 V 40.367484 H 49 v 2.944005 h -4.411363 v 2.591095 h 4.067741 v 2.944004 h -4.067741 z" id="text1" style="font-weight:800;font-size:17.9011px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Ultra-Bold';fill:#e5edf7;fill-rule:evenodd;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round" aria-label="PDF" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

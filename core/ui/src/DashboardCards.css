@@ -1,0 +1,63 @@
+.aui-dashboard-card { min-width:0; overflow:hidden; border:1px solid var(--aether-color-border); border-radius:18px; color:var(--aether-color-text); background:var(--aether-color-bg-panel); }
+.aui-dashboard-card > header { min-height:54px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 18px; background:var(--aether-color-bg-inset); }
+.aui-dashboard-card h2 { margin:0; font-size:18px; font-weight:550; letter-spacing:-.2px; }
+.aui-dashboard-card__body { padding:16px; }
+.aui-dashboard-card__caption { margin-top:4px; color:var(--aether-color-text-dim); font:10px var(--aether-font-family); }
+.aui-dashboard-card > header:has(.aui-dashboard-card__caption) { padding-top:12px; padding-bottom:10px; }
+.aui-metric-card { border:1px solid var(--aether-color-border); border-radius:14px; padding:16px; min-width:0; }
+.aui-metric-card__label { display:flex; align-items:center; gap:10px; font-size:15px; color:var(--aether-color-text-dim); white-space:nowrap; }
+.aui-metric-card__label > span { width:36px; height:36px; display:grid; place-items:center; flex:none; border-radius:10px; background:var(--aether-color-bg-control); color:var(--aether-color-accent); }
+.aui-metric-card__label svg { width:19px; height:19px; }
+.aui-metric-card > strong { display:block; font-size:21px; font-weight:600; letter-spacing:-.5px; margin:18px 0 16px; }
+.aui-metric-card footer { display:flex; align-items:center; flex-wrap:wrap; gap:7px; color:var(--aether-color-text-dim); font-size:12px; white-space:nowrap; }
+.aui-metric-change { display:inline-flex; gap:6px; align-items:center; white-space:nowrap; font-size:12px; }
+.aui-metric-change[data-trend=positive] { color:var(--aether-color-ok); }
+.aui-metric-change[data-trend=negative] { color:var(--aether-color-error); }
+.aui-metric-change b { display:grid; place-items:center; border-radius:50%; width:16px; height:16px; font-size:12px; font-weight:400; background:currentColor; }
+.aui-metric-change[data-trend=positive] b { background:var(--aether-color-ok); color:var(--aether-color-bg-panel); }
+.aui-metric-change[data-trend=negative] b { background:var(--aether-color-error); color:var(--aether-color-bg-panel); }
+.aui-goal-progress { padding:15px; border:1px solid var(--aether-color-border); border-radius:13px; }
+.aui-goal-progress header, .aui-goal-progress footer { display:flex; gap:10px; justify-content:space-between; font-size:14px; color:var(--aether-color-text-dim); }
+.aui-goal-progress header strong, .aui-goal-progress footer strong { color:var(--aether-color-text); font-weight:500; }
+.aui-goal-progress footer { justify-content:flex-start; margin-top:9px; }
+.aui-goal-progress progress { appearance:none; display:block; width:100%; height:8px; border:0; border-radius:8px; overflow:hidden; margin-top:10px; background:var(--aether-color-bg-control); }
+.aui-goal-progress progress::-webkit-progress-bar { background:var(--aether-color-bg-control); }
+.aui-goal-progress progress::-webkit-progress-value { border-radius:8px; background:linear-gradient(0deg, color-mix(in srgb,var(--aether-color-accent) 65%,var(--aether-color-bg-panel)),var(--aether-color-accent)); }
+.aui-goal-progress progress::-moz-progress-bar { background:var(--aether-color-accent); border-radius:8px; }
+.aui-activity-list { list-style:none; padding:0; margin:0; }
+.aui-activity-list li + li { border-top:1px solid var(--aether-color-border); }
+.aui-activity-list button { display:flex; align-items:center; gap:11px; width:100%; text-align:left; padding:14px 0; border:0; color:inherit; background:transparent; font:15px var(--aether-font-family); cursor:pointer; }
+.aui-activity-list button:hover:enabled { color:var(--aether-color-accent); }
+.aui-activity-list button:disabled { cursor:default; }
+.aui-activity-list button > span:nth-child(2) { flex:1; }
+.aui-activity-list time { margin-left:auto; color:var(--aether-color-text-dim); font-size:12px; white-space:nowrap; }
+.aui-activity-dot { display:inline-block; width:10px; height:10px; flex:none; border-radius:50%; background:var(--aether-color-accent); }
+.aui-activity-dot[data-tone=positive] { background:var(--aether-color-ok); }
+.aui-activity-dot[data-tone=negative] { background:var(--aether-color-error); }
+.aui-activity-dot[data-tone=warning] { background:var(--aether-color-warn); }
+.aui-dashboard-empty { padding:30px; text-align:center; color:var(--aether-color-text-dim); }
+.aui-dashboard-table { overflow:auto; }
+.aui-dashboard-table .aui-data-table { border:0; background:transparent; font-size:14px; }
+.aui-dashboard-table .aui-data-table th, .aui-dashboard-table .aui-data-table td { border-left:0; border-right:0; padding:13px 0; }
+.aui-dashboard-table .aui-data-table th { color:var(--aether-color-text-dim); font-weight:400; background:transparent; }
+.aui-dashboard-table .aui-data-table-heading > button { padding-left:0; background:transparent; }
+.aui-dashboard-table .aui-data-table [aria-selected=true] { background:var(--aether-color-bg-selected); color:var(--aether-color-text); }
+
+.aui-dashboard-table .aui-data-table-header { background:transparent; min-height:36px; }
+.aui-dashboard-table .aui-data-table-heading, .aui-dashboard-table .aui-data-table-cell { border-right:0; }
+.aui-dashboard-table .aui-data-table-cell { padding:12px 8px 12px 0; color:var(--aether-color-text); }
+.aui-dashboard-table .aui-data-table-heading > button { padding-left:0; font-weight:400; }
+.aui-dashboard-table .aui-data-table-cell .aui-menu-trigger { border:0; background:none; box-shadow:none; }
+.aui-dashboard-table[data-density=compact] .aui-data-table { font-size:11px; }
+.aui-dashboard-table[data-density=compact] .aui-data-table-cell { padding:8px 12px; color:var(--aether-color-text-dim); border-right:1px solid var(--aether-color-border-subtle); }
+.aui-dashboard-table[data-density=compact] .aui-data-table-heading > button { padding:6px 12px; font-size:10px; }
+.aui-dashboard-table[data-density=compact] .aui-data-table-header { background:var(--aether-color-bg-inset); }
+/* Compact is the shared card density for small workflow widgets. */
+.aui-dashboard-card[data-density=compact] { border-radius:var(--aether-radius-panel); }
+.aui-dashboard-card[data-density=compact] > header { min-height:40px; padding:0 16px; background:var(--aether-color-bg-panel); gap:8px; }
+.aui-dashboard-card[data-density=compact] h2 { font-size:12px; font-weight:var(--aether-font-weight-strong); letter-spacing:normal; }
+.aui-dashboard-card[data-density=compact] > .aui-dashboard-card__body { padding:4px 16px 16px; }
+
+/* Data widgets may reuse the heading/body layout without adopting a card container. */
+.aui-dashboard-card[data-content-only] { border:0; border-radius:0; box-shadow:none; background:transparent; }
+.aui-dashboard-card[data-content-only] > header { background:transparent; }

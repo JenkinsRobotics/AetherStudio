@@ -1,0 +1,63 @@
+/* Collection geometry follows Jonathan's Items reference. Colours follow the
+   active theme. The collection draws NO card of its own — no border, no radius,
+   no fill: whatever panel hosts it is the card, so a hosted tree never shows a
+   second box inside the first, and its surface matches every other card.
+   Only the controls it contains (the filter chip, footer hovers) are tinted. */
+.aui-collection {
+  box-sizing: border-box;
+  --collection-control: color-mix(in srgb, var(--aether-color-bg-panel), var(--aether-color-text) 7%);
+  display: flex; flex: 1 1 auto; flex-direction: column; min-width: 0; min-height: 0;
+  overflow: hidden; background: transparent; color: var(--aether-color-text);
+  font-family: var(--aether-font-family); font-size: calc(var(--aether-font-size-body) + 1px);
+}
+.aui-collection-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex: none; min-height: 45px; padding: 0 15px; color: var(--aether-color-text-dim); font-size: inherit; }
+.aui-collection-heading strong { font-weight: var(--aether-font-weight-strong); }
+.aui-collection-search { padding: 0 10px 5px; flex: none; }
+.aui-collection-filter { display: flex; align-items: center; gap: 5px; min-height: 24px; border-radius: 4px; background: var(--collection-control); color: var(--aether-color-text-dim); }
+.aui-collection-filter:focus-within { outline: 1px solid var(--aether-color-border-focus); }
+.aui-collection-filter-icon { display: flex; padding-left: 5px; }
+.aui-collection-filter svg { width: 14px; height: 14px; }
+.aui-collection-filter input { appearance: none; width: 0; min-width: 0; flex: 1; height: 24px; border: 0; outline: 0; padding: 0; background: transparent; color: var(--aether-color-text); font: inherit; font-size: 11px; }
+.aui-collection-filter input::placeholder { color: var(--aether-color-text-dim); opacity: 1; }
+.aui-collection-filter input::-webkit-search-cancel-button { display: none; }
+.aui-collection-filter button { display: grid; place-items: center; border: 0; border-radius: 3px; padding: 0; width: 22px; height: 22px; background: transparent; color: inherit; cursor: pointer; }
+.aui-collection-filter button:hover { background: var(--aether-color-bg-hover); }
+.aui-collection .aui-tree-row:not(.aui-tree-row--divider) { height: 24px; min-height: 24px; padding-block: 0; padding-right: 5px; gap: 6px; border-radius: 4px; font-size: inherit; color: var(--aether-color-text); }
+.aui-collection .aui-tree-icon { width: 18px; height: 18px; color: var(--aether-color-text-dim); display: grid; place-items: center; }
+.aui-collection .aui-tree-icon > svg, .aui-collection .aui-tree-action svg { width: 16px; height: 16px; }
+.aui-collection .aui-tree-icon .aui-tool-icon { filter: grayscale(1); opacity: .75; }
+.aui-collection .aui-tree-disclosure { width: 14px; height: 18px; }
+.aui-collection .aui-tree-row--selected:not(.aui-tree-row--divider), .aui-collection .aui-tree-row--selected:hover:not(.aui-tree-row--disabled) { background: var(--aether-color-bg-selected); color: var(--aether-color-text-on-selected); box-shadow: none; }
+.aui-collection .aui-tree-row--selected .aui-tree-icon { color: inherit; }
+.aui-collection .aui-tree-row--dimmed:not(.aui-tree-row--selected) { opacity: .4; }
+.aui-collection .aui-tree-action { color: var(--aether-color-text-dim); }
+.aui-collection .aui-tree-badge { font-size: 10px; }
+.aui-collection .aui-tree-panel-content { padding: 0 10px 8px; }
+.aui-collection .aui-collection-footer { justify-content: space-between; align-items: center; height: 54px; padding: 0 7px; border-top: 1px solid var(--aether-color-border); flex: none; background: transparent; }
+.aui-collection-footer-start { display: inline-flex; align-items: center; gap: 2px; }
+.aui-collection-footer .aui-icon-button { border: 0; background: transparent; width: 28px; height: 28px; min-height: 0; padding: 5px; color: var(--aether-color-text); }
+.aui-collection-footer .aui-icon-button svg { width: 17px; height: 17px; }
+.aui-collection-footer .aui-icon-button:hover:not(:disabled) { background: var(--collection-control); }
+.aui-collection-footer .aui-icon-button:disabled { opacity: .3; }
+.aui-collection-list { flex: 1 1 auto; overflow: auto; min-height: 0; padding: 0 10px 8px; }
+.aui-collection .aui-listbox { font-size: inherit; border: 0; background: transparent; border-radius: 0; }
+.aui-collection .aui-listbox-option { min-height: 24px; padding: 3px 6px; border-radius: 4px; font-size: inherit; }
+.aui-collection .aui-listbox-icon { color: var(--aether-color-text-dim); }
+.aui-collection .aui-listbox-icon > svg { width: 16px; height: 16px; }
+.aui-collection .aui-listbox-option--selected { color: var(--aether-color-text-on-selected); }
+.aui-collection .aui-listbox-description { font-size: 11px; }
+.aui-collection .aui-listbox-actions button { border: 0; background: transparent; }
+
+/* The shell keeps the collection's footer at the panel's bottom. */
+.aui-shell-panel-host:has(> .aui-collection), .aui-shell-panel-body:has(> .aui-collection) { display: flex; flex-direction: column; }
+.aui-collection .aui-tree-status { color: var(--aether-color-text-dim); }
+.aui-collection .aui-listbox-option--dimmed:not(.aui-listbox-option--selected) { opacity: .4; }
+
+.aui-collection-filter-count { flex: none; padding-inline: 2px; color: var(--aether-color-text-faint); font-size: var(--aether-font-size-caption); white-space: nowrap; }
+
+/* Collection commands have one home, beside the section title. */
+.aui-collection-heading > strong { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.aui-collection-heading-actions, .aui-collection-actions { display:inline-flex; align-items:center; gap:2px; flex:none; }
+.aui-collection-actions .aui-icon-button { width:24px; height:24px; min-height:0; padding:4px; border:0; background:transparent; color:var(--aether-color-text-dim); }
+.aui-collection-actions .aui-icon-button:hover:not(:disabled) { background:var(--aether-color-bg-hover); }
+.aui-collection-actions .aui-icon-button svg { width:16px; height:16px; }

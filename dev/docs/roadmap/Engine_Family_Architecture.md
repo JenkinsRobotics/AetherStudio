@@ -19,7 +19,7 @@ folders and later split into their own repos:
 - `Aether CAD/` — Aether CAD, the CAD authoring product (started 2026-08-01)
 
 Later products (simulation, show control) sit on the same Aether engine. The
-folders are scaffolds today; existing code (`animacore/`, `app/`)
+folders are scaffolds today; existing code (`aether_animation/`, `app/`)
 migrates as the split solidifies rather than in one disruptive move.
 
 ## Layering
@@ -27,7 +27,7 @@ migrates as the split solidifies rather than in one disruptive move.
 | Layer | Strategy | Today |
 |---|---|---|
 | Kernel (B-Rep math) | **Adopt, integrate, and distribute**: Aether Core owns the supported Open CASCADE build plus its stable WebAssembly/C++ seam, topology/tolerance policy, and STEP/IGES I/O | `app/Sources/AnimaCADShim` + `Aether CAD/` proof today |
-| Aether / parametric state | **Build & own**: deterministic feature DAG, migrations, rebuild diagnostics, stable IDs, 2D constraints, 3D mates, DOF, kinematics, and evaluation | split across `Aether CAD/` and `animacore/` today |
+| Aether / parametric state | **Build & own**: deterministic feature DAG, migrations, rebuild diagnostics, stable IDs, 2D constraints, 3D mates, DOF, kinematics, and evaluation | split across `Aether CAD/` and `aether_animation/` today |
 | Aether / AetherScene | **Build & own**: the one 3D world — entities with a single stable ID space (part instances, connectors, mates), transforms, selection, interaction ops | being built inside Anima Studio |
 | Aether / render contracts | **Build & own**: one entity stream consumed by Metal and WebGPU; GPU pick contract | `app/Sources/AnimaCADViewport` |
 | Products | Thin front-ends over Aether | `app/` today |

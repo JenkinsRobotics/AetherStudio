@@ -1,0 +1,127 @@
+@import "./IconButtonSizes.css";
+
+/* One default surface for the component, legacy class-only controls and icon
+   menu triggers. Text menu buttons retain their own treatment. */
+.aui-icon-button,
+.aui-menu-trigger.aui-icon-button {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--aui-icon-button-size, var(--aui-icon-medium-size));
+  height: var(--aui-icon-button-size, var(--aui-icon-medium-size));
+  padding: 0;
+  border: 0;
+  border-radius: var(--aui-icon-button-radius, 10px);
+  background: transparent;
+  box-shadow: none;
+  color: var(--aether-color-text-dim);
+  cursor: pointer;
+}
+.aui-icon-button:hover:not(:disabled),
+.aui-menu-trigger.aui-icon-button:hover:not(:disabled),
+.aui-menu-trigger.aui-icon-button[aria-expanded="true"] {
+  border: 0;
+  background: var(--aether-color-bg-hover);
+  box-shadow: none;
+  color: var(--aether-color-text);
+}
+.aui-icon-button:disabled { opacity: 0.35; cursor: default; }
+.aui-icon-button svg {
+  width: var(--aui-icon-button-glyph-size, var(--aui-icon-medium-glyph));
+  height: var(--aui-icon-button-glyph-size, var(--aui-icon-medium-glyph));
+}
+.aui-icon-button:focus-visible { outline-offset: -2px; }
+
+
+/* The button owns its selection shape; the host owns spacing around the cell. */
+.aui-icon-button:is([data-appearance="rounded"], [data-appearance="cell"]) {
+  box-sizing: border-box;
+  flex: none;
+  width: var(--aui-icon-button-size, var(--aui-icon-medium-size));
+  min-width: var(--aui-icon-button-size, var(--aui-icon-medium-size));
+  height: var(--aui-icon-button-size, var(--aui-icon-medium-size));
+  padding: 0;
+  border: 0;
+  border-radius: var(--aui-icon-button-radius, 10px);
+  background: transparent;
+  box-shadow: none;
+  color: var(--aether-color-text-dim);
+}
+.aui-icon-button[data-appearance="cell"] {
+  --aui-icon-button-size: 44px;
+  --aui-icon-button-glyph-size: 26px;
+  --aui-icon-button-radius: var(--aether-selection-cell-radius, 0px);
+}
+.aui-icon-button:is([data-appearance="rounded"], [data-appearance="cell"]) svg {
+  width: var(--aui-icon-button-glyph-size, var(--aui-icon-medium-glyph));
+  height: var(--aui-icon-button-glyph-size, var(--aui-icon-medium-glyph));
+}
+.aui-icon-button:is([data-appearance="rounded"], [data-appearance="cell"]):hover:not(:disabled):not([aria-pressed="true"]) {
+  background: var(--aether-color-bg-hover);
+  color: var(--aether-color-text);
+}
+.aui-icon-button:is([data-appearance="rounded"], [data-appearance="cell"]):focus-visible { outline-offset: -2px; }
+
+/* Latched icon commands use one shared state treatment in every application. */
+.aui-icon-button[aria-pressed="true"],
+.aui-icon-button[aria-pressed="true"]:hover:not(:disabled) {
+  background: var(--aether-color-accent);
+  border-color: var(--aether-color-border-focus);
+  color: var(--aether-color-text-on-selected);
+}
+
+/* Quiet state controls (for example, axis locks) emphasize the glyph, not a frame. */
+.aui-icon-button[data-appearance="glyph"],
+.aui-icon-button[data-appearance="glyph"]:hover:not(:disabled) {
+  width: var(--aui-icon-button-size, 28px);
+  min-width: var(--aui-icon-button-size, 28px);
+  height: var(--aui-icon-button-size, 28px);
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--aether-color-text-dim);
+}
+.aui-icon-button[data-appearance="glyph"][aria-pressed="true"],
+.aui-icon-button[data-appearance="glyph"][aria-pressed="true"]:hover:not(:disabled) { color: var(--aether-color-accent); background: transparent; }
+.aui-icon-button[data-appearance="glyph"]:hover:not(:disabled):not([aria-pressed="true"]) { color: var(--aether-color-text); }
+.aui-icon-button[data-appearance="glyph"]:focus-visible { outline-offset: -2px; }
+
+/* Explicit standards apply across every appearance; omitted size retains legacy defaults. */
+.aui-icon-button[data-size="small"] {
+  --aui-icon-button-size: var(--aui-icon-small-size);
+  --aui-icon-button-glyph-size: var(--aui-icon-small-glyph);
+  --aui-icon-button-radius: 8px;
+}
+.aui-icon-button[data-size="medium"] {
+  --aui-icon-button-size: var(--aui-icon-medium-size);
+  --aui-icon-button-glyph-size: var(--aui-icon-medium-glyph);
+}
+.aui-icon-button[data-size="large"] {
+  --aui-icon-button-size: var(--aui-icon-large-size);
+  --aui-icon-button-glyph-size: var(--aui-icon-large-glyph);
+}
+.aui-icon-button[data-size] {
+  box-sizing: border-box;
+  width: var(--aui-icon-button-size);
+  min-width: var(--aui-icon-button-size);
+  height: var(--aui-icon-button-size);
+  min-height: var(--aui-icon-button-size);
+  padding: 0;
+}
+.aui-icon-button[data-size] svg {
+  width: var(--aui-icon-button-glyph-size);
+  height: var(--aui-icon-button-glyph-size);
+}
+/* Cell shape stays independent of size, including the small standard. */
+.aui-icon-button[data-appearance="cell"][data-size] { --aui-icon-button-radius: var(--aether-selection-cell-radius, 0px); }
+@media (pointer: coarse) {
+  .aui-icon-button[data-size],
+  .aui-icon-button:is([data-appearance="rounded"], [data-appearance="cell"]) { min-width: 44px; min-height: 44px; }
+}
+
+/* A selected fill needs contrast for its single keyboard-focus edge. */
+.aui-icon-button[aria-pressed="true"]:not([data-appearance="glyph"]):focus-visible {
+  outline-color:var(--aether-color-text-on-selected);
+}

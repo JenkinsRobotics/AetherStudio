@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="var(--tool-edge,#627f98)" stroke-width="1.2" stroke-linejoin="round">
+  <path d="M4 9 16 4l12 5v14l-12 5-12-5Z" fill="var(--tool-paper,#eff6fb)"/>
+  <path d="M4 9 16 15v13L4 23Z" fill="var(--tool-blue,#198fdf)" fill-opacity=".65"/>
+  <path d="m16 15 12-6v14l-12 5Z" fill="var(--tool-metalSide-a,#87a7c2)"/>
+  <path d="M4 9 16 4l12 5-12 6ZM4 16l12 6 12-6" fill="none"/>
+  <path d="M16 15v13" fill="none"/>
+  <circle cx="16" cy="22" r="1.4" fill="var(--tool-orange,#e99343)" stroke="none"/>
+</svg>

@@ -1,0 +1,24 @@
+.aui-appearance-swatches { display:grid; grid-template-columns:repeat(8,1fr); gap:3px; }
+.aui-appearance-swatches button { min-width:0; height:22px; border:1px solid var(--aether-color-border); border-radius:3px; color:white; }
+.aui-compact-action-panel { --panel-bg:var(--aether-color-bg-inset); --panel-control:var(--aether-color-bg-control); --panel-text:var(--aether-color-text); display:grid; gap:12px; max-width:330px; margin:auto; padding:14px;    color:var(--panel-text);   border:0; border-radius:0; box-shadow:none; background:transparent; }
+.aui-compact-action-panel.is-dark { border-color:var(--aether-color-border-control); }
+.aui-compact-action-panel > button { display:flex; align-items:center; gap:8px; min-height:39px; padding:0 12px; border:1px solid var(--aether-color-border-control); border-radius:8px; background:var(--panel-control); color:inherit; }
+.aui-compact-action-panel > button strong { flex:1; font-size:13px; }
+.aui-compact-action-panel > button svg { width:18px; height:18px; }
+.aui-compact-action-panel > button.primary { color:white; background:var(--aether-color-accent); }
+.aui-compact-action-panel kbd { opacity:.5; font:11px ui-monospace,monospace; }
+.aui-compact-action-panel > div { display:flex; padding:4px; gap:4px; border-radius:9px; background:var(--panel-control); }
+.aui-compact-action-panel > div button { flex:1; display:flex; align-items:center; justify-content:center; gap:8px; height:34px; border:0; border-radius:7px; color:inherit; background:transparent; }
+.aui-compact-action-panel > div button[aria-pressed=true] { background:var(--panel-bg); box-shadow:var(--aether-shadow-1); }
+.aui-compact-action-panel > div svg { width:14px; height:14px; }
+.aui-compact-action-panel output { text-align:right; opacity:.58; font:10px ui-monospace,monospace; }
+.aui-sequence-editor { display:flex; flex-direction:column; gap:6px; min-height:300px; color:var(--aether-color-text); background:var(--aether-color-bg-inset); }
+.aui-sequence-editor > header { display:flex; flex-wrap:wrap; gap:4px; padding:6px; }
+.aui-sequence-editor > header input { min-width:80px; width:100px; flex:1; }
+.aui-sequence-editor > .aui-timeline { flex:1; min-height:240px; }
+.aui-sequence-editor footer { display:flex; justify-content:space-between; padding:6px; font-size:10px; }
+.aui-waypoint-lanes { display:grid; gap:8px; padding:10px; }
+.aui-waypoint-lanes > div { display:grid; grid-template-columns:90px 1fr; gap:10px; }
+.aui-waypoint-lanes > div > div { display:flex; flex-wrap:wrap; gap:10px; }
+.aui-waypoint-lanes button { border:1px solid var(--aether-color-border); border-radius:5px; padding:7px; color:var(--aether-color-text); background:var(--aether-color-bg-panel); }
+.aui-waypoint-lanes button[aria-pressed=true] { border-color:var(--aether-color-accent); }

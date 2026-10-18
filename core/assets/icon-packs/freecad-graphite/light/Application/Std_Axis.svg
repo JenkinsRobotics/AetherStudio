@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg5821" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/Std_Axis.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs5823">
+    <linearGradient id="linearGradient1419">
+      <stop style="stop-color:#aabacc;stop-opacity:1" offset="0" id="stop1415" />
+      <stop style="stop-color:#f3f7fc;stop-opacity:1" offset="1" id="stop1417" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient1419" id="linearGradient1394" x1="1063.0024" y1="577.59387" x2="1426.1705" y2="587.05365" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.5057001,0,0,1.5613398,-626.67611,-362.41198)" />
+  </defs>
+  <g id="layer1">
+    <g id="g3360" transform="matrix(0.1367863,0,0,0.1367863,-119.15519,-134.86962)">
+      <g id="g3360-3" transform="translate(-2.96179e-7,2.9614273e-6)">
+        <rect transform="matrix(0.85509196,0.51847636,0,1,0,0)" rx="0" ry="0" y="536.84424" x="1075.1082" height="34.667957" width="435.30161" id="rect4154" style="fill:url(#linearGradient1394);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+    </g>
+  </g>
+</svg>

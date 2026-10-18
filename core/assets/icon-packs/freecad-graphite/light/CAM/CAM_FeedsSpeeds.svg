@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" version="1.1" id="CAM_FeedsSpeeds" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/CAM_FeedsSpeeds.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs">
+    
+    <linearGradient id="toolGrad" x1="36" y1="8" x2="56" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:#f3f7fc;stop-opacity:1" />
+      <stop offset="0.45" style="stop-color:#e0e7ef;stop-opacity:1" />
+      <stop offset="1" style="stop-color:#bcc9d8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="topGrad" x1="38" y1="8" x2="52" y2="14" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:#f3f7fc;stop-opacity:1" />
+      <stop offset="1" style="stop-color:#d3dce7;stop-opacity:1" />
+    </linearGradient>
+    <clipPath id="bodyClip">
+      <path d="M 40,10 L 50,10 L 50,46 Q 50,49 47,49 L 43,49 Q 40,49 40,46 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </clipPath>
+  </defs>
+
+  
+  <g stroke-linecap="round" fill="none">
+    
+    <g stroke="#405269" stroke-width="8">
+      <path d="M 8,20 L 34,20" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="M 5,32 L 33,32" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="M 8,44 L 34,44" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    
+    <g stroke="#37a8fa" stroke-width="4">
+      <path d="M 8,20 L 34,20" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="M 5,32 L 33,32" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="M 8,44 L 34,44" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+
+  
+  
+  <path d="M 40,10 L 50,10 L 50,46 Q 50,49 47,49 L 43,49 Q 40,49 40,46 Z" style="fill:url(#toolGrad);stroke:#405269;stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  
+  <g clip-path="url(#bodyClip)" stroke="#405269" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85">
+    <path d="M 38,22 L 52,14" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 38,30 L 52,22" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 38,38 L 52,30" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 38,46 L 52,38" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  
+  <path d="M 41.5,12 L 41.5,43" fill="none" stroke="#405269" stroke-width="1.1" stroke-linecap="round" opacity="0.8" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+  
+  <ellipse cx="45" cy="10" rx="5" ry="2" style="fill:url(#topGrad);stroke:#405269;stroke-width:1.1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

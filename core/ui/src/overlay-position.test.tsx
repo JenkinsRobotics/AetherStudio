@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { useRef } from "react";
 import { expect, test } from "vitest";
 import { useOverlayPosition } from "./overlay-position";
@@ -50,4 +50,23 @@ test("flips above an anchor and clamps to the viewport edge", () => {
   expect(overlay.style.left).toBe("792px");
   expect(overlay.style.top).toBe("625px");
   expect(overlay.style.visibility).toBe("visible");
+});
+
+
+test("toolbar menus clear the whole toolbar, follow scrolling and flip above its top", () => {
+  Object.defineProperty(window, "innerWidth", { configurable: true, value: 1000 });
+  Object.defineProperty(window, "innerHeight", { configurable: true, value: 800 });
+  const toolbar = document.createElement("div"), anchor = document.createElement("button");
+  toolbar.dataset.toolbarMenuBoundary = "";
+  toolbar.append(anchor);
+  let top = 30;
+  toolbar.getBoundingClientRect = () => domRect(0, top, 1000, 100);
+  anchor.getBoundingClientRect = () => domRect(240, top + 30, 14, 28);
+  render(<PositionProbe anchor={anchor} />);
+  const overlay = screen.getByTestId("overlay");
+  expect(overlay.style.left).toBe("240px");
+  expect(overlay.style.top).toBe("135px");
+  top = 690;
+  fireEvent.scroll(window);
+  expect(overlay.style.top).toBe("585px");
 });

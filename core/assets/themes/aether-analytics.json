@@ -1,0 +1,78 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "aether-analytics",
+  "name": "Aether Analytics",
+  "description": "Charcoal analytics surfaces, compact cards, blue and amber charts. Light and dark modes.",
+  "extends": "aether-default",
+  "modes": {
+    "dark": {
+      "color-bg-app": "#26292b",
+      "color-bg-shell": "#17191b",
+      "color-bg-panel": "#1e2023",
+      "color-bg-bar": "#191b1e",
+      "color-bg-rail": "#191c1f",
+      "color-bg-inset": "#25282d",
+      "color-bg-control": "#2d3036",
+      "color-bg-control-hover": "#393d44",
+      "color-bg-hover": "#2b2f36",
+      "color-bg-row-hover": "#292d34",
+      "color-bg-selected": "#252d40",
+      "color-text": "#f1f2f4",
+      "color-text-soft": "#c9cdd5",
+      "color-text-dim": "#a1a6b0",
+      "color-text-faint": "#858b96",
+      "color-border": "#30343a",
+      "color-border-subtle": "#282c31",
+      "color-border-control": "#353941",
+      "color-accent": "#4775ed",
+      "color-accent-strong": "#3862d4",
+      "color-accent-icon": "#789bff",
+      "color-border-focus": "#789bff",
+      "color-selection-edge": "#789bff",
+      "color-ok": "#58b69d",
+      "color-warn": "#efa935"
+    },
+    "light": {
+      "color-bg-app": "#edf0f2",
+      "color-bg-shell": "#f7f8fa",
+      "color-bg-panel": "#ffffff",
+      "color-bg-bar": "#ffffff",
+      "color-bg-rail": "#f5f6f8",
+      "color-bg-inset": "#f3f4f6",
+      "color-bg-control": "#f1f2f4",
+      "color-bg-control-hover": "#e4e7ec",
+      "color-bg-hover": "#e9edf5",
+      "color-bg-row-hover": "#eef2f8",
+      "color-bg-selected": "#e6edfc",
+      "color-text": "#202329",
+      "color-text-soft": "#343941",
+      "color-text-dim": "#606670",
+      "color-text-faint": "#737984",
+      "color-border": "#dfe3e9",
+      "color-border-subtle": "#eef0f4",
+      "color-border-control": "#dfe3e9",
+      "color-accent": "#446fe6",
+      "color-accent-strong": "#3157bf",
+      "color-accent-icon": "#446fe6",
+      "color-border-focus": "#446fe6",
+      "color-selection-edge": "#446fe6",
+      "color-ok": "#26876d",
+      "color-warn": "#e5a13a"
+    }
+  },
+  "geometry": {
+    "radius-panel": "6px",
+    "radius-control": "5px",
+    "radius-button": "5px",
+    "radius-field": "5px",
+    "radius-row": "4px",
+    "size-control": "28px"
+  },
+  "font": {
+    "font-weight-strong": "500"
+  },
+  "effects": {
+    "control-shadow": "none",
+    "control-hover-shadow": "none"
+  }
+}

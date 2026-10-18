@@ -1,0 +1,17 @@
+import './AppUpdates.css';
+/** Decorative feature illustrations; these are not screenshots or interactive controls. */
+export function AppUpdateArtwork({scene}:{scene:'projection'|'effects'|'timeline'|'rig'|'circuit'|'board'|'paths'|'paint'|'library'}) {
+ return <div className={`app-feature-art app-feature-art--${scene}`} aria-hidden="true">
+  <div className="app-feature-grid"/>
+  <svg viewBox="0 0 180 210" fill="none">
+   {scene==='library' && <>{[0,1,2].map(i=><g key={i} transform={`translate(${18+i*37} ${45+i*22}) rotate(-8)`}><rect width="72" height="100" rx="7" fill={['#566c8a','#87adab','#f7eee0'][i]}/><path d="M14 30h42m-42 18h42m-42 18h27" stroke={i===2?'#8ba4ac':'#e7f1f1'} strokeWidth="5" strokeLinecap="round"/></g>)}</>}
+   {scene==='projection'  && <><path d="M15 156 42 111 150 31 170 148 52 172Z" fill="#fccefa" opacity=".25"/><path d="m51 68 98-30 9 101-96 26Z" fill="#615dd1" stroke="#dedbff" strokeWidth="2"/>{[0,1,2,3].map(i=><path key={i} d={`M${53+i*27} ${68-i*8} l8 99 M${53+i*3} ${68+i*27} l98 -29`} stroke="#c3b5fd"/>)}<rect x="14" y="154" width="41" height="23" rx="5" fill="#253453"/><circle cx="44" cy="164" r="7" fill="#b7edff"/></>}
+   {scene==='effects' && <>{[0,1,2,3,4,5].map(i=><path key={i} d="m90 34 48 84-96 0Z" transform={`rotate(${i*60} 90 107)`} fill={['#e89aae','#ffce8a','#ade1c9','#b0dff4','#b4ade7','#f3afd9'][i]} opacity=".78"/>)}<circle cx="90" cy="107" r="22" fill="#263249"/></>}
+   {scene==='timeline' && <><rect x="12" y="48" width="156" height="116" rx="10" fill="#273344"/>{[0,1,2,3].map(i=><g key={i}><path d={`M25 ${72+i*24}H155`} stroke="#627282"/>{[0,1,2].map(j=><path key={j} d={`m${39+j*44+i*3} ${66+i*24} 6 6-6 6-6-6Z`} fill={['#a6d9b9','#92cde7','#e9b889'][i%3]}/>)}</g>)}<path d="M99 39v139" stroke="#fb8386" strokeWidth="2"/></>}
+   {scene==='rig' && <><path d="m40 172 48-48 30-61 27-17" stroke="#455969" strokeWidth="19" strokeLinecap="round"/><path d="m40 172 48-48 30-61 27-17" stroke="#c4e5df" strokeWidth="11" strokeLinecap="round"/>{[[40,172],[88,124],[118,63],[145,46]].map(([x,y])=><circle key={x} cx={x} cy={y} r="10" fill="#f5c08c" stroke="#455969" strokeWidth="3"/>)}<path d="M19 185h65" stroke="#455969" strokeWidth="8"/></>}
+   {(scene==='circuit'||scene==='board') && <><rect x="24" y="42" width="132" height="132" rx="12" fill="#315e58"/>{[0,1,2].map(i=><path key={i} d={`M35 ${67+i*38}h25v19h54v-26h29`} stroke={i===1?'#ffd18b':'#92ccb2'} strokeWidth="3"/>)}<rect x="68" y="85" width="43" height="42" rx="4" fill="#24343b" stroke="#e7cb91" strokeWidth="3"/><circle cx="38" cy="56" r="4" fill="#f1d7a7"/><circle cx="143" cy="160" r="4" fill="#f1d7a7"/>{scene==='board'&&<path d="M46 152h17m62-94h15" stroke="#f5da9d" strokeWidth="10"/>}</>}
+   {scene==='paths' && <><path d="M31 151C31 40 133 191 145 59L120 151Z" fill="#faaf7d" stroke="#263c65" strokeWidth="3"/><path d="M31 151V45m114 14-14 110" stroke="#fff"/>{[[31,151],[31,45],[145,59],[131,169],[120,151]].map(([x,y])=><rect key={`${x}${y}`} x={x-4} y={y-4} width="8" height="8" fill="#fff" stroke="#263c65"/>)}</>}
+   {scene==='paint' && <>{['#7776c6','#e77f91','#f6b986','#83b9ad'].map((color,i)=><path key={color} d={`M31 ${69+i*29}Q80 ${22+i*39} 144 ${73+i*27}`} stroke={color} strokeWidth={13+i*2} strokeLinecap="round"/>)}<path d="m60 174 61-123" stroke="#35445f" strokeWidth="9" strokeLinecap="round"/><path d="m60 174-9 18 18-12" fill="#35445f"/></>}
+  </svg>
+ </div>;
+}

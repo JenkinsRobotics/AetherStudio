@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg12" width="32" height="32" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_Octagon.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g transform="rotate(30,55.977041,35.414538)" style="fill:none;stroke:#5bbdff;stroke-width:1.1" id="symbol">
+    <circle cx="46.010242" cy="53.328125" style="stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none" id="circle4" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="49.622784" cy="39.534939" style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#5bbdff;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none" id="circle4-3" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#5bbdff;stroke-width:1.1" id="path2" d="m 40.158899,17.409435 -7.953333,3.294379 -7.953332,-3.294379 -3.294379,-7.9533326 3.294379,-7.9533329 7.953332,-3.2943783 7.953333,3.2943783 3.294379,7.9533328 z" transform="matrix(1.0916218,-0.63024817,0.63740447,1.1040169,4.8265812,63.185929)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g style="stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter" id="crosshair">
+    <path id="path9" d="m16,3v9m0,8v9m-13-13h9m8,0h9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

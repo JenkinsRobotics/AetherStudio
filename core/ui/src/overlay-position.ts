@@ -64,7 +64,13 @@ export function useOverlayPosition({
         left = anchor.x;
         top = anchor.y;
       } else {
-        const rect = anchor.getBoundingClientRect();
+        const anchorRect = anchor.getBoundingClientRect();
+        // Tool arrows can be shorter than their labelled button. Keep horizontal
+        // alignment with the trigger, but clear the whole toolbar vertically.
+        const toolbar = anchor instanceof HTMLElement ? anchor.closest("[data-toolbar-menu-boundary]") : null;
+        const boundary = toolbar?.getBoundingClientRect();
+        const rect = { left: anchorRect.left, right: anchorRect.right,
+          top: boundary?.top ?? anchorRect.top, bottom: boundary?.bottom ?? anchorRect.bottom };
         switch (placement) {
           case "bottom-end":
             left = rect.right - width;

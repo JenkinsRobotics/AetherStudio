@@ -1,0 +1,18 @@
+html, body, #root { height: 100%; margin: 0; }
+* { box-sizing: border-box; }
+.workbench-demo { height: 100%; display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--aether-color-bg-app); color: var(--aether-color-text); font-family: var(--aether-font-family); }
+.workbench-demo-bar { display: flex; align-items: center; gap: 18px; font-size: 12px; }
+.workbench-demo-bar a { color: var(--aether-color-accent); }
+.workbench-demo-bar > :last-child { margin-left: auto; }
+.workbench-demo > .aui-workbench-window { flex: 1; }
+.workbench-demo-files { display: grid; gap: 5px; margin-top: 12px; }
+.workbench-demo-files button { display: flex; align-items: center; gap: 10px; text-align: left; padding: 10px; border: 0; border-radius: 6px; background: transparent; color: inherit; cursor: pointer; }
+.workbench-demo-files button[aria-pressed="true"] { background: var(--aether-color-bg-selected); }
+.workbench-demo-files small { display: block; margin-top: 3px; color: var(--aether-color-text-dim); }
+.workbench-demo-files p { font-size: 12px; color: var(--aether-color-text-dim); }
+.workbench-demo-canvas { min-height: 100%; display: grid; place-items: center; padding: 90px 24px; }
+.workbench-demo-document { display: grid; gap: 18px; width: min(100%,420px); padding: 28px; background: var(--aether-color-bg-panel); border: 1px solid var(--aether-color-border); border-radius: 10px; }
+.workbench-demo-document label { display: grid; gap: 8px; }
+.workbench-demo-document p { font-size: 12px; line-height: 1.5; color: var(--aether-color-text-dim); margin: 0; }
+.workbench-demo-note { padding: 8px 10px; background: var(--aether-color-bg-panel); border: 1px solid var(--aether-color-border); border-radius: 7px; font-size: 11px; color: var(--aether-color-text-dim); }
+.workbench-demo-status-end { margin-left: auto; }

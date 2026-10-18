@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2726" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Snap_Endpoint.svg. Authors: [Yorik van Havre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2728">
+    <linearGradient id="linearGradient3779">
+      <stop id="stop3781" offset="0" style="stop-color:#3c4b5f;stop-opacity:1" />
+      <stop id="stop3783" offset="1" style="stop-color:#54667b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="508.38715" x2="146.08063" y1="728.83636" x1="170.20491" id="linearGradient3785" xlink:href="#linearGradient3779" />
+  </defs>
+  <g id="layer1">
+    <g transform="matrix(0.1621282,0,0,0.1621282,6.3605986,-66.108806)" id="g4289">
+      <path id="rect2269" d="M 277.8342,450.93208 91.251015,618.75727 c -8.918335,-3.55647 -18.650534,-5.41282 -28.857145,-5.13952 -40.206815,1.07665 -71.8358285,34.50943 -70.759301,74.72077 1.0765272,40.21135 34.505519,72.0416 74.712334,70.96496 40.206817,-1.07665 72.033487,-34.7071 70.956957,-74.91845 -0.10549,-3.93995 -0.6803,-7.71094 -1.38356,-11.46508 L 324.67764,503.11801 277.8342,450.93208 z" style="color:#e5edf7;fill:url(#linearGradient3785);fill-opacity:1;fill-rule:nonzero;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="rect2269-1" d="M 276.74385,468.64297 94.08423,632.57831 c -8.91833,-3.55647 -25.263569,-7.19772 -36.016523,-5.77147 -35.913836,4.76357 -53.8623972,30.41905 -54.1239057,64.67562 -0.2495862,32.69478 36.3906717,55.11513 55.5116257,55.51162 26.648562,0.55259 62.860723,-13.7279 65.072103,-62.27432 0.24957,-5.47877 -0.90505,-11.37956 -2.99603,-15.53019 l 185.73261,-167.0305 z" style="color:#e5edf7;fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

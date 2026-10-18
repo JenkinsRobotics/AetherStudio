@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
+import { AetherIcon } from "./AetherIcon";
 import type { ReactNode } from "react";
+import { Inspector } from "./Inspector";
 import { FieldRow } from "./FieldRow";
 
 export interface PropertyGridItem {
@@ -82,7 +84,7 @@ export function PropertyGrid({
   };
 
   return (
-    <div
+    <Inspector><div
       className={["aui-property-grid", className].filter(Boolean).join(" ")}
       role="region"
       aria-label={ariaLabel}
@@ -102,7 +104,7 @@ export function PropertyGrid({
                 aria-expanded={!collapsed}
                 onClick={() => toggle(section.id)}
               >
-                <span aria-hidden="true">{collapsed ? "▸" : "▾"}</span>
+                <span aria-hidden="true"><AetherIcon name={collapsed ? "chevron-right" : "chevron-down"} /></span>
                 <strong>{section.label}</strong>
                 {section.badge ? <small>{section.badge}</small> : null}
               </button>
@@ -133,6 +135,6 @@ export function PropertyGrid({
           );
         })
       )}
-    </div>
+    </div></Inspector>
   );
 }

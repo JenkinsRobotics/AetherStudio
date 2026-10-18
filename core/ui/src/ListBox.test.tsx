@@ -28,9 +28,10 @@ test("renders semantic nonselectable collections without inert row selection", (
   const onAction = vi.fn();
   render(<ListBox ariaLabel="Read-only results" items={[{ id: "one", label: "Result", actions: [{ id: "show", label: "Show result", icon: "↗" }] }]} selectedIDs={new Set()} selectionMode="none" onAction={onAction} />);
   expect(screen.getByRole("list", { name: "Read-only results" })).not.toBeNull();
-  expect(screen.getByRole("listitem").getAttribute("tabindex")).toBe("-1");
+  expect(screen.getByRole("listitem").getAttribute("tabindex")).toBe("0");
   fireEvent.click(screen.getByRole("listitem"));
-  fireEvent.click(screen.getByRole("button", { name: "Show result" }));
+  fireEvent.contextMenu(screen.getByText("Result"));
+  fireEvent.click(screen.getByRole("menuitem", { name: "Show result" }));
   expect(onAction).toHaveBeenCalledWith("one", "show");
 });
 
@@ -118,7 +119,8 @@ test("disabled rows do not select and actions do not change selection", () => {
     />
   );
   fireEvent.click(screen.getByText("Disabled"));
-  fireEvent.click(screen.getByLabelText("Hide"));
+  fireEvent.contextMenu(screen.getByText("Body"));
+  fireEvent.click(screen.getByRole("menuitem", { name: "Hide" }));
   expect(onSelect).not.toHaveBeenCalled();
   expect(onAction).toHaveBeenCalledWith("body", "hide");
 });
@@ -165,4 +167,28 @@ test("large collections render a window rather than every row", () => {
   expect(
     (container.querySelector(".aui-listbox-window") as HTMLElement).style.height
   ).toBe("4000px");
+});
+
+test('search and category filters compose while retaining selection in the source collection', () => {
+  const {onSelect}=renderList({selectedIDs:new Set(['steel'])});
+  fireEvent.click(screen.getByRole('button',{name:'Search Materials types'}));
+  fireEvent.click(screen.getByRole('menuitemradio',{name:'Metals'}));
+  const query=screen.getByRole('searchbox',{name:'Search Materials'});
+  fireEvent.change(query,{target:{value:'alu'}});
+  expect(screen.queryByText('Steel')).toBeNull();expect(screen.getByText('Aluminum')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button',{name:'Clear Search Materials'}));
+  expect(screen.getByText('Steel').closest('[role="option"]')?.getAttribute('aria-selected')).toBe('true');
+  expect(screen.queryByText('ABS')).toBeNull(); expect(onSelect).not.toHaveBeenCalled();
+});
+
+test('commands for nonselectable results remain keyboard accessible through the menu', () => {
+  const action=vi.fn();
+  render(<ListBox ariaLabel="Results" selectionMode="none" selectedIDs={new Set()} onAction={action}
+    items={[{id:'result',label:'Result',actions:[{id:'show',label:'Show geometry',icon:'eye'}]}]}/>);
+  const row=screen.getByRole('listitem');
+  fireEvent.focus(row);fireEvent.keyDown(row,{key:'Enter'});
+  fireEvent.click(screen.getByRole('menuitem',{name:'Show geometry'}));
+  expect(action).toHaveBeenCalledWith('result','show');
+  fireEvent.click(screen.getByRole('button',{name:'More Results controls'}));
+  expect(screen.getByRole('menuitem',{name:'Show geometry'})).toBeTruthy();
 });

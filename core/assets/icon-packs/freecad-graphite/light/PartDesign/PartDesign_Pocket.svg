@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/PartDesign/Gui/Resources/icons/PartDesign_Pocket.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient4062">
+      <stop style="stop-color:#9caec3;stop-opacity:1;" offset="0" id="stop4064" />
+      <stop style="stop-color:#a8b8cb;stop-opacity:1" offset="1" id="stop4066" />
+    </linearGradient>
+    <linearGradient id="linearGradient4054">
+      <stop style="stop-color:#a8b8cb;stop-opacity:1;" offset="0" id="stop4056" />
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="1" id="stop4058" />
+    </linearGradient>
+    <linearGradient id="linearGradient4046">
+      <stop style="stop-color:#2d9ced;stop-opacity:1;" offset="0" id="stop4048" />
+      <stop style="stop-color:#34a4f6;stop-opacity:1" offset="1" id="stop4050" />
+    </linearGradient>
+    <linearGradient id="linearGradient4036">
+      <stop style="stop-color:#2693e2;stop-opacity:1;" offset="0" id="stop4038" />
+      <stop style="stop-color:#2d9ced;stop-opacity:1" offset="1" id="stop4040" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient4036" id="linearGradient4042" x1="28" y1="31" x2="26" y2="22" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient4046" id="linearGradient4052" x1="40" y1="24" x2="39" y2="18" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient4054" id="linearGradient4060" x1="23.012539" y1="37.67511" x2="20.305182" y2="28.071651" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient4062" id="linearGradient4068" x1="62.269226" y1="31.026562" x2="58.208187" y2="25.116741" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <g transform="scale(0.73872768,1.3536788)" style="font-size:54.21519089000000236px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#37a8fa;fill-opacity:1;stroke:#405269;font-family:Arial;-inkscape-font-specification:Arial;color:#405269;fill-rule:nonzero;stroke-width:1.1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="text3796">
+      <path style="fill:url(#linearGradient4042);stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1" d="m 17,27 16,-12 0,16 -3,3 z" id="path4030" transform="scale(1.3536788,0.73872768)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:url(#linearGradient4052);stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1" d="M 33,15 33,32 49,19 z" id="path4032" transform="scale(1.3536788,0.73872768)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="font-size:54.21519088999999525px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#405269;fill:url(#linearGradient4060);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" d="m 4.0610462,22.900559 37.9029928,7.387275 0,13.297097 -37.9029928,-7.387276 z" id="rect3200" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="font-size:54.21519088999999525px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#405269;fill:url(#linearGradient4068);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" d="m 41.964039,30.287834 40.610358,-17.729461 0,11.819639 -40.610358,19.206919 z" id="rect3200-8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="font-size:54.21519089px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#405269;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" d="m 6.7684048,24.999282 0,10.181145 32.4777042,6.300608 0.0317,-10.147163 z" id="path3805" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="font-size:54.21519089px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;color:#405269;fill:none;stroke:#7c8fa5;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial" d="m 44.671399,30.995535 -10e-7,9.374454 35.195641,-16.653139 0.01056,-8.117139 z" id="path3807" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 15,31 31,19 31,33" id="path4034" transform="scale(1.3536788,0.73872768)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 35,31 35,17.6 50,22" id="path4044" transform="scale(1.3536788,0.73872768)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:#c3cfdc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 32 8 L 3 31 L 31 41 L 61 17 L 32 8 z M 33 15 L 47 19 L 31 32 L 17 27 L 33 15 z " transform="scale(1.3536788,0.73872768)" id="path3238" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="M 17,27 31,32 47,19 33,15 z" id="path4028" transform="scale(1.3536788,0.73872768)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

@@ -6,12 +6,14 @@ import {
   type ReactNode,
 } from "react";
 import { AppIcon, AetherIcon, Button, Checkbox, TextField } from "@aether/ui";
-import artwork from "../../core/assets/branding/studio-setup.svg";
-import { api } from "./api";
+import artwork from "@aether/assets/branding/studio-setup.svg";
+import { api } from "@aether/session/library/api";
 import "./setup.css";
 
 export type Installation = {
   setup_authorized?: boolean;
+  setup_instructions?: string;
+  data_directory?: string | null;
   host_ready: boolean;
   storage_ready: boolean;
   packages: {
@@ -162,7 +164,7 @@ export function SetupWizard({
       );
       return;
     }
-    if (step === 2 && !authorized) { setError("Reopen Aether Studio.app on this host to authorize setup, then refresh this page."); return; }
+    if (step === 2 && !authorized) { setError(installation.setup_instructions ?? "Reopen Aether Studio.app on this host to authorize setup, then refresh this page."); return; }
     if (step === 2 && password !== confirm) {
       setError("Your passwords do not match. Check both fields and try again.");
       return;
@@ -283,6 +285,7 @@ export function SetupWizard({
           )}
           {step === 1 && (
             <>
+              {installation?.data_directory && <p className="hint">Server data folder: <code style={{ overflowWrap: "anywhere" }}>{installation.data_directory}</code>. Selected during installation; all team browsers use this server.</p>}
               <label className="field">
                 <span>Workspace name</span>
                 <TextField
@@ -396,7 +399,7 @@ export function SetupWizard({
                 checked={showPassword}
                 onChange={(e) => setShowPassword(e.target.checked)}
               />
-              <div className="setup-note"><AetherIcon name="home" /><p>{authorizing ? "Authorizing setup…" : authorized ? "Setup authorized on this host. No code to enter." : "Open Aether Studio.app on this host to authorize first-time setup, then refresh this page. Authorization lasts an hour and survives refreshes."}</p></div>
+              <div className="setup-note"><AetherIcon name="home" /><p>{authorizing ? "Authorizing setup…" : authorized ? "Setup authorized on this host. No code to enter." : installation.setup_instructions ?? "Open Aether Studio.app on this host to authorize first-time setup, then refresh this page. Authorization lasts an hour and survives refreshes."}</p></div>
               <p className="setup-smallprint">
                 This account belongs to your installation. Your email can be used for sign-in and password recovery once an administrator configures Email delivery. Keep your password somewhere safe.
               </p>

@@ -1,0 +1,21 @@
+/* Both selection states occupy the same rows; double-click targets stay put. */
+.library-file-controls.library-filter-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.library-file-controls > .library-filter-left {
+  min-width: 0;
+  height: 40px;
+  flex-wrap: nowrap;
+}
+.library-file-controls > .library-command-bar { overflow-x: auto; }
+.library-file-controls > .library-command-bar > button { flex: none; white-space: nowrap; }
+.library-file-controls > .library-list-tools { height: 40px; }
+@media (max-width: 900px) {
+  .library-file-controls.library-filter-row { grid-template-columns: minmax(0, 1fr); }
+  .library-file-controls > .library-list-tools { justify-content: flex-end; }
+}
+/* Library text rules must not override the welcome card's contrast. */
+.library-root .aui-app-update-welcome small,
+.library-root .aui-app-update-welcome h3,
+.library-root .aui-app-update-welcome p { color: white; }

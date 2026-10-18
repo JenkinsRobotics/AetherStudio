@@ -1,0 +1,43 @@
+{
+  "name": "@aether/sketch",
+  "version": "0.2.0-alpha.4",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json",
+    "./src/snapping": "./src/snapping.ts",
+    "./src/bounds": "./src/bounds.ts",
+    "./src/contour": "./src/contour.ts",
+    "./src/nodes": "./src/nodes.ts",
+    "./src/curves": "./src/curves.ts",
+    "./src/geometry": "./src/geometry.ts",
+    "./src/svg-elements": "./src/svg-elements.ts",
+    "./src/svg": "./src/svg.ts",
+    "./src/compound": "./src/compound.ts",
+    "./src/types": "./src/types.ts",
+    "./src/trim": "./src/trim.ts",
+    "./src/edit": "./src/edit.ts",
+    "./src/paint": "./src/paint.ts",
+    "./src/tools": "./src/tools.ts",
+    "./src/regions": "./src/regions.ts",
+    "./src/primitives": "./src/primitives.ts",
+    "./src/svg-import": "./src/svg-import.ts",
+    "./src/index": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "polygon-clipping": "^0.15.7",
+    "svgpath": "^2.6.0"
+  },
+  "files": [
+    "src"
+  ]
+}

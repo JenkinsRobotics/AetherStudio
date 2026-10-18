@@ -1,0 +1,33 @@
+.aui-dashboard-stage { height:100dvh; overflow-y:auto; overflow-x:hidden; padding:clamp(12px,5vw,92px) clamp(12px,4.7vw,80px); box-sizing:border-box; background:var(--aether-color-bg-app); color:var(--aether-color-text); font:14px var(--aether-font-family); }
+.aui-dashboard-shell { display:flex; min-height:calc(100dvh - clamp(24px,9.4vw,160px)); max-width:1660px; margin:auto; border:8px solid var(--aether-color-bg-panel); border-radius:30px; background:var(--aether-color-bg-bar); padding:16px; gap:16px; box-shadow:0 26px 48px color-mix(in srgb,var(--aether-color-shadow) 13%,transparent); }
+.aui-dashboard-sidebar.aui-sidebar { --aether-sidebar-width:250px; width:250px; flex:none; display:flex; flex-direction:column; border:0; border-radius:22px; background:var(--aether-color-bg-inset); padding:16px; }
+.aui-dashboard-sidebar .aui-sidebar-body { overflow:visible; flex:1; }
+.aui-dashboard-brand { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+.aui-dashboard-brand__mark { display:grid; place-items:center; width:38px; height:38px; flex:none; border-radius:10px; font-weight:600; font-size:21px; color:var(--aether-color-text-on-selected); background:linear-gradient(135deg,var(--aether-color-accent),color-mix(in srgb,var(--aether-color-accent) 60%,var(--aether-color-bg-panel))); }
+.aui-dashboard-brand strong { display:block; font-size:16px; font-weight:600; }
+.aui-dashboard-brand small { display:block; color:var(--aether-color-text-dim); font-size:11px; margin-top:4px; }
+.aui-dashboard-sidebar__search { margin-bottom:20px; }
+.aui-dashboard-sidebar__search .aui-sidebar-label { display:block; }
+.aui-dashboard-nav-group { display:grid; gap:var(--aether-list-item-gap,2px); }
+.aui-dashboard-nav-group h2 { font-size:11px; font-weight:400; text-transform:uppercase; color:var(--aether-color-text-faint); margin:13px 0 6px; }
+.aui-sidebar.aui-dashboard-sidebar nav { gap:var(--aether-list-item-gap,2px); }
+.aui-dashboard-sidebar .aui-sidebar-footer { display:flex; align-items:center; justify-content:space-between; gap:6px; padding-top:26px; border:0; }
+.aui-dashboard-sidebar.aui-sidebar--collapsed { padding:14px 8px; }
+.aui-dashboard-sidebar.aui-sidebar--collapsed .aui-dashboard-sidebar__search { display:none; }
+.aui-dashboard-main { flex:1; min-width:0; padding:16px; border-radius:22px; background:var(--aether-color-bg-panel); }
+.aui-dashboard-page-header { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:15px; margin-bottom:18px; }
+.aui-dashboard-breadcrumb { display:flex; gap:10px; align-items:center; color:var(--aether-color-text-dim); font-size:14px; margin-bottom:16px; }
+.aui-dashboard-breadcrumb svg { width:18px; height:18px; }
+.aui-dashboard-page-header h1 { margin:0; font-size:23px; letter-spacing:-.65px; font-weight:600; }
+.aui-dashboard-page-actions { display:flex; gap:12px; align-items:center; }
+.aui-dashboard-content { min-width:0; }
+@media(min-width:1700px) { .aui-dashboard-sidebar.aui-sidebar { width:276px; } .aui-dashboard-main { padding:18px; } }
+@media(max-width:1250px) { .aui-dashboard-stage { padding:20px; } .aui-dashboard-shell { min-height:calc(100dvh - 40px); padding:10px; gap:10px; } .aui-dashboard-sidebar.aui-sidebar { width:215px; padding:12px; } }
+@media(max-width:860px) { .aui-dashboard-stage { padding:0; } .aui-dashboard-shell { border:0; border-radius:0; padding:8px; gap:8px; } .aui-dashboard-main { padding:14px; } .aui-dashboard-sidebar.aui-sidebar { width:58px; padding:12px 6px; } .aui-dashboard-sidebar .aui-sidebar-label, .aui-dashboard-sidebar__search, .aui-dashboard-sidebar .aui-sidebar-toggle { display:none; } .aui-sidebar.aui-dashboard-sidebar nav button { justify-content:center; padding:8px; } .aui-dashboard-brand { justify-content:center; } .aui-dashboard-page-actions { gap:6px; flex-wrap:wrap; } .aui-dashboard-page-header h1 { font-size:21px; } }
+@media(prefers-reduced-motion:reduce) { .aui-dashboard-stage * { scroll-behavior:auto; transition:none; } }
+.aui-dashboard-shell .aui-sidebar.aui-dashboard-sidebar nav button svg { margin:0; }
+.aui-dashboard-shell .aui-sidebar.aui-dashboard-sidebar nav button { height:40px; padding:0 10px; gap:12px; }
+.aui-dashboard-shell .aui-dashboard-sidebar.aui-sidebar--collapsed { width:64px; padding:14px 8px; }
+.aui-dashboard-shell .aui-dashboard-sidebar.aui-sidebar--collapsed nav button { padding:0; gap:0; }
+
+.aui-dashboard-shell .aui-sidebar.aui-dashboard-sidebar nav button svg { width:19px; height:19px; }

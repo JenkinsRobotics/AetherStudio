@@ -1,0 +1,90 @@
+{
+  "name": "@aether/session",
+  "version": "0.2.0-alpha.59",
+  "private": true,
+  "type": "module",
+  "description": "Browser adapters for the Aether Studio document and session protocol",
+  "peerDependencies": {
+    "react": ">=18",
+    "@aether/ui": "0.2.0-alpha.86",
+    "@aether/assets": "0.2.0-alpha.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "jsdom": "^25.0.1",
+    "@testing-library/react": "^16.1.0",
+    "react-dom": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@aether/assets": "file:vendor/aether-assets-0.2.0-alpha.8.tgz",
+    "esbuild": "^0.25.0",
+    "@aether/ui": "file:vendor/aether-ui-0.2.0-alpha.86.tgz"
+  },
+  "exports": {
+    "./applications": "./applications.ts",
+    "./autosave": "./autosave.ts",
+    "./package.json": "./package.json",
+    "./agent": "./agent.ts",
+    "./useDocumentConnection": "./useDocumentConnection.ts",
+    "./documents": "./documents.ts",
+    "./drive-destination": "./drive-destination.ts",
+    "./vitest.config": "./vitest.config.ts",
+    "./useHostedDocument": "./useHostedDocument.ts",
+    "./library/api": {
+      "types": "./dist-library/api.d.ts",
+      "default": "./dist-library/api.js"
+    },
+    "./library/drive-api": {
+      "types": "./dist-library/drive-api.d.ts",
+      "default": "./dist-library/drive-api.js"
+    },
+    "./library/design-kinds": {
+      "types": "./dist-library/design-kinds.d.ts",
+      "default": "./dist-library/design-kinds.js"
+    },
+    "./library/create-native-file": {
+      "types": "./dist-library/create-native-file.d.ts",
+      "default": "./dist-library/create-native-file.js"
+    },
+    "./library/LibraryToolMenu": {
+      "types": "./dist-library/LibraryToolMenu.d.ts",
+      "default": "./dist-library/LibraryToolMenu.js"
+    },
+    "./library/ApplicationArtwork": {
+      "types": "./dist-library/ApplicationArtwork.d.ts",
+      "default": "./dist-library/ApplicationArtwork.js"
+    },
+    "./library/studio.css": "./dist-library/studio.css",
+    "./library/library.css": "./dist-library/library.css",
+    "./library/FileDetailsInspector.css": "./dist-library/FileDetailsInspector.css",
+    "./library/members": {
+      "types": "./dist-library/members.d.ts",
+      "default": "./dist-library/members.js"
+    },
+    "./LiveEditorAccess": "./LiveEditorAccess.tsx"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build:library": "node emit-library.mjs",
+    "build:bootstrap": "node build-bootstrap.mjs"
+  },
+  "files": [
+    "account.css",
+    "agent.ts",
+    "useDocumentConnection.ts",
+    "account.js",
+    "documents.ts",
+    "applications.ts",
+    "autosave.ts",
+    "drive-destination.ts",
+    "vitest.config.ts",
+    "useHostedDocument.ts",
+    "dist-library",
+    "document-changes.ts",
+    "live-editor.ts",
+    "LiveEditorAccess.tsx"
+  ]
+}

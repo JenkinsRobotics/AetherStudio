@@ -1,0 +1,16 @@
+[package]
+name = "aether-automation-client"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "aether-agent"
+path = "src/main.rs"
+
+[dependencies]
+aether-protocol-core = { path = "../protocol-core", version = "0.1.0-alpha.1" }
+serde.workspace = true
+serde_json.workspace = true
+reqwest = { workspace = true, features = ["blocking"] }

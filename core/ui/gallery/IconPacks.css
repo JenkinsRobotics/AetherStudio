@@ -1,0 +1,12 @@
+.icon-pack { width: 100%; min-width: 0; display: grid; gap: 14px; }
+.icon-pack p { margin: 0; max-width: 90ch; color: var(--aether-color-text-dim); }
+.icon-pack-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.icon-pack-filter { width: 220px; }
+.icon-pack-count { font-size: 11px; color: var(--aether-color-text-faint); }
+/* The surface is the active theme in the chosen mode: the tokens paint it, like the theme tiles. */
+.icon-pack-surface { padding: 20px; border-radius: var(--aether-radius-panel); background: var(--aether-color-bg-panel); color: var(--aether-color-text); }
+.icon-pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); column-gap: 8px; row-gap: 20px; }
+.icon-pack-cell { display: grid; justify-items: center; align-content: start; gap: 8px; min-width: 0; }
+.icon-pack-cell > span { font-size: 10px; text-align: center; overflow-wrap: anywhere; opacity: .8; }
+.icon-pack-more { width: 100%; }
+.icon-pack-more > summary { cursor: pointer; font-size: 12px; color: var(--aether-color-text-dim); }

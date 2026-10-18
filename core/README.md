@@ -13,7 +13,7 @@ Applications import the packages separately. Engine modules must not import
 React, UI widgets or application code. Putting UI under the same parent does
 not change that dependency boundary.
 
-The Python semantic engine remains at `../animacore/` pending a separately
+The Python semantic engine remains at `../aether_animation/` pending a separately
 verified consolidation. Product directories are unchanged in this move;
 the `apps/` grouping and suite `host/` remain planned.
 

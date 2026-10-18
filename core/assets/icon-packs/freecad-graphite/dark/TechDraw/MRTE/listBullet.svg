@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32" id="svg249" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/MRTE/listBullet.svg. Authors: [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><rect style="fill:#6c8098;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-dashoffset:128.504" id="rect2999" width="47.063217" height="46.938217" x="8.4683914" y="8.5308914" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <g id="layer4" style="display:inline" transform="translate(0,16)" />
+  <g id="g2458" transform="matrix(0.7,0,0,0.7,-29.919201,26.897701)">
+    <circle id="circle1836" r="7.131" cy="-17.455" cx="56.132" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect id="rect1838" height="10.118" width="56.292" y="-22.514" x="71.619003" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle id="circle1840" r="7.131" cy="7.2190022" cx="56.132" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect id="rect1842" height="10.118" width="56.292" y="2.1590009" x="71.619003" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle id="circle1844" r="7.131" cy="32.032997" cx="56.132" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect id="rect1846" height="10.117" width="56.292" y="26.974997" x="71.619003" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

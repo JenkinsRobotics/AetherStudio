@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2568" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Part/Gui/Resources/icons/booleans/Part_Fuse.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2570">
+    <linearGradient id="linearGradient3805">
+      <stop style="stop-color:#a8b8cb;stop-opacity:1;" offset="0" id="stop3807" />
+      <stop style="stop-color:#a8b8cb;stop-opacity:0;" offset="1" id="stop3809" />
+    </linearGradient>
+    <linearGradient id="linearGradient3143">
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="0" id="stop3145" />
+      <stop style="stop-color:#a8b8cb;stop-opacity:1" offset="1" id="stop3147" />
+    </linearGradient>
+    <radialGradient xlink:href="#linearGradient3143" id="radialGradient3023" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.1751823,1.8905104,-3.1273904,1.9440534,60.507183,-124.06637)" cx="46.534134" cy="26.281744" fx="46.534134" fy="26.281744" r="19.571428" />
+    <radialGradient xlink:href="#linearGradient3805" id="radialGradient3811" cx="22.625563" cy="32.826664" fx="22.625563" fy="32.826664" r="13" gradientTransform="matrix(0.22188004,-0.16641004,0.69230766,0.92307688,3.2536872,7.463585)" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:url(#radialGradient3023);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" d="M 40 7 C 31.223986 7 23.839523 12.945441 21.65625 21.03125 C 11.323305 21.217406 3 29.622594 3 40 C 3 50.49401 11.50599 59 22 59 C 30.776014 59 38.160477 53.054559 40.34375 44.96875 C 50.676695 44.782594 59 36.377406 59 26 C 59 15.50599 50.49401 7 40 7 z " id="path3550-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:url(#radialGradient3811);stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 21,25 c 5.79937,2.615469 10.296259,7.638903 16,20" id="path3027" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" d="M 40 9 C 31.610943 9 24.671219 15.071076 23.28125 23.0625 C 22.859709 23.031199 22.429541 23 22 23 C 12.610558 23 5 30.61056 5 40 C 5 49.38944 12.610558 57 22 57 C 30.389057 57 37.328781 50.928924 38.71875 42.9375 C 39.140291 42.968801 39.570459 43 40 43 C 49.389442 43 57 35.38944 57 26 C 57 16.61056 49.389442 9 40 9 z " id="path3550-3-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

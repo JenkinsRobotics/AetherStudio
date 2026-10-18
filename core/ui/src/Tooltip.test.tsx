@@ -32,3 +32,13 @@ test("focus reveals immediately with shortcut and disabled explanation", () => {
   fireEvent.keyDown(document, { key: "Escape" });
   expect(screen.queryByRole("tooltip")).toBeNull();
 });
+
+test("new pointer help replaces another focused tooltip",()=>{
+ vi.useFakeTimers();
+ render(<><Tooltip content="First help"><button>First</button></Tooltip><Tooltip content="Second help"><button>Second</button></Tooltip></>);
+ fireEvent.focus(screen.getByRole('button',{name:'First'}));
+ fireEvent.pointerEnter(screen.getByRole('button',{name:'Second'}).parentElement!);
+ act(()=>vi.advanceTimersByTime(500));
+ expect(screen.getAllByRole('tooltip')).toHaveLength(1);
+ expect(screen.getByRole('tooltip').textContent).toBe('Second help');
+});

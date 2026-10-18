@@ -1,0 +1,17 @@
+{
+  "name": "aether-platform",
+  "version": "0.1.0-alpha.1",
+  "private": true,
+  "scripts": {
+    "setup:web": "node dev/projects.mjs install",
+    "build": "node dev/projects.mjs build",
+    "test": "node dev/projects.mjs test",
+    "suite:doctor": "python3 suite.py doctor",
+    "suite:check": "python3 suite.py check",
+    "test:boundaries": "node --test dev/project-boundaries.test.mjs",
+    "check:ui": "node dev/check-ui-adoption.mjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

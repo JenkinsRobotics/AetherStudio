@@ -1,0 +1,126 @@
+.showcase-sections { display: grid; gap: 42px; min-width: 0; }
+.showcase-comparison-jumps { display:flex; flex-wrap:wrap; gap:8px 18px; }
+.showcase-comparison-jumps .aui-button { font-size:12px; }
+.showcase-comparison-title { margin:0 0 8px; font-size:17px; font-weight:600; }
+.showcase-sections[data-comparison] > section + section { border-top:1px solid var(--aether-color-border); padding-top:24px; }
+.showcase-sections[data-comparison] .showcase-section-content > :is(.header-bar-specimens,.concept-header-specimen) { width:100%; }
+.showcase-comparison-references { width:100%; min-width:0; }
+.showcase-sections[data-comparison] .gallery-variant { max-width:100%; overflow-x:auto; }
+.showcase-comparison-references > h3 { margin:16px 0 0; font-size:12px; color:var(--aether-color-text-dim); }
+.showcase-comparison-references:not(:has(.gallery-variant)) { display:none; }
+.showcase-library { padding: 6px; font: 12px var(--aether-font-family); }
+.showcase-library details + details { margin-top: 10px; }
+.showcase-library summary { padding: 8px 5px; color: var(--aether-color-text); cursor: pointer; font-weight: 650; }
+.showcase-library summary span { float: right; color: var(--aether-color-text-faint); font-size: 10px; font-weight: 400; padding-right: 4px; }
+.showcase-library ul { list-style: none; margin: 0; padding: 0; }
+.showcase-library details ul { margin-left: 9px; padding-left: 7px; border-left: 1px solid var(--aether-color-border); }
+.showcase-library button { display: block; width: 100%; border: 0; border-radius: 5px; background: transparent; padding: 7px 8px; color: var(--aether-color-text-dim); font: inherit; text-align: left; cursor: pointer; }
+.showcase-library button:hover { background: var(--aether-color-bg-hover); color: var(--aether-color-text); }
+.showcase-library button[aria-current] { background: var(--aether-color-accent); color: var(--aether-color-on-selected, white); }
+.showcase-library button:focus-visible, .showcase-library summary:focus-visible { outline: 2px solid var(--aether-color-accent); outline-offset: -2px; }
+.showcase-library header { padding: 8px 5px 12px; }
+.showcase-library header strong { font-size: 14px; }
+.showcase-library p { margin: 6px 0 0; color: var(--aether-color-text-dim); line-height: 1.5; }
+.showcase-library .aui-search-field { max-width: 100%; box-sizing: border-box; }
+.showcase-library-separator { margin: 14px 0 6px; padding: 12px 5px 0; border-top: 1px solid var(--aether-color-border); color: var(--aether-color-text-faint); font-size: 10px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+.showcase-library .showcase-collection-title { display: flex; align-items: center; gap: 8px; min-height: 36px; font-weight: 600; }
+.showcase-collection-title > span:not(.showcase-theme-dot) { flex: 1; }
+.showcase-collection-title small { font-size: 10px; opacity: .6; }
+.showcase-collection[data-selected="true"] > .showcase-collection-title { color: var(--aether-color-text); }
+.showcase-collection ul { margin: 0 0 8px 10px; padding-left: 6px; border-left: 1px solid var(--aether-color-border); }
+.showcase-theme-dot { flex: 0 0 9px; height: 9px; border-radius: 50%; }
+.showcase-library .showcase-new-collection { margin: 16px 0 4px; border: 1px solid var(--aether-color-border); text-align: center; }
+.showcase-page-header { display: grid; gap: 10px; margin: 0 24px; padding: 24px 0 20px; border-bottom: 1px solid var(--aether-color-border); }
+.showcase-breadcrumb { color: var(--aether-color-text-dim); font-size: 11px; }
+.showcase-page-title { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.showcase-page-title h1 { margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -.4px; }
+.showcase-page-header > p { margin: 0; color: var(--aether-color-text-dim); line-height: 1.55; max-width: 72ch; }
+.showcase-page-actions, .showcase-save-notice { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.showcase-save-notice { color: var(--aether-color-text-dim); font-size: 11px; }
+.showcase-theme-preview { background: var(--aether-color-bg-app); color: var(--aether-color-text); }
+.showcase-demo-launcher { padding: 12px; }
+.showcase-collection-form { display: grid; gap: 12px; }
+.showcase-collection-form > label { display: grid; gap: 6px; color: var(--aether-color-text-dim); }
+.showcase-collection-members-heading { display: flex; justify-content: space-between; align-items: center; }
+.showcase-collection-members-heading span, .showcase-collection-form > p { font-size: 11px; color: var(--aether-color-text-dim); margin: 0; line-height: 1.5; }
+.showcase-collection-members { display: grid; gap: 12px; max-height: 240px; overflow: auto; border: 1px solid var(--aether-color-border); border-radius: 8px; padding: 12px; }
+.showcase-collection-members fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; min-width: 0; }
+.showcase-collection-members legend { padding: 0 0 8px; font-weight: 600; }
+.showcase-demo-launcher { display: grid; gap: 12px; }
+.showcase-demo-launcher p { color: var(--aether-color-text-dim); line-height: 1.5; margin: 0; }
+.showcase-demo-launcher a { display: grid; gap: 5px; padding: 10px 0; border-top: 1px solid var(--aether-color-border); color: var(--aether-color-text); text-decoration: none; }
+.showcase-demo-launcher a span { color: var(--aether-color-text-dim); font-size: 11px; line-height: 1.5; }
+.showcase-demo-launcher a:hover strong { color: var(--aether-color-accent); }
+
+/* ElementSpec — one element per page: standard, variations, configuration, usage. */
+.element-spec { display: grid; gap: 12px; width: 100%; max-width: 560px; box-sizing: border-box; padding: 14px 16px; border: 1px solid var(--aether-color-border); border-radius: 12px; background: var(--aether-color-bg-panel); }
+.element-spec-summary { margin: 0; color: var(--aether-color-text-dim); font-size: 12px; line-height: 1.4; }
+.element-spec-rows { display: grid; grid-template-columns: minmax(90px, max-content) minmax(0, 1fr); align-items: center; gap: 10px 16px; margin: 0; }
+.element-spec-rows dt { display: grid; gap: 1px; font: 600 12px var(--aether-font-family); color: var(--aether-color-text); }
+.element-spec-rows dt small { font-weight: 400; font-size: 11px; color: var(--aether-color-text-dim); max-width: 160px; }
+.element-spec-rows dd { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; margin: 0; }
+.element-spec-rules { margin: 0; padding: 10px 0 0 18px; border-top: 1px solid var(--aether-color-border); color: var(--aether-color-text-dim); font-size: 12px; line-height: 1.5; }
+
+/* ShowcaseHome — what's new, then app showcase cards. */
+.showcase-home { display: grid; gap: 32px; width: 100%; }
+.showcase-home-update-art { display: grid; place-items: center; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: var(--aether-color-text); cursor: pointer; }
+.showcase-home-update-art:disabled { cursor: default; }
+.showcase-home-apps header h2 { margin: 0; font-size: 20px; }
+.showcase-home-apps header p { margin: 4px 0 14px; color: var(--aether-color-text-dim); font-size: 13px; }
+
+.element-spec-references { width: 100%; max-width: 960px; margin-top: 8px; }
+.element-spec-references > summary { cursor: pointer; color: var(--aether-color-text-dim); font-size: 12px; }
+.element-spec-references-body { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.element-spec-references:not(:has(.element-spec-references-body > *)) { display: none; }
+
+/* Navigation sidebars specimens: each sidebar in a plain window-height column. */
+.nav-bar-specimens h4 { margin: 8px 0 12px; font-size: 12px; color: var(--aether-color-text-dim); }
+.nav-bar-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin-bottom: 24px; }
+.nav-bar-specimen { margin: 0; display: flex; flex-direction: column; gap: 8px; max-width: 280px; }
+/* The caption can be wider than an icon rail; the window must follow its sidebar. */
+.nav-bar-specimen-window { display: flex; align-self: flex-start; width: fit-content; max-width: 100%; height: 640px; border-radius: 12px; overflow: hidden; border: 1px solid var(--aether-color-border); background: var(--aether-color-bg-panel); color: var(--aether-color-text); }
+.nav-bar-specimen-window > .aui-application-sidebar.aui-sidebar { border-right: 0; }
+.nav-bar-specimen figcaption { font-size: 12px; color: var(--aether-color-text-dim); }
+.element-spec-states figure { display: grid; justify-items: start; gap: 4px; margin: 0; }
+.element-spec-states figcaption { font-size: 10px; color: var(--aether-color-text-dim); }
+/* ponytail: pinned states reuse the library's hover/focus tokens on the sample's
+   control; a widget with bespoke hover art needs its own data-state hook. */
+[data-element-state="hover"] :is(button, input, select, [role="tab"], [role="slider"], .aui-select-trigger):not(:disabled) { background: var(--aether-color-bg-control-hover); border-color: var(--aether-color-border-control-hover); box-shadow: var(--aether-control-hover-shadow); }
+[data-element-state="focus"] :is(button, input, select, [role="tab"], [role="slider"]):not(:disabled):not(.aui-breadcrumbs *) { outline: 2px solid var(--aether-color-border-focus); outline-offset: -2px; box-shadow: none; }
+
+/* A compound navigation sample has one focused link, never a row of boxes. */
+[data-element-state="focus"] .aui-breadcrumbs li:first-child > button:not(:disabled) {
+  outline: none;
+  box-shadow: none;
+  color: var(--aether-color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Faithful sidebar reference palette; isolated from the surrounding gallery theme. */
+.nav-bar-reference-window { height:640px; flex-direction:column; border-radius:8px; }
+.nav-bar-reference-window > .aui-application-sidebar.aui-sidebar { height:100%; }
+.nav-bar-specimen-window.nav-bar-reference-window[data-nav-reference] {
+  --aether-color-bg-panel:#ffffff;
+  --aether-color-bg-control:#f3f4f6;
+  --aether-color-bg-hover:#f3f4f8;
+  --aether-color-text:#101624;
+  --aether-color-text-dim:#344054;
+  --aether-color-border:#e9ebef;
+  --aether-color-accent:#3538cd;
+  --aether-color-text-on-selected:#ffffff;
+}
+.nav-bar-specimen-window.nav-bar-reference-window[data-nav-reference="tint"] .aui-application-sidebar-row[aria-current="page"] { background:#f2f1fa; color:#3538cd; }
+.nav-bar-specimen-window.nav-bar-reference-window[data-nav-reference="solid"] { --aether-color-bg-panel:#f8fafb; --aether-color-accent:#101624; }
+.nav-bar-specimen-window.nav-bar-reference-window[data-nav-reference="solid"] .aui-application-sidebar-badge { background:transparent; border:1px solid currentColor; }
+.nav-bar-specimen-window.nav-bar-reference-window[data-nav-reference="dark"] {
+  --aether-color-bg-panel:#111827;
+  --aether-color-bg-control:#333a48;
+  --aether-color-bg-hover:#252d3c;
+  --aether-color-text:#f9fafb;
+  --aether-color-text-dim:#d0d5dd;
+  --aether-color-border:#242c3c;
+  --aether-color-accent:#333a48;
+}
+.nav-bar-specimen-window.nav-bar-reference-window[data-nav-reference="dark"] .aui-application-sidebar-badge { background:#333a48; color:#f9fafb; }

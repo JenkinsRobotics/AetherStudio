@@ -32,7 +32,7 @@ The same character also ships inside JaegerAnimation at
 
 | | AnimaCore `pack/v1` | JaegerAnimation `character/v1` |
 |---|---|---|
-| Defined in | `animacore/pack.py` | `jaeger_animation/characters.py` |
+| Defined in | `aether_animation/pack.py` | `jaeger_animation/characters.py` |
 | Manifest | `pack.yaml` | `character.yaml` |
 | Identity | `id` | `character` |
 | Unit of address | **slot** — a flat name | **expression x mouth state** — two axes |

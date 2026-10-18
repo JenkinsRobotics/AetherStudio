@@ -1,0 +1,7 @@
+.aui-tree-panel-split { display:grid; flex:1 1 auto; min-width:0; min-height:0; height:100%; overflow:hidden; }
+.aui-tree-panel-split-section { display:flex; flex-direction:column; min-height:0; min-width:0; overflow:hidden; }
+.aui-tree-panel-split-divider { position:relative; background:linear-gradient(to bottom, transparent 2px, var(--aether-color-border) 2px, var(--aether-color-border) 3px, transparent 3px); }
+.aui-tree-panel-split-divider > .aui-panel-resize-handle { inset:0; height:6px; }
+.aui-shell-panel-host:has(> .aui-tree-panel-split), .aui-shell-panel-body:has(> .aui-tree-panel-split) { display:flex; flex-direction:column; }
+.aui-tree-panel-split .aui-collection-heading { min-height:34px; padding-inline:10px; }
+.aui-tree-panel-split .aui-collection-footer { height:34px; }

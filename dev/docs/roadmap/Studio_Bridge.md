@@ -8,7 +8,7 @@
 
 ## Ownership (the policy this protocol enforces)
 
-**AnimaCore (`animacore/`, Python) owns the meaning of everything:**
+**AnimaCore (`aether_animation/`, Python) owns the meaning of everything:**
 typed mates/DOF/limits/relations, canonical validation, keyframe and
 scene evaluation, mate alignment + kinematic pose resolution,
 `.character.anima` / `.scene.anima` parsing and writing, output
@@ -35,7 +35,7 @@ replaced by bridge calls (migration order below), not extended.
 ## Transport
 
 Newline-delimited JSON over the helper's stdio. The app spawns the
-helper (`python -m animacore.bridge`, or a bundled executable) and
+helper (`python -m aether_animation.bridge`, or a bundled executable) and
 keeps it alive for the session — one long-running process, not a
 shell-out per call. One JSON object per line, UTF-8.
 
@@ -55,7 +55,7 @@ line — one error surface, never a second parser.
 
 | Method | params | result |
 |---|---|---|
-| `hello` | `{client, protocol_version}` | `{engine:"animacore", engine_version, protocol_version, capabilities:[…]}` — mismatched `protocol_version` → `protocol_mismatch` error |
+| `hello` | `{client, protocol_version}` | `{engine:"aether_animation", engine_version, protocol_version, capabilities:[…]}` — mismatched `protocol_version` → `protocol_mismatch` error |
 | `load_character` | `{text}` (file bytes; `path` variant later) | `{handle, rig:{identity, parts:[…], joints:[<describe_mate>…], parameters:[…], clips:[{name,duration_s,loop,keyframes}], outputs:[{dof_path,channel,value_at_zero,value_at_one}], relations:[<describe_relation>…]}}` — invalid → `format_error` with `path`. Each joint entry is `describe_mate`; each relation entry is `describe_relation` (see below). The `rig` block is **full-fidelity** so `serialize_character` can rebuild the rig losslessly — see "Serialization" for the additive enrichment fields (`keyframes`, output ranges, per-DOF `axis_vector`/`name`/`description`, joint `description`). |
 | `validate_character` | `{text}` | `{diagnostics:[…]}` (empty = valid) — no handle allocated |
 | `evaluate` | `{handle, clip?, time_s?}` | `{dof_values:{path:native_units}, parameters:{name:0..1}, channels:{channel:0..1}, limit_violations:[{dof_path,value,min,max}]}` |
@@ -82,7 +82,7 @@ the whole evaluate.
 
 **Enriched joint summary (`describe_mate`).** Each joint in
 `load_character` is the consistent per-mate hook
-`animacore.mates.describe_mate(joint)`:
+`aether_animation.mates.describe_mate(joint)`:
 
 ```
 {id, name, type, parent_part, child_part,
@@ -205,7 +205,7 @@ feedback while the green checkmark remains the only committing action.
 
 The engine owns `.anima` **writing** as well as reading, so a project
 Save has one format author: the app hands the engine a rig/scene and
-gets back canonical text (`animacore/serialize.py`, the inverse of the
+gets back canonical text (`aether_animation/serialize.py`, the inverse of the
 loaders). Units and cleanliness mirror the loader — rotation angles are
 radians in the model and **degrees** in the file (translations stay
 metres); defaults are omitted, never echoed (`simulation_connection:
@@ -250,7 +250,7 @@ file's `axis:` list — null when absent, distinct from the template
    renders the returned DOF values in RealityKit (its current pose
    resolver applies them to rest geometry).
 2. **Done (engine side):** `resolve_pose` ships the mate-alignment +
-   kinematic math in the engine (`animacore/kinematics.py`). Remaining
+   kinematic math in the engine (`aether_animation/kinematics.py`). Remaining
    app work: route RealityKit through `resolve_pose` and delete the
    Swift `RigPoseResolver` + `MateConnectorMath`.
 3. Route the Swift timeline/inspector through `evaluate`; delete the

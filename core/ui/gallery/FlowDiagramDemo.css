@@ -1,0 +1,18 @@
+.flow-demo { width: 100%; min-width: 0; display: grid; gap: 18px; padding: 8px 0; }
+.flow-demo-toolbar, .flow-demo-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.flow-demo-title { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.flow-demo-title strong { font-size: 17px; font-weight: 600; letter-spacing: -.35px; }
+.flow-demo-title span, .flow-demo-caption, .flow-demo-speed, .flow-demo-description { font-size: 12px; color: var(--aether-color-text-dim); }
+.flow-demo-controls { display: flex; align-items: center; gap: 10px; }
+.flow-demo-controls .aui-button { min-width: 88px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.flow-demo-speed { display: flex; align-items: center; gap: 8px; }
+.flow-demo-speed .aui-select-field-wrap { width: 74px; }
+.flow-demo-module-links { fill: none; stroke: var(--aether-color-text-faint); stroke-width: 1.5; }
+.flow-demo-description { margin: -6px 0 0; min-height: 18px; line-height: 1.5; }
+.flow-demo-reduced-motion { display: none; }
+.flow-demo-footer .aui-segmented-control { max-width: 100%; overflow-x: auto; }
+.flow-demo-footer .aui-segmented-control button { white-space: nowrap; }
+.flow-demo-export { display: grid; gap: 12px; }
+.flow-demo-export p { margin: 0; line-height: 1.5; color: var(--aether-color-text-dim); }
+.flow-demo-export textarea { width: 100%; min-height: 260px; max-height: 50vh; box-sizing: border-box; resize: vertical; padding: 12px; font: 11px/1.5 var(--aether-font-mono); color: var(--aether-color-text); background: var(--aether-color-bg); border: 1px solid var(--aether-color-border); border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) { .flow-demo-reduced-motion { display: inline; } }

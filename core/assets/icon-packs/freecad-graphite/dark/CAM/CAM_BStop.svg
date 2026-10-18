@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 12.7 12.7" version="1.1" id="svg8" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/CAM_BStop.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2">
+    <linearGradient id="linearGradient5233">
+      <stop style="stop-color:#47586c;stop-opacity:1;" offset="0" id="stop5229" />
+      <stop style="stop-color:#47586c;stop-opacity:0;" offset="1" id="stop5231" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient5233" id="linearGradient5235" x1="8.6454659" y1="287.28171" x2="4.9853415" y2="292.0462" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1" transform="translate(0,-284.29998)">
+    <rect style="opacity:1;fill:#e5edf7;fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect5211" width="8.9609938" height="9.1818638" x="1.9878261" y="286.1774" ry="1.104347" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="opacity:1;fill:url(#linearGradient5235);fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 4.0387567,287.1713 h 4.8591464 c 0.6118083,0 1.1043469,0.49254 1.1043469,1.10435 v 3.02909 H 2.9344095 v -3.02909 c 0,-0.61181 0.4925389,-1.10435 1.1043472,-1.10435 z" id="rect5211-8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

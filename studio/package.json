@@ -1,16 +1,19 @@
 {
   "name": "aether-studio",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node ../dev/check-theme-literals.mjs && tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "check:theme": "node ../dev/check-theme-literals.mjs"
+    "check:theme": "node ../dev/check-theme-literals.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
-    "@aether/ui": "file:../core/ui",
+    "@aether/assets": "file:vendor/aether-assets-0.2.0-alpha.27.tgz",
+    "@aether/session": "file:vendor/aether-session-0.2.0-alpha.155.tgz",
+    "@aether/ui": "file:vendor/aether-ui-0.2.0-alpha.145.tgz",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -19,6 +22,7 @@
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.9.2",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
   }
 }

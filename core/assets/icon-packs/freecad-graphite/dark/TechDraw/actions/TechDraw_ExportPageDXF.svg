@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="32" height="32" id="svg2160" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/actions/TechDraw_ExportPageDXF.svg. Authors: [WandererFan], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2162">
+    <linearGradient xlink:href="#linearGradient3806" id="linearGradient3012" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.4499974,0,0,1.4705882,-20.398395,-15.05882)" x1="22.62105" y1="35.470131" x2="61.526257" y2="32.273422" />
+    <linearGradient id="linearGradient3806">
+      <stop style="stop-color:#56b9fc;stop-opacity:1" offset="0" id="stop3808" />
+      <stop style="stop-color:#3da4f0;stop-opacity:1" offset="1" id="stop3810" />
+    </linearGradient>
+    </defs>
+  <g id="g1">
+    <rect style="fill:#6c8098;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect2987" width="48.658924" height="57.944008" x="-54.971996" y="3.0279987" transform="rotate(-90)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#65788f;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect1" width="48.658924" height="57.944008" x="-54.971996" y="3.0279987" transform="rotate(-90)" d="M -52.972656,5.0273437 H -8.3125 V 58.972656 h -44.660156 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="layer1" transform="matrix(0.425438,0,0,0.42543722,31.723686,30.214946)">
+      <path id="path3343" d="M 35.907323,8.8968626 V 23.000001 H 3 l 10e-8,23.505231 H 35.907323 V 60.60837 L 64.1136,34.752616 Z" style="fill:url(#linearGradient3012);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3343-2" d="m 40.608369,19.248595 v 8.452452 H 7.7010462 V 41.804185 H 40.608369 v 8.06651 L 57.062031,34.752616 Z" style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g aria-label="DXF" id="text955" style="font-size:29.5652px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;stroke-width:1.1" transform="translate(0,-2)">
+      <path d="m 24.094679,21.682327 q 0,4.550479 -2.596673,6.970679 -2.584067,2.420199 -7.474887,2.420199 H 8.8045642 v -18.42881 h 5.7857888 q 4.512664,0 7.008496,2.382384 2.49583,2.382383 2.49583,6.655548 z m -4.058876,0.100842 q 0,-5.937052 -5.243766,-5.937052 h -2.079859 v 12.000156 h 1.676492 q 5.647133,0 5.647133,-6.063104 z" style="font-weight:bold;-inkscape-font-specification:'Open Sans Bold';stroke-width:1.1;fill:#e5edf7" id="path6692" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="m 42.813409,31.073205 h -4.462243 l -4.28577,-6.970678 -4.285769,6.970678 H 25.594698 L 31.708223,21.56888 25.98546,12.644395 h 4.31098 l 3.97064,6.630338 3.895008,-6.630338 h 4.210139 l -5.785789,9.138774 z" style="font-weight:bold;-inkscape-font-specification:'Open Sans Bold';stroke-width:1.1;fill:#e5edf7" id="path6694" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="m 48.977354,31.073205 h -3.844588 v -18.42881 h 10.563163 v 3.201722 h -6.718575 v 4.752163 h 6.252182 v 3.189116 h -6.252182 z" style="font-weight:bold;-inkscape-font-specification:'Open Sans Bold';stroke-width:1.1;fill:#e5edf7" id="path6696" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

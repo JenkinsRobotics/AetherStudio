@@ -1,0 +1,241 @@
+{
+  "created": "2026-09-13",
+  "generator": "Built-in image-generation tool",
+  "reference": "Jonathan\u2019s five-tile Aether design sheet supplied in conversation on 2026-09-13",
+  "kind": "Clean icons, named icon variants and Studio application card heroes",
+  "prompts": "PROMPTS.md",
+  "files": [
+    {
+      "file": "aether-animate-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "1f423f4d949dfb73f765e194bb531e7a38eb8bc33a399edeaada52d926a0a57e"
+    },
+    {
+      "file": "aether-animate-named.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "dd3b19217967b1a4805765dfda896695cd0763725778fa94d9d1adceaeea6a07"
+    },
+    {
+      "file": "aether-animate.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "914f55db5f410338eecc2b0f72b7b2422be5128895c7e54555c411aa4da235fb"
+    },
+    {
+      "file": "aether-cad-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "3c1f782f7e26cca8ba60dc93cef394e2faeb1574a10ad03669c3d66636490fca"
+    },
+    {
+      "file": "aether-cad-named.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "10db1e873f571c56f473f94d6cbeaa5504801e3bb0631c58fc717220b79cb6ca"
+    },
+    {
+      "file": "aether-cad.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "ef08360a457e74e8c71144bcc5d284323c1815789c5628487a53e501b91ba455"
+    },
+    {
+      "file": "aether-sketch-named.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "a02910dd3a1f82174089e5376995afdd1413186ab62024d8ee1cd704b8280e7c"
+    },
+    {
+      "file": "aether-sketch.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "99af037f46f995f80c81f945387bd6227e7c6b365768354005f8a284c124e82a"
+    },
+    {
+      "file": "aether-studio-named.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "b1bb4cf649058b3a4a16e3c67ad3a124744fbae1f9dc17df52ea2912eb64fe25"
+    },
+    {
+      "file": "aether-studio.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "c71c122ab83b3f4974c2afcf3926e2959f7f96be08baab47ca4b100b3320d911"
+    },
+    {
+      "file": "aether-ui-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "8b4c3962b32eff9b6767aab363a3fa6eb49c6ee60120ca73f021a718a1483fa4"
+    },
+    {
+      "file": "aether-vector-named.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "31cb4fc79a6b71954e5308191ddc0e9275bfd352b79467837f512c380f7a6663"
+    },
+    {
+      "file": "aether-vector.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "119f74b50e8d80f2f90bc8ec135c3c6aa531714bb145172cd1ce55be6cb7a6b3"
+    },
+    {
+      "file": "aether-animate-hero.webp",
+      "source": "aether-animate-hero.png",
+      "format": "WebP",
+      "encoding": "cwebp -q 86",
+      "bytes": 142152,
+      "sha256": "ff5e42819b1781f37ec9756a68b4a3742613a81135dca32e47b35e48cf3b3fe8"
+    },
+    {
+      "file": "aether-cad-hero.webp",
+      "source": "aether-cad-hero.png",
+      "format": "WebP",
+      "encoding": "cwebp -q 86",
+      "bytes": 144496,
+      "sha256": "5024d60dc186700db1f2f5ae04fe22e45a3e503441cca8c8c1b89788727ac2c5"
+    },
+    {
+      "file": "aether-ui-hero.webp",
+      "source": "aether-ui-hero.png",
+      "format": "WebP",
+      "encoding": "cwebp -q 86",
+      "bytes": 72230,
+      "sha256": "89eecac90c55dd9ec46e95a5b696bc7175f108b4e5fda32fe4be17ddc5024113"
+    },
+    {
+      "file": "aether-map.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "d1d2fe0fa546d64bdba65a54f89814f15da6088d0526a6f498df020d93f6ed5d",
+      "prompts": "MAP-PROMPTS.md"
+    },
+    {
+      "file": "aether-map-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "eb79b3f8e3634dc17b2c8c225eba45d7ab6d130ec82ac488620516641f68d6bb",
+      "prompts": "MAP-PROMPTS.md"
+    },
+    {
+      "file": "aether-ui.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "a0f6200d861fbac0777b4976d5d03ffb7a2f292bd58fa15c1cd86b70203b02dd",
+      "prompts": "HOME-ART-PROMPTS.md"
+    },
+    {
+      "file": "aether-sketch-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "62aeb579aa7b05c5bb01b2af7a8a62869123491dd1e8d8ccb80456529b877d0d",
+      "prompts": "HOME-ART-PROMPTS.md"
+    },
+    {
+      "file": "aether-vector-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "49ff710a9a7e21da8dc2f03c47d16bb130fda36854926811644fa1e36df03af8",
+      "prompts": "HOME-ART-PROMPTS.md"
+    },
+    {
+      "file": "aether-map-hero-v2.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "053349c84cb98d18e196cdad45b1d4ad86a5b57d9a6ebec1c146a64bbd4fb0e4",
+      "prompts": "HOME-ART-PROMPTS.md"
+    },
+    {
+      "file": "aether-io.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "59c281a46087f3deda776df0e6019f07ffca6f0f97dc1dc0335d1f1f3ed2759b",
+      "prompts": "IO-PROMPTS.md"
+    },
+    {
+      "file": "aether-drive.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "62862a55bfc0990ee4251d3dad92032b69d9ec10b8f08e7522eaba60513593c0"
+    },
+    {
+      "file": "aether-io-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "56a75590fecbc13e73f3f5664ca419489d515cd1da556e1cbf4788e943a1cc52"
+    },
+    {
+      "file": "aether-io-hero.webp",
+      "width": 1672,
+      "height": 941,
+      "format": "WEBP",
+      "color": "RGB",
+      "sha256": "34f28ed0e85514dd68da7d7b66f05cb1b482ec577e7f85cf4a6523c305af8ef3"
+    },
+    {
+      "file": "aether-drive-hero.png",
+      "width": 1672,
+      "height": 941,
+      "format": "PNG",
+      "color": "RGB",
+      "sha256": "27912315cbd2885dc01fadb144eb320079a5d33609d4a059badf76d4dd54f724"
+    },
+    {
+      "file": "aether-drive-hero.webp",
+      "width": 1672,
+      "height": 941,
+      "format": "WEBP",
+      "color": "RGB",
+      "sha256": "3cbc5bc9dbcae087de2d1fc206c32e2490adb21baff9a39f1d291732a598ad9a"
+    }
+  ],
+  "variant_prompts": "VARIANT-PROMPTS.md"
+}

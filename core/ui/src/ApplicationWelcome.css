@@ -1,0 +1,22 @@
+.aui-app-welcome { container: aether-welcome / inline-size; overflow: hidden; border: 1px solid var(--aether-color-border); border-radius: 12px; background: var(--aether-color-bg-panel); color: var(--aether-color-text); font-family: var(--aether-font-family); }
+.aui-app-welcome-layout { display: grid; grid-template-columns: minmax(0, 1fr) min(38%, 360px); align-items: center; min-height: 280px; }
+.aui-app-welcome-copy { align-self: center; padding: clamp(24px, 4vw, 52px); }
+.aui-app-welcome-eyebrow { color: var(--aether-color-text-dim); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.aui-app-welcome-copy h1 { margin: 18px 0 12px; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; font-weight: 600; letter-spacing: -0.035em; }
+.aui-app-welcome-copy p { color: var(--aether-color-text-dim); font-size: 14px; line-height: 1.7; max-width: 36em; }
+.aui-app-welcome-badge { display: inline-block; margin-top: 18px; padding: 7px 12px; border: 1px solid var(--aether-color-border); border-radius: 20px; color: var(--aether-color-text-dim); font-size: 12px; }
+.aui-app-welcome-art { display: grid; place-items: center; width: 100%; max-width: 360px; aspect-ratio: 1; max-height: 360px; overflow: hidden; }
+.aui-app-welcome-art img { display: block; width: 100%; height: 100%; max-height: 360px; object-fit: contain; }
+.aui-app-welcome-square, .aui-app-welcome-wide { width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.aui-app-welcome-wide { display: none; }
+@container aether-welcome (min-width: 1100px) {
+  .aui-app-welcome-layout--wide { grid-template-columns: minmax(0, 1fr) min(48%, 640px); }
+  .aui-app-welcome-layout--wide .aui-app-welcome-art { max-width: 640px; aspect-ratio: 16 / 9; }
+  .aui-app-welcome-layout--wide .aui-app-welcome-square { display: none; }
+  .aui-app-welcome-layout--wide .aui-app-welcome-wide { display: block; }
+}
+@container aether-welcome (max-width: 600px) {
+  .aui-app-welcome-layout { grid-template-columns: minmax(0, 1fr); }
+  .aui-app-welcome-art { grid-row: 1; justify-self: center; max-width: 230px; max-height: 230px; }
+  .aui-app-welcome-art img { max-height: 230px; object-fit: contain; }
+}

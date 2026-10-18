@@ -1,0 +1,15 @@
+.aui-application-identity { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; white-space: nowrap; }
+.aui-application-identity > a { display: inline-flex; color: inherit; }
+.aui-application-identity > strong { font-size: 13px; }
+.aui-document-bar[data-application] > .aui-document-bar-cluster { min-width: 0; }
+.aui-document-bar[data-application] > .aui-document-bar-cluster--trailing { flex: 0 0 auto; margin-left: auto; padding-left: 12px; }
+.aui-document-bar[data-application] .aui-application-view-controls { display: flex; align-items: center; gap: var(--aether-space-3); }
+@media (max-width: 680px) {
+  .aui-application-identity { gap: 8px; }
+  .aui-application-identity > strong { font-size: 11px; }
+}
+
+.aui-application-account { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; }
+/* The shared React gear owns app settings; the host supplies the identity only. */
+.aui-application-account [data-aether-account] .suite-settings { display: none; }
+.aui-application-home-header > .aui-application-account { margin-left: auto; }

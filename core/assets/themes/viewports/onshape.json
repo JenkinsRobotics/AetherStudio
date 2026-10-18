@@ -1,0 +1,38 @@
+{
+  "$schema": "aether-viewport/v1",
+  "id": "onshape",
+  "name": "Studio Grey",
+  "description": "The shipped default stage: near-white with a quiet grid.",
+  "modes": {
+    "dark": {
+      "viewport-bg-top": "#f6f8f9",
+      "viewport-bg-bottom": "#e9edf0",
+      "viewport-grid": "rgba(154, 164, 173, 0.18)",
+      "viewport-grid-axis": "rgba(127, 138, 148, 0.35)",
+      "viewport-part": "#f7f9fb",
+      "viewport-part-shade": "#b9c3cd",
+      "viewport-part-edge": "rgba(0, 0, 0, 0.12)",
+      "viewport-cavity": "#9aa4ad",
+      "viewport-sketch": "#24466e",
+      "viewport-sketch-constrained": "#12203a",
+      "viewport-construction": "#e6aa64",
+      "viewport-selection": "#1d4ed8",
+      "viewport-hover": "#3b82f6"
+    },
+    "light": {
+      "viewport-bg-top": "#f6f8f9",
+      "viewport-bg-bottom": "#e9edf0",
+      "viewport-grid": "rgba(154, 164, 173, 0.18)",
+      "viewport-grid-axis": "rgba(127, 138, 148, 0.35)",
+      "viewport-part": "#f7f9fb",
+      "viewport-part-shade": "#b9c3cd",
+      "viewport-part-edge": "rgba(0, 0, 0, 0.12)",
+      "viewport-cavity": "#9aa4ad",
+      "viewport-sketch": "#24466e",
+      "viewport-sketch-constrained": "#12203a",
+      "viewport-construction": "#e6aa64",
+      "viewport-selection": "#1d4ed8",
+      "viewport-hover": "#3b82f6"
+    }
+  }
+}

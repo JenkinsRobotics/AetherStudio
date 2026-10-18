@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/PartDesign/Gui/Resources/icons/PartDesign_PointPattern.svg. Authors: jrheinlaender, agryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs>
+    <linearGradient id="linearGradient2" x1="16" y1="41" x2="16" y2="49" gradientUnits="userSpaceOnUse" gradientTransform="translate(9,5)">
+      <stop offset="0" style="stop-color:#56b9fc" />
+      <stop offset="1" style="stop-color:#3da4f0" />
+    </linearGradient>
+    <linearGradient id="linearGradient3" xlink:href="#linearGradient2" x1="16" y1="41" x2="16" y2="49" gradientUnits="userSpaceOnUse" gradientTransform="translate(9,5)" />
+    <linearGradient id="linearGradient4" xlink:href="#linearGradient2" x1="16" y1="41" x2="16" y2="49" gradientUnits="userSpaceOnUse" gradientTransform="translate(24,-25)" />
+    <linearGradient id="linearGradient4219" xlink:href="#linearGradient4141-2" x1="33" y1="24" x2="56" y2="56" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.1650395e-6)" />
+    <linearGradient id="linearGradient4141-2">
+      <stop offset="0" style="stop-color:#47586c" />
+      <stop offset="1" style="stop-color:#324154" />
+    </linearGradient>
+    <linearGradient id="linearGradient4061-9" xlink:href="#linearGradient4055-3" x1="10" y1="59" x2="9" y2="54" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.1650395e-6)" />
+    <linearGradient id="linearGradient4055-3">
+      <stop offset="0" style="stop-color:#293749" />
+      <stop offset="1" style="stop-color:#324154" />
+    </linearGradient>
+    </defs>
+  <path d="M 61,10.9 46.9,6.9 2.9,34.8 V 48.9 L 38,60.9 h 23 z" class="outline" fill="url(#linearGradient4219)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="M 59,12.2 46.9,9.3 5,36.1 V 48 L 38.5,59.1 H 58.8 Z" class="highlight" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="M 2.9,60.9 H 38 L 2.9,48.9 Z" class="outline" fill="url(#linearGradient4061-9)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="M 5,58.9 H 25.7 L 5,51.8 Z" class="highlight highlight-wide" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 3,28 10,3 v 10 l -10,-3 z" class="face blue" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 13,31 8,-5 v 10 l -8,5 z" class="face blue-side" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 12,23 9,3 -8,5 -10,-3 z" class="face blue-top" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 25.4,40.2 10,3 v 10 l -10,-3 z" class="face yellow" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 35.4,43.2 8,-5 v 10 l -8,5 z" class="face yellow-side" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 34.4,35.2 9,3 -8,5 -10,-3 z" class="face yellow-top" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 40.9,9.1 10,3 v 10 l -10,-3 z" class="face yellow" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 50.9,12.1 8,-5 v 10 l -8,5 z" class="face yellow-side" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m 49.9,4.1 9,3 -8,5 -10,-3 z" class="face yellow-top" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="25" cy="50" r="3" class="point point-fill" fill="url(#linearGradient3)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="25" cy="50" r="5" class="point point-outline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="40" cy="20" r="3" class="point point-fill" fill="url(#linearGradient4)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="40" cy="20" r="5" class="point point-outline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

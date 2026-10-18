@@ -1,0 +1,44 @@
+.aui-dimensioned-sketch {
+  --sketch-paper: light-dark(#fff, #111a29);
+  --sketch-grid: light-dark(#e8edf5, #1e2a3d);
+  --sketch-major: light-dark(#dbe3ef, #29384e);
+  --sketch-profile: light-dark(#183779, #9ab7ff);
+  --sketch-construction: light-dark(#a06bff, #b893ff);
+  --sketch-dimension: light-dark(#606574, #a9b5cb);
+  --sketch-value: light-dark(#30293f, #e0e7f5);
+  --sketch-reference: light-dark(#405aee, #99aaff);
+  --sketch-accent: light-dark(#df1034, #ff8299);
+  --sketch-constraint: light-dark(#2c934e, #83db9a);
+  --sketch-constraint-bg: light-dark(#e3f3e8, #163829);
+  display: block; width: 100%; min-width: 0; outline: none; touch-action: none;
+  background: var(--sketch-paper); user-select: none;
+}
+.aui-dimensioned-sketch:focus-visible { box-shadow: inset 0 0 0 2px var(--aether-color-accent); }
+.aui-sketch-background { fill: var(--sketch-paper); cursor: grab; }
+.aui-sketch-background:active { cursor: grabbing; }
+.aui-sketch-grid-line { fill: none; stroke: var(--sketch-grid); stroke-width: 1; }
+.aui-sketch-major-line { fill: none; stroke: var(--sketch-major); stroke-width: 1; }
+.aui-sketch-entity { outline: none; cursor: pointer; }
+.aui-sketch-entity path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.aui-sketch-entity-hit { stroke: transparent; stroke-width: 18; }
+.aui-sketch-entity-line { stroke: var(--sketch-profile); stroke-width: 4; pointer-events: none; }
+.aui-sketch-entity.is-construction .aui-sketch-entity-line { stroke: var(--sketch-construction); stroke-width: 1.7; stroke-dasharray: 9 7; }
+.aui-sketch-entity.is-selected .aui-sketch-entity-line, .aui-sketch-entity:focus-visible .aui-sketch-entity-line { stroke: var(--aether-color-accent); stroke-width: 5; }
+.aui-sketch-entity:hover .aui-sketch-entity-line { filter: drop-shadow(0 0 3px var(--sketch-reference)); }
+.aui-sketch-vertices circle { fill: var(--sketch-paper); stroke: var(--sketch-constraint); stroke-width: 2; }
+.aui-sketch-origin { fill: var(--sketch-accent); stroke: var(--sketch-accent); stroke-width: 1; }
+.aui-sketch-dimension-lines { fill: none; stroke: var(--sketch-dimension); stroke-width: 1.4; pointer-events: none; }
+.aui-sketch-dimension-lines .is-extension { opacity: .55; stroke-width: 1; }
+.aui-sketch-dimension-lines .aui-sketch-label-leader { opacity: .5; stroke-width: 1; }
+.aui-sketch-dimension.is-accent .aui-sketch-dimension-lines { stroke: var(--sketch-accent); }
+.aui-sketch-dimension-label { outline: none; cursor: move; font-family: var(--aether-font-mono); }
+.aui-sketch-dimension-label rect { fill: var(--sketch-paper); fill-opacity: .94; stroke: transparent; }
+.aui-sketch-dimension-value { font-size: 19px; font-weight: 600; fill: var(--sketch-value); }
+.aui-sketch-expression { font-size: 13px; fill: var(--sketch-reference); }
+.aui-sketch-dimension.is-accent .aui-sketch-dimension-value { fill: var(--sketch-accent); }
+.aui-sketch-dimension-label:hover rect, .aui-sketch-dimension-label:focus-visible rect, .aui-sketch-dimension.is-selected rect { stroke: var(--aether-color-accent); }
+.aui-sketch-dimension.is-selected .aui-sketch-dimension-lines { stroke: var(--aether-color-accent); }
+.aui-sketch-constraint { outline: none; cursor: pointer; }
+.aui-sketch-constraint circle { fill: var(--sketch-constraint-bg); stroke: var(--sketch-constraint); stroke-width: 1.5; }
+.aui-sketch-constraint text { fill: var(--sketch-constraint); font: 15px var(--aether-font-mono); }
+.aui-sketch-constraint:hover circle, .aui-sketch-constraint:focus-visible circle, .aui-sketch-constraint[aria-pressed=true] circle { stroke: var(--aether-color-accent); stroke-width: 3; }

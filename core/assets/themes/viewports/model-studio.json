@@ -1,0 +1,26 @@
+{
+  "$schema": "aether-viewport/v1",
+  "id": "model-studio",
+  "name": "Model Studio",
+  "description": "Dark studio stage; choose the Model Studio rendering preset in CAD for its lighting and surface finish.",
+  "modes": {
+    "dark": {
+      "viewport-bg-top": "#101112",
+      "viewport-bg-bottom": "#101112",
+      "viewport-grid": "#303436",
+      "viewport-grid-axis": "#555954",
+      "viewport-part": "#c6c9c7",
+      "viewport-part-edge": "#151b1d",
+      "viewport-sketch": "#aee2ff"
+    },
+    "light": {
+      "viewport-bg-top": "#101112",
+      "viewport-bg-bottom": "#101112",
+      "viewport-grid": "#303436",
+      "viewport-grid-axis": "#555954",
+      "viewport-part": "#c6c9c7",
+      "viewport-part-edge": "#151b1d",
+      "viewport-sketch": "#aee2ff"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2726" height="32" width="32" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Snap_Perpendicular.svg. Authors: [Yorik van Havre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2728">
+    <linearGradient id="linearGradient3759">
+      <stop id="stop3761" offset="0" style="stop-color:#b4c2d3;stop-opacity:1" />
+      <stop id="stop3763" offset="1" style="stop-color:#d3dde7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="598.96307" x2="127.30297" y1="728.49023" x1="182.81459" id="linearGradient3765" xlink:href="#linearGradient3759" />
+  </defs>
+  <g id="layer1">
+    <g transform="matrix(0.1621282,0,0,0.1621282,6.3605986,-66.108806)" id="g4289">
+      <path id="rect3942" d="m 114.96705,475.60391 0,185.03875 -135.695083,0 0,74.01551 357.741593,0 0,-74.01551 -148.03101,0 0,-185.03875 z" style="color:#405269;fill:url(#linearGradient3765);fill-opacity:1;fill-rule:nonzero;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="rect3942-3" d="m 127.30297,487.93983 0,185.03875 -135.6950856,0 0,49.34367 333.0697556,0 0,-49.34367 -148.031,0 0,-185.03875 z" style="color:#405269;fill:none;stroke:#7c8fa5;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

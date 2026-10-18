@@ -1,0 +1,21 @@
+.aui-shell { --aui-shell-motion-easing:cubic-bezier(.2,.8,.2,1); }
+.aui-shell[data-animate-panels=true] .aui-shell-panel { animation:aui-panel-enter var(--aui-shell-motion-duration) var(--aui-shell-motion-easing); }
+.aui-shell[data-animate-panels=true] .aui-shell-panel[data-closing=true] { animation:aui-panel-exit var(--aui-shell-motion-duration) var(--aui-shell-motion-easing) both; pointer-events:none; }
+.aui-shell[data-animate-panels=true] .aui-shell-side--right, .aui-shell[data-animate-panels=true] .aui-shell-fledge--right { --aui-panel-motion-x:18px; }
+.aui-shell[data-animate-panels=true] .aui-shell-side:not(.aui-shell-side--right), .aui-shell[data-animate-panels=true] .aui-shell-fledge--left { --aui-panel-motion-x:-18px; }
+.aui-shell[data-animate-panels=true] :is(.aui-shell-stack,.aui-shell-flstack) { max-width:var(--aui-stack-width); transition:max-width var(--aui-shell-motion-duration) var(--aui-shell-motion-easing); overflow-x:clip; }
+.aui-shell[data-animate-panels=true] :is(.aui-shell-stack,.aui-shell-flstack)[data-closing=true] { max-width:0; }
+.aui-shell[data-animate-panels=true] .aui-shell-fledge > .aui-float { position:relative; z-index:2; }
+.aui-shell[data-animate-panels=true] .aui-float-panel { animation:aui-panel-enter var(--aui-shell-motion-duration) var(--aui-shell-motion-easing); }
+.aui-shell[data-animate-panels=true] .aui-float-panel[data-closing=true] { animation:aui-panel-exit var(--aui-shell-motion-duration) var(--aui-shell-motion-easing) both; pointer-events:none; }
+@starting-style { .aui-shell[data-animate-panels=true] :is(.aui-shell-stack,.aui-shell-flstack) { max-width:0; } }
+@keyframes aui-panel-enter { from { opacity:0; transform:translateX(var(--aui-panel-motion-x,-18px)); } to { opacity:1; transform:translateX(0); } }
+@keyframes aui-panel-exit { from { opacity:1; transform:translateX(0); } to { opacity:0; transform:translateX(var(--aui-panel-motion-x,-18px)); } }
+@media(prefers-reduced-motion:reduce) {
+  .aui-shell[data-animate-panels=true] :is(.aui-shell-panel,.aui-shell-stack,.aui-shell-flstack,.aui-float-panel) { animation:none; transition:none; }
+}
+
+/* Initial measurements must not trigger resize transitions. */
+.aui-shell[data-layout-ready="false"] :is(.aui-shell-content, .aui-tabbed-sidebar, .aui-shell-panel, .aui-shell-stack, .aui-shell-flstack, .aui-float-panel) {
+  transition: none;
+}

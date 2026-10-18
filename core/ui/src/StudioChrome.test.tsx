@@ -5,6 +5,7 @@ import { AppearanceToggle, StudioModeButton, WorkspaceWindowMenu } from "./Studi
 afterEach(() => {
   localStorage.clear();
   document.documentElement.classList.remove("aether-light-theme");
+  delete document.documentElement.dataset.aetherTheme;
 });
 
 test("studio mode button cycles on click and resets from its menu", () => {
@@ -24,15 +25,17 @@ test("appearance toggle cycles System → Light → Dark and applies the light c
   fireEvent.click(screen.getByLabelText("Appearance System"));
   expect(screen.getByLabelText("Appearance Light")).toBeTruthy();
   expect(document.documentElement.classList.contains("aether-light-theme")).toBe(true);
+  expect(document.documentElement.dataset.aetherTheme).toBe("light");
   expect(localStorage.getItem("aether-appearance")).toBe("light");
   fireEvent.click(screen.getByLabelText("Appearance Light"));
   expect(screen.getByLabelText("Appearance Dark")).toBeTruthy();
   expect(document.documentElement.classList.contains("aether-light-theme")).toBe(false);
+  expect(document.documentElement.dataset.aetherTheme).toBe("dark");
 });
 
 test("workspace windows menu keeps native entries, disabling browser-managed ones", () => {
   render(<WorkspaceWindowMenu />);
-  fireEvent.click(screen.getByLabelText("Workspace windows and tabs"));
+  fireEvent.click(screen.getByLabelText("Windows"));
   expect(screen.getByText("New Workspace Tab")).toBeTruthy();
   const detach = screen.getByText("Detach Current Tab").closest('[role="menuitem"],[role="menuitemradio"],button');
   expect(detach?.getAttribute("aria-disabled") ?? String((detach as HTMLButtonElement)?.disabled)).toMatch(/true/);

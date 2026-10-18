@@ -1,0 +1,29 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "graphite",
+  "name": "Graphite",
+  "description": "Aether Studio with a graphite accent: the quiet, monochrome workbench.",
+  "extends": "aether-studio",
+  "modes": {
+    "dark": {
+      "color-accent": "#9aa3ae",
+      "color-accent-strong": "#9aa3ae",
+      "color-accent-icon": "#9aa3ae",
+      "color-bg-selected": "#9aa3ae",
+      "color-border-focus": "#9aa3ae",
+      "color-border-control-hover": "#9aa3ae",
+      "color-selection-edge": "#9aa3ae",
+      "viewport-selection": "#9aa3ae"
+    },
+    "light": {
+      "color-accent": "#5b6270",
+      "color-accent-strong": "#5b6270",
+      "color-accent-icon": "#5b6270",
+      "color-bg-selected": "#5b6270",
+      "color-border-focus": "#5b6270",
+      "color-border-control-hover": "#5b6270",
+      "color-selection-edge": "#5b6270",
+      "viewport-selection": "#5b6270"
+    }
+  }
+}

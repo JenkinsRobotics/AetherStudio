@@ -1,9 +1,38 @@
 # Inheriting from FreeCAD and OCCT
 
+**2026-10-03 audit:** inheritance is not complete. The current
+[Part/Assembly/Drawing parity and reference-retirement gates](FreeCAD_Parity_Acceptance.md)
+supersede any inference of completion from this historical spike report.
+The installed native engine reports 1.1.3; the reference archive identifies
+itself as 26.3 development. Neither a green adapter suite nor copied workbench
+icons establishes whole-application parity. Retain the reference pending the
+acceptance gates; the installed FreeCAD runtime remains an active dependency.
+
 **Decision (Jonathan, 2026-09-12): keep our design, inherit the engine.** The
 UI, document model and product shape stay ours. Anything below that line —
 solving, projection, tessellation, exchange — we take from FreeCAD and OCCT
 rather than write, wherever it is genuinely available.
+
+**Superseding decision, same day: headless FreeCAD is the baseline engine.**
+Rather than reimplement parametric features one at a time, Aether CAD drives
+FreeCAD's own solver and feature set through a narrow JSON boundary:
+`Aether CAD/freecad-engine/` (see its README and ATTRIBUTION). I argued
+against this on concurrency grounds and Jonathan's call stands; the sections
+below are kept because they remain the record of what is available à la carte,
+and because the browser OCCT path is still what serves interactive work.
+
+What that decision costs, stated once so it is engineered rather than
+discovered: each worker is a **native process holding OCCT memory**, so
+concurrency becomes a process-pool sizing problem instead of being free. The
+boundary is built stateless-per-job specifically so a pool can be shared
+rather than pinned per user. Sizing it against the 200-concurrent-user target
+is tracked in `dev/docs/roadmap/Host_Scaling.md`.
+
+**Open question for the next session:** what remains of the browser engine.
+My read — keep both. FreeCAD is the authority for parametric features; the
+browser OCCT/WASM path stays for interactive preview and selection, where a
+server round trip per drag would be unusable. The boundary in
+`freecad-engine/protocol.py` is written so either can satisfy it.
 
 This document records what is *verified* available, what it replaces, and in
 what order. Numbers here were measured on 2026-09-12, not estimated.
@@ -46,11 +75,14 @@ compared coordinates:
 | Verdict | Solves | Share |
 |---|---|---|
 | unsupported *by the spike* | 867 | 67.4% |
-| **agreed to 1e-6** | **202** | **15.7%** |
+| **agreed to 1e-6** | **211** | **16.4%** |
 | spike mapping still failing | 163 | 12.7% |
-| disagreed | 26 | 2.0% |
-| both rejected | 19 | 1.5% |
-| planegcs solved what we reject | 10 | 0.8% |
+| both rejected | 23 | 1.8% |
+| disagreed | 17 | 1.3% |
+| planegcs solved what we reject | 6 | 0.5% |
+
+*(Updated after mapping `fix` to planegcs `coordinate_x`/`coordinate_y`, which
+was the main source of disagreement: agreed 202 → 211, disagreed 26 → 17.)*
 
 *(1,287 solves carrying at least one constraint; the other 591 calls had no
 constraints and return early in both solvers.)*
@@ -71,11 +103,10 @@ Nothing was rejected because planegcs cannot express it. The gaps break down as:
   curve-contact reference still resolving to the segment), plus 121
   reference/driver dimensions whose value the spike reads before resolving.
 
-**The one real migration cost:** the 26 disagreements are *different valid
-solutions*, not wrong ones — drift of 10–16 mm on under-determined systems
-where our spike leaves `fix` unimplemented. Constraint systems have many
-solutions and the two solvers pick different branches. Existing sketches
-would re-settle, so pinned coordinates in tests change. That is a re-pinning
+**The one real migration cost:** the remaining 17 disagreements are
+*different valid solutions*, not wrong ones. Constraint systems have many
+solutions and the two solvers pick different branches, so existing sketches
+re-settle and pinned coordinates in tests change. That is a re-pinning
 exercise, and FreeCAD has the same character.
 
 **What it buys:** deletes ~2,599 lines of residuals, damping, rank and
@@ -138,12 +169,42 @@ Onshape stays the interaction reference it already is.
 
 ## Recommended order
 
-1. **HLR for drawings** — pure gain, no dependency, no migration. Blocks the
-   Drawing packet, which is queued and not yet written.
-2. **Finish the planegcs mapping** — ellipse and B-spline primitives, the
-   curve-contact references, and `fix`; then swap the seam and re-pin.
-3. **Offsets and spline fitting** to OCCT.
-4. **Tier 3 specs**, continuously, ahead of each feature packet.
+1. ~~**HLR for drawings**~~ — **done 2026-09-12**:
+   `engine/src/kernel/hidden-line.ts`, exported from `@aether/core/kernel` as
+   `projectHiddenLineView`. Returns visible/hidden sharp edges and
+   visible/hidden silhouettes as view-plane polylines, with an explicit view
+   normal and up direction so a view is reproducible rather than rolled to
+   whatever OCCT picks. Four tests: a box projects true-size with its far
+   edges classified hidden; a cylinder's silhouette is found where no B-Rep
+   edge exists; an occluded solid's hidden length exceeds its hidden length
+   from the opposite side; a degenerate view direction is refused.
+   *Nothing consumed the old path because there was no old path* — this is
+   the Drawing packet's projection layer, ready before the packet is written.
+2. **Finish the planegcs mapping so it can become the default.** In order of
+   how many real solves each unblocks: curve-contact references (163 mapping
+   failures), bezier segments via planegcs B-spline (198), ellipse segments
+   (138), reference/driver dimensions (121). `fix` is done.
+3. **Then swap the seam and re-pin** the coordinates that legitimately move.
+4. **Offsets and spline fitting** to OCCT (`BRepOffsetAPI_MakeOffset`,
+   `GeomAPI_Interpolate`) — retires the `offset` constraint's 66 solves.
+5. **Tier 3 specs**, continuously, ahead of each feature packet.
+
+## What is active today
+
+| Capability | Status |
+|---|---|
+| OCCT kernel (solids, booleans, STEP read) | **active**, always was |
+| OCCT hidden-line removal | **active** in the engine; no UI consumes it yet because the Drawing workbench does not exist |
+| PlaneGCS sketch solving | **not active.** Our solver is still the default; planegcs runs only when a test harness registers the comparison hook |
+
+PlaneGCS cannot be switched on yet — not for caution, but because the mapping
+currently covers *less* than our own solver does. Making it the default before
+the step-2 list is finished would break sketching that works today.
+
+**No UI change, at any point.** Both inheritances sit below
+`solveDrawingConstraints(source, options) → SketchDrawing` and below the
+kernel's shape API. The 27,726-line UI layer is untouched by design — that is
+what makes this approach safe to do incrementally.
 
 ## License
 
@@ -162,4 +223,4 @@ LGPL-2.1-with-exception and already in use.
   asset, and the CAD production build passes).
 
 Re-run: `AETHER_SOLVER_REPORT=<file> npx vitest run --config
-vitest.spike.config.ts src/sketch` from `Aether CAD/engine`.
+vitest.spike.config.ts src/sketch` from `Aether CAD/aether-engine`.

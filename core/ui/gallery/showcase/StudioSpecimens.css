@@ -1,0 +1,10 @@
+/* Specimens join their functional section's existing open comparison flow. */
+.showcase-studio-specimens,
+.showcase-studio-specimens > div,
+.showcase-studio-specimens .ms-specimen-grid { display:contents; }
+.showcase-studio-specimens article,
+.showcase-studio-specimens .avatar-widget-grid > div { box-sizing:border-box; flex:0 1 306px; width:306px; min-width:0; max-width:100%; }
+.showcase-studio-specimens[data-studio-kind="timelines"] article { flex-basis:720px; width:720px; }
+.showcase-studio-source { display:block; margin-bottom:6px; font-size:10px; color:var(--aether-color-text-dim); }
+
+.showcase-studio-specimens[data-studio-kind="trees"] article > .aui-feature-tree { height:740px; }

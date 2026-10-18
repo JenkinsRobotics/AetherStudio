@@ -1,0 +1,73 @@
+/* Generated from the Graphite Ribbon pack palettes. Classic icons are untouched. */
+[data-aether-theme="dark"] {
+  --graphite-edge: #ecf1f8;
+  --graphite-muted: #8c9caf;
+  --graphite-top-a: #657488;
+  --graphite-top-b: #374457;
+  --graphite-front-a: #384658;
+  --graphite-front-b: #1c2838;
+  --graphite-side-a: #273345;
+  --graphite-side-b: #141e2b;
+  --graphite-blue-a: #50b9ff;
+  --graphite-blue-b: #087eee;
+  --graphite-blue: #299fff;
+  --graphite-paper: #273547;
+  --graphite-cavity: #101823;
+  --graphite-sphere-a: #8393a7;
+  --graphite-sphere-b: #253244;
+  --graphite-sphere-c: #101722;
+}
+[data-aether-theme="light"] {
+  --graphite-edge: #3d4c5e;
+  --graphite-muted: #79899b;
+  --graphite-top-a: #fcfdff;
+  --graphite-top-b: #ccd7e2;
+  --graphite-front-a: #e0e7ef;
+  --graphite-front-b: #abbacb;
+  --graphite-side-a: #b8c6d5;
+  --graphite-side-b: #899aad;
+  --graphite-blue-a: #38aaff;
+  --graphite-blue-b: #0075dd;
+  --graphite-blue: #0086e7;
+  --graphite-paper: #f1f5fa;
+  --graphite-cavity: #62748b;
+  --graphite-sphere-a: #ffffff;
+  --graphite-sphere-b: #b7c6d7;
+  --graphite-sphere-c: #718298;
+}
+.aui-tool-icon[data-icon-pack="graphite-ribbon"][data-icon-palette="light"] {
+  --graphite-edge: #3d4c5e;
+  --graphite-muted: #79899b;
+  --graphite-top-a: #fcfdff;
+  --graphite-top-b: #ccd7e2;
+  --graphite-front-a: #e0e7ef;
+  --graphite-front-b: #abbacb;
+  --graphite-side-a: #b8c6d5;
+  --graphite-side-b: #899aad;
+  --graphite-blue-a: #38aaff;
+  --graphite-blue-b: #0075dd;
+  --graphite-blue: #0086e7;
+  --graphite-paper: #f1f5fa;
+  --graphite-cavity: #62748b;
+  --graphite-sphere-a: #ffffff;
+  --graphite-sphere-b: #b7c6d7;
+  --graphite-sphere-c: #718298;
+}
+.aui-tool-icon[data-icon-pack="graphite-ribbon"][data-icon-palette="dark"] {
+  --graphite-edge: #ecf1f8;
+  --graphite-muted: #8c9caf;
+  --graphite-top-a: #657488;
+  --graphite-top-b: #374457;
+  --graphite-front-a: #384658;
+  --graphite-front-b: #1c2838;
+  --graphite-side-a: #273345;
+  --graphite-side-b: #141e2b;
+  --graphite-blue-a: #50b9ff;
+  --graphite-blue-b: #087eee;
+  --graphite-blue: #299fff;
+  --graphite-paper: #273547;
+  --graphite-cavity: #101823;
+  --graphite-sphere-a: #8393a7;
+  --graphite-sphere-b: #253244;
+  --graphite-sphere-c: #101722;
+}

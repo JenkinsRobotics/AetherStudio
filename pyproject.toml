@@ -1,45 +1,23 @@
-# AnimaCore — the Anima animation engine (Python runtime).
-# The headless core the Mac app (app/, Swift) and the firmware author
-# for; see dev/docs/roadmap/ for the .anima format + wire protocol
-# contracts both implementations answer to.
-
 [build-system]
 requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "animacore"
-description = "AnimaCore — the open animation engine: mechanism rigs, mates/DOF, kinematics, show execution, and hardware wire protocol for AI characters and animatronic robots."
-readme = "README.md"
+name = "aether-platform"
+version = "0.2.0a4"
 requires-python = ">=3.11,<3.13"
-dynamic = ["version"]
-dependencies = [
-    "pyyaml>=6",
-    "pyserial>=3.5",
-    "numpy>=1.26",  # DH2 inverse kinematics (Jacobian DLS); isolated to the IK path
-    # "jaeger-os>=0.9,<0.10",  # pin once JaegerOS integration lands
-]
+dependencies = ["pillow>=10"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7", "ruff"]
-# 2D media rasterizer (animacore.raster): real image/sprite/gif/video decoders.
-# Optional — the core engine never imports animacore.raster.
-media = ["pillow>=10", "imageio>=2.34", "imageio-ffmpeg>=0.5"]
-# STEP tessellation for the front-ends' import pipelines
-# (unity/Tools/step_to_obj.py). Optional — the engine never parses geometry.
-cad = ["cascadio>=0.0.14", "trimesh>=4"]
-
-[tool.setuptools.dynamic]
-version = {attr = "animacore.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["animacore*"]
+include = ["core", "core.host*"]
 
 [tool.pytest.ini_options]
-testpaths = ["animacore/tests", "core/host/tests"]
-pythonpath = ["."]
+testpaths = ["core/host/tests"]
 
-[tool.ruff]
-line-length = 88
-target-version = "py311"
+[tool.setuptools.package-data]
+core = ["assets/cad/units.json"]
+"core.host" = ["application-catalog.json"]

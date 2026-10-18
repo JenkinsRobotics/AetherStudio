@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/Param_Int.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs4">
+    <linearGradient id="linearGradient4866">
+      <stop style="stop-color:#2f3e50;stop-opacity:1" offset="0" id="stop4868" />
+      <stop style="stop-color:#5d7086;stop-opacity:1" offset="1" id="stop4870" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient4866" id="linearGradient4872" x1="32" y1="1046.3622" x2="30" y2="994.36218" gradientUnits="userSpaceOnUse" gradientTransform="translate(2,0)" />
+  </defs>
+  <g id="layer1" transform="translate(0,-988.36218)">
+    <path id="path11867" style="font-size:medium;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:url(#linearGradient4872);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;font-family:sans-serif" d="m 29,991.36218 8,0 0,58.00002 -7.999998,0 0,-58.00002 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path11867-7" style="font-size:medium;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:none;stroke:#e5edf7;stroke-width:1.1;font-family:sans-serif" d="m 31,993.36218 4,0 0,54.00002 -3.999999,0 0,-54.00002 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

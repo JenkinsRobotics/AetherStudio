@@ -1,0 +1,38 @@
+.aui-action-items { display: flex; flex-direction: column; height: 100%; min-height: 0; min-width: 0; color: var(--aether-color-text); font: 12px/1.5 var(--aether-font-family); }
+.aui-shell-panel-host:has(> .aui-action-items), .aui-shell-panel-body:has(> .aui-action-items) { display: flex; flex-direction: column; }
+.aui-action-items-header { display: flex; align-items: center; gap: 4px; padding: 5px 8px; border-bottom: 1px solid var(--aether-color-border); }
+.aui-action-items-header h3 { flex: 1; margin: 0; font-size: 12px; }
+.aui-action-items :is(.aui-icon-button,.aui-menu-trigger) { display: grid; place-items: center; width: 26px; min-width: 0; height: 26px; padding: 4px; background: transparent; border: 0; color: var(--aether-color-text-soft); }
+.aui-action-items :is(.aui-icon-button,.aui-menu-trigger):hover:not(:disabled) { color: var(--aether-color-accent); background: var(--aether-color-bg-hover); }
+.aui-action-items :is(.aui-icon-button,.aui-menu-trigger) svg { width: 16px; height: 16px; }
+.aui-action-items-tools { flex: none; padding: 7px 8px; border-bottom: 1px solid var(--aether-color-border); }
+.aui-action-items-filters { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 9px; }
+.aui-action-items-filters > select:first-child { flex: 1 0 54px; }
+.aui-action-items-filters > select:nth-child(2) { flex: 1 0 62px; }
+.aui-action-items-filters > .aui-action-assignee { flex: 1 0 80px; }
+.aui-action-items select, .aui-action-item-dialog :is(select,input,textarea) { box-sizing: border-box; min-width: 0; color: var(--aether-color-text); background: var(--aether-color-bg-panel); font: inherit; border: 1px solid var(--aether-color-border); border-radius: var(--aether-radius-field); padding: 4px; }
+.aui-action-items-filters > select, .aui-action-assignee select { width: auto; height: 30px; font-size: 11px; text-overflow: ellipsis; }
+.aui-action-assignee select { width: 100%; }
+.aui-action-items-filters :is(.aui-icon-button,.aui-menu-trigger) { width: 22px; height: 30px; padding: 3px; }
+.aui-action-assignee { position: relative; min-width: 0; }
+.aui-action-assignee > span { position: absolute; top: -6px; right: -1px; min-width: 14px; height: 14px; border-radius: 50%; background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); text-align: center; font-size: 10px; line-height: 14px; pointer-events: none; }
+.aui-action-items-body { flex: 1; min-height: 0; overflow: auto; }
+.aui-action-items-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; padding: 88px 14px 20px; color: var(--aether-color-text-dim); }
+.aui-action-items-empty > svg { width: min(160px,80%); height: auto; opacity: .16; }
+.aui-action-items-empty p { margin: 0; }
+.aui-action-items-body ul { list-style: none; margin: 0; padding: 0; }
+.aui-action-items-body li { display: grid; gap: 8px; padding: 12px 10px; border-bottom: 1px solid var(--aether-color-border); }
+.aui-action-item-title { display: flex; align-items: flex-start; gap: 6px; }
+.aui-action-item-title > svg { width: 16px; height: 16px; flex: none; margin-top: 2px; color: var(--aether-color-text-dim); }
+.aui-action-item-title strong { flex: 1; min-width: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.aui-action-items-body small { color: var(--aether-color-text-dim); }
+.aui-action-items-body li > select { justify-self: start; }
+.aui-action-items-error { margin: 8px; color: var(--aether-color-error); }
+.aui-action-item-dialog .aui-dialog { width: min(440px,calc(100vw - 32px)); }
+.aui-action-item-dialog form, .aui-action-item-dialog label { display: grid; gap: 8px; }
+.aui-action-item-dialog form { gap: 14px; }
+.aui-action-item-dialog :is(select,input,textarea) { width: 100%; padding: 7px; }
+.aui-action-item-dialog textarea { resize: vertical; }
+.aui-action-item-buttons { display: flex; gap: 6px; justify-content: flex-end; }
+.aui-action-item-dialog [role="alert"] { color: var(--aether-color-error); }
+.aui-action-item-dialog blockquote { white-space: pre-wrap; overflow-wrap: anywhere; }

@@ -1,3 +1,5 @@
+import { TreeRename } from "./TreeRename";
+import { AetherIcon } from "./AetherIcon";
 import {
   useCallback,
   useEffect,
@@ -16,10 +18,20 @@ import type {
 export interface TreeNode {
   id: string;
   label: string;
+  /** Product-defined type used by the shared collection picker. */
+  category?: string;
+  /** Additional type keywords included in text filtering. */
+  searchText?: string;
   icon?: ReactNode;
+  /** Counts or other short metadata. Use status icons for state. */
   badge?: string;
+  status?: readonly { id: string; label: string; icon: ReactNode }[];
   /** Row cannot be focused, selected, renamed, or dragged. */
   disabled?: boolean;
+  /** Protect fixed reference/collection rows from drag gestures. */
+  draggable?: boolean;
+  /** Ordered leaves split their whole row into before/after drop targets. */
+  dropMode?: "hierarchy" | "reorder";
   /** Visually de-emphasized (for example suppressed/hidden entities). */
   dimmed?: boolean;
   /** Extra class on the row element for application-specific presentation. */
@@ -30,7 +42,7 @@ export interface TreeNode {
   /** Semantic row tone; "error" marks failing entities. */
   tone?: "error";
   /** Hover-revealed trailing actions; clicks never change selection; `pinned` keeps one visible without hover. */
-  actions?: readonly { id: string; label: string; icon: ReactNode; pinned?: boolean }[];
+  actions?: readonly { id: string; label: string; icon: ReactNode; pinned?: boolean; state?: boolean }[];
   children?: readonly TreeNode[];
   /** Shows a live child status row while an expanded branch resolves. */
   childrenLoading?: boolean;
@@ -56,6 +68,8 @@ export interface TreeProps {
   expandedIDs?: ReadonlySet<string>;
   onToggle?: (id: string, expanded: boolean) => void;
   defaultCollapsedIDs?: readonly string[];
+  /** Reveal ancestors of the controlled selection without forgetting their collapsed state. */
+  revealSelection?: boolean;
   /** Case-insensitive filter that keeps matching rows and ancestors. */
   filter?: string;
   emptyState?: ReactNode;
@@ -79,6 +93,8 @@ export interface TreeProps {
   virtualizeThreshold?: number;
   height?: number;
   rowHeight?: number;
+  /** Inset before root rows; descendants add the normal hierarchy indentation. */
+  rootInset?: number;
   overscan?: number;
   className?: string;
   style?: CSSProperties;
@@ -123,6 +139,7 @@ export function Tree({
   expandedIDs,
   onToggle,
   defaultCollapsedIDs,
+  revealSelection = false,
   filter,
   emptyState,
   renamingID,
@@ -134,6 +151,7 @@ export function Tree({
   virtualizeThreshold = 1000,
   height = 320,
   rowHeight = 28,
+  rootInset = 7,
   overscan = 5,
   className,
   style,
@@ -143,7 +161,6 @@ export function Tree({
   );
   const [focusedID, setFocusedID] = useState<string | null>(null);
   const [scrollTop, setScrollTop] = useState(0);
-  const [renameDraft, setRenameDraft] = useState("");
   const [dragTarget, setDragTarget] = useState<{
     id: string;
     position: TreeMovePosition;
@@ -152,7 +169,13 @@ export function Tree({
   const dragSourceRef = useRef<string | null>(null);
   const rowRefs = useRef(new Map<string, HTMLDivElement>());
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const renameInputRef = useRef<HTMLInputElement>(null);
+  const selectionKey = JSON.stringify([...selectedIDs].sort());
+  const [revealOverride, setRevealOverride] = useState<{ selection: string; closed: ReadonlySet<string> }>(
+    () => ({ selection: selectionKey, closed: new Set() }),
+  );
+  useEffect(() => {
+    setRevealOverride(current => current.selection === selectionKey ? current : { selection: selectionKey, closed: new Set() });
+  }, [selectionKey]);
 
   const isExpanded = useCallback(
     (id: string) =>
@@ -161,6 +184,11 @@ export function Tree({
   );
   const toggle = useCallback(
     (id: string, currentlyExpanded: boolean) => {
+      setRevealOverride(current => {
+        const closed = new Set(current.selection === selectionKey ? current.closed : []);
+        if (currentlyExpanded) closed.add(id); else closed.delete(id);
+        return { selection: selectionKey, closed };
+      });
       onToggle?.(id, !currentlyExpanded);
       if (!expandedIDs) {
         setInternalCollapsed((current) => {
@@ -171,16 +199,26 @@ export function Tree({
         });
       }
     },
-    [expandedIDs, onToggle]
+    [expandedIDs, onToggle, selectionKey]
   );
 
   const filterText = (filter ?? "").trim().toLocaleLowerCase();
   const matchesFilter = useCallback(
     function matches(node: TreeNode): boolean {
-      if (node.label.toLocaleLowerCase().includes(filterText)) return true;
+      if (node.label.toLocaleLowerCase().includes(filterText) || node.searchText?.toLocaleLowerCase().includes(filterText)) return true;
       return (node.children ?? []).some(matches);
     },
     [filterText]
+  );
+
+  // Keep a controlled selection visible through collapsed ancestors. Moving a
+  // layer into a collapsed scene should reveal where it landed; when selection
+  // leaves that subtree, the user's original collapsed state applies again.
+  const containsSelection = useCallback(
+    function contains(node: TreeNode): boolean {
+      return selectedIDs.has(node.id) || (node.children ?? []).some(contains);
+    },
+    [selectedIDs]
   );
 
   const rows = useMemo<FlatRow[]>(() => {
@@ -192,14 +230,17 @@ export function Tree({
           (node.children?.length ?? 0) > 0 ||
           Boolean(node.childrenLoading) ||
           node.childrenError !== undefined;
-        const expanded = hasChildren && (filterText ? true : isExpanded(node.id));
+        const expanded = hasChildren && (filterText ? true
+          : isExpanded(node.id) || (revealSelection
+            && !(revealOverride.selection === selectionKey && revealOverride.closed.has(node.id))
+            && (node.children ?? []).some(containsSelection)));
         output.push({ node, depth, hasChildren, expanded });
         if (expanded && node.children?.length) walk(node.children, depth + 1);
       }
     };
     walk(nodes, 0);
     return output;
-  }, [filterText, isExpanded, matchesFilter, nodes]);
+  }, [containsSelection, filterText, isExpanded, matchesFilter, nodes, revealSelection, revealOverride, selectionKey]);
 
   const visualRows = useMemo<VisualRow[]>(() => {
     const output: VisualRow[] = [];
@@ -238,17 +279,6 @@ export function Tree({
       visualIndex: start + offset,
     }));
   }, [height, overscan, rowHeight, scrollTop, virtualized, visualRows]);
-
-  useEffect(() => {
-    if (!renamingID) return;
-    const row = rows.find((entry) => entry.node.id === renamingID);
-    if (!row) return;
-    setRenameDraft(row.node.label);
-    requestAnimationFrame(() => {
-      renameInputRef.current?.focus();
-      renameInputRef.current?.select();
-    });
-  }, [renamingID, rows]);
 
   const applySelect = useCallback(
     (
@@ -303,9 +333,17 @@ export function Tree({
 
   const onKeyDown = useCallback(
     (event: KeyboardEvent<HTMLDivElement>, row: FlatRow, index: number) => {
+      if (event.target !== event.currentTarget) return;
       const enabled = rows.filter((entry) => !entry.node.disabled);
       const enabledIndex = enabled.findIndex((entry) => entry.node.id === row.node.id);
       const move = (target: FlatRow | undefined) => target && focusRow(target.node.id);
+      if (event.key === "ContextMenu" || (event.key === "F10" && event.shiftKey)) {
+        if (onContextMenu) {
+          const box = event.currentTarget.getBoundingClientRect();
+          event.preventDefault(); event.stopPropagation(); onContextMenu(row.node.id, box.left + 24, box.bottom);
+        }
+        return;
+      }
       switch (event.key) {
         case "ArrowDown":
           move(enabled[enabledIndex + 1]);
@@ -348,20 +386,18 @@ export function Tree({
       }
       event.preventDefault();
     },
-    [applySelect, focusRow, onActivate, rows, selectedIDs, toggle]
+    [applySelect, focusRow, onActivate, onContextMenu, rows, selectedIDs, toggle]
   );
-
-  const commitRename = (id: string) => {
-    const value = renameDraft.trim();
-    if (value) onRename?.(id, value);
-    else onCancelRename?.(id);
-  };
 
   const handleDragOver = (event: DragEvent<HTMLDivElement>, targetID: string) => {
     const sourceID = dragSourceRef.current;
     if (!sourceID || sourceID === targetID) return;
-    const position = dropPosition(event);
-    if (canMove && !canMove(sourceID, targetID, position)) return;
+    let position = dropPosition(event);
+    if (position === "inside" && rows.find(row=>row.node.id === targetID)?.node.dropMode === "reorder") {
+      const rect=event.currentTarget.getBoundingClientRect();
+      position=event.clientY < rect.top + rect.height/2 ? "before" : "after";
+    }
+    if (canMove && !canMove(sourceID, targetID, position)) { setDragTarget(null); return; }
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
     setDragTarget({ id: targetID, position });
@@ -375,6 +411,10 @@ export function Tree({
       </div>
     );
   }
+
+  const tabbableID = rows.find((entry) => !entry.node.disabled && entry.node.id === focusedID)?.node.id
+    ?? rows.find((entry) => !entry.node.disabled && selectedIDs.has(entry.node.id))?.node.id
+    ?? rows.find((entry) => !entry.node.disabled)?.node.id;
 
   const renderVisualRow = (visual: VisualRow, visualIndex: number) => {
     const virtualStyle: CSSProperties | undefined = virtualized
@@ -392,9 +432,9 @@ export function Tree({
           key={`${visual.kind}-${visual.parentID}`}
           className={`aui-tree-child-state aui-tree-child-state--${visual.kind}`}
           role={visual.kind === "error" ? "alert" : "status"}
-          style={{ ...virtualStyle, paddingLeft: 7 + visual.depth * 16 }}
+          style={{ ...virtualStyle, paddingLeft: rootInset + visual.depth * 16 }}
         >
-          <span aria-hidden="true">{visual.kind === "loading" ? "◌" : "!"}</span>
+          <AetherIcon name={visual.kind === "loading" ? "history" : "status-error"} />
           <span>{visual.content}</span>
           {visual.kind === "error" && onRetryChildren ? (
             <button type="button" onClick={() => onRetryChildren(visual.parentID)}>
@@ -432,21 +472,16 @@ export function Tree({
         aria-level={row.depth + 1}
         aria-disabled={node.disabled || undefined}
         className={rowClasses.join(" ")}
-        style={{ ...virtualStyle, paddingLeft: 7 + row.depth * 16 }}
-        tabIndex={
-          !node.disabled &&
-          (focusedID === node.id ||
-            (focusedID === null && rows.find((entry) => !entry.node.disabled)?.node.id === node.id))
-            ? 0
-            : -1
-        }
-        draggable={Boolean(onMove && !node.disabled && !isRenaming)}
+        style={{ ...virtualStyle, paddingLeft: rootInset + row.depth * 16 }}
+        tabIndex={!node.disabled && tabbableID === node.id ? 0 : -1}
+        draggable={Boolean(onMove && node.draggable !== false && !node.disabled && !isRenaming)}
         onFocus={() => setFocusedID(node.id)}
         onClick={(event) => applySelect(row, event)}
         onDoubleClick={() => !node.disabled && !isRenaming && onActivate?.(node.id)}
         onContextMenu={(event) => {
           if (!onContextMenu || node.disabled) return;
           event.preventDefault();
+          event.currentTarget.focus();
           onContextMenu(node.id, event.clientX, event.clientY);
         }}
         onKeyDown={(event) => onKeyDown(event, row, nodeIndex)}
@@ -465,7 +500,7 @@ export function Tree({
           const sourceID = dragSourceRef.current;
           const target = dragTarget;
           event.preventDefault();
-          if (sourceID && target?.id === node.id) {
+          if (sourceID && target?.id === node.id && (!canMove || canMove(sourceID,node.id,target.position))) {
             onMove?.(sourceID, node.id, target.position);
           }
           dragSourceRef.current = null;
@@ -488,36 +523,23 @@ export function Tree({
               toggle(node.id, row.expanded);
             }}
           >
-            {row.expanded ? "▾" : "▸"}
+            <AetherIcon name="chevron" width={14} height={14} style={{ transform: row.expanded ? "rotate(90deg)" : undefined }} />
           </button>
         ) : (
           <span className="aui-tree-disclosure" aria-hidden="true" />
         )}
         <span className="aui-tree-icon" aria-hidden="true">{node.icon ?? ""}</span>
         {isRenaming ? (
-          <input
-            ref={renameInputRef}
-            className="aui-tree-rename"
-            aria-label={`Rename ${node.label}`}
-            value={renameDraft}
-            onChange={(event) => setRenameDraft(event.target.value)}
-            onClick={(event) => event.stopPropagation()}
-            onBlur={() => commitRename(node.id)}
-            onKeyDown={(event) => {
-              event.stopPropagation();
-              if (event.key === "Enter") {
-                event.preventDefault();
-                commitRename(node.id);
-              } else if (event.key === "Escape") {
-                event.preventDefault();
-                onCancelRename?.(node.id);
-              }
-            }}
-          />
+          <TreeRename key={node.id} label={node.label}
+            onCommit={(value) => { onRename?.(node.id, value); focusRow(node.id); }}
+            onCancel={() => { onCancelRename?.(node.id); focusRow(node.id); }} />
         ) : (
-          <span className="aui-tree-label">{node.label}</span>
+          <span className="aui-tree-label" title={node.label}>{node.label}</span>
         )}
-        {node.badge ? <span className="aui-tree-badge">{node.badge}</span> : <span />}
+        {node.badge || node.status?.length ? <span className="aui-tree-badge">
+          {node.badge}
+          {node.status?.map((status) => <span className="aui-tree-status" key={status.id} role="img" title={status.label} aria-label={status.label}>{status.icon}</span>)}
+        </span> : <span />}
         {node.actions?.length ? (
           <span className="aui-tree-actions">
             {node.actions.map((action) => (

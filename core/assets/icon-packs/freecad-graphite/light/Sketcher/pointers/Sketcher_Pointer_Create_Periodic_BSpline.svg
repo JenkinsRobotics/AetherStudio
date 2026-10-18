@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="32" width="32" id="svg16" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/pointers/Sketcher_Pointer_Create_Periodic_BSpline.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="symbol" style="fill:none;stroke:#37a8fa;stroke-width:1.1" transform="translate(1.1788527,3.8661511)">
+    <circle cx="17.999966" cy="54.245457" id="circle6" style="stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="25.429577" cy="27.690033" id="circle8" style="stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="47.962303" cy="50.087288" id="circle8-8" style="fill:none;stroke:#37a8fa;stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle cx="56.821148" cy="23.764732" id="circle10" style="stroke-width:1.1" r="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="M 23.297354,48.548164 C 11.939585,38.359889 28.58861,39.65841 32.351293,32.7207 36.540231,24.99705 47.969854,12.196919 49.047349,23.560944 50.08735,34.529529 62.821147,33.092853 45.446559,42.24712 32.966441,48.822604 34.655119,58.736438 23.297354,48.548164 Z" id="path3234-1-8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="crosshair" style="stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter">
+    <path d="m16,3v9m0,8v9m-13-13h9m8,0h9" id="path13" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="background" x1="150" y1="120" x2="874" y2="910" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a1930"/>
+      <stop offset="0.5" stop-color="#161245"/>
+      <stop offset="1" stop-color="#050711"/>
+    </linearGradient>
+    <linearGradient id="beam1" x1="100" y1="900" x2="512" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#42d6ff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#42d6ff" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="beam2" x1="900" y1="900" x2="512" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a58aff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#a58aff" stop-opacity="0.0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <rect x="72" y="72" width="880" height="880" rx="218" fill="url(#background)" filter="url(#shadow)"/>
+  <rect x="91" y="91" width="842" height="842" rx="199" fill="none" stroke="#ffffff" stroke-opacity="0.11" stroke-width="8"/>
+
+  <!-- Projection Grid Background -->
+  <g opacity="0.1" stroke="#8ee7ff" stroke-width="2">
+    <path d="M178 300H846M178 512H846M178 724H846"/>
+    <path d="M300 178V846M512 178V846M724 178V846"/>
+  </g>
+
+  <!-- Volumetric Projection Beams -->
+  <polygon points="120,800 512,180 340,900" fill="url(#beam1)" style="mix-blend-mode: screen;"/>
+  <polygon points="900,800 512,180 680,900" fill="url(#beam2)" style="mix-blend-mode: screen;"/>
+
+  <!-- The "A" Structural Object being projected upon -->
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M250 820 L512 250 L774 820" stroke="#eafaff" stroke-opacity="0.9" stroke-width="48"/>
+    <path d="M360 620 L664 620" stroke="#eafaff" stroke-opacity="0.9" stroke-width="48"/>
+  </g>
+
+  <!-- Mapping Nodes/Corners -->
+  <g fill="#17213a" stroke="#42d6ff" stroke-width="8">
+    <circle cx="250" cy="820" r="20"/>
+    <circle cx="512" cy="250" r="20"/>
+    <circle cx="774" cy="820" r="20"/>
+    <rect x="340" y="600" width="40" height="40" rx="6"/>
+    <rect x="644" y="600" width="40" height="40" rx="6"/>
+  </g>
+</svg>

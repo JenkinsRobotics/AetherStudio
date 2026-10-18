@@ -12,8 +12,13 @@ from pathlib import Path
 
 
 class Problem(Exception):
-    def __init__(self, status: int, message: str):
-        self.status, self.message = status, message
+    """A refusal the client is meant to act on. `detail` carries structured
+    data when the message alone is not enough to act — a merge conflict names
+    both heads and what differs, so the client can offer a resolution."""
+
+    def __init__(self, status: int, message: str, detail: dict | None = None):
+        super().__init__(status, message, detail)
+        self.status, self.message, self.detail = status, message, detail
 
 
 def password_hash(password: str, salt: str | None = None) -> str:
@@ -97,9 +102,6 @@ class Store:
             self.db.execute(
                 "INSERT OR IGNORE INTO settings VALUES (?,?)", (key, json.dumps(value))
             )
-        for app in ("cad", "animation", "ui"):
-            self.db.execute("INSERT OR IGNORE INTO applications VALUES (?,1)", (app,))
-            self.db.execute("INSERT OR IGNORE INTO app_access VALUES (?,0)", (app,))
         self.db.commit()
         (directory / "studio.sqlite3").chmod(0o600)
         self.setup_path = directory / "setup-token"
@@ -107,6 +109,15 @@ class Store:
             self.setup_path.write_text(secrets.token_urlsafe(32))
             self.setup_path.chmod(0o600)
         self.dummy_hash = password_hash(secrets.token_urlsafe(24))
+
+    def seed_applications(self, ids):
+        """Register the installed applications. The host's package registry is
+        the single source of truth for what exists; this only ever adds rows,
+        so an app disabled by an administrator stays disabled."""
+        for app in ids:
+            self.db.execute("INSERT OR IGNORE INTO applications VALUES (?,1)", (app,))
+            self.db.execute("INSERT OR IGNORE INTO app_access VALUES (?,0)", (app,))
+        self.db.commit()
 
     def ready(self):
         return self.db.execute("SELECT 1 FROM users LIMIT 1").fetchone() is not None
@@ -252,6 +263,8 @@ class Store:
 
     def revoke(self, uid):
         self.db.execute("DELETE FROM sessions WHERE user_id=?", (uid,))
+        if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='automation_grants' AND type='table'").fetchone():
+            self.db.execute("UPDATE automation_grants SET revoked=1 WHERE user_id=?", (uid,))
         self.db.commit()
 
     def reset_password(self, uid, password, must_change=True):

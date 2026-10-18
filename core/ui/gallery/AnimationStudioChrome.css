@@ -1,0 +1,59 @@
+/* The concept session's structural rules. Its palette is the theme pack:
+   AnimationStudioDemo scopes `aether-studio` (Standard) or `midnight` (High Contrast) while mounted. */
+.animation-studio { background: var(--aether-color-bg-app); }
+.animation-studio .aui-document-bar { background: var(--aether-color-bg-bar); }
+.animation-studio .aui-document-bar { min-height:54px; }
+[data-animation-design-preset="Compact"] .animation-studio .aui-document-bar { min-height:48px; }
+[data-animation-design-preset="Compact"] .animation-studio .aui-panel { --aether-radius-panel:8px; }
+
+/* The shared canvas stays edge-to-edge; individual framed views consume the
+   measured safe rectangle and reserve their local center-view switcher. */
+.animation-studio .aui-shell .animation-assets-panel,
+.animation-studio .aui-shell .animation-workspace-card,
+.animation-studio .aui-shell .animation-animate-center,
+.animation-studio .aui-shell .animation-show-center {
+  inset:var(--aui-workspace-inset-top,112px) var(--aui-workspace-inset-right,80px) max(66px, var(--aui-workspace-inset-bottom,10px)) var(--aui-workspace-inset-left,80px);
+  transition:inset var(--aui-shell-motion-duration) var(--aui-shell-motion-easing);
+}
+.animation-studio[data-framed-content=true] .animation-modeling-workspace {
+  padding:var(--aui-workspace-inset-top,112px) var(--aui-workspace-inset-right,80px) max(66px, var(--aui-workspace-inset-bottom,10px)) var(--aui-workspace-inset-left,80px);
+  transition:padding var(--aui-shell-motion-duration) var(--aui-shell-motion-easing);
+}
+.animation-studio .animation-character-workspace {
+  padding:var(--aui-workspace-inset-top,112px) var(--aui-workspace-inset-right,80px) 24px var(--aui-workspace-inset-left,80px);
+  transition:padding var(--aui-shell-motion-duration) var(--aui-shell-motion-easing);
+}
+.animation-studio .aui-shell-fledge { z-index:6; }
+.animation-studio .aui-shell-fltoolbar { z-index:7; }
+@media(prefers-reduced-motion:reduce) {
+  .animation-studio .aui-shell :is(.animation-assets-panel,.animation-workspace-card,.animation-animate-center,.animation-show-center,.animation-modeling-workspace,.animation-character-workspace) { transition:none; }
+}
+/* Nodes is also a framed workspace, even without Show's view switcher. */
+.animation-studio .aui-shell-center > .animation-node-editor {
+  position:absolute;
+  inset:var(--aui-workspace-inset-top,112px) var(--aui-workspace-inset-right,80px) 22px var(--aui-workspace-inset-left,80px);
+  width:auto; height:auto;
+  overflow:hidden;
+  border:1px solid var(--aether-color-border);
+  border-radius:10px;
+  background:var(--aether-color-bg-panel);
+  transition:inset var(--aui-shell-motion-duration) var(--aui-shell-motion-easing);
+}
+@media(prefers-reduced-motion:reduce) { .animation-studio .aui-shell-center > .animation-node-editor { transition:none; } }
+.animation-studio .aui-shell-center { background:var(--aether-color-bg-app); }
+
+/* Camera HUD follows the same native side clearance as other floating controls. */
+.animation-studio .animation-model-preview > .aui-viewport-cube { top:max(12px, var(--aui-workspace-inset-top,10px)); right:max(12px, var(--aui-workspace-inset-right,10px)); }
+
+.animation-studio[data-framed-content="false"] .animation-modeling-workspace { padding: 0; }
+.animation-studio .animation-assets-stage[data-assets-view="three-d"] .animation-assets-panel {
+  inset: 0; border: 0; border-radius: 0; box-shadow: none;
+}
+.animation-studio .animation-assets-stage[data-assets-view="three-d"] .animation-collection-header {
+  position: absolute; z-index: 2;
+  top: var(--aui-workspace-inset-top);
+  left: var(--aui-workspace-inset-left);
+  right: var(--aui-workspace-inset-right);
+}
+
+.animation-studio .animation-model-preview > .animation-viewport-caption { top:var(--aui-workspace-inset-top); left:var(--aui-workspace-inset-left); }

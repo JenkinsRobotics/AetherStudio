@@ -1,0 +1,60 @@
+/* Anchor to the full canvas width, independently of floating sidebars.
+   The empty part of this overlay never intercepts canvas input. */
+.aui-workspace-bottom-dock {
+  position: absolute;
+  inset: var(--aui-workspace-inset-top, 10px) var(--aui-bottom-dock-margin, 10px)
+    var(--aui-workspace-inset-bottom, 10px) var(--aui-bottom-dock-margin, 10px);
+  container-type: inline-size;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+.aui-workspace-bottom-dock > .aui-tabbed-sidebar { pointer-events: auto; }
+.aui-workspace-bottom-dock > .aui-tabbed-sidebar[data-open="true"] {
+  max-height: min(100%, calc(var(--aui-bottom-dock-content-height) + var(--aui-tabbed-tray-height) + 6px));
+}
+.aui-workspace-bottom-dock .aui-tabbed-sidebar-tabs { justify-content: center; border-top: 1px solid var(--aether-color-border); }
+.aui-workspace-bottom-dock .aui-tabbed-sidebar[data-open="false"] .aui-tabbed-sidebar-tabs { border-top-color: transparent; }
+.aui-workspace-bottom-dock-editor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  min-width: calc(var(--aui-sidebar-expanded-width) - 2px);
+}
+.aui-workspace-bottom-dock-body { flex: 1; min-height: 0; overflow: auto; }
+.aui-workspace-bottom-dock-resize { flex: 0 0 6px; touch-action: none; cursor: ns-resize; position: relative; }
+.aui-workspace-bottom-dock-resize::after { content: ""; position: absolute; width: 32px; height: 2px; top: 2px; left: calc(50% - 16px); border-radius: 2px; background: var(--aether-color-border); }
+.aui-workspace-bottom-dock-resize:hover::after,
+.aui-workspace-bottom-dock-resize:focus-visible::after { background: var(--aether-color-accent); }
+.aui-workspace-bottom-dock-resize:focus-visible { outline: 1px solid var(--aether-color-accent); outline-offset: -1px; }
+
+/* Canvas HUDs remain usable above this bottom overlay in narrow center frames. */
+.aui-shell .aui-shell-center [data-workspace-overlay~="bottom"] {
+  bottom: max(16px, var(--aui-workspace-inset-bottom, 10px), var(--aui-bottom-dock-clearance, 0px));
+}
+
+/* Like side rails, a docked bottom card attaches to its frame and fills its
+   edge even while collapsed. Its measured height reduces the center canvas. */
+.aui-workspace-bottom-dock[data-layout="docked"] {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+  width: 100%;
+}
+.aui-workspace-bottom-dock[data-layout="docked"] > .aui-tabbed-sidebar {
+  width: 100%;
+  max-width: 100%;
+  height: calc(var(--aui-bottom-dock-content-height) + var(--aui-tabbed-tray-height) + 6px);
+  border: 0;
+  border-top: 1px solid var(--aether-color-border);
+  border-radius: 0;
+  box-shadow: none;
+}
+.aui-workspace-bottom-dock[data-layout="docked"] > .aui-tabbed-sidebar[data-open="true"] {
+  max-height: calc(var(--aui-bottom-dock-content-height) + var(--aui-tabbed-tray-height) + 6px);
+}

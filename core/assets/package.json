@@ -1,0 +1,40 @@
+{
+  "name": "@aether/assets",
+  "version": "0.2.0-alpha.27",
+  "private": true,
+  "files": [
+    "branding",
+    "cad",
+    "electronics",
+    "fonts",
+    "icon-packs",
+    "icons",
+    "illustrations",
+    "licenses",
+    "themes",
+    "catalogs",
+    "README.md",
+    "models"
+  ],
+  "exports": {
+    "./*": "./*",
+    "./package.json": "./package.json",
+    "./electronics/symbols": "./electronics/symbols.ts",
+    "./catalogs/db54f664a13d0d": "./catalogs/db54f664a13d0d.ts",
+    "./catalogs/fbb09378fa973b": "./catalogs/fbb09378fa973b.ts",
+    "./catalogs/c0b2566acef0ce": "./catalogs/c0b2566acef0ce.ts",
+    "./catalogs/4bfcb1fee69082": "./catalogs/4bfcb1fee69082.ts",
+    "./catalogs/28b1cf0e1f9aba": "./catalogs/28b1cf0e1f9aba.ts",
+    "./catalogs/fc43ab973bc0db": "./catalogs/fc43ab973bc0db.ts",
+    "./icon-packs/graphite-ribbon/artwork": "./icon-packs/graphite-ribbon/artwork.ts",
+    "./icon-packs/freecad-graphite/tool-map": "./icon-packs/freecad-graphite/tool-map.ts",
+    "./icon-packs/freecad-graphite/catalog": "./icon-packs/freecad-graphite/catalog.ts",
+    "./branding/apps/sources": "./branding/apps/sources.ts",
+    "./branding/marks/sources": "./branding/marks/sources.ts",
+    "./branding/wordmarks/data": "./branding/wordmarks/data.ts",
+    "./branding/wordmarks/downloads": "./branding/wordmarks/downloads.ts",
+    "./themes/rendering/model-studio": "./themes/rendering/model-studio.ts",
+    "./models/scifirobot/geometry": "./models/scifirobot/geometry.ts",
+    "./models/scifirobot/parametric/manifest": "./models/scifirobot/parametric/manifest.ts"
+  }
+}

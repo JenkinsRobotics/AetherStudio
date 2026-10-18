@@ -1,0 +1,6 @@
+/* File details use the same property sheet as application inspectors. */
+.library-details.studio-file-inspector,
+.drive-details.studio-file-inspector { padding: 0; gap: 0; }
+.library-details.studio-file-inspector h2, .library-details.studio-file-inspector h3, .drive-details.studio-file-inspector h2 { font-size: var(--aether-font-size-body); margin: 8px 0; padding: 0; border: 0; overflow-wrap: anywhere; }
+.studio-file-inspector p { color: var(--aether-color-text-dim); margin-block: 8px; }
+.drive-details.studio-file-inspector button { margin: 0; }

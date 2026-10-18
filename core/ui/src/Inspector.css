@@ -1,0 +1,131 @@
+.aui-inspector {
+  --aui-inspector-label-width: 36%;
+  padding: 12px 14px 16px;
+  container-type: inline-size;
+  container-name: inspector;
+  min-width: 0;
+  color: var(--aether-color-text);
+  font-family: var(--aether-font-family);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.aui-inspector .aui-field-row,
+.aui-field-row.aui-field-row--inline {
+  grid-template-columns: minmax(0, var(--aui-inspector-label-width, 36%)) minmax(0, 1fr);
+  align-items: center;
+  gap: 4px 10px;
+  padding-block: 4px;
+}
+.aui-inspector .aui-field-row--stacked { grid-template-columns: minmax(0, 1fr); }
+.aui-inspector .aui-field-row-heading label { font-size: 12px; font-weight: 400; color: var(--aether-color-text-dim); line-height: 1.35; }
+.aui-inspector .aui-field-row-heading { gap: 4px; }
+.aui-inspector .aui-field-row-editor { display: flex; align-items: center; gap: 6px; }
+.aui-inspector .aui-field-row-editor > * { min-width: 0; flex: 1; }
+.aui-inspector .aui-field-row-help,
+.aui-inspector .aui-field-row-error,
+.aui-field-row--inline > .aui-field-row-help,
+.aui-field-row--inline > .aui-field-row-error { grid-column: 1 / -1; }
+.aui-inspector :is(.aui-text-field, .aui-number-field, .aui-select-field, .aui-color-field-text),
+.aui-inspector .aui-field-row-editor .aui-menu-trigger {
+  min-height: 30px;
+  font-size: 12px;
+  border-radius: 6px;
+  border-color: transparent;
+  background: color-mix(in srgb, var(--aether-color-text) 6%, var(--aether-color-bg-panel));
+  box-shadow: none;
+}
+.aui-inspector :is(.aui-text-field, .aui-number-field, .aui-select-field):focus-visible {
+  border-color: var(--aether-color-border-focus);
+  outline: 2px solid var(--aether-color-border-focus);
+  outline-offset: -2px;
+}
+.aui-inspector .aui-button { min-height: 30px; padding: 4px 8px; font-size: 12px; }
+.aui-inspector .aui-button,
+.aui-inspector .aui-button:hover:not(:disabled) { border-color: transparent; box-shadow: none; }
+.aui-inspector .aui-button:not(.aui-button--primary):not(.aui-button--active) {
+  background: color-mix(in srgb, var(--aether-color-text) 6%, var(--aether-color-bg-panel));
+}
+.aui-inspector .aui-button:not(.aui-button--primary):not(.aui-button--active):hover:not(:disabled) {
+  background: color-mix(in srgb, var(--aether-color-text) 11%, var(--aether-color-bg-panel));
+}
+.aui-inspector .aui-icon-button { width: 28px; height: 28px; min-width: 28px; min-height: 30px; }
+.aui-field-row-heading .aui-inspector-info,
+.aui-inspector-parameter-heading .aui-inspector-info {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--aether-color-border);
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 0;
+  background: transparent;
+  color: var(--aether-color-text-faint);
+  cursor: pointer;
+}
+.aui-inspector-parameter-heading { flex: 0 0 var(--aui-inspector-label-width); display: flex; align-items: center; gap: 4px; min-width: 0; }
+.aui-inspector .aui-inspector-parameter-heading .aui-parameter-label { flex: 1; }
+.aui-inspector-info:focus-visible { outline: 2px solid var(--aether-color-border-focus); outline-offset: -2px; }
+.aui-inspector .aui-color-field { grid-template-columns: 24px minmax(0, 1fr); gap: 6px; }
+.aui-inspector .aui-color-field-picker { width: 24px; height: 24px; min-height: 24px; }
+.aui-inspector .aui-color-field-text { min-width: 0; min-height: 30px; font-size: 12px; border-color: transparent; }
+/* Tabs are individual choices, never buttons inset into a second filled shell. */
+.aui-inspector .aui-tabs { padding: 0; margin-block: 14px; gap: var(--aether-selection-cell-gap); border: 0; border-radius: 0; background: transparent; box-shadow: none;  overflow: hidden; }
+.aui-inspector .aui-tab { flex: 1; justify-content: center; min-width: 0; min-height: 32px; padding: 6px 4px; gap: 5px; border: 0; border-radius: var(--aether-selection-cell-radius); font-size: 12px; font-weight: 500; box-shadow: none; }
+.aui-inspector .aui-tab:hover:not(:disabled):not(.aui-tab--active) { background: var(--aether-color-bg-hover); }
+.aui-inspector .aui-tab--active,
+.aui-inspector .aui-tab--active:hover { background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); box-shadow: none; }
+.aui-inspector .aui-checkbox { min-height: 30px; padding-block: 4px; }
+.aui-inspector .aui-checkbox-label { font-weight: 400; font-size: 12px; }
+.aui-inspector .aui-segmented-control { max-width: 100%;  padding: var(--aether-selection-cell-inset); }
+.aui-inspector .aui-segmented-control button { min-width: 0; font-size: 12px;  border-radius: var(--aether-selection-cell-radius); }
+.aui-inspector .aui-parameter {
+  padding: 6px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.aui-inspector .aui-parameter-label { flex: 0 0 var(--aui-inspector-label-width); font-size: 12px; font-weight: 400; color: var(--aether-color-text-dim); }
+.aui-inspector .aui-parameter-entry { flex-basis: 60px; }
+.aui-inspector .aui-parameter-row { gap: 8px; }
+.aui-inspector .aui-parameter[data-modulated] .aui-parameter-label { color: var(--aether-color-accent-icon); }
+.aui-inspector .aui-parameter-assignment { margin-top: 2px; padding: 2px 7px; }
+.aui-inspector-section { border-top: 1px solid var(--aether-color-border-subtle); margin-top: 12px; padding-top: 8px; min-width: 0; }
+.aui-inspector-section:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.aui-inspector-section-heading { display: flex; align-items: center; gap: 8px; justify-content: space-between; min-height: 30px; font-weight: var(--aether-font-weight-strong); }
+.aui-inspector-section-heading h3 { margin: 0; font: inherit; }
+details.aui-inspector-section > summary { display: list-item; cursor: pointer; list-style-position: inside; }
+.aui-inspector-section-body { min-width: 0; padding-top: 4px; }
+.aui-inspector-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding-block: 5px; }
+.aui-inspector summary:focus-visible { outline: 2px solid var(--aether-color-border-focus); outline-offset: -2px; border-radius: var(--aether-radius-row); }
+
+.aui-inspector .aui-parameter-icon { display: none; }
+.aui-inspector .aui-parameter-row .aui-parameter-value { font-size: 12px; background: color-mix(in srgb, var(--aether-color-text) 6%, var(--aether-color-bg-panel)); border-radius: var(--aether-radius-row); min-height: 26px; }
+.aui-inspector .aui-field-row-editor .aui-number-field { padding-left: 5px; }
+.aui-inspector .aui-number-field-wrap:not(:has(.aui-number-field-unit)) .aui-number-field { padding-right: 5px; }
+.aui-inspector .aui-field-row-editor > .aui-button { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aui-inspector [aria-invalid="true"] { border-color: var(--aether-color-error); }
+
+/* PropertyGrid is another composition of the same property sheet, including CAD readouts. */
+.aui-inspector .aui-property-grid { padding: 0; gap: 0; }
+.aui-inspector .aui-property-section { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--aether-color-border-subtle); }
+.aui-inspector .aui-property-section:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.aui-inspector .aui-property-section-heading { min-height: 30px; padding: 0; background: transparent; font-size: 12px; }
+.aui-inspector .aui-property-section-body { padding: 4px 0 0; gap: 0; }
+.aui-inspector .aui-property-editor { min-width: 0; width: 100%; }
+.aui-inspector .aui-property-editor output { overflow-wrap: anywhere; }
+.aui-inspector .aui-field-row-editor > output { overflow-wrap: anywhere; }
+
+/* Reference language: Appearance / StyleProperties / transform inspectors.
+   Products compose these controls; they do not introduce another property skin. */
+.aui-inspector .aui-segmented-control { min-height: 30px; padding: var(--aether-selection-cell-inset); border-radius: 6px; background: color-mix(in srgb, var(--aether-color-text) 6%, var(--aether-color-bg-panel)); }
+.aui-inspector .aui-segmented-control button { padding: 4px 8px; border-radius: var(--aether-selection-cell-radius); }
+.aui-inspector .aui-segmented-control button[aria-checked="true"] { background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); box-shadow: none; }
+.aui-inspector-section-heading { font-size: 12px; letter-spacing: 0; text-transform: none; }
+.aui-inspector-section-body > p { margin: 6px 0 10px; color: var(--aether-color-text-dim); font-size: 11px; line-height: 1.5; }
+.aui-inspector .aui-field-row-heading label { overflow-wrap: anywhere; }
+.aui-inspector .aui-field-row-editor .aui-segmented-control { width: 100%; }
+/* Narrow trays retain usable controls instead of squeezing labels and segments. */
+@container inspector (max-width: 220px) {
+  .aui-inspector .aui-field-row { grid-template-columns: minmax(0, 1fr); }
+}

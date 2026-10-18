@@ -1,0 +1,21 @@
+.pdm-revision-demo { container-type: inline-size; min-width: 0; width: 100%; max-width: 1060px; margin: 0 auto; display: grid; gap: 20px; }
+.pdm-revision-demo-intro { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.pdm-revision-demo-intro strong { font-size: 17px; font-weight: 600; letter-spacing: -.3px; }
+.pdm-revision-demo-intro p, .pdm-revision-demo-footnote { color: var(--aether-color-text-dim); font-size: 12px; line-height: 1.6; margin: 6px 0 0; }
+.pdm-revision-demo-surface { min-width: 0; padding: clamp(18px, 4vw, 48px);     border:0; border-radius:0; box-shadow:none; background:transparent; }
+.pdm-revision-demo-surface .aui-revision-tree { --revision-accent: light-dark(#d90022, #ff7185); --revision-action-bg: #d90022; }
+.pdm-revision-demo-workbench { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.pdm-revision-demo-editor, .pdm-revision-demo-inspector { display: flex; flex-direction: column; gap: 9px; min-width: 0; font-size: 12px; }
+.pdm-revision-demo-editor > span:first-child, .pdm-revision-demo-inspector > span { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.pdm-revision-demo code { font: 11px var(--aether-font-mono); color: var(--aether-color-text-dim); }
+.pdm-revision-demo-editor small { margin-left: auto; color: var(--aether-color-text-dim); font-weight: 400; }
+.pdm-revision-demo-editor textarea { box-sizing: border-box; resize: vertical; width: 100%; min-height: 85px; padding: 12px; font: 12px/1.6 var(--aether-font-family); color: var(--aether-color-text); background: var(--aether-color-bg-inset); border: 1px solid var(--aether-color-border); border-radius: 8px; }
+.pdm-revision-demo-inspector p { margin: 0; min-height: 60px; padding: 12px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.pdm-revision-demo-hint, .pdm-revision-demo-inspector small { color: var(--aether-color-text-dim); font-size: 11px; line-height: 1.5; }
+.pdm-revision-demo-status { font-size: 12px; min-height: 18px; }
+.pdm-revision-demo-footnote { margin-top: -16px; }
+.pdm-revision-demo-form { display: grid; gap: 12px; max-width: 440px; }
+.pdm-revision-demo-form label { display: grid; gap: 6px; }
+.pdm-revision-demo-form p { margin: 0; line-height: 1.6; }
+.pdm-revision-demo-form blockquote { border-left: 2px solid var(--aether-color-border); margin: 0; padding-left: 12px; }
+@container (max-width: 600px) { .pdm-revision-demo-workbench { grid-template-columns: 1fr; } .pdm-revision-demo-surface { padding: 20px;  border:0; border-radius:0; box-shadow:none; background:transparent; } }

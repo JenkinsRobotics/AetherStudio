@@ -1,0 +1,7 @@
+.aui-relation-editor { display:grid; gap:16px; padding:14px; min-width:0; color:var(--aether-color-text); font-size:12px; }
+.aui-relation-editor fieldset { display:grid; gap:10px; padding:0; margin:0; border:0; min-width:0; }
+.aui-relation-editor legend { margin-bottom:10px; font-size:9.5px; letter-spacing:.06em; color:var(--aether-color-text-dim); }
+.aui-relation-editor label { display:grid; gap:6px; }
+.aui-relation-editor p { margin:0; font-size:11px; color:var(--aether-color-text-dim); line-height:1.5; }
+.aui-relation-editor [role=alert] { color:var(--aether-color-error); }
+.aui-relation-editor footer { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:6px; }

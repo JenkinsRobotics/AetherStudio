@@ -1,0 +1,20 @@
+/* Composition only: controls and spacing come from the suite Inspector. */
+.aui-style-properties { width: 100%; min-width: 0; }
+.aui-style-heading, .aui-style-section > header { display: flex; align-items: center; gap: 6px; min-height: 28px; }
+.aui-style-heading { justify-content: space-between; }
+.aui-style-section { border-top: 1px solid var(--aether-color-border-subtle); padding-top: 8px; margin-top: 12px; }
+.aui-style-section-toggle { display: flex; align-items: center; gap: 6px; flex: 1; text-align: left; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; font-weight: var(--aether-font-weight-strong); cursor: pointer; }
+.aui-style-section-toggle svg { width: 12px; height: 12px; }
+.aui-style-section fieldset { min-width: 0; margin: 0; padding: 4px 0 0; border: 0; }
+.aui-style-section fieldset:disabled { opacity: .42; }
+.aui-style-section small { color: var(--aether-color-text-dim); }
+.aui-style-pair { min-width: 0; }
+.aui-style-corners { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-block: 4px; }
+.aui-style-corners > label { display: flex; gap: 8px; align-items: center; min-width: 0; }
+.aui-style-corner-glyph { display: block; width: 10px; height: 10px; flex: none; border-top: 1.5px solid var(--aether-color-accent); border-left: 1.5px solid var(--aether-color-accent); }
+.aui-style-corner-glyph.corner-1 { transform: rotate(90deg); }
+.aui-style-corner-glyph.corner-2 { transform: rotate(180deg); }
+.aui-style-corner-glyph.corner-3 { transform: rotate(270deg); }
+.aui-style-properties > footer { display: flex; gap: 6px; padding-top: 12px; color: var(--aether-color-text-dim); }
+.aui-style-properties > footer svg { width: 12px; height: 12px; }
+.aui-style-properties :is(button,input,select):focus-visible { outline: 2px solid var(--aether-color-border-focus); outline-offset: -2px; }

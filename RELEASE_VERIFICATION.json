@@ -1,0 +1,101 @@
+{
+  "release": "v0.1.0-alpha.1",
+  "environment": "macOS arm64; Node 24; Python 3.11/3.12; Rust 1.97.1; installed native FreeCAD",
+  "frontends": {
+    "clean_install_and_build": 8,
+    "frozen_browser_pages_without_javascript_errors": 8,
+    "editor_layouts_checked": [
+      "cad",
+      "map",
+      "sketch",
+      "io"
+    ],
+    "layout_widths": [
+      1440,
+      900
+    ],
+    "sketch_browser_workflows": [
+      "vector drawing, gradients, clipping, SVG export",
+      "account-isolated draft recovery"
+    ]
+  },
+  "checks": {
+    "aether_ui": {
+      "full_run_passed": 854,
+      "timing_failure_resolved_by_unchanged_six_test_rerun": 1,
+      "final_layout_tests_passed": 31,
+      "types_and_build": "passed"
+    },
+    "cad_frontend": {
+      "full_run_passed": 1939,
+      "initial_failures": 2,
+      "final_affected_rerun_passed": 29,
+      "skipped": 35,
+      "resolution": "Updated the file-manager placement assertion; the panel case passes in isolation after a timing failure."
+    },
+    "cad_core": {
+      "passed": 814
+    },
+    "cad_native": {
+      "passed": 913,
+      "skipped": 0,
+      "required_native_engine": true
+    },
+    "map": {
+      "passed": 1112,
+      "final_layout_passed": 36
+    },
+    "animation_engine": {
+      "passed": 1252,
+      "skipped": 3
+    },
+    "sketch": {
+      "passed": 16,
+      "browser_workflows": 2
+    },
+    "io": {
+      "passed": 3
+    },
+    "drive": {
+      "passed": 17
+    },
+    "studio": {
+      "passed": 16
+    },
+    "shared_sketch": {
+      "passed": 24
+    },
+    "session_source": {
+      "passed": 86
+    },
+    "rust": {
+      "passed": 145,
+      "failed": 0,
+      "ignored": 432,
+      "note": "Disposable PostgreSQL, live browser, installation and matched-server acceptance tests retain their explicit ignored gates. They were not counted as passing."
+    }
+  },
+  "package_integrity": {
+    "ui": "0.2.0-alpha.145",
+    "assets": "0.2.0-alpha.27",
+    "session_runtime_members_unchanged": true,
+    "versioned_archives": "vendor-manifest.json",
+    "fetch_checksum_refusal": "verified"
+  },
+  "limits": [
+    "Developer preview, not a signed desktop installer.",
+    "No running installation or stored user data was switched.",
+    "Connected and physical hardware acceptance is separate; ignored gates are listed honestly.",
+    "See ALPHA_0_1.md for product-specific unfinished capabilities."
+  ],
+  "repository": "AetherStudio",
+  "web_artifact": {
+    "repo": "AetherStudio",
+    "archive": "aetherstudio-web-0.1.0-alpha.1.zip",
+    "sha256": "28071928bb1812ff917f4ce7c15de23dbec20174c4642917b4d73ebfd72e3053",
+    "bytes": 101333058,
+    "web_files": 10525,
+    "different_from_live": []
+  },
+  "source_manifest_sha256": "a08ce733a0461fd6ffb10c07d42e8ad0da66117430b38999c7e71975e0ace3cb"
+}

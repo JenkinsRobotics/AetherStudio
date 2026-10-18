@@ -1,0 +1,30 @@
+.sidebar-specimen { display: grid; align-content: start; gap: 10px; width: 360px; max-width: 100%; min-width: 0; }
+.sidebar-specimen-option { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--aether-color-text-dim); }
+.sidebar-specimen-option .aui-select { width: 100px; }
+.sidebar-specimen-content { min-width: 0; }
+.sidebar-specimen-content[hidden] { display: none; }
+.sidebar-specimen-content .aui-style-properties { width: 100%; border: 0; }
+.sidebar-specimen[data-variant="slim"] { width: 216px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-specimen-stage { display: flex; flex-direction: column; height: 680px; min-width: 0; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties { padding: 10px; gap: 14px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties-mode { min-height: 28px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties-mode > button { min-height: 24px; padding: 3px 4px; font-size: 11px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties-axis { grid-template-columns: 10px minmax(0, 1fr) 22px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties-axis .aui-number-field { height: 24px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties-axis .aui-icon-button { width: 22px; min-width: 22px; height: 24px; min-height: 24px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties > .aui-button,
+.sidebar-specimen[data-variant="slim"] .sidebar-properties > [role="group"] > .aui-button { min-height: 26px; padding: 3px 6px; font-size: 11px; }
+.sidebar-specimen[data-variant="slim"] .sidebar-properties > small { font-size: 10px; }
+.workspace-demo-directory { width: 100%; min-width: 0; }
+.workspace-demo-directory > p { margin: 0 0 18px; color: var(--aether-color-text-dim); font-size: 13px; }
+.workspace-demo-window { height: 100dvh; display: flex; flex-direction: column; color: var(--aether-color-text); font: 12px var(--aether-font-family); }
+.workspace-demo-window-content { flex: 1; min-height: 0; min-width: 0; overflow: auto; position: relative; }
+.workspace-demo-window-content > .properties-lab { max-width: none; height: 100%; border: 0; border-radius: 0; }
+.workspace-demo-window-content > .ribbon-demo--fullscreen { height: 100%; }
+.workspace-demo-window-content > .aui-coming-home { min-height: 100%; height: 100%; }
+/* Center-column toolbars use the available center width; no mock workspace. */
+.bottom-dock-specimen { width: 100%; max-width: 100%; min-width: 0; position: relative; }
+.bottom-dock-specimen > .aui-workspace-bottom-dock { inset: 0; }
+
+.panel-specimen-content { margin: 0; padding: 12px; font-size: 12px; color: var(--aether-color-text-dim); }
+.bottom-panel-specimen { min-height: 0; min-width: 0; }

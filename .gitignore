@@ -1,110 +1,26 @@
-# macOS
-.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# Virtual environments
-.venv/
-venv/
-env/
-ENV/
-
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-*.egg
-.eggs/
-pip-wheel-metadata/
-
-# Node / web builds
 node_modules/
-.vite/
+dist/
+.venv/
+__pycache__/
+*.pyc
 *.tsbuildinfo
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Pytest / coverage
+test-results/
+playwright-report/
+.env*
+.DS_Store
+dist-lib/
 .pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-.tox/
-.nox/
+.ruff_cache/
+*.egg-info/
 
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
+# Local verification, generated packages and preserved reference checkouts
+.verification/
+dist-library/
+build/
+*.egg-info/
+ REFERENCE CAD/
 
-# Swift Package Manager / Xcode
-.build/
-.swiftpm/
-DerivedData/
-*.xcuserstate
-xcuserdata/
+.dev-data/
 
-# Local development app assembled by app/Scripts/build-root-app.sh
-/Anima Studio.app/
-# Local web-app bundle assembled by Aether CAD/Scripts/build-macos-app.sh
-/Aether CAD.app/
-
-# Notebooks
-.ipynb_checkpoints/
-
-# Models and weights (never commit — too large)
-*.gguf
-*.bin
-*.pt
-*.pth
-*.onnx
-*.safetensors
-
-# Local secrets
-.env
-.env.*
-!.env.example
-
-# Operator/instance state, if this repo ever runs standalone
-.jaeger_os/
-
-# pyproject.toml is tracked in this repo (real product, not a template
-# instance) — the template's ignore rule is intentionally dropped.
-Test Lab.app/
-
-# AI-generated UI reference images (46MB, design scratch, not wired into build)
-reference_ui/
-
-# Test coverage artifacts
-default.profraw
-
-# Local web-app bundle assembled by aether-animation/Launcher/build-launcher.sh
-/Aether Animation.app/
-
-# Local gallery bundle assembled by core/ui/Launcher/build-launcher.sh
-/Aether UI.app/
-
-# Frozen native application retained during web parity work
-/aether-animation/archive/*.app/
-
-# Independent host browser shortcut
-/Aether Studio.app/
-
-# Vendored third-party CAD reference material (54MB) — never commit
-/Aether CAD/ REFERENCE CAD/
-
-# Reference clones with their own .git (would land as broken gitlinks)
-/examples/Open-LLM-VTuber/
-/examples/Open-LLM-VTuber-Unity/
-/examples/Open-LLM-VTuber-Web/
+# Rust framework build artifacts
+/target/

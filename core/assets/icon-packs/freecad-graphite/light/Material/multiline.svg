@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16.933333 16.933333" version="1.1" id="svg5" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Material/Gui/Resources/icons/multiline.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="g299">
+    <rect style="fill:none;stroke:#405269;stroke-width:1.1;stroke-dasharray:none;stroke-opacity:1" id="rect434" width="14.684375" height="14.122135" x="1.1244792" y="1.3559896" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-dasharray:none;stroke-opacity:1" d="M 1.9182291,7.3752603 H 14.344339 v 0" id="path2181" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-dasharray:none;stroke-opacity:1" d="m 1.8800515,4.7867171 h 7.9413322 v 0" id="path2181-5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-dasharray:none;stroke-opacity:1" d="m 1.9099611,12.567709 h 9.4252659 v 0" id="path2181-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-dasharray:none;stroke-opacity:1" d="M 1.8935214,10.021094 H 11.82992 v 0" id="path2181-46" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

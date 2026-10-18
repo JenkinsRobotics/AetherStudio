@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "/var/folders/sw/9gk79bcn0r30dr3vk76whpxc0000gn/T/aether-session-declarations-XpqoBv",
+    "rootDir": ".",
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "library"
+  ],
+  "exclude": [
+    "library/**/*.test.*"
+  ]
+}

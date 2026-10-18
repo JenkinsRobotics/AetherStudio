@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2160" height="32" width="32" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/TechDraw_TreeSection.svg. Authors: [WandererFan], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2162">
+    <linearGradient id="linearGradient3020">
+      <stop style="stop-color:#a4b5c8;stop-opacity:1" offset="0" id="stop3022" />
+      <stop style="stop-color:#e0e7ef;stop-opacity:1" offset="1" id="stop3024" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="19.585159" x2="22.600058" y1="22.427111" x1="24.011684" id="linearGradient3841" xlink:href="#linearGradient3827" gradientTransform="matrix(1.125,0,0,1.125,-2.6044404,-2.3593338)" />
+    <linearGradient id="linearGradient3827">
+      <stop id="stop3829" offset="0" style="stop-color:#e0e7ef;stop-opacity:1" />
+      <stop id="stop3831" offset="1" style="stop-color:#f3f7fc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientTransform="matrix(1.125,0,0,-1.125,-4,-1.125)" gradientUnits="userSpaceOnUse" y2="13" x2="26" y1="-15" x1="32" id="linearGradient3833" xlink:href="#linearGradient3020" />
+  </defs>
+  <g transform="matrix(0.88888889,0,0,0.88888889,3.5555556,32)" id="layer1" style="stroke-width:1.1">
+    <path y="-27" x="5" height="54" width="54" id="rect4138-1" style="display:inline;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:8.775;stroke-opacity:1" d="M 5,-22.5 V -27 h 4.5 m 9,0 h 9 m 9,0 h 9 m 9,0 H 59 l 0,4.5 m 0,9 v 9 m 0,9 v 9 m 0,9 V 27 h -4.5 m -9,0 h -9 m -9,0 h -9 m -9,0 H 5 v -4.5 m 0,-9 v -9 m 0,-9 v -9 m 0,-9 V -27" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path y="-27" x="5" height="54" width="54" id="path1" style="display:inline;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:8.775;stroke-opacity:1" d="M 5,-22.5 V -27 h 4.5 m 9,0 h 9 m 9,0 h 9 m 9,0 H 59 l 0,4.5 m 0,9 v 9 m 0,9 v 9 m 0,9 V 27 h -4.5 m -9,0 h -9 m -9,0 h -9 m -9,0 H 5 v -4.5 m 0,-9 v -9 m 0,-9 v -9 m 0,-9 V -27" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path7047-7" d="M 13,17 V -17 H 51 V 8.000001 H 27 C 27,8.000001 27,17 19,17 c -4,0 -6,0 -6,0 z" style="fill:url(#linearGradient3833);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path7047-4" d="M 15,15 V -15 H 49 V 5.9999998 H 25 C 25,5.9999998 25,15 20,15 c -4,0 -5,0 -5,0 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <ellipse ry="2.4867074" rx="2.4703476" cy="21.006134" cx="22.952965" transform="matrix(2.8336091,0,0,2.8149673,-27.039729,-53.131581)" id="path7049-4" style="fill:url(#linearGradient3841);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <ellipse ry="2.4867074" rx="2.4703476" cy="21.006134" cx="22.952965" transform="matrix(2.0240063,0,0,2.0106911,-8.4569449,-36.236847)" id="path7049-0" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

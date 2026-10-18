@@ -1,0 +1,28 @@
+.aui-dialog:has(.app-plugin-library) { width: min(1040px, 94vw); max-width: 94vw; }
+.app-plugin-library { min-height: min(620px, 70vh); }
+.app-plugin-library__scope { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--aether-color-border); }
+.app-plugin-library__scope p { margin: 5px 0 0; color: var(--aether-color-text-dim); font-size: 12px; }
+.app-plugin-library .page-heading { display: none; }
+.app-plugin-library .studio-plugin { padding: 18px; border-radius: 12px; gap: 14px; }
+.app-plugin-library .studio-plugin h2 { font-size: 15px; }
+.app-plugin-library .studio-plugins__filters { margin: 18px 0; }
+.plugins-grid-icon { display: inline-flex; position: relative; width: 18px; height: 18px; }
+.plugins-grid-icon > svg:first-child { width: 18px; height: 18px; clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%, 100% 100%, 0 100%); }
+.plugins-grid-icon > svg:last-child { position: absolute; width: 10px; height: 10px; right: -1px; top: -1px; }
+body:has(> #root .plugin-embedded-page) { margin: 0; padding: 0; background: var(--aether-color-bg-panel); }
+.plugin-embedded-page { padding: 18px; }
+.app-plugin-library { font-family: var(--aether-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif); color: var(--aether-color-text); font-size: 13px; }
+.app-plugin-library .studio-plugins__filters { display: grid; grid-template-columns: auto minmax(180px, 320px); align-items: center; }
+.app-plugin-library .studio-plugins__filters > div { display: flex; gap: 6px; }
+.app-plugin-library .hint { color: var(--aether-color-text-dim); font-size: 12px; line-height: 1.5; }
+@media (max-width: 600px) { .app-plugin-library .studio-plugins__filters { grid-template-columns: 1fr; } }
+
+/* This footer item is navigation, so use the same full-width row as Settings. */
+.aui-application-sidebar-tools:has(nav[aria-label="Plugins"]) { padding-inline: 0; }
+.aui-application-sidebar-tools:has(nav[aria-label="Plugins"]) > .aui-application-sidebar-navigation { flex: 1; min-width: 0; }
+
+.app-plugin-library { min-height:0; }
+.app-plugin-library__scope { padding-bottom:12px; }
+.app-plugin-library .studio-plugins__filters { display:flex; flex-wrap:wrap; gap:12px; margin:14px 0; }
+.app-plugin-library .studio-plugins__filters > input { flex:1; }
+.app-plugin-library .hint { margin:10px 0; }

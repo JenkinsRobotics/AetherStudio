@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2726" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/obsolete/Sketcher_ConstrainVertical_old.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2728">
+    <linearGradient id="linearGradient3791">
+      <stop style="stop-color:#48596e;stop-opacity:1" offset="0" id="stop3793" />
+      <stop style="stop-color:#61758c;stop-opacity:1" offset="1" id="stop3795" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3791" id="linearGradient3797" x1="32.545582" y1="61.636627" x2="28.716692" y2="4.1787543" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <g id="g3436" transform="translate(107.50353,10.589633)" />
+    <g transform="scale(1.0446886,0.95722304)" style="font-size:83.11606598000000190px;font-style:normal;font-weight:normal;fill:url(#linearGradient3797);fill-opacity:1;stroke:#e5edf7;font-family:Bitstream Vera Sans;stroke-width:1.1;stroke-linejoin:round" id="text3648">
+      <path d="M 26.004559,63.726006 2.8716691,3.1340688 l 8.5632279,0 19.196239,51.0141092 19.236824,-51.0141092 8.522644,0 -23.092306,60.5919372 -9.293739,0" id="path3000" style="fill:url(#linearGradient3797);stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;fill-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g transform="scale(1.0446886,0.95722304)" style="font-size:83.11606598000000190px;font-style:normal;font-weight:normal;fill:none;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;font-family:Bitstream Vera Sans" id="text3648-3">
+      <path d="m 5.7433383,5.223443 4.4032257,0 20.484573,52.756774 20.484573,-52.756774 4.403226,0 -21.441796,56.413185 -6.796283,0 z" id="path3000-6" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:miter;stroke-miterlimit:1.89999998000000003;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

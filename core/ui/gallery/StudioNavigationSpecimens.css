@@ -1,0 +1,29 @@
+.studio-nav-specimens { margin: 28px 0; }
+.studio-nav-specimens > p { margin: 0 0 18px; font-size: 12px; color: var(--aether-color-text-dim); }
+.studio-nav-comparison { display: flex; flex-wrap: wrap; align-items: start; gap: 28px; }
+.studio-nav-comparison figure { margin: 0; }
+.studio-nav-preview { height: 880px; width: fit-content; }
+.studio-nav-comparison figcaption { margin-top: 10px; font-size: 12px; color: var(--aether-color-text-dim); }
+.studio-nav-context { display: grid; gap: 12px; padding-bottom: 2px; }
+.studio-nav-context .aui-menu-trigger {
+  display: flex; align-items: center; justify-content: flex-start; gap: 12px;
+  width: 100%; padding: 5px 4px; border: 0; background: transparent;
+  color: #c6d9e9; font-size: 12px; text-align: left; border-radius: 6px;
+}
+.studio-nav-context .aui-menu-trigger:hover { background: #1b303e; }
+.studio-nav-context .aui-menu-trigger > svg { width: 24px; height: 24px; flex: none; }
+.studio-nav-context .aui-menu-trigger > .aui-sidebar-label { flex: 1; }
+.studio-nav-context strong { font-size: 12px; font-weight: 500; color: #edf5ff; }
+.studio-nav-context small { display: flex; align-items: center; gap: 5px; margin-top: 7px; font-size: 11px; color: #a3bace; }
+.studio-nav-context small svg { width: 12px; height: 12px; }
+.studio-nav-context .studio-nav-document-chevron { width: 12px; height: 12px; }
+.studio-nav-context .studio-nav-cloud > svg { color: #199eff; fill: #138deb; }
+.studio-nav-cloud-copy { display: flex; flex-direction: column; }
+.studio-nav-cloud small i { width: 9px; height: 9px; flex: none; background: #27e76b; border-radius: 50%; }
+.studio-nav-cloud--syncing small i { background: #ffcb55; }
+.studio-nav-cloud--offline small i { background: #8496a5; }
+.aui-sidebar--collapsed .studio-nav-context .aui-menu-trigger { justify-content: center; padding-inline: 0; }
+.aui-sidebar--collapsed .studio-nav-context .studio-nav-document-chevron { display: none; }
+.aui-sidebar--collapsed .studio-nav-context .studio-nav-cloud { flex-direction: column-reverse; gap: 10px; }
+.aui-sidebar--collapsed .studio-nav-context small { margin-top: 0; }
+.studio-nav-announcement { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

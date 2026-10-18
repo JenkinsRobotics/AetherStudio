@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/CAM_OperationB.svg. Authors: [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient3021">
+      <stop id="stop3023" offset="0" style="stop-color:#bcc9d8;stop-opacity:1" />
+      <stop id="stop3025" offset="1" style="stop-color:#e0e7ef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3021" id="linearGradient3838" gradientUnits="userSpaceOnUse" x1="32" y1="15" x2="29" y2="7" />
+    <linearGradient xlink:href="#linearGradient3021-7" id="linearGradient3838-1" gradientUnits="userSpaceOnUse" x1="32" y1="15" x2="29" y2="7" />
+    <linearGradient id="linearGradient3021-7">
+      <stop id="stop3023-4" offset="0" style="stop-color:#bcc9d8;stop-opacity:1" />
+      <stop id="stop3025-0" offset="1" style="stop-color:#e0e7ef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3021-4" id="linearGradient3838-2" gradientUnits="userSpaceOnUse" x1="32" y1="15" x2="29" y2="7" />
+    <linearGradient id="linearGradient3021-4">
+      <stop id="stop3023-5" offset="0" style="stop-color:#bcc9d8;stop-opacity:1" />
+      <stop id="stop3025-5" offset="1" style="stop-color:#e0e7ef;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <g id="g3833" transform="translate(0,7)">
+    <g id="g3027">
+      <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,11 44,0" id="path3003" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:url(#linearGradient3838);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,11 44,0" id="path3003-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,10 44,0" id="path3003-3-5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g transform="translate(0,14)" id="g3027-9">
+      <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,11 44,0" id="path3003-4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:url(#linearGradient3838-1);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,11 44,0" id="path3003-3-8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,10 44,0" id="path3003-3-5-8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g transform="translate(0,28)" id="g3027-1">
+      <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,11 44,0" id="path3003-7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:url(#linearGradient3838-2);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,11 44,0" id="path3003-3-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" d="m 10,10 44,0" id="path3003-3-5-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

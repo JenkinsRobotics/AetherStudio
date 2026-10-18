@@ -3,7 +3,7 @@
 > File extension: `.scene.anima`  
 > Format: YAML  
 > Version: execution v1 + v2 — the show-playback subset the Python
-> runtime executes (`animacore/scene.py` is the reference
+> runtime executes (`aether_animation/scene.py` is the reference
 > implementation). v2 adds the FANUC-inspired scripting constructs
 > (condition trees, `select`, `call`/`subroutines`, `inputs`,
 > `wait_until`, background `monitors`) additively within
@@ -246,7 +246,7 @@ posted events and `set_input` calls).
 
 ### Execution model (shipped)
 
-`animacore.scene.SceneRunner` executes a loaded scene against a
+`aether_animation.scene.SceneRunner` executes a loaded scene against a
 character rig and any `OutputAdapter` (simulator, UDP, serial — the
 adapter seam is proven adapter-agnostic):
 
@@ -498,7 +498,7 @@ When the Anima Runtime receives an `AnimationCommand` with a scene file:
 7. On error: publish AnimationResult(success=False, reason=...)
 ```
 
-Steps 1–4 exist today in `animacore/scene.py` with `post_event` as
+Steps 1–4 exist today in `aether_animation/scene.py` with `post_event` as
 the gate surface; the JaegerOS action/bus wrapping (feedback topics,
 cancel-with-blend-out, `AnimationResult`) is the deferred integration
 layer.

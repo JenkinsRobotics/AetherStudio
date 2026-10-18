@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2985" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Surface/Gui/Resources/icons/Surface_Workbench.svg. Authors: [bitacovir]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2987">
+    <linearGradient gradientUnits="userSpaceOnUse" y2="28" x2="7" y1="9" x1="47" id="linearGradient2095" xlink:href="#linearGradient1189" gradientTransform="matrix(0.96812402,0,0,0.96755864,-0.72057496,-2.6783592)" />
+    <linearGradient id="linearGradient1189">
+      <stop id="stop1185" offset="0" style="stop-color:#293749;stop-opacity:1" />
+      <stop id="stop1187" offset="1" style="stop-color:#47586c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <g id="layer1">
+    <path id="path3820-1-9" d="M 3.1519208,24.413282 17.899691,60.320494 c 14.52186,-34.832109 31.154371,7.93994 42.771854,-25.924611 L 38.972508,3.1269928 C 30.809307,30.407148 17.749067,-0.16084869 3.1519208,24.413282 Z" style="display:inline;fill:url(#linearGradient2095);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path864" d="M 13.603223,48.657681 Z" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:none;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 5.3492197,24.626663 18.113409,55.643482 C 32.677175,26.678261 49.470489,63.641047 58.406281,34.501823 L 39.63819,7.4361573 C 30.967406,29.589343 16.774125,4.5857267 5.3492197,24.626663 Z" id="path3820-1-9-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

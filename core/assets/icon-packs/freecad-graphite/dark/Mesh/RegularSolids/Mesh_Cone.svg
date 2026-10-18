@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2943" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Mesh/Gui/Resources/icons/RegularSolids/Mesh_Cone.svg. Authors: [jmaustpc], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2945">
+    <linearGradient id="linearGradient3811">
+      <stop style="stop-color:#52b5fa;stop-opacity:1;" offset="0" id="stop3813" />
+      <stop style="stop-color:#3aa1ee;stop-opacity:1;" offset="1" id="stop3815" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3811" id="linearGradient3825" x1="29" y1="22" x2="36" y2="23" gradientUnits="userSpaceOnUse" />
+    <linearGradient id="linearGradient2269">
+      <stop offset="0" id="stop2271" style="stop-color:#e5edf7;stop-opacity:1;" />
+      <stop offset="1" id="stop2273" style="stop-color:#e5edf7;stop-opacity:0;" />
+    </linearGradient>
+    <radialGradient r="18.0625" fy="41.625" fx="25.1875" cy="41.625" cx="25.1875" gradientTransform="matrix(1,0,0,0.32526,0,28.08607)" gradientUnits="userSpaceOnUse" id="radialGradient3043" xlink:href="#linearGradient2269" />
+  </defs>
+  <g id="layer1">
+    <path id="path2267" transform="matrix(1.652249,0,0,1.1276596,-9.6160217,10.436169)" d="m 43.25,41.625 a 18.0625,5.875 0 1 1 -36.125,0 18.0625,5.875 0 1 1 36.125,0 z" style="opacity:0.26704544;color:#e5edf7;fill:url(#radialGradient3043);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.1;marker:none;visibility:visible;display:inline;overflow:visible" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3825);stroke:none;fill-opacity:1" d="M 32,3 7,48 c 0,0 3,9 25,9 22,0 25,-9 25,-9 L 32,3" id="path2999-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 56,46 c 0,0 -2,9 -24,9 C 10,55 8,46 8,46" id="path3795" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 56,50 32,7" id="path3793" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="M 32,3 7,48 c 0,0 3,9 25,9 22,0 25,-9 25,-9 L 32,3" id="path2999" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="M 49,54 32,4 39,56" id="path3771" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="M 25,56 32,4 15,54" id="path3773" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

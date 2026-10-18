@@ -1,0 +1,14 @@
+/* The native UI Dev browser as its own tool (?demo=ui-dev). In the showcase its
+   templates and variants render flat through NativeTemplate / StateVariant. */
+.gallery-native-library { flex: 1; min-height: 0; overflow: auto; padding: 16px; display: grid; gap: 18px; align-content: start; }
+.native-showcase-library { min-width: 0; display: grid; gap: 18px; }
+.native-showcase-library > .animation-tool-ribbon { position: relative; }
+.native-showcase-library .uidev-workspace { position: static; padding: 0; height: auto; min-height: 0; overflow: visible; }
+.native-showcase-library .uidev-scroll { overflow: visible; height: auto; padding: 0; }
+.native-showcase-library .animation-variant-board { max-width: 100%; }
+.native-showcase-library .animation-variant-board-scroll { max-width: 100%; }
+/* The theme lab's `> header > div { display: grid }` also catches the SegmentedControl's root div and stacks its options; keep it a row. */
+.gallery-native-template .uidev-theme-lab > header > .aui-segmented-control { display: inline-flex; flex-shrink: 0; }
+/* Specimen sizing only. Widget content inherits its host; actual overlay frames remain inside their examples. */
+.gallery-specimen-panel { display: grid; align-content: start; justify-items: start; gap: 12px; padding: 16px; min-height: 90px;    min-width: 0; max-width: 100%;  border:0; border-radius:0; box-shadow:none; background:transparent; }
+.gallery-variant[data-wide] > .gallery-specimen-panel { width: 100%; box-sizing: border-box;  border:0; border-radius:0; box-shadow:none; background:transparent; }

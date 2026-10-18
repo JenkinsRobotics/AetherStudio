@@ -1,0 +1,25 @@
+/* Compact container presentation; feature bodies and behavior are shared. */
+.aui-feature-window.aui-feature-window--compact {
+  box-sizing:border-box; width:300px; max-width:100%; color:var(--aether-color-text);
+  background:var(--aether-color-bg-panel); border-radius:12px;
+  box-shadow:0 6px 18px color-mix(in srgb,var(--aether-color-shadow) 25%,transparent);
+}
+.aui-feature-window--compact > .aui-float-panel-header {
+  justify-content:flex-start; gap:10px; min-height:48px; padding:0 14px;
+  background:color-mix(in srgb,var(--aether-color-text) 10%,var(--aether-color-bg-panel));
+  color:var(--aether-color-text); font-size:18px; font-weight:600; letter-spacing:normal; text-transform:none;
+}
+.aui-feature-window--compact .aui-feature-header-icon { display:flex; flex:none; }
+.aui-feature-window--compact .aui-feature-header-icon > svg { width:26px; height:26px; }
+/* Body typography, field height and spacing inherit the Standard presentation. */
+.aui-feature-window--compact .aui-feature-tabs { width:100%; border:0; border-radius:999px; padding:0; gap:0; background:var(--aether-color-bg-inset); }
+.aui-feature-window--compact .aui-feature-tabs > button { flex:1 1 0; min-width:0; min-height:28px; padding:4px 9px; border:0; border-radius:999px; font-size:12px; line-height:20px; }
+.aui-feature-window--compact .aui-feature-tabs > button.active { background:color-mix(in srgb,var(--aether-color-accent) 38%,var(--aether-color-bg-control)); color:var(--aether-color-text); font-weight:400; }
+.aui-feature-window--compact .aui-feature-entities { border-radius:8px; }
+.aui-feature-window.aui-feature-window--compact input[type="text"],
+.aui-feature-window.aui-feature-window--compact input[type="number"],
+.aui-feature-window--compact .aui-feature-picker-trigger { border-radius:8px; }
+.aui-feature-window--compact > .aui-feature-commit-actions { display:flex; justify-content:flex-end; flex:none; gap:8px; padding:0 12px; }
+.aui-feature-window--compact > .aui-feature-commit-actions > .aui-button { min-width:72px; min-height:30px; padding:5px 14px; border-radius:8px; font-size:14px; }
+.aui-feature-window--compact p[role="status"] { margin:0; font-size:12px; line-height:17px; color:var(--aether-color-text-dim); }
+.aui-feature-window--compact .aui-feature-footer { min-height:34px; padding:2px 8px; border-top:0; }

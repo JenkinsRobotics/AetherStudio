@@ -1,0 +1,4 @@
+.app-feature-art { position:relative; width:100%; height:100%; min-height:210px; overflow:hidden; }
+.app-feature-art svg { position:absolute; width:100%; height:100%; inset:0; filter:drop-shadow(0 14px 10px #20334626); }
+.app-feature-grid { position:absolute; inset:0; background-image:linear-gradient(#ffffff20 1px,transparent 1px),linear-gradient(90deg,#ffffff20 1px,transparent 1px); background-size:22px 22px; transform:rotate(-12deg) scale(1.3); }
+.app-feature-art--board svg { transform:rotate(-13deg); }

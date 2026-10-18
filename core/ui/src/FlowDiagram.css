@@ -1,0 +1,66 @@
+.aui-flow-diagram {
+  --flow-surface: var(--aether-color-bg-panel);
+  --flow-green: var(--aether-color-ok);
+  --flow-violet: var(--aether-color-joint);
+  --flow-red: var(--aether-color-error);
+  --flow-neutral: var(--aether-color-text);
+  --flow-teal: var(--aether-color-part);
+  --flow-blue: var(--aether-color-accent);
+  --flow-amber: var(--aether-color-hardware);
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  
+  
+  background: var(--flow-surface);
+  color: var(--aether-color-text);
+  font-family: var(--aether-font-family);
+ border:0; border-radius:0; box-shadow:none; }
+.aui-flow-diagram-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+.aui-flow-diagram-scroll:focus-visible { outline: 2px solid var(--aether-color-accent); outline-offset: -3px; }
+.aui-flow-diagram svg { display: block; width: 100%; min-width: 860px; height: auto; }
+.aui-flow-dot { fill: var(--aether-color-text-faint); opacity: .38; }
+.aui-flow-route { transition: opacity 180ms ease; }
+.aui-flow-route[data-muted="true"] { opacity: .13; }
+.aui-flow-route[data-tone="green"] { color: var(--flow-green); }
+.aui-flow-route[data-tone="violet"] { color: var(--flow-violet); }
+.aui-flow-route[data-tone="red"] { color: var(--flow-red); }
+.aui-flow-route[data-tone="neutral"] { color: var(--flow-neutral); }
+.aui-flow-route[data-tone="teal"] { color: var(--flow-teal); }
+.aui-flow-route[data-tone="blue"] { color: var(--flow-blue); }
+.aui-flow-route[data-tone="amber"] { color: var(--flow-amber); }
+.aui-flow-route path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.aui-flow-route-clearance { stroke: var(--flow-surface); stroke-width: 10; }
+.aui-flow-route-line { stroke: currentColor; stroke-width: 4.4; }
+.aui-flow-route-signal {
+  stroke: var(--flow-surface);
+  stroke-width: 2;
+  stroke-dasharray: 9 491;
+  animation: aui-flow-travel var(--flow-duration) linear var(--flow-delay) infinite;
+}
+.aui-flow-diagram[data-paused="true"] .aui-flow-route-signal { animation-play-state: paused; }
+.aui-flow-port { fill: var(--flow-surface); stroke: currentColor; stroke-width: 2.7; }
+.aui-flow-label {
+  fill: var(--aether-color-text);
+  font-size: 13px;
+  font-weight: 550;
+  paint-order: stroke;
+  stroke: var(--flow-surface);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+.aui-flow-label[data-subtle="true"] { fill: var(--aether-color-text-dim); font-size: 11px; font-weight: 400; }
+.aui-flow-node-body { fill: var(--aether-color-bg-inset); stroke: var(--aether-color-text-soft); stroke-width: 1.2; }
+.aui-flow-node[data-variant="gate"] .aui-flow-node-body { fill: var(--flow-surface); stroke: var(--aether-color-text); stroke-width: 1.8; }
+.aui-flow-node-inset { fill: none; stroke: var(--aether-color-border); }
+.aui-flow-node-notch { fill: var(--flow-surface); stroke: var(--aether-color-text-soft); stroke-width: 1.2; }
+.aui-flow-pins { fill: var(--flow-surface); stroke: var(--aether-color-text-faint); stroke-width: 1; }
+.aui-flow-node-label, .aui-flow-node-detail { fill: var(--aether-color-text); font-family: var(--aether-font-mono); font-size: 12px; }
+.aui-flow-node-detail { fill: var(--aether-color-text-dim); font-size: 10px; }
+.aui-flow-node[data-variant="processor"] > .aui-flow-node-label { font-size: 23px; font-weight: 600; letter-spacing: -.7px; }
+@keyframes aui-flow-travel { to { stroke-dashoffset: -1000; } }
+@media (prefers-reduced-motion: reduce) {
+  .aui-flow-route { transition: none; }
+  .aui-flow-route-signal { animation: none; display: none; }
+}
+@media print { .aui-flow-route-signal { display: none; } }

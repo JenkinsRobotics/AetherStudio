@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg3612" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_DelPoint.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs3614">
+    <linearGradient id="linearGradient3836">
+      <stop id="stop3838" offset="0" style="stop-color:#324154;stop-opacity:1;" />
+      <stop id="stop3840" offset="1" style="stop-color:#47586c;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="143.22015" x2="158.4444" y1="149.22015" x1="160.4444" id="linearGradient3850" xlink:href="#linearGradient3836" />
+    <linearGradient y2="485.54004" x2="54.509644" y1="453.55045" x1="11.390151" gradientTransform="matrix(1.050705,0.0195272,0.0195272,1.0567846,61.906432,41.415953)" gradientUnits="userSpaceOnUse" id="linearGradient3922" xlink:href="#linearGradient3836" />
+  </defs>
+  <g id="layer1">
+    <g id="g5199" transform="translate(-127.44439,-128.22016)">
+      <path id="rect3558" d="m 154.44439,141.22016 0,0 -10,0 0,10 10,0 0,0 10,0 0,0 10,0 0,-10 -10,0 0,0 z" style="color:#e5edf7;fill:url(#linearGradient3850);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <g transform="translate(0,-21)" id="g3912">
+        <g id="g3856" transform="translate(0,31)">
+          <rect transform="translate(127.44439,128.22016)" y="37" x="3" height="6" width="58" id="rect3852" style="fill:#6c8098;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path transform="translate(127.44439,128.22016)" id="path3854" d="M 59,41 5,41" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        </g>
+        <g transform="matrix(1.2349522,0.01894995,-0.0189508,1.2348959,-7.1881028,-111.34439)" id="g4312" style="stroke:#91a4bb;stroke-width:1.1">
+          <g id="g4248" transform="matrix(-0.1153544,-0.09575809,0.09575809,-0.1153544,98.667777,319.83687)" style="stroke:#91a4bb;stroke-width:1.1">
+            <g style="stroke-width:1.1" id="g3906" transform="translate(-3.7314339,-3.2817175)">
+              <path d="m 147.07465,535.89484 a 48.571431,48.571431 0 1 1 -97.14285,0 48.571431,48.571431 0 1 1 97.14285,0 z" id="path4250" style="fill:#324154;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+              <path d="m 136.22359,535.86575 a 37.80547,37.803747 49.467268 1 1 -75.60894,-0.002 37.80547,37.803747 49.467268 0 1 75.60894,0.002 z" id="path4250-7" style="fill:url(#linearGradient3922);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <path transform="translate(127.44439,128.22016)" id="path3826" d="m 19,15 10,0 0,0 6,0 0,0 10,0 0,6 -10,0 0,0 -6,0 0,0 -10,0 z" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

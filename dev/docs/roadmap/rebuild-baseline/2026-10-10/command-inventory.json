@@ -1,0 +1,1264 @@
+{
+  "snapshot_version": 1,
+  "date": "2026-10-10",
+  "purpose": "Phase 0 as-built contract inventory; never consumed as a second runtime source of truth",
+  "commits": {
+    "aether-platform": "6005d0f36ad54599f5589de2d10d0a926056cdf2",
+    "aether-cad": "4fafa8b730de0d86d4ef6b67e34d13db81f27bcf",
+    "aether-map": "8d0dc2a6c091126f6b5811c58d45470a41d34844",
+    "aether-animation": "ed715e62ea85a82b51715a50866f5a7cc9f3b57f"
+  },
+  "source_sha256": {
+    "aether-platform/core/host/automation/commands.py": "60f93d04e53a784a59fcca780b017df776ab91375a85a1dfd70e79d588fc3c8e",
+    "aether-platform/core/host/automation/__init__.py": "9198defa5fdae05646260e10bdb01a3db4ea6da5c7f3035a1c8700552146152a",
+    "aether-cad/service/aether_cad_service/automation.py": "173d817940db60ec16b40981d2eee1a42925c6ae544c949758a59b9172e9cc23",
+    "aether-map/service/aether_map_service/automation.py": "223d214e49f433bffe53bbb23c0aed8b3b5bd3805e263c3de01d7ce6e4ecc3ff",
+    "aether-animation/aether_animation/bridge.py": "3e3e4bfedb9f14c85c7d7bd16499883cb9a57a58f86eac9e7106d43a7cc14a25",
+    "aether-platform/core/host/server.py": "22d4553d5388578993cd0fedcf140530be4b59936499e01a5ea00e0ae276c69c"
+  },
+  "automation": {
+    "catalog_schema_version": 1,
+    "run_request_shape": {
+      "id": "command name",
+      "arguments": "validated product/platform fields"
+    },
+    "run_success_shape": {
+      "command": "command name",
+      "result": "current command-specific object"
+    },
+    "counts": {
+      "platform": 5,
+      "cad": 11,
+      "map": 4
+    },
+    "commands": [
+      {
+        "owner": "platform",
+        "id": "document.list",
+        "title": "Find documents",
+        "description": "List accessible saved files in one application. Searches file names, not live editor state.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "query": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "view": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "enum": [
+                "personal",
+                "workspace",
+                "recent"
+              ]
+            },
+            "parent": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "app"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "platform",
+        "id": "document.inspect",
+        "title": "Inspect saved document",
+        "description": "Read saved metadata and up to 64 KiB of UTF-8 content. Binary files return metadata only. Does not inspect unsaved editor state.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "branch": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            }
+          },
+          "required": [
+            "app",
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "platform",
+        "id": "document.history",
+        "title": "Read document history",
+        "description": "Read revisions, named versions and branches of an accessible document.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "app",
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "platform",
+        "id": "document.rename",
+        "title": "Rename document",
+        "description": "Rename a document using the revision last read. Creates a recoverable history entry; stale revisions are rejected.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "name",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "platform",
+        "id": "document.version.create",
+        "title": "Create named version",
+        "description": "Name the current saved state on a branch. Requires the current branch revision; does not edit document content.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "branch": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "message": {
+              "type": "string",
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "name",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.revolve.preview",
+        "title": "Preview revolve extents",
+        "description": "Evaluate saved revolve direction and angles without saving. Angles are degrees; symmetric centers the primary angle and requires zero opposite angle. Total sweep cannot exceed 360 degrees.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "angle_deg": {
+              "type": "number",
+              "minimum": 1e-06,
+              "maximum": 360
+            },
+            "second_angle_deg": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360
+            },
+            "symmetric": {
+              "type": "boolean"
+            },
+            "reversed": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "angle_deg",
+            "second_angle_deg",
+            "symmetric",
+            "reversed"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.revolve.setextent",
+        "title": "Change revolve extents",
+        "description": "Change saved revolve angles/direction after native validation. Same extent limits as preview. Requires latest revision and creates recoverable history; open editors must reload.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "angle_deg": {
+              "type": "number",
+              "minimum": 1e-06,
+              "maximum": 360
+            },
+            "second_angle_deg": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360
+            },
+            "symmetric": {
+              "type": "boolean"
+            },
+            "reversed": {
+              "type": "boolean"
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "angle_deg",
+            "second_angle_deg",
+            "symmetric",
+            "reversed",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.part.inspect",
+        "title": "Inspect CAD part",
+        "description": "Read saved part features, stable body identities and editable extrusion parameters. No unsaved editor state.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "app",
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.part.evaluate",
+        "title": "Evaluate CAD part",
+        "description": "Rebuild saved visible history in FreeCAD and return body volumes and topology counts. No pixel preview, export or save.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "app",
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.part.topology",
+        "title": "Inspect CAD body faces",
+        "description": "Read a page of exact native face references and snap candidates for one saved body. Coordinates are millimeters. Bind references to the returned document revision; inspect again after edits.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "body_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "offset": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100000
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "body_id"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.extrude.preview",
+        "title": "Preview extrusion depth",
+        "description": "Evaluate a proposed depth in millimeters through the full native history without saving. Blind/symmetric Extrude only; not a pixel image.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "depth_mm": {
+              "type": "number",
+              "minimum": 1e-06,
+              "maximum": 1000000
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "depth_mm"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.extrude.setdepth",
+        "title": "Change extrusion depth",
+        "description": "Change a saved Blind/symmetric extrusion depth in millimeters after full native validation. Requires latest revision; creates recoverable file history. Open editors must reload.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "depth_mm": {
+              "type": "number",
+              "minimum": 1e-06,
+              "maximum": 1000000
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "depth_mm",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.extrude.previewoffset",
+        "title": "Preview extrusion end offset",
+        "description": "Preview a signed millimeter offset from the next face without saving. Positive stops before the face; negative extends beyond. Uses current native geometry.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "end_offset_mm": {
+              "type": "number",
+              "minimum": -1000000,
+              "maximum": 1000000
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "end_offset_mm"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.extrude.setoffset",
+        "title": "Change extrusion end offset",
+        "description": "Change a saved Up-to-next extrusion offset after native validation. Positive stops before the face; negative extends beyond. Requires latest revision and creates file history.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "end_offset_mm": {
+              "type": "number",
+              "minimum": -1000000,
+              "maximum": 1000000
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "end_offset_mm",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.feature.suppress",
+        "title": "Suppress or restore CAD feature",
+        "description": "Use CAD's dependency-aware suppression or restoration, then validate the complete native result before saving. Creates file history; open editors must reload.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "action": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "enum": [
+                "suppress",
+                "unsuppress"
+              ]
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "action",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "cad",
+        "id": "cad.feature.move",
+        "title": "Reorder CAD feature",
+        "description": "Move a feature one history position (-1 up, 1 down). Dependency-invalid or native-invalid order is refused. Latest revision required; creates file history.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "cad"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "feature_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "direction": {
+              "type": "integer",
+              "enum": [
+                -1,
+                1
+              ]
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "feature_id",
+            "direction",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "map",
+        "id": "map.show.inspect",
+        "title": "Inspect Map show",
+        "description": "Read saved scenes, surfaces, timelines, tracks, reusable assets and clip assignments. Does not inspect unsaved editor state.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "map"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          },
+          "required": [
+            "app",
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "map",
+        "id": "map.show.evaluate",
+        "title": "Evaluate Map scene",
+        "description": "Evaluate a saved scene's Main composition at a time in seconds using the player evaluator. Returns geometry and audio state, not a pixel image or live camera data. Does not play or deploy anything.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "map"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "scene_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "time_s": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 604800
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "scene_id",
+            "time_s"
+          ],
+          "additionalProperties": false
+        },
+        "writes": false,
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "map",
+        "id": "map.clip.move",
+        "title": "Move Map clip",
+        "description": "Move a saved clip to an existing compatible track and start time. Keeps surface assignments and source identity. Respects locks and nesting rules. Requires latest revision and records recoverable file history; open editors must reload.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "map"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "clip_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "track_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "start_s": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 604800
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "clip_id",
+            "track_id",
+            "start_s",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "owner": "map",
+        "id": "map.clip.edit",
+        "title": "Edit Map clip",
+        "description": "Duplicate, delete, split or trim a saved clip using Map's timeline commands. Split/trim require time_s in timeline seconds. Respects locks; requires latest revision and records recoverable file history. Open editors must reload.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "app": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "enum": [
+                "map"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "clip_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "action": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "enum": [
+                "duplicate",
+                "delete",
+                "split",
+                "trim-start",
+                "trim-end"
+              ]
+            },
+            "time_s": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 604800
+            },
+            "expected_revision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "app",
+            "id",
+            "clip_id",
+            "action",
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "writes": true,
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      }
+    ],
+    "gaps": [
+      "No public typed result schema per command",
+      "No declared per-command undo contract (saved history is not live editor undo)",
+      "No durable idempotency key/result replay contract",
+      "No shared explicit protocol version on each run request",
+      "No shared cancellation/progress/job contract",
+      "Current schemas expose saved documents, not full UI command coverage"
+    ]
+  },
+  "animation_bridge": {
+    "source": "aether-animation/aether_animation/bridge.py",
+    "protocol_version": 1,
+    "capability_count": 58,
+    "capabilities": [
+      "hello",
+      "load_character",
+      "validate_character",
+      "evaluate",
+      "resolve_pose",
+      "forward_kinematics",
+      "solve_ik",
+      "mate_types",
+      "relation_types",
+      "preview_mate",
+      "add_mate",
+      "update_mate",
+      "remove_mate",
+      "add_part",
+      "update_part",
+      "remove_part",
+      "add_relation",
+      "update_relation",
+      "remove_relation",
+      "serialize_character",
+      "serialize_scene",
+      "new_workspace",
+      "load_workspace",
+      "save_workspace",
+      "describe_workspace",
+      "describe_assembly",
+      "project_bom",
+      "solve_assembly",
+      "list_connectors",
+      "add_part_definition",
+      "update_part_definition",
+      "remove_part_definition",
+      "add_instance",
+      "update_instance",
+      "remove_instance",
+      "move_instance",
+      "set_instance_grounded",
+      "set_instance_suppressed",
+      "add_connector",
+      "update_connector",
+      "remove_connector",
+      "set_dof_value",
+      "canvas2d.describe",
+      "canvas2d.new",
+      "canvas2d.load",
+      "canvas2d.save",
+      "canvas2d.get",
+      "canvas2d.add_surface",
+      "canvas2d.update_surface",
+      "canvas2d.remove_surface",
+      "canvas2d.add_source",
+      "canvas2d.remove_source",
+      "canvas2d.evaluate",
+      "canvas2d.render_frame",
+      "canvas2d.matrix_preview",
+      "canvas2d.release",
+      "release",
+      "shutdown"
+    ],
+    "coverage_note": "Capability names checked against dispatch; argument/result/effect schemas still require per-verb inventory. Not registered as platform automation commands."
+  },
+  "host_api_literal_candidates": {
+    "note": "Static source path literals only, including prefixes; NOT an exhaustive endpoint registry or permission classification. Dynamic library/drive actions and product-owned endpoints need separate inventory.",
+    "items": [
+      {
+        "literal": "/api/automation/",
+        "line": 277
+      },
+      {
+        "literal": "/api/agent/",
+        "line": 279
+      },
+      {
+        "literal": "/api/setup/authorize",
+        "line": 288
+      },
+      {
+        "literal": "/api/recovery/request",
+        "line": 293
+      },
+      {
+        "literal": "/api/recovery/reset",
+        "line": 326
+      },
+      {
+        "literal": "/api/setup",
+        "line": 338
+      },
+      {
+        "literal": "/api/login",
+        "line": 391
+      },
+      {
+        "literal": "/api/logout",
+        "line": 404
+      },
+      {
+        "literal": "/api/drive/",
+        "line": 411
+      },
+      {
+        "literal": "/api/library/",
+        "line": 416
+      },
+      {
+        "literal": "/api/",
+        "line": 421
+      },
+      {
+        "literal": "/api/preferences",
+        "line": 425
+      },
+      {
+        "literal": "/api/profile",
+        "line": 463
+      },
+      {
+        "literal": "/api/password",
+        "line": 475
+      },
+      {
+        "literal": "/api/admin/",
+        "line": 484
+      },
+      {
+        "literal": "/api/agent/",
+        "line": 283
+      },
+      {
+        "literal": "/api/",
+        "line": 400
+      },
+      {
+        "literal": "/api/admin/mail",
+        "line": 486
+      },
+      {
+        "literal": "/api/admin/mail/test",
+        "line": 490
+      },
+      {
+        "literal": "/api/admin/storage",
+        "line": 505
+      },
+      {
+        "literal": "/api/admin/backup",
+        "line": 509
+      },
+      {
+        "literal": "/api/admin/team",
+        "line": 513
+      },
+      {
+        "literal": "/api/admin/access",
+        "line": 558
+      },
+      {
+        "literal": "/api/admin/theme",
+        "line": 571
+      },
+      {
+        "literal": "/api/admin/service",
+        "line": 600
+      },
+      {
+        "literal": "/api/admin/users",
+        "line": 643
+      },
+      {
+        "literal": "/api/admin/user",
+        "line": 654
+      },
+      {
+        "literal": "/api/admin/apps",
+        "line": 704
+      },
+      {
+        "literal": "/api/admin/settings",
+        "line": 720
+      },
+      {
+        "literal": "/api/admin/restart",
+        "line": 748
+      },
+      {
+        "literal": "/api/drive/download",
+        "line": 1029
+      },
+      {
+        "literal": "/api/automation/commands/",
+        "line": 854
+      },
+      {
+        "literal": "/api/logout",
+        "line": 397
+      },
+      {
+        "literal": "/api/password",
+        "line": 397
+      },
+      {
+        "literal": "/api/library/",
+        "line": 904
+      },
+      {
+        "literal": "/api/status",
+        "line": 1088
+      },
+      {
+        "literal": "/api/admin/backups/",
+        "line": 1137
+      },
+      {
+        "literal": "/api/admin/maintenance",
+        "line": 1153
+      },
+      {
+        "literal": "/api/admin/state",
+        "line": 1158
+      },
+      {
+        "literal": "/api/automation/",
+        "line": 278
+      },
+      {
+        "literal": "/api/automation/commands/",
+        "line": 893
+      }
+    ]
+  }
+}

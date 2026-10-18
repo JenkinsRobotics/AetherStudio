@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/IFC/IfcWall.svg. Authors: [yorikvanhavre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><g id="layer1">
+    <g id="g4052" transform="matrix(0.91666667,0,0,1,-50.916667,0)">
+      <path id="path3276" d="m 85,53 0,-10 24,8 0,10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4048" d="m 87.208102,45.791898 0,5.832408 19.644748,6.583796 0,-5.780382 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056" transform="translate(-60,0)">
+      <path id="path3278" d="m 109,51 12,-8 0,10 -12,8 z" style="fill:#d3dde7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4050" d="M 110.96532,57.306462 111,52.052025 l 8,-5.329494 0,5.225444 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-6" transform="matrix(1,0,0,-1,-71,88.72253)">
+      <path id="path3278-2" d="m 109,43.72253 11,-4 0,10 -11,4 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4050-9" d="m 110.99875,50.861814 0.001,-5.733219 7.00781,-2.532042 -0.002,5.724779 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-1" transform="matrix(0.91666667,0,0,1,-72.916667,-8)">
+      <path id="path3276-2" d="m 85,53 0,-10 24,8 0,10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4048-7" d="m 87.208102,45.791898 0,5.832408 19.644748,6.583796 0,-5.780382 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-6-9" transform="matrix(1,0,0,-1,-104,76.72253)">
+      <path id="path3278-2-3" d="m 109,43.72253 11,-4 0,10 -11,4 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4050-9-6" d="m 110.99875,50.861814 0.001,-5.733219 7.00781,-2.532042 -0.002,5.724779 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-0" transform="matrix(0.91666667,0,0,1,-61.916667,-16)">
+      <path id="path3276-6" d="m 85,53 0,-10 24,8 0,10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4048-2" d="m 87.208102,45.791898 0,5.832408 19.644748,6.583796 0,-5.780382 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-61" transform="translate(-60,-12)">
+      <path id="path3278-8" d="m 109,51 12,-8 0,10 -12,8 z" style="fill:#d3dde7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4050-7" d="M 110.96532,57.306462 111,52.052025 l 8,-5.329494 0,5.225444 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-9" transform="matrix(0.91666667,0,0,1,-50.916667,-24)">
+      <path id="path3276-20" d="m 85,53 0,-10 24,8 0,10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4048-23" d="m 87.208102,45.791898 0,5.832408 19.644748,6.583796 0,-5.780382 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-7" transform="translate(-60,-24)">
+      <path id="path3278-5" d="m 109,51 12,-8 0,10 -12,8 z" style="fill:#d3dde7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4050-92" d="M 110.96532,57.306462 111,52.052025 l 8,-5.329494 0,5.225444 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-1-2" transform="matrix(0.91666667,0,0,1,-72.916667,-32)">
+      <path id="path3276-2-8" d="m 85,53 0,-10 24,8 0,10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path4048-7-9" d="m 87.208102,45.791898 0,5.832408 19.644748,6.583796 0,-5.780382 z" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <path style="fill:#f3f7fc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 27,19 49,27 61,19 39,11 z" id="path4312" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#f3f7fc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 5,11 27,19 39,11 17,3 z" id="path4312-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

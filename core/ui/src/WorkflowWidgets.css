@@ -1,0 +1,60 @@
+.aui-workflow { font:12px/1.45 var(--aether-font-family); color:var(--aether-color-text); min-width:0; }
+.aui-workflow p { margin:0; }
+.aui-workflow-stack { display:flex; flex-direction:column; gap:14px; min-width:0; }
+.aui-workflow-field { display:flex; flex-direction:column; gap:6px; color:var(--aether-color-text-soft); font-size:11px; min-width:0; }
+.aui-workflow input,.aui-workflow select,.aui-workflow textarea { box-sizing:border-box; }
+.aui-workflow textarea { resize:vertical; min-height:100px; width:100%; padding:10px; border:1px solid var(--aether-color-border-control); border-radius:var(--aether-radius-field); color:var(--aether-color-text); background:var(--aether-color-bg-inset); font:12px/1.5 var(--aether-font-family); }
+.aui-workflow textarea:focus { outline:1px solid var(--aether-color-border-focus); }
+.aui-workflow-actions { display:flex; align-items:center; gap:8px; min-width:0; }
+.aui-workflow-actions > .aui-button { flex:1 1 auto; justify-content:center; }
+.aui-workflow-actions > .aui-select-field-wrap,.aui-workflow-actions > .aui-slider { flex:1; min-width:0; }
+.aui-workflow-hint { font-size:11px; color:var(--aether-color-text-dim); }
+.aui-workflow-divider { display:flex; align-items:center; gap:10px; justify-content:center; color:var(--aether-color-text-dim); font-size:10px; }
+.aui-workflow-divider::before,.aui-workflow-divider::after { content:""; height:1px; flex:1; background:var(--aether-color-border-subtle); }
+.aui-workflow-summary { margin:0; border-radius:var(--aether-radius-control); padding:8px 12px; background:var(--aether-color-bg-inset); }
+.aui-workflow-summary > div { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:9px 0; border-bottom:1px dashed var(--aether-color-border-subtle); }
+.aui-workflow-summary > div:last-child { border-bottom:0; }
+.aui-workflow-summary dt { color:var(--aether-color-text-dim); }
+.aui-workflow-summary dd { margin:0; overflow-wrap:anywhere; }
+.aui-workflow-steps { list-style:none; margin:0; padding:14px; border-radius:var(--aether-radius-control); background:var(--aether-color-bg-inset); }
+.aui-workflow-steps > li { padding-bottom:18px; position:relative; }
+.aui-workflow-steps > li:last-child { padding-bottom:0; }
+.aui-workflow-steps > li:not(:last-child)::after { content:""; position:absolute; left:8px; top:20px; bottom:3px; border-left:1px dotted var(--aether-color-border-control); }
+.aui-workflow-settings { border-top:1px solid var(--aether-color-border-subtle); }
+.aui-workflow-file { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px; border:1px dashed var(--aether-color-border-control); border-radius:var(--aether-radius-control); }
+.aui-workflow-file strong { font-weight:500; }
+.aui-workflow-file small { display:block; color:var(--aether-color-text-dim); }
+.aui-workflow-map { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:8px; }
+.aui-workflow-map-row { display:contents; }
+.aui-workflow-map-row > span:first-child { padding:7px 9px; border-radius:var(--aether-radius-field); background:var(--aether-color-bg-inset); }
+.aui-workflow-members { padding:0; margin:0; list-style:none; }
+.aui-workflow-members > li { display:flex; gap:10px; align-items:center; padding:12px 0; border-bottom:1px solid var(--aether-color-border-subtle); }
+.aui-workflow-members > li:last-child { border-bottom:0; }
+.aui-workflow-members > li > span:not(.aui-avatar) { flex:1; min-width:0; }
+.aui-workflow-members strong { display:block; font-size:11px; font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.aui-workflow-members small { display:block; font-size:10px; overflow:hidden; text-overflow:ellipsis; color:var(--aether-color-text-dim); }
+.aui-workflow-credit { width:min(260px,80vw); padding:12px; }
+.aui-workflow-variants { margin:0; padding:0; list-style:none; }
+.aui-workflow-variants button { padding:10px; width:100%; text-align:left; border:0; background:transparent; color:inherit; font:inherit; cursor:pointer; border-radius:var(--aether-radius-row); }
+.aui-workflow-variants button::before { content:"·"; margin-right:8px; }
+.aui-workflow-variants button:hover { background:var(--aether-color-bg-hover); }
+.aui-workflow-variants button[aria-pressed=true] { background:var(--aether-color-bg-selected); color:var(--aether-color-text-on-selected); }
+.aui-workflow-details summary { text-align:center; cursor:pointer; font-size:11px; }
+.aui-workflow-details li { margin-block:8px; }
+.aui-workflow-columns { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); margin:-4px -16px -16px; }
+.aui-workflow-sequence-list { padding:8px; background:var(--aether-color-bg-inset); min-height:370px; }
+.aui-workflow-group { display:flex; align-items:center; gap:7px; font:11px var(--aether-font-family); background:transparent; border:0; color:var(--aether-color-text-dim); padding:12px 4px 6px; cursor:pointer; }
+.aui-workflow-group svg { width:12px; height:12px; }
+.aui-workflow-sequence-row { display:flex; align-items:center; border-radius:var(--aether-radius-row); }
+.aui-workflow-sequence-row > button:first-child { flex:1; min-width:0; padding:8px 6px; border:0; background:transparent; color:inherit; text-align:left; font:11px var(--aether-font-family); overflow:hidden; white-space:nowrap; text-overflow:ellipsis; cursor:pointer; }
+.aui-workflow-sequence-row form { min-width:0; }
+.aui-workflow-sequence-row[data-selected=true] { color:var(--aether-color-text); background:var(--aether-color-bg-control-hover); }
+.aui-workflow-sequence-row .aui-icon-button { width:22px; height:22px; }
+.aui-workflow-message-list { display:flex; flex-direction:column; gap:4px; padding:8px; min-width:0; border-left:1px solid var(--aether-color-border-subtle); }
+.aui-workflow-message-list header { display:flex; align-items:center; justify-content:space-between; font-size:11px; }
+.aui-workflow-message-list > button:not(.aui-button) { padding:10px; text-align:left; color:inherit; background:transparent; border:0; border-radius:var(--aether-radius-row); cursor:pointer; font:11px var(--aether-font-family); }
+.aui-workflow-message-list > button[aria-pressed=true] { color:var(--aether-color-text); background:color-mix(in srgb,var(--aether-color-accent) 18%,var(--aether-color-bg-panel)); }
+.aui-workflow-message-list strong { font-weight:500; }
+.aui-workflow-message-list small { display:block; color:var(--aether-color-text-dim); margin-top:4px; font-size:10px; }
+.aui-workflow-message-list > .aui-button { margin-top:auto; }
+.aui-workflow-variants button:focus-visible,.aui-workflow-group:focus-visible,.aui-workflow-sequence-row > button:focus-visible,.aui-workflow-message-list > button:focus-visible { outline:2px solid var(--aether-color-border-focus); outline-offset:-2px; }

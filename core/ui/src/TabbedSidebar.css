@@ -1,0 +1,256 @@
+@import "./IconButtonSizes.css";
+
+/* One tray vocabulary in every orientation. Attached editors inherit the frame's
+   surface; detached editors and trays each have their own frame. */
+.aui-tabbed-sidebar {
+  position: relative;
+  --aui-sidebar-button: var(--aui-icon-medium-size);
+  --aui-sidebar-icon: var(--aui-icon-medium-glyph);
+  --aui-sidebar-content-deduction: 0px;
+  --aui-tabbed-tray-height: calc(var(--aui-sidebar-button) + 2px + 2 * var(--aether-selection-cell-inset));
+  --aui-sidebar-surface-gap: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--aui-sidebar-surface-gap);
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  width: var(--aui-sidebar-expanded-width, 248px);
+  max-width: var(--aui-sidebar-expanded-width, 248px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--aether-color-text);
+  font-family: var(--aether-font-family);
+}
+.aui-tabbed-sidebar-tabs {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: var(--aether-selection-cell-gap);
+  padding: var(--aether-selection-cell-inset);
+  min-height: var(--aui-tabbed-tray-height);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  border: 1px solid var(--aether-color-border);
+  border-radius: 9px;
+  background: var(--aether-color-bg-panel);
+  box-shadow: var(--aether-shadow-1);
+}
+.aui-tabbed-sidebar-tab {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: var(--aui-sidebar-button);
+  min-width: var(--aui-sidebar-button);
+  height: var(--aui-sidebar-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--aether-selection-cell-radius);
+  background: transparent;
+  color: var(--aether-color-text-dim);
+  cursor: pointer;
+  transition: background var(--aether-motion-fast), color var(--aether-motion-fast);
+}
+.aui-tabbed-sidebar-tab svg { width: var(--aui-sidebar-icon); height: var(--aui-sidebar-icon); flex: 0 0 auto; }
+.aui-tabbed-sidebar-tab:hover { background: var(--aether-color-bg-hover, color-mix(in srgb, var(--aether-color-text) 8%, transparent)); color: var(--aether-color-text); }
+.aui-tabbed-sidebar-tab[aria-pressed="true"] { background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); }
+.aui-tabbed-sidebar-tab:focus-visible { outline: 2px solid var(--aether-color-accent); outline-offset: -2px; }
+.aui-tabbed-sidebar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--aether-color-border);
+  border-radius: 9px;
+  background: var(--aether-color-bg-panel);
+  box-shadow: var(--aether-shadow-1);
+}
+.aui-tabbed-sidebar[data-tabs="bottom"] > .aui-tabbed-sidebar-tabs,
+.aui-tabbed-sidebar[data-tabs="right"] > .aui-tabbed-sidebar-tabs { order: 1; }
+.aui-tabbed-sidebar-content > .aui-shell-panel { flex: 1; }
+.aui-tabbed-sidebar[data-orientation="vertical"] { flex-direction: row; }
+.aui-tabbed-sidebar[data-orientation="vertical"] > .aui-tabbed-sidebar-tabs {
+  flex-direction: column;
+  align-items: stretch;
+  align-self: stretch;
+  max-height: 100%;
+}
+/* The shell owns safe-area measurement; each card fills its available height. */
+.aui-shell .aui-shell-fledge[data-sidebar-tabs] {
+  align-items: stretch;
+  flex-direction: column;
+  bottom: var(--aui-workspace-inset-bottom, 10px);
+}
+.aui-shell-fledge[data-sidebar-anchor="bottom"] { justify-content: flex-end; }
+/* Docked chrome is part of the window edge, not a floating card. */
+.aui-shell .aui-shell-side[data-sidebar-tabs] { border: 0; background: var(--aether-color-bg-panel); padding: 0; }
+.aui-shell .aui-shell-side[data-sidebar-tabs]:not(.aui-shell-side--right) { border-right: 1px solid var(--aether-color-border); }
+.aui-shell .aui-shell-side[data-sidebar-tabs].aui-shell-side--right { border-left: 1px solid var(--aether-color-border); }
+.aui-shell-side[data-sidebar-tabs] > .aui-tabbed-sidebar[data-attachment="attached"] {
+  --aui-sidebar-content-deduction: 0px;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.aui-shell-side[data-sidebar-anchor="bottom"] > .aui-tabbed-sidebar { align-self: flex-end; }
+.aui-tabbed-sidebar[data-orientation="horizontal"][data-attachment="detached"][data-expanded="false"] { height: auto; }
+/* Attached surfaces share one frame; their border boxes stay unchanged. */
+.aui-tabbed-sidebar[data-attachment="attached"] {
+  --aui-sidebar-surface-gap: 0px;
+  height: 100%;
+  max-height: 100%;
+  outline: 1px solid var(--aether-color-border);
+  outline-offset: -1px;
+  border-radius: 9px;
+  background: var(--aether-color-bg-panel);
+  box-shadow: var(--aether-shadow-1);
+  overflow: hidden;
+}
+.aui-tabbed-sidebar[data-animate="true"] {
+  transition: max-height var(--aether-motion-base) var(--aether-motion-ease), max-width var(--aether-motion-base) var(--aether-motion-ease), width var(--aether-motion-base) var(--aether-motion-ease);
+}
+/* The anchor is independent of tab order (including outboard opening). */
+.aui-tabbed-sidebar[data-anchor="top"] { margin-block: 0 auto; }
+.aui-tabbed-sidebar[data-anchor="bottom"] { margin-block: auto 0; }
+.aui-tabbed-sidebar[data-orientation="horizontal"][data-open="false"] { max-height: var(--aui-tabbed-tray-height); overflow: hidden; }
+.aui-tabbed-sidebar[data-orientation="vertical"][data-open="false"] { max-width: var(--aui-tabbed-tray-height); }
+.aui-tabbed-sidebar[data-attachment="attached"] > .aui-tabbed-sidebar-tabs,
+.aui-tabbed-sidebar[data-attachment="attached"] > .aui-tabbed-sidebar-content {
+  border-color: transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+/* Attachment changes the surface only. Both trays keep the same border box,
+   cell dimensions, alignment and glyphs, including after collapse. */
+.aui-tabbed-sidebar[data-orientation="horizontal"] > .aui-tabbed-sidebar-tabs { height: var(--aui-tabbed-tray-height); }
+.aui-tabbed-sidebar[data-orientation="horizontal"] > .aui-tabbed-sidebar-tabs > .aui-tabbed-sidebar-tab { height: 100%; }
+.aui-tabbed-sidebar[data-orientation="vertical"] > .aui-tabbed-sidebar-tabs > .aui-tabbed-sidebar-tab { width: 100%; min-height: var(--aui-sidebar-button); }
+/* Contents stay at their editor width while the enclosing frame reveals them. */
+.aui-tabbed-sidebar[data-orientation="vertical"] > .aui-tabbed-sidebar-content { flex: 1 1 0; overflow-x: hidden; }
+.aui-tabbed-sidebar[data-orientation="vertical"] .aui-shell-panel { min-width: calc(var(--aui-sidebar-expanded-width, 248px) - var(--aui-tabbed-tray-height) - var(--aui-sidebar-content-deduction)); }
+.aui-tabbed-sidebar[data-labels="labels"] { --aui-sidebar-tray-width: 124px; }
+.aui-tabbed-sidebar[data-labels="labels"][data-orientation="vertical"][data-open="false"] { max-width: var(--aui-sidebar-tray-width); }
+.aui-tabbed-sidebar[data-labels="labels"] .aui-tabbed-sidebar-tab { width: auto; gap: 5px; padding: 0 7px; }
+.aui-tabbed-sidebar[data-labels="labels"][data-orientation="vertical"] > .aui-tabbed-sidebar-tabs { width: var(--aui-sidebar-tray-width); align-items: stretch; }
+.aui-tabbed-sidebar[data-labels="labels"][data-orientation="vertical"] .aui-tabbed-sidebar-tab { justify-content: flex-start; }
+.aui-tabbed-sidebar[data-labels="labels"][data-orientation="vertical"] .aui-shell-panel { min-width: calc(var(--aui-sidebar-expanded-width, 248px) - var(--aui-sidebar-tray-width) - var(--aui-sidebar-content-deduction)); }
+.aui-tabbed-sidebar-tab-label { white-space: nowrap; font-size: 11px; overflow: hidden; text-overflow: ellipsis; }
+.aui-tabbed-sidebar[data-tab-size="compact"] { --aui-sidebar-button: 30px; --aui-sidebar-icon: 18px; }
+.aui-tabbed-sidebar[data-tab-size="touch"] { --aui-sidebar-button: 44px; --aui-sidebar-icon: 26px; }
+.aui-shell[data-animate-panels="true"] .aui-tabbed-sidebar .aui-shell-panel { animation-name: aui-attached-panel-enter; }
+.aui-shell[data-animate-panels="true"] .aui-tabbed-sidebar .aui-shell-panel[data-closing="true"] { animation-name: aui-attached-panel-exit; }
+@keyframes aui-attached-panel-enter { from { opacity: 0; } to { opacity: 1; } }
+@keyframes aui-attached-panel-exit { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .aui-tabbed-sidebar[data-animate="true"], .aui-tabbed-sidebar-tab { transition: none; }
+}
+
+/* Side anchors remain at the window edge even when tray order is reversed. */
+.aui-shell-side[data-sidebar-anchor="left"] { justify-content: flex-start; }
+.aui-shell-side[data-sidebar-anchor="right"] { justify-content: flex-end; }
+
+.aui-tabbed-sidebar[data-attachment="detached"] { --aui-sidebar-content-deduction: 10px; }
+.aui-sidebar-tab-separator { flex: 0 0 1px; width: 1px; height: 18px; background: var(--aether-color-border); margin: 0 2px; }
+.aui-tabbed-sidebar[data-orientation="vertical"] .aui-sidebar-tab-separator { width: 18px; height: 1px; margin: 2px 0; }
+
+/* A single internal rule separates controls from the editor without splitting
+   the combined background. It does not alter tray size or its animation anchor. */
+.aui-tabbed-sidebar[data-attachment="attached"] > .aui-tabbed-sidebar-tabs { position: relative; }
+.aui-tabbed-sidebar[data-attachment="attached"] > .aui-tabbed-sidebar-tabs::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background: var(--aether-color-border);
+}
+.aui-tabbed-sidebar[data-attachment="attached"][data-tabs="left"] > .aui-tabbed-sidebar-tabs::after { top: 0; bottom: 0; right: 0; width: 1px; }
+.aui-tabbed-sidebar[data-attachment="attached"][data-tabs="right"] > .aui-tabbed-sidebar-tabs::after { top: 0; bottom: 0; left: 0; width: 1px; }
+.aui-tabbed-sidebar[data-attachment="attached"][data-tabs="top"] > .aui-tabbed-sidebar-tabs::after { left: 0; right: 0; bottom: 0; height: 1px; }
+.aui-tabbed-sidebar[data-attachment="attached"][data-tabs="bottom"] > .aui-tabbed-sidebar-tabs::after { left: 0; right: 0; top: 0; height: 1px; }
+.aui-tabbed-sidebar[data-attachment="attached"][data-open="false"] > .aui-tabbed-sidebar-tabs::after { background: transparent; }
+
+/* Floating cards use icon/content measurements. Docked cards retain their full
+   edge span. Measured max sizes preserve the same continuous reveal animation. */
+.aui-tabbed-sidebar[data-floating="true"][data-orientation="vertical"][data-open="false"] {
+  max-height: min(100%, var(--aui-sidebar-tray-length, 100%));
+}
+.aui-tabbed-sidebar[data-floating="true"][data-orientation="horizontal"][data-open="false"] {
+  max-width: min(100%, var(--aui-sidebar-tray-length, 248px));
+}
+.aui-tabbed-sidebar[data-floating="true"][data-height-policy="content"][data-open="true"][data-orientation="vertical"] {
+  max-height: min(100%, max(var(--aui-sidebar-tray-length, var(--aui-tabbed-tray-height)), var(--aui-sidebar-content-height, 100%)));
+}
+.aui-tabbed-sidebar[data-floating="true"][data-height-policy="content"][data-open="true"][data-orientation="horizontal"] {
+  max-height: min(100%, calc(var(--aui-tabbed-tray-height) + var(--aui-sidebar-content-height, 100%) + var(--aui-sidebar-surface-gap)));
+}
+/* The content's intrinsic height must not inherit the card's stretched height.
+   It stays at editor width during collapse; the outer content area scrolls. */
+.aui-tabbed-sidebar[data-floating="true"][data-height-policy="content"] > .aui-tabbed-sidebar-content > .aui-shell-panel { flex: 0 0 auto; }
+.aui-tabbed-sidebar[data-floating="true"][data-height-policy="content"] .aui-shell-panel-slot,
+.aui-tabbed-sidebar[data-floating="true"][data-height-policy="content"] .aui-shell-panel-host { height: auto; }
+.aui-tabbed-sidebar[data-floating="true"][data-orientation="horizontal"] > .aui-tabbed-sidebar-content > .aui-shell-panel { min-width: calc(var(--aui-sidebar-expanded-width, 248px) - 2px); }
+/* An open card may be narrower than its preferred editor width on a small
+   workspace. Let its controls reflow instead of creating a sideways scroll. */
+.aui-tabbed-sidebar[data-floating="true"][data-orientation="horizontal"][data-open="true"] > .aui-tabbed-sidebar-content > .aui-shell-panel { min-width: 0; }
+
+.aui-tabbed-sidebar[data-floating="true"][data-height-policy="fixed"][data-open="true"] {
+  max-height: min(100%, max(var(--aui-tabbed-tray-height), var(--aui-sidebar-fixed-height)));
+}
+
+/* Open cards respect the editor width, including manual resizing. Extra icons
+   scroll in the tray; they must not consume the middle canvas on small screens. */
+.aui-shell .aui-shell-fledge[data-sidebar-tabs] { max-width: calc(100% - 28px); }
+.aui-tabbed-sidebar[data-floating="true"][data-orientation="horizontal"] {
+  width: var(--aui-sidebar-expanded-width, 248px);
+}
+.aui-tabbed-sidebar[data-floating="true"][data-orientation="horizontal"][data-open="true"] {
+  max-width: min(100%, var(--aui-sidebar-expanded-width, 248px));
+}
+
+.aui-tabbed-sidebar[data-floating="true"][data-orientation="horizontal"][data-open="false"] {
+  width: var(--aui-sidebar-tray-length, 248px);
+}
+.aui-shell-fledge--right > .aui-tabbed-sidebar[data-orientation="horizontal"] { align-self: flex-end; }
+.aui-shell-fledge--left > .aui-tabbed-sidebar[data-orientation="horizontal"] { align-self: flex-start; }
+
+/* Canvas-mode hot zones are only 16px wide while hidden. Once revealed, give
+   their absolutely positioned cards the workspace's full containing width;
+   otherwise a scrolling horizontal tray is clipped to the hot zone itself.
+   Empty space still passes pointer input straight through to the canvas. */
+.aui-shell-edge:has(> .aui-shell-fledge[data-sidebar-tabs]) {
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Slim reference variant: a narrow editor with an edge-to-edge horizontal tray.
+   The tray keeps its full editor width when collapsed, so either anchor is stable. */
+.aui-tabbed-sidebar[data-variant="slim"] {
+  --aui-sidebar-expanded-width: 216px;
+  --aui-sidebar-button: var(--aui-icon-large-size);
+  --aui-sidebar-icon: var(--aui-icon-small-glyph);
+  --aui-tabbed-tray-height: calc(var(--aui-sidebar-button) + 2px);
+}
+.aui-tabbed-sidebar[data-variant="slim"][data-tab-size="touch"] { --aui-sidebar-button: 44px; --aui-sidebar-icon: var(--aui-icon-medium-glyph); }
+.aui-tabbed-sidebar[data-variant="slim"][data-floating][data-orientation="horizontal"][data-open] {
+  width: var(--aui-sidebar-expanded-width);
+  max-width: min(100%, var(--aui-sidebar-expanded-width));
+}
+.aui-tabbed-sidebar[data-variant="slim"] > .aui-tabbed-sidebar-tabs { padding: 0; gap: 0; }
+.aui-tabbed-sidebar[data-variant="slim"][data-open="false"] > .aui-tabbed-sidebar-content { display: none; }
+.aui-tabbed-sidebar[data-variant="slim"] > .aui-tabbed-sidebar-tabs > .aui-tabbed-sidebar-tab {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  border-radius: 6px;
+}

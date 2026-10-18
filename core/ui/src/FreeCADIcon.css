@@ -1,0 +1,6 @@
+[data-aether-theme="dark"] { --freecad-icon-dark-display: block; --freecad-icon-light-display: none; }
+[data-aether-theme="light"] { --freecad-icon-dark-display: none; --freecad-icon-light-display: block; }
+.aui-freecad-icon { display: inline-flex; flex: none; vertical-align: middle; }
+.aui-freecad-icon > img { width: 100%; height: 100%; object-fit: contain; }
+.aui-freecad-icon[data-palette="auto"] > .aui-freecad-icon-dark { display: var(--freecad-icon-dark-display, block); }
+.aui-freecad-icon[data-palette="auto"] > .aui-freecad-icon-light { display: var(--freecad-icon-light-display, none); }

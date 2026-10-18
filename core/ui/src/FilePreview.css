@@ -1,0 +1,56 @@
+.aui-file-preview-scrim {
+  position: fixed; inset: 0; z-index: 120;
+  display: grid; place-items: center; padding: 24px;
+  background: var(--aether-color-scrim);
+}
+.aui-file-preview {
+  display: flex; flex-direction: column; min-width: 0;
+  width: min(1100px, 100%); height: min(820px, 100%);
+  border: 1px solid var(--aether-color-border); border-radius: var(--aether-radius-panel);
+  background: var(--aether-color-bg-panel); color: var(--aether-color-text);
+  box-shadow: var(--aether-shadow-3); overflow: hidden;
+}
+.aui-file-preview > header {
+  display: flex; align-items: center; gap: 8px; flex: none;
+  padding: 10px 12px; border-bottom: 1px solid var(--aether-color-border);
+}
+.aui-file-preview-name { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.aui-file-preview-name strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.aui-file-preview-name small { color: var(--aether-color-text-dim); font-size: 11px; }
+.aui-file-preview-open {
+  flex: none; padding: var(--aether-control-padding-y) var(--aether-control-padding-x);
+  border: var(--aether-control-border-width) solid transparent; border-radius: var(--aether-radius-button);
+  background: var(--aether-color-accent); color: var(--aether-color-text-on-selected);
+  font: inherit; cursor: pointer;
+}
+
+/* The stage fills what is left and centres whatever the browser renders. */
+.aui-file-preview-stage {
+  position: relative; flex: 1; min-height: 0;
+  display: grid; place-items: center; padding: 12px;
+  background: var(--aether-color-bg-inset);
+}
+.aui-file-preview-stage[data-kind="pdf"],
+.aui-file-preview-stage[data-kind="text"] { padding: 0; }
+.aui-file-preview-stage img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.aui-file-preview-stage iframe { width: 100%; height: 100%; border: 0; background: var(--aether-color-bg-app); }
+.aui-file-preview-stage video { max-width: 100%; max-height: 100%; }
+.aui-file-preview-stage audio { width: min(520px, 100%); }
+.aui-file-preview-stage pre {
+  margin: 0; width: 100%; height: 100%; overflow: auto; padding: 14px; box-sizing: border-box;
+  white-space: pre-wrap; word-break: break-word;
+  font: 12px/1.6 var(--aether-font-mono); color: var(--aether-color-text);
+}
+.aui-file-preview-none {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  margin: 0; max-width: 32ch; text-align: center; color: var(--aether-color-text-dim); font-size: 12px;
+}
+.aui-file-preview-none svg { width: 34px; height: 34px; color: var(--aether-color-text-faint); }
+
+/* Stepping through a selection, kept clear of the content. */
+.aui-file-preview-step {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 1;
+  background: var(--aether-color-bg-panel); border: 1px solid var(--aether-color-border);
+}
+.aui-file-preview-step:first-of-type { left: 10px; }
+.aui-file-preview-step:last-of-type { right: 10px; }

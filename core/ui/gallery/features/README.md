@@ -1,24 +1,28 @@
-# Feature editors
+# CAD feature editor collection
 
-One file per feature — `sketch.ts`, `extrude.ts`, `revolve.ts`, `sweep.ts`,
-`loft.ts`, `thicken.ts`, `enclose.ts`, `plane.ts`, `mate.ts` — each owning
-that feature's window layout, controls, dependent sub-settings, and
-validation. `shared.ts` holds the plumbing they all use (window
-construction, parameter-row helpers, and the Core-validated wrapper);
-`index.ts` re-exports them.
+The original engine-backed feature editors are owned by Aether CAD, in
+`Aether-CAD/gallery/features/`. Shared UI must not import the CAD engine.
 
-Every editor is built from two shared pieces and nothing else:
+Aether UI → **App demos → Aether CAD → CAD feature editors** embeds the
+CAD-owned gallery at `/cad/gallery/index.html?embed=1`. The full-window link
+opens `/cad/gallery/index.html`. Build both the UI showcase and CAD to serve it.
 
-- `@aether/ui`'s `openFeatureWindow` — the window chrome (title, ✓/✕,
-  tabs, entities box, parameter rows, nested sub-settings, anchored
-  pickers, property footer, error state).
-- `@aether/core` — the engine's own types and validators, so an editor
-  reports the errors the app would report.
+The collection contains Sketch, Extrude, Revolve, Sweep, Loft, Thicken, Enclose,
+Plane and Mate, with search and per-editor reset. CAD also retains its transform
+gizmo example under Viewport tools. These are interactive reference windows;
+their demo controls do not edit a saved CAD document.
 
-To add a feature: copy the closest existing file, keep its layout in
-Onshape order (body type → boolean → selection → end type → parameters →
-nested options), and export one `build<Name>Demo(host)`.
+The TypeScript files in this directory are legacy redirect builders retained
+for compatibility; the showcase no longer renders them as repeated links.
 
-These are the reference implementations the Aether CAD editors are ported
-from; `Aether CAD/src/plane-window.ts` is the first app-side editor built
-on the same window API.
+## Feature-editor presentation references — 2026-10-15
+
+**Widgets → Aether CAD → Feature editors** shows the standard and compact
+designs independently. The Spacious specimen was removed at Jonathan’s request. `gallery/CADFeatureEditors.tsx` owns the nine
+presentation-only body builders shared by the standard and compact sets.
+`gallery/CompactFeaturePopupDemo.tsx` mounts those bodies through the shared
+`openFeatureWindow({variant: "compact"})` container: icon/title header, full-width
+pill tabs and one bottom Cancel/Apply row. Both sets use 300px windows and
+the same 12px body typography, 26px field heights and 8px body spacing. Apply gives local sample feedback;
+Cancel restores the initial controls. Neither executes or saves CAD geometry.
+Actual feature behavior and engine validation belong to Aether CAD.

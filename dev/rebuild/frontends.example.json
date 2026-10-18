@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "studio": "../../studio/dist",
+  "session": "../../core/session",
+  "icons": "../../core/assets/icons",
+  "branding": "../../core/assets/branding/apps",
+  "apps": {
+    "drive": "../../drive/dist",
+    "io": "../../../Aether-IO/dist",
+    "cad": "../../../Aether-CAD/dist",
+    "animation": "../../../Aether-Animation/web/dist",
+    "ui": "../../core/ui/dist",
+    "map": "../../../Aether-Map/dist",
+    "sketch": "../../../Aether-Sketch/dist",
+    "vector": "../../../Aether-Vector/dist"
+  }
+}

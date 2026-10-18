@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from "react";
+import { AetherIcon } from "./AetherIcon";
 import type {
   CSSProperties,
   DragEvent,
@@ -341,7 +342,7 @@ export function DataTable<Row>({
                   }}
                 >
                   {column.header}
-                  {activeSort ? <span aria-hidden="true">{activeSort === "ascending" ? "▲" : "▼"}</span> : null}
+                  {activeSort ? <span aria-hidden="true"><AetherIcon name={activeSort === "ascending" ? "chevron-up" : "chevron-down"} /></span> : null}
                 </button>
                 {column.resizable ? (
                   <span className="aui-data-table-resizer" role="separator" aria-label={`Resize ${column.header}`} onPointerDown={(event) => startResize(event, column)} />

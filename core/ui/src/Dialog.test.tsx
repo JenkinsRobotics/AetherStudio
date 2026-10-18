@@ -62,3 +62,20 @@ test("focus moves into the dialog on open and Tab cycles within it", () => {
   fireEvent.keyDown(document, { key: "Tab", shiftKey: true });
   expect(document.activeElement).toBe(screen.getByText("OK"));
 });
+
+test("inline dialogs stay in document flow without stealing focus, trapping Tab or dismissing on Escape", () => {
+  const close = vi.fn();
+  const { rerender, container } = render(<button>Outside</button>);
+  const outside = screen.getByText("Outside");
+  outside.focus();
+  rerender(<><button>Outside</button><Dialog inline open title="Preview" onClose={close} actions={<button>Apply</button>}>Body</Dialog></>);
+  expect(document.activeElement).toBe(outside);
+  expect(screen.getByRole("dialog").getAttribute("aria-modal")).toBe("false");
+  expect(container.querySelector(".aui-dialog-scrim--inline")).toBeTruthy();
+  expect(fireEvent.keyDown(document, { key: "Tab" })).toBe(true);
+  fireEvent.keyDown(document, { key: "Escape" });
+  fireEvent.click(container.querySelector(".aui-dialog-scrim")!);
+  expect(close).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole("button", { name: "Close" }));
+  expect(close).toHaveBeenCalledTimes(1);
+});

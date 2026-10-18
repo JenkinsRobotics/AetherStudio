@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/Arch_Floor.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient3071">
+      <stop id="stop3073" offset="0" style="stop-color:#c4d0dd;stop-opacity:1" />
+      <stop id="stop3075" offset="1" style="stop-color:#e5ecf3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3874" id="linearGradient3880" x1="56" y1="47" x2="53" y2="39" gradientUnits="userSpaceOnUse" />
+    <linearGradient id="linearGradient3874">
+      <stop style="stop-color:#c4d0dd;stop-opacity:1" offset="0" id="stop3876" />
+      <stop style="stop-color:#dae2ec;stop-opacity:1" offset="1" id="stop3878" />
+    </linearGradient>
+    <linearGradient y2="9" x2="24" y1="64" x1="34" gradientUnits="userSpaceOnUse" id="linearGradient3120" xlink:href="#linearGradient3071" />
+  </defs>
+  <g id="layer1">
+    <path d="M 3,9 3,53 51,53 61,43 61,9 z" id="rect3005" style="color:#405269;fill:url(#linearGradient3120);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 5,51 0,-40 54,0 0,32 -6,8 z" id="path3096" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m 61,43 c 0,-1 -4,-4 -8,-4 0,0 2,10 -2,14 z" id="path3778" style="color:#405269;fill:url(#linearGradient3880);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 53.08551,48.1244 6.65843,-6.453618" id="path3125" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m 61,43 c 0,-1 -4,-4 -8,-4 0,0 2,10 -2,14 z" id="path3778-3" style="color:#405269;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="g3067" transform="matrix(1.1,0,0,1.1538462,-0.8,-4.4615385)" style="fill:#405269">
+      <path id="rect5347" d="m 8,16 0,4 0,22 2,0 2,0 12.363636,-2e-6 0,-3.466666 -12.727272,0 0,-8.666666 10.909091,0 0,-3.466667 -10.909091,0 0,-6.933333 5.454545,0 0,-3.466667 z m 18.181818,-10e-7 0,3.466667 10.909091,0 0,10.4 1.818182,0 0,-10.4 5.454545,0 0,19.066666 -5.454545,0 0,-1.733333 -1.818182,0 0,1.733333 -3.636364,0 0,3.466666 L 35,42 l 3,0 6,0 2,0 2,0 0,-26 z" style="color:#405269;fill:#405269;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path5429" d="m 34.363636,39.399998 0,-7 c -0.04286,-7.19e-4 -0.03409,1.272727 0,0 -4.07634,0 -9.090909,0.933334 -9.090909,7.866667" style="color:#405269;fill:none;stroke:#405269;stroke-width:1.1;stroke-linejoin:round;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

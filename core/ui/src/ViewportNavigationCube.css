@@ -1,0 +1,32 @@
+/* Keep the shared floating square panel around the beveled navigator. */
+.aui-viewport-cube.aui-viewport-cube { width: 180px; height: 180px; }
+.aui-viewport-cube .aui-viewport-cube-stage { left: 21px; top: 28px; width: 138px; height: 138px; }
+.aui-viewport-cube .aui-viewport-cube-face polygon { stroke: var(--aether-color-text-dim); stroke-width: .6; stroke-linejoin: round; }
+.aui-viewport-cube .aui-viewport-cube-face text { fill: var(--aether-color-text); font-size: 9px; font-weight: 500; }
+.aui-viewport-cube .aui-viewport-cube-face:hover polygon,
+.aui-viewport-cube .aui-viewport-cube-face:focus-visible polygon { fill: var(--aether-color-accent) !important; stroke: var(--aether-color-accent-strong); stroke-width: 1; }
+.aui-viewport-cube .aui-viewport-cube-nudge { width: 24px; height: 24px; }
+.aui-viewport-cube .aui-viewport-cube-nudge--up { top: 0; left: 78px; }
+.aui-viewport-cube .aui-viewport-cube-nudge--down { bottom: 0; left: 78px; }
+.aui-viewport-cube .aui-viewport-cube-nudge--left { top: 83px; left: 0; }
+.aui-viewport-cube .aui-viewport-cube-nudge--right { top: 83px; right: 0; }
+/* Pair the curved controls around the upper-right corner; their arrowheads
+   follow the same circular path in opposite directions. */
+.aui-viewport-cube .aui-viewport-cube-roll { width: 40px; height: 30px; }
+.aui-viewport-cube .aui-viewport-cube-roll--left { top: 11px; left: 104px; }
+.aui-viewport-cube .aui-viewport-cube-roll--right { top: 43px; right: 1px; }
+.aui-viewport-cube .aui-viewport-cube-roll svg { width: 38px; height: 24px; transform: rotate(45deg); }
+.aui-viewport-cube .aui-viewport-cube-nudge svg { width: 24px; height: 24px; }
+.aui-viewport-cube .aui-viewport-cube-nudge svg,
+.aui-viewport-cube .aui-viewport-cube-roll svg { fill: var(--aether-color-bg-control-hover); stroke: var(--aether-color-text-dim); stroke-width: 1; }
+.aui-viewport-cube .aui-viewport-cube-nudge:hover svg,
+.aui-viewport-cube .aui-viewport-cube-roll:hover svg { fill: var(--aether-color-accent); }
+.aui-viewport-cube .aui-viewport-cube-home { right: 7px; bottom: 6px; }
+.aui-viewport-cube .aui-viewport-cube-home svg { width: 15px; height: 15px; }
+.aui-viewport-cube .aui-viewport-cube-axes line { stroke-width: 1; }
+.aui-viewport-cube .aui-viewport-cube-axes text { font-size: 7px; }
+
+.aui-viewport-cube-scene { position: absolute; left: 21px; top: 28px; width: 138px; height: 138px; pointer-events: none; }
+.aui-viewport-cube-scene canvas { display: block; width: 100%; height: 100%; }
+/* Retain accessible face controls, projected exactly onto the 3D facets. */
+.aui-viewport-cube--3d .aui-viewport-cube-stage { opacity: 0; }

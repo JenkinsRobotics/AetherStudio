@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import ipaddress
 import json
 import queue
+import re
 import mimetypes
 import os
 import secrets
-import shutil
 import ssl
 import socket
 import threading
@@ -20,24 +21,33 @@ import zipfile
 from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import quote, unquote, urlsplit
+from urllib.parse import parse_qs, quote, unquote, urlsplit
 
-from animacore.bridge import Session, handle_request
 from core.host.state import Problem, Store, password_matches
+from core.host.agents import Agents
 from core.host.library import Library
 from core.host.mail import Mailer, identity
+from core.host.branding import favicon_metadata, icon_metadata, icon_route, without_icon_links
+from core.host.products import Products
+from core.host.projects import project_path
 
 REPO = Path(__file__).resolve().parents[2]
+SUITE_ICON_NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+APPLICATION_CATALOG = json.loads(Path(__file__).with_name("application-catalog.json").read_text(encoding="utf-8"))
 PACKAGES = {
-    "cad": ("Aether CAD", "Design parts and assemblies", REPO / "Aether CAD/dist"),
-    "animation": (
-        "Aether Animation",
-        "Rig, pose and animate characters",
-        REPO / "aether-animation/web/dist",
-    ),
-    "ui": ("Aether UI", "Shared components and design review", REPO / "core/ui/dist"),
+    app["id"]: (
+        app["name"], app["description"],
+        REPO / "core/ui/dist" if app["id"] == "ui" else
+        project_path(app["id"]) / ("web/dist" if app["id"] == "animation" else "dist"),
+    )
+    for app in APPLICATION_CATALOG
 }
 
+COMING_SOON_APPS = {app["id"] for app in APPLICATION_CATALOG if app["coming_soon"]}
+
+#: Applications whose bare "/<app>/" path opens the Studio library home rather
+#: than the application bundle. Aether UI has no document library.
+LIBRARY_HOME_APPS = ("cad", "animation", "map")
 
 def safe_path(root, relative):
     target = (root / relative).resolve()
@@ -104,19 +114,29 @@ def validate_settings(settings):
 
 
 class StudioHost:
-    def __init__(self, directory: Path, packages=None):
+    def __init__(self, directory: Path, packages=None, products=None):
+        self.products = products if products is not None else Products()
         self.store = Store(directory)
-        self.library = Library(self.store)
+        self.library = Library(self.store, self.products)
+        self.products.initialize(self)
+        from core.host.drive import Drive
+        self.drive = Drive(self)
+        self.agents = Agents(directory)
         self.mailer = Mailer(directory)
         self.mail_queue = queue.Queue(maxsize=32)
         self.mail_worker_started = False
         self.packages = packages or PACKAGES
+        self.store.seed_applications(self.packages)
+        from core.host.automation import Automation
+        self.automation = Automation(self)
         self.running_settings = self.store.settings()
         self.lock = threading.RLock()
         self.engines = {}
         self.started = time.time()
         self.server = None
         self.restart_requested = False
+        from core.host.host_storage import HostStorage
+        self.storage = HostStorage(self)
 
     def enqueue_mail(self, recipient, subject, body, kind):
         if not self.mail_worker_started:
@@ -167,11 +187,12 @@ class StudioHost:
         directory = self.store.directory / "backups"
         directory.mkdir(exist_ok=True, mode=0o700)
         name = f"studio-{time.strftime('%Y%m%d-%H%M%S')}-{secrets.token_hex(3)}.zip"
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(dir=directory, prefix=".backup-") as temporary:
             snapshot = Path(temporary) / "studio.sqlite3"
             connection = sqlite3.connect(snapshot)
             self.store.db.backup(connection)
             connection.execute("DELETE FROM sessions")
+            connection.execute("DELETE FROM automation_grants")
             connection.execute("DELETE FROM recovery_tokens")
             connection.execute("DELETE FROM setup_sessions")
             connection.execute("DELETE FROM attempts")
@@ -179,12 +200,17 @@ class StudioHost:
             connection.commit()
             connection.close()
             with zipfile.ZipFile(
-                directory / name, "w", zipfile.ZIP_DEFLATED
+                Path(temporary) / name, "w", zipfile.ZIP_DEFLATED
             ) as archive:
                 archive.write(snapshot, "studio.sqlite3")
                 archive.writestr(
                     "backup.json", json.dumps({"version": 1, "created": time.time()})
                 )
+                blobs = self.store.directory / "drive/blobs"
+                if blobs.exists():
+                    for blob in blobs.iterdir():
+                        if blob.is_file() and not blob.is_symlink() and re.fullmatch(r"[0-9a-f]{64}", blob.name):
+                            archive.write(blob, "drive/blobs/" + blob.name)
                 workspace = self.store.directory / "workspaces"
                 if workspace.exists():
                     for item in workspace.rglob("*"):
@@ -196,7 +222,12 @@ class StudioHost:
                             archive.write(
                                 item, str(item.relative_to(self.store.directory))
                             )
-        (directory / name).chmod(0o600)
+            completed = Path(temporary) / name
+            completed.chmod(0o600)
+            with completed.open("rb") as stream:
+                os.fsync(stream.fileno())
+            os.replace(completed, directory / name)
+        self.storage.completed(name)
         return name
 
     def apps(self, user):
@@ -210,6 +241,7 @@ class StudioHost:
                 "installed": (value[2] / "index.html").is_file(),
                 "url": f"/{key}/",
                 "admin_only": key == "ui",
+                "coming_soon": key in COMING_SOON_APPS,
             }
             for key, value in self.packages.items()
             if self.app_allowed(key, user)
@@ -219,18 +251,9 @@ class StudioHost:
         root = self.store.directory / "workspaces" / uid
         if not root.exists():
             root.mkdir(parents=True, mode=0o700)
-            examples = root / "examples"
-            examples.mkdir()
-            # Seed only the working animation sample, never the repository or host config.
-            source = REPO / "examples/pan_tilt_head.character.anima"
-            if source.is_file():
-                shutil.copy2(source, examples / source.name)
-                for name in ("base.stl", "yoke.stl", "head.usdz"):
-                    asset = REPO / "examples/assets" / name
-                    if asset.is_file():
-                        (examples / "assets").mkdir(exist_ok=True)
-                        shutil.copy2(asset, examples / "assets" / name)
+            self.products.seed_workspace(root)
         return root
+
 
     def require_user(self, token, admin=False, allow_change=False):
         user = self.store.user_for(token)
@@ -246,6 +269,17 @@ class StudioHost:
 
     def dispatch(self, path, data, token, address, setup_token=""):
         store = self.store
+        if path.startswith("/api/automation/"):
+            return self.automation.dispatch(path[len("/api/automation/"):], data, token)
+        if path.startswith("/api/agent/"):
+            user = self.require_user(token)
+            if user["role"] == "service":
+                raise Problem(403, "Sign in with a user account to manage agents.")
+            action = path.removeprefix("/api/agent/")
+            if action == "chat":
+                app = data.get("app")
+                self.require_app(app, user)
+            return self.agents.dispatch(user["id"], user["role"] == "admin", action, data)
         if path == "/api/setup/authorize":
             return {
                 "ok": True,
@@ -363,16 +397,26 @@ class StudioHost:
                 403, "Service tokens can only call their scoped application APIs."
             )
         if path == "/api/logout":
+            self.agents.cancel_user(uid)
             store.db.execute(
                 "DELETE FROM sessions WHERE token=?", (store.token_hash(token),)
             )
             store.audit(user["username"], "sign_out")
             return {"ok": True, "_cookie": ""}
+        if path.startswith("/api/drive/"):
+            if user["role"] == "service":
+                raise Problem(403, "Sign in with a user account to open Drive.")
+            self.require_app("drive", user)
+            return self.drive.dispatch(path.rsplit("/", 1)[-1], user, data)
         if path.startswith("/api/library/"):
             if user["role"] == "service":
                 raise Problem(403, "Sign in with a user account to open the library.")
             self.require_app(data.get("app"), user)
             return self.library.dispatch(path.rsplit("/", 1)[-1], user, data)
+        if path.startswith("/api/"):
+            product = path.split("/", 3)[2]
+            if product in self.products.services:
+                return self.products.api(self, user, product, path, data)
         if path == "/api/preferences":
             if user["role"] == "service":
                 raise Problem(403, "User account required.")
@@ -453,10 +497,14 @@ class StudioHost:
                 ):
                     raise Problem(503, "The email queue is full. Try again shortly.")
                 return {"ok": True}
+            if path == "/api/admin/storage":
+                result = self.storage.configure(data)
+                store.audit(user["username"], "backup_policy_saved")
+                return result
             if path == "/api/admin/backup":
                 name = self.backup()
                 store.audit(user["username"], "backup_created", name)
-                return {"ok": True, "name": name}
+                return {"ok": True, "name": name, "warning": self.storage.read()["error"]}
             if path == "/api/admin/team":
                 team_id = data.get("id") or secrets.token_hex(16)
                 if data.get("action") == "delete":
@@ -477,7 +525,7 @@ class StudioHost:
                             not isinstance(i, str) or i not in known_users
                             for i in members
                         )
-                        or any(i not in ("cad", "animation") for i in apps)
+                        or any(i not in self.packages or i == "ui" for i in apps)
                     ):
                         raise Problem(
                             400, "Choose a team name, valid members and applications."
@@ -504,7 +552,8 @@ class StudioHost:
                 return {"ok": True}
             if path == "/api/admin/access":
                 if (
-                    data.get("id") not in ("cad", "animation")
+                    data.get("id") not in self.packages
+                    or data.get("id") == "ui"
                     or type(data.get("restricted")) is not bool
                 ):
                     raise Problem(400, "Invalid application access policy.")
@@ -520,7 +569,7 @@ class StudioHost:
                 if not isinstance(base, str) or not base.strip() or len(base) > 64:
                     raise Problem(400, "Choose a base theme id.")
                 if not isinstance(apps, dict) or any(
-                    key not in ("studio", "cad", "animation", "ui")
+                    key not in ("studio", *self.packages)
                     or not isinstance(value, str)
                     or len(value) > 64
                     for key, value in apps.items()
@@ -559,7 +608,7 @@ class StudioHost:
                     or not 1 <= len(name.strip()) <= 80
                     or not isinstance(apps, list)
                     or not apps
-                    or any(i not in ("cad", "animation") for i in apps)
+                    or any(i not in self.packages or i == "ui" for i in apps)
                     or type(days) is not int
                     or not 1 <= days <= 365
                 ):
@@ -643,6 +692,8 @@ class StudioHost:
                     store.revoke(target["id"])
                 else:
                     raise Problem(400, "Unknown user action.")
+                if action in ("update", "reset_password", "revoke_sessions"):
+                    self.agents.cancel_user(target["id"])
                 store.audit(user["username"], action, target["username"])
                 return {"ok": True}
             if path == "/api/admin/apps":
@@ -700,21 +751,7 @@ class StudioHost:
         self.require_app(app, user)
         root = self.root_for(uid)
         if route == "rpc":
-            if data.get("method") == "shutdown":
-                raise Problem(403, "Engine shutdown is managed by the host.")
-            # A login owns its engine handles; users and application packages cannot collide.
-            key = (store.token_hash(token), app)
-            if key not in self.engines:
-                live = {
-                    r[0]
-                    for r in store.db.execute(
-                        "SELECT token FROM sessions WHERE expires>? UNION SELECT token FROM services WHERE expires>? AND active=1",
-                        (time.time(), time.time()),
-                    )
-                }
-                self.engines = {k: v for k, v in self.engines.items() if k[0] in live}
-                self.engines[key] = Session(workspace_root=root)
-            return handle_request(self.engines[key], data)
+            return self.products.rpc(self, user, app, token, data)
         if route == "files/save":
             if not isinstance(data.get("path"), str) or not isinstance(
                 data.get("text"), str
@@ -777,6 +814,18 @@ def make_handler(host):
             self.end_headers()
             self.wfile.write(body)
 
+
+
+
+
+
+
+
+
+
+
+
+
         def context(self):
             public = urlsplit(host.running_settings["public_url"])
             authority = self.headers.get("Host", "")
@@ -797,10 +846,11 @@ def make_handler(host):
             authorization = self.headers.get("Authorization", "")
             if authorization.startswith("Bearer "):
                 token = authorization[7:]
-                if not token.startswith("aether_sa_"):
+                agent_command = urlsplit(self.path).path.startswith("/api/automation/commands/")
+                if not token.startswith("aether_sa_") and not (agent_command and token.startswith("aether_agent_")):
                     raise Problem(
                         401,
-                        "Only service-account tokens support Bearer authentication.",
+                        "This credential cannot access that endpoint.",
                     )
             return origin, token
 
@@ -812,34 +862,53 @@ def make_handler(host):
             except Exception:
                 return ""
 
+        def do_PUT(self):
+            if not host.products.http(self, host, "PUT", unquote(urlsplit(self.path).path)):
+                self.reply(404, {"error": "Not found."})
+
+        def do_DELETE(self):
+            if not host.products.http(self, host, "DELETE", unquote(urlsplit(self.path).path)):
+                self.reply(404, {"error": "Not found."})
+
         def do_POST(self):  # noqa: N802
-            with host.lock:
-                try:
-                    origin, token = self.context()
-                    if (
-                        self.headers.get("Origin") != origin
-                        and not self.headers.get("Authorization", "").startswith(
-                            "Bearer aether_sa_"
-                        )
-                    ) or self.headers.get_content_type() != "application/json":
-                        raise Problem(403, "A same-origin JSON request is required.")
-                    try:
-                        length = int(self.headers.get("Content-Length", "0"))
-                    except ValueError:
-                        raise Problem(400, "Invalid content length.") from None
-                    limit_mb = (
-                        9 if urlsplit(self.path).path.startswith("/api/library/") else 8
+            # Header checks and the body read stay OUTSIDE host.lock: they
+            # touch the network, and a client dribbling its body would hold
+            # the lock and serialize every other user's writes. Only
+            # dispatch, which mutates shared state, is mutually exclusive.
+            try:
+                if host.products.http(self, host, "POST", urlsplit(self.path).path):
+                    return
+                origin, token = self.context()
+                if (
+                    self.headers.get("Origin") != origin
+                    and not self.headers.get("Authorization", "").startswith(
+                        "Bearer aether_sa_"
                     )
-                    if not 0 < length <= limit_mb * 1024 * 1024:
-                        raise Problem(
-                            413, f"Request must be between 1 byte and {limit_mb} MB."
-                        )
-                    try:
-                        data = json.loads(self.rfile.read(length))
-                    except (ValueError, UnicodeDecodeError):
-                        raise Problem(400, "Invalid JSON.") from None
-                    if not isinstance(data, dict):
-                        raise Problem(400, "Expected a JSON object.")
+                    and not (
+                        urlsplit(self.path).path.startswith("/api/automation/commands/")
+                        and self.headers.get("Authorization", "").startswith("Bearer aether_agent_")
+                        and not self.headers.get("Origin")
+                    )
+                ) or self.headers.get_content_type() != "application/json":
+                    raise Problem(403, "A same-origin JSON request is required.")
+                try:
+                    length = int(self.headers.get("Content-Length", "0"))
+                except ValueError:
+                    raise Problem(400, "Invalid content length.") from None
+                limit_mb = (
+                    9 if urlsplit(self.path).path.startswith("/api/library/") else 8
+                )
+                if not 0 < length <= limit_mb * 1024 * 1024:
+                    raise Problem(
+                        413, f"Request must be between 1 byte and {limit_mb} MB."
+                    )
+                try:
+                    data = json.loads(self.rfile.read(length))
+                except (ValueError, UnicodeDecodeError):
+                    raise Problem(400, "Invalid JSON.") from None
+                if not isinstance(data, dict):
+                    raise Problem(400, "Expected a JSON object.")
+                with host.lock:
                     result = host.dispatch(
                         urlsplit(self.path).path,
                         data,
@@ -847,33 +916,117 @@ def make_handler(host):
                         self.client_address[0],
                         self.setup_cookie(),
                     )
-                    headers = {}
-                    if "_setup_cookie" in result:
-                        value = result.pop("_setup_cookie")
-                        secure = "; Secure" if origin.startswith("https:") else ""
-                        headers["Set-Cookie"] = (
-                            f"aether_setup={value}; Path=/; HttpOnly; SameSite=Strict; Max-Age={3600 if value else 0}{secure}"
-                        )
-                    if "_cookie" in result:
-                        value = result.pop("_cookie")
-                        secure = "; Secure" if origin.startswith("https:") else ""
-                        headers["Set-Cookie"] = (
-                            f"aether_session={value}; Path=/; HttpOnly; SameSite=Strict; Max-Age={43200 if value else 0}{secure}"
-                        )
-                    self.reply(200, result, headers=headers)
-                except Problem as error:
-                    self.reply(error.status, {"error": error.message})
-                except Exception:
-                    host.store.db.rollback()
-                    self.reply(
-                        500,
-                        {
-                            "error": "The request failed. No credentials are included in host logs."
-                        },
+                headers = {}
+                if "_setup_cookie" in result:
+                    value = result.pop("_setup_cookie")
+                    secure = "; Secure" if origin.startswith("https:") else ""
+                    headers["Set-Cookie"] = (
+                        f"aether_setup={value}; Path=/; HttpOnly; SameSite=Strict; Max-Age={3600 if value else 0}{secure}"
                     )
+                if "_cookie" in result:
+                    value = result.pop("_cookie")
+                    secure = "; Secure" if origin.startswith("https:") else ""
+                    headers["Set-Cookie"] = (
+                        f"aether_session={value}; Path=/; HttpOnly; SameSite=Strict; Max-Age={43200 if value else 0}{secure}"
+                    )
+                self.reply(200, result, headers=headers)
+            except Problem as error:
+                # A refusal with structure behind it — a merge conflict names
+                # both heads and what differs — hands that structure over, so
+                # the client can offer a resolution instead of a dead end.
+                body = {"error": error.message}
+                if error.detail is not None:
+                    body["detail"] = error.detail
+                self.reply(error.status, body)
+            except Exception:
+                # The store is one shared connection, so a rollback must hold
+                # the same lock dispatch does — otherwise it discards whatever
+                # transaction another thread has in flight.
+                with host.lock:
+                    host.store.db.rollback()
+                self.reply(
+                    500,
+                    {
+                        "error": "The request failed. No credentials are included in host logs."
+                    },
+                )
+
+        def drive_download(self):
+            _, token = self.context()
+            query = parse_qs(urlsplit(self.path).query)
+            with host.lock:
+                user = host.require_user(token)
+                host.require_app("drive", user)
+                row = host.drive.row(user["id"], query.get("id", [""])[0])
+                if query.get("revision"):
+                    try:
+                        revision = int(query["revision"][0])
+                    except ValueError:
+                        raise Problem(400, "Choose a saved revision.") from None
+                    saved = host.library.history.revision(row["id"], revision)
+                    row = {**dict(row), "content": saved["content"], "name": saved["name"]}
+                temporary_archive = row["kind"] == "folder"
+                if temporary_archive:
+                    from core.host.drive_download import archive, snapshot
+                    archive_entries = snapshot(host.drive, user["id"], row)
+                    blob = None
+                else:
+                    blob = host.drive.storage.blob(row)
+                content = row["content"] or b""
+                length = blob.stat().st_size if blob else len(content)
+                name = row["name"] + (".zip" if temporary_archive else "")
+            if temporary_archive:
+                blob = archive(archive_entries)
+                length = blob.stat().st_size
+            try:
+                start, end, status = 0, max(0, length - 1), 200
+                range_header = self.headers.get("Range")
+                if range_header:
+                    match = re.fullmatch(r"bytes=(\d+)-(\d*)", range_header)
+                    if not match:
+                        raise Problem(416, "Unsupported byte range.")
+                    start, end = int(match[1]), min(int(match[2]) if match[2] else end, end)
+                    if start >= length or end < start:
+                        raise Problem(416, "Byte range is outside this file.")
+                    status = 206
+                mime = mimetypes.guess_type(name)[0] or "application/octet-stream"
+                safe_preview = mime in ("image/png", "image/jpeg", "image/gif", "image/webp", "application/pdf", "video/mp4", "video/webm", "audio/mpeg", "audio/wav")
+                self.send_response(status)
+                self.send_header("Content-Type", mime if safe_preview else "application/octet-stream")
+                self.send_header("Content-Disposition", ("inline" if safe_preview and query.get("preview") else "attachment") + "; filename*=UTF-8''" + quote(name))
+                self.send_header("Content-Length", str(end-start+1 if length else 0))
+                self.send_header("Accept-Ranges", "bytes")
+                self.send_header("Cache-Control", "private, no-store")
+                self.send_header("X-Content-Type-Options", "nosniff")
+                if status == 206:
+                    self.send_header("Content-Range", f"bytes {start}-{end}/{length}")
+                self.end_headers()
+                stream = blob.open("rb") if blob else io.BytesIO(content)
+                with stream:
+                    stream.seek(start)
+                    remaining = end-start+1 if length else 0
+                    while remaining:
+                        chunk = stream.read(min(1024*1024, remaining))
+                        if not chunk:
+                            break
+                        self.wfile.write(chunk)
+                        remaining -= len(chunk)
+            except (BrokenPipeError, ConnectionResetError):
+                pass
+            finally:
+                if temporary_archive:
+                    blob.unlink(missing_ok=True)
 
         def do_GET(self):  # noqa: N802
             fast_path = unquote(urlsplit(self.path).path)
+            if host.products.http(self, host, "GET", fast_path):
+                return
+            if fast_path == "/api/drive/download":
+                try:
+                    self.drive_download()
+                except Problem as error:
+                    self.reply(error.status, {"error": error.message})
+                return
             # Public suite assets stream without the host lock: they are hot,
             # auth-free, and must not queue behind API handlers.
             if fast_path in ("/suite/account.js", "/suite/account.css"):
@@ -884,21 +1037,44 @@ def make_handler(host):
                     "text/javascript" if fast_path.endswith(".js") else "text/css",
                 )
                 return
-            if fast_path.startswith("/icons/"):
-                name = fast_path.rsplit("/", 1)[-1]
-                if name in {
-                    app + extension
-                    for app in ("studio", "cad", "animation", "ui")
-                    for extension in (".png", ".svg")
-                }:
+            # Shared interface icons, so vanilla suite chrome inlines the same
+            # artwork React gets from AetherIcon instead of copying geometry.
+            if fast_path.startswith("/suite/icons/") and fast_path.endswith(".svg"):
+                name = fast_path[len("/suite/icons/") : -len(".svg")]
+                icon = REPO / "core/assets/icons" / (name + ".svg")
+                if not SUITE_ICON_NAME.fullmatch(name) or not icon.is_file():
+                    self.reply(404, {"error": "No such icon."})
+                    return
+                self.reply(200, icon.read_bytes(), "image/svg+xml")
+                return
+            browser_icon = icon_route(REPO / "core/assets/branding/apps", fast_path, host.packages)
+            if browser_icon is not None:
+                asset, redirect = browser_icon
+                if asset is None or not asset.is_file():
+                    self.reply(404, {"error": "Icon not found."})
+                elif redirect:
+                    self.reply(302, b"", headers={"Location": redirect})
+                else:
                     self.reply(
                         200,
-                        (REPO / "core/assets/branding/apps" / name).read_bytes(),
-                        "image/png" if name.endswith(".png") else "image/svg+xml",
+                        asset.read_bytes(),
+                        "image/x-icon" if asset.suffix == ".ico" else "image/png",
                     )
-                else:
-                    self.reply(404, {"error": "Icon not found."})
                 return
+            # Raspberry Pi provisioning. Auth-free by necessity: a device being
+            # imaged has no credentials yet. Every response is a repository
+            # file, never user data, and the installer is stamped with the URL
+            # the device actually reached us on.
+            # Openly-licensed asset search, proxied.
+            #
+            # The browser cannot call Openverse itself: the same request that
+            # succeeds from a server is answered 401 from a page. Proxying also
+            # settles the question for the providers that come next — Pexels and
+            # Pixabay both need an API key, and a key in a browser bundle is a
+            # published key, so it has to be the host that holds it either way.
+            #
+            # Only the query reaches the upstream URL, so this cannot be pointed
+            # at an arbitrary host.
             static_response = None
             with host.lock:
                 try:
@@ -919,6 +1095,7 @@ def make_handler(host):
                                     "enabled"
                                 ],
                                 "installation": {
+                                    "data_directory": str(host.store.directory.resolve()) if host.store.setup_authorized(self.setup_cookie()) else None,
                                     "host_ready": True,
                                     "setup_authorized": host.store.setup_authorized(
                                         self.setup_cookie()
@@ -968,11 +1145,17 @@ def make_handler(host):
                             },
                         )
                         return
+                    if path == "/api/admin/maintenance":
+                        host.require_user(token, admin=True)
+                        from core.host.maintenance import diagnostics
+                        self.reply(200, diagnostics(host))
+                        return
                     if path == "/api/admin/state":
                         host.require_user(token, admin=True)
                         self.reply(
                             200,
                             {
+                                "storage": host.storage.state(),
                                 "users": host.store.users(),
                                 "mail": host.mailer.public_config(),
                                 "settings": host.store.settings(),
@@ -1038,20 +1221,6 @@ def make_handler(host):
                             "text/javascript" if path.endswith(".js") else "text/css",
                         )
                         return
-                    if path.startswith("/icons/"):
-                        name = path.rsplit("/", 1)[-1]
-                        if name not in {
-                            app + extension
-                            for app in ("studio", "cad", "animation", "ui")
-                            for extension in (".png", ".svg")
-                        }:
-                            raise Problem(404, "Icon not found.")
-                        self.reply(
-                            200,
-                            (REPO / "core/assets/branding/apps" / name).read_bytes(),
-                            "image/png" if name.endswith(".png") else "image/svg+xml",
-                        )
-                        return
                     if (
                         path.endswith("/manifest.webmanifest")
                         or path == "/manifest.webmanifest"
@@ -1063,6 +1232,8 @@ def make_handler(host):
                             else "Aether Studio"
                         )
                         start = f"/{app}/" if app in host.packages else "/"
+                        icon = app if app in host.packages else "studio"
+                        icon_url, icon_sizes = icon_metadata(REPO / "core/assets/branding/apps", icon)
                         self.reply(
                             200,
                             {
@@ -1076,8 +1247,8 @@ def make_handler(host):
                                 "theme_color": "#171a20",
                                 "icons": [
                                     {
-                                        "src": f"/icons/{app if app in host.packages else 'studio'}.png",
-                                        "sizes": "1024x1024",
+                                        "src": icon_url,
+                                        "sizes": icon_sizes,
                                         "type": "image/png",
                                     }
                                 ],
@@ -1109,7 +1280,7 @@ def make_handler(host):
                             )
                             return
                         host.require_app(app, user)
-                        if not route and app not in ("cad", "animation"):
+                        if not route and app not in LIBRARY_HOME_APPS:
                             self.reply(
                                 302, b"", headers={"Location": f"/{app}/index.html"}
                             )
@@ -1136,7 +1307,7 @@ def make_handler(host):
                         else:
                             target = (
                                 (REPO / "studio/dist/index.html")
-                                if app in ("cad", "animation") and not route
+                                if app in LIBRARY_HOME_APPS and not route
                                 else safe_path(host.packages[app][2], route)
                             )
                     else:
@@ -1165,15 +1336,20 @@ def make_handler(host):
                 body = target.read_bytes()
                 if target.name == "index.html":
                     icon = app if app in host.packages else "studio"
-                    metadata = f'<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="/icons/{icon}.svg"><link rel="apple-touch-icon" href="/icons/{icon}.png"><meta name="theme-color" content="#171a20"></head>'
+                    icon_url, icon_sizes = icon_metadata(REPO / "core/assets/branding/apps", icon)
+                    tab_url, tab_sizes, tab_type = favicon_metadata(REPO / "core/assets/branding/apps", icon)
+                    body = without_icon_links(body)
+                    metadata = f'<meta name="aether-app" content="{icon}"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="{tab_type}" sizes="{tab_sizes}" href="{tab_url}"><link rel="apple-touch-icon" sizes="{icon_sizes}" href="{icon_url}"><meta name="theme-color" content="#171a20"></head>'
                     metadata = metadata.replace(
                         "</head>",
                         '<link rel="stylesheet" href="/suite/account.css"><script type="module" src="/suite/account.js"></script></head>',
                     )
-                    if app in ("cad", "animation") and not route:
+                    if app in LIBRARY_HOME_APPS and not route:
+                        # The library home is the Studio bundle; name it for the
+                        # application whose library it is showing.
                         body = body.replace(
                             b"<title>Aether Studio</title>",
-                            b"<title>Aether CAD</title>",
+                            f"<title>{host.packages[app][0]}</title>".encode(),
                         )
                     body = body.replace(b"</head>", metadata.encode())
                 self.reply(
@@ -1189,6 +1365,14 @@ def make_handler(host):
 
 
 def serve(directory):
+    from core.host.installation import local_directory, server_lease
+
+    directory = local_directory(directory)
+    with server_lease(directory):
+        _serve(directory)
+
+
+def _serve(directory):
     previous = None
     while True:
         host = StudioHost(directory)
@@ -1223,9 +1407,12 @@ def serve(directory):
                 "host", "network_apply_failed", "Previous connection restored"
             )
         host.server = server
+        backup_stop, backup_thread = host.storage.start()
         try:
             server.serve_forever()
         finally:
+            backup_stop.set()
+            backup_thread.join()
             server.server_close()
         if not host.restart_requested:
             break

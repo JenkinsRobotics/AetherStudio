@@ -41,7 +41,14 @@ export function SplitPane({
   const containerRef = useRef<HTMLDivElement>(null);
   const size = primarySize ?? internalSize;
   const isCollapsed = collapsed ?? internalCollapsed;
-  const clamp = (value: number) => Math.min(maxPrimarySize, Math.max(minPrimarySize, value));
+  /* The fixed cap is a desktop comfort limit; on a narrow viewport it is the
+     wrong constraint, because 720 of 820 leaves the secondary pane unusable.
+     Whichever cap is tighter wins, and the minimum still outranks both. */
+  const clamp = (value: number) => {
+    const room = containerRef.current?.getBoundingClientRect().width ?? 0;
+    const cap = room > 0 ? Math.min(maxPrimarySize, Math.max(minPrimarySize, room - minPrimarySize)) : maxPrimarySize;
+    return Math.min(cap, Math.max(minPrimarySize, value));
+  };
   const resize = (value: number) => {
     const next = clamp(value);
     if (primarySize === undefined) setInternalSize(next);
@@ -83,11 +90,12 @@ export function SplitPane({
 
   const primaryCollapsed = isCollapsed && collapseSide === "primary";
   const secondaryCollapsed = isCollapsed && collapseSide === "secondary";
+  const bar = "var(--aui-splitpane-separator, 5px)";
   const tracks = primaryCollapsed
-    ? "0px 5px minmax(0, 1fr)"
+    ? `0px ${bar} minmax(0, 1fr)`
     : secondaryCollapsed
-      ? "minmax(0, 1fr) 5px 0px"
-      : `${size}px 5px minmax(0, 1fr)`;
+      ? `minmax(0, 1fr) ${bar} 0px`
+      : `${size}px ${bar} minmax(0, 1fr)`;
   const paneStyle = orientation === "horizontal"
     ? { gridTemplateColumns: tracks }
     : { gridTemplateRows: tracks };

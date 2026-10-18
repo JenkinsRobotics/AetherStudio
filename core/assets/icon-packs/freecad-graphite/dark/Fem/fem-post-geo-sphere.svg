@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2784" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/fem-post-geo-sphere.svg. Authors: [Stefan Tröger], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2786">
+    <linearGradient id="linearGradient3600">
+      <stop style="stop-color:#47586c;stop-opacity:1" offset="0" id="stop3602" />
+      <stop style="stop-color:#293749;stop-opacity:1" offset="1" id="stop3604" />
+    </linearGradient>
+    <radialGradient r="27.084639" fy="18.626959" fx="20.802507" cy="18.626959" cx="20.802507" gradientTransform="matrix(0.66666671,0.70000004,-1.3510775,1.2867404,32.100634,-19.902858)" gradientUnits="userSpaceOnUse" id="radialGradient3132" xlink:href="#linearGradient3600" />
+  </defs>
+  <g id="layer1">
+    <path style="color:#e5edf7;fill:url(#radialGradient3132);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="path2826" d="m 57.818182,30.363636 a 26.181818,26.181818 0 1 1 -52.363636,0 26.181818,26.181818 0 1 1 52.363636,0 z" transform="matrix(1.1076389,0,0,1.1076389,-3.0416672,-1.6319442)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="color:#e5edf7;fill:none;stroke:#e5edf7;stroke-width:1.1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="path2826-4" d="m 57.818182,30.363636 a 26.181818,26.181818 0 1 1 -52.363636,0 26.181818,26.181818 0 1 1 52.363636,0 z" transform="matrix(1.03125,0,0,1.03125,-0.6250005,0.68750036)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="color:#e5edf7;fill:none;stroke:#e5edf7;stroke-width:1.1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="path2826-5" d="m 57.818182,30.363636 a 26.181818,26.181818 0 1 1 -52.363636,0 26.181818,26.181818 0 1 1 52.363636,0 z" transform="matrix(1.1076389,0,0,1.1076389,-3.0416672,-1.631944)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

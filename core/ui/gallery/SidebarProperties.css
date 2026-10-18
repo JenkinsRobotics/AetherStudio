@@ -1,0 +1,15 @@
+.sidebar-properties { padding: 10px; display: grid; gap: 12px; }
+.sidebar-properties .sidebar-properties-mode {
+  box-sizing: border-box;
+  min-height: 36px;
+  padding: 2px;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.sidebar-properties .sidebar-properties-mode > button { min-height: 32px; padding: 6px 8px; border-radius: 4px; font-size: 12px; }
+.sidebar-properties-group { display: grid; gap: 4px; }
+.sidebar-properties-group > strong { font-size: 11px; font-weight: 500; margin-bottom: 2px; }
+.sidebar-properties-axis { display: grid; grid-template-columns: 12px minmax(0, 1fr) 28px; gap: 4px; align-items: center; }
+.sidebar-properties-axis > span { font-size: 10px; }
+.sidebar-properties-axis .aui-number-field { height: 28px; }

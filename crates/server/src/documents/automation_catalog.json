@@ -1,0 +1,211 @@
+[
+  {
+    "id": "document.list",
+    "title": "Find documents",
+    "description": "List accessible saved files in one application. Searches file names, not live editor state.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "query": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "view": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "enum": [
+            "personal",
+            "workspace",
+            "recent"
+          ]
+        },
+        "parent": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "app"
+      ],
+      "additionalProperties": false
+    },
+    "writes": false,
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "id": "document.inspect",
+    "title": "Inspect saved document",
+    "description": "Read saved metadata and up to 64 KiB of UTF-8 content. Binary files return metadata only. Does not inspect unsaved editor state.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        }
+      },
+      "required": [
+        "app",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "writes": false,
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "id": "document.history",
+    "title": "Read document history",
+    "description": "Read revisions, named versions and branches of an accessible document.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "app",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "writes": false,
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "id": "document.rename",
+    "title": "Rename document",
+    "description": "Rename a document using the revision last read. Creates a recoverable history entry; stale revisions are rejected.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180
+        },
+        "expected_revision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "app",
+        "id",
+        "name",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "writes": true,
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "id": "document.version.create",
+    "title": "Create named version",
+    "description": "Name the current saved state on a branch. Requires the current branch revision; does not edit document content.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "expected_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 500
+        }
+      },
+      "required": [
+        "app",
+        "id",
+        "name",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "writes": true,
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  }
+]

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg3364" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Part/Gui/Resources/icons/booleans/Part_Section.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs3366">
+    <linearGradient gradientTransform="translate(0,-9)" xlink:href="#linearGradient3777" id="linearGradient3783" x1="53.896763" y1="51.179787" x2="48" y2="32" gradientUnits="userSpaceOnUse" />
+    <linearGradient id="linearGradient3777">
+      <stop style="stop-color:#9caec3;stop-opacity:1" offset="0" id="stop3779" />
+      <stop style="stop-color:#a8b8cb;stop-opacity:1" offset="1" id="stop3781" />
+    </linearGradient>
+    <linearGradient gradientTransform="translate(22,-17)" xlink:href="#linearGradient3767" id="linearGradient3773" x1="22.116516" y1="55.717518" x2="19" y2="33" gradientUnits="userSpaceOnUse" />
+    <linearGradient id="linearGradient3767">
+      <stop style="stop-color:#a8b8cb;stop-opacity:1" offset="0" id="stop3769" />
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="1" id="stop3771" />
+    </linearGradient>
+    <linearGradient id="linearGradient3777-6">
+      <stop style="stop-color:#9caec3;stop-opacity:1" offset="0" id="stop3779-7" />
+      <stop style="stop-color:#a8b8cb;stop-opacity:1" offset="1" id="stop3781-5" />
+    </linearGradient>
+    <linearGradient y2="32" x2="48" y1="51.179787" x1="53.896763" gradientTransform="translate(-24,-13)" gradientUnits="userSpaceOnUse" id="linearGradient3066" xlink:href="#linearGradient3777-6" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:#c3cfdc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 7.0000001,5 0,48.691179 44.0000009,6.955882 0,-48.691178 z" id="path3105-9-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3825" d="m 35,12 22,4 0,26 -22,-4 z" style="fill:url(#linearGradient3773);fill-opacity:1;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 37,14.42772 0.0087,21.919116 18.008671,3.268799 -0.0087,-21.933614 z" id="path3765" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#c3cfdc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 17,46 41,50 57,42 35,38 z" id="path2993-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3066);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 35,12 0,26 -18,8 0,-28 z" id="path2995-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#7c8fa5;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 19.01243,19.433833 -0.01226,23.535301 14.001105,-6.300993 3.6e-4,-21.867363 z" id="path3775-5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#c3cfdc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 17,18 41,22 57,16 35,12 z" id="path2993" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3783);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 57,16 0,26 -16,8 0,-28 z" id="path2995" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#7c8fa5;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 43.01243,23.433833 -0.01226,23.535301 12.001105,-6.300993 3.6e-4,-21.867363 z" id="path3775" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 17,18 0,28 24,4 0,-28 z" id="path3105" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 17,18 0,28 24,4 0,-28 z" id="path3105-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="opacity:0.4;fill:#c3cfdc;stroke:none" d="m 8,6 0,47 42,6 0,-46 z m 6,8.3 28,4.7 c 0,0 1.215502,0.908743 1.579227,1.470117 C 43.942951,21.031491 44,22 44,22 l 0,32 -31,-6 z" id="path3105-9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="opacity:0.4;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 9,7.3005 0,44.725 40,6.375 0,-44.725 z" id="path3105-9-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 51,14 0,32" id="path3966" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

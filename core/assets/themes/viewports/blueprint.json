@@ -1,0 +1,38 @@
+{
+  "$schema": "aether-viewport/v1",
+  "id": "blueprint",
+  "name": "Blueprint",
+  "description": "Drafting blue with white lines: sketch geometry and constraints in chalk.",
+  "modes": {
+    "dark": {
+      "viewport-bg-top": "#123a66",
+      "viewport-bg-bottom": "#0a2747",
+      "viewport-grid": "rgba(255, 255, 255, 0.1)",
+      "viewport-grid-axis": "rgba(255, 255, 255, 0.28)",
+      "viewport-part": "#5f8fc4",
+      "viewport-part-shade": "#2f5f93",
+      "viewport-part-edge": "rgba(255, 255, 255, 0.35)",
+      "viewport-cavity": "#0c2a4c",
+      "viewport-sketch": "#ffffff",
+      "viewport-sketch-constrained": "#dbeafe",
+      "viewport-construction": "#ffd166",
+      "viewport-selection": "#ffd166",
+      "viewport-hover": "#ffe59a"
+    },
+    "light": {
+      "viewport-bg-top": "#1d4f86",
+      "viewport-bg-bottom": "#123a66",
+      "viewport-grid": "rgba(255, 255, 255, 0.1)",
+      "viewport-grid-axis": "rgba(255, 255, 255, 0.28)",
+      "viewport-part": "#7aa6d6",
+      "viewport-part-shade": "#3f6fa3",
+      "viewport-part-edge": "rgba(255, 255, 255, 0.35)",
+      "viewport-cavity": "#153e6b",
+      "viewport-sketch": "#ffffff",
+      "viewport-sketch-constrained": "#dbeafe",
+      "viewport-construction": "#ffd166",
+      "viewport-selection": "#ffd166",
+      "viewport-hover": "#ffe59a"
+    }
+  }
+}

@@ -46,7 +46,7 @@ backend (in flight, Codex) completes it. Each DOF carries:
 | `neutral…` | the pose used for fallback and "home" |
 | `limits` | **optional** — see §2. Absent limits = continuous/unbounded motion (a wheel keeps spinning) |
 
-Per-kind DOF sets (already encoded in `animacore/rig.py`
+Per-kind DOF sets (already encoded in `aether_animation/rig.py`
 `JOINT_TYPE_DOF_TEMPLATES` — AnimaCore must match, snake_case raw
 values, same DOF names):
 
@@ -64,7 +64,7 @@ values, same DOF names):
 ### Mate categories (kinematic vs geometry-constraint)
 
 Mates split into two categories (`mate_type_schema` carries `category`
-and `drivable`; `animacore.mates.mate_category`):
+and `drivable`; `aether_animation.mates.mate_category`):
 
 - **Kinematic** (the eight above) — abstract connector frames plus DOF.
   The engine owns their motion fully: `child_in_parent` resolves them
@@ -86,7 +86,7 @@ and `drivable`; `animacore.mates.mate_category`):
     child at the parent frame (identity relative) and Studio resolves
     the actual contact. The engine invents no contact math.
 
-## 1a. Pose resolution (implemented — `animacore/kinematics.py`)
+## 1a. Pose resolution (implemented — `aether_animation/kinematics.py`)
 
 The forward-kinematics engine that makes every mate actually *move* the
 child part relative to the parent — about/along the **mate connector as
@@ -227,7 +227,7 @@ operations in the mate dialog:
   dialog's Offset section. Offsets shift the zero pose; they do not
   consume or restrict DOF.
 
-> **Unified in AnimaCore (`animacore/mates.py`).** The connector pair,
+> **Unified in AnimaCore (`aether_animation/mates.py`).** The connector pair,
 > the flip (§4), the secondary-axis 90° reorientation (§4), the offset
 > (§4), and the simulation-connection toggle are one value —
 > `MateControls` — shared identically across all eight kinds; only the
@@ -273,8 +273,8 @@ Rules (deliberately Onshape-faithful):
   conveniences that compute it (persisted alongside for round-trip
   display, but the float is the semantic value).
 
-**Bridge hooks (implemented — `animacore/rig.py`, surfaced by
-`animacore/bridge.py`).** The relation twin of the mate hooks:
+**Bridge hooks (implemented — `aether_animation/rig.py`, surfaced by
+`aether_animation/bridge.py`).** The relation twin of the mate hooks:
 `relation_type_schema` / `all_relation_type_schemas` (the static
 per-kind palette catalog, verb `relation_types`) and `describe_relation`
 (the per-instance descriptor, added as the `relations` array in

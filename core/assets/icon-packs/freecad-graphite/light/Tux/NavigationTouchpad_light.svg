@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+ <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Tux/Resources/icons/NavigationTouchpad_light.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g transform="translate(0 -988.36)" fill="none" stroke="#405269">
+  <path d="m32 1043.4v-15" stroke-width="1.1" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m8 1028.4h48" stroke-width="1.1" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+  <rect x="8" y="997.36" width="48" height="46" ry="7" color="#405269" stroke-width="1.1" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+ </g>
+</svg>

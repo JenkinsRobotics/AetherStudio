@@ -74,3 +74,47 @@ test("transport toggles play and empty state renders", () => {
   );
   expect(screen.getByText("no clip")).not.toBeNull();
 });
+
+test("editor presentation exposes full transport, timecode, track detail, and curves", () => {
+  const onStop = vi.fn();
+  const onStepFrame = vi.fn();
+  const onSeekAdjacentKeyframe = vi.fn();
+  const onToggleLoop = vi.fn();
+  const onFramesPerSecondChange = vi.fn();
+  const { rerender } = render(
+    <Timeline
+      variant="editor"
+      mode="dope-sheet"
+      tracks={tracks.map((track) => ({ ...track, detail: "rad", kind: "motion" as const, color: "#54a9fb" }))}
+      durationS={2}
+      timeS={0.5}
+      onSeek={() => {}}
+      clipName="Main"
+      framesPerSecond={30}
+      looping
+      onStop={onStop}
+      onStepFrame={onStepFrame}
+      onSeekAdjacentKeyframe={onSeekAdjacentKeyframe}
+      onToggleLoop={onToggleLoop}
+      onFramesPerSecondChange={onFramesPerSecondChange}
+      outputStatus="OUTPUT OFFLINE"
+    />
+  );
+  expect(screen.getByText("Main")).not.toBeNull();
+  expect(screen.getAllByText("rad").length).toBe(2);
+  expect(screen.getByText("OUTPUT OFFLINE")).not.toBeNull();
+  expect(screen.getByLabelText("Timeline position").textContent).toContain("00:00:15");
+  fireEvent.click(screen.getByRole("button", { name: "Stop" }));
+  fireEvent.click(screen.getByRole("button", { name: "Next frame" }));
+  fireEvent.click(screen.getByRole("button", { name: "Previous keyframe" }));
+  fireEvent.click(screen.getByRole("button", { name: "Loop preview" }));
+  fireEvent.change(screen.getByRole("combobox", { name: "Frame rate" }), { target: { value: "60" } });
+  expect(onStop).toHaveBeenCalledTimes(1);
+  expect(onStepFrame).toHaveBeenCalledWith(1);
+  expect(onSeekAdjacentKeyframe).toHaveBeenCalledWith(-1);
+  expect(onToggleLoop).toHaveBeenCalledTimes(1);
+  expect(onFramesPerSecondChange).toHaveBeenCalledWith(60);
+
+  rerender(<Timeline variant="editor" mode="curves" tracks={tracks} durationS={2} timeS={0.5} onSeek={() => {}} />);
+  expect(screen.getByLabelText("Animation curves")).not.toBeNull();
+});

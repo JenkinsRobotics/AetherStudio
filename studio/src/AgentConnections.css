@@ -1,0 +1,23 @@
+.agent-connections { border: 1px solid var(--aether-color-border); background: var(--aether-color-bg-panel); border-radius: 8px; padding: 20px; margin: 24px 0; display: grid; gap: 14px; }
+.agent-connections h2 { margin: 0; font-size: 16px; }
+.agent-connections p { margin: 6px 0; color: var(--aether-color-text-dim); line-height: 1.5; font-size: 13px; }
+.agent-connections form { display: grid; gap: 12px; }
+.agent-connections__fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; }
+.agent-connections__fields label { display: grid; gap: 6px; font-size: 12px; }
+.agent-connections fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.agent-connections legend { font-size: 12px; margin-bottom: 8px; }
+.agent-connections__apps { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+.agent-connections form > button { justify-self: start; }
+.agent-connections__key { padding: 12px; border: 1px solid var(--aether-color-border); background: var(--aether-color-bg-control); display: grid; gap: 10px; min-width: 0; }
+.agent-connections__key > div { display: flex; gap: 8px; }
+.agent-connections__key input { width: 100%; min-width: 0; }
+.agent-connections__list article { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid var(--aether-color-border); }
+.agent-connections__list article > div { min-width: 0; overflow-wrap: anywhere; }
+.agent-connections__list article button { flex-shrink: 0; }
+.agent-connections small { color: var(--aether-color-text-dim); }
+.agent-connections details { font-size: 12px; overflow-wrap: anywhere; }
+.agent-connections summary { cursor: pointer; }
+.agent-consent { font-family: var(--aether-font-family); color: var(--aether-color-text); box-sizing: border-box; min-height: 100vh; display: grid; place-items: center; padding: 32px; }
+.agent-consent > section { width: min(100%, 640px); }
+.agent-consent__destination { display: block; overflow-wrap: anywhere; padding-block: 8px; }
+.agent-consent__actions { display: flex; justify-content: flex-end; gap: 12px; }

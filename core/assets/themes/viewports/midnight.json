@@ -1,0 +1,25 @@
+{
+  "$schema": "aether-viewport/v1",
+  "id": "midnight",
+  "name": "Midnight",
+  "description": "Near-black stage with a faint grid; parts read as lit metal.",
+  "modes": {
+    "dark": {
+      "viewport-bg-top": "#0d121b",
+      "viewport-bg-bottom": "#04060a",
+      "viewport-grid": "rgba(255, 255, 255, 0.05)",
+      "viewport-grid-axis": "rgba(255, 255, 255, 0.16)"
+    },
+    "light": {
+      "viewport-bg-top": "#1a2130",
+      "viewport-bg-bottom": "#0b0f17",
+      "viewport-grid": "rgba(255, 255, 255, 0.05)",
+      "viewport-grid-axis": "rgba(255, 255, 255, 0.16)",
+      "viewport-part": "#8a94a3",
+      "viewport-part-shade": "#3a424d",
+      "viewport-cavity": "#1c2230",
+      "viewport-sketch": "#7fbcff",
+      "viewport-sketch-constrained": "#ffffff"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.floating-toolbar-specimens { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; width: 100%; min-width: 0; }
+.floating-toolbar-specimen { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 10px; max-width: 100%; min-width: 0; }
+.floating-toolbar-specimen > small { color: var(--aether-color-text-dim); font-size: 11px; }
+.floating-toolbar-specimen > output { color: var(--aether-color-text-dim); font-size: 11px; min-height: 16px; }
+.floating-toolbar-command-example { width: 610px; }

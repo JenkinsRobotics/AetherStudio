@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_EquationDeformation.svg. Authors: [Alexander Gryson], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs4">
+    <linearGradient id="linearGradient3802">
+      <stop id="stop3804" offset="0" style="stop-color:#e5edf7;stop-opacity:1;" />
+      <stop id="stop3806" offset="1" style="stop-color:#2f3e50;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="42" x2="47" y1="58" x1="49" id="linearGradient3808" xlink:href="#linearGradient3802" />
+  </defs>
+  <g transform="translate(0,-988.36218)" id="layer1">
+    <rect transform="translate(0,988.36218)" y="39" x="3" height="22" width="58" id="rect2987" style="fill:url(#linearGradient3808);stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:9.6;fill-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect y="1029.3622" x="5" height="18" width="54" id="rect2987-6" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:9.6;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="rect2987-3" d="m 3,1027.3622 c 18,0 24,-20 30,-32.00002 l 20,10.00002 c -4,8 -18,44 -50,44 z" style="fill:#55677d;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dashoffset:9.6;fill-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Measure/Gui/Resources/icons/Measurement-CenterOfMass.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer3" style="display:inline">
+    <path id="path31" style="color:#405269;fill:#405269;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none" d="M 32 8 C 18.780725 7.9999966 7.9999966 18.780725 8 32 A 23.999994 23.999994 0 0 0 32 56 C 45.219275 56.000003 56.000003 45.219275 56 32 A 23.999994 23.999994 0 0 0 32 8 z M 32 14 L 32 32 L 50 32 C 50.000003 41.976634 41.976634 50.000003 32 50 L 32 32 L 14 32 C 13.999997 22.023366 22.023366 13.999997 32 14 z " vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

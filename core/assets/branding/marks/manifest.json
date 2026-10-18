@@ -1,0 +1,106 @@
+{
+  "created": "2026-10-13",
+  "mode": "Built-in image_gen editing",
+  "kind": "Standalone transparent A derivatives; original icon masters unchanged",
+  "files": [
+    {
+      "app": "studio",
+      "file": "studio.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "d9a5dad5a2dfd988a736318129d6d2dd2afa2685b4ff8361a9d71eebfb220b0a",
+      "transparentFraction": 0.7128,
+      "master": "../new-aether-2026-09/aether-studio.png",
+      "masterSha256": "c71c122ab83b3f4974c2afcf3926e2959f7f96be08baab47ca4b100b3320d911"
+    },
+    {
+      "app": "cad",
+      "file": "cad.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "9b358fab8dfd825f2caa2a67630cd4894d731fe3e7142ab202a05d99c69a4b7e",
+      "transparentFraction": 0.689,
+      "master": "../new-aether-2026-09/aether-cad.png",
+      "masterSha256": "ef08360a457e74e8c71144bcc5d284323c1815789c5628487a53e501b91ba455"
+    },
+    {
+      "app": "animation",
+      "file": "animation.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "7b1ab396d07f8796e144e10ea1f025e74281da42aa900ec0a8f33399762d3591",
+      "transparentFraction": 0.6314,
+      "master": "../new-aether-2026-09/aether-animate.png",
+      "masterSha256": "914f55db5f410338eecc2b0f72b7b2422be5128895c7e54555c411aa4da235fb"
+    },
+    {
+      "app": "ui",
+      "file": "ui.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "ae44d84030ac8088efa77a0e9ebb94abf3855d31fc02df37d20c192a34b321ff",
+      "transparentFraction": 0.6969,
+      "master": "../new-aether-2026-09/aether-ui.png",
+      "masterSha256": "a0f6200d861fbac0777b4976d5d03ffb7a2f292bd58fa15c1cd86b70203b02dd"
+    },
+    {
+      "app": "map",
+      "file": "map.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "b84b4ce98b9a285896e7f704759ab77ef09c244fb5cc8132cb7febcf01d57e99",
+      "transparentFraction": 0.688,
+      "master": "../new-aether-2026-09/aether-map.png",
+      "masterSha256": "d1d2fe0fa546d64bdba65a54f89814f15da6088d0526a6f498df020d93f6ed5d"
+    },
+    {
+      "app": "sketch",
+      "file": "sketch.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "fe2557cc7ef67f2cc4ef2ab065afd4d6673b620951662fd942874f96cf726979",
+      "transparentFraction": 0.6964,
+      "master": "../new-aether-2026-09/aether-sketch.png",
+      "masterSha256": "99af037f46f995f80c81f945387bd6227e7c6b365768354005f8a284c124e82a"
+    },
+    {
+      "app": "vector",
+      "file": "vector.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "f437a76f6502674f14eea1c6e6657f9ac686886970cd3864b099e72c0ee46463",
+      "transparentFraction": 0.6739,
+      "master": "../new-aether-2026-09/aether-vector.png",
+      "masterSha256": "119f74b50e8d80f2f90bc8ec135c3c6aa531714bb145172cd1ce55be6cb7a6b3"
+    },
+    {
+      "app": "io",
+      "file": "io.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "89f631bbc525d17e2a92130a06328034214ba0e26fda217866be5d540eb7d408",
+      "transparentFraction": 0.6476,
+      "master": "../new-aether-2026-09/aether-io.png",
+      "masterSha256": "59c281a46087f3deda776df0e6019f07ffca6f0f97dc1dc0335d1f1f3ed2759b"
+    },
+    {
+      "app": "drive",
+      "file": "drive.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "3f0768addc04d68ddd34c1719bb0979c083297b4a3dfe03fec8d00f233cd638a",
+      "transparentFraction": 0.691,
+      "master": "../new-aether-2026-09/aether-drive.png",
+      "masterSha256": "62862a55bfc0990ee4251d3dad92032b69d9ec10b8f08e7522eaba60513593c0"
+    }
+  ]
+}

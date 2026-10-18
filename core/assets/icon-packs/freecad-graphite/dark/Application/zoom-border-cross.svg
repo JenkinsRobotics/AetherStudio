@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg11300" height="32" width="32" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/zoom-border-cross.svg. Authors: Martin Ruskov. Rights: . Source and license notices: http://creativecommons.org/licenses/by-sa/2.0/</desc><defs id="defs3">
+    <linearGradient id="linearGradient3873">
+      <stop style="stop-color:#6c8098;stop-opacity:1;" offset="0" id="stop3875" />
+      <stop style="stop-color:#5d7086;stop-opacity:1" offset="1" id="stop3877" />
+    </linearGradient>
+    <linearGradient id="linearGradient3863">
+      <stop style="stop-color:#54667b;stop-opacity:1" offset="0" id="stop3865" />
+      <stop style="stop-color:#4d5e73;stop-opacity:1" offset="1" id="stop3867" />
+    </linearGradient>
+    <radialGradient xlink:href="#linearGradient3857" id="radialGradient3163" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.44443897,0.44201085,-0.71793955,0.71401751,140.76466,-18.376658)" cx="43.783218" cy="41.446495" fx="43.783218" fy="41.446495" r="12.458333" />
+    <linearGradient id="linearGradient3857">
+      <stop style="stop-color:#54667b;stop-opacity:1" offset="0" id="stop3859" />
+      <stop style="stop-color:#3c4b5f;stop-opacity:1" offset="1" id="stop3861" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3863" id="linearGradient3869" x1="139.61827" y1="38.502964" x2="140.73358" y2="44.079514" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.76377033,0,0,0.75959787,35.331115,11.912598)" />
+    <linearGradient xlink:href="#linearGradient3873" id="linearGradient3879" x1="126.79221" y1="22.888617" x2="131.8111" y2="34.041721" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.76377033,0,0,0.75959787,35.331115,11.912598)" />
+  </defs>
+  <g id="layer1" transform="translate(0,16)">
+    <g id="g3157" transform="matrix(1.7932228,0,0,1.7932228,-206.36667,-43.04439)">
+      <path id="rect3057" d="m 136.91257,40.017714 3.05508,-3.038391 9.16524,9.115187 -3.05508,3.038381 z" style="fill:url(#linearGradient3869);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dashoffset:2.04;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3865" d="m 148.22059,46.383744 -7.6377,-7.595975" style="fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <ellipse id="path3055" style="fill:url(#radialGradient3163);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:2.04;stroke-opacity:1" cx="133.44901" cy="33.534679" rx="8.9443302" ry="8.8954668" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <ellipse id="path3055-1" style="fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:2.04;stroke-opacity:1" cx="133.44901" cy="33.534679" rx="8.0924892" ry="8.0482798" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <rect style="fill:url(#linearGradient3879);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.849511, 1.69902;stroke-dashoffset:0;stroke-opacity:1" id="rect3871" width="11.073932" height="9.3190603" x="127.91203" y="28.875149" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <rect style="fill:#586a81;fill-opacity:1;stroke:none;stroke-width:1.1;stroke-opacity:1" id="rect12275" width="1.1153103" height="14.499035" x="121.77331" y="15.081445" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <rect style="fill:#586a81;fill-opacity:1;stroke:none;stroke-width:1.1;stroke-opacity:1" id="rect12379" width="14.499035" height="1.1153104" x="115.08144" y="21.773308" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

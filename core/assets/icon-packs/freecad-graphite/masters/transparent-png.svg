@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="@edge@" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="@top@"/><stop offset="1" stop-color="@muted@"/></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="@muted@"/><stop offset="1" stop-color="@side@"/></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="@side@"/><stop offset="1" stop-color="@muted@"/></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="@blueHigh@"/><stop offset="1" stop-color="@blueLow@"/></linearGradient>
+</defs>
+<rect x="4" y="4" width="24" height="24" rx="1" fill="none" stroke="@edge@"/><rect x="10" y="4" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><rect x="22" y="4" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><rect x="4" y="10" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><rect x="16" y="10" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><rect x="10" y="16" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><rect x="22" y="16" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><rect x="4" y="22" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><rect x="16" y="22" width="6" height="6" rx="0" fill="@muted@" stroke="none"/><path d="M6 25 13 16 17 20 22 12 27 25Z" fill="url(#blueFeature)" stroke="@edge@" /><circle cx="11" cy="10" r="2" fill="@blueHigh@" stroke="@blueHigh@"/>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/IFC/IfcCovering.svg. Authors: [yorikvanhavre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><g id="layer1">
+    <g id="g4052" transform="matrix(0.76955598,0,0,0.83951561,-34.686235,0.48145316)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3276" d="M 85,53 V 43 l 24,8 v 10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056" transform="matrix(0.83951561,0,0,0.83951561,-42.311835,0.48145316)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3278" d="m 109,51 12,-8 v 10 l -12,8 z" style="fill:#d3dde7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-6" transform="matrix(0.83951561,0,0,-0.83951561,-51.546507,74.965402)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3278-2" d="m 109,43.72253 11,-4 v 10 l -11,4 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-1" transform="matrix(0.76955598,0,0,0.83951561,-53.155579,-6.2346718)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3276-2" d="M 85,53 V 43 l 24,8 v 10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-6-9" transform="matrix(0.83951561,0,0,-0.83951561,-79.250522,64.891215)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3278-2-3" d="m 109,43.72253 11,-4 v 10 l -11,4 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-0" transform="matrix(0.76955598,0,0,0.83951561,-43.920907,-12.950797)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3276-6" d="M 85,53 V 43 l 24,8 v 10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-61" transform="matrix(0.83951561,0,0,0.83951561,-42.311835,-9.5927342)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3278-8" d="m 109,51 12,-8 v 10 l -12,8 z" style="fill:#d3dde7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-9" transform="matrix(0.76955598,0,0,0.83951561,-34.686235,-19.666922)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3276-20" d="M 85,53 V 43 l 24,8 v 10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-7" transform="matrix(0.83951561,0,0,0.83951561,-42.311835,-19.666922)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3278-5" d="m 109,51 12,-8 v 10 l -12,8 z" style="fill:#d3dde7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4056-7-3" transform="matrix(0.83951561,0,0,0.83951561,-51.275634,-13.1082)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3278-5-5" d="m 106.93875,51 5.99596,-4.412376 v 37.701129 l -5.99596,4.412376 z" style="fill:#d3dde7;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-1-2" transform="matrix(0.76955598,0,0,0.83951561,-53.155579,-26.383047)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3276-2-8" d="M 85,53 V 43 l 24,8 v 10 z" style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g id="g4052-1-2-3" transform="matrix(0.76955598,0,0,0.83951561,-61.439438,-20.315457)" style="fill:#f3f7fc;fill-opacity:1;stroke-width:1.1;stroke-dasharray:none">
+      <path id="path3276-2-8-6" d="M 85,82.109809 V 43 l 44.75775,15.109809 v 39.109809 z" style="fill:#f3f7fc;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <path style="fill:#f3f7fc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 30.726023,16.43225 49.195367,23.148375 59.269554,16.43225 40.80021,9.7161249 Z" id="path4312" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#f3f7fc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 12.25668,9.7161249 30.726023,16.43225 40.80021,9.7161249 22.330867,3 Z" id="path4312-1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#f3f7fc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 4.0348822,15.641938 38.937676,28.676264 43.360284,25.916762 8.4574897,12.882434 Z" id="path4312-1-5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

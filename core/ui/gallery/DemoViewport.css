@@ -1,0 +1,24 @@
+/* Standalone demos fill the app area supplied by the host. The host already
+   reserves its status row in body/#root; viewport units and fixed app roots
+   bypass that reservation. Keep minimum-size/content-heavy demos scrollable. */
+#root[data-demo] { position: relative; min-height: 0; overflow: auto; }
+
+#root[data-demo] > :is(
+  .wheel-reference, .wheel-studio, .spotlight-studio, .avatar-studio,
+  .properties-demo, .workspace-demo-window, .wn-app-scroll,
+  .material-studio, .analytics-app, .commerce-demo
+) { height: 100%; min-height: 0; }
+
+#root[data-demo] > :is(.animation-studio, .animation-mockup-app, .atlas-app),
+#root[data-demo] .ribbon-demo--fullscreen {
+  position: relative; inset: auto; height: 100%;
+}
+
+#root[data-demo] > :is(.material-studio, .analytics-app) { overflow: auto; }
+#root[data-demo] > .material-studio > .ms-app-window { height: 100%; }
+#root[data-demo] > .analytics-app > .aui-dashboard-navigation { height: 100%; }
+#root[data-demo] > .commerce-demo > .aui-dashboard-stage { height: 100%; }
+
+@media (max-width: 800px) {
+  #root[data-demo] > .material-studio > .ms-app-window { height: auto; min-height: 100%; }
+}

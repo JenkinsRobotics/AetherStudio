@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2985" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/CAM_Stop.svg. Authors: [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2987">
+    <linearGradient id="linearGradient3007">
+      <stop style="stop-color:#2693e2;stop-opacity:1" offset="0" id="stop3009" />
+      <stop style="stop-color:#34a4f6;stop-opacity:0;" offset="1" id="stop3011" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3007" id="linearGradient3013" x1="117.28671" y1="85.444054" x2="103.23077" y2="40.384613" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:#34a4f6;fill-opacity:0.85997319999999999;fill-rule:nonzero;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none" id="path3003" d="m 77.09091,22.272728 a 29.545454,28.09091 0 1 1 -59.090908,0 29.545454,28.09091 0 1 1 59.090908,0 z" transform="matrix(0.98153848,0,0,1.0323624,-14.667694,9.0064723)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3013);fill-opacity:1;fill-rule:nonzero;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none" id="path3005" d="m 135.09091,62.454544 a 24.363636,23.90909 0 1 1 -48.727274,0 24.363636,23.90909 0 1 1 48.727274,0 z" transform="matrix(1.0671642,0,0,1.0874525,-86.164179,-35.916347)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ebf0f7;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold" id="text2999">
+      <path d="m 26,10 12,0 0,16.119223 -1.7,11.758875 -8.600002,0 L 26,26.119223 26,10 m 0,31.985264 12,0 L 38,52 26,52 26,41.985264" id="path2993" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

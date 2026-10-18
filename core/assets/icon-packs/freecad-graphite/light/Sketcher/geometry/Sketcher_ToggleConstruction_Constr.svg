@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/geometry/Sketcher_ToggleConstruction_Constr.svg. Authors: [wmayer], [agryson] Alexander Gryson
+[JoshuaCall]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><g id="g1593-1" transform="matrix(0.78879356,0,0,0.78879356,19.59251,-3.2449824)">
+    <path style="fill:#e0e7ef;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 52.27482,49.922109 48.032181,54.16475 5.6057758,11.738344 9.8484153,7.495704 Z" id="path3061-7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 48.524081,51.828224 7.9422954,11.246434" id="path3063-9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="g1597-4" transform="matrix(1.1717126,0,0,1.1717126,-77.264053,8.0703067)">
+    <path style="fill:#a8b8cb;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 67.735801,3.7936952 71.97844,-0.44894628 83.305152,10.849428 79.062512,15.092067 Z" id="path3061-5-5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 71.48654,1.8875803 8.991977,9.0221187 0.188094,0.188357 0.24011,0.240447" id="path3063-8-8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#a8b8cb;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 82.909077,19.151857 4.242639,-4.242641 11.407468,11.279389 -1.340465,1.340465 -0.246303,0.246303 -2.655872,2.655871 z" id="path9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 86.667466,17.261893 9.575458,9.431231" id="path10" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#a8b8cb;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 98.177559,34.636818 4.242641,-4.242641 11.54347,11.265364 -4.24264,4.242639 z" id="path11" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 101.9283,32.730703 9.69885,9.420747" id="path12" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

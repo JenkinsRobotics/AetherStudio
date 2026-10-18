@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="32" height="32" id="svg4024" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/actions/TechDraw_ClipGroup.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs4026">
+    <linearGradient xlink:href="#linearGradient3866" id="linearGradient3771" x1="98" y1="1047.3622" x2="81" y2="993.36218" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-1,-1,0,1052.3622,124.00001)" />
+    <linearGradient id="linearGradient3866">
+      <stop style="stop-color:#5d7086;stop-opacity:1" offset="0" id="stop3868" />
+      <stop style="stop-color:#6c8098;stop-opacity:1" offset="1" id="stop3870" />
+    </linearGradient>
+  </defs>
+  <g id="layer1">
+    <g id="g2">
+      <g id="layer3" style="display:inline" transform="matrix(0,-1,-1,0,64.00001,64.00001)">
+        <g id="layer3-3" style="display:inline">
+          <path style="fill:url(#linearGradient3771);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 11,3 v 58.00002 h 42 v -48 L 43,3 Z" id="path2991" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 13,5 V 59.00002 H 51 V 13.81392 L 41.99741,5 Z" id="path3763" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path style="fill:#e5edf7;fill-opacity:0.392157;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 43,3 V 13.00002 H 53 Z" id="path2993" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        </g>
+      </g>
+      <g id="g5" style="stroke:#e5edf7;stroke-width:1.1" transform="matrix(1,0,0,0.99999707,0,-3.9898413)">
+        <circle style="fill:#667991;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round" id="path2" cx="45.99572" cy="45.994976" r="15.005042" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path id="path1" style="fill:#52b5fa;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="m 43.99572,35.994976 h 4 v 8 h 8 v 4 h -8 v 8 h -4 v -8 h -8 v -4 h 8 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+    </g>
+    <g id="g3" transform="matrix(0.66411048,0,0,0.65769381,1.7737209,5.8095183)" style="stroke-width:1.1">
+      <rect style="fill:#415266;fill-opacity:1;stroke:none;stroke-width:1.1;stroke-linecap:square;stroke-linejoin:round;stroke-dashoffset:5.4;paint-order:stroke fill markers" id="rect4" width="19.99361" height="17.100039" x="10.895241" y="17" transform="matrix(1.5057736,0,0,1.5204644,-5.509973,-8.8478943)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="display:inline;fill:none;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect4138-7" width="30.10585" height="26" x="10.895793" y="17" d="M 10.895793,20.25 V 17 h 3.763231 m 7.526463,0 h 7.526462 m 7.526463,0 h 3.763231 v 3.25 m 0,6.5 v 6.5 m 0,6.5 V 43 h -3.763231 m -7.526463,0 h -7.526462 m -7.526463,0 h -3.763231 v -3.25 m 0,-6.5 v -6.5 m 0,-6.5 V 17" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="display:inline;fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="path3" width="30.10585" height="26" x="10.895793" y="17" d="M 10.895793,20.25 V 17 h 3.763231 m 7.526463,0 h 7.526462 m 7.526463,0 h 3.763231 v 3.25 m 0,6.5 v 6.5 m 0,6.5 V 43 h -3.763231 m -7.526463,0 h -7.526462 m -7.526463,0 h -3.763231 v -3.25 m 0,-6.5 v -6.5 m 0,-6.5 V 17" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

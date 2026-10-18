@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" version="1.1" id="svg1356" width="32" height="32" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/CAM/Gui/Resources/icons/move-to-origin.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g fill="none" stroke="#e5edf7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" id="g1352">
+    <path style="display:inline" d="m 18,32 c 0,-7.731986 6.268014,-14 14,-14 7.731986,0 14,6.268014 14,14 0,7.731986 -6.268014,14 -14,14" id="circle1338" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 32,6 V 22" id="path1340" style="display:inline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 32,42 V 58" id="path1342" style="display:inline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 6,32 H 22" id="path1344" style="display:inline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 42,32 H 58" id="path1346" style="display:inline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 9,54.999995 23.453197,40.546798" id="path1348" style="display:inline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 18,40 23.453197,40.546798 24,46" id="path1350" style="display:inline" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <path id="circle1354" style="display:inline;fill:#e5edf7;stroke:none;stroke-opacity:1;stroke-width:1.1;stroke-dasharray:none" d="m 37,32 a 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 5,5 0 0 1 5,5 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

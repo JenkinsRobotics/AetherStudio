@@ -1,0 +1,91 @@
+.aui-harness-drawing {
+  --harness-bg: #0d0f0f;
+  --harness-card: #151717;
+  --harness-head: #252727;
+  --harness-line: #353838;
+  --harness-text: #d0d3d1;
+  --harness-dim: #828886;
+  --harness-pin: #4d5350;
+  --harness-active: #61d9b0;
+  --harness-paper: #fafcfb;
+  color: var(--harness-text);
+  font-family: var(--aether-font-family);
+}
+.aui-harness-drawing text {
+  fill: var(--harness-text);
+  font-size: 15px;
+  user-select: none;
+}
+.aui-harness-card-body {
+  fill: var(--harness-card);
+  stroke: var(--harness-line);
+  stroke-width: 1.5;
+}
+.aui-harness-card-head {
+  fill: var(--harness-head);
+}
+.aui-harness-title {
+  font-weight: 600;
+}
+.aui-harness-drawing .aui-harness-muted {
+  fill: var(--harness-dim);
+}
+.aui-harness-divider {
+  fill: none;
+  stroke: var(--harness-line);
+}
+.aui-harness-port {
+  fill: var(--harness-pin);
+}
+.aui-harness-pin[aria-pressed="true"] .aui-harness-port {
+  fill: var(--harness-active);
+}
+.aui-harness-card[data-selected] > rect {
+  stroke: var(--harness-active);
+}
+.aui-harness-drawing [role="button"] {
+  cursor: pointer;
+  outline: none;
+}
+.aui-harness-drawing [role="button"]:focus-visible > rect:first-child {
+  stroke: var(--harness-active);
+  stroke-width: 2;
+}
+.aui-harness-pin:hover > rect {
+  fill: var(--harness-head);
+}
+.aui-harness-gauge {
+  fill: var(--harness-card);
+  stroke: var(--harness-line);
+}
+.aui-connector-face > rect,
+.aui-connector-face > path {
+  fill: var(--harness-head);
+  stroke: var(--harness-line);
+  stroke-width: 3;
+}
+.aui-connector-face circle {
+  fill: var(--harness-pin);
+}
+.aui-connector-face text {
+  font-size: 10px;
+}
+.aui-connector-preview > rect {
+  fill: var(--harness-paper);
+  stroke: var(--harness-line);
+}
+.aui-connector-preview[data-tone="green"] image {
+  filter: sepia(1) saturate(4) hue-rotate(95deg);
+}
+.aui-connector-preview[data-tone="blue"] image {
+  filter: sepia(1) saturate(6) hue-rotate(155deg);
+}
+.aui-connector-preview[data-tone="orange"] image {
+  filter: sepia(1) saturate(5) hue-rotate(-20deg);
+}
+.aui-harness-table text {
+  font-size: 11px;
+}
+.aui-harness-table [role="button"]:hover > rect:first-child {
+  fill: var(--harness-head);
+}

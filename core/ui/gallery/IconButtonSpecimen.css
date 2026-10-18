@@ -1,0 +1,20 @@
+.icon-button-specimen { width: 560px; max-width: 100%; min-width: 0; container-type: inline-size; }
+.icon-active-examples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; max-width: 100%; }
+.icon-active-example { display: grid; justify-items: center; gap: 5px; margin: 0; }
+.icon-active-example figcaption { font-size: 11px; color: var(--aether-color-text-dim); text-align: center; }
+@container (max-width: 420px) {
+  .icon-button-specimen .element-spec-rows { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .icon-button-specimen .element-spec-rows dd { margin-bottom: 10px; }
+}
+
+/* Pinned states show the rounded control's real surface and keyboard focus. */
+.icon-button-specimen [data-element-state="hover"] .aui-icon-button[data-appearance="rounded"] {
+  background: var(--aether-color-bg-hover);
+  color: var(--aether-color-text);
+  box-shadow: none;
+}
+.icon-button-specimen [data-element-state="focus"] .aui-icon-button[data-appearance="rounded"] {
+  outline: 2px solid var(--aether-color-border-focus);
+  outline-offset: -2px;
+  box-shadow: none;
+}

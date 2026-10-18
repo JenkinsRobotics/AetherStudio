@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { AetherIcon } from "./AetherIcon";
 import type { KeyboardEvent, ReactNode } from "react";
 
 export interface BottomPanelTab {
@@ -73,7 +74,7 @@ export function BottomPanel({
         </div>
         <div className="aui-bottom-panel-actions">
           {actions}
-          <button type="button" aria-label={collapsed ? "Expand bottom panel" : "Collapse bottom panel"} onClick={() => onCollapsedChange?.(!collapsed)}>{collapsed ? "⌃" : "⌄"}</button>
+          <button type="button" aria-label={collapsed ? "Expand bottom panel" : "Collapse bottom panel"} onClick={() => onCollapsedChange?.(!collapsed)}><AetherIcon name={collapsed ? "chevron-up" : "chevron-down"} /></button>
         </div>
       </header>
       {!collapsed ? (

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2816" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/constraints/Constraint_Block.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="pale-red" style="fill:none;stroke:#e5edf7;stroke-width:1.1" transform="matrix(0.61538495,0,0,0.61538495,10.309556,10.309556)">
+    <path d="M 17.15836,17.158356 52.874794,52.87479" id="path2" style="stroke-width:1.1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 52.874794,17.158356 17.15836,52.87479" id="path4" style="stroke-width:1.1;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle r="29.249981" cy="-35.246952" cx="-35.246952" id="circle6" style="stroke-width:1.1;stroke-dasharray:none" transform="scale(-1)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="red" style="fill:none;stroke:#5bbdff;stroke-width:1.1" transform="matrix(-0.68685493,0,0,-0.68685493,54.001462,53.947177)">
+    <circle r="26" cy="32" cx="32" id="circle9" style="stroke-width:1.1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 50,50 14,14" id="path11" style="stroke-width:1.1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 14,50 50,14" id="path13" style="stroke-width:1.1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="red-6" style="fill:none;stroke:#5bbdff;stroke-width:1.1" transform="matrix(-0.77382069,0,0,-0.77382069,68.948538,68.948534)">
+    <circle r="24.325176" cy="47.670937" cx="47.67094" id="circle9-7" style="fill:none;fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="dark" style="fill:none;stroke:#5bbdff;stroke-width:1.1" transform="matrix(-0.68685493,0,0,-0.68685493,53.94718,53.947177)">
+    <path d="M 50,52 12,14" id="path18" style="stroke-width:1.1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 12,50 50,12" id="path20" style="stroke-width:1.1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

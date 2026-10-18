@@ -1,0 +1,32 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "model-studio",
+  "name": "Model Studio",
+  "description": "The quiet dark Model Studio interface.",
+  "extends": "aether-default",
+  "modes": {
+    "dark": {
+      "color-bg-app": "#101112",
+      "color-bg-panel": "#191b1c",
+      "color-bg-bar": "#17191a",
+      "color-bg-control": "#272a2c",
+      "color-bg-hover": "#303437",
+      "color-border": "#34383a",
+      "color-text": "#dfe3e3",
+      "color-text-dim": "#91999d",
+      "color-bg-inset": "#101213",
+      "color-bg-shell": "#17191a",
+      "color-bg-rail": "#191b1c",
+      "color-bg-control-hover": "#303437",
+      "color-bg-row-hover": "#292d30",
+      "color-border-control": "#4a565e",
+      "color-border-control-hover": "#657c87",
+      "color-border-subtle": "#292d30",
+      "color-text-soft": "#d0d6d8",
+      "color-text-faint": "#6b7478"
+    }
+  },
+  "effects": {
+    "shadow-1": "0 4px 14px #0003"
+  }
+}

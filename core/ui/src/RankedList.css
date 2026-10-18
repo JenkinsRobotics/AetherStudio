@@ -1,0 +1,11 @@
+.aui-ranked-list { list-style:none; margin:0; padding:0; display:grid; gap:4px; }
+.aui-ranked-list button { display:flex; align-items:center; width:100%; gap:7px; min-height:26px; padding:3px 0; border:0; background:none; color:var(--aether-color-text-dim); font:11px var(--aether-font-family); text-align:left; cursor:pointer; border-radius:var(--aether-radius-row); }
+.aui-ranked-list button:disabled { cursor:default; opacity:1; }
+.aui-ranked-list button:hover:enabled, .aui-ranked-list button[aria-pressed=true] { background:var(--aether-color-bg-row-hover); color:var(--aether-color-text); }
+.aui-ranked-list button:focus-visible { outline:2px solid var(--aether-color-border-focus); }
+.aui-ranked-list__rank { width:14px; text-align:center; background:var(--aether-color-bg-control); border:1px solid var(--aether-color-border); border-radius:2px; font-size:9px; }
+.aui-ranked-list__icon, .aui-ranked-list__icon > img { width:15px; height:15px; flex:none; object-fit:cover; border-radius:50%; display:grid; place-items:center; }
+.aui-ranked-list__icon svg { width:14px; height:14px; }
+.aui-ranked-list__label { flex:1; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.aui-ranked-list strong { color:var(--aether-color-text-soft); font-weight:400; }
+.aui-ranked-list button > svg { width:12px; height:12px; color:var(--aether-color-text-faint); }

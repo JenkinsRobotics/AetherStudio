@@ -1,0 +1,55 @@
+name: Rust framework compatibility
+on: [push, pull_request]
+jobs:
+  gateway:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      RUSTUP_TOOLCHAIN: 1.97.1
+      AETHER_TEST_MAP_WORKER: ${{ github.workspace }}/.integration/map/service/aether_map_service/runtime/native-worker.json
+      AETHER_TEST_CAD_WORKER: ${{ github.workspace }}/.integration/cad/service/aether_cad_service/runtime/native-worker.json
+      AETHER_TEST_CAD_FIXTURE: ${{ github.workspace }}/.integration/cad/service/tests/fixtures/automation-part.acpart
+      AETHER_TEST_MAP_FIXTURE: ${{ github.workspace }}/.integration/map/service/tests/fixtures/automation-show.aethermap
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Product-owned integration input; pin AETHER_MAP_REF to the release commit.
+      - uses: actions/checkout@v4
+        with:
+          repository: JenkinsRobotics/Aether-Map
+          ref: ${{ vars.AETHER_MAP_REF || 'v0.1.0-alpha.1' }}
+          path: .integration/map
+      - run: python3 tools/fetch-vendor.py && npm ci --ignore-scripts --no-audit --no-fund && npm run build:automation
+        working-directory: .integration/map
+      # Product-owned CAD package, including its replaceable FreeCAD boundary.
+      - uses: actions/checkout@v4
+        with:
+          repository: JenkinsRobotics/Aether-CAD
+          ref: ${{ vars.AETHER_CAD_REF || 'v0.1.0-alpha.1' }}
+          path: .integration/cad
+      - run: python3 tools/fetch-vendor.py && npm ci --ignore-scripts --no-audit --no-fund && npm run build:automation
+        working-directory: .integration/cad
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y freecad
+      - if: runner.os == 'macOS'
+        run: brew install --cask freecad
+      - run: rustup toolchain install 1.97.1 --profile minimal --component rustfmt --component clippy
+      - run: python -m pip install -e '.[dev]'
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y postgresql
+      - if: runner.os == 'macOS'
+        run: brew install postgresql@17
+      - run: python3 tools/fetch-vendor.py
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: core/files
+      - run: npx playwright install --with-deps chromium
+        working-directory: core/files
+      - run: python dev/rebuild/check.py

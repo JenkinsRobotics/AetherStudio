@@ -1,0 +1,38 @@
+{
+  "$schema": "aether-viewport/v1",
+  "id": "cad-light",
+  "name": "CAD Light",
+  "description": "A pale workbench stage with dark grid lines \u2014 the native CAD Light preview.",
+  "modes": {
+    "dark": {
+      "viewport-bg-top": "#d3dae0",
+      "viewport-bg-bottom": "#bcc5cd",
+      "viewport-grid": "rgba(41, 41, 41, 0.25)",
+      "viewport-grid-axis": "rgba(31, 31, 31, 0.4)",
+      "viewport-part": "#f2f4f7",
+      "viewport-part-shade": "#aab3bd",
+      "viewport-part-edge": "rgba(0, 0, 0, 0.14)",
+      "viewport-cavity": "#8f98a3",
+      "viewport-sketch": "#24466e",
+      "viewport-sketch-constrained": "#12203a",
+      "viewport-construction": "#c2410c",
+      "viewport-selection": "#1d4ed8",
+      "viewport-hover": "#3b82f6"
+    },
+    "light": {
+      "viewport-bg-top": "#d3dae0",
+      "viewport-bg-bottom": "#bcc5cd",
+      "viewport-grid": "rgba(41, 41, 41, 0.25)",
+      "viewport-grid-axis": "rgba(31, 31, 31, 0.4)",
+      "viewport-part": "#f2f4f7",
+      "viewport-part-shade": "#aab3bd",
+      "viewport-part-edge": "rgba(0, 0, 0, 0.14)",
+      "viewport-cavity": "#8f98a3",
+      "viewport-sketch": "#24466e",
+      "viewport-sketch-constrained": "#12203a",
+      "viewport-construction": "#c2410c",
+      "viewport-selection": "#1d4ed8",
+      "viewport-hover": "#3b82f6"
+    }
+  }
+}

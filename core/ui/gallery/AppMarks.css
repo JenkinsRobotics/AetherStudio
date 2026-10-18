@@ -1,0 +1,24 @@
+body { margin: 0; background: #f3f5f8; color: #202937; font-family: var(--aether-font-family, system-ui, sans-serif); }
+.app-marks-page { max-width: 1200px; margin: auto; padding: 32px; }
+.app-marks-page header { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.app-marks-page h1 { font-size: 30px; letter-spacing: -1px; margin: 8px 0; }
+.app-marks-page p { margin: 0; color: #637084; font-size: 13px; }
+.app-marks-page .app-marks-eyebrow { font-size: 10px; letter-spacing: 2px; }
+.app-marks-page label { display: grid; gap: 7px; min-width: 120px; font-size: 12px; }
+.app-marks-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.app-marks-grid article { border: 1px solid #dde2e9; border-radius: 12px; background: #fff; padding: 16px; min-width: 0; }
+.app-marks-identity { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.app-marks-identity h2 { font-size: 13px; margin: 0; font-weight: 600; flex: 1; }
+.app-marks-identity a { color: #315dc5; font-size: 11px; text-decoration: none; }
+.app-marks-identity a:hover { text-decoration: underline; }
+.app-marks-surfaces { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.app-marks-surfaces figure { margin: 0; min-width: 0; }
+.app-marks-surface { height: 112px; display: grid; place-items: center; border-radius: 5px; }
+.app-marks-surface img { max-width: 100%; }
+.app-marks-surface--light { background: #f7f8fa; }
+.app-marks-surface--dark { background: #25292e; }
+.app-marks-surface--transparent { background: repeating-conic-gradient(#e4e7ec 0% 25%, #f8fafc 0% 50%) 50% / 14px 14px; }
+.app-marks-surfaces figcaption { text-align: center; font-size: 10px; text-transform: capitalize; color: #758195; margin-top: 7px; }
+.app-marks-page footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 20px; font-size: 11px; color: #637084; }
+@media (max-width: 920px) { .app-marks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 580px) { .app-marks-grid { grid-template-columns: minmax(0, 1fr); } .app-marks-page { padding: 20px; } .app-marks-page header { align-items: start; flex-direction: column; } }

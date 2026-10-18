@@ -210,7 +210,7 @@ export — rather than the editable Project internals — is self-contained.
 ## Engine serialization contract (BR-SAVE — engine side shipped)
 
 The engine has the write verbs, the inverse of its loaders
-(`animacore/serialize.py` + the `serialize_character` / `serialize_scene`
+(`aether_animation/serialize.py` + the `serialize_character` / `serialize_scene`
 bridge verbs; full spec + round-trip guarantee live in
 `Studio_Bridge.md` → "Serialization"):
 
@@ -222,7 +222,7 @@ bridge verbs; full spec + round-trip guarantee live in
 Round-trip is the acceptance test: `load_character(text)` →
 serialize → `text'` where `load_character(text')` yields an equal rig,
 for every file in `examples/` — verified in
-`animacore/tests/test_serialize.py` and `test_bridge.py`. Serialization
+`aether_animation/tests/test_serialize.py` and `test_bridge.py`. Serialization
 validates (an un-serializable/invalid rig errors) so the app can never
 write a broken file. To make the round-trip lossless the engine
 **additively** enriched the `load_character` rig summary (clip

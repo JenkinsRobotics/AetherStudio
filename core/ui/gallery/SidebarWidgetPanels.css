@@ -1,0 +1,7 @@
+.sidebar-widget-tree { display: flex; height: min(640px, 72dvh); min-height: 440px; min-width: 0; width: 100%; }
+.sidebar-widget-editor { min-width: 0; }
+.sidebar-widget-selection { display: block; margin-bottom: 8px; font-size: 12px; }
+.sidebar-widget-preview { box-sizing: border-box; overflow: auto; display: grid; place-content: center; gap: 20px; height: 100%; min-width: 0; margin: 0; padding: 24px; }
+.sidebar-widget-preview-stage { display: grid; place-items: center; min-height: 240px; }
+.sidebar-widget-preview figcaption { display: grid; gap: 6px; text-align: center; font-size: 12px; }
+.sidebar-widget-preview figcaption span { color: var(--aether-color-text-dim); font-size: 11px; }

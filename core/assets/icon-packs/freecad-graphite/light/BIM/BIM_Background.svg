@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 16 16" version="1.1" id="svg8" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/BIM/Resources/icons/BIM_Background.svg. Authors: FreeCAD contributors. Rights: FreeCAD LGPL2+. Source and license notices: http://creativecommons.org/licenses/by-sa/4.0/</desc><defs id="defs2">
+    <linearGradient id="linearGradient888">
+      <stop style="stop-color:#a8b9cb;stop-opacity:1;" offset="0" id="stop884" />
+      <stop style="stop-color:#ecf1f7;stop-opacity:1;" offset="1" id="stop886" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient888" id="linearGradient848" x1="0" y1="16" x2="16" y2="0" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <path style="color:#405269;overflow:visible;fill:#f3f7fc;fill-opacity:0.932327;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#405269" d="m 14.75,2.25 -12.5,12.5 h 12.5 z" id="path840-0" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="color:#405269;overflow:visible;fill:url(#linearGradient848);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#405269" d="M 1.25,13.75 13.75,1.25 H 1.25 Z" id="rect833-2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path id="path1-3" style="color:#405269;overflow:visible;fill:none;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#405269" d="M 1.75,12.5 12.5,1.75 H 1.75 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path id="path1-7-7" style="color:#405269;overflow:visible;fill:none;fill-opacity:0.932327;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#405269" d="M 3.5,14.25 H 14.25 V 3.5 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

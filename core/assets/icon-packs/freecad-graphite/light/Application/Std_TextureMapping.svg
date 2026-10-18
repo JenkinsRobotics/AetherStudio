@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg6248" height="32" width="32" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/Std_TextureMapping.svg. Authors: [bitacovir]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer1">
+    <g transform="matrix(-1,0,0,0.99363058,4,0.0382165)" id="g3913-7" />
+    <rect style="fill:#405269;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round" id="rect848" width="42" height="56" x="11" y="4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect style="fill:none;fill-rule:evenodd;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" id="rect890" width="40" height="53.97327" x="12" y="5.0267296" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect style="fill:#2d9ced;fill-rule:evenodd;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter" id="rect850" width="17" height="24" x="13" y="6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect y="34" x="34" height="24" width="17" id="rect850-1" style="fill:#2d9ced;fill-rule:evenodd;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

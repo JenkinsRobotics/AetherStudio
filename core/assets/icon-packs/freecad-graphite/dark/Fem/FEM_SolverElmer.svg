@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_SolverElmer.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2871">
+    <radialGradient xlink:href="#linearGradient7846" id="radialGradient7853" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.6078495,-1.6415634,1.0200403,0.9990911,-27.038252,5.7580199)" cx="10.093725" cy="19.564108" fx="10.093725" fy="19.564108" r="4.1269531" />
+    <linearGradient id="linearGradient7846">
+      <stop style="stop-color:#5e7187;stop-opacity:1;" offset="0" id="stop7844" />
+      <stop style="stop-color:#56b9fc;stop-opacity:1" offset="0.70109481" id="stop7845" />
+      <stop style="stop-color:#596b81;stop-opacity:1" offset="1" id="stop7846" />
+    </linearGradient>
+    <radialGradient xlink:href="#linearGradient7850" id="radialGradient7854" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.80057454,0.88132904,-0.54165048,0.49202013,8.1639684,-14.962634)" cx="23.022713" cy="6.5421166" fx="23.022713" fy="6.5421166" r="7.75" />
+    <linearGradient id="linearGradient7850">
+      <stop style="stop-color:#283748;stop-opacity:1;" offset="0" id="stop7847" />
+      <stop style="stop-color:#48596e;stop-opacity:1;" offset="0.44112775" id="stop7848" />
+      <stop style="stop-color:#50b3f9;stop-opacity:1;" offset="0.9097079" id="stop7849" />
+      <stop style="stop-color:#596b81;stop-opacity:1" offset="1" id="stop7850" />
+    </linearGradient>
+    <radialGradient xlink:href="#linearGradient7846" id="radialGradient7843" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.6078495,-1.6415634,1.0200403,0.9990911,-27.038252,5.7580199)" cx="10.093725" cy="19.564108" fx="10.093725" fy="19.564108" r="4.1269531" />
+    <radialGradient xlink:href="#linearGradient7850" id="radialGradient7838" cx="23.022713" cy="6.5421166" fx="23.022713" fy="6.5421166" r="7.75" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.80057454,0.88132904,-0.54165048,0.49202013,8.1639684,-14.962634)" />
+  </defs>
+  <g id="layer3" style="display:inline">
+    <g id="g1" transform="matrix(1.2257782,0,0,1.2257782,-7.2249015,-7.2249015)" style="stroke-width:1.1">
+      <g id="g7850" style="display:inline;stroke:#e5edf7;stroke-width:1.1;stroke-dasharray:none" transform="matrix(1.8074878,0,0,1.8074878,3.0801948,3.0801948)">
+        <path d="M 16,3.0213377 C 8.8320828,3.0213377 3.0213378,8.8320828 3.0213377,16 h 7.7773563 c 3e-4,-2.872478 2.328828,-5.201006 5.201306,-5.201306 z" style="font-variation-settings:normal;opacity:1;fill:url(#radialGradient7843);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-dasharray:none;stop-color:#e5edf7;stop-opacity:1" id="path7832" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="m 16,3.0213377 v 7.7773563 c 2.872478,3e-4 5.201006,2.328829 5.201306,5.201306 h 7.777356 C 28.978662,8.8320828 23.167917,3.0213378 16,3.0213377 Z" style="fill:url(#radialGradient7838);stroke:#e5edf7;stroke-width:1.1;stroke-dasharray:none" id="path7830" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <g id="g7853" transform="matrix(-1.8074878,0,0,-1.8074878,60.919805,60.919805)" style="display:inline;stroke:#e5edf7;stroke-width:1.1;stroke-dasharray:none">
+        <path d="M 16,3.0213378 C 8.8320828,3.0213378 3.0213378,8.8320828 3.0213378,16 h 7.7773562 c 3e-4,-2.872478 2.328828,-5.201006 5.201306,-5.201306 z" style="font-variation-settings:normal;opacity:1;fill:url(#radialGradient7853);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-dasharray:none;stop-color:#e5edf7;stop-opacity:1" id="path7850" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="m 16,3.0213378 v 7.7773562 c 2.872478,3e-4 5.201006,2.328829 5.201306,5.201306 h 7.777356 C 28.978662,8.8320828 23.167917,3.0213378 16,3.0213378 Z" style="fill:url(#radialGradient7854);stroke:#e5edf7;stroke-width:1.1;stroke-dasharray:none" id="path7851" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+    </g>
+    <path style="display:inline;fill:#4f6176;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="M 17.231138,31.999998 V 11.297636 H 32 46.768861 v 3.943308 3.943307 h -8.861317 -8.861317 v 3.943305 3.943306 h 7.876725 7.876726 v 3.943309 3.943307 h -7.876726 -7.876725 v 4.929131 4.929137 h 8.861317 8.861317 v 3.943306 3.943308 H 32 17.231138 Z" id="path1070" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:#324154;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="M 18.83125,12.896875 H 32 45.16875 v 2.343749 2.343751 H 37.907813 27.446875 v 5.543749 5.542188 H 36.923438 43.2 v 2.34375 2.34375 h -6.276562 -9.476563 v 6.528125 6.529687 h 10.460938 7.260937 v 2.343751 2.343749 H 32 18.83125 V 32 Z" id="path1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2980" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/TechDraw_Lock.svg. Authors: [bitacovir]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2982">
+    <linearGradient id="linearGradient2">
+      <stop style="stop-color:#3c4b5f;stop-opacity:1;" offset="0" id="stop2" />
+      <stop style="stop-color:#4d5e73;stop-opacity:1;" offset="1" id="stop3" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient2" id="linearGradient3" x1="2.1071069" y1="79.305664" x2="89.226877" y2="79.305664" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="g13-6" transform="matrix(0.5056249,0,0,0.5182899,8.9100439,3.8963143)" style="stroke-width:1.1">
+    <path style="color:#e5edf7;display:inline;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="m 69.399185,52.366485 c 0.0363,-9.83311 -0.0259,-17.17877 0,-27.01191 C 69.398185,12.026008 57.308175,2.2016603 41.710675,2.2015093 26.666071,2.2013637 15.999916,10.77427 15.999916,25.354575 c 0.02998,9.832532 0,27.01191 0,27.01191" id="path9-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="color:#e5edf7;display:inline;fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="m 69.399185,52.366485 c 0.0363,-9.83311 -0.0259,-17.17877 0,-27.01191 C 69.398185,12.026008 57.308175,2.273694 41.710675,2.273543 26.666071,2.2733974 15.999916,10.77427 15.999916,25.354575 c 0.02998,9.832532 0,27.01191 0,27.01191" id="path5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <rect style="fill:#54667b;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:normal" id="rect1" width="91.025146" height="61.693474" x="0.15359999" y="48.459625" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:url(#linearGradient3);stroke:#91a4bb;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:normal" id="rect2" width="91.025146" height="61.693474" x="0.15359999" y="48.459625" d="M 4.0605469,52.365234 H 87.273437 V 106.24609 H 4.0605469 Z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m 44.750842,60.032678 c -5.818575,0 -10.787765,5.426444 -9.766706,11.733821 0.228073,1.408803 0.779328,4.383663 3.722025,6.541121 L 35.777423,98.600582 H 53.57718 L 50.27243,78.73365 c 2.857358,-1.773198 4.377568,-4.969543 4.376597,-8.614423 0,-5.693818 -4.696047,-10.086517 -9.898184,-10.086517 z" style="display:inline;fill:#e5edf7;stroke:none;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none" id="path13-5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

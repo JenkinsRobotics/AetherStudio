@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg3364" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/MeshPart/Gui/Resources/icons/MeshPart_CurveOnMesh.svg. Authors: [vocx]. Rights: CC-BY-SA 4.0. Source and license notices: http://creativecommons.org/licenses/by-sa/4.0/</desc><defs id="defs3366">
+    <linearGradient id="linearGradient1489">
+      <stop style="stop-color:#2490e0;stop-opacity:1" offset="0" id="stop1485" />
+      <stop style="stop-color:#32a1f2;stop-opacity:1" offset="1" id="stop1487" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="28" x2="7" y1="9" x1="47" id="linearGradient2095" xlink:href="#linearGradient1489" gradientTransform="matrix(0.90855455,0,0,0.90802396,3.3799799,3.2426344)" />
+    </defs>
+  <path style="display:inline;opacity:1;fill:url(#linearGradient2095);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 7.0141981,28.667305 17.008298,55 c 13.628318,-32.688862 29.073746,9.988264 39.9764,-21.792575 L 40.630716,8.6907782 C 32.969804,34.292364 20.713171,5.6052405 7.0141981,28.667305 Z" id="path3820-1-9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <g style="display:inline" id="layer4" />
+  <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 12.176618,22.772079 c 0,0 10.450799,13.231287 10.450799,22.531539" id="path1041" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path id="path1043" d="m 25.888981,20.005048 c 0,0 10.738436,13.998318 10.738436,23.29857" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 36.354919,17.608076 C 44.121109,26.812449 49.20269,35.633307 50.0656,44.262407" id="path1045" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 53.936256,28.954744 C 42.814306,52.924466 25.747864,21.955586 14.530035,47.747007" id="path1041-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 44.919102,15.485212 C 33.797152,39.454935 21.093199,10.715239 9.300096,34.397325" id="path1041-3-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <g transform="translate(-6.9972139,-13.026307)" id="g1067">
+    <path id="path3764" d="m 17.008298,55 c 13.628318,-32.688862 29.073746,9.988264 39.9764,-21.792575" style="fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#37a8fa;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 17.008298,55 c 13.628318,-32.688862 29.073746,9.988264 39.9764,-21.792575" id="path1219" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 64 64" id="svg2" version="1.1" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/cursor-through.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs4">
+    <linearGradient gradientTransform="matrix(1.9992772,0,0,1.9992772,-0.23550294,-1052.047)" xlink:href="#linearGradient4136-0" id="linearGradient4146-0" x1="3.2922609" y1="1048.2958" x2="7.3351092" y2="1045.6942" gradientUnits="userSpaceOnUse" />
+    <linearGradient id="linearGradient4136-0">
+      <stop style="stop-color:#e5edf7;stop-opacity:1;" offset="0" id="stop4138-8" />
+      <stop style="stop-color:#e5edf7;stop-opacity:0" offset="1" id="stop4140-7" />
+    </linearGradient>
+  </defs>
+  <g id="layer1" transform="matrix(2.6825842,0,0,2.6825749,-11.215812,-2760.3708)">
+    <path style="fill:url(#linearGradient4146-0);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 9.9393899,1030.4959 6e-7,18.5201 4.2134615,-4.1523 2.912554,6.4989 3.001123,-1.6055 -3.18829,-6.9637 5.402014,-0.2053 z" id="path4134" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

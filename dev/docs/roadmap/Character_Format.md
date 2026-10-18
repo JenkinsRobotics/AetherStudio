@@ -3,7 +3,7 @@
 > File extension: `.character.anima`  
 > Format: YAML  
 > Version: 2.0 — the mechanism-rig format the Python runtime loads
-> (`animacore/loader.py` is the reference implementation). The 1.0
+> (`aether_animation/loader.py` is the reference implementation). The 1.0
 > draft below it is kept for the expressive-face/voice sections that
 > have not been redesigned yet; its `bones`, `blend_shapes`, and
 > `physical` sections are superseded and rejected by the 2.0 loader.
@@ -193,7 +193,7 @@ parts:
 ### Mate controls (universal — K4/K9)
 
 Every mate — all eight kinds — carries the same optional universal
-controls (`animacore/mates.py` `MateControls`); only the DOF set
+controls (`aether_animation/mates.py` `MateControls`); only the DOF set
 differs per kind, so the UI binds one panel and reads the DOF slots
 from the `mate_types` bridge verb. All fields are optional with
 sensible defaults (a mate with none is legal, and the runtime models
@@ -326,8 +326,8 @@ files and their evaluation are unchanged.
 | `suppressed` | joint | The joint contributes **no driven DOF** (its DOF are not read from clips / not in the active solve) and does **not** position its child in forward kinematics. |
 | `suppressed` | relation | The relation is **skipped** (not applied); its driven DOF falls back to its own neutral. |
 
-Solve semantics (deterministic — `animacore/rig.py` `evaluate_pose`,
-`animacore/kinematics.py` `resolve_pose`):
+Solve semantics (deterministic — `aether_animation/rig.py` `evaluate_pose`,
+`aether_animation/kinematics.py` `resolve_pose`):
 
 - **Suppression is per-element — no cascade.** Suppressing a part does
   not auto-suppress its assembly-tree children. The UI achieves "suppress

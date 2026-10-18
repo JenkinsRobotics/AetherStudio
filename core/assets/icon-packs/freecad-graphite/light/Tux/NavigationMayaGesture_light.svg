@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+ <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Tux/Resources/icons/NavigationMayaGesture_light.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g transform="translate(0 -988.36)" fill="none" stroke="#405269" stroke-width="6">
+  <path d="m16 1012.1 16 16 16-16" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m16 1028.4v-20c0-8 4-12 16-12s16 4 16 12v20c0 8-4 17-16 17s-16-9-16-17z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="m32 1004.4v12" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+ </g>
+</svg>

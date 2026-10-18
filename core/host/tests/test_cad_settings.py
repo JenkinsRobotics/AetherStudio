@@ -1,18 +1,19 @@
 import base64
 import json
 from pathlib import Path
-import pytest
-from core.host.state import Problem
 
-from animacore.cad_document import CADDocument, defaults
+import pytest
+from aether_cad_service.document import CADDocument, defaults
+
+from core.host.projects import project_path
+from core.host.state import Problem
 
 pytest_plugins = ("core.host.tests.test_library",)
 
 
 def native(call):
     content = (
-        Path(__file__).resolve().parents[3]
-        / "Aether CAD/examples/Train-Cart-Wheel.acpart"
+        project_path("cad") / "examples/Train-Cart-Wheel.acpart"
     ).read_bytes()
     return call(
         "create",
@@ -44,11 +45,7 @@ def test_settings_are_portable_revisioned_and_authorized(library):
     meta = call("cad_metadata", {"id": file["id"]})
     assert meta["settings"]["description"] == "Wheel specification"
     assert meta["settings"]["units"]["length"]["unit"] == "in"
-    with pytest.raises(Problem):
-        call(
-            "version",
-            {"id": file["id"], "expected_revision": file["revision"], "name": "V1"},
-        )
+    call("version", {"id": file["id"], "expected_revision": file["revision"], "name": "V1"})
     assert len(call("history", {"id": file["id"]})["revisions"]) == 3
     old = call("cad_metadata", {"id": file["id"], "revision": 1})
     assert old["settings"]["description"] == "" and not old["writable"]
@@ -262,3 +259,18 @@ def test_move_does_not_bypass_folder_permissions_or_sharing_scope(library):
         with pytest.raises(Problem):
             edit(call, file, "move", parent=folder["id"])
     assert call("cad_metadata", {"id": file["id"]})["parent"] is None
+
+
+def test_legacy_settings_do_not_apply_a_branch_request_to_main(library):
+    _, _, _, _, call = library
+    file = native(call)
+    for branch in ("Design", "branch-" + "a" * 64):
+        for action in ("cad_metadata", "cad_operation"):
+            with pytest.raises(Problem) as failure:
+                call(action, {"id": file["id"], "branch": branch,
+                              "operation": "rename", "name": "Wrong branch",
+                              "expected_revision": file["revision"]})
+            assert failure.value.status == 501
+    current = call("read", {"id": file["id"]})
+    assert current["name"] == file["name"]
+    assert current["revision"] == file["revision"]

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg4025" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/Std_UserEditModeDefault.svg. Authors: [bitacovir]. Rights: FreeCAD LGPL2+. Source and license notices: http://creativecommons.org/licenses/by-sa/4.0/</desc><defs id="defs4027">
+    <linearGradient id="linearGradient942">
+      <stop style="stop-color:#e0e7ef;stop-opacity:1" offset="0" id="stop938" />
+      <stop style="stop-color:#a4b5c8;stop-opacity:1" offset="1" id="stop940" />
+    </linearGradient>
+    <linearGradient id="linearGradient919">
+      <stop style="stop-color:#a4b5c8;stop-opacity:1" offset="0" id="stop915" />
+      <stop style="stop-color:#d3dde7;stop-opacity:1" offset="1" id="stop917" />
+    </linearGradient>
+    <linearGradient id="linearGradient2497">
+      <stop style="stop-color:#9caec3;stop-opacity:1" offset="0" id="stop2493" />
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="1" id="stop2495" />
+    </linearGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1.489736,0,0,-0.53739498,111.31562,31.29632)" r="15.644737" fy="36.421127" fx="24.837126" cy="36.421127" cx="24.837126" id="radialGradient8668" xlink:href="#linearGradient8662" />
+    <linearGradient id="linearGradient8662">
+      <stop id="stop8664" offset="0" style="stop-color:#405269;stop-opacity:1;" />
+      <stop id="stop8666" offset="1" style="stop-color:#405269;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient919" id="linearGradient921" x1="45" y1="24" x2="10" y2="-12" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient942" id="linearGradient944" x1="19" y1="2" x2="32" y2="6" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient2497" id="linearGradient1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.69479672,-0.69479672,0.70710678,0.70710678,-380.19427,258.66394)" x1="454.8096" y1="115.02686" x2="467.76303" y2="102.29894" />
+  </defs>
+  <g id="layer4">
+    <path id="path898-8" d="m 17,2 9,12 29,-37" style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(0,32)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle style="fill:none;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" id="path881" cx="31.97114" cy="0.77428854" r="26.210501" transform="translate(0,32)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="" id="path8660" style="color:#405269;display:inline;overflow:visible;visibility:visible;opacity:0.141176;fill:url(#radialGradient8668);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none" cx="24.837126" cy="36.421127" rx="15.644737" ry="8.3968935" transform="translate(0,32)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <circle id="path881-9" style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient921);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke" r="26.210501" cy="1" cx="32" transform="translate(0,32)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 17,2 9,12 29,-37" id="path898" transform="translate(0,32)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path898-6" d="m 17,2 9,12 29,-37" style="fill:none;stroke:url(#linearGradient944);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(0,32)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="layer4-60" style="display:inline" transform="translate(0,-3.9999998)">
+    <path style="display:inline;fill:url(#linearGradient1);stroke:none;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 3.0000818,21.999919 H 29.28419 c -2.12132,-2.121321 -2.121318,-2.878714 1e-6,-5.000033 -2.118429,-2.118428 -2.118629,-3.88137 0,-6 -2.12132,-2.1213203 -2.121317,-2.8785688 1e-6,-4.9998875 l -26.2841095,-1.4e-6 z" id="path3843-5-6-9-7-6" transform="translate(-2.1104444e-6,1.0000829)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 452.54848,97.248607 17.9055,17.593793" id="path3888-5-6-2" transform="matrix(0.69479672,-0.69479672,0.70710678,0.70710678,-380.19427,259.66402)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:none;stroke:#7c8fa5;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 410.16237,100.31115 17.8493,17.53857" id="path3888" transform="matrix(0.69479672,-0.69479672,0.70710678,0.70710678,-352.91008,234.04877)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 446.07175,103.61259 18.91496,18.58567 c 0,-3 0.54504,-3.53555 3.59819,-3.53555 0,-2.99591 1.26853,-4.24264 4.31781,-4.24264 0,-3 0.54495,-3.53546 3.5981,-3.53546 L 457.58585,92.298938 Z" id="path3843-5-6-9-6-6" transform="matrix(0.69479672,-0.69479672,0.70710678,0.70710678,-380.19427,259.66402)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 29.284191,10.999886 H 3.0000823 Z" style="display:inline;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" id="path1-1" transform="translate(-2.1104444e-6,1.0000829)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 29.284191,16.999886 H 3.000082 Z" style="display:inline;fill:none;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" id="path1-7-8" transform="translate(-2.1104444e-6,1.0000829)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m 29.284189,17.999969 c -2.081547,-2.11843 -2.081746,-3.88137 0,-6 -2.084393,-2.1213172 -2.084387,-2.8785695 2e-6,-4.9998895 L 44.840542,14.999964 29.284189,23 c -2.084394,-2.121316 -2.084389,-2.878712 0,-5.000031 z" style="display:inline;fill:#f3f7fc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" id="path1-2-7" transform="translate(2.6299677e-6)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:#405269;stroke:none;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 473.46271,124.86983 8.47599,2.67156 -2.71894,-8.32839 c -3.10593,0.81774 -4.92679,2.61222 -5.75705,5.65683 z" id="path3971-2-9" transform="matrix(0.69479672,-0.69479672,0.70710678,0.70710678,-380.19427,259.66402)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

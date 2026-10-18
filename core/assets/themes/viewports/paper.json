@@ -1,0 +1,38 @@
+{
+  "$schema": "aether-viewport/v1",
+  "id": "paper",
+  "name": "Paper",
+  "description": "A white drafting sheet: light stage in either interface mode, ink sketch lines.",
+  "modes": {
+    "dark": {
+      "viewport-bg-top": "#fbfbfa",
+      "viewport-bg-bottom": "#ebeae5",
+      "viewport-grid": "rgba(0, 0, 0, 0.06)",
+      "viewport-grid-axis": "rgba(0, 0, 0, 0.16)",
+      "viewport-part": "#f2f1ec",
+      "viewport-part-shade": "#c9c7bf",
+      "viewport-part-edge": "rgba(0, 0, 0, 0.12)",
+      "viewport-cavity": "#b3b1a9",
+      "viewport-sketch": "#1d4ed8",
+      "viewport-sketch-constrained": "#111111",
+      "viewport-construction": "#c2410c",
+      "viewport-selection": "#1d4ed8",
+      "viewport-hover": "#3b82f6"
+    },
+    "light": {
+      "viewport-bg-top": "#fbfbfa",
+      "viewport-bg-bottom": "#ebeae5",
+      "viewport-grid": "rgba(0, 0, 0, 0.06)",
+      "viewport-grid-axis": "rgba(0, 0, 0, 0.16)",
+      "viewport-part": "#f2f1ec",
+      "viewport-part-shade": "#c9c7bf",
+      "viewport-part-edge": "rgba(0, 0, 0, 0.12)",
+      "viewport-cavity": "#b3b1a9",
+      "viewport-sketch": "#1d4ed8",
+      "viewport-sketch-constrained": "#111111",
+      "viewport-construction": "#c2410c",
+      "viewport-selection": "#1d4ed8",
+      "viewport-hover": "#3b82f6"
+    }
+  }
+}

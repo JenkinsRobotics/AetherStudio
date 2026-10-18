@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg1307" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/media-playback-step.svg. Authors: Lapo Calamandrei, Jakub Steiner. Rights: . Source and license notices: http://creativecommons.org/licenses/by-sa/2.0/</desc><defs id="defs1309">
+    <linearGradient id="linearGradient3823">
+      <stop style="stop-color:#3aa1ee;stop-opacity:1" offset="0" id="stop3825" />
+      <stop style="stop-color:#52b5fa;stop-opacity:1" offset="1" id="stop3827" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3823" id="linearGradient3829" x1="23" y1="34" x2="15" y2="-4" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.75,0,0,1,15.470323,9.6824872e-4)" />
+    <linearGradient xlink:href="#linearGradient3823" id="linearGradient18233" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.8768379,0,0,1.0394052,1.1001462,-0.57650644)" x1="23" y1="34" x2="15" y2="-4" />
+  </defs>
+  <g id="layer4" style="display:inline" transform="translate(0,16)" />
+  <g id="layer1" style="display:inline" transform="translate(0,16)">
+    <path style="fill:#52b5fa;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 17.5,45 V -13 L 61,16 Z" id="path3035" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:url(#linearGradient3829);fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 19.220323,41.768584 V -9.766648 l 38.681784,25.767616 z" id="path3035-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#e5edf7;fill-opacity:1;fill-rule:evenodd;stroke-width:1.1" id="rect394" width="12.081266" height="60" x="2.4593668" y="-14" ry="0" d="M 3.4593668,-14 H 13.540633 a 1,1 45 0 1 1,1 l 0,58 a 1,1 135 0 1 -1,1 L 3.4593668,46 a 1,1 45 0 1 -1,-1 l 0,-58 a 1,1 135 0 1 1,-1 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:url(#linearGradient18233);fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 4.9926483,43.012665 V -11.036408 H 12.007352 V 43.012665 Z" id="path3035-3-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

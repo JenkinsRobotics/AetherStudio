@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg4199" height="32" width="32" version="1.1" viewBox="0 0 64.000001 64.000001" fill="#e5edf7" color="#e5edf7">
+ <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Tux/Resources/icons/Navigation_Gesture_SelectTouch.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer1" transform="translate(0 -988.36)">
+  <rect id="rect4140" style="color:#e5edf7" fill-rule="evenodd" ry="10" height="56" width="56" y="992.36" x="4" fill="#667991" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <g id="layer1-7" fill="#47586c" transform="translate(-1.2837e-7 -.000018607)">
+   <g id="g4281" fill="#47586c" transform="matrix(0.5 0 0 0.5 20.237 506.39)">
+    <ellipse id="path3059" rx="5.7143" ry="5.625" transform="matrix(2.625 0 0 2.6667 -17.723 791.04)" cy="88.839" cx="15.714" fill="#47586c" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+   </g>
+  </g>
+  <g id="g4138" transform="matrix(.56104 0 0 -.55886 14.047 1590.6)" stroke="#e5edf7" stroke-width="2.8574" fill="#47586c">
+   <g id="g4140" transform="matrix(0.5 0 0 0.5 20.237 506.39)" stroke="#e5edf7" stroke-width="5.7148" fill="#47586c">
+    <ellipse id="ellipse4142" rx="5.7143" transform="matrix(2.625 0 0 2.6667 -17.723 791.04)" stroke="#e5edf7" ry="5.625" cy="88.839" cx="15.714" stroke-width="1.1" fill="#47586c" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+   </g>
+  </g>
+ </g>
+</svg>

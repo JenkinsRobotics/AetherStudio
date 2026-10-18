@@ -111,6 +111,13 @@ icons['mass']=path('M9 12H23L29 29H3Z','url(#metalFront)')+circle(16,8,5,'none',
 icons['back']=line('M12 7 3 15 12 23 M3 15H20Q28 15 28 27',blue,2.5)
 icons['add']=cube(5,4,19,True)+circle(25,24,6,pale)+line('M25 20V28 M21 24H29')
 
+# Primitives and sketch relations the Aether/Anima tool bars list (2026-09-24).
+icons['box']=cube(6,5,20,True)
+icons['cylinder']=path('M8 8V24Q16 31 24 24V8','url(#blueFront)')+f'<ellipse cx="16" cy="8" rx="8" ry="3.4" fill="url(#blueTop)" stroke="var(--tool-edge,#627f98)" stroke-width="1.1"/>'
+icons['sphere']=circle(16,16,12,'url(#blueFront)','var(--tool-edge,#627f98)')+line('M4 16H28 M16 4Q9 16 16 28 M16 4Q23 16 16 28','var(--tool-edge,#627f98)',0.9)+circle(11,10,2.4,pale)
+icons['equal']=path('M4 8H28V13H4Z','url(#blueTop)')+path('M4 19H28V24H4Z','url(#blueTop)')
+icons['boolean']=circle(12,16,9,'url(#metalTop)','var(--tool-edge,#627f98)')+path('M20 7.6A9 9 0 1 1 20 24.4A9 9 0 0 0 20 7.6Z','url(#blueFront)')+path('M12 7A9 9 0 0 1 20 7.6A9 9 0 0 1 20 24.4A9 9 0 0 1 12 25Z','url(#blueTop)','none')
+
 colors={'blueTop':('#d2f3ff','#68bcf4'),'blueFront':('#50c9ff','#1687d7'),'blueSide':('#359be6','#2560a4'),'metalTop':('#f6fbff','#c8d6e1'),'metalFront':('#d4e0ea','#8fa4b7'),'metalSide':('#9eb4c7','#627e96'),'warm':('#ffd7a1','#f29b49')}
 for name,art in icons.items():
     defs=''.join(f'<linearGradient id="{key}" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="var(--tool-{key}-a,{a})"/><stop offset="1" stop-color="var(--tool-{key}-b,{b})"/></linearGradient>' for key,(a,b) in colors.items() if f'url(#{key})' in art)

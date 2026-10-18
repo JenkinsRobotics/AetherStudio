@@ -1,0 +1,3 @@
+/* The hosted home no longer mounts a bottom status tray. Override the legacy
+   reservation in the pinned session stylesheet without changing other apps. */
+body { padding-bottom: 0; }

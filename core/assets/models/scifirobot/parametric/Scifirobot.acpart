@@ -1,0 +1,1946 @@
+{
+  "format": "aether-part",
+  "formatVersion": 21,
+  "documentId": "scifirobot-feature-study",
+  "name": "Scifirobot",
+  "units": "millimeter",
+  "features": [
+    {
+      "id": "shell-sketch-1",
+      "type": "profile",
+      "name": "Sketch 1 \u00b7 Shell section",
+      "plane": "XZ",
+      "offsetMillimeters": 0,
+      "suppressed": false,
+      "profile": {
+        "type": "drawing",
+        "contours": [
+          {
+            "type": "path",
+            "start": [
+              936.3262341994918,
+              1067.5641353800709
+            ],
+            "segments": [
+              {
+                "type": "arc",
+                "middle": [
+                  1328.9734896226676,
+                  -500.2294112506275
+                ],
+                "end": [
+                  0,
+                  -1420
+                ]
+              },
+              {
+                "type": "line",
+                "end": [
+                  0,
+                  -1392
+                ]
+              },
+              {
+                "type": "arc",
+                "middle": [
+                  1302.7683785596855,
+                  -490.36573271892496
+                ],
+                "end": [
+                  917.8634633842905,
+                  1046.5135749641258
+                ]
+              },
+              {
+                "type": "line",
+                "end": [
+                  936.3262341994918,
+                  1067.5641353800709
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "shell-revolve",
+      "type": "revolve",
+      "name": "Revolve 1 \u00b7 Shell section",
+      "profileFeatureId": "shell-sketch-1",
+      "axis": "Z",
+      "angleDegrees": 360,
+      "operation": "new",
+      "bodyId": "shell",
+      "suppressed": false
+    },
+    {
+      "id": "lens-sketch-3",
+      "type": "profile",
+      "name": "Sketch 2 \u00b7 Optical housing",
+      "plane": "XY",
+      "offsetMillimeters": 1055,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 940,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "lens-extrude-4",
+      "type": "extrude",
+      "name": "Extrude 1 \u00b7 Optical housing",
+      "profileFeatureId": "lens-sketch-3",
+      "distanceMillimeters": 150,
+      "operation": "new",
+      "bodyId": "lens",
+      "suppressed": false
+    },
+    {
+      "id": "lens-sketch-5",
+      "type": "profile",
+      "name": "Sketch 3 \u00b7 Optical seat",
+      "plane": "XY",
+      "offsetMillimeters": 1205,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 690,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "lens-extrude-6",
+      "type": "extrude",
+      "name": "Extrude 2 \u00b7 Optical seat",
+      "profileFeatureId": "lens-sketch-5",
+      "distanceMillimeters": 100,
+      "operation": "add",
+      "targetBodyId": "lens",
+      "suppressed": false
+    },
+    {
+      "id": "bezel-sketch-7",
+      "type": "profile",
+      "name": "Sketch 4 \u00b7 Lens bezel",
+      "plane": "XY",
+      "offsetMillimeters": 1195,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 950,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "bezel-extrude-8",
+      "type": "extrude",
+      "name": "Extrude 3 \u00b7 Lens bezel",
+      "profileFeatureId": "bezel-sketch-7",
+      "distanceMillimeters": 75,
+      "operation": "new",
+      "bodyId": "bezel",
+      "suppressed": false
+    },
+    {
+      "id": "bezel-sketch-9",
+      "type": "profile",
+      "name": "Sketch 5 \u00b7 Lens bezel bore",
+      "plane": "XY",
+      "offsetMillimeters": 1270,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 895,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "bezel-cut-10",
+      "type": "extrude",
+      "name": "Pocket 1 \u00b7 Lens bezel",
+      "profileFeatureId": "bezel-sketch-9",
+      "distanceMillimeters": 75,
+      "operation": "cut",
+      "targetBodyId": "bezel",
+      "suppressed": false
+    },
+    {
+      "id": "bezel-fillet",
+      "type": "fillet",
+      "name": "Fillet 1 \u00b7 Lens bezel",
+      "targetBodyId": "bezel",
+      "radiusMillimeters": 20,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 1270
+      },
+      "suppressed": false
+    },
+    {
+      "id": "glass-sketch-12",
+      "type": "profile",
+      "name": "Sketch 6 \u00b7 Lens crown",
+      "plane": "XZ",
+      "offsetMillimeters": 0,
+      "suppressed": false,
+      "profile": {
+        "type": "drawing",
+        "contours": [
+          {
+            "type": "path",
+            "start": [
+              0,
+              1460
+            ],
+            "segments": [
+              {
+                "type": "arc",
+                "middle": [
+                  325,
+                  1418
+                ],
+                "end": [
+                  460,
+                  1310
+                ]
+              },
+              {
+                "type": "line",
+                "end": [
+                  0,
+                  1310
+                ]
+              },
+              {
+                "type": "line",
+                "end": [
+                  0,
+                  1460
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "glass-revolve",
+      "type": "revolve",
+      "name": "Revolve 2 \u00b7 Lens crown",
+      "profileFeatureId": "glass-sketch-12",
+      "axis": "Z",
+      "angleDegrees": 360,
+      "operation": "new",
+      "bodyId": "glass",
+      "suppressed": false
+    },
+    {
+      "id": "lens-trim-sketch-14",
+      "type": "profile",
+      "name": "Sketch 7 \u00b7 Lens retaining ring",
+      "plane": "XY",
+      "offsetMillimeters": 1320,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 465,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "lens-trim-extrude-15",
+      "type": "extrude",
+      "name": "Extrude 4 \u00b7 Lens retaining ring",
+      "profileFeatureId": "lens-trim-sketch-14",
+      "distanceMillimeters": 35,
+      "operation": "new",
+      "bodyId": "lens-trim",
+      "suppressed": false
+    },
+    {
+      "id": "lens-trim-sketch-16",
+      "type": "profile",
+      "name": "Sketch 8 \u00b7 Lens retaining ring bore",
+      "plane": "XY",
+      "offsetMillimeters": 1355,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 438,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "lens-trim-cut-17",
+      "type": "extrude",
+      "name": "Pocket 2 \u00b7 Lens retaining ring",
+      "profileFeatureId": "lens-trim-sketch-16",
+      "distanceMillimeters": 35,
+      "operation": "cut",
+      "targetBodyId": "lens-trim",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-1-sketch-18",
+      "type": "profile",
+      "name": "Sketch 9 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          810,
+          0
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-1-extrude-19",
+      "type": "extrude",
+      "name": "Extrude 5 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-1-sketch-18",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-1",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-2-sketch-20",
+      "type": "profile",
+      "name": "Sketch 10 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          572.7564927611036,
+          572.7564927611035
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-2-extrude-21",
+      "type": "extrude",
+      "name": "Extrude 6 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-2-sketch-20",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-2",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-3-sketch-22",
+      "type": "profile",
+      "name": "Sketch 11 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          4.9598195365467804e-14,
+          810
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-3-extrude-23",
+      "type": "extrude",
+      "name": "Extrude 7 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-3-sketch-22",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-3",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-4-sketch-24",
+      "type": "profile",
+      "name": "Sketch 12 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          -572.7564927611035,
+          572.7564927611036
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-4-extrude-25",
+      "type": "extrude",
+      "name": "Extrude 8 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-4-sketch-24",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-4",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-5-sketch-26",
+      "type": "profile",
+      "name": "Sketch 13 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          -810,
+          9.919639073093561e-14
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-5-extrude-27",
+      "type": "extrude",
+      "name": "Extrude 9 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-5-sketch-26",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-5",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-6-sketch-28",
+      "type": "profile",
+      "name": "Sketch 14 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          -572.7564927611036,
+          -572.7564927611035
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-6-extrude-29",
+      "type": "extrude",
+      "name": "Extrude 10 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-6-sketch-28",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-6",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-7-sketch-30",
+      "type": "profile",
+      "name": "Sketch 15 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          -1.487945860964034e-13,
+          -810
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-7-extrude-31",
+      "type": "extrude",
+      "name": "Extrude 11 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-7-sketch-30",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-7",
+      "suppressed": false
+    },
+    {
+      "id": "optic-bolt-8-sketch-32",
+      "type": "profile",
+      "name": "Sketch 16 \u00b7 Optical fastener",
+      "plane": "XY",
+      "offsetMillimeters": 1200,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 25,
+        "centerMillimeters": [
+          572.7564927611033,
+          -572.7564927611036
+        ]
+      }
+    },
+    {
+      "id": "optic-bolt-8-extrude-33",
+      "type": "extrude",
+      "name": "Extrude 12 \u00b7 Optical fastener",
+      "profileFeatureId": "optic-bolt-8-sketch-32",
+      "distanceMillimeters": 55,
+      "operation": "new",
+      "bodyId": "optic-bolt-8",
+      "suppressed": false
+    },
+    {
+      "id": "hub-sketch-34",
+      "type": "profile",
+      "name": "Sketch 17 \u00b7 Drive housing",
+      "plane": "YZ",
+      "offsetMillimeters": -1350,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 690,
+        "centerMillimeters": [
+          -60,
+          0
+        ]
+      }
+    },
+    {
+      "id": "hub-extrude-35",
+      "type": "extrude",
+      "name": "Extrude 13 \u00b7 Drive housing",
+      "profileFeatureId": "hub-sketch-34",
+      "distanceMillimeters": 240,
+      "operation": "new",
+      "bodyId": "hub",
+      "suppressed": false
+    },
+    {
+      "id": "hub-sketch-36",
+      "type": "profile",
+      "name": "Sketch 18 \u00b7 Drive cap",
+      "plane": "YZ",
+      "offsetMillimeters": -1510,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 590,
+        "centerMillimeters": [
+          -60,
+          0
+        ]
+      }
+    },
+    {
+      "id": "hub-extrude-37",
+      "type": "extrude",
+      "name": "Extrude 14 \u00b7 Drive cap",
+      "profileFeatureId": "hub-sketch-36",
+      "distanceMillimeters": 160,
+      "operation": "add",
+      "targetBodyId": "hub",
+      "suppressed": false
+    },
+    {
+      "id": "hub-sketch-38",
+      "type": "profile",
+      "name": "Sketch 19 \u00b7 Drive face",
+      "plane": "YZ",
+      "offsetMillimeters": -1590,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 440,
+        "centerMillimeters": [
+          -60,
+          0
+        ]
+      }
+    },
+    {
+      "id": "hub-extrude-39",
+      "type": "extrude",
+      "name": "Extrude 15 \u00b7 Drive face",
+      "profileFeatureId": "hub-sketch-38",
+      "distanceMillimeters": 80,
+      "operation": "add",
+      "targetBodyId": "hub",
+      "suppressed": false
+    },
+    {
+      "id": "hub-right-sketch-40",
+      "type": "profile",
+      "name": "Sketch 20 \u00b7 Drive housing",
+      "plane": "YZ",
+      "offsetMillimeters": 1110,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 690,
+        "centerMillimeters": [
+          -60,
+          0
+        ]
+      }
+    },
+    {
+      "id": "hub-right-extrude-41",
+      "type": "extrude",
+      "name": "Extrude 16 \u00b7 Drive housing",
+      "profileFeatureId": "hub-right-sketch-40",
+      "distanceMillimeters": 240,
+      "operation": "new",
+      "bodyId": "hub-right",
+      "suppressed": false
+    },
+    {
+      "id": "hub-right-sketch-42",
+      "type": "profile",
+      "name": "Sketch 21 \u00b7 Drive cap",
+      "plane": "YZ",
+      "offsetMillimeters": 1350,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 590,
+        "centerMillimeters": [
+          -60,
+          0
+        ]
+      }
+    },
+    {
+      "id": "hub-right-extrude-43",
+      "type": "extrude",
+      "name": "Extrude 17 \u00b7 Drive cap",
+      "profileFeatureId": "hub-right-sketch-42",
+      "distanceMillimeters": 160,
+      "operation": "add",
+      "targetBodyId": "hub-right",
+      "suppressed": false
+    },
+    {
+      "id": "hub-right-sketch-44",
+      "type": "profile",
+      "name": "Sketch 22 \u00b7 Drive face",
+      "plane": "YZ",
+      "offsetMillimeters": 1510,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 440,
+        "centerMillimeters": [
+          -60,
+          0
+        ]
+      }
+    },
+    {
+      "id": "hub-right-extrude-45",
+      "type": "extrude",
+      "name": "Extrude 18 \u00b7 Drive face",
+      "profileFeatureId": "hub-right-sketch-44",
+      "distanceMillimeters": 80,
+      "operation": "add",
+      "targetBodyId": "hub-right",
+      "suppressed": false
+    },
+    {
+      "id": "vents-sketch-46",
+      "type": "profile",
+      "name": "Sketch 23 \u00b7 Tube section",
+      "plane": "XY",
+      "offsetMillimeters": 595,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 90,
+        "centerMillimeters": [
+          -1050,
+          -250
+        ]
+      }
+    },
+    {
+      "id": "vents-extrude-47",
+      "type": "extrude",
+      "name": "Extrude 19 \u00b7 Tube section",
+      "profileFeatureId": "vents-sketch-46",
+      "distanceMillimeters": 630,
+      "operation": "new",
+      "bodyId": "vents",
+      "suppressed": false
+    },
+    {
+      "id": "vents-sketch-48",
+      "type": "profile",
+      "name": "Sketch 24 \u00b7 Tube section bore",
+      "plane": "XY",
+      "offsetMillimeters": 1225,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 62,
+        "centerMillimeters": [
+          -1050,
+          -250
+        ]
+      }
+    },
+    {
+      "id": "vents-cut-49",
+      "type": "extrude",
+      "name": "Pocket 3 \u00b7 Tube section",
+      "profileFeatureId": "vents-sketch-48",
+      "distanceMillimeters": 630,
+      "operation": "cut",
+      "targetBodyId": "vents",
+      "suppressed": false
+    },
+    {
+      "id": "vents-chamfer",
+      "type": "chamfer",
+      "name": "Chamfer 1 \u00b7 Left cooling tube 1",
+      "targetBodyId": "vents",
+      "radiusMillimeters": 5,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 1225
+      },
+      "suppressed": false
+    },
+    {
+      "id": "tube-left-2-sketch-51",
+      "type": "profile",
+      "name": "Sketch 25 \u00b7 Tube section",
+      "plane": "XY",
+      "offsetMillimeters": 595,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 90,
+        "centerMillimeters": [
+          -1050,
+          -20
+        ]
+      }
+    },
+    {
+      "id": "tube-left-2-extrude-52",
+      "type": "extrude",
+      "name": "Extrude 20 \u00b7 Tube section",
+      "profileFeatureId": "tube-left-2-sketch-51",
+      "distanceMillimeters": 630,
+      "operation": "new",
+      "bodyId": "tube-left-2",
+      "suppressed": false
+    },
+    {
+      "id": "tube-left-2-sketch-53",
+      "type": "profile",
+      "name": "Sketch 26 \u00b7 Tube section bore",
+      "plane": "XY",
+      "offsetMillimeters": 1225,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 62,
+        "centerMillimeters": [
+          -1050,
+          -20
+        ]
+      }
+    },
+    {
+      "id": "tube-left-2-cut-54",
+      "type": "extrude",
+      "name": "Pocket 4 \u00b7 Tube section",
+      "profileFeatureId": "tube-left-2-sketch-53",
+      "distanceMillimeters": 630,
+      "operation": "cut",
+      "targetBodyId": "tube-left-2",
+      "suppressed": false
+    },
+    {
+      "id": "tube-left-2-chamfer",
+      "type": "chamfer",
+      "name": "Chamfer 2 \u00b7 Left cooling tube 2",
+      "targetBodyId": "tube-left-2",
+      "radiusMillimeters": 5,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 1225
+      },
+      "suppressed": false
+    },
+    {
+      "id": "tube-left-3-sketch-56",
+      "type": "profile",
+      "name": "Sketch 27 \u00b7 Tube section",
+      "plane": "XY",
+      "offsetMillimeters": 595,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 90,
+        "centerMillimeters": [
+          -1050,
+          210
+        ]
+      }
+    },
+    {
+      "id": "tube-left-3-extrude-57",
+      "type": "extrude",
+      "name": "Extrude 21 \u00b7 Tube section",
+      "profileFeatureId": "tube-left-3-sketch-56",
+      "distanceMillimeters": 630,
+      "operation": "new",
+      "bodyId": "tube-left-3",
+      "suppressed": false
+    },
+    {
+      "id": "tube-left-3-sketch-58",
+      "type": "profile",
+      "name": "Sketch 28 \u00b7 Tube section bore",
+      "plane": "XY",
+      "offsetMillimeters": 1225,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 62,
+        "centerMillimeters": [
+          -1050,
+          210
+        ]
+      }
+    },
+    {
+      "id": "tube-left-3-cut-59",
+      "type": "extrude",
+      "name": "Pocket 5 \u00b7 Tube section",
+      "profileFeatureId": "tube-left-3-sketch-58",
+      "distanceMillimeters": 630,
+      "operation": "cut",
+      "targetBodyId": "tube-left-3",
+      "suppressed": false
+    },
+    {
+      "id": "tube-left-3-chamfer",
+      "type": "chamfer",
+      "name": "Chamfer 3 \u00b7 Left cooling tube 3",
+      "targetBodyId": "tube-left-3",
+      "radiusMillimeters": 5,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 1225
+      },
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-1-sketch-61",
+      "type": "profile",
+      "name": "Sketch 29 \u00b7 Tube section",
+      "plane": "XY",
+      "offsetMillimeters": 595,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 90,
+        "centerMillimeters": [
+          1050,
+          -250
+        ]
+      }
+    },
+    {
+      "id": "tube-right-1-extrude-62",
+      "type": "extrude",
+      "name": "Extrude 22 \u00b7 Tube section",
+      "profileFeatureId": "tube-right-1-sketch-61",
+      "distanceMillimeters": 630,
+      "operation": "new",
+      "bodyId": "tube-right-1",
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-1-sketch-63",
+      "type": "profile",
+      "name": "Sketch 30 \u00b7 Tube section bore",
+      "plane": "XY",
+      "offsetMillimeters": 1225,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 62,
+        "centerMillimeters": [
+          1050,
+          -250
+        ]
+      }
+    },
+    {
+      "id": "tube-right-1-cut-64",
+      "type": "extrude",
+      "name": "Pocket 6 \u00b7 Tube section",
+      "profileFeatureId": "tube-right-1-sketch-63",
+      "distanceMillimeters": 630,
+      "operation": "cut",
+      "targetBodyId": "tube-right-1",
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-1-chamfer",
+      "type": "chamfer",
+      "name": "Chamfer 4 \u00b7 Right cooling tube 1",
+      "targetBodyId": "tube-right-1",
+      "radiusMillimeters": 5,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 1225
+      },
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-2-sketch-66",
+      "type": "profile",
+      "name": "Sketch 31 \u00b7 Tube section",
+      "plane": "XY",
+      "offsetMillimeters": 595,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 90,
+        "centerMillimeters": [
+          1050,
+          -20
+        ]
+      }
+    },
+    {
+      "id": "tube-right-2-extrude-67",
+      "type": "extrude",
+      "name": "Extrude 23 \u00b7 Tube section",
+      "profileFeatureId": "tube-right-2-sketch-66",
+      "distanceMillimeters": 630,
+      "operation": "new",
+      "bodyId": "tube-right-2",
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-2-sketch-68",
+      "type": "profile",
+      "name": "Sketch 32 \u00b7 Tube section bore",
+      "plane": "XY",
+      "offsetMillimeters": 1225,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 62,
+        "centerMillimeters": [
+          1050,
+          -20
+        ]
+      }
+    },
+    {
+      "id": "tube-right-2-cut-69",
+      "type": "extrude",
+      "name": "Pocket 7 \u00b7 Tube section",
+      "profileFeatureId": "tube-right-2-sketch-68",
+      "distanceMillimeters": 630,
+      "operation": "cut",
+      "targetBodyId": "tube-right-2",
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-2-chamfer",
+      "type": "chamfer",
+      "name": "Chamfer 5 \u00b7 Right cooling tube 2",
+      "targetBodyId": "tube-right-2",
+      "radiusMillimeters": 5,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 1225
+      },
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-3-sketch-71",
+      "type": "profile",
+      "name": "Sketch 33 \u00b7 Tube section",
+      "plane": "XY",
+      "offsetMillimeters": 595,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 90,
+        "centerMillimeters": [
+          1050,
+          210
+        ]
+      }
+    },
+    {
+      "id": "tube-right-3-extrude-72",
+      "type": "extrude",
+      "name": "Extrude 24 \u00b7 Tube section",
+      "profileFeatureId": "tube-right-3-sketch-71",
+      "distanceMillimeters": 630,
+      "operation": "new",
+      "bodyId": "tube-right-3",
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-3-sketch-73",
+      "type": "profile",
+      "name": "Sketch 34 \u00b7 Tube section bore",
+      "plane": "XY",
+      "offsetMillimeters": 1225,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 62,
+        "centerMillimeters": [
+          1050,
+          210
+        ]
+      }
+    },
+    {
+      "id": "tube-right-3-cut-74",
+      "type": "extrude",
+      "name": "Pocket 8 \u00b7 Tube section",
+      "profileFeatureId": "tube-right-3-sketch-73",
+      "distanceMillimeters": 630,
+      "operation": "cut",
+      "targetBodyId": "tube-right-3",
+      "suppressed": false
+    },
+    {
+      "id": "tube-right-3-chamfer",
+      "type": "chamfer",
+      "name": "Chamfer 6 \u00b7 Right cooling tube 3",
+      "targetBodyId": "tube-right-3",
+      "radiusMillimeters": 5,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 1225
+      },
+      "suppressed": false
+    },
+    {
+      "id": "sensor--630--960-sketch-76",
+      "type": "profile",
+      "name": "Sketch 35 \u00b7 Sensor lens",
+      "plane": "XY",
+      "offsetMillimeters": 770,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 150,
+        "centerMillimeters": [
+          -630,
+          -960
+        ]
+      }
+    },
+    {
+      "id": "sensor--630--960-extrude-77",
+      "type": "extrude",
+      "name": "Extrude 25 \u00b7 Sensor lens",
+      "profileFeatureId": "sensor--630--960-sketch-76",
+      "distanceMillimeters": 100,
+      "operation": "new",
+      "bodyId": "sensor--630--960",
+      "suppressed": false
+    },
+    {
+      "id": "sensor--630--960-fillet",
+      "type": "fillet",
+      "name": "Fillet 2 \u00b7 Lower left sensor",
+      "targetBodyId": "sensor--630--960",
+      "radiusMillimeters": 40,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 870
+      },
+      "suppressed": false
+    },
+    {
+      "id": "sensor--630-960-sketch-79",
+      "type": "profile",
+      "name": "Sketch 36 \u00b7 Sensor lens",
+      "plane": "XY",
+      "offsetMillimeters": 770,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 150,
+        "centerMillimeters": [
+          -630,
+          960
+        ]
+      }
+    },
+    {
+      "id": "sensor--630-960-extrude-80",
+      "type": "extrude",
+      "name": "Extrude 26 \u00b7 Sensor lens",
+      "profileFeatureId": "sensor--630-960-sketch-79",
+      "distanceMillimeters": 100,
+      "operation": "new",
+      "bodyId": "sensor--630-960",
+      "suppressed": false
+    },
+    {
+      "id": "sensor--630-960-fillet",
+      "type": "fillet",
+      "name": "Fillet 3 \u00b7 Upper left sensor",
+      "targetBodyId": "sensor--630-960",
+      "radiusMillimeters": 40,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 870
+      },
+      "suppressed": false
+    },
+    {
+      "id": "sensor-630--960-sketch-82",
+      "type": "profile",
+      "name": "Sketch 37 \u00b7 Sensor lens",
+      "plane": "XY",
+      "offsetMillimeters": 770,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 150,
+        "centerMillimeters": [
+          630,
+          -960
+        ]
+      }
+    },
+    {
+      "id": "sensor-630--960-extrude-83",
+      "type": "extrude",
+      "name": "Extrude 27 \u00b7 Sensor lens",
+      "profileFeatureId": "sensor-630--960-sketch-82",
+      "distanceMillimeters": 100,
+      "operation": "new",
+      "bodyId": "sensor-630--960",
+      "suppressed": false
+    },
+    {
+      "id": "sensor-630--960-fillet",
+      "type": "fillet",
+      "name": "Fillet 4 \u00b7 Lower right sensor",
+      "targetBodyId": "sensor-630--960",
+      "radiusMillimeters": 40,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 870
+      },
+      "suppressed": false
+    },
+    {
+      "id": "sensor-630-960-sketch-85",
+      "type": "profile",
+      "name": "Sketch 38 \u00b7 Sensor lens",
+      "plane": "XY",
+      "offsetMillimeters": 770,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 150,
+        "centerMillimeters": [
+          630,
+          960
+        ]
+      }
+    },
+    {
+      "id": "sensor-630-960-extrude-86",
+      "type": "extrude",
+      "name": "Extrude 28 \u00b7 Sensor lens",
+      "profileFeatureId": "sensor-630-960-sketch-85",
+      "distanceMillimeters": 100,
+      "operation": "new",
+      "bodyId": "sensor-630-960",
+      "suppressed": false
+    },
+    {
+      "id": "sensor-630-960-fillet",
+      "type": "fillet",
+      "name": "Fillet 5 \u00b7 Upper right sensor",
+      "targetBodyId": "sensor-630-960",
+      "radiusMillimeters": 40,
+      "edgePlane": {
+        "plane": "XY",
+        "offsetMillimeters": 870
+      },
+      "suppressed": false
+    },
+    {
+      "id": "seams-sketch-88",
+      "type": "profile",
+      "name": "Sketch 39 \u00b7 Equatorial seam",
+      "plane": "YZ",
+      "offsetMillimeters": -8,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 1427,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "seams-extrude-89",
+      "type": "extrude",
+      "name": "Extrude 29 \u00b7 Equatorial seam",
+      "profileFeatureId": "seams-sketch-88",
+      "distanceMillimeters": 16,
+      "operation": "new",
+      "bodyId": "seams",
+      "suppressed": false
+    },
+    {
+      "id": "seams-sketch-90",
+      "type": "profile",
+      "name": "Sketch 40 \u00b7 Equatorial seam bore",
+      "plane": "YZ",
+      "offsetMillimeters": 8,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 1417,
+        "centerMillimeters": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "seams-cut-91",
+      "type": "extrude",
+      "name": "Pocket 9 \u00b7 Equatorial seam",
+      "profileFeatureId": "seams-sketch-90",
+      "distanceMillimeters": 16,
+      "operation": "cut",
+      "targetBodyId": "seams",
+      "suppressed": false
+    },
+    {
+      "id": "grille-sketch-92",
+      "type": "profile",
+      "name": "Sketch 41 \u00b7 Vent surround",
+      "plane": "XZ",
+      "offsetMillimeters": -1420,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 320,
+        "centerMillimeters": [
+          0,
+          -50
+        ]
+      }
+    },
+    {
+      "id": "grille-extrude-93",
+      "type": "extrude",
+      "name": "Extrude 30 \u00b7 Vent surround",
+      "profileFeatureId": "grille-sketch-92",
+      "distanceMillimeters": 40,
+      "operation": "new",
+      "bodyId": "grille",
+      "suppressed": false
+    },
+    {
+      "id": "grille-sketch-94",
+      "type": "profile",
+      "name": "Sketch 42 \u00b7 Vent surround bore",
+      "plane": "XZ",
+      "offsetMillimeters": -1380,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 285,
+        "centerMillimeters": [
+          0,
+          -50
+        ]
+      }
+    },
+    {
+      "id": "grille-cut-95",
+      "type": "extrude",
+      "name": "Pocket 10 \u00b7 Vent surround",
+      "profileFeatureId": "grille-sketch-94",
+      "distanceMillimeters": 40,
+      "operation": "cut",
+      "targetBodyId": "grille",
+      "suppressed": false
+    },
+    {
+      "id": "grille-insert-sketch-96",
+      "type": "profile",
+      "name": "Sketch 43 \u00b7 Vent insert",
+      "plane": "XZ",
+      "offsetMillimeters": -1415,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 285,
+        "centerMillimeters": [
+          0,
+          -50
+        ]
+      }
+    },
+    {
+      "id": "grille-insert-extrude-97",
+      "type": "extrude",
+      "name": "Extrude 31 \u00b7 Vent insert",
+      "profileFeatureId": "grille-insert-sketch-96",
+      "distanceMillimeters": 20,
+      "operation": "new",
+      "bodyId": "grille-insert",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-0-sketch-98",
+      "type": "profile",
+      "name": "Sketch 44 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            -253,
+            -194.22205101855957
+          ],
+          [
+            -227,
+            -194.22205101855957
+          ],
+          [
+            -227,
+            94.22205101855957
+          ],
+          [
+            -253,
+            94.22205101855957
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-0-extrude",
+      "type": "extrude",
+      "name": "Extrude 32 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-0-sketch-98",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-0",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-1-sketch-100",
+      "type": "profile",
+      "name": "Sketch 45 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            -193,
+            -264.47610589527216
+          ],
+          [
+            -167,
+            -264.47610589527216
+          ],
+          [
+            -167,
+            164.47610589527216
+          ],
+          [
+            -193,
+            164.47610589527216
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-1-extrude",
+      "type": "extrude",
+      "name": "Extrude 33 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-1-sketch-100",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-1",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-2-sketch-102",
+      "type": "profile",
+      "name": "Sketch 46 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            -133,
+            -302.98221281347037
+          ],
+          [
+            -107,
+            -302.98221281347037
+          ],
+          [
+            -107,
+            202.98221281347034
+          ],
+          [
+            -133,
+            202.98221281347034
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-2-extrude",
+      "type": "extrude",
+      "name": "Extrude 34 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-2-sketch-102",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-2",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-3-sketch-104",
+      "type": "profile",
+      "name": "Sketch 47 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            -73,
+            -323.4958866235469
+          ],
+          [
+            -47,
+            -323.4958866235469
+          ],
+          [
+            -47,
+            223.49588662354688
+          ],
+          [
+            -73,
+            223.49588662354688
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-3-extrude",
+      "type": "extrude",
+      "name": "Extrude 35 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-3-sketch-104",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-3",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-4-sketch-106",
+      "type": "profile",
+      "name": "Sketch 48 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            -13,
+            -330
+          ],
+          [
+            13,
+            -330
+          ],
+          [
+            13,
+            230
+          ],
+          [
+            -13,
+            230
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-4-extrude",
+      "type": "extrude",
+      "name": "Extrude 36 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-4-sketch-106",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-4",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-5-sketch-108",
+      "type": "profile",
+      "name": "Sketch 49 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            47,
+            -323.4958866235469
+          ],
+          [
+            73,
+            -323.4958866235469
+          ],
+          [
+            73,
+            223.49588662354688
+          ],
+          [
+            47,
+            223.49588662354688
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-5-extrude",
+      "type": "extrude",
+      "name": "Extrude 37 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-5-sketch-108",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-5",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-6-sketch-110",
+      "type": "profile",
+      "name": "Sketch 50 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            107,
+            -302.98221281347037
+          ],
+          [
+            133,
+            -302.98221281347037
+          ],
+          [
+            133,
+            202.98221281347034
+          ],
+          [
+            107,
+            202.98221281347034
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-6-extrude",
+      "type": "extrude",
+      "name": "Extrude 38 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-6-sketch-110",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-6",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-7-sketch-112",
+      "type": "profile",
+      "name": "Sketch 51 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            167,
+            -264.47610589527216
+          ],
+          [
+            193,
+            -264.47610589527216
+          ],
+          [
+            193,
+            164.47610589527216
+          ],
+          [
+            167,
+            164.47610589527216
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-7-extrude",
+      "type": "extrude",
+      "name": "Extrude 39 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-7-sketch-112",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-7",
+      "suppressed": false
+    },
+    {
+      "id": "grille-bar-8-sketch-114",
+      "type": "profile",
+      "name": "Sketch 52 \u00b7 Grille slat",
+      "plane": "XZ",
+      "offsetMillimeters": -1435,
+      "suppressed": false,
+      "profile": {
+        "type": "polygon",
+        "pointsMillimeters": [
+          [
+            227,
+            -194.22205101855957
+          ],
+          [
+            253,
+            -194.22205101855957
+          ],
+          [
+            253,
+            94.22205101855957
+          ],
+          [
+            227,
+            94.22205101855957
+          ]
+        ]
+      }
+    },
+    {
+      "id": "grille-bar-8-extrude",
+      "type": "extrude",
+      "name": "Extrude 40 \u00b7 Grille slat",
+      "profileFeatureId": "grille-bar-8-sketch-114",
+      "distanceMillimeters": 25,
+      "operation": "new",
+      "bodyId": "grille-bar-8",
+      "suppressed": false
+    },
+    {
+      "id": "antenna-sketch-116",
+      "type": "profile",
+      "name": "Sketch 53 \u00b7 Antenna mast",
+      "plane": "XZ",
+      "offsetMillimeters": -1530,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 35,
+        "centerMillimeters": [
+          -780,
+          -250
+        ]
+      }
+    },
+    {
+      "id": "antenna-extrude-117",
+      "type": "extrude",
+      "name": "Extrude 41 \u00b7 Antenna mast",
+      "profileFeatureId": "antenna-sketch-116",
+      "distanceMillimeters": 550,
+      "operation": "new",
+      "bodyId": "antenna",
+      "suppressed": false
+    },
+    {
+      "id": "antenna-cap-sketch-118",
+      "type": "profile",
+      "name": "Sketch 54 \u00b7 Antenna cap",
+      "plane": "XZ",
+      "offsetMillimeters": -1605,
+      "suppressed": false,
+      "profile": {
+        "type": "circle",
+        "radiusMillimeters": 75,
+        "centerMillimeters": [
+          -780,
+          -250
+        ]
+      }
+    },
+    {
+      "id": "antenna-cap-extrude-119",
+      "type": "extrude",
+      "name": "Extrude 42 \u00b7 Antenna cap",
+      "profileFeatureId": "antenna-cap-sketch-118",
+      "distanceMillimeters": 110,
+      "operation": "new",
+      "bodyId": "antenna-cap",
+      "suppressed": false
+    },
+    {
+      "id": "antenna-cap-fillet",
+      "type": "fillet",
+      "name": "Fillet 6 \u00b7 Antenna cap",
+      "targetBodyId": "antenna-cap",
+      "radiusMillimeters": 40,
+      "edgePlane": {
+        "plane": "XZ",
+        "offsetMillimeters": 1605
+      },
+      "suppressed": false
+    }
+  ],
+  "bodyProperties": {
+    "shell": {
+      "name": "Outer shell",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "lens": {
+      "name": "Optical housing",
+      "visible": true,
+      "color": "#151a1c"
+    },
+    "bezel": {
+      "name": "Lens bezel",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "glass": {
+      "name": "Optical glass",
+      "visible": true,
+      "color": "#192125"
+    },
+    "lens-trim": {
+      "name": "Lens retaining ring",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-1": {
+      "name": "Optical fastener 1",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-2": {
+      "name": "Optical fastener 2",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-3": {
+      "name": "Optical fastener 3",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-4": {
+      "name": "Optical fastener 4",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-5": {
+      "name": "Optical fastener 5",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-6": {
+      "name": "Optical fastener 6",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-7": {
+      "name": "Optical fastener 7",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "optic-bolt-8": {
+      "name": "Optical fastener 8",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "hub": {
+      "name": "Left drive",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "hub-right": {
+      "name": "Right drive",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "vents": {
+      "name": "Left cooling tube 1",
+      "visible": true,
+      "color": "#737e80"
+    },
+    "tube-left-2": {
+      "name": "Left cooling tube 2",
+      "visible": true,
+      "color": "#737e80"
+    },
+    "tube-left-3": {
+      "name": "Left cooling tube 3",
+      "visible": true,
+      "color": "#737e80"
+    },
+    "tube-right-1": {
+      "name": "Right cooling tube 1",
+      "visible": true,
+      "color": "#737e80"
+    },
+    "tube-right-2": {
+      "name": "Right cooling tube 2",
+      "visible": true,
+      "color": "#737e80"
+    },
+    "tube-right-3": {
+      "name": "Right cooling tube 3",
+      "visible": true,
+      "color": "#737e80"
+    },
+    "sensor--630--960": {
+      "name": "Lower left sensor",
+      "visible": true,
+      "color": "#192125"
+    },
+    "sensor--630-960": {
+      "name": "Upper left sensor",
+      "visible": true,
+      "color": "#192125"
+    },
+    "sensor-630--960": {
+      "name": "Lower right sensor",
+      "visible": true,
+      "color": "#192125"
+    },
+    "sensor-630-960": {
+      "name": "Upper right sensor",
+      "visible": true,
+      "color": "#192125"
+    },
+    "seams": {
+      "name": "Equatorial seam",
+      "visible": true,
+      "color": "#303739"
+    },
+    "grille": {
+      "name": "Top vent surround",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "grille-insert": {
+      "name": "Top vent insert",
+      "visible": true,
+      "color": "#192125"
+    },
+    "grille-bar-0": {
+      "name": "Grille slat 1",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-1": {
+      "name": "Grille slat 2",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-2": {
+      "name": "Grille slat 3",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-3": {
+      "name": "Grille slat 4",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-4": {
+      "name": "Grille slat 5",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-5": {
+      "name": "Grille slat 6",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-6": {
+      "name": "Grille slat 7",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-7": {
+      "name": "Grille slat 8",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "grille-bar-8": {
+      "name": "Grille slat 9",
+      "visible": true,
+      "color": "#c6c9c7"
+    },
+    "antenna": {
+      "name": "Antenna mast",
+      "visible": true,
+      "color": "#aebbbd"
+    },
+    "antenna-cap": {
+      "name": "Antenna cap",
+      "visible": true,
+      "color": "#192125"
+    }
+  }
+}

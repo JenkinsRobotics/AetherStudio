@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2860" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/TechDraw/Gui/Resources/icons/TechDraw_ProjRear.svg. Authors: [WandererFan], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2862">
+    <linearGradient id="linearGradient3790">
+      <stop style="stop-color:#4d5e73;stop-opacity:1" offset="0" id="stop3792" />
+      <stop style="stop-color:#54667b;stop-opacity:1" offset="1" id="stop3794" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3790" id="linearGradient3796" x1="24.120333" y1="49.95517" x2="19.481165" y2="24.769613" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.0763547,0,0,1.2275803,18.395103,-18.176113)" />
+    </defs>
+  <g id="layer2" style="display:inline">
+    <path style="stroke-width:1.1;display:inline;fill:url(#linearGradient3796);fill-opacity:1;stroke:none" d="m 26.000914,10.342265 -0.0078,25.890801 32.019171,9.435404 3e-6,-25.954406 z" id="path3002-1" transform="matrix(0.993217,0,0,0.88219388,0.217091,2.887596)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:1" d="M 25,35 V 11 l 34,9 v 24 z" id="path1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:1" d="m 5,20 20,-9 34,9 -20,9 z" id="path2" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:1" d="m 5,44 20,-9 34,9 -20,9 z" id="path3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:1" d="M 25,35 V 11 l 34,9 v 24 z" id="path6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:1" d="m 5,44 20,-9 34,9 -20,9 z" id="path8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:1" d="M 59.000004,44 V 20 L 39,29 v 24 z" id="path4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:1" d="m 5,43.999903 v -24 l 34,9 V 53 Z" id="path5" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:1" d="m 5,43.999903 v -24 l 34,9 V 53 Z" id="path10" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:1" d="M 59.000004,44 V 20 L 39,29 v 24 z" id="path9" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;opacity:1;fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:1" d="m 5,20 20,-9 34,9 -20,9 z" id="path7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

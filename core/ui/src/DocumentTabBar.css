@@ -1,0 +1,218 @@
+/* DocumentTabBar.tsx — DocumentTabs plus an add control, at the bottom or in the top bar. */
+.aui-document-tabbar { display: flex; align-items: stretch; flex: none; min-width: 0; }
+.aui-document-tabbar > .aui-document-tabs { flex: 1 1 auto; }
+.aui-document-tabbar-add.aui-menu-trigger { display: grid; place-items: center; flex: none; width: 34px; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--aether-color-text); cursor: pointer; }
+.aui-document-tabbar-add.aui-menu-trigger:hover:not(:disabled) { background: var(--aether-color-bg-hover); }
+.aui-document-tabbar-add.aui-menu-trigger:disabled { opacity: .45; cursor: default; }
+.aui-document-tabbar-add svg { width: 15px; height: 15px; }
+
+/* Browser-style tabs (Jonathan, 2026-10-11), both placements: inactive tabs
+   are shaded blocks; the active tab takes the workspace colour and joins it
+   (rounded on the side away from the workspace). Close sits on the right. */
+.aui-document-tabbar > .aui-document-tabs { flex: 0 1 auto; align-self: stretch; height: auto; gap: 0; border: 0; border-radius: 0; background: transparent; }
+.aui-document-tabbar .aui-document-tab-list { gap: 2px; align-items: stretch; }
+.aui-document-tabbar .aui-document-tab {
+  min-width: 170px; max-width: 280px; border: 1px solid color-mix(in srgb, var(--aether-color-text) 14%, transparent); box-shadow: none;
+  background: color-mix(in srgb, var(--aether-color-text) 6%, var(--aether-color-bg-shell));
+  transition: background-color var(--aether-motion-fast) var(--aether-motion-ease);
+}
+.aui-document-tabbar .aui-document-tab:not(.aui-document-tab--active):hover { background: color-mix(in srgb, var(--aether-color-text) 10%, var(--aether-color-bg-shell)); }
+.aui-document-tabbar .aui-document-tab--active { background: var(--aether-color-bg-shell); box-shadow: inset 0 -2px 0 var(--aether-color-accent); }
+.aui-document-tabbar .aui-document-tab > [role="tab"] { flex: 1; min-width: 0; height: 100%; padding: 0 30px; justify-content: center; font: 500 12px var(--aether-font-family); color: var(--aether-color-text-dim); }
+.aui-document-tabbar .aui-document-tab--active > [role="tab"] { color: var(--aether-color-text); font-weight: 600; }
+.aui-document-tabbar .aui-document-tab-close { top: 50%; left: auto; right: 8px; width: 16px; height: 16px; transform: translateY(-50%); border-radius: 4px; font-size: 13px; line-height: 1; opacity: .7; }
+.aui-document-tabbar .aui-document-tab-close:hover { opacity: 1; }
+.aui-document-tabbar-add.aui-menu-trigger { align-self: center; width: 26px; height: 26px; margin: 0 4px; border-radius: 6px; color: var(--aether-color-text-dim); }
+.aui-document-tabbar-add.aui-menu-trigger:hover:not(:disabled) { color: var(--aether-color-text); background: color-mix(in srgb, var(--aether-color-text) 8%, transparent); }
+
+/* Bottom (Onshape): a bar above the status bar, "+" far left; the active tab
+   hangs from the workspace above it. */
+.aui-document-tabbar[data-placement="bottom"] { height: 32px; padding: 0 6px 0 2px; border-top: 1px solid var(--aether-color-border); background: color-mix(in srgb, var(--aether-color-text) 16%, var(--aether-color-bg-shell)); }
+.aui-document-tabbar[data-placement="bottom"] > .aui-document-tabs { margin-top: -1px; padding: 0 0 5px; }
+.aui-document-tabbar[data-placement="bottom"] .aui-document-tab { border-top: 0; border-radius: 0 0 8px 8px; }
+
+/* Header (Fusion): tabs in the top bar's free width, "+" after them; the active
+   tab rises into the workspace below it. */
+.aui-document-tabbar[data-placement="header"] { flex: 1 1 auto; align-self: stretch; margin-left: 8px; }
+.aui-document-tabbar[data-placement="header"] > .aui-document-tabs { margin-bottom: -1px; padding: 6px 0 0; }
+.aui-document-tabbar[data-placement="header"] .aui-document-tab { border-radius: 8px 8px 0 0; }
+.aui-document-bar-cluster:has(> .aui-document-tabbar[data-placement="header"]) { flex: 1 1 auto; align-self: stretch; }
+
+/* Header buttons in the same language: rounded, softly filled, title case. */
+.aui-document-bar button.aui-workspace-switcher {
+  height: 26px; padding: 0 8px 0 10px; border: 0; border-radius: 6px;
+  background: color-mix(in srgb, var(--aether-color-text) 6%, transparent);
+  color: var(--aether-color-text); font: 500 12px var(--aether-font-family); letter-spacing: 0; text-transform: none;
+}
+.aui-document-bar button.aui-workspace-switcher .aui-workspace-switcher-name { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.aui-document-bar button.aui-workspace-switcher:hover { background: color-mix(in srgb, var(--aether-color-text) 10%, transparent); }
+
+.aui-document-tab-status { flex:none; font-size:var(--aether-font-size-caption); font-weight:400; color:var(--aether-color-text-dim); white-space:nowrap; }
+
+/* Shared document tray: a slim title rail above generous, divided document tabs. */
+.aui-document-tray.aui-document-tabbar[data-placement="bottom"] {
+  height: 58px;
+  padding: 0;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background: color-mix(in srgb, var(--aether-color-text) 16%, var(--aether-color-bg-shell));
+}
+.aui-document-tray-heading {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--aether-color-border);
+  color: var(--aether-color-text-faint);
+  font: 500 10px var(--aether-font-family);
+}
+.aui-document-tray[data-placement="bottom"] > :is(.aui-document-tab-groups, .aui-document-tabs) {
+  height: 38px;
+  flex: 1 1 0;
+}
+.aui-document-tray[data-placement="bottom"] .aui-document-tabs {
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.aui-document-tray[data-placement="bottom"] .aui-document-tab-list { gap: 0; }
+.aui-document-tray[data-placement="bottom"] .aui-document-tab {
+  min-width: 154px;
+  max-width: 280px;
+  border: 0;
+  border-right: 1px solid var(--aether-color-border);
+  border-radius: 0;
+  background: transparent;
+}
+.aui-document-tray[data-placement="bottom"] .aui-document-tab--active {
+  background: var(--aether-color-bg-shell);
+  box-shadow: inset 0 2px 0 var(--aether-color-accent);
+}
+.aui-document-tray[data-placement="bottom"] .aui-document-tab > [role="tab"] {
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0 30px 0 20px;
+  font-weight: 400;
+}
+.aui-document-tray[data-placement="bottom"] .aui-document-tab--active > [role="tab"] {
+  color: var(--aether-color-accent);
+  font-weight: 500;
+}
+.aui-document-tray[data-placement="bottom"] > .aui-document-tabbar-add {
+  align-self: stretch;
+  width: 40px;
+  height: 38px;
+  margin: 0;
+  border-right: 1px solid var(--aether-color-border);
+  border-radius: 0;
+}
+.aui-document-tray[data-placement="bottom"] > .aui-document-tabbar-add svg { width: 17px; height: 17px; }
+
+.aui-document-tray .aui-tab-menu {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  display: grid; place-items: center; width: 22px; height: 26px;
+  padding: 0; border: 0; border-radius: 4px; background: transparent;
+  color: var(--aether-color-text-dim); cursor: pointer;
+}
+.aui-document-tray .aui-tab-menu svg, .aui-document-tray .aui-tab-add-menu svg { width: 10px; height: 10px; }
+.aui-document-tray .aui-tab-add-group { display: flex; align-items: stretch; flex: none; border-right: 1px solid var(--aether-color-border); }
+.aui-document-tray .aui-tab-add-group > .aui-document-tabbar-add { width: 30px; height: 100%; margin: 0; border-radius: 0; }
+.aui-document-tray .aui-tab-add-menu { display: grid; place-items: center; width: 20px; padding: 0; border: 0; background: transparent; color: var(--aether-color-text-dim); cursor: pointer; }
+.aui-document-tray .aui-tab-menu:hover, .aui-document-tray .aui-tab-add-menu:hover { background: var(--aether-color-bg-hover); color: var(--aether-color-text); }
+.aui-document-tray .aui-tab-add-group button:focus-visible { outline: 1px solid var(--aether-color-border-focus); outline-offset: -2px; }
+.aui-document-tray[data-placement="bottom"] .aui-tab-add-group { height: 38px; }
+
+/* Keep the live status text accessible, but display only a compact state dot. */
+.aui-document-tray .aui-document-tab-status {
+  display: inline-block;
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  overflow: hidden;
+  font-size: 0;
+  border-radius: 50%;
+  background: var(--aether-color-error);
+}
+.aui-document-tray .aui-document-tab-status[data-save-tone="saved"] { background: var(--aether-color-ok); }
+.aui-document-tray .aui-document-tab-status[data-save-tone="pending"] { background: var(--aether-color-warn); }
+
+/* Studio reference variant. One 50px footer row; apps own document artwork,
+   type labels and lifecycle. Existing browser tabs/trays keep their styling. */
+.aui-document-tabbar.aui-document-tabbar--studio[data-placement="bottom"] {
+  --aether-color-text: #e4edf5;
+  --aether-color-text-dim: #a6b7c8;
+  --aether-color-bg-hover: #233342;
+  --aether-color-border-focus: #69bcff;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 0 6px;
+  align-items: center;
+  border: 1px solid #2a3843;
+  border-radius: 10px;
+  background: linear-gradient(115deg, #18232b, #111a20 50%, #172229);
+  color: var(--aether-color-text);
+  font-family: var(--aether-font-family);
+  color-scheme: dark;
+}
+.aui-document-tabbar--studio[data-placement="bottom"] > .aui-document-tabs {
+  flex: 0 1 auto;
+  min-width: 0;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.aui-document-tabbar--studio .aui-document-tab-list { gap: 0; }
+.aui-document-tabbar--studio[data-placement="bottom"] .aui-document-tab {
+  box-sizing: border-box;
+  flex: 0 1 174px;
+  width: 174px;
+  min-width: 0;
+  max-width: 174px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  box-shadow: inset -1px 0 #27343e;
+}
+.aui-document-tabbar--studio .aui-document-tab:not(.aui-document-tab--active):hover { background: #1d2b36; }
+.aui-document-tabbar--studio[data-placement="bottom"] .aui-document-tab--active {
+  background: linear-gradient(120deg, #244d72, #173a60);
+  box-shadow: inset 0 0 0 1px #209eff;
+}
+.aui-document-tabbar--studio .aui-document-tab > [role="tab"] {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  grid-template-rows: 18px 16px;
+  align-content: center;
+  justify-content: start;
+  column-gap: 10px;
+  row-gap: 0;
+  padding: 5px 12px;
+  border-radius: 7px;
+  text-align: left;
+  font-size: 12px;
+  line-height: 16px;
+  color: #bbcad9;
+}
+.aui-document-tabbar--studio .aui-document-tab--active > [role="tab"] { color: #edf6ff; }
+.aui-document-tabbar--studio .aui-document-tab-icon { display: grid; place-items: center; grid-column: 1; grid-row: 1 / 3; width: 36px; height: 36px; }
+.aui-document-tabbar--studio .aui-document-tab-icon > :is(svg, img) { width: 36px; height: 36px; object-fit: contain; }
+.aui-document-tabbar--studio .aui-document-tab-label { grid-column: 2; align-self: end; font-weight: 600; }
+.aui-document-tabbar--studio .aui-document-tab-detail { grid-column: 2; align-self: start; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #9bafc3; font-size: 11px; font-weight: 400; }
+.aui-document-tabbar--studio .aui-document-tab:not(:has(.aui-document-tab-detail)) .aui-document-tab-label { grid-row: 1 / 3; align-self: center; }
+.aui-document-tabbar--studio .aui-document-tab:has(.aui-document-tab-close) > [role="tab"] { padding-right: 28px; }
+.aui-document-tabbar--studio > .aui-document-tabbar-add.aui-menu-trigger { flex: none; width: 48px; height: 36px; margin: 0 6px 0 0; border: 0; border-radius: 6px; color: #bbcedf; }
+.aui-document-tabbar--studio > .aui-document-tabbar-add svg { width: 22px; height: 22px; }
+.aui-document-tabbar--studio .aui-document-tabbar-next { flex: none; margin-left: 0; color: #b8ccdd; }
+.aui-document-tabbar--studio .aui-document-tabbar-overview { flex: none; display: flex; align-items: center; margin-left: auto; padding-left: 10px; border-left: 1px solid #2a3843; }
+.aui-document-tabbar-actions { flex:none; display:flex; align-items:center; gap:4px; margin-left:auto; }
+.aui-document-tabbar--studio .aui-document-tabs-overflow { min-width: 36px; padding: 0 6px; border: 0; border-radius: 6px; color: #bbcedf; }
+/* Replace the selected edge at keyboard focus, never add a second ring. */
+.aui-document-tabbar--studio .aui-document-tab:has(> [role="tab"]:focus-visible) { box-shadow: inset 0 0 0 2px #8cd0ff; }
+.aui-document-tabbar.aui-document-tabbar--studio button:focus-visible { outline: 0; box-shadow: inset 0 0 0 2px #8cd0ff; }
+.aui-document-tabbar.aui-document-tabbar--studio .aui-document-tab > [role="tab"]:focus-visible { box-shadow: none; }

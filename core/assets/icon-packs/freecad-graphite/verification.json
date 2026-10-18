@@ -1,0 +1,15 @@
+{
+  "iconCount": 1731,
+  "paletteCount": 2,
+  "derivedSVGCount": 3462,
+  "categories": 25,
+  "rasterizer": "librsvg rsvg-convert at 64px",
+  "expectedBlankIDs": [
+    "TechDraw/none"
+  ],
+  "unexpectedEmptyOrFailed": [],
+  "visualReview": "Representative icons from all 24 categories, at 24px and 48px, both palettes; review-workbenches-1.png through -3.png. Not a live browser review. All 24 Aether additions also reviewed at 24px/48px in both palettes in review-aether-additions.png.",
+  "originalAetherAdditions": 24,
+  "illustratedToolCoverage": 123,
+  "upstreamToolMatches": 99
+}

@@ -1,0 +1,31 @@
+.aui-parameter {
+  container-type: inline-size;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--aether-color-border-subtle);
+  border-radius: var(--aether-radius-panel);
+  background: var(--aether-color-bg-control);
+  color: var(--aether-color-text);
+  font-family: var(--aether-font-family);
+}
+.aui-parameter[data-modulated] { border-color: var(--aether-color-accent); background: color-mix(in srgb, var(--aether-color-accent) 8%, var(--aether-color-bg-control)); }
+.aui-parameter:focus-within { border-color: var(--aether-color-border-focus); }
+.aui-parameter[data-disabled] { opacity: .5; }
+.aui-parameter-row { display: flex; gap: 8px; align-items: center; min-width: 0; }
+.aui-parameter-label { display: flex; gap: 6px; align-items: center; flex: 0 1 100px; min-width: 0; font-size: var(--aether-font-size-caption); line-height: 1.3; }
+.aui-parameter-label > span:last-child { overflow-wrap: anywhere; }
+.aui-parameter-icon { display: flex; flex: none; color: var(--aether-color-text-dim); }
+.aui-parameter-icon svg { width: 14px; height: 14px; }
+.aui-parameter-row > .aui-slider { flex: 1 1 65px; }
+.aui-parameter-entry { flex: 0 0 58px; min-width: 0; margin-left: auto; }
+.aui-parameter-row .aui-parameter-value { min-width: 0; border-color: transparent; background: transparent; box-shadow: none; text-align: right; font-size: var(--aether-font-size-caption); font-variant-numeric: tabular-nums; padding: 6px 4px; }
+.aui-parameter-entry .aui-number-field-wrap:has(.aui-number-field-unit) .aui-parameter-value { padding-right: 22px; }
+.aui-parameter-row .aui-parameter-value:focus-within { background: var(--aether-color-bg-inset); border-color: var(--aether-color-border-focus); }
+.aui-parameter-row .aui-parameter-value.aui-number-field--invalid { border-color: var(--aether-color-error); }
+.aui-parameter-assignment { display: block; margin: 4px 0 0 auto; border: 0; border-radius: var(--aether-radius-pill); padding: 3px 8px; background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); font: inherit; font-size: var(--aether-font-size-caption); cursor: pointer; }
+.aui-parameter-assignment:focus-visible { outline: 2px solid var(--aether-color-border-focus); outline-offset: -2px; }
+.aui-parameter-help { margin: 4px 0 0; color: var(--aether-color-text-dim); font-size: var(--aether-font-size-caption); line-height: 1.4; }
+@container (max-width: 170px) {
+  .aui-parameter-row { flex-wrap: wrap; }
+  .aui-parameter-label { flex-basis: 100%; }
+}

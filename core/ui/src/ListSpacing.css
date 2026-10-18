@@ -1,0 +1,18 @@
+/* Shared desktop list rhythm. Trees retain their explicit virtualization heights. */
+:root {
+  --aether-list-navigation-height: 34px;
+  --aether-list-navigation-icon: 20px;
+  --aether-list-item-gap: 2px;
+  --aether-list-content-gap: 8px;
+  --aether-list-section-gap: 14px;
+  --aether-list-cell-padding-y: 8px;
+  --aether-list-cell-padding-x: 12px;
+  --aether-list-option-height: 28px;
+}
+@media (pointer: coarse) {
+  :root {
+    --aether-list-navigation-height: 44px;
+    --aether-list-option-height: 44px;
+    --aether-list-cell-padding-y: 12px;
+  }
+}

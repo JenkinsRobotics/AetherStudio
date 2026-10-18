@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { applyInterfaceColors, INTERFACE_COLORS_KEY } from "./InterfaceColors";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { AetherIcon } from "./AetherIcon";
 import { Menu, MenuButton, type MenuItem } from "./Menu";
 import { nextLayoutPreset, type LayoutPreset } from "./WorkspaceShell";
+import { DEFAULT_THEME_ID, resolveTheme, themeCSS, type AetherThemeManifest } from "./themes";
 
-/* The three native Anima Studio header controls, ported faithfully from
+export type { AetherThemeManifest } from "./themes";
+
+/* The three native Aether Animation Studio header controls, ported faithfully from
  * `WorkspaceChrome.swift`: the studio-mode button (click cycles presets,
  * menu lists them), the workspace windows/tabs menu, and the appearance
  * toggle (System → Light → Dark). */
@@ -21,7 +25,7 @@ export function StudioModeButton({ preset, onChange, extraItems = [], onExtraSel
         type="button"
         className={`aui-studio-mode aui-studio-mode--${preset}`}
         aria-label={`Studio mode: ${title}`}
-        title={`Studio mode: ${title} · click to cycle`}
+        title="Mode"
         aria-haspopup="menu"
         onClick={() => onChange(nextLayoutPreset(preset))}
         onContextMenu={(event) => { event.preventDefault(); setMenu({ x: event.clientX, y: event.clientY }); }}
@@ -70,7 +74,7 @@ export function WorkspaceWindowMenu() {
   const browserManaged = "The browser manages windows and tabs.";
   return (
     <MenuButton
-      label="Workspace windows and tabs"
+      label="Windows"
       className="aui-workspace-windows"
       placement="bottom-end"
       items={[
@@ -97,7 +101,7 @@ const APPEARANCE_ORDER: readonly AppearanceMode[] = ["system", "light", "dark"];
 const APPEARANCE_TITLE: Record<AppearanceMode, string> = { system: "System", light: "Light", dark: "Dark" };
 const APPEARANCE_KEY = "aether-appearance";
 
-function storedAppearance(): AppearanceMode {
+export function storedAppearance(): AppearanceMode {
   try {
     const saved = localStorage.getItem(APPEARANCE_KEY) as AppearanceMode | null;
     return saved && APPEARANCE_ORDER.includes(saved) ? saved : "system";
@@ -109,56 +113,112 @@ function applyAppearance(mode: AppearanceMode) {
   const prefersLight = typeof matchMedia === "function" && matchMedia("(prefers-color-scheme: light)").matches;
   const light = mode === "light" || (mode === "system" && prefersLight);
   document.documentElement.classList.toggle("aether-light-theme", light);
+  // The illustrated tool palette follows the resolved mode, including System.
+  document.documentElement.dataset.aetherTheme = light ? "light" : "dark";
   document.documentElement.dataset.appearance = mode;
+  applyInterfaceColors();
 }
 
 const THEME_KEY = "aether-theme";
+const VIEWPORT_KEY = "aether-viewport-theme";
 
-export interface AetherThemeManifest {
-  id: string;
-  name: string;
-  modes: { dark: Record<string, string>; light: Record<string, string> };
-}
-
-/** Hot-installs a theme at runtime (VS Code-style): synthesizes the scoped
- * CSS from the manifest and injects it, replacing any prior install of the
- * same id. Pair with setAetherTheme(manifest.id) to activate immediately.
- * Build-time installs (dev/build-theme-css.mjs) produce identical selectors. */
+/** Hot-installs a theme at runtime (VS Code-style): resolves the manifest
+ * against the pack, synthesizes the scoped CSS and injects it, replacing any
+ * prior install of the same id. Pair with setAetherTheme(manifest.id) to
+ * activate immediately. dev/build-theme-css.mjs emits identical selectors. */
 export function installAetherTheme(manifest: AetherThemeManifest) {
   if (typeof document === "undefined") return;
-  const vars = (tokens: Record<string, string>) =>
-    Object.entries(tokens).map(([name, value]) => `  --aether-${name}: ${value};`).join("\n");
-  const css = `.aether-theme-${manifest.id} {\n${vars(manifest.modes.dark)}\n}\n` +
-    `.aether-theme-${manifest.id}.aether-light-theme,\n` +
-    `.aether-theme-${manifest.id} .aether-home-theme.aether-light-theme,\n` +
-    `.aether-theme-${manifest.id}.aether-light-theme .aether-home-theme {\n${vars(manifest.modes.light)}\n}`;
   const existing = document.head.querySelector(`style[data-aether-theme="${manifest.id}"]`);
   const style = existing ?? document.createElement("style");
   style.setAttribute("data-aether-theme", manifest.id);
-  style.textContent = css;
+  style.textContent = themeCSS(resolveTheme(manifest));
   if (!existing) document.head.append(style);
 }
 
-/** Installed-theme selection (VS Code-style): themes generate side-by-side
- * scoped classes; this applies the persisted choice. "aether-default" (or
- * unset) means the built-in :root theme. */
+/** Installed-theme selection: themes generate side-by-side scoped classes;
+ * this applies the persisted choice. The default theme is the bare :root. */
 export function setAetherTheme(themeID: string) {
   try { localStorage.setItem(THEME_KEY, themeID); } catch { /* device preference only */ }
   applyAetherTheme();
+  announceTheme(themeID);
 }
 
 export function activeAetherTheme(): string {
-  try { return localStorage.getItem(THEME_KEY) || "aether-default"; } catch { return "aether-default"; }
+  const fallback = typeof document === "undefined" ? DEFAULT_THEME_ID
+    : document.documentElement.dataset.aetherHostTheme || DEFAULT_THEME_ID;
+  try { return localStorage.getItem(THEME_KEY) || fallback; } catch { return fallback; }
 }
+
+/** Tells every mounted control the choice changed. Silent where there is no
+ *  document, so a theme can be set in a node test or during prerender. */
+const announceTheme = (id: string | null) => {
+  if (typeof document === "undefined") return;
+  const EventClass = document.defaultView?.CustomEvent ?? CustomEvent;
+  document.dispatchEvent(new EventClass("aether-theme", { detail: id }));
+};
+
+const swapRootClass = (prefix: string, id: string | null) => {
+  if (typeof document === "undefined") return;
+  const root = document.documentElement;
+  for (const name of [...root.classList]) if (name.startsWith(prefix)) root.classList.remove(name);
+  if (id) root.classList.add(`${prefix}${id}`);
+};
 
 function applyAetherTheme() {
   if (typeof document === "undefined") return;
   const active = activeAetherTheme();
-  const root = document.documentElement;
-  for (const name of [...root.classList]) {
-    if (name.startsWith("aether-theme-")) root.classList.remove(name);
-  }
-  if (active !== "aether-default") root.classList.add(`aether-theme-${active}`);
+  swapRootClass("aether-theme-", active === DEFAULT_THEME_ID ? null : active);
+}
+
+/** The viewport theme: the stage's own look (background, grid, part and sketch
+ * colours), chosen independently of the interface theme. `null` means the
+ * interface theme's own viewport look. */
+export function setAetherViewportTheme(viewportID: string | null) {
+  try { if (viewportID) localStorage.setItem(VIEWPORT_KEY, viewportID); else localStorage.removeItem(VIEWPORT_KEY); } catch { /* device preference only */ }
+  applyAetherViewportTheme();
+  announceTheme(viewportID);
+}
+
+export function activeAetherViewportTheme(): string | null {
+  const fallback = typeof document === "undefined" ? null : document.documentElement.dataset.aetherHostViewportTheme ?? null;
+  try { return localStorage.getItem(VIEWPORT_KEY) ?? fallback; } catch { return fallback; }
+}
+
+function applyAetherViewportTheme() {
+  if (typeof document === "undefined") return;
+  swapRootClass("aether-viewport-", activeAetherViewportTheme());
+}
+
+/** Sets and persists the appearance mode app-wide, as the toggle's click does. */
+export function setAetherAppearance(mode: AppearanceMode) {
+  try { localStorage.setItem(APPEARANCE_KEY, mode); } catch { /* device preference only */ }
+  applyAppearance(mode);
+  document.dispatchEvent(new CustomEvent("aether-appearance", { detail: mode }));
+}
+
+/** Default the new studio presentation without overwriting a saved user theme. */
+export function useStudioDesignDefaults() {
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    root.dataset.aetherHostTheme ||= "model-studio";
+    root.dataset.aetherHostViewportTheme ||= "model-studio";
+    applyAetherTheme(); applyAetherViewportTheme();
+    announceTheme(activeAetherTheme());
+  }, []);
+}
+
+/** A concept app that presents in its own theme: the classes ride on <html>
+ * (so portalled menus share them) for the component's lifetime, and the
+ * person's persisted theme and appearance come back on unmount. */
+export function useScopedAetherTheme(themeID: string | null, appearance?: "light" | "dark") {
+  useEffect(() => {
+    if (themeID) swapRootClass("aether-theme-", themeID === DEFAULT_THEME_ID ? null : themeID);
+    if (appearance) {
+      document.documentElement.classList.toggle("aether-light-theme", appearance === "light");
+      document.documentElement.dataset.aetherTheme = appearance;
+    }
+    return () => { applyAetherTheme(); applyAppearance(storedAppearance()); };
+  }, [themeID, appearance]);
 }
 
 /* Suite-wide bootstrap: every page importing @aether/ui applies the stored
@@ -167,6 +227,7 @@ function applyAetherTheme() {
 if (typeof document !== "undefined") {
   applyAppearance(storedAppearance());
   applyAetherTheme();
+  applyAetherViewportTheme();
   if (typeof matchMedia === "function") {
     matchMedia("(prefers-color-scheme: light)").addEventListener?.("change", () => {
       if (storedAppearance() === "system") applyAppearance("system");
@@ -176,6 +237,8 @@ if (typeof document !== "undefined") {
     window.addEventListener("storage", (event) => {
       if (event.key === APPEARANCE_KEY) applyAppearance(storedAppearance());
       if (event.key === THEME_KEY) applyAetherTheme();
+      if (event.key === VIEWPORT_KEY) applyAetherViewportTheme();
+      if (event.key === INTERFACE_COLORS_KEY || event.key === null) applyInterfaceColors();
     });
   }
 }
@@ -186,8 +249,13 @@ export function AppearanceToggle() {
   const [mode, setMode] = useState<AppearanceMode>(storedAppearance);
   useEffect(() => {
     const follow = (event: StorageEvent) => { if (event.key === APPEARANCE_KEY) setMode(storedAppearance()); };
+    const shared = () => setMode(storedAppearance());
     window.addEventListener("storage", follow);
-    return () => window.removeEventListener("storage", follow);
+    document.addEventListener("aether-appearance", shared);
+    return () => {
+      window.removeEventListener("storage", follow);
+      document.removeEventListener("aether-appearance", shared);
+    };
   }, []);
   useEffect(() => {
     applyAppearance(mode);
@@ -203,11 +271,12 @@ export function AppearanceToggle() {
       type="button"
       className="aui-appearance-toggle"
       aria-label={`Appearance ${title}`}
-      title={`Appearance: ${title} — click to change`}
+      title="Appearance"
       onClick={() => {
         const next = APPEARANCE_ORDER[(APPEARANCE_ORDER.indexOf(mode) + 1) % APPEARANCE_ORDER.length];
         try { localStorage.setItem(APPEARANCE_KEY, next); } catch { /* device preference only */ }
         setMode(next);
+        document.dispatchEvent(new CustomEvent("aether-appearance", { detail: next }));
       }}
     >
       <AetherIcon name={`appearance-${mode}` as "appearance-system"} />

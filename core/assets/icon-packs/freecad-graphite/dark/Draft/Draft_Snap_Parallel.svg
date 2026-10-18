@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2726" height="32" width="32" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Draft/Resources/icons/Draft_Snap_Parallel.svg. Authors: [Yorik van Havre], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2728">
+    <linearGradient id="linearGradient3770">
+      <stop style="stop-color:#3c4b5f;stop-opacity:1" offset="0" id="stop3772" />
+      <stop style="stop-color:#54667b;stop-opacity:1" offset="1" id="stop3774" />
+    </linearGradient>
+    <linearGradient id="linearGradient3760">
+      <stop id="stop3762" offset="0" style="stop-color:#3c4b5f;stop-opacity:1" />
+      <stop id="stop3764" offset="1" style="stop-color:#54667b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="-306.52237" x2="-411.70007" y1="-418.48642" x1="-556.02374" id="linearGradient3766" xlink:href="#linearGradient3760" />
+    <linearGradient gradientUnits="userSpaceOnUse" y2="-461.80075" x2="-385.55225" y1="-559.67511" x1="-506.27731" id="linearGradient3768" xlink:href="#linearGradient3770" />
+    </defs>
+  <g id="layer1">
+    <g transform="matrix(0.1621282,0,0,0.1621282,6.3605986,-66.108806)" id="g4289">
+      <rect transform="matrix(-0.84132762,-0.54052551,0.53359904,-0.84573759,0,0)" y="-383.2905" x="-599.68225" height="60.013901" width="285.04855" id="rect3942-4-9" style="color:#e5edf7;fill:url(#linearGradient3766);fill-opacity:1;fill-rule:nonzero;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <rect transform="matrix(-0.84132761,-0.54052553,0.53359906,-0.84573758,0,0)" y="-521.89862" x="-599.61768" height="62.080875" width="285.73264" id="rect3942-4-9-9" style="color:#e5edf7;fill:url(#linearGradient3768);fill-opacity:1;fill-rule:nonzero;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path transform="matrix(6.1679584,0,0,6.1679584,-39.231908,407.75637)" id="path3810" d="M 10.016071,27.192847 45.636364,50.102273 42.409091,55.25 6.7713892,32.357176 z" style="fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3810-4" d="M 96.368171,458.10747 316.07266,599.41185 296.16698,631.16282 76.355111,489.96083 z" style="fill:none;stroke:#91a4bb;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+  </svg>

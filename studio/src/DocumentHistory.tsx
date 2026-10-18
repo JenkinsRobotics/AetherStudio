@@ -1,56 +1,49 @@
-import { useEffect, useState } from "react";
-import { Button, TextField } from "@aether/ui";
-import { api } from "./api";
-type Revision = {
-  revision: number;
-  name: string;
-  author: string;
-  saved: number;
-  event: string;
-  note: string;
-};
+import { useMemo, useState } from "react";
+import {
+  Button,
+  DocumentVersionPanel,
+  DocumentCollaborationPanel,
+  type DocumentConnection,
+} from "@aether/ui";
+import { documentRequest } from "@aether/session/documents";
+
+/** Studio uses the same document services as each editor. */
 export function DocumentHistory({
   file,
   onClose,
   onChanged,
 }: {
-  file: { id: string; name: string; revision: number; writable: boolean };
+  file: {
+    id: string;
+    app?: string;
+    name: string;
+    revision: number;
+    writable: boolean;
+  };
   onClose: () => void;
   onChanged: () => Promise<void>;
 }) {
-  const [history, setHistory] = useState<{
-    revisions: Revision[];
-    versions: { name: string; revision: number }[];
-  }>({ revisions: [], versions: [] });
-  const [error, setError] = useState(""),
-    [name, setName] = useState(""),
-    [busy, setBusy] = useState(false),
-    [head, setHead] = useState(file.revision);
-  const load = async () =>
-    setHistory(await api("/api/library/history", { app: "cad", id: file.id }));
-  useEffect(() => {
-    void load().catch((e) => setError(e.message));
-  }, [file.id]);
-  const act = async (action: string, data: object) => {
-    setBusy(true);
-    setError("");
-    try {
-      const result = await api<{ revision: number }>("/api/library/" + action, {
-        app: "cad",
-        id: file.id,
-        expected_revision: head,
-        ...data,
-      });
-      setHead(result.revision);
-      await load();
-      await onChanged();
-      setName("");
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      setBusy(false);
-    }
-  };
+  const [tab, setTab] = useState<
+    "versions" | "comments" | "notes" | "tasks" | "reminders"
+  >("versions");
+  const app = file.app ?? "cad";
+  const connection = useMemo<DocumentConnection>(
+    () => ({
+      key: `${app}:${file.id}`,
+      name: file.name,
+      writable: file.writable,
+      call: <T,>(action: string, data: Record<string, unknown> = {}) =>
+        documentRequest<T>(app, action, { ...data, id: file.id }),
+      flush: async () => {},
+      reload: onChanged,
+      openBranch: async (branch) => {
+        location.assign(
+          `/${app}/index.html?document=${encodeURIComponent(file.id)}&branch=${encodeURIComponent(branch)}`,
+        );
+      },
+    }),
+    [file.id, file.writable, app],
+  );
   return (
     <div className="library-modal">
       <section
@@ -59,70 +52,32 @@ export function DocumentHistory({
         aria-modal="true"
         aria-label="Document history"
       >
-        <h2>{file.name}</h2>
-        <p>
-          Saved history · restoring adds a new revision and retains later work.
-        </p>
-        {error && <p role="alert">{error}</p>}
-        {file.writable && (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              void act("version", { name });
-            }}
-          >
-            <TextField
-              aria-label="Version name"
-              placeholder="Name this version, e.g. Prototype 1"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              maxLength={80}
-            />
-            <Button type="submit" disabled={busy}>
-              Create named version
+        <header>
+          <h2>{file.name}</h2>
+          <Button onClick={onClose}>Close</Button>
+        </header>
+        <nav aria-label="Document services">
+          {(
+            ["versions", "comments", "notes", "tasks", "reminders"] as const
+          ).map((id) => (
+            <Button
+              key={id}
+              aria-pressed={tab === id}
+              onClick={() => setTab(id)}
+            >
+              {id === "versions"
+                ? "Versions and history"
+                : id === "tasks"
+                  ? "Action items"
+                  : id.charAt(0).toUpperCase() + id.slice(1)}
             </Button>
-          </form>
-        )}
-        {history.versions.length > 0 && (
-          <p>
-            {history.versions
-              .map((v) => `${v.name} (r${v.revision})`)
-              .join(" · ")}
-          </p>
-        )}
-        <ol>
-          {history.revisions.map((r) => (
-            <li key={r.revision}>
-              <strong>
-                Revision {r.revision} · {r.event}
-              </strong>
-              <p>
-                {r.author} · {new Date(r.saved * 1000).toLocaleString()}
-              </p>
-              {r.note && <p>{r.note}</p>}
-              <a
-                href={
-                  "/cad/index.html?document=" +
-                  encodeURIComponent(file.id) +
-                  "&revision=" +
-                  r.revision
-                }
-              >
-                Open read-only
-              </a>
-              {file.writable && r.revision !== head && (
-                <Button
-                  disabled={busy}
-                  onClick={() => void act("restore", { revision: r.revision })}
-                >
-                  Restore as new revision
-                </Button>
-              )}
-            </li>
           ))}
-        </ol>
-        <Button onClick={onClose}>Close</Button>
+        </nav>
+        {tab === "versions" ? (
+          <DocumentVersionPanel connection={connection} />
+        ) : (
+          <DocumentCollaborationPanel connection={connection} kind={tab} />
+        )}
       </section>
     </div>
   );

@@ -1,0 +1,16 @@
+.aui-file-type-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.aui-file-type-filters > button {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 28px; padding: 4px 11px;
+  border: 1px solid var(--aether-color-border); border-radius: 999px;
+  background: var(--aether-color-bg-panel); color: var(--aether-color-text);
+  font: inherit; font-size: 12px; cursor: pointer;
+}
+.aui-file-type-filters > button:hover { background: var(--aether-color-bg-hover); }
+.aui-file-type-filters > button[aria-pressed="true"], .aui-file-type-filters > button[data-selected] {
+  border-color: var(--aether-color-accent);
+  background: color-mix(in srgb, var(--aether-color-accent) 12%, var(--aether-color-bg-panel));
+}
+.aui-file-type-filters svg { width: 17px; height: 17px; flex: none; }
+
+.aui-file-type-menu { max-height: min(420px, calc(100dvh - 32px)); overflow-y: auto; }

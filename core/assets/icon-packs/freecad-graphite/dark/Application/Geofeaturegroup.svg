@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" version="1.1" viewBox="0 0 64 64" id="svg96" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/Geofeaturegroup.svg. Authors: [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs26">
+    <linearGradient id="linearGradient4399" x1="48.714" x2="44.714" y1="45.586" y2="34.586" gradientTransform="translate(1.2856,1.4142)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#48596e" offset="0" id="stop8" />
+      <stop stop-color="#596b81" offset="1" id="stop10" />
+    </linearGradient>
+    <linearGradient id="linearGradient69056" x1="27.244" x2="22.244" y1="54.588" y2="40.588" gradientTransform="translate(-1.2435,-2.5881)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#48596e" offset="0" id="stop14" />
+      <stop stop-color="#61758c" offset="1" id="stop16" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient69056" id="linearGradient920" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.2435,-2.5881)" x1="20.243999" y1="37.588001" x2="17.243999" y2="27.587999" />
+    <linearGradient xlink:href="#linearGradient73208" id="linearGradient69042-3" gradientUnits="userSpaceOnUse" gradientTransform="translate(-12.714351,-17.585786)" x1="48.714352" y1="45.585785" x2="46.714352" y2="35.585785" />
+    <linearGradient id="linearGradient73208">
+      <stop style="stop-color:#48596e;stop-opacity:1" offset="0" id="stop73210" />
+      <stop style="stop-color:#596b81;stop-opacity:1" offset="1" id="stop73212" />
+    </linearGradient>
+  </defs>
+  <g id="g40" style="stroke-width:1.1">
+    <path d="M 9,49 V 35 l 28,10 v 14 z" id="path30" style="fill:url(#linearGradient69056);stroke:#e5edf7;stroke-linejoin:round" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 37,59 V 45 L 55,28 v 13 z" id="path32" style="fill:url(#linearGradient4399);stroke:#e5edf7;stroke-linejoin:round" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 11.008,47.606 11,37.9997 l 24,8 0.0081,10.185 z" id="path34" style="fill:none;stroke:#e5edf7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 39.005,54.168 39,45.9998 l 14,-13 0.0021,7.1768 z" id="path36" style="fill:none;stroke:#e5edf7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="M 23,40 42,23 55,28 37,45 Z" id="path38" style="fill:#61758c;stroke:#e5edf7;stroke-linejoin:round" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g display="none" fill="#56b9fc" fill-rule="evenodd" opacity=".588" stroke="#5bbdff" stroke-width="1px" id="g94">
+    <path d="m9 35v14" id="path66" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m9 35 28 10" id="path68" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m55 28v13" id="path70" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m37 45 18-17" id="path72" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m23 40v-14" id="path74" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m29 5 13 5" id="path76" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m23 26 19-16" id="path78" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m19 13 10-8" id="path80" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m55 15-9 8" id="path82" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m42 23v-13" id="path84" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m42 23 14 5" id="path86" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m23 40 19-17" id="path88" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m23 10h19" id="path90" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m34 17v13" id="path92" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <path d="M 9,35 V 21 l 14,5 v 14 z" id="path912" style="fill:url(#linearGradient920);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path d="M 9,21 28.585,5.209 42,10.0001 l -19,16 z" id="path914" style="fill:#61758c;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-opacity:1" id="path52" d="m 10.951,33.746 0.08695,-9.9796 9.9568,3.5229 -0.02105,9.9613 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path id="path69040" d="M 23,40 V 26 L 42,10 v 13 z" style="fill:url(#linearGradient69042-3);fill-opacity:1;fill-rule:nonzero;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path id="path69044-6" d="M 25,36 V 27 L 40,14 v 8 z" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+</svg>

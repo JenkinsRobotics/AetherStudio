@@ -1,23 +1,123 @@
+/* node_modules/@aether/ui/dist-lib/ApplicationStatusBar.css */
+.aui-application-status {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 12px;
+  width: 100%;
+  height: var(--aether-size-statusbar, 24px);
+  padding: 0 12px;
+  border-top: 1px solid var(--aether-color-border, #dce2e9);
+  background: var(--aether-color-bg-bar, var(--aether-color-bg-panel, #f4f6f8));
+  color: var(--aether-color-text-dim, #536275);
+  font: 11px var(--aether-font-family, system-ui);
+}
+.aui-application-status__identity {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+.aui-application-status__connection {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}
+.aui-application-status__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--aether-color-warn, #c58b24);
+}
+.aui-application-status[data-connection=connected] .aui-application-status__dot {
+  background: var(--aether-color-ok, #28a66b);
+}
+.aui-application-status[data-connection=offline] .aui-application-status__dot {
+  background: var(--aether-color-error, #d15353);
+}
+.aui-application-status[data-connection=local] .aui-application-status__dot {
+  background: var(--aether-color-text-dim, #536275);
+}
+.aui-application-status__name {
+  font-weight: 600;
+}
+.aui-application-status__name,
+.aui-application-status__message,
+.aui-application-status__company {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.aui-application-status__message {
+  flex: 1;
+  text-align: center;
+}
+.aui-application-status__company {
+  flex: 0 1 auto;
+  max-width: 45%;
+  margin-left: auto;
+  text-align: right;
+}
+.aui-application-status__connection-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .aui-application-status {
+    gap: 8px;
+    padding-inline: 8px;
+  }
+  .aui-application-status__message:empty {
+    flex: 0;
+  }
+}
+
+/* account-layout.css */
 aether-account {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   font: 12px var(--aether-font-family, system-ui);
   color: var(--aether-color-text);
 }
-.suite-account {
+.suite-account,
+.suite-settings {
   position: relative;
 }
-.suite-account summary {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.suite-account summary,
+.suite-settings summary {
+  display: grid;
+  place-items: center;
+  width: 33px;
+  height: 33px;
   cursor: pointer;
   list-style: none;
   border-radius: 8px;
-  padding: 4px;
 }
-.suite-account summary::-webkit-details-marker {
+.suite-account summary::-webkit-details-marker,
+.suite-settings summary::-webkit-details-marker {
   display: none;
+}
+.suite-settings summary {
+  color: var(--aether-color-text-dim);
+}
+.suite-settings summary svg {
+  width: 18px;
+  height: 18px;
+}
+.suite-account summary:hover,
+.suite-settings summary:hover,
+.suite-account[open] summary,
+.suite-settings[open] summary {
+  background: var(--aether-color-bg-hover);
+  color: var(--aether-color-text);
 }
 .suite-avatar {
   width: 27px;
@@ -26,17 +126,18 @@ aether-account {
   object-fit: cover;
   display: grid;
   place-items: center;
-  background: #3269ff;
-  color: white;
+  background: var(--aether-color-accent);
+  color: var(--aether-color-text-on-selected);
   font-weight: 650;
 }
-.suite-account-name {
-  max-width: 125px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.suite-avatar-large {
+  width: 76px;
+  height: 76px;
+  font-size: 28px;
+  margin-bottom: 6px;
 }
-.suite-account-menu {
+.suite-account-menu,
+.suite-settings-menu {
   position: absolute;
   right: 0;
   top: calc(100% + 8px);
@@ -44,21 +145,88 @@ aether-account {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  width: 260px;
   padding: 12px;
   border: 1px solid var(--aether-color-border);
   border-radius: 12px;
   background: var(--aether-color-bg-panel);
   box-shadow: 0 10px 35px #0005;
 }
+.suite-settings-menu {
+  width: 250px;
+}
+.suite-account-menu {
+  width: 290px;
+}
 .suite-account-menu small {
   color: var(--aether-color-text-dim);
   overflow-wrap: anywhere;
 }
+.suite-settings-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 9px 8px;
+}
+.suite-settings-row select {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--aether-color-border-control);
+  border-radius: 6px;
+  background: var(--aether-color-bg-control);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.suite-account-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 2px 8px;
+}
+.suite-account-brand {
+  font-weight: 650;
+  color: inherit;
+  text-decoration: none;
+}
+.suite-account-brand:hover {
+  text-decoration: underline;
+}
+.suite-account-signout {
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--aether-color-text-dim);
+  padding: 4px 6px;
+  font: inherit;
+  cursor: pointer;
+}
+.suite-account-signout:hover {
+  background: var(--aether-color-bg-hover);
+  color: var(--aether-color-text);
+}
 .suite-account-identity {
   display: grid;
-  gap: 2px;
-  padding-bottom: 4px;
+  justify-items: center;
+  gap: 3px;
+  padding: 6px 0 4px;
+  text-align: center;
+}
+.suite-account-identity strong {
+  font-size: 15px;
+}
+.suite-account-link {
+  margin-top: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--aether-color-accent);
+  padding: 2px;
+  font: inherit;
+  cursor: pointer;
+}
+.suite-account-link:hover {
+  text-decoration: underline;
 }
 .suite-account-item {
   display: block;
@@ -87,8 +255,136 @@ aether-account {
   color: var(--aether-color-error);
   margin: 0;
 }
-@media (max-width: 1000px) {
-  .suite-account-name {
-    display: none;
-  }
+.suite-agent-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(420px, 100vw);
+  z-index: 10000;
+  display: grid;
+  grid-template-rows: 44px minmax(0, 1fr);
+  background: var(--aether-color-bg-panel);
+  color: var(--aether-color-text);
+  border-left: 1px solid var(--aether-color-border);
+  box-shadow: var(--aether-shadow-lg);
+}
+.suite-agent-drawer header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  font: 600 13px system-ui;
+  border-bottom: 1px solid var(--aether-color-border);
+}
+.suite-agent-drawer header button {
+  color: inherit;
+  background: var(--aether-color-bg-control);
+  border: 1px solid var(--aether-color-border);
+  border-radius: 5px;
+  padding: 5px 9px;
+  cursor: pointer;
+}
+.suite-agent-drawer iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  min-height: 0;
+}
+[data-aether-account-layout=sidebar] {
+  position: relative;
+}
+[data-aether-account-layout=sidebar] .suite-account,
+[data-aether-account-layout=sidebar] .suite-settings {
+  position: static;
+}
+[data-aether-account-layout=sidebar] aether-account {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+}
+[data-aether-account-layout=sidebar] .suite-account {
+  flex: 1;
+  min-width: 0;
+}
+[data-aether-account-layout=sidebar] .suite-account summary {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  gap: 10px;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+[data-aether-account-layout=sidebar] .suite-avatar {
+  flex: none;
+}
+.suite-account-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  text-align: left;
+}
+.suite-account-caption strong,
+.suite-account-caption small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.suite-account-caption strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+.suite-account-caption small {
+  font-size: 11px;
+  color: var(--aether-color-text-dim);
+}
+[data-aether-account-layout=sidebar] .suite-account-menu,
+[data-aether-account-layout=sidebar] .suite-settings-menu {
+  top: auto;
+  bottom: calc(100% + 8px);
+  left: 0;
+  right: auto;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100dvh - 120px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.aui-sidebar--collapsed [data-aether-account-layout=sidebar] aether-account {
+  flex-direction: column;
+}
+.aui-sidebar--collapsed [data-aether-account-layout=sidebar] .suite-account-caption {
+  display: none;
+}
+.aui-sidebar--collapsed [data-aether-account-layout=sidebar] .suite-settings-menu {
+  left: 0;
+  right: auto;
+}
+[data-aether-account-layout=sidebar] summary:focus-visible {
+  outline: 2px solid var(--aether-color-accent);
+  outline-offset: 2px;
+}
+html body.suite-has-status-row {
+  box-sizing: border-box;
+  height: calc(100% - var(--aether-size-statusbar, 24px));
+  min-height: 0;
+  padding-bottom: 0;
+}
+.suite-status-row {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 60;
+}
+.suite-has-status-row #root > .app-root {
+  height: 100%;
+}
+.aui-document-bar [data-aether-account],
+.aui-document-bar aether-account,
+.aui-document-bar .suite-account {
+  display: flex;
+  align-self: stretch;
+  align-items: stretch;
+}
+.aui-document-bar .suite-account > summary {
+  height: auto;
+  min-width: 36px;
+  border-radius: 0;
 }

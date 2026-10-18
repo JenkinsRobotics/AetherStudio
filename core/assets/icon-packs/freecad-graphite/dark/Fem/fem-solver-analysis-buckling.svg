@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/fem-solver-analysis-buckling.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer3" style="display:inline">
+    <g id="g6642" transform="matrix(1.0587163,0,0,0.96622296,-0.19879196,3.557657)" style="stroke-width:1.1;stroke-dasharray:none">
+      <path style="fill:#47586c;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.95337999" d="m 21.508014,21.526682 c 2.207047,5.037303 4.582355,9.491266 4.582355,15.818777 0,6.327511 -2.518595,14.776982 -4.582355,22.146287 h 13.747065 c 1.882303,-7.259597 4.582354,-15.818776 4.582354,-22.146287 0,-6.327511 -2.660233,-11.124586 -4.582354,-15.818777 z" id="path2260" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <g id="g3088-1-2-4" transform="matrix(-0.33791917,0.37192683,-0.33791917,-0.37192683,39.429821,34.963426)" style="stroke-width:1.1;stroke-dasharray:none">
+        <g id="g6037" style="stroke-width:1.1;stroke-dasharray:none">
+          <path id="path3343-0-8-5" d="m -35.031948,37.980044 8.837986,8.837986 -11.246832,11.246832 9.804074,9.804074 11.246832,-11.246832 8.8379868,8.837986 2.5388678,-30.018913 z" style="fill:#4aaff7;fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+          <path id="path3343-2-2-9-4" d="m -28.185741,40.327518 6.430117,6.430117 -11.246832,11.246832 5.426131,5.426131 11.246832,-11.246832 6.4301178,6.430118 1.5007602,-19.799216 z" style="fill:none;fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+        </g>
+      </g>
+      <path style="fill:#324154;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.95337999" d="m 24.550781,23.503906 h 9.394531 c 1.858298,4.338064 3.916016,8.437709 3.916016,13.841797 0,5.647474 -2.278578,13.241564 -4.123047,20.169922 h -9.626953 c 1.905279,-6.781244 3.955078,-14.302802 3.955078,-20.169922 0,-5.548434 -1.709148,-9.783384 -3.515625,-13.841797 z" id="path46" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

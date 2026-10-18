@@ -11,24 +11,27 @@ import { AetherIcon } from "./AetherIcon";
  */
 const SidebarContext = createContext<{ collapsed: boolean; toggle: () => void; ariaLabel: string } | null>(null);
 
-export function SidebarToggle() {
+/** Optional content makes a brand or another shared control the collapse target. */
+export function SidebarToggle({ children, className }: { children?: ReactNode; className?: string } = {}) {
   const context = useContext(SidebarContext);
   if (!context) return null;
   return (
     <button
       type="button"
-      className="aui-sidebar-toggle"
+      className={["aui-sidebar-toggle", className].filter(Boolean).join(" ")}
       aria-expanded={!context.collapsed}
       aria-label={context.collapsed ? `Expand ${context.ariaLabel}` : `Collapse ${context.ariaLabel}`}
       title={context.collapsed ? "Expand sidebar" : "Collapse sidebar"}
       onClick={context.toggle}
     >
-      <AetherIcon name="sidebar" />
+      {children ?? <AetherIcon name="sidebar" />}
     </button>
   );
 }
 
-export function CollapsibleSidebar({ id, ariaLabel, className, children, footer, toggle = "default" }: {
+export function CollapsibleSidebar({ id, ariaLabel, className, children, footer, toggle = "default", defaultCollapsed = false }: {
+  /** Initial state until the person toggles it (their choice is remembered). */
+  defaultCollapsed?: boolean;
   /** Stable per-sidebar key; the collapse preference persists per device. */
   id: string;
   ariaLabel: string;
@@ -40,7 +43,7 @@ export function CollapsibleSidebar({ id, ariaLabel, className, children, footer,
 }) {
   const storageKey = `aether-sidebar-${id}`;
   const [collapsed, setCollapsed] = useState(() => {
-    try { return localStorage.getItem(storageKey) === "collapsed"; } catch { return false; }
+    try { const saved = localStorage.getItem(storageKey); return saved ? saved === "collapsed" : defaultCollapsed; } catch { return defaultCollapsed; }
   });
   const toggleCollapsed = () => {
     const next = !collapsed;

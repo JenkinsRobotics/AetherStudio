@@ -1,0 +1,321 @@
+.aui-workspace-ribbon {
+  display: grid;
+  grid-template-rows: auto 80px;
+  min-width: 0;
+  /* Never wider than what it sits in: the tool row scrolls instead, so a long
+     catalogue cannot push the rest of the app sideways. */
+  max-width: 100%;
+  flex: 0 0 auto;
+  background: var(--aether-color-bg-panel);
+  color: var(--aether-color-text);
+  border-bottom: 1px solid var(--aether-color-border);
+}
+/* Workspaces lead the tool tabs in one strip, Fusion-style: the higher level
+   reads as the heading, a rule divides the two — no boxed selector column. */
+.aui-workspace-ribbon-tabs { display: flex; align-items: stretch; min-width: 0; overflow-x: auto; }
+.aui-workspace-ribbon-workspaces {
+  flex: none;
+  display: flex;
+  margin-right: var(--aether-space-2);
+  padding-right: var(--aether-space-2);
+  border-right: 1px solid var(--aether-color-border);
+}
+.aui-workspace-ribbon-workspaces .aui-tab { text-transform: none; letter-spacing: 0; }
+.aui-workspace-ribbon-tabs > .aui-tabs { flex: none; }
+/* Text category tabs retain rounded corners independently of icon selection cells. */
+.aui-workspace-ribbon-tabs .aui-tab { text-transform: none; letter-spacing: 0; border-radius: var(--aether-radius-row); }
+.aui-workspace-ribbon-tabs .aui-tab--active { background: color-mix(in srgb, var(--aether-color-text) 9%, transparent); color: var(--aether-color-text); border-color: transparent; box-shadow: none; }
+.aui-workspace-ribbon-tools { min-width: 0; overflow-x: auto; overflow-y: hidden; }
+.aui-workspace-ribbon-tools .aui-tool-tray-viewport > .aui-ribbon {
+  width: max-content;
+  min-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  gap: 0;
+  border: 0;
+  overflow: visible;
+}
+.aui-workspace-ribbon-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: var(--aether-selection-cell-inset);
+  border-right: 1px solid var(--aether-color-border);
+}
+.aui-workspace-ribbon-buttons { display: flex; gap: var(--aether-selection-cell-gap);  flex: 1;  align-items: stretch; }
+.aui-workspace-ribbon-caption.aui-menu-trigger {
+  display: flex;
+  gap: var(--aether-space-1);
+  padding: 0 var(--aether-space-2);
+  min-height: 20px;
+  font: var(--aether-font-size-caption) var(--aether-font-family);
+}
+
+/* Panel appearance keeps its 22px icon slot whatever size an icon's own
+   attributes ask for (the glass sample's 40px glyphs, say). */
+.aui-workspace-ribbon[data-appearance="panel"] .aui-ribbon-tool-icon svg { width: 22px; height: 22px; }
+
+/* The trailing "•••" menu sits at the far right of the tool row, after a rule. */
+.aui-workspace-ribbon-more { display: flex; align-items: center; margin-left: auto; padding: 0 6px; border-left: 1px solid var(--aether-color-border); }
+.aui-workspace-ribbon-more-button.aui-menu-trigger {
+  display: inline-grid;
+  place-items: center;
+  min-width: 32px;
+  min-height: 28px;
+  padding: 0 6px;
+  border-radius: var(--aether-radius-control);
+  color: var(--aether-color-text-dim);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.aui-workspace-ribbon-more-button.aui-menu-trigger:hover { color: var(--aether-color-text); background: var(--aether-color-bg-hover); }
+
+/* Column layout: the workspace is its own column at the far left, spanning both
+   rows, with the tool tabs above the tools to its right. A workspace governs
+   which tabs exist, so it reads as governing the whole ribbon rather than
+   sitting inside the strip as one more tab. */
+.aui-workspace-ribbon[data-workspace-layout="column"] {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+}
+.aui-workspace-ribbon[data-workspace-layout="column"] .aui-workspace-ribbon-workspaces {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--aether-space-4);
+  border-right: 1px solid var(--aether-color-border);
+}
+.aui-workspace-ribbon[data-workspace-layout="column"] .aui-workspace-ribbon-tabs { grid-column: 2; grid-row: 1; }
+.aui-workspace-ribbon[data-workspace-layout="column"] .aui-workspace-ribbon-tools { grid-column: 2; grid-row: 2; }
+
+/* Strip is the original arrangement and keeps its original rules: the
+   workspaces render inside the tab row, so nothing above needs to apply. */
+
+/* Glass surface with macOS-style controls approved 2026-10-11. Use the
+   showcase's 10px chrome scale in every consumer; the original 17px concept
+   scale enlarged application tabs and spacing around the fixed-size tools.
+   --wr-font-size remains an explicit opt-in scale override. Colours are
+   mixed from theme tokens; the panel appearance above is untouched. */
+.aui-workspace-ribbon[data-appearance="glass"] {
+  --wr-line: color-mix(in srgb, var(--aether-color-text) 12%, transparent);
+  --wr-inset: color-mix(in srgb, var(--aether-color-bg-inset) 55%, transparent);
+  --wr-hairline: color-mix(in srgb, var(--aether-color-text) 12%, transparent);
+  position: relative;
+  font-size: var(--wr-font-size, 10px);
+  grid-template-rows: 1.65em auto;
+  gap: 0.18em 0.7em;
+  padding: 0.2em 0.6em 0.2em 0.55em;
+  border: 1px solid var(--wr-line);
+  border-radius: 1.3em;
+  background: color-mix(in srgb, var(--aether-color-bg-panel) 82%, transparent);
+  backdrop-filter: blur(24px) saturate(1.3);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--aether-color-shadow) 18%, transparent);
+}
+.aui-workspace-ribbon[data-appearance="glass"][data-workspace-layout="column"] { grid-template-rows: 1.65em auto; }
+
+/* The workspace: one boxed button beside the tool slab, top-aligned with it
+   (in the render it does not reach up into the tab row). */
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-workspaces { grid-row: 2; align-self: stretch; margin: 0; padding: 0; border: 0; }
+.aui-workspace-ribbon[data-appearance="glass"] button.aui-workspace-switcher {
+  height: 100%;
+  padding: 0 1.1em;
+  gap: 0.6em;
+  border: 1px solid var(--wr-line);
+  border-radius: 0.7em;
+  background: var(--wr-inset);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--aether-color-text) 5%, transparent);
+}
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-switcher-icon svg { width: 1.25em; height: 1.25em; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-switcher-name { font-size: 1em; font-weight: 500; letter-spacing: 0; }
+.aui-workspace-ribbon[data-appearance="glass"] button.aui-workspace-switcher > svg { width: 0.7em; height: 0.7em; }
+
+/* Compact pill tabs; labels retain the common 10px chrome scale. */
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tabs { padding: 0; overflow-x: auto; overflow-y: hidden; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tabs .aui-tabs { gap: 0; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tabs .aui-tab {
+  height: 1.65em;
+  padding: 0 1.45em;
+  border: 1px solid transparent;
+  border-radius: var(--aether-radius-row);
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--aether-color-text-dim);
+}
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tabs .aui-tab:hover { color: var(--aether-color-text); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tabs .aui-tab--active {
+  color: var(--aether-color-text);
+  border-color: transparent;
+  background: color-mix(in srgb, var(--aether-color-text) 9%, transparent);
+  box-shadow: none;
+}
+
+/* The tool row is content-sized, with hairlines between groups.
+   Jonathan 2026-09-30, against the Fusion reference: the tools
+   sit straight on the ribbon and the only rules between them are the group
+   hairlines. A second frame inside the ribbon's own frame just draws a box
+   around a box — the workspace button beside it is the one boxed thing. */
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tools { border: 0; background: none; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tools .aui-tool-tray-viewport > .aui-ribbon { background: transparent; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group { margin: 0; padding: var(--aether-selection-cell-inset); gap: var(--aether-selection-cell-gap); border-right: 1px solid var(--wr-hairline); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group:last-child { border-right: 0; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-buttons { flex: 1; gap: var(--aether-selection-cell-gap); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool {
+  position: relative;
+  flex: none;
+  font-size: inherit; /* the panel tool sets a caption px size; the tile is measured in the ribbon's em */
+  flex-direction: column;
+  justify-content: center;
+  /* Use CAD's label width with the smaller shared icon/tile height.
+     The same proportions apply in products and the showcase. */
+  width: 62px;
+  height: 40px;
+  gap: 2px;
+  padding: 0 4px;
+  border: 1px solid transparent;
+  border-radius: var(--aether-selection-cell-radius);
+  color: var(--aether-color-text);
+}
+/* The tool names its own job, the way the ToolSidebar's buttons do (Jonathan
+   2026-09-30: "the icons larger with names"). The group caption underneath
+   still names the group, so the two read as one column. */
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool-label {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--aether-color-text-dim);
+}
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool--active .aui-ribbon-tool-label { color: var(--aether-color-accent); }
+/* The variant caret sits in the tile's bottom-right, which is where the name
+   now runs, so a tool that carries variants keeps its text clear of it. */
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-tool:has(.aui-workspace-ribbon-variants) .aui-ribbon-tool-label { padding-right: 11px; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool-icon { display: inline-grid; place-items: center; font-size: 1em; line-height: 1; color: var(--aether-color-text); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool-icon svg { width: 24px; height: 24px; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool:hover:not(:disabled) { color: var(--aether-color-text); background: color-mix(in srgb, var(--aether-color-text) 7%, transparent); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool--active,
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool--active:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--aether-color-accent) 14%, transparent);
+  border-color: transparent;
+  box-shadow: none;
+}
+.aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool--active .aui-ribbon-tool-icon { color: var(--aether-color-accent-icon); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-caption.aui-menu-trigger {
+  flex: none;
+  gap: 3px;
+  min-height: 0;
+  /* The caption may set the group's width when it is the wider of the two, as
+     it does in the ToolSidebar. Clipping it to the tools instead turned
+     "CONSTRUCT" into "CONSTRUC", which reads as a bug rather than a label. */
+  padding: 1px 2px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--aether-color-text);
+}
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-caption svg { width: 7px; height: 7px; color: var(--aether-color-text-dim); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-more { margin: 0; padding: 0 0.6em; border-left: 1px solid var(--wr-hairline); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-more-button.aui-menu-trigger { min-width: 1.8em; min-height: 1.8em; border-radius: 0.5em; color: var(--aether-color-text); font-size: 1.1em; letter-spacing: 0.1em; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-more-button.aui-menu-trigger:hover { background: color-mix(in srgb, var(--aether-color-text) 7%, transparent); }
+
+/* Density changes tools, never access to the workspace selector. */
+.aui-workspace-ribbon-group[data-compact] { justify-content: center; padding: var(--aether-selection-cell-inset); }
+.aui-workspace-ribbon-group-button.aui-menu-trigger { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--aether-selection-cell-radius); color: var(--aether-color-text-dim); }
+.aui-workspace-ribbon-group-button.aui-menu-trigger:hover, .aui-workspace-ribbon-group-button.aui-menu-trigger[aria-expanded="true"] { color: var(--aether-color-text); background: var(--aether-color-bg-hover); }
+.aui-workspace-ribbon-group-button .aui-ribbon-tool-icon { display: inline-grid; place-items: center; }
+.aui-workspace-ribbon[data-density="compact"] { grid-template-rows: auto auto; }
+.aui-workspace-ribbon[data-appearance="glass"][data-density="compact"] { grid-template-rows: 1.65em auto; }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group[data-compact] { margin: 0; padding: var(--aether-selection-cell-inset); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group-button.aui-menu-trigger { width: 3.4em; height: 3.4em; border-radius: var(--aether-selection-cell-radius); color: var(--aether-color-text); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group-button.aui-menu-trigger:hover, .aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group-button.aui-menu-trigger[aria-expanded="true"] { background: color-mix(in srgb, var(--aether-color-text) 7%, transparent); }
+.aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group-button .aui-ribbon-tool-icon svg { width: 24px; height: 24px; }
+.aui-workspace-ribbon[data-appearance="glass"][data-density="compact"] .aui-workspace-ribbon-more { margin: 0.3em 0; }
+
+@media (pointer: coarse) {
+  .aui-workspace-ribbon[data-appearance="glass"] .aui-ribbon-tool,
+  .aui-workspace-ribbon[data-appearance="glass"] .aui-workspace-ribbon-group-button.aui-menu-trigger {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Docking is independent of appearance and density: occupy the host edge to edge. */
+.aui-workspace-ribbon[data-docked] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  border-radius: 0;
+  border-width: 0 0 1px;
+  box-shadow: none;
+}
+
+/* A tool that carries variants: the button plus a caret that picks which one
+   it is. The pair reads as a single control, so the caret tucks against it. */
+.aui-workspace-ribbon-tool { position: relative; display: inline-flex; }
+.aui-workspace-ribbon-variants.aui-menu-trigger {
+  position: absolute;
+  right: 0.1em;
+  bottom: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1em;
+  border: 0;
+  border-radius: 0.3em;
+  color: var(--aether-color-text-dim);
+  background: transparent;
+}
+.aui-workspace-ribbon-variants.aui-menu-trigger:hover { color: var(--aether-color-text); background: var(--aether-color-bg-hover); }
+
+/* An app with many tool tabs (Aether CAD ships ten) must be able to reach the
+   last one: the strip scrolls sideways rather than clipping, and keeps its
+   scrollbar out of the chrome. */
+.aui-workspace-ribbon-tabs { min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.aui-workspace-ribbon-tabs::-webkit-scrollbar { display: none; }
+.aui-workspace-ribbon-tabs .aui-tabs { min-width: max-content; }
+
+/* Opt-in tabless compact strip: the app supplies its context's grouped tools. */
+.aui-workspace-ribbon[data-icon-strip] {
+  display: flex; align-items: stretch; padding: var(--aether-selection-cell-inset); min-width: 0;
+}
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-tools { flex: 1; }
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-group {
+  flex-direction: row; align-items: stretch; padding: var(--aether-selection-cell-inset); gap: var(--aether-selection-cell-gap);
+}
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-buttons { gap: var(--aether-selection-cell-gap); }
+.aui-workspace-ribbon[data-icon-strip] .aui-ribbon-tool {
+  width: 30px; min-width: 30px; height: 30px; min-height: 30px; padding: 4px; border-radius: var(--aether-selection-cell-radius);
+}
+.aui-workspace-ribbon[data-icon-strip] .aui-ribbon-tool-icon svg { width: 20px; height: 20px; }
+.aui-workspace-ribbon[data-icon-strip] .aui-ribbon-tool-label {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-tool:has(.aui-workspace-ribbon-variants) { padding-right: 11px; }
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-variants { bottom: 0; top: 0; right: 0; width: 11px; }
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-caption.aui-menu-trigger { min-width: 12px; padding: 0; height: 30px; }
+
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-more { position: sticky; right: 0; background: var(--aether-color-bg-panel); z-index: 1; }
+.aui-workspace-ribbon[data-icon-strip] .aui-workspace-ribbon-tools { scrollbar-width: thin; }
+
+.aui-workspace-ribbon-tools { display:flex; overflow:hidden; min-height:0; }
+.aui-tool-tray-viewport { flex:1; min-width:0; overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; scrollbar-width:thin; }
+.aui-tool-tray-scroll { flex:0 0 24px; width:24px; border:0; border-radius:0; padding:0; color:var(--aether-color-text); background:var(--aether-color-bg-panel); cursor:pointer; }
+.aui-tool-tray-scroll:hover:not(:disabled) { background:var(--aether-color-bg-hover); }
+.aui-tool-tray-scroll:disabled { opacity:.3; cursor:default; }
+.aui-tool-tray-scroll:focus-visible, .aui-tool-tray-viewport:focus-visible { outline:2px solid var(--aether-color-accent); outline-offset:-2px; }
+.aui-tool-tray-scroll svg { width:12px; height:12px; }
+
+/* Direct compact commands retain category navigation when no merged group set was supplied. */
+.aui-workspace-ribbon[data-icon-strip][data-compact-tools] { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; }
+.aui-workspace-ribbon[data-icon-strip][data-compact-tools] .aui-workspace-ribbon-tabs { grid-column: 1; grid-row: 1; }
+.aui-workspace-ribbon[data-icon-strip][data-compact-tools] .aui-workspace-ribbon-tools { grid-column: 1; grid-row: 2; }

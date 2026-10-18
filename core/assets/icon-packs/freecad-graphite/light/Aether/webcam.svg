@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#405269" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<desc>FreeCAD Graphite extension: webcam. Original illustration by Aether Studio contributors, 2026-09-24; not upstream FreeCAD artwork.</desc><defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="#f3f7fc" /><stop offset="1" stop-color="#7c8fa5" /></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="#7c8fa5" /><stop offset="1" stop-color="#879db5" /></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="#879db5" /><stop offset="1" stop-color="#7c8fa5" /></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="#37a8fa" /><stop offset="1" stop-color="#076cb8" /></linearGradient>
+</defs>
+<rect x="3" y="5" width="26" height="18" rx="3" fill="url(#metalFace)" stroke="#405269" /><circle cx="16" cy="14" r="6" fill="url(#metalSide)" stroke="#405269" /><circle cx="16" cy="14" r="3" fill="url(#blueFeature)" stroke="#37a8fa" /><circle cx="25" cy="9" r="1" fill="#37a8fa" stroke="#37a8fa" /><path d="M16 23V28M10 28H22" fill="none" stroke="#405269" />
+</svg>

@@ -1,0 +1,50 @@
+{
+  "folders": [
+    {
+      "name": "Aether Studio (server + Drive)",
+      "path": "."
+    },
+    {
+      "name": "Aether Cad",
+      "path": "../Aether-CAD"
+    },
+    {
+      "name": "Aether Map",
+      "path": "../Aether-Map"
+    },
+    {
+      "name": "Aether Animation",
+      "path": "../Aether-Animation"
+    },
+    {
+      "name": "Aether Sketch",
+      "path": "../Aether-Sketch"
+    },
+    {
+      "name": "Aether Vector",
+      "path": "../Aether-Vector"
+    },
+    {
+      "name": "Aether Io",
+      "path": "../Aether-IO"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.venv": true,
+      "**/.verification": true
+    },
+    "search.exclude": {
+      "**/dist": true,
+      "**/dist-lib": true,
+      "**/migration/phase2-baseline": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "ms-python.python"
+    ]
+  }
+}

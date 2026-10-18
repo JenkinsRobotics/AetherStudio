@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#405269" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<desc>FreeCAD Graphite extension: freehand. Original illustration by Aether Studio contributors, 2026-09-24; not upstream FreeCAD artwork.</desc><defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="#f3f7fc" /><stop offset="1" stop-color="#7c8fa5" /></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="#7c8fa5" /><stop offset="1" stop-color="#879db5" /></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="#879db5" /><stop offset="1" stop-color="#7c8fa5" /></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="#37a8fa" /><stop offset="1" stop-color="#076cb8" /></linearGradient>
+</defs>
+<path d="M4 22C0 7 16 4 14 14S9 28 19 26Q25 24 25 16" fill="none" stroke="#405269" /><path d="M20 12 25 6 28 9 23 15Z" fill="url(#metalFace)" stroke="#405269" /><path d="M25 6 27 4 30 7 28 9" fill="none" stroke="#37a8fa" />
+</svg>

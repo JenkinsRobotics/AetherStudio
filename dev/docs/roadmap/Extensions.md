@@ -43,12 +43,12 @@ code/assets live inside the bundle; an extension never reaches into
 another extension or the app's internals beyond its extension point's
 API. `capabilities` is surfaced to the user at install time.
 
-Shipped manifest semantics (E1, `animacore/extensions.py`):
+Shipped manifest semantics (E1, `aether_animation/extensions.py`):
 `id` and `provides[].id` are lowercase slugs (`[a-z0-9_-]`); an
 `output_adapter` entry must be `"<module>.py:<ClassName>"` and is
 imported from inside the bundle under an extension-namespaced module
 name (no `sys.path` pollution), then checked against the
-`animacore.outputs.OutputAdapter` protocol; the optional per-
+`aether_animation.outputs.OutputAdapter` protocol; the optional per-
 contribution `config:` mapping (identifier keys) passes through as the
 adapter's constructor keyword arguments; contribution ids are unique
 per kind across the whole registry (v1 keeps one flat namespace per
@@ -57,7 +57,7 @@ supported" when loaded (except `parametric_feature`, loadable since
 E2 — see below); unknown kinds are manifest errors.
 
 Shipped `parametric_feature` semantics (E2 backend,
-`animacore/features.py`): the contribution's `entry` is a
+`aether_animation/features.py`): the contribution's `entry` is a
 **YAML template file** inside the bundle (must end `.yaml`/`.yml`,
 takes no `config:` — pure data, no Python ever runs, which is why the
 example bundle declares `capabilities: []`). The template
@@ -130,8 +130,8 @@ the standard evaluated-channel frame. Core contracts stay small.
 
 | # | Packet | Depends on | Lane |
 |---|---|---|---|
-| E1 | Manifest schema + discovery/registry + `output_adapter` point + built-in simulator adapter behind the same API + one real packaged example extension — **shipped 2026-07-15** (`animacore/extensions.py`, `animacore/outputs.py`, `examples/extensions/udp-wire-output.animaext/`; see STATUS.md) | — | Claude (Python) |
-| E2 | `parametric_feature`: declarative template schema (params → parts/joints/relations), loader + expansion into the standard rig — **backend shipped 2026-07-15** (`animacore/features.py`, `examples/extensions/parametric-linkage.animaext/`; Studio rendering remains with E3) | format 2.0 | Claude format/runtime; Codex Studio rendering |
+| E1 | Manifest schema + discovery/registry + `output_adapter` point + built-in simulator adapter behind the same API + one real packaged example extension — **shipped 2026-07-15** (`aether_animation/extensions.py`, `aether_animation/outputs.py`, `examples/extensions/udp-wire-output.animaext/`; see STATUS.md) | — | Claude (Python) |
+| E2 | `parametric_feature`: declarative template schema (params → parts/joints/relations), loader + expansion into the standard rig — **backend shipped 2026-07-15** (`aether_animation/features.py`, `examples/extensions/parametric-linkage.animaext/`; Studio rendering remains with E3) | format 2.0 | Claude format/runtime; Codex Studio rendering |
 | E3 | Studio: Extensions browser (installed list, capabilities display, enable/disable), parametric features appearing in the Rig ribbon like built-ins | E1/E2 | Codex |
 | E4 | `scene_action` point | `.scene.anima` execution | Claude |
 | E5 | Firmware `motor_backend` build hooks | firmware v0 | Claude |

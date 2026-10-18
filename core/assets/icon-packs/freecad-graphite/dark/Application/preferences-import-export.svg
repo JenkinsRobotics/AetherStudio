@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/preferences-import-export.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2871">
+    <linearGradient xlink:href="#linearGradient3765" id="linearGradient3771" x1="98" y1="1047.3622" x2="81" y2="993.36218" gradientUnits="userSpaceOnUse" gradientTransform="translate(-60,-988.36218)" />
+    <linearGradient id="linearGradient3765">
+      <stop style="stop-color:#5d7086;stop-opacity:1;" offset="0" id="stop3767" />
+      <stop style="stop-color:#6c8098;stop-opacity:1" offset="1" id="stop3769" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3806" id="linearGradient3012" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.73269922,0,0,0.5925111,13.613318,24.513214)" x1="48.014042" y1="26.323408" x2="43.478561" y2="42.076672" />
+    <linearGradient id="linearGradient3806">
+      <stop style="stop-color:#56b9fc;stop-opacity:1" offset="0" id="stop3808" />
+      <stop style="stop-color:#3da4f0;stop-opacity:1" offset="1" id="stop3810" />
+    </linearGradient>
+    <linearGradient id="linearGradient3806-2">
+      <stop style="stop-color:#52b5fa;stop-opacity:1" offset="0" id="stop3808-1" />
+      <stop style="stop-color:#3aa1ee;stop-opacity:1" offset="1" id="stop3810-8" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3806-2" id="linearGradient4" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.73269922,0,0,0.5925111,-11.267912,24.513214)" x1="80.383858" y1="22.940084" x2="69.464722" y2="38.488976" />
+  </defs>
+  <path style="fill:url(#linearGradient3771);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 11,3 v 58.00002 h 42 v -48 L 43,3 Z" id="path2991" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 13,5 V 59.00002 H 51 V 13.81392 L 41.99741,5 Z" id="path3763" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <path style="fill:#e5edf7;fill-opacity:0.392157;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="M 43,3 V 13.00002 H 53 Z" id="path2993" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  <g id="g1" transform="translate(-0.754626,-1.7650705)">
+    <path style="display:inline;fill:#56b9fc;fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 45.628392,34.16514 v 5.682261 H 29.628021 v 9.470435 h 16.000371 v 5.682261 L 59.881299,44.582619 Z" id="path3343" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="display:inline;fill:url(#linearGradient3012);fill-opacity:1;fill-rule:evenodd;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 47.629277,38.105469 v 3.742187 H 31.628392 v 5.470703 h 16.000885 v 3.742188 l 8.863281,-6.478516 z" id="path1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="g4" transform="translate(-24.754625,-23.400167)">
+    <path style="font-variation-settings:normal;display:inline;opacity:1;vector-effect:none;fill:#52b5fa;fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#e5edf7;stop-opacity:1" d="m 45.628392,34.16514 v 5.682261 H 29.628021 v 9.470435 h 16.000371 v 5.682261 L 59.881299,44.582619 Z" id="path3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="font-variation-settings:normal;display:inline;opacity:1;vector-effect:none;fill:url(#linearGradient4);fill-opacity:1;fill-rule:evenodd;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#e5edf7;stop-opacity:1" d="m 47.629277,38.105469 v 3.742187 H 31.628392 v 5.470703 h 16.000885 v 3.742188 l 8.863281,-6.478516 z" id="path4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

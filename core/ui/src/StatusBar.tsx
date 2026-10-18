@@ -24,7 +24,7 @@ export function StatusBar({ leading, center, trailing, children }: {
 }) {
   const hasRegions = leading !== undefined || center !== undefined || trailing !== undefined;
   return (
-    <div className="aui-status-bar" aria-label="Workspace status">
+    <div className="aui-status-bar" role="status" aria-label="Workspace status">
       {hasRegions ? (
         <>
           <div className="aui-status-bar__leading">{leading}</div>

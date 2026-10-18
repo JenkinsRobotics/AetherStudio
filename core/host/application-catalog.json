@@ -1,0 +1,10 @@
+[
+  {"id":"drive","name":"Aether Drive","description":"Files, projects and shared workspaces","admin_only":false,"coming_soon":false},
+  {"id":"io","name":"Aether IO","description":"Electronics design workspace — UI preview","admin_only":false,"coming_soon":false},
+  {"id":"cad","name":"Aether CAD","description":"Design parts and assemblies","admin_only":false,"coming_soon":false},
+  {"id":"animation","name":"Aether Animation","description":"Rig, pose and animate characters","admin_only":false,"coming_soon":false},
+  {"id":"ui","name":"Aether UI","description":"Shared components and design review","admin_only":true,"coming_soon":false},
+  {"id":"map","name":"Aether Map","description":"Projection mapping and show control","admin_only":false,"coming_soon":false},
+  {"id":"sketch","name":"Aether Sketch","description":"Drawing and visual ideation","admin_only":false,"coming_soon":true},
+  {"id":"vector","name":"Aether Vector","description":"Vector illustration and graphic design","admin_only":false,"coming_soon":true}
+]

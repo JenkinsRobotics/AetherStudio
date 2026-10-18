@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg3065" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/applications-python.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs3067">
+    <linearGradient xlink:href="#linearGradient4671" id="linearGradient3027" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.30307123,0,0,0.3059972,-6.2026572,-4.4262311)" x1="150.96111" y1="192.35176" x2="112.03144" y2="137.27299" />
+    <linearGradient id="linearGradient4671">
+      <stop style="stop-color:#dee5ee;stop-opacity:1" offset="0" id="stop4673" />
+      <stop style="stop-color:#e7edf4;stop-opacity:1" offset="1" id="stop4675" />
+    </linearGradient>
+    <linearGradient id="linearGradient4689">
+      <stop style="stop-color:#c1cddb;stop-opacity:1" offset="0" id="stop4691" />
+      <stop style="stop-color:#a8b9cb;stop-opacity:1" offset="1" id="stop4693" />
+    </linearGradient>
+    <linearGradient y2="114.39767" x2="135.66525" y1="20.603781" x1="26.648937" gradientTransform="matrix(0.30307123,0,0,0.3059972,-6.2026572,-4.4262311)" gradientUnits="userSpaceOnUse" id="linearGradient3063" xlink:href="#linearGradient4689" />
+  </defs>
+  <g id="layer1">
+    <path d="m 31.461584,1.8789638 c -2.469461,0.011474 -4.827741,0.2220839 -6.902785,0.5892627 -6.112821,1.0799344 -7.222671,3.3403304 -7.222671,7.5088844 l 0,5.5053921 14.445341,0 0,1.835132 -14.445341,0 -5.421213,0 c -4.1982177,0 -7.8742982,2.523371 -9.0241292,7.323687 -1.3263152,5.502276 -1.3851452,8.935787 0,14.681047 1.0268266,4.276549 3.4790273,7.323686 7.6772442,7.323687 l 4.966638,0 0,-6.599737 c 0,-4.76792 4.125318,-8.97362 9.024131,-8.973622 l 14.428506,0 c 4.016385,0 7.222672,-3.306959 7.222671,-7.340523 l 0,-13.7550631 c 0,-3.9147689 -3.302552,-6.8555252 -7.222671,-7.5088844 C 36.505811,2.0551496 33.931046,1.867489 31.461584,1.8789638 z m -7.811932,4.4278849 c 1.492104,0 2.710605,1.2384043 2.710605,2.7611137 -1e-6,1.5173126 -1.218501,2.7442786 -2.710605,2.7442786 -1.497455,0 -2.710607,-1.226966 -2.710607,-2.7442786 0,-1.5227082 1.213152,-2.7611137 2.710607,-2.7611137 z" style="fill:url(#linearGradient3063);fill-opacity:1" id="path1948" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path d="m 48.011435,17.317635 0,6.414539 c 0,4.973107 -4.216233,9.158818 -9.02413,9.158819 l -14.428506,0 c -3.95221,0 -7.222671,3.382557 -7.222671,7.340524 l 0,13.755061 c 0,3.914773 3.404164,6.217396 7.222671,7.340526 4.572583,1.344523 8.957451,1.587505 14.428506,0 3.636673,-1.052936 7.222672,-3.171974 7.222671,-7.340526 l 0,-5.505391 -14.428507,0 0,-1.835131 14.428507,0 7.222673,0 c 4.19822,0 5.762648,-2.928347 7.222666,-7.323687 1.508151,-4.524934 1.44398,-8.87639 0,-14.681047 -1.037521,-4.179353 -3.019107,-7.323687 -7.222666,-7.323687 l -5.421214,0 z M 39.896452,52.15145 c 1.497455,1e-6 2.710606,1.226966 2.710606,2.744276 -1e-6,1.522709 -1.213153,2.761117 -2.710606,2.761117 -1.492106,0 -2.710606,-1.238408 -2.710606,-2.761117 1e-6,-1.51731 1.218498,-2.744276 2.710606,-2.744276 z" style="fill:url(#linearGradient3027);fill-opacity:1" id="path1950" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" version="1.1" viewBox="0 0 18.062223 18.062222" height="32" width="32" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_EquationStaticCurrent.svg. Authors: [vdwalts], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs847">
+    <linearGradient id="linearGradient1150">
+      <stop id="stop1148" offset="0" style="stop-color:#293749;stop-opacity:1;" />
+      <stop id="stop1146" offset="1" style="stop-color:#56b9fc;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient id="linearGradient1144">
+      <stop id="stop1140" offset="0" style="stop-color:#293749;stop-opacity:1;" />
+      <stop id="stop1142" offset="1" style="stop-color:#46576b;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient y2="13.820765" x2="-11.459097" y1="25.800545" x1="-28.720476" spreadMethod="reflect" gradientTransform="matrix(0.28222223,0,0,0.28222223,5.0799991,3.1044441)" gradientUnits="userSpaceOnUse" id="linearGradient4223" xlink:href="#linearGradient1150" />
+    <linearGradient y2="30.911497" x2="23.96336" y1="15.428647" x1="40.167469" gradientUnits="userSpaceOnUse" id="linearGradient4225" xlink:href="#linearGradient1144" />
+    <linearGradient xlink:href="#linearGradient3094" id="linearGradient3092" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-45,34.253048,123.74443)" x1="51.284271" y1="24.928932" x2="38.500004" y2="39" />
+    <linearGradient id="linearGradient3094">
+      <stop id="stop3096" offset="0" style="stop-color:#4b5d72;stop-opacity:1;" />
+      <stop id="stop3098" offset="1" style="stop-color:#6c8098;stop-opacity:1;" />
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1.5871031,0,0,1.5493987,12.665791,-6.2836685)" id="g4208" style="display:inline">
+    <path style="display:inline;opacity:1;fill:url(#linearGradient4223);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M -6.2855296,8.9257673 -2.1538273,6.1404647 C 0.7713407,3.9682537 4.6042171,9.1392512 1.2356358,11.1842 l -4.4296191,2.777302 z" id="path3063-3-4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path transform="matrix(0.21671885,0.05091208,-0.01095213,0.22989988,-11.210918,4.6034621)" style="display:inline;fill:url(#linearGradient4225);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1" d="m 44,22 c 0,6.627417 -5.372583,12 -12,12 -6.627417,0 -12,-5.372583 -12,-12 0,-6.627417 5.372583,-12 12,-12 6.627417,0 12,5.372583 12,12 z" id="path3011-3-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+  <g id="g3088" transform="matrix(-0.1353276,-0.0259661,0.0259661,-0.1353276,-0.74341116,18.769906)">
+    <path id="path3343" d="m -34.603187,38.669813 8.121641,7.171185 -10.625827,9.852744 c -5.90924,5.611358 2.451088,14.837031 8.828678,10.058069 l 10.82057,-10.790454 6.384518,6.861734 2.1949274,-24.693149 z" style="fill:url(#linearGradient3092);fill-opacity:1;fill-rule:evenodd;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path3343-2" d="m -29.543784,40.341316 5.577926,5.448125 -11.784543,11.358159 c -4.115745,3.657384 1.941308,11.177753 6.718367,6.725166 l 11.46696,-11.432227 4.919511,4.973108 L -11,39.251263 Z" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

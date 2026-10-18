@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="@edge@" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="@top@"/><stop offset="1" stop-color="@muted@"/></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="@muted@"/><stop offset="1" stop-color="@side@"/></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="@side@"/><stop offset="1" stop-color="@muted@"/></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="@blueHigh@"/><stop offset="1" stop-color="@blueLow@"/></linearGradient>
+</defs>
+<path d="M16 3 28 10 16 17 4 10Z" fill="url(#metalTop)" stroke="@edge@" /><path d="M4 10 16 17V30L4 23Z" fill="url(#metalFace)" stroke="@edge@" /><path d="M16 17 28 10V23L16 30Z" fill="url(#metalSide)" stroke="@edge@" /><path d="M4 10 16 17 28 10M16 17V30" fill="none" stroke="@blueHigh@" /><circle cx="16" cy="17" r="1.4" fill="@blueHigh@" stroke="@blueHigh@"/>
+</svg>

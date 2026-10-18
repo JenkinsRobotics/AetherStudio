@@ -1,0 +1,1 @@
+<path d="M5 10 16 4 27 10V23L16 29 5 23Z" fill="url(#side)" stroke="edge" /><path d="M5 10 16 4 27 10 16 16Z" fill="url(#top)" stroke="edge" /><path d="M5 10 16 16V29L5 23Z" fill="url(#front)" stroke="edge" /><ellipse cx="16" cy="10" rx="4" ry="2.5" fill="cavity" stroke="blue"/>

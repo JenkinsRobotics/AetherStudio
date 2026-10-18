@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg4199" height="32" width="32" version="1.1" viewBox="0 0 64 64.000001" fill="#405269" color="#405269">
+ <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Tux/Resources/icons/Navigation_Mouse_AltLeft.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><g id="layer1" transform="translate(0 -988.36)">
+  <g fill-rule="evenodd">
+   <rect id="rect4151" style="color:#405269" ry="10" height="56" width="58" y="992.36" x="3" fill="#ebf0f7" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+   <g stroke="#405269">
+    <path id="path4153" d="m20.923 1033.6v-13.846c0-5.5385 2.7692-8.6538 11.077-8.6538 8.3077 0 11.077 3.1153 11.077 8.6538v13.846c0 5.5384-2.7692 12.115-11.077 12.115-8.3077 0-11.077-6.577-11.077-12.115z" stroke-width="1.1" fill="#f3f7fc" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path4155" d="m21.615 1021.8c-0.096-6.9 1.017-10.1 10.385-10.1v10.038z" stroke-width="1.1" fill="#c3cfdc" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path4157" d="m42.385 1021.8c0.096-6.9-1.017-10.1-10.385-10.1v10.038z" stroke-width="1.1" fill="#f3f7fc" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+   </g>
+  </g>
+  <g stroke="#405269">
+   <path id="path4159" d="m32 1022.5v-11.423" stroke-width="1.1" fill="none" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+   <path id="path4161" d="m20.923 1022.5h22.154" stroke-width="1.1" fill="none" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" />
+   <rect id="rect4163" height="12.462" stroke-linecap="round" stroke-width="1.1" fill="#f3f7fc" style="color:#405269" fill-rule="evenodd" ry="2.4231" width="5.5385" y="1016.2" x="29.231" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+  </g>
+  <g id="g5846" transform="translate(-.50298 .34070)" stroke="#405269" stroke-linecap="round" stroke-width="1.3" fill="none">
+   <path id="path5814" stroke-linejoin="round" d="m19 1005.4 3-8 3 8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linecap="round" />
+   <path id="path5816" d="m20 1003.4h4" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+   <path id="path5818" stroke-linejoin="round" d="m32 1005.4h-4v-8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linecap="round" />
+   <g>
+    <path id="path5820" d="m33 997.36h6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path5822" d="m36 997.36v8" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path5826" d="m40 1002.4h6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path5828" d="m43 999.36v6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+   </g>
+  </g>
+ </g>
+</svg>

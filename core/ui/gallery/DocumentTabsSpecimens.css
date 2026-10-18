@@ -1,0 +1,11 @@
+.studio-document-specimen { display: grid; gap: 12px; width: 100%; min-width: 0; }
+.studio-document-specimen-heading, .studio-document-specimen-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 12px; }
+.studio-document-specimen-heading > span, .studio-document-specimen-caption > span, .studio-document-specimen-note { color: var(--aether-color-text-dim); }
+.studio-document-specimen-note { margin: 0 0 12px; font-size: 12px; }
+.studio-document-overview { display: grid; gap: 6px; min-width: 260px; }
+.studio-document-overview > button { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 0; border-radius: 7px; text-align: left; color: var(--aether-color-text); background: var(--aether-color-bg-hover); cursor: pointer; }
+.studio-document-overview > button[aria-current="page"] { background: var(--aether-color-bg-selected); }
+.studio-document-overview > button:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--aether-color-border-focus); }
+.studio-document-overview > button > span:first-child, .studio-document-overview > button > span:first-child > svg { width: 36px; height: 36px; }
+.studio-document-overview > button > span:nth-child(2) { display: grid; gap: 3px; flex: 1; }
+.studio-document-overview small { color: var(--aether-color-text-dim); }

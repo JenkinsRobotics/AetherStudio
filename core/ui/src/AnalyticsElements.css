@@ -1,0 +1,10 @@
+.aui-status-badge { display:inline-flex; align-items:center; gap:4px; padding:2px 7px; border:1px solid color-mix(in srgb,currentColor 45%,transparent); border-radius:var(--aether-radius-pill); color:var(--aether-color-text-dim); font:10px/1.25 var(--aether-font-family); white-space:nowrap; }
+.aui-status-badge[data-tone=positive] { color:var(--aether-color-ok); }
+.aui-status-badge[data-tone=negative] { color:var(--aether-color-error); }
+.aui-status-badge[data-tone=warning] { color:var(--aether-color-warn); }
+.aui-chart-legend { display:flex; flex-wrap:wrap; align-items:center; gap:12px; font:10px var(--aether-font-family); color:var(--aether-color-text-dim); }
+.aui-chart-legend > span, .aui-chart-legend button { display:inline-flex; align-items:center; gap:5px; }
+.aui-chart-legend button { padding:3px 0; border:0; background:none; color:inherit; font:inherit; cursor:pointer; }
+.aui-chart-legend button[aria-pressed=false] { opacity:.45; text-decoration:line-through; }
+.aui-chart-legend button:focus-visible { outline:2px solid var(--aether-color-border-focus); outline-offset:3px; }
+.aui-chart-swatch { width:7px; height:7px; flex:none; border-radius:1px; background:var(--series-color); }

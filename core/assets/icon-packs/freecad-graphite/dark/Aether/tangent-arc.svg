@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#e5edf7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+<desc>FreeCAD Graphite extension: tangent-arc. Original illustration by Aether Studio contributors, 2026-09-24; not upstream FreeCAD artwork.</desc><defs>
+<linearGradient id="metalTop" x2="0.7" y2="1"><stop stop-color="#6c8098" /><stop offset="1" stop-color="#91a4bb" /></linearGradient>
+<linearGradient id="metalFace" x2="0.5" y2="1"><stop stop-color="#91a4bb" /><stop offset="1" stop-color="#192636" /></linearGradient>
+<linearGradient id="metalSide" x2="0" y2="1"><stop stop-color="#192636" /><stop offset="1" stop-color="#91a4bb" /></linearGradient>
+<linearGradient id="blueFeature" x2="0.4" y2="1"><stop stop-color="#5bbdff" /><stop offset="1" stop-color="#0876d5" /></linearGradient>
+</defs>
+<path d="M4 25H15C23 25 27 18 27 7" fill="none" stroke="#e5edf7" /><path d="M15 25H29" fill="none" stroke="#91a4bb" stroke-dasharray="2 3" /><circle cx="15" cy="25" r="2" fill="#5bbdff" stroke="#5bbdff" /><circle cx="4" cy="25" r="1.2" fill="#5bbdff" stroke="#5bbdff" /><circle cx="27" cy="7" r="1.2" fill="#5bbdff" stroke="#5bbdff" />
+</svg>

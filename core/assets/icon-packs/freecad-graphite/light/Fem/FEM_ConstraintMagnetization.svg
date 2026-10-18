@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2869" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_ConstraintMagnetization.svg. Authors: [maxwxyz]. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><defs id="defs2871">
+    <linearGradient id="linearGradient9">
+      <stop style="stop-color:#34a4f6;stop-opacity:1" offset="0" id="stop9" />
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="1" id="stop10" />
+    </linearGradient>
+    <linearGradient id="linearGradient1">
+      <stop style="stop-color:#37a8fa;stop-opacity:1;" offset="0" id="stop3" />
+      <stop style="stop-color:#9caec3;stop-opacity:1" offset="1" id="stop4" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient1" id="linearGradient4" x1="34.258762" y1="17.817911" x2="34.53809" y2="45.337917" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient9" id="linearGradient10" x1="31.050907" y1="22.545275" x2="31.386511" y2="41.961227" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer3" style="display:inline">
+    <path id="path459" style="fill:#32a2f3;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="M 58.619262,3.9999998 17.423843,4.0419724 C 4.6469265,6.0527582 5.1420236,21.854153 5.2574549,32.040542 5.3728861,42.226932 4.4400373,57.792834 17.423843,59.958021 l 41.195419,0.04198 0.14854,-15.208062 H 26.275937 c -4.420442,0 -4.659126,-8.255722 -4.643666,-12.791935 0.0155,-4.547572 0.322158,-12.791935 4.742599,-12.791935 h 32.392932 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path16" style="fill:url(#linearGradient4);fill-opacity:1;stroke:url(#linearGradient10);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="m 53.583984,8.7734375 0.0957,10.0117185 H 26.544922 c -5.823631,0 -6.009378,9.084754 -6.023438,13.208985 -0.01402,4.113946 0.03982,13.220703 5.935547,13.220703 h 27.222656 l -0.0957,10.011718 -34.863281,-0.03516 C 8.8949786,53.449543 9.5692741,41.233182 9.4648438,32.017578 9.361638,22.910053 9.0224493,10.428998 18.71875,8.8085938 Z" transform="matrix(1.1193003,0,0,1.1193003,-3.3368708,-3.8176124)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path21" style="color:#405269;fill:#ebf0f7;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;-inkscape-stroke:none" d="M 40.847339,7.1771131 V 10.406914 H 27.624068 v 2.399388 h 13.223271 v 3.231675 l 7.665935,-4.431369 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path26" style="color:#405269;fill:#ebf0f7;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;-inkscape-stroke:none" d="m 34.437192,47.962022 -7.665936,4.43137 7.665936,4.429494 v -3.229801 h 13.22327 v -2.399387 h -13.22327 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path id="path31" style="color:#405269;fill:#ebf0f7;fill-rule:evenodd;stroke:#405269;stroke-width:1.1;-inkscape-stroke:none" d="m 13.319513,21.555167 -4.4308715,7.664918 h 3.2313115 v 13.224748 h 2.399119 V 29.220085 h 3.231314 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

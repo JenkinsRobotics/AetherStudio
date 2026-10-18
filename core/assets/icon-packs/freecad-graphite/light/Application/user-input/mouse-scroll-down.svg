@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" version="1.1" id="svg1" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Gui/Icons/user-input/mouse-scroll-down.svg. Authors: FreeCAD contributors. Rights: . Source and license notices: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</desc><path stroke="#405269" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" d="M 12,5.873029 V 10 M 13.5,12 12,13.5 10.5,12 M 6,7 C 6,4.790861 7.790861,3 10,3 h 4 c 2.209139,0 4,1.790861 4,4 v 10 c 0,2.209139 -1.790861,4 -4,4 H 10 C 7.790861,21 6,19.209139 6,17 Z" id="path1" vector-effect="non-scaling-stroke" />
+</svg>

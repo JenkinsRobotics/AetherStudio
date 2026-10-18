@@ -1,3 +1,4 @@
+import packagedAssets0 from "@aether/assets/catalogs/c0b2566acef0ce";
 import { render } from "@testing-library/react";
 import { expect, test } from "vitest";
 import { AetherIcon } from "./AetherIcon";
@@ -14,7 +15,7 @@ test("renders shared chrome icons as presentation-only SVG", () => {
 
 
 test("shared icon sources are scalable geometry without embedded raster or font glyphs", () => {
-  const sources = import.meta.glob("../../assets/icons/*.svg", { query: "?raw", import: "default", eager: true });
+  const sources = (packagedAssets0 as Record<string, unknown>);
   expect(Object.keys(sources).length).toBeGreaterThan(30);
   for (const [path, markup] of Object.entries(sources)) {
     expect(markup).toContain('viewBox="0 0 24 24"');
@@ -45,4 +46,15 @@ test("registering a pack hot-swaps icons that are already mounted", async () => 
   expect(container.innerHTML).toContain("ellipse");
   act(() => registerIconPack(null));
   expect(container.innerHTML).toBe(before);
+});
+
+test("repeated illustrated icons keep gradients local to each instance", () => {
+  const { container } = render(<><AetherIcon name="file-part" /><AetherIcon name="file-part" /><AetherIcon name="file-assembly" /></>);
+  const ids = [...container.querySelectorAll('[id]')].map(element => element.id);
+  expect(ids.length).toBeGreaterThan(0);
+  expect(new Set(ids).size).toBe(ids.length);
+  for (const svg of container.querySelectorAll('svg')) {
+    const local = new Set([...svg.querySelectorAll('[id]')].map(element => element.id));
+    for (const reference of svg.innerHTML.matchAll(/url\(#([^)]+)\)/g)) expect(local.has(reference[1])).toBe(true);
+  }
 });

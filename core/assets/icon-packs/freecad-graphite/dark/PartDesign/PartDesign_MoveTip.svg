@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg3052" version="1.1" viewBox="0 0 64 64" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/PartDesign/Gui/Resources/icons/PartDesign_MoveTip.svg. Authors: [blobfish], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs3054">
+    <linearGradient id="linearGradient3992">
+      <stop style="stop-color:#56b9fc;stop-opacity:1" offset="0" id="stop3994" />
+      <stop style="stop-color:#3da4f0;stop-opacity:1" offset="1" id="stop3996" />
+    </linearGradient>
+    <linearGradient id="linearGradient3873">
+      <stop style="stop-color:#47586c;stop-opacity:1;" offset="0" id="stop3875" />
+      <stop style="stop-color:#293749;stop-opacity:1" offset="1" id="stop3877" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3873" id="linearGradient3879" x1="27.71979" y1="46.315926" x2="33.467113" y2="57.854782" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient3992" id="linearGradient3998" x1="51" y1="26" x2="57" y2="42" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1">
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 5,13 47,0" id="path3899" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="m 5,5 0,46 46,0" id="path3093" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="m 5,5 0,46 46,0" id="path3093-3" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="g3863" transform="translate(-0.20025323,-0.88339671)">
+      <path transform="matrix(0.86997005,0,0,0.86663677,26.084867,6.7443139)" d="m 38.064973,52.085354 c 0,4.460915 -3.602431,8.077202 -8.046254,8.077202 -4.443824,0 -8.046254,-3.616287 -8.046254,-8.077202 0,-4.460916 3.60243,-8.077202 8.046254,-8.077202 4.443823,0 8.046254,3.616286 8.046254,8.077202 z" id="path3024" style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.50000000000000000;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:20.39999999999999858" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path transform="matrix(0.86997005,0,0,0.86663677,26.084867,6.7443139)" d="m 38.064973,52.085354 c 0,4.460915 -3.602431,8.077202 -8.046254,8.077202 -4.443824,0 -8.046254,-3.616287 -8.046254,-8.077202 0,-4.460916 3.60243,-8.077202 8.046254,-8.077202 4.443823,0 8.046254,3.616286 8.046254,8.077202 z" id="path3024-3" style="fill:url(#linearGradient3879);stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.50000000000000000;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:20.39999999999999858;fill-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <path style="fill:none;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 5,13 47,0" id="path3899-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#52b5fa;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.5;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:20.4" id="path3024-2" d="m 38.064973,52.085354 a 8.0462542,8.0772018 0 1 1 -16.092508,0 8.0462542,8.0772018 0 1 1 16.092508,0 z" transform="matrix(0.86997005,0,0,0.86663677,25.910337,-32.112823)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#52b5fa;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.5;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:20.4" id="path3024-3-7" d="m 38.064973,52.085354 a 8.0462542,8.0772018 0 1 1 -16.092508,0 8.0462542,8.0772018 0 1 1 16.092508,0 z" transform="matrix(0.86997005,0,0,0.86663677,25.910337,-32.112823)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#52b5fa;stroke:#5bbdff;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path4250-71-6-49-2" d="M 48.195229,9.7433274 A 5.0175912,5.0172897 0.01328306 1 1 55.817398,16.27037 5.0175912,5.0172897 0.01328306 1 1 48.195229,9.7433274 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <path style="fill:#667991;fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path4250-7-3-2-5-7" d="m 49.719906,11.05034 a 3.0000108,2.9999913 89.877399 1 1 4.557239,3.902762 3.0000108,2.9999913 89.877399 0 1 -4.557239,-3.902762 z" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="g1" transform="translate(0,-1.2978453)">
+      <path style="fill:url(#linearGradient3998);fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 43,33 9,-9 9,9 H 55 V 43 H 49 V 33 Z" id="path3775" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 53,25.8 -7,7" id="path3970" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" d="m 48,31 h 3 v 11" id="path3972" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path style="fill:none;fill-opacity:1;stroke:#e5edf7;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 43,33 9,-9 9,9 H 55 V 43 H 49 V 33 Z" id="path3775-0" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

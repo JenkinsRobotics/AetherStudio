@@ -1,3 +1,6 @@
+import { Menu } from "./Menu";
+import { CollectionView, type CollectionControl } from "./CollectionView";
+import { CollectionFilter, type CollectionFilterOption } from "./CollectionFilter";
 import {
   useCallback,
   useEffect,
@@ -14,14 +17,17 @@ import type {
 
 export interface ListBoxItem {
   id: string;
+  category?: string;
   label: string;
   description?: string;
   icon?: ReactNode;
   badge?: string;
+  /** Non-interactive metadata, such as version and revision badges. */
+  accessory?: ReactNode;
   group?: string;
   disabled?: boolean;
   dimmed?: boolean;
-  actions?: readonly { id: string; label: string; icon: ReactNode }[];
+  actions?: readonly { id: string; label: string; icon: ReactNode; pinned?: boolean; disabled?: boolean }[];
 }
 
 export interface ListBoxProps {
@@ -32,6 +38,11 @@ export interface ListBoxProps {
     mode: "single" | "toggle" | "range"
   ) => void;
   ariaLabel: string;
+  title?: string;
+  controls?: readonly CollectionControl[];
+  filter?: string;
+  onFilterChange?: (query: string) => void;
+  filterOptions?: readonly CollectionFilterOption[];
   selectionMode?: "none" | "single" | "multiple";
   onActivate?: (id: string) => void;
   onContextMenu?: (id: string, x: number, y: number) => void;
@@ -75,7 +86,7 @@ const TYPEAHEAD_RESET_MS = 700;
  * commands; ListBox owns consistent selection, keyboard, action, and scalable
  * rendering behavior.
  */
-export function ListBox({
+export function ListBoxRows({
   items,
   selectedIDs,
   onSelect,
@@ -83,6 +94,7 @@ export function ListBox({
   selectionMode = "single",
   onActivate,
   onContextMenu,
+  onFocusItem,
   onAction,
   emptyState,
   loading = false,
@@ -94,7 +106,7 @@ export function ListBox({
   overscan = 4,
   className,
   style,
-}: ListBoxProps) {
+}: ListBoxProps & { onFocusItem?: (id: string) => void }) {
   const [focusedID, setFocusedID] = useState<string | null>(null);
   const [scrollTop, setScrollTop] = useState(0);
   const anchorRef = useRef<string | null>(null);
@@ -240,6 +252,11 @@ export function ListBox({
   const onKeyDown = useCallback(
     (event: KeyboardEvent<HTMLDivElement>, item: ListBoxItem) => {
       const index = enabledItems.findIndex((entry) => entry.id === item.id);
+      if (event.key === 'ContextMenu' || (event.key === 'F10' && event.shiftKey)) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        onContextMenu?.(item.id, rect.left + 10, rect.bottom);
+        event.preventDefault(); return;
+      }
       switch (event.key) {
         case "ArrowDown":
           focusItem(enabledItems[index + 1] ?? enabledItems[0]);
@@ -254,7 +271,10 @@ export function ListBox({
           focusItem(enabledItems[enabledItems.length - 1]);
           break;
         case "Enter":
-          if (selectedIDs.has(item.id) && onActivate) onActivate(item.id);
+          if (selectionMode === 'none' && item.actions?.length) {
+            const rect = event.currentTarget.getBoundingClientRect();
+            onContextMenu?.(item.id, rect.left, rect.bottom);
+          } else if (selectedIDs.has(item.id) && onActivate) onActivate(item.id);
           else applySelect(item, event);
           break;
         case " ":
@@ -274,7 +294,7 @@ export function ListBox({
       }
       event.preventDefault();
     },
-    [applySelect, enabledItems, focusItem, handleTypeahead, onActivate, selectedIDs]
+    [applySelect, enabledItems, focusItem, handleTypeahead, onActivate, onContextMenu, selectedIDs, selectionMode]
   );
 
   const renderRow = (row: VisualRow) => {
@@ -311,14 +331,14 @@ export function ListBox({
         aria-selected={selectionMode === "none" ? undefined : selected}
         aria-disabled={item.disabled || undefined}
         tabIndex={
-          selectionMode !== "none" && !item.disabled &&
+          selectionMode === "none" ? (!item.disabled && item.actions?.length ? 0 : -1) : !item.disabled &&
           (focusedID === item.id ||
             (focusedID === null && enabledItems[0]?.id === item.id))
             ? 0
             : -1
         }
         style={virtualStyle}
-        onFocus={() => { if (selectionMode !== "none") setFocusedID(item.id); }}
+        onFocus={() => { onFocusItem?.(item.id); if (selectionMode !== "none") setFocusedID(item.id); }}
         onClick={(event) => { if (selectionMode !== "none") applySelect(item, event); }}
         onDoubleClick={() => !item.disabled && onActivate?.(item.id)}
         onContextMenu={(event) => {
@@ -338,9 +358,10 @@ export function ListBox({
           ) : null}
         </span>
         {item.badge ? <span className="aui-listbox-badge">{item.badge}</span> : null}
-        {item.actions?.length ? (
+        {item.accessory != null && <span className="aui-listbox-accessory">{item.accessory}</span>}
+        {item.actions?.some(a => a.pinned) ? (
           <span className="aui-listbox-actions">
-            {item.actions.map((action) => (
+            {item.actions.filter(a => a.pinned).map((action) => (
               <button
                 key={action.id}
                 type="button"
@@ -405,4 +426,33 @@ export function ListBox({
       </div>
     </div>
   );
+}
+
+/** Every flat collection uses the same searchable frame as hierarchical lists. */
+export function ListBox(props: ListBoxProps) {
+  const [query, setQuery] = useState(''), [category, setCategory] = useState('all');
+  const effectiveQuery = props.onFilterChange ? props.filter ?? '' : query;
+  const text = (effectiveQuery || props.filter || '').trim().toLocaleLowerCase();
+  const items = props.items.filter(item => (category === 'all' || (item.category ?? item.group) === category)
+    && (!text || `${item.label} ${item.description ?? ''} ${item.badge ?? ''}`.toLocaleLowerCase().includes(text)));
+  const options = props.filterOptions ?? [...new Set(props.items.map(i => i.category ?? i.group).filter(Boolean))].map(id => ({ id: id!, label: id! }));
+  const [menu, setMenu] = useState<{ id: string; x: number; y: number } | null>(null);
+  const [actionTarget, setActionTarget] = useState<string | null>(null);
+  const active = props.items.find(i => props.selectedIDs.has(i.id)) ?? props.items.find(i => i.id === actionTarget);
+  const actions = (id: string) => props.items.find(i => i.id === id)?.actions ?? [];
+  const rowControls: CollectionControl[] = active?.actions?.map(a => ({ ...a, disabled: active.disabled || a.disabled,
+    onClick: () => props.onAction?.(active.id, a.id) })) ?? [];
+  return <CollectionView title={props.title ?? props.ariaLabel} className="aui-list-collection"
+    controlsLabel={`${props.ariaLabel} controls`} controls={[...(props.controls ?? []), ...rowControls]}
+    filter={<CollectionFilter query={effectiveQuery} onQueryChange={props.onFilterChange ?? setQuery} options={options}
+      value={category} onChange={setCategory} ariaLabel={`Search ${props.ariaLabel}`} />}>
+    <div className="aui-collection-list"><ListBoxRows {...props} key={`${category}/${text}`} items={items} onFocusItem={setActionTarget}
+      onContextMenu={(id, x, y) => {
+        if (props.onContextMenu) props.onContextMenu(id, x, y);
+        else if (actions(id).length) setMenu({ id, x, y });
+      }}
+      rowHeight={props.rowHeight ?? (props.items.some(i => i.description) ? 40 : 24)} /></div>
+    {menu && <Menu className="aui-collection-popup" open anchor={menu} ariaLabel={`${props.ariaLabel} item options`} items={actions(menu.id)}
+      onSelect={id => { props.onAction?.(menu.id, id); setMenu(null); }} onClose={() => setMenu(null)} />}
+  </CollectionView>;
 }

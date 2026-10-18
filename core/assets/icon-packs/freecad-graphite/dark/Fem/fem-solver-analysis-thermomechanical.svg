@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 64.000001 64" id="svg2" version="1.1" fill="#e5edf7" color="#e5edf7">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/fem-solver-analysis-thermomechanical.svg. Authors: [vdwalts], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs4">
+    <linearGradient id="linearGradient3945">
+      <stop id="stop3947" offset="0" style="stop-color:#e5edf7;stop-opacity:1" />
+      <stop id="stop3949" offset="1" style="stop-color:#61758c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="linearGradient3802">
+      <stop style="stop-color:#56b9fc;stop-opacity:1" offset="0" id="stop3804" />
+      <stop style="stop-color:#61758c;stop-opacity:1" offset="1" id="stop3806" />
+    </linearGradient>
+    <linearGradient id="linearGradient3851">
+      <stop style="stop-color:#56b9fc;stop-opacity:1" offset="0" id="stop3853" />
+      <stop id="stop3800" offset="0.57894737" style="stop-color:#61758c;stop-opacity:1" />
+      <stop style="stop-color:#4cb0f8;stop-opacity:1" offset="1" id="stop3855" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3802" id="linearGradient3819" gradientUnits="userSpaceOnUse" x1="9.3783789" y1="21.129963" x2="35.339195" y2="-2.0099678" />
+    <linearGradient xlink:href="#linearGradient3802" id="linearGradient3823" gradientUnits="userSpaceOnUse" x1="9.3783789" y1="21.129963" x2="35.339195" y2="-2.0099678" />
+    <linearGradient xlink:href="#linearGradient3851" id="linearGradient3833" x1="35.103447" y1="1022.8914" x2="13.044866" y2="1007.7099" gradientUnits="userSpaceOnUse" />
+    <linearGradient xlink:href="#linearGradient3945" id="linearGradient3823-0" gradientUnits="userSpaceOnUse" x1="9.3783789" y1="21.129963" x2="35.339195" y2="-2.0099678" />
+    </defs>
+  <g id="layer1" transform="translate(0,-988.36221)">
+    <g id="g3810" transform="matrix(1.2573447,0,0,1.2585787,-7.6657516,-264.32749)">
+      <path style="fill:url(#linearGradient3833);stroke:#5bbdff;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1" d="m 50.027955,1017.879 -24.221453,-14.6436 c -11.343465,-4.64331 -24.7287841,13.2093 -12.401386,22.256 l 23.695503,13.8408 z" id="path3063" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <g style="fill:url(#linearGradient3823);fill-opacity:1" id="g3031" transform="matrix(-0.92148168,0.21647657,0.04656814,0.97752705,56.658022,1010.6769)">
+        <path transform="translate(-17,-7)" style="fill:url(#linearGradient3819);fill-opacity:1;stroke:#5bbdff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4" d="m 44,22 c 0,6.627417 -5.372583,12 -12,12 -6.627417,0 -12,-5.372583 -12,-12 0,-6.627417 5.372583,-12 12,-12 6.627417,0 12,5.372583 12,12 z" id="path3011" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      </g>
+      <g style="fill:url(#linearGradient3823-0);fill-opacity:1" id="g3031-0" transform="matrix(-0.92148169,0.21647657,0.04656814,0.97752705,78.927175,1009.8824)" />
+    </g>
+  </g>
+</svg>

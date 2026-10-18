@@ -1,0 +1,8 @@
+.aui-workspace-files { width: 100%; max-height: min(65vh, 640px); overflow: auto; }
+.aui-workspace-files .aui-file-manager { min-height: 240px; }
+
+.aui-workspace-file-status { align-self:center; max-width:260px; padding:0 10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:var(--aether-font-size-caption); color:var(--aether-color-text-dim); }
+
+.aui-dialog:has(.aui-workspace-files) { width:min(720px, calc(100vw - 32px)); }
+
+.aui-document-tray-actions { display: flex; align-items: center; flex: none; margin-left: auto; gap: 2px; }

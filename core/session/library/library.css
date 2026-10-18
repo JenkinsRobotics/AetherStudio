@@ -1,0 +1,576 @@
+/* Library theme variables. */
+.studio {
+  --library-hero-glow: var(--library-hero-glow);
+  --library-scrim: var(--library-scrim);
+  --library-dialog-bg: var(--library-dialog-bg);
+  --library-dialog-fg: var(--library-dialog-fg);
+  --library-dialog-border: var(--library-dialog-border);
+  --library-dialog-row-border: var(--library-dialog-row-border);
+  --library-dialog-link: var(--library-dialog-link);
+  --library-dialog-dim: var(--library-dialog-dim);
+}
+.aether-light-theme .studio {
+  --library-hero-glow: #b9cbe866;
+  --library-scrim: #3336;
+  --library-dialog-bg: #ffffff;
+  --library-dialog-fg: #22303f;
+  --library-dialog-border: #c6ccd4;
+  --library-dialog-row-border: #dde2e8;
+  --library-dialog-link: #2f5fd0;
+  --library-dialog-dim: #5a6878;
+}
+
+.library-root {
+  display: grid;
+  /* The rail's width is declared once and read by both the grid track and the
+     sidebar. They used to be set independently, and below 1100px they
+     disagreed: the track dropped to 175px and then 155px while .library-nav
+     kept width:210px, so the sidebar overflowed its own column and painted
+     over the content. One variable makes that impossible. */
+  --library-nav: 210px;
+  grid-template-columns: var(--library-nav) minmax(0, 1fr);
+  grid-template-rows: var(--aether-size-topbar) minmax(0, 1fr);
+  transition: grid-template-columns var(--aether-motion-slow) var(--aether-motion-ease);
+  background: var(--aether-color-bg-app);
+}
+.library-top {
+  grid-column: 1/-1;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 0 20px;
+  background: var(--aether-color-bg-bar);
+  border-bottom: 1px solid var(--aether-color-border);
+}
+.library-top > input {
+  margin-left: auto;
+  width: min(35vw, 450px);
+}
+.library-top [data-aether-account] {
+  margin-left: auto;
+}
+.library-brand {
+  color: var(--aether-color-accent);
+  display: flex;
+}
+.library-workspace {
+  color: var(--aether-color-text-dim);
+  font-size: 11px;
+}
+.library-nav {
+  width: var(--library-nav);
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 14px 22px;
+  gap: 10px;
+  border-right: 1px solid var(--aether-color-border);
+  background: var(--aether-color-bg-shell);
+  transition: width var(--aether-motion-base) var(--aether-motion-ease);
+}
+.library-nav-spacer { flex: 1; }
+
+/* The rail narrows for two different reasons and the track has to follow both.
+   The breakpoints below are one; the person collapsing it is the other, and
+   that one is a class rather than a width, so the variable has to be told.
+   Without this the track kept the expanded 210px while the sidebar painted its
+   collapsed width, leaving a dead band beside the rail on a wide window — the
+   same disagreement as before, in the other direction. The track is `auto`
+   rather than the collapsed width restated, because restating it is what put
+   the two declarations out of step in the first place. */
+.library-root:has(.library-nav.aui-sidebar--collapsed) {
+  --library-nav: auto;
+}
+
+.library-nav nav {
+  display: grid;
+  gap: 5px;
+  margin-top: 18px;
+}
+.library-nav nav button {
+  border: 0;
+  background: transparent;
+  color: var(--aether-color-text-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 10px;
+  font: inherit;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.library-nav nav button[aria-current] {
+  background: var(--aether-color-bg-selected);
+  color: var(--aether-color-text-on-selected);
+}
+.library-nav-footer {
+  margin-top: auto;
+  display: flex;
+  gap: 9px;
+  color: var(--aether-color-text-dim);
+  line-height: 1.7;
+  padding-bottom: 16px;
+}
+.library-nav a {
+  text-decoration: none;
+  color: var(--aether-color-text-dim);
+}
+.library-main {
+  padding: 24px 30px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.library-breadcrumb {
+  margin-bottom: 24px;
+}
+.library-breadcrumb button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--aether-color-text);
+  font: inherit;
+  cursor: pointer;
+}
+.library-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 30px 32px;
+  border: 1px solid var(--aether-color-border);
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at right, var(--library-hero-glow), transparent 75%),
+    var(--aether-color-bg-panel);
+  margin-bottom: 32px;
+}
+.library-eyebrow {
+  color: var(--aether-color-accent);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 650;
+}
+.library-welcome h1 {
+  margin-top: 14px;
+  font-size: 27px;
+}
+.library-welcome p {
+  margin: 12px 0 20px;
+  color: var(--aether-color-text-dim);
+  line-height: 1.6;
+  max-width: 480px;
+}
+.library-welcome button + button {
+  margin-left: 8px;
+}
+.library-hero-art {
+  padding: 24px;
+  color: var(--aether-color-accent);
+}
+/* Creating a file confirms itself here rather than only moving the view. */
+.library-notice {
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 0 12px; padding: 8px 10px 8px 12px;
+  border: 1px solid var(--aether-color-border); border-left: 3px solid var(--aether-color-ok);
+  border-radius: var(--aether-radius-panel); background: var(--aether-color-bg-inset);
+  color: var(--aether-color-text); font-size: 12px;
+}
+.library-notice > :last-child { margin-left: auto; }
+
+.library-list-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+.library-list-heading h2 {
+  font-size: 16px;
+}
+.library-list-heading > span {
+  color: var(--aether-color-text-dim);
+  font-size: 11px;
+}
+.library-list-tools {
+  display: flex;
+  gap: 7px;
+  margin-left: auto;
+}
+.library-note {
+  color: var(--aether-color-text-dim);
+  margin-bottom: 16px !important;
+  line-height: 1.6;
+}
+.library-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+.library-table th {
+  color: var(--aether-color-text-dim);
+  font-weight: 500;
+  padding: 12px;
+  border-bottom: 1px solid var(--aether-color-border);
+}
+.library-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--aether-color-border);
+}
+.library-table td:first-child {
+  width: 42%;
+}
+.library-table th:first-child,
+.library-table td:first-child {
+  padding-left: 16px;
+}
+.library-table th:last-child,
+.library-table td:last-child {
+  padding-right: 16px;
+}
+.library-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.library-table button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  word-break: break-word;
+}
+.library-grid .selected {
+  background: var(--aether-color-bg-selected);
+  color: var(--aether-color-text-on-selected);
+}
+/* Rows read like OneDrive's: the selected one is a soft accent wash with an
+   edge bar, not the design system's solid fill — a row stays readable while
+   selected, and hover reads as a lighter step of the same colour. */
+.library-table tbody tr {
+  transition: background-color var(--aether-motion-fast) var(--aether-motion-ease);
+}
+.library-table tbody tr:hover {
+  background: var(--aether-color-bg-row-hover);
+}
+.library-table tbody tr.selected {
+  background: color-mix(in srgb, var(--aether-color-accent) 14%, transparent);
+}
+.library-table tbody tr.selected:hover {
+  background: color-mix(in srgb, var(--aether-color-accent) 22%, transparent);
+}
+.library-table tbody td:first-child {
+  position: relative;
+}
+.library-table tbody tr.selected td:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--aether-color-selection-edge);
+}
+.library-empty {
+  margin: auto;
+  text-align: center;
+  padding: 65px 15px;
+  color: var(--aether-color-text-dim);
+}
+.library-empty h3 {
+  margin: 20px 0 10px;
+}
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 16px;
+}
+.library-grid button {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 25px 15px;
+  border-radius: 10px;
+  background: var(--aether-color-bg-panel);
+  border: 1px solid var(--aether-color-border);
+  color: var(--aether-color-text);
+  cursor: pointer;
+  align-items: center;
+  min-width: 0;
+}
+.library-grid strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.library-grid small {
+  color: var(--aether-color-text-dim);
+}
+.library-details {
+  width: 290px;
+  flex: none;
+  padding: 18px 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: auto;
+}
+.library-details h2 {
+  font-size: 13px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--aether-color-border);
+}
+.library-details h3 {
+  overflow-wrap: anywhere;
+}
+.library-details > svg {
+  color: var(--aether-color-accent);
+  margin: 15px auto;
+}
+.library-details dl {
+  margin: 0 0 12px;
+  display: grid;
+  gap: 7px;
+}
+.library-details dt {
+  color: var(--aether-color-text-dim);
+  font-size: 11px;
+}
+.library-details dd {
+  margin: 0 0 10px;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.library-details-empty {
+  padding-top: 45px;
+  text-align: center;
+  color: var(--aether-color-text-dim);
+  line-height: 1.7;
+}
+.library-details-empty svg {
+  margin-bottom: 20px;
+  opacity: 0.4;
+}
+.library-modal {
+  position: fixed;
+  inset: 0;
+  background: var(--library-scrim);
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+.library-modal form {
+  width: min(420px, 90vw);
+  padding: 26px;
+  background: var(--aether-color-bg-panel);
+  border: 1px solid var(--aether-color-border);
+  border-radius: 12px;
+  display: grid;
+  gap: 20px;
+}
+.library-modal label {
+  display: grid;
+  gap: 8px;
+}
+.library-modal form > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.history-dialog{width:min(760px,94vw);max-height:85vh;overflow:auto;background:var(--library-dialog-bg);color:var(--library-dialog-fg);border:1px solid var(--library-dialog-border);border-radius:10px;padding:24px}.history-dialog li{padding:12px;border-bottom:1px solid var(--library-dialog-row-border)}.history-dialog a{color:var(--library-dialog-link);margin-right:12px}.history-dialog form{display:flex;gap:8px}.history-dialog p{color:var(--library-dialog-dim)}
+
+/* The Create trigger is the shared MenuButton now, so this styles that button
+   and the bespoke dropdown's rules are gone with the dropdown. */
+.library-create.aui-menu-trigger {
+  width: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: var(--aether-size-row);
+  padding: var(--aether-control-padding-y) var(--aether-control-padding-x);
+  border: var(--aether-control-border-width) solid transparent;
+  border-radius: var(--aether-radius-button);
+  background: var(--aether-color-accent);
+  color: var(--aether-color-text-on-selected);
+  font: inherit; cursor: pointer;
+}
+.library-create.aui-menu-trigger:hover:not(:disabled) { background: var(--aether-color-accent-strong); }
+.library-create.aui-menu-trigger:disabled { opacity: .55; cursor: default; }
+
+.library-user-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 4px 2px 0; font-size: 13px; }
+.library-section-title { margin-top: 14px; padding: 0 2px; font-size: var(--aether-font-size-label); font-weight: var(--aether-font-weight-strong); text-transform: uppercase; letter-spacing: var(--aether-font-letter-caps); color: var(--aether-color-text-faint); }
+.library-workspaces { display: grid; gap: 2px; }
+.library-workspaces-empty { margin: 4px 2px; font-size: 11px; color: var(--aether-color-text-faint); }
+.library-workspaces button { display: flex; gap: 10px; align-items: center; border: 0; background: transparent; color: var(--aether-color-text-soft); padding: 9px 10px; border-radius: 6px; font: inherit; text-align: left; cursor: pointer; }
+.library-workspaces button:disabled { opacity: 0.45; cursor: default; }
+
+.library-create-plus { margin-right: 6px; font-size: 15px; font-weight: 700; line-height: 1; }
+.library-workspace-tile { display: grid; place-items: center; width: 20px; height: 20px; flex: none; border-radius: 6px; background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); font-size: 10px; font-weight: 700; }
+.library-workspaces button[aria-current] { background: var(--aether-color-bg-selected); color: var(--aether-color-text-on-selected); }
+
+/* Get started cards (Office-style) */
+.library-start { margin-bottom: 28px; }
+/* Section headers share one treatment (matches .library-list-heading h2). */
+.library-start h2 { font-size: 16px; margin: 18px 0 12px; }
+.library-start-cards { display:flex; gap:12px; flex-wrap:wrap; }
+.library-start-cards > button { display:flex; align-items:center; gap:12px; min-width:215px; padding:12px 16px; border-radius:10px; border:1px solid var(--aether-color-border); background:var(--aether-color-bg-panel); color:var(--aether-color-text); cursor:pointer; text-align:left; }
+.library-start-cards > button:hover:not(:disabled) { background:var(--aether-color-bg-control); }
+.library-start-cards > button:disabled { opacity:.55; cursor:default; }
+.library-start-cards strong { display:block; font:600 13px system-ui; }
+.library-start-cards small { display:block; font:11px system-ui; color:var(--aether-color-text-faint); }
+.library-start-cards span { display:block; }
+
+/* Type chips + name filter (OneDrive-style) */
+.library-filter-row { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:12px 0; flex-wrap:wrap; }
+.library-filter-left { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.library-filter-row .library-list-tools { display:inline-flex; align-items:center; gap:6px; }
+.library-name-filter { min-width:min(220px, 100%); flex:1 1 180px; padding:6px 12px; border-radius:999px; border:1px solid var(--aether-color-border); background:var(--aether-color-bg-control); color:var(--aether-color-text); font:12px system-ui; }
+
+/* Recent table rows: tile icon + name/location subline */
+.library-table .library-file-name { display:inline-flex; flex-direction:column; gap:1px; }
+.library-table .library-file-name strong { font:500 13px system-ui; }
+.library-table .library-file-name small { font:11px system-ui; color:var(--aether-color-text-faint); }
+
+/* Right-click context menu (OneDrive-style) */
+.library-context-item { position:relative; }
+.library-context-caret { margin-left:auto; color:var(--aether-color-text-faint); }
+.library-context-submenu { position:absolute; left:calc(100% - 4px); top:-6px; min-width:180px; padding:6px; border-radius:10px; border:1px solid var(--aether-color-border); background:var(--aether-color-bg-panel); box-shadow:0 14px 34px var(--library-scrim); }
+
+/* Clean borderless list tools (match header/toolbar icon buttons). */
+.library-tool { display:inline-flex; align-items:center; gap:6px; padding:5px 9px; border:0; border-radius:6px; background:transparent; color:var(--aether-color-text); font:12px system-ui; cursor:pointer; }
+.library-tool:hover { background:var(--aether-color-bg-control); }
+.library-tool[aria-pressed="true"], .library-tool[aria-expanded="true"] { background:var(--aether-color-bg-control); }
+.library-tool-glyph { font-size:13px; }
+.library-toolmenu { position:relative; }
+.library-toolmenu-list { position:absolute; right:0; top:calc(100% + 5px); z-index:70; min-width:170px; padding:5px; border-radius:8px; border:1px solid var(--aether-color-border); background:var(--aether-color-bg-panel); box-shadow:0 10px 30px var(--library-scrim); display:grid; }
+.library-toolmenu-list > button { display:flex; align-items:center; gap:9px; padding:7px 10px; border:0; border-radius:6px; background:transparent; color:var(--aether-color-text); font:12.5px system-ui; cursor:pointer; text-align:left; }
+.library-toolmenu-list > button:hover { background:var(--aether-color-bg-control); }
+.library-toolmenu-check { margin-left:auto; color:var(--aether-color-accent); }
+.library-filter-left .library-toolmenu-list { right:auto; left:0; }
+
+/* Two cards: the list (header + rows on one surface) and the details tray.
+   The row grows to the bottom of the view so the list card never stops short. */
+.library-listing { display: flex; align-items: stretch; gap: 12px; flex: 1 0 auto; }
+.library-listing-main,
+.library-details { border: 1px solid var(--aether-color-border); border-radius: 10px; background: var(--aether-color-bg-panel); }
+.library-listing-main { flex: 1; min-width: 0; overflow: auto; display: flex; flex-direction: column; }
+.library-listing .library-grid { padding: 16px; }
+.library-details { min-width: 0; }
+.library-selected-chip { border:1px solid var(--aether-color-border); border-radius:999px; }
+.library-command-bar { flex-wrap: wrap; }
+
+/* --- Sidebar constant-geometry contract ---------------------------------
+   A row is [36px icon slot][label]. Rows are 36px tall on a 4px grid in
+   BOTH states; the panel's 10px padding never changes, so every icon keeps
+   its exact position while labels appear/disappear. Expanded sections are
+   introduced by their header (user name, WORKSPACES); collapsed, the header
+   is replaced by a divider line. */
+.library-nav nav { margin-top: 0; }
+.library-nav .library-user-row { height: var(--aether-size-row); padding: 0; }
+.library-nav .library-user-row .aui-sidebar-label { margin-left: 10px; }
+.library-nav .library-user-row .aui-sidebar-toggle { margin-left: auto; }
+.library-nav .library-workspaces { gap: var(--aether-size-grid); }
+.library-nav .library-workspaces button { height: var(--aether-size-row); padding: 0; gap: 0; }
+.library-nav .library-workspace-tile { margin: 0 8px; }
+.library-nav .library-workspaces button svg { flex: none; margin: 0 10px; }
+.library-nav .library-create.aui-menu-trigger { justify-content: flex-start; }
+.library-create-plus { width: var(--aether-size-icon-slot); margin: 0; display: grid; place-items: center; }
+.library-nav .library-section-title { margin: 6px 0 0; padding: 0 10px; }
+.library-nav .library-nav-footer { padding: 0; }
+.library-nav .library-nav-footer svg { flex: none; margin: 0 10px; }
+
+/* Collapsed: labels hide (shared rule); geometry identical; headers → dividers. */
+.library-nav.aui-sidebar--collapsed .library-create .aui-button { width: var(--aether-size-icon-slot); border-radius: 50%; }
+.library-nav.aui-sidebar--collapsed .library-user-row .aui-sidebar-toggle { margin-left: 0; }
+.library-nav.aui-sidebar--collapsed nav { border-top: 1px solid var(--aether-color-border); padding-top: 8px; }
+.library-nav.aui-sidebar--collapsed .library-section-title { height: 1px; margin: 6px 8px 0; padding: 0; background: var(--aether-color-border); overflow: hidden; }
+
+/* Coarse pointer: the library's own navigation and menus. */
+@media (pointer: coarse) {
+  .library-nav nav button,
+  .library-workspaces button,
+  .library-toolmenu-list > button,
+  .library-tool,
+  .library-breadcrumb button { min-height: 44px; }
+  .library-breadcrumb button { padding-inline: 8px; }
+}
+
+/* ------------------------------------------------------------------------
+   Responsive ladder — LAST in the file on purpose. These rules carry no more
+   specificity than the base ones they adjust, so if a base rule is declared
+   after them it silently wins. That already happened once: `.library-user-row`
+   sits near the end of this file and beat the stacked rule that hides it,
+   which pushed the row 34px past a 589px window.
+   ------------------------------------------------------------------------ */
+
+/* Four steps, each one earning its change rather than shaving pixels off the
+   same layout: roomy, tight, an icon rail, then stacked. The rail step is the
+   important one — below about 960px a 175px sidebar is a fifth of the window
+   spent on words the icons already say. */
+
+/* Tight: the sidebar narrows and the decorative art goes. */
+@media (max-width: 1180px) {
+  .library-root { --library-nav: 180px; }
+  .library-main { padding: 22px 18px; }
+  .library-welcome { padding: 24px; }
+  .library-hero-art { display: none; }
+  .library-workspace { display: none; }
+}
+
+/* Icon rail: the sidebar keeps every target and drops its labels, which is
+   what the collapsed state already does; here the width decides it. */
+@media (max-width: 960px) {
+  .library-root { --library-nav: 60px; }
+  .library-nav { padding: 10px 8px 16px; align-items: center; }
+  .library-nav .aui-sidebar-label,
+  .library-user-row,
+  .library-section-title { display: none; }
+  .library-nav nav { width: 100%; }
+  .library-nav nav button,
+  .library-nav .aui-sidebar-row { justify-content: center; padding-inline: 0; }
+  .library-create.aui-menu-trigger { width: 100%; padding-inline: 0; }
+}
+
+/* Content reflows before the shell does: the detail pane moves under the list
+   and the table sheds the columns a narrow screen cannot spare. */
+@media (max-width: 860px) {
+  .library-listing { flex-direction: column; }
+  .library-details { width: auto; max-height: 220px; }
+  .library-details-empty { padding: 0; }
+  .library-details-empty svg { display: none; }
+  .library-table th:nth-child(3),
+  .library-table td:nth-child(3),
+  .library-table th:nth-child(4),
+  .library-table td:nth-child(4) { display: none; }
+  .library-welcome h1 { font-size: 22px; }
+}
+
+/* Stacked: no room for a rail beside the content, so it becomes a scrolling
+   row of destinations under the top bar. */
+@media (max-width: 620px) {
+  .library-root { grid-template-columns: minmax(0, 1fr); grid-template-rows: var(--aether-size-topbar) auto minmax(0, 1fr); }
+  .library-top { padding: 0 10px; gap: 8px; }
+  .library-top > input { width: 0; min-width: 70px; flex: 1; }
+  .library-top strong { font-size: 11px; }
+  .library-nav {
+    grid-column: 1; grid-row: 2; width: auto; padding: 8px 10px;
+    flex-direction: row; align-items: center; flex-wrap: nowrap; gap: 8px;
+    border-right: 0; border-bottom: 1px solid var(--aether-color-border);
+  }
+  .library-nav nav { display: flex; width: auto; margin-top: 0; min-width: 0; flex: 1 1 auto; overflow-x: auto; }
+  /* Sidebar furniture, not destinations: the name, the Workspaces heading and
+     the collapse toggle have no job in a horizontal row, and the name alone
+     pushed the row 34px past the window. */
+  .library-user-row, .library-section-title, .library-workspaces { display: none; }
+  .library-nav nav button { white-space: nowrap; flex-shrink: 0; padding: 8px; font-size: 11px; }
+  .library-nav-footer, .library-nav > a, .library-nav-spacer { display: none; }
+  .library-create { width: auto; flex: none; }
+  .library-create > button { padding-inline: 12px; }
+  .library-main { grid-column: 1; grid-row: 3; padding: 16px 12px; }
+  .library-details { max-height: 180px; }
+  .library-welcome { padding: 18px; }
+  .library-list-heading { gap: 8px; }
+}

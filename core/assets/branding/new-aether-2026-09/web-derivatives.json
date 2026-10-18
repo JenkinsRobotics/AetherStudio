@@ -1,0 +1,94 @@
+{
+  "purpose": "Browser artwork derivatives; PNG masters and original archives remain unchanged.",
+  "command": "cwebp -q 90 SOURCE.png -o OUTPUT.webp",
+  "files": [
+    {
+      "source": "aether-studio.png",
+      "file": "aether-studio.webp",
+      "source_sha256": "c71c122ab83b3f4974c2afcf3926e2959f7f96be08baab47ca4b100b3320d911",
+      "sha256": "13ba030da39a084954a9dcdb63578269aee4c5c44657b3bf7235a94b7ef53842",
+      "source_bytes": 1490391,
+      "bytes": 60750
+    },
+    {
+      "source": "aether-cad.png",
+      "file": "aether-cad.webp",
+      "source_sha256": "ef08360a457e74e8c71144bcc5d284323c1815789c5628487a53e501b91ba455",
+      "sha256": "e020e8787643eae5482cb1d228f175293489cc07db46ad997aa2793af0869604",
+      "source_bytes": 1578715,
+      "bytes": 123102
+    },
+    {
+      "source": "aether-animate.png",
+      "file": "aether-animate.webp",
+      "source_sha256": "914f55db5f410338eecc2b0f72b7b2422be5128895c7e54555c411aa4da235fb",
+      "sha256": "7c9474b7b22fe0a5f9ba33516fa72a961e4c4bae03d0e552a2c89acfd84b4681",
+      "source_bytes": 1871991,
+      "bytes": 131244
+    },
+    {
+      "source": "aether-map.png",
+      "file": "aether-map.webp",
+      "source_sha256": "d1d2fe0fa546d64bdba65a54f89814f15da6088d0526a6f498df020d93f6ed5d",
+      "sha256": "459432ba9e226ffad4c9648ab36fecf4dec5e95fa7b439231defce3db39b25ff",
+      "source_bytes": 1778643,
+      "bytes": 148730
+    },
+    {
+      "source": "aether-drive.png",
+      "file": "aether-drive.webp",
+      "source_sha256": "62862a55bfc0990ee4251d3dad92032b69d9ec10b8f08e7522eaba60513593c0",
+      "sha256": "ee5603d01fbdedae8a653e795fcad865f47ec8c328b3723c835b0b59cdaeb8c6",
+      "source_bytes": 1538248,
+      "bytes": 77976
+    },
+    {
+      "source": "aether-io.png",
+      "file": "aether-io.webp",
+      "source_sha256": "59c281a46087f3deda776df0e6019f07ffca6f0f97dc1dc0335d1f1f3ed2759b",
+      "sha256": "43820f4c30bb038902344afa5e6ba678e77a10a61f67c175926b16ee3c6e1e75",
+      "source_bytes": 1505322,
+      "bytes": 83160
+    },
+    {
+      "source": "aether-ui.png",
+      "file": "aether-ui.webp",
+      "source_sha256": "a0f6200d861fbac0777b4976d5d03ffb7a2f292bd58fa15c1cd86b70203b02dd",
+      "sha256": "9cb8a18ab70f255452c1e00aea6c6e030c45b5b13f3ce4ba7f2662a57a630c30",
+      "source_bytes": 1429912,
+      "bytes": 95102
+    },
+    {
+      "source": "aether-vector.png",
+      "file": "aether-vector.webp",
+      "source_sha256": "119f74b50e8d80f2f90bc8ec135c3c6aa531714bb145172cd1ce55be6cb7a6b3",
+      "sha256": "ec07cf248e41e678235249d272684f2aab3c6da959489bbf03469eb17e937c10",
+      "source_bytes": 1725731,
+      "bytes": 75672
+    },
+    {
+      "source": "aether-map-hero-v2.png",
+      "file": "aether-map-hero-v2.webp",
+      "source_sha256": "053349c84cb98d18e196cdad45b1d4ad86a5b57d9a6ebec1c146a64bbd4fb0e4",
+      "sha256": "fc4f7dc9453b291025ccd5609de63b84b9e7b8842a03706be56c9c282ee2ab4d",
+      "source_bytes": 2060397,
+      "bytes": 260812
+    },
+    {
+      "source": "aether-sketch-hero.png",
+      "file": "aether-sketch-hero.webp",
+      "source_sha256": "62aeb579aa7b05c5bb01b2af7a8a62869123491dd1e8d8ccb80456529b877d0d",
+      "sha256": "c1da3cd5be3fddc25904c0c73890e71382d1d5ad41e37734475c5c529124bc08",
+      "source_bytes": 2539452,
+      "bytes": 272740
+    },
+    {
+      "source": "aether-vector-hero.png",
+      "file": "aether-vector-hero.webp",
+      "source_sha256": "49ff710a9a7e21da8dc2f03c47d16bb130fda36854926811644fa1e36df03af8",
+      "sha256": "6f8bc60cd310609189d1509708dd6c8219928b01ad311754746241757cda3dfd",
+      "source_bytes": 1402415,
+      "bytes": 85806
+    }
+  ]
+}

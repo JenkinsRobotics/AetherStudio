@@ -1,0 +1,233 @@
+.aui-application-sidebar.aui-sidebar {
+  width: 248px;
+  height: 100%;
+  flex: none;
+  padding: 14px 12px 12px;
+  gap: var(--aether-list-section-gap, 14px);
+  background: var(--aether-color-bg-panel);
+  color: var(--aether-color-text);
+  border-right: 1px solid var(--aether-color-border);
+  font-family: var(--aether-font-family);
+}
+.aui-application-sidebar.aui-sidebar .aui-sidebar-body { gap: var(--aether-list-section-gap, 14px); }
+.aui-application-sidebar-brand { display: flex; align-items: center; gap: 8px; flex: none; }
+.aui-application-sidebar-brand > a { display: flex; flex: 1; min-width: 0; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+.aui-application-sidebar-brand strong { font-size: 15px; white-space: nowrap; }
+.aui-application-sidebar-brand .aui-sidebar-toggle { flex: none; margin: 0; }
+.aui-application-sidebar-mark { display:none; }
+.aui-application-sidebar-brand--wordmark > :is(a, button) > .aui-sidebar-label { display:flex; min-width:0; width:100%; }
+.aui-application-sidebar-brand--wordmark .aui-app-wordmark { width:auto; height:auto; max-height:40px; max-width:100%; }
+.aui-sidebar--collapsed .aui-application-sidebar-brand--wordmark > :is(a, button) > .aui-sidebar-label { display:none; }
+.aui-sidebar--collapsed .aui-application-sidebar-mark { display:flex; }
+.aui-sidebar--collapsed .aui-application-sidebar-brand--wordmark > a { justify-content:center; }
+.aui-application-sidebar-content { min-height: 0; overflow: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: var(--aether-list-section-gap, 14px); }
+.aui-application-sidebar-caption { margin: 0 0 8px; padding: 0 12px; font-size: 11px; font-weight: 500; color: var(--aether-color-text-dim); }
+.aui-application-sidebar nav { gap: var(--aether-list-item-gap, 2px); }
+.aui-application-sidebar.aui-sidebar nav button,
+.aui-application-sidebar nav a { display: flex; align-items: center; justify-content: flex-start; width: 100%; min-height: var(--aether-list-navigation-height, 34px); height: auto; box-sizing: border-box; padding: 6px 12px; gap: 12px; border: 0; border-radius: 8px; background: transparent; color: var(--aether-color-text-dim); text-decoration: none; font: 13px var(--aether-font-family); cursor: pointer; text-align: left; }
+.aui-application-sidebar.aui-sidebar nav button > svg,
+.aui-application-sidebar nav a > svg { width: 16px; height: 16px; margin: 0; flex: none; }
+.aui-application-sidebar nav a:hover,
+.aui-application-sidebar.aui-sidebar nav button:hover,
+.aui-application-sidebar nav a[aria-current],
+.aui-application-sidebar.aui-sidebar nav button[aria-pressed="true"] { background: var(--aether-color-bg-hover); color: var(--aether-color-text); }
+.aui-application-sidebar nav a[aria-current],
+.aui-application-sidebar nav button[aria-pressed="true"] { font-weight: 600; }
+.aui-application-sidebar a:focus-visible,
+.aui-application-sidebar button:focus-visible { outline: 2px solid var(--aether-color-accent); outline-offset: -2px; }
+.aui-application-sidebar-tools { display: flex; align-items: center; gap: 8px; padding: 8px 4px; margin-bottom: 8px; }
+.aui-application-sidebar-profile { min-height: 44px; }
+.aui-application-sidebar-fallback { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--aether-color-text-dim); }
+.aui-application-sidebar-fallback > .aui-sidebar-label { flex: 1; }
+.aui-application-sidebar-profile:has(aether-account:not(:empty)) .aui-application-sidebar-fallback { display: none; }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed { width: 64px; padding-inline: 10px; }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-sidebar-label,
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-caption { display: none; }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-brand { flex-direction: column; gap: 8px; }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed nav a,
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed nav button { justify-content: center; padding-inline: 0; }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-fallback,
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-tools { flex-direction: column; }
+@media (max-width: 680px) {
+  .aui-application-sidebar.aui-sidebar { width: min(248px, 65vw); }
+  .aui-application-sidebar-brand { flex-wrap: wrap; }
+}
+
+/* Standard sidebar rows (2026-10-10): sections with captions, badges, a solid
+   accent selection, pinned Settings and the account footer. Three classes so
+   the shared nav-row contract and product scopes cannot restyle these rows. */
+.aui-application-sidebar-action { flex: none; }
+.aui-application-sidebar-action > * { width: 100%; }
+.aui-application-sidebar-brand--toggle-only { justify-content: flex-end; }
+.aui-application-sidebar-navigation { display: flex; flex-direction: column; gap: var(--aether-list-section-gap, 14px); }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-section { display: flex; flex-direction: column; gap: var(--aether-list-item-gap, 2px); margin: 0; }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-caption { margin: 0 0 6px; padding: 0 12px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--aether-color-text-dim); }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row {
+  display: flex; align-items: center; gap: 12px; width: 100%; height: var(--aether-list-navigation-height, 34px); min-height: var(--aether-list-navigation-height, 34px); box-sizing: border-box;
+  padding: 0 12px; border: 0; border-radius: 8px; background: transparent; color: var(--aether-color-text);
+  font: 500 13px var(--aether-font-family); text-align: left; text-decoration: none; cursor: pointer;
+  transition: background-color var(--aether-motion-fast) var(--aether-motion-ease), color var(--aether-motion-fast) var(--aether-motion-ease);
+}
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row:hover:not(:disabled):not([aria-current="page"]),
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row[aria-expanded="true"] { background: var(--aether-color-bg-hover); }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row[aria-current="page"],
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row[aria-current="page"]:hover { background: var(--aether-color-accent); color: var(--aether-color-text-on-selected); font-weight: 600; }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row:disabled { opacity: .5; cursor: default; }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row:focus-visible { outline: 2px solid var(--aether-color-accent); outline-offset: -2px; }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-icon,
+.aui-sidebar.aui-application-sidebar .aui-app-launcher-icon { display: grid; place-items: center; flex: none; width: var(--aether-list-navigation-icon, 20px); height: var(--aether-list-navigation-icon, 20px); color: var(--aether-color-text-dim); }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row[aria-current="page"] .aui-application-sidebar-icon { color: inherit; }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-icon svg,
+.aui-sidebar.aui-application-sidebar .aui-app-launcher-icon svg { width: 18px; height: 18px; margin: 0; }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-row > .aui-sidebar-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aui-application-sidebar-badge { flex: none; min-width: 20px; padding: 1px 8px; box-sizing: border-box; border-radius: 999px; background: color-mix(in srgb, var(--aether-color-accent) 12%, transparent); color: var(--aether-color-accent); font-size: 12px; font-weight: 600; text-align: center; }
+.aui-application-sidebar-settings { display: flex; flex-direction: column; gap: var(--aether-list-item-gap, 2px); padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--aether-color-border); }
+/* The Settings row replaces the account control's own gear in this footer. */
+.aui-application-sidebar:has(.aui-application-sidebar-settings) .aui-application-sidebar-profile .suite-settings { display: none; }
+
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-row { justify-content: center; padding: 0; }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-badge { display: none; }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-brand--toggle-only { justify-content: center; }
+/* Captions become dividers in the rail. */
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-section:has(.aui-application-sidebar-caption) { padding-top: 12px; border-top: 1px solid var(--aether-color-border); }
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-section:first-child { padding-top: 0; border-top: 0; }
+
+/* Keep product-supplied navigation and standard rows on the same compact rhythm. */
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar nav button,
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar .aui-sidebar-row {
+  height: var(--aether-list-navigation-height, 34px); min-height: var(--aether-list-navigation-height, 34px);
+}
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar nav button > svg,
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar nav a > svg,
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar .aui-sidebar-row > svg {
+  width: var(--aether-list-navigation-icon, 20px); height: var(--aether-list-navigation-icon, 20px);
+}
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-icon,
+.aui-sidebar.aui-application-sidebar .aui-app-launcher-icon { width: var(--aether-list-navigation-icon, 20px); height: var(--aether-list-navigation-icon, 20px); }
+.aui-sidebar.aui-application-sidebar .aui-application-sidebar-icon svg,
+.aui-sidebar.aui-application-sidebar .aui-app-launcher-icon svg { width: var(--aether-list-navigation-icon, 20px); height: var(--aether-list-navigation-icon, 20px); }
+
+.aui-application-sidebar .aui-application-sidebar-brand {height:32px; min-height:32px;}
+.aui-application-sidebar.aui-sidebar.aui-sidebar--collapsed {width:69px; padding-inline:12px;}
+.aui-application-sidebar-user {display:flex; align-items:center; justify-content:space-between; min-height:34px; padding:0 12px;}
+.aui-application-sidebar-user .aui-sidebar-label {overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600;}
+.aui-application-sidebar-user .aui-sidebar-toggle {flex:none; margin:0;}
+.aui-application-sidebar.aui-sidebar .aui-application-sidebar-disclosure {display:flex; align-items:center; justify-content:space-between; height:34px; padding:0 12px; font-weight:500;}
+.aui-workspace-monogram {display:grid; place-items:center; width:20px; height:20px; flex:none; border-radius:5px; background:var(--aether-color-bg-hover); color:inherit; font-size:10px; font-weight:600;}
+.aui-sidebar--collapsed .aui-application-sidebar-user {padding:0; justify-content:center;}
+.aui-application-sidebar.aui-sidebar--collapsed .aui-application-sidebar-disclosure {justify-content:center; padding:0;}
+
+.aui-application-sidebar .aui-application-sidebar-disclosure {border:0;border-radius:8px;background:transparent;color:var(--aether-color-text-dim);font:inherit;cursor:pointer;flex:none;}
+.aui-application-sidebar .aui-application-sidebar-disclosure:hover {background:var(--aether-color-bg-hover);}
+.aui-application-sidebar-disclosure > svg {width:20px;height:20px;}
+.aui-application-sidebar-row[aria-current="page"] .aui-workspace-monogram {background:color-mix(in srgb,var(--aether-color-text-on-selected) 18%,transparent);}
+
+/* selection="tint": the current row is a soft accent wash with accent text. */
+.aui-sidebar.aui-application-sidebar--tint .aui-application-sidebar-row[aria-current="page"],
+.aui-sidebar.aui-application-sidebar--tint .aui-application-sidebar-row[aria-current="page"]:hover { background: color-mix(in srgb, var(--aether-color-accent) 12%, transparent); color: var(--aether-color-accent); }
+
+/* Captioned navigation: group captions remain readable in the narrow rail.
+   Brand art and navigation glyphs have separate, stable size roles. */
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar--captioned {
+  --aether-list-navigation-height: 32px;
+  --aether-list-navigation-icon: 18px;
+  width: 224px;
+  padding: 12px 14px;
+  gap: 12px;
+}
+.aui-application-sidebar--captioned.aui-sidebar .aui-sidebar-body { gap: 24px; }
+.aui-application-sidebar--captioned .aui-application-sidebar-brand { position:relative; height:44px; min-height:44px; }
+.aui-application-sidebar--captioned .aui-application-sidebar-brand > a { gap:8px; }
+.aui-application-sidebar--captioned .aui-application-sidebar-brand strong { font-size:14px; font-weight:600; }
+.aui-application-sidebar--captioned .aui-application-sidebar-brand > .aui-application-sidebar-brand-toggle { display:flex; flex:1; align-self:stretch; align-items:center; justify-content:flex-start; gap:8px; width:100%; height:44px; min-width:0; padding:0; margin:0; border:0; border-radius:4px; background:transparent; color:inherit; font:inherit; text-align:left; cursor:pointer; }
+.aui-application-sidebar--captioned .aui-application-sidebar-brand > .aui-application-sidebar-brand-toggle:hover { background:var(--aether-color-bg-hover); }
+.aui-application-sidebar--captioned .aui-application-sidebar-navigation { gap:22px; }
+.aui-sidebar.aui-application-sidebar--captioned .aui-application-sidebar-section { gap:0; }
+.aui-sidebar.aui-application-sidebar--captioned .aui-application-sidebar-caption { margin:0 0 8px; padding:0 8px; font-size:8px; line-height:12px; letter-spacing:.035em; font-weight:500; color:var(--aether-color-text); }
+.aui-sidebar.aui-application-sidebar--captioned .aui-application-sidebar-row { padding:0 8px; gap:8px; border-radius:4px; font-size:12px; font-weight:500; }
+.aui-sidebar.aui-application-sidebar--captioned .aui-application-sidebar-icon { color:inherit; }
+.aui-application-sidebar--captioned .aui-application-sidebar-badge { min-width:20px; padding:1px 6px; font-size:10px; font-weight:500; }
+.aui-application-sidebar--captioned .aui-application-sidebar-settings { margin-bottom:12px; padding-bottom:16px; }
+.aui-application-sidebar--captioned .aui-application-sidebar-profile { min-height:44px; }
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed { width:80px; padding-inline:14px; }
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-brand { flex-direction:row; }
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-brand > a,
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-brand > .aui-application-sidebar-brand-toggle { justify-content:center; }
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-caption { display:block; padding:0; text-align:center; font-size:7px; letter-spacing:0; }
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-section:has(.aui-application-sidebar-caption) { padding:0; border:0; }
+
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-fallback { flex-direction:row; justify-content:center; gap:2px; }
+.aui-application-sidebar--captioned.aui-sidebar.aui-sidebar--collapsed .aui-application-sidebar-fallback > button { width:24px; min-width:24px; height:28px; padding:4px; }
+
+/* Studio is an opt-in reference variant; standard/captioned geometry is unchanged. */
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar--studio {
+  --aether-list-navigation-height: 44px;
+  --aether-list-navigation-icon: 24px;
+  --aether-color-bg-panel: #101a20;
+  --aether-color-bg-control: #162630;
+  --aether-color-bg-hover: #1b303e;
+  --aether-color-border: #29404e;
+  --aether-color-text: #d4e1ee;
+  --aether-color-text-dim: #aabed1;
+  --aether-color-accent: #169fff;
+  --aether-color-text-on-selected: #eaf5ff;
+  box-sizing: border-box;
+  width: 232px;
+  padding: 10px 8px;
+  gap: 16px;
+  border: 1px solid #2b4250;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 50% 0, #1a2e3b70, transparent 48%), linear-gradient(110deg, #101a20, #0b1319 70%, #11202a);
+  box-shadow: inset 0 1px 0 #a0d4ff0d, 0 8px 24px #0003;
+  color-scheme: dark;
+}
+.aui-application-sidebar--studio.aui-sidebar .aui-sidebar-body { gap: 12px; }
+.aui-application-sidebar--studio .aui-application-sidebar-brand { height: 128px; min-height: 128px; }
+.aui-application-sidebar--studio .aui-application-sidebar-brand > .aui-application-sidebar-brand-toggle,
+.aui-application-sidebar--studio .aui-application-sidebar-brand > a {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; width: 100%; height: 100%; padding: 0; margin: 0; border: 0;
+  background: transparent; color: inherit; border-radius: 8px; cursor: pointer;
+}
+.aui-application-sidebar--studio .aui-application-sidebar-brand img,
+.aui-application-sidebar--studio .aui-application-sidebar-brand svg { width: 96px; height: 88px; object-fit: contain; }
+.aui-application-sidebar--studio .aui-application-sidebar-brand strong {
+  font-size: 21px; font-weight: 600; letter-spacing: .7px; text-transform: uppercase;
+  background: linear-gradient(110deg, #19b8ff, #c1d6ff 75%); background-clip: text; color: transparent;
+}
+.aui-application-sidebar--studio .aui-application-sidebar-brand--wordmark { height:64px; min-height:64px; }
+.aui-application-sidebar--studio .aui-application-sidebar-brand--wordmark .aui-app-wordmark { width:100%; height:auto; max-height:40px; }
+.aui-application-sidebar--studio .aui-application-sidebar-brand-toggle:hover { background: #28425528; }
+.aui-application-sidebar--studio .aui-application-sidebar-navigation { gap: 18px; }
+.aui-sidebar.aui-application-sidebar--studio .aui-application-sidebar-section { gap: 2px; }
+.aui-application-sidebar--studio .aui-application-sidebar-section + .aui-application-sidebar-section { border-top: 1px solid var(--aether-color-border); padding-top: 18px; margin-inline: 8px; }
+.aui-sidebar.aui-application-sidebar--studio .aui-application-sidebar-row {
+  position: relative; padding-inline: 16px; gap: 16px; border-radius: 6px;
+  color: #c4d5e6; font-size: 13px; font-weight: 400;
+}
+.aui-sidebar.aui-application-sidebar--studio .aui-application-sidebar-icon { color: #d4e4f3; }
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar--studio .aui-application-sidebar-row[aria-current="page"],
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar--studio .aui-application-sidebar-row[aria-current="page"]:hover {
+  background: linear-gradient(100deg, #086f9d 0, #124675 15%, #163368 100%);
+  color: #e9f4ff; font-weight: 500; box-shadow: inset 0 0 0 1px #1988de;
+}
+.aui-application-sidebar--studio .aui-application-sidebar-row[aria-current="page"]::before {
+  content: ""; position: absolute; left: 0; top: 3px; bottom: 3px; width: 3px;
+  background: #12b7ff; border-radius: 3px;
+}
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar--studio .aui-application-sidebar-row:focus-visible,
+.aui-application-sidebar--studio .aui-sidebar-toggle:focus-visible {
+  outline: 0; box-shadow: inset 0 0 0 2px #70c5ff;
+}
+.aui-application-sidebar--studio .aui-sidebar-footer { border-top: 1px solid var(--aether-color-border); margin-inline: 8px; padding-top: 14px; }
+.aui-sidebar.aui-application-sidebar.aui-application-sidebar--studio.aui-sidebar--collapsed { width: 72px; padding-inline: 8px; }
+.aui-application-sidebar--studio.aui-sidebar--collapsed .aui-application-sidebar-brand { height: 64px; min-height: 64px; flex-direction: row; }
+.aui-application-sidebar--studio.aui-sidebar--collapsed .aui-application-sidebar-brand img,
+.aui-application-sidebar--studio.aui-sidebar--collapsed .aui-application-sidebar-brand svg { width: 40px; height: 40px; }
+.aui-application-sidebar--studio.aui-sidebar--collapsed .aui-application-sidebar-row { padding-inline: 0; }
+.aui-application-sidebar--studio.aui-sidebar--collapsed .aui-application-sidebar-section + .aui-application-sidebar-section { margin-inline: 0; }
+.aui-application-sidebar--studio.aui-sidebar--collapsed .aui-sidebar-footer { margin-inline: 4px; }
+@media (forced-colors: active) {
+  .aui-application-sidebar--studio .aui-application-sidebar-brand strong { background: none; color: CanvasText; }
+  .aui-sidebar.aui-application-sidebar--studio .aui-application-sidebar-row[aria-current="page"] { outline: 1px solid Highlight; outline-offset: -1px; }
+}

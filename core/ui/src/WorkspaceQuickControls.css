@@ -1,0 +1,11 @@
+.aui-workspace-quick-controls, .aui-quick-control-bar { display:flex; align-items:center; gap:8px; }
+.aui-quick-control-bar { min-width:0; min-height:32px; }
+.aui-quick-control { display:flex; align-items:center; }
+.aui-quick-controls-menu { max-height:min(560px, 80vh); overflow:auto; }
+.aui-quick-controls-menu:not(.aui-menu) { width:280px; padding:12px; }
+.aui-quick-controls-menu input { box-sizing:border-box; width:100%; margin-bottom:10px; }
+.aui-document-bar .aui-workspace-quick-controls--compact,
+.aui-document-bar .aui-workspace-quick-controls--compact .aui-quick-control-bar { align-items:center; gap:4px; }
+.aui-document-bar .aui-workspace-quick-controls--compact .aui-quick-control { align-items:center; }
+.aui-document-bar .aui-workspace-quick-controls--compact :is(.aui-icon-button, .aui-app-launcher-button, .aui-appearance-toggle, .aui-studio-mode, .aui-workspace-windows) { align-self:center; width:28px; min-width:28px; height:28px; }
+.aui-document-bar .aui-workspace-quick-controls--compact :is(.aui-icon-button, .aui-app-launcher-button, .aui-appearance-toggle, .aui-studio-mode, .aui-workspace-windows) svg { width:16px; height:16px; }

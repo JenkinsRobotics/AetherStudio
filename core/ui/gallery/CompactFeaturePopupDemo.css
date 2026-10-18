@@ -1,0 +1,20 @@
+.cad-feature-comparison { display:grid; grid-template-columns:minmax(0, 1fr) minmax(330px, 400px); gap:24px; width:100%; align-items:start; }
+.cad-feature-comparison > article { min-width:0; }
+.cad-feature-comparison h3 { margin:0 0 8px; }
+.cad-feature-comparison p { font-size:12px; line-height:1.5; }
+.compact-feature-reference { width:300px; max-width:100%; min-width:0; }
+@media(max-width:1100px) { .cad-feature-comparison { grid-template-columns:1fr; } }
+/* Bare feature windows (Widgets › Aether CAD): no card, wrap at their own width. */
+.cad-feature-editors { display:flex; flex-wrap:wrap; align-items:flex-start; gap:20px; }
+.cad-feature-editor { position:relative; flex:none; }
+.cad-feature-editor .aui-feature-window { max-height:none; }
+.feature-editor-variants { display:grid; gap:32px; width:100%; min-width:0; }
+.feature-editor-design { min-width:0; }
+.feature-editor-design + .feature-editor-design { border-top:1px solid var(--aether-color-border); padding-top:24px; }
+.feature-editor-design > h2 { margin:0 0 16px; font-size:14px; font-weight:600; color:var(--aether-color-text); }
+.feature-editor-row { display:flex; flex-wrap:wrap; align-items:flex-start; gap:24px; min-width:0; }
+.feature-editor-specimen { display:grid; align-content:start; gap:10px; min-width:0; max-width:100%; }
+.feature-editor-specimen > small { font-size:11px; color:var(--aether-color-text-dim); }
+.feature-editor-specimen .cad-feature-editor, .feature-editor-specimen .aui-feature-window { max-width:100%; }
+
+/* Compact specimens keep the same 300px width and wrapping flow as Standard. */

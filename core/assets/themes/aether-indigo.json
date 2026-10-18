@@ -1,0 +1,29 @@
+{
+  "$schema": "aether-theme/v1",
+  "id": "aether-indigo",
+  "name": "Aether Indigo",
+  "description": "Aether Studio with the indigo accent.",
+  "extends": "aether-studio",
+  "modes": {
+    "dark": {
+      "color-accent": "#8b87ff",
+      "color-accent-strong": "#8b87ff",
+      "color-accent-icon": "#8b87ff",
+      "color-bg-selected": "#8b87ff",
+      "color-border-focus": "#8b87ff",
+      "color-border-control-hover": "#8b87ff",
+      "color-selection-edge": "#8b87ff",
+      "viewport-selection": "#8b87ff"
+    },
+    "light": {
+      "color-accent": "#5b54e0",
+      "color-accent-strong": "#5b54e0",
+      "color-accent-icon": "#5b54e0",
+      "color-bg-selected": "#5b54e0",
+      "color-border-focus": "#5b54e0",
+      "color-border-control-hover": "#5b54e0",
+      "color-selection-edge": "#5b54e0",
+      "viewport-selection": "#5b54e0"
+    }
+  }
+}

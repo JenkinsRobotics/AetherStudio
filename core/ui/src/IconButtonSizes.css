@@ -1,0 +1,9 @@
+/* Shared desktop metrics, independent of selection shape or container width. */
+:root {
+  --aui-icon-small-size: 28px;
+  --aui-icon-small-glyph: 20px;
+  --aui-icon-medium-size: 36px;
+  --aui-icon-medium-glyph: 20px;
+  --aui-icon-large-size: 40px;
+  --aui-icon-large-glyph: 24px;
+}

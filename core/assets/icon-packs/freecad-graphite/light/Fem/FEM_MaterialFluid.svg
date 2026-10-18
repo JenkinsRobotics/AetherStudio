@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Fem/Gui/Resources/icons/FEM_MaterialFluid.svg. Authors: [qingfengxia], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient3876">
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="0" id="stop3878" />
+      <stop style="stop-color:#a8b8cb;stop-opacity:1" offset="1" id="stop3880" />
+    </linearGradient>
+    <linearGradient id="linearGradient3844">
+      <stop style="stop-color:#c3cfdc;stop-opacity:1" offset="0" id="stop3846" />
+      <stop style="stop-color:#9caec3;stop-opacity:1" offset="1" id="stop3848" />
+    </linearGradient>
+    <radialGradient xlink:href="#linearGradient3844" id="radialGradient3856" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.93686282,0.60595824,-1.478506,2.2858957,35.362767,-60.868733)" cx="56.88583" cy="20.735109" fx="56.88583" fy="20.735109" r="7" />
+    <linearGradient xlink:href="#linearGradient3876" id="linearGradient3884" x1="25.626812" y1="42.536713" x2="29.664934" y2="58.064484" gradientUnits="userSpaceOnUse" spreadMethod="pad" />
+  </defs>
+  <g id="layer1">
+    <ellipse style="fill:#c3cfdc;fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" id="path4042" cx="31.683996" cy="50.300598" rx="27.257332" ry="8.8730106" transform="matrix(1.0639339,0,0,1.1270131,-1.7096784,-5.6894328)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    <g id="g3852" transform="translate(-29,-1)">
+      <path id="path3824" d="m 62,4 c -4,14 -8,12 -8,20 0,2 2,8 8,8 6,0 8,-6 8,-8 0,-8 -4,-6 -8,-20 z" style="fill:#c3cfdc;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+      <path id="path3824-3" d="m 62,10 c -3,8 -6,8 -6,14 0,2 2,6 6,6 4,0 6,-4 6,-6 0,-6 -3,-6 -6,-14 z" style="fill:url(#radialGradient3856);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <ellipse style="fill:url(#linearGradient3884);fill-opacity:1;stroke:#405269;stroke-width:1.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" id="path4042-6" cx="31.683996" cy="50.300598" rx="27.257332" ry="8.8730106" transform="matrix(0.99055917,0,0,0.90161055,0.61512713,5.64845)" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

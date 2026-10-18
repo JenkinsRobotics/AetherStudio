@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" id="svg2816" version="1.1" viewBox="0 0 64 64" fill="#405269" color="#405269">
+  <desc>FreeCAD Graphite adaptation by Aether Studio contributors, 2026-09-24. Original: src/Mod/Sketcher/Gui/Resources/icons/obsolete/Sketcher_ConstrainParallel_old.svg. Authors: [wmayer], [agryson] Alexander Gryson. Rights: FreeCAD LGPL2+. Source and license notices: https://www.gnu.org/copyleft/lesser.html</desc><defs id="defs2818">
+    <linearGradient id="linearGradient3779">
+      <stop style="stop-color:#c4d0dd;stop-opacity:1" offset="0" id="stop3781" />
+      <stop style="stop-color:#e5ecf3;stop-opacity:1" offset="1" id="stop3783" />
+    </linearGradient>
+    <linearGradient xlink:href="#linearGradient3779" id="linearGradient3785" x1="24.935808" y1="25.862068" x2="15.760358" y2="-25.862068" gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g id="layer1" transform="translate(0,32)">
+    <g style="font-size:82.30408478px;font-style:normal;font-weight:normal;fill:#eaf0f6;fill-opacity:1;stroke:#405269;stroke-width:1.1;font-family:Bitstream Vera Sans" id="text2818" transform="matrix(0.98087829,0,0,0.96666668,7.5410072,-4.7599922e-7)">
+      <path d="m 15.760358,-21.724137 0,20.6896547 10.194945,0 c 3.777599,0 6.672508,-0.7270395 8.735502,-2.6828649 2.062923,-1.955758 2.478898,-5.0795279 2.478937,-8.6964448 -3.9e-5,-3.590041 0.02393,-5.285538 -2.038989,-7.24138 -2.062994,-1.955741 -5.397851,-2.068912 -9.17545,-2.068965 l -10.194945,0 m -8.1559561,-8.275862 18.3255191,0 c 6.724682,6e-5 11.801703,1.527185 15.231078,4.581379 3.456083,3.027514 5.184146,7.474931 5.184193,13.342264 -4.7e-5,5.9210007 -2.058348,10.6013891 -5.229715,13.561213 -3.171367,2.9598239 -7.004219,5.7565227 -15.160174,5.7565227 l -10.194945,0 L 15.722285,30 l -8.1178831,0 0,-59.999999" style="fill:url(#linearGradient3785);fill-opacity:1;stroke:#405269;stroke-width:1.1" id="path2988" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+    <g style="font-size:82.30408477999999661px;font-style:normal;font-weight:normal;fill:none;fill-opacity:1;stroke:#405269;stroke-width:1.1;font-family:Bitstream Vera Sans" id="text2818-3" transform="matrix(0.98087829,0,0,0.96666668,7.541007,-4.2954024e-7)">
+      <path d="m 13.721369,-23.793103 0,24.8275862 14.272923,0 c 3.100671,0 7.898444,-2.5588985 8.971551,-4.137931 2.08676,-3.0705801 2.242888,-6.2068965 2.242888,-9.3103442 0,-3.103449 0,-7.034483 -3.058483,-9.103449 -3.058484,-2.068965 -6.417346,-2.275809 -10.194945,-2.275862 l -12.233934,0 m -4.0779779,-4.137931 16.3119119,0 c 6.724682,0 10.843547,1.083737 14.272922,4.137931 3.058484,3.103449 4.077978,6.206897 4.077978,11.379311 0.131486,6.2144203 -1.856407,9.8329394 -5.097472,12.82758554 C 36.150248,3.1034487 33.091764,5.1724142 25.955303,5.1724142 l -12.233934,0 0,22.7586208 -4.0779779,0 0,-55.862069" style="fill:none;stroke:#405269;stroke-width:1.1" id="path2988-6" vector-effect="non-scaling-stroke" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>
