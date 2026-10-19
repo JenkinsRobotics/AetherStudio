@@ -7,10 +7,11 @@ import arrow2 from "@aether/assets/icons/navigation/up.svg?raw";
 import arrow3 from "@aether/assets/icons/navigation/left.svg?raw";
 import arrow4 from "@aether/assets/icons/navigation/right.svg?raw";
 import arrow5 from "@aether/assets/icons/navigation/down.svg?raw";
-import { viewportCubeRegionsForUpAxis, viewportCubeColorTokens, type ViewportUpAxis, type CubeVector, type CubeFaceView } from "./viewport-cube-geometry";
+import { viewportCubeRegionsForUpAxis, viewportCubeColorTokens, viewportCubeProjection, viewportCubeAxisOrigin, viewportCubeAxes, type ViewportUpAxis, type CubeVector, type CubeFaceView } from "./viewport-cube-geometry";
 import "./ViewportNavigationCube.css";
 import { ViewportCubeHome } from "./ViewportCubeHome";
-import type { MenuItem } from "./Menu";
+import { MenuButton, type MenuItem } from "./Menu";
+import { AetherIcon } from "./AetherIcon";
 
 export type ViewportOrientation = readonly [
   x: number,
@@ -26,6 +27,8 @@ export interface ViewportNavigationCubeProps {
   upAxis?: ViewportUpAxis;
   id?: string;
   className?: string;
+  /** Studio uses a quiet surface, corner controls and direct cube navigation. */
+  appearance?: "standard" | "studio";
   onSelectView: (view: StandardViewportView) => void;
   onSelectDirection?: (direction: CubeVector) => void;
   onFit: () => void;
@@ -36,7 +39,6 @@ export interface ViewportNavigationCubeProps {
 }
 
 type Vector3 = readonly [number, number, number];
-const point = (x: number, y: number, z: number): Vector3 => [x, y, z];
 
 function normalizedOrientation([x, y, z, w]: ViewportOrientation): ViewportOrientation {
   const length = Math.hypot(x, y, z, w) || 1;
@@ -86,7 +88,7 @@ export function viewportCubeTransform(orientation: ViewportOrientation): string 
   return `matrix3d(${matrix.join(",")})`;
 }
 
-const project = ([x, y]: Vector3): readonly [number, number] => [46 + x * 21, 46 - y * 21];
+const project = ([x, y]: Vector3): readonly [number, number] => [viewportCubeProjection.center + x * viewportCubeProjection.scale, viewportCubeProjection.center - y * viewportCubeProjection.scale];
 
 function centroid(points: readonly (readonly [number, number])[]): readonly [number, number] {
   const [x, y] = points.reduce(
@@ -103,6 +105,7 @@ export function ViewportNavigationCube({
   upAxis = "y",
   id,
   className,
+  appearance = "standard",
   onSelectView,
   onSelectDirection,
   onFit,
@@ -115,6 +118,7 @@ export function ViewportNavigationCube({
   const [highlight, setHighlight] = useState<string | null>(null);
   const maskPrefix = useId().replaceAll(":", "");
   const classes = ["aui-viewport-cube"];
+  if (appearance === "studio") classes.push("aui-viewport-cube--studio");
   if (className) classes.push(className);
   if (sceneReady) classes.push("aui-viewport-cube--3d");
   const projections = viewportCubeRegionsForUpAxis(upAxis)
@@ -131,34 +135,27 @@ export function ViewportNavigationCube({
     })
     .filter((face) => face.facing > 1e-9)
     .sort((first, second) => first.depth - second.depth);
-  const axisOrigin = rotateIntoCamera(point(-1.15, -1.15, -1.15), orientation);
-  const axes = [
-    { id: "x", end: rotateIntoCamera(point(1.2, -1.15, -1.15), orientation) },
-    { id: "y", end: rotateIntoCamera(point(-1.15, 1.2, -1.15), orientation) },
-    { id: "z", end: rotateIntoCamera(point(-1.15, -1.15, 1.2), orientation) },
-  ] as const;
+  const axisOrigin = rotateIntoCamera(viewportCubeAxisOrigin, orientation);
+  const axes = viewportCubeAxes.map(axis => ({...axis, end:rotateIntoCamera(axis.end, orientation)}));
   const [axisX, axisY] = project(axisOrigin);
   const facets = projections.map(face => face.cameraVertices);
   const depthMasks = [
-    ...axes.flatMap(axis => [
-      { id: `${maskPrefix}-${axis.id}-line`, polygons: cubeAxisOccluders(facets, axisOrigin, axis.end) },
-      { id: `${maskPrefix}-${axis.id}-label`, polygons: cubeAxisOccluders(facets, axis.end) },
-    ]),
+    ...axes.map(axis => ({ id: `${maskPrefix}-${axis.id}-line`, polygons: cubeAxisOccluders(facets, axisOrigin, axis.end) })),
     { id: `${maskPrefix}-origin`, polygons: cubeAxisOccluders(facets, axisOrigin) },
   ];
 
   return (
     <div id={id} className={classes.join(" ")} aria-label="Viewport navigation">
-      <button className="aui-viewport-cube-roll aui-viewport-cube-roll--left" type="button" title="Roll view counterclockwise" aria-label="Roll view counterclockwise" onClick={() => onRoll(-1)}>
+      {appearance !== "studio" && <><button className="aui-viewport-cube-roll aui-viewport-cube-roll--left" type="button" title="Roll view counterclockwise" aria-label="Roll view counterclockwise" onClick={() => onRoll(-1)}>
         <NavigationArrow name="roll-left" />
       </button>
       <button className="aui-viewport-cube-roll aui-viewport-cube-roll--right" type="button" title="Roll view clockwise" aria-label="Roll view clockwise" onClick={() => onRoll(1)}>
         <NavigationArrow name="roll-right" />
       </button>
       <button className="aui-viewport-cube-nudge aui-viewport-cube-nudge--up" type="button" title="Nudge view up 15 degrees" aria-label="Nudge view up 15 degrees" onClick={() => onNudge(0, 1)}><NavigationArrow name="up" /></button>
-      <button className="aui-viewport-cube-nudge aui-viewport-cube-nudge--left" type="button" title="Nudge view left 15 degrees" aria-label="Nudge view left 15 degrees" onClick={() => onNudge(-1, 0)}><NavigationArrow name="left" /></button>
+      <button className="aui-viewport-cube-nudge aui-viewport-cube-nudge--left" type="button" title="Nudge view left 15 degrees" aria-label="Nudge view left 15 degrees" onClick={() => onNudge(-1, 0)}><NavigationArrow name="left" /></button></>}
       <ViewportCubeScene orientation={orientation} upAxis={upAxis} highlight={highlight} onReady={setSceneReady} />
-      <svg className="aui-viewport-cube-stage" viewBox="0 0 92 92" role="img" aria-label="Camera ViewCube">
+      <svg className="aui-viewport-cube-stage" viewBox={`0 0 ${viewportCubeProjection.size} ${viewportCubeProjection.size}`} role="img" aria-label="Camera ViewCube">
         <defs>
           {depthMasks.map(mask => <mask key={mask.id} id={mask.id} maskUnits="userSpaceOnUse" x="-100" y="-100" width="300" height="300" style={{ maskType: "luminance" }}>
             <rect x="-100" y="-100" width="300" height="300" fill="white" />
@@ -196,19 +193,22 @@ export function ViewportNavigationCube({
         <g className="aui-viewport-cube-axes" aria-hidden="true" pointerEvents="none">
           {axes.map((axis) => {
             const [endX, endY] = project(axis.end);
-            return (
-              <g key={axis.id} className={`aui-viewport-cube-axis-${axis.id}`}>
-                <line mask={`url(#${maskPrefix}-${axis.id}-line)`} x1={axisX} y1={axisY} x2={endX} y2={endY} />
-                <text mask={`url(#${maskPrefix}-${axis.id}-label)`} x={endX} y={endY}>{axis.id.toUpperCase()}</text>
-              </g>
-            );
+            const dx = endX - axisX, dy = endY - axisY, length = Math.hypot(dx,dy);
+            const labelX = endX + (length > .1 ? dx / length * 5 : -5);
+            const labelY = endY + (length > .1 ? dy / length * 5 : 5);
+            return <g key={axis.id} className={`aui-viewport-cube-axis-${axis.id}`}>
+              <line className="aui-viewport-cube-axis-hidden" x1={axisX} y1={axisY} x2={endX} y2={endY}/>
+              <line mask={`url(#${maskPrefix}-${axis.id}-line)`} x1={axisX} y1={axisY} x2={endX} y2={endY}/>
+              <text x={labelX} y={labelY}>{axis.id.toUpperCase()}</text>
+            </g>;
           })}
-          <circle mask={`url(#${maskPrefix}-origin)`} cx={axisX} cy={axisY} r="1.8" />
+          <circle mask={`url(#${maskPrefix}-origin)`} cx={axisX} cy={axisY} r="1.5"/>
         </g>
       </svg>
-      <button className="aui-viewport-cube-nudge aui-viewport-cube-nudge--right" type="button" title="Nudge view right 15 degrees" aria-label="Nudge view right 15 degrees" onClick={() => onNudge(1, 0)}><NavigationArrow name="right" /></button>
-      <button className="aui-viewport-cube-nudge aui-viewport-cube-nudge--down" type="button" title="Nudge view down 15 degrees" aria-label="Nudge view down 15 degrees" onClick={() => onNudge(0, -1)}><NavigationArrow name="down" /></button>
-      <ViewportCubeHome onHome={onFit} items={homeMenuItems} onSelect={onHomeMenuSelect} />
+      {appearance !== "studio" && <><button className="aui-viewport-cube-nudge aui-viewport-cube-nudge--right" type="button" title="Nudge view right 15 degrees" aria-label="Nudge view right 15 degrees" onClick={() => onNudge(1, 0)}><NavigationArrow name="right" /></button>
+      <button className="aui-viewport-cube-nudge aui-viewport-cube-nudge--down" type="button" title="Nudge view down 15 degrees" aria-label="Nudge view down 15 degrees" onClick={() => onNudge(0, -1)}><NavigationArrow name="down" /></button></>}
+      <ViewportCubeHome onHome={onFit} items={appearance === "studio" ? undefined : homeMenuItems} onSelect={onHomeMenuSelect} />
+      {appearance === "studio" && homeMenuItems?.length && onHomeMenuSelect ? <MenuButton className="aui-viewport-cube-options" label="Camera settings" items={homeMenuItems} onSelect={onHomeMenuSelect}><AetherIcon name="cube"/><AetherIcon name="chevron-down"/></MenuButton> : null}
     </div>
   );
 }

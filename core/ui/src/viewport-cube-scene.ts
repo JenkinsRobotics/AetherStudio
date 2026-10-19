@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { viewportCubeRegionsForUpAxis, viewportCubeColorTokens, type ViewportUpAxis } from "./viewport-cube-geometry";
+import { viewportCubeRegionsForUpAxis, viewportCubeColorTokens, viewportCubeProjection, type ViewportUpAxis } from "./viewport-cube-geometry";
 
 export type CubeScenePalette = Record<keyof typeof viewportCubeColorTokens | "x" | "y" | "z", string>;
 
@@ -21,7 +21,7 @@ function textTexture(text: string, color: string) {
  * face projection, so DOM keyboard/pointer targets align with mesh facets. */
 export class ViewportCubeScene {
   readonly scene = new THREE.Scene();
-  readonly camera = new THREE.OrthographicCamera(-46/21, 46/21, 46/21, -46/21, 0.1, 20);
+  readonly camera = new THREE.OrthographicCamera(-viewportCubeProjection.center/viewportCubeProjection.scale, viewportCubeProjection.center/viewportCubeProjection.scale, viewportCubeProjection.center/viewportCubeProjection.scale, -viewportCubeProjection.center/viewportCubeProjection.scale, 0.1, 20);
   readonly faces = new Map<string, THREE.Mesh<THREE.BufferGeometry, THREE.MeshBasicMaterial>>();
   private idleColors = new Map<string, THREE.Color>();
 
@@ -48,19 +48,8 @@ export class ViewportCubeScene {
         }
       }
     }
-    const origin = new THREE.Vector3(-1.15,-1.15,-1.15);
-    const axes = ["x","y","z"] as const;
-    axes.forEach((axis,index)=>{
-      const end = origin.clone().setComponent(index,1.2);
-      const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([origin,end]),new THREE.LineBasicMaterial({color:palette[axis],depthTest:true}));
-      line.name=`axis-${axis}`; this.scene.add(line);
-      const texture = textTexture(axis.toUpperCase(),palette[axis]);
-      if (texture) {
-        const label = new THREE.Sprite(new THREE.SpriteMaterial({map:texture,depthTest:true,depthWrite:false}));
-        label.position.copy(end); label.scale.set(2,0.5,1); label.name=`axis-${axis}-label`;
-        this.scene.add(label);
-      }
-    });
+    // The shared SVG layer projects corner axes into this same camera frame.
+    // It supplies crisp strokes plus faint occluded segments in both renderers.
     this.setOrientation([0,0,0,1]);
   }
 
@@ -91,9 +80,9 @@ export function readCubeScenePalette(host: HTMLElement): CubeScenePalette {
   return Object.fromEntries(Object.entries({...viewportCubeColorTokens,x:"--aether-color-error",y:"--aether-color-ok",z:"--aether-color-accent-icon"})
     .map(([key,token])=>[key,style.getPropertyValue(token).trim()])) as CubeScenePalette;
 }
-export function createCubeRenderer() {
+export function createCubeRenderer(size = 138) {
   const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1,2));
-  renderer.setSize(138,138); renderer.setClearColor(0,0);
+  renderer.setSize(size,size,false); renderer.setClearColor(0,0);
   return renderer;
 }

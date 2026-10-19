@@ -23,10 +23,32 @@
 .aui-viewport-cube .aui-viewport-cube-roll:hover svg { fill: var(--aether-color-accent); }
 .aui-viewport-cube .aui-viewport-cube-home { right: 7px; bottom: 6px; }
 .aui-viewport-cube .aui-viewport-cube-home svg { width: 15px; height: 15px; }
-.aui-viewport-cube .aui-viewport-cube-axes line { stroke-width: 1; }
-.aui-viewport-cube .aui-viewport-cube-axes text { font-size: 7px; }
+.aui-viewport-cube .aui-viewport-cube-axes line { stroke-width:2.5px; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+.aui-viewport-cube .aui-viewport-cube-axes .aui-viewport-cube-axis-hidden { opacity:.25; }
+.aui-viewport-cube .aui-viewport-cube-axes text { font-size:7px; font-weight:600; stroke:var(--aether-color-bg-panel); stroke-width:2.5px; vector-effect:non-scaling-stroke; paint-order:stroke; }
 
 .aui-viewport-cube-scene { position: absolute; left: 21px; top: 28px; width: 138px; height: 138px; pointer-events: none; }
 .aui-viewport-cube-scene canvas { display: block; width: 100%; height: 100%; }
 /* Retain accessible face controls, projected exactly onto the 3D facets. */
-.aui-viewport-cube--3d .aui-viewport-cube-stage { opacity: 0; }
+.aui-viewport-cube--3d .aui-viewport-cube-face { opacity:0; }
+
+/* Approved Studio navigator. Palette overrides stay local to the cube and are
+   shared by the depth-buffered scene and its accessible SVG fallback. */
+.aui-viewport-cube--studio.aui-viewport-cube {
+  width:220px; height:220px; border:1px solid var(--aether-color-border);
+  border-radius:14px; background:color-mix(in srgb,var(--aether-color-bg-panel) 94%,transparent);
+  box-shadow:0 10px 26px #00000030;
+  --aether-color-bg-control-hover:#46515c;
+  --aether-color-bg-hover:#596571;
+  --aether-color-border-control:#6b7784;
+  --aether-color-text-dim:#aab5c0;
+  --aether-color-text:#dce3e9;
+}
+.aui-viewport-cube--studio :is(.aui-viewport-cube-stage,.aui-viewport-cube-scene) { left:23px; top:35px; width:174px; height:174px; }
+.aui-viewport-cube--studio .aui-viewport-cube-home { inset:auto 6px 6px auto; width:32px; height:32px; background:transparent; border-color:transparent; border-radius:7px; }
+.aui-viewport-cube--studio .aui-viewport-cube-home svg { width:18px; height:18px; }
+.aui-viewport-cube--studio .aui-viewport-cube-options { position:absolute; top:8px; left:8px; display:flex; align-items:center; justify-content:center; gap:5px; height:28px; padding:4px 7px; border:1px solid var(--aether-color-border); border-radius:7px; background:transparent; color:var(--aether-color-text-dim); cursor:pointer; }
+.aui-viewport-cube-options svg { width:16px; height:16px; }
+.aui-viewport-cube-options svg:last-child { width:11px; height:11px; }
+.aui-viewport-cube--studio :is(.aui-viewport-cube-home,.aui-viewport-cube-options):hover { background:var(--aether-color-bg-control); color:var(--aether-color-text); }
+.aui-viewport-cube--studio :is(.aui-viewport-cube-home,.aui-viewport-cube-options):focus-visible { outline:2px solid var(--aether-color-border-focus); outline-offset:2px; }

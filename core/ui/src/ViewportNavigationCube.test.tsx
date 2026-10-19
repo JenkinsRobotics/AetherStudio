@@ -1,3 +1,5 @@
+import * as THREE from "three";
+import { viewportCubeAxes, viewportCubeAxisOrigin, viewportCubeProjection } from "./viewport-cube-geometry";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { expect, test, vi } from "vitest";
 import {
@@ -81,9 +83,9 @@ test("emits typed face, fit, nudge, and roll intent", () => {
 test('face lettering follows a half-turn camera roll instead of staying upright',()=>{
  const props={onSelectView:()=>{},onFit:()=>{},onNudge:()=>{},onRoll:()=>{}};
  const {container,rerender}=render(<ViewportNavigationCube {...props} orientation={[0,0,0,1]}/>);
- expect(container.querySelector('[data-view="front"] text')?.getAttribute('transform')).toBe('matrix(1 0 0 1 46 46)');
+ expect(container.querySelector('[data-view="front"] text')?.getAttribute('transform')).toBe('matrix(1 0 0 1 54 54)');
  rerender(<ViewportNavigationCube {...props} orientation={[0,0,1,0]}/>);
- expect(container.querySelector('[data-view="front"] text')?.getAttribute('transform')).toBe('matrix(-1 0 0 -1 46 46)');
+ expect(container.querySelector('[data-view="front"] text')?.getAttribute('transform')).toBe('matrix(-1 0 0 -1 54 54)');
 });
 
 test("edge and corner regions emit their shared direction by pointer and keyboard",()=>{
@@ -113,8 +115,43 @@ test("gives axes depth masks scoped independently for multiple cube widgets", ()
   const { container }=render(<><ViewportNavigationCube {...props}/><ViewportNavigationCube {...props}/></>);
   const masks=[...container.querySelectorAll('mask')];
   expect(new Set(masks.map(mask=>mask.id)).size).toBe(masks.length);
-  for (const axis of container.querySelectorAll('.aui-viewport-cube-axes line, .aui-viewport-cube-axes text, .aui-viewport-cube-axes circle')) {
+  for (const axis of container.querySelectorAll('.aui-viewport-cube-axes [mask]')) {
     const id=axis.getAttribute('mask')!.slice(5,-1);
     expect(masks.some(mask=>mask.id===id)).toBe(true);
+  }
+});
+
+test("axes and cube use one camera frame and moving corner origin in both appearances", () => {
+  const props={upAxis:"z" as const,onSelectView:()=>{},onFit:()=>{},onNudge:()=>{},onRoll:()=>{}};
+  const {container,rerender}=render(<ViewportNavigationCube {...props} orientation={[0,0,0,1]}/>);
+  const orientations = [[0,0,0,1],[Math.SQRT1_2,0,0,Math.SQRT1_2],[0,1,0,0],[.3,.5,.2,.7]] as const;
+  for (const appearance of ["standard","studio"] as const) {
+    const origins=new Set<string>();
+    for (const orientation of orientations) {
+      rerender(<ViewportNavigationCube {...props} appearance={appearance} orientation={orientation}/>);
+      const axes=container.querySelector('.aui-viewport-cube-axes')!;
+      expect(axes.closest('.aui-viewport-cube-stage')).not.toBeNull();
+      expect(container.querySelector('.aui-viewport-cube-triad')).toBeNull();
+      expect([...axes.querySelectorAll('text')].map(text=>text.textContent)).toEqual(['X','Y','Z']);
+      const inverse=new THREE.Quaternion(...orientation).normalize().invert();
+      const project=(v:readonly number[])=>{
+        const p=new THREE.Vector3(v[0],v[1],v[2]).applyQuaternion(inverse);
+        return [viewportCubeProjection.center+p.x*viewportCubeProjection.scale,viewportCubeProjection.center-p.y*viewportCubeProjection.scale];
+      };
+      const origin=project(viewportCubeAxisOrigin);origins.add(origin.join(','));
+      for (const axis of viewportCubeAxes) {
+        const line=axes.querySelector(`.aui-viewport-cube-axis-${axis.id} line[mask]`)!;
+        const end=project(axis.end);
+        ['x1','y1','x2','y2'].forEach((key,i)=>expect(Number(line.getAttribute(key))).toBeCloseTo([...origin,...end][i]));
+      }
+      for (const label of axes.querySelectorAll('text')) {
+        for (const dimension of ['x','y']) {
+          expect(Number(label.getAttribute(dimension))).toBeGreaterThan(5);
+          expect(Number(label.getAttribute(dimension))).toBeLessThan(103);
+        }
+      }
+    }
+    // Symmetric cardinal views can project this corner to the same pixel.
+    expect(origins.size).toBeGreaterThan(1);
   }
 });

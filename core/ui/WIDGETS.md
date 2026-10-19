@@ -1,3 +1,30 @@
+## Unified animated CAD camera navigator — 2026-10-18
+
+`StudioCameraControl` owns one expanding surface. The same 40px circle becomes
+a 220px rounded square over 260ms, anchored at its upper-right corner. The cube
+launcher stays fixed at the upper-right corner and collapses the same surface
+back to the circle. There is no detached popover or duplicate launcher.
+The collapsed projection caption fades as the surface opens. Reduced-motion
+preferences remove transitions.
+
+The navigator stays mounted while collapsed, preparing its renderer before the
+first expansion and preserving camera orientation across toggles. Closed content is inert and hidden from
+assistive technology; Escape closes the widget and focuses its toggle. Viewport
+interaction keeps it open. Products supply real camera actions and menu choices.
+
+`ViewportNavigationCube appearance="studio"` supplies the slate beveled cube,
+Home lower-right and camera settings upper-left, without roll/nudge arrows. Its
+174px renderer and accessible SVG targets share dimensions and orientation.
+The XYZ axes share the cube's 3D coordinate frame and corner origin. They use
+the same quaternion and projection as its facets, so both their origin and ends
+move with the cube. All variants share crisp 2.5px SVG strokes, depth-masked
+foreground segments, faint rear segments and readable endpoint labels. The shared
+camera lens reserves label margin throughout an orbit; no detached triad is used.
+CAD binds Home to isometric plus frame-all, and exposes Perspective/Orthographic
+alongside existing camera/display commands. Standard cube variants remain
+compatible. UI172 is the shared implementation; CAD adopts session189 with no
+runtime changes from 188.
+
 ## Shared application design — Alpha 0.1
 
 `StudioAppFrame`, `StudioDocumentBar` and `StudioWorkspace` compose the approved

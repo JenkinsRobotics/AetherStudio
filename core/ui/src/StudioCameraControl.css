@@ -1,0 +1,44 @@
+.aui-studio-camera-control { position:relative; display:block; width:40px; height:55px; flex:none; }
+/* The launcher and navigator share this surface throughout the transition. */
+.aui-studio-camera-surface {
+  position:absolute; top:0; right:0; width:40px; height:40px; overflow:hidden;
+  border-radius:20px; background:#292e30;
+  box-shadow:inset 0 0 0 1px transparent,0 10px 26px #00000000;
+  transition:width 260ms cubic-bezier(.2,.8,.2,1),height 260ms cubic-bezier(.2,.8,.2,1),border-radius 260ms cubic-bezier(.2,.8,.2,1),background 200ms ease,box-shadow 200ms ease;
+}
+.aui-studio-camera-control[data-expanded="true"] .aui-studio-camera-surface {
+  width:220px; height:220px; border-radius:14px;
+  background:color-mix(in srgb,var(--aether-color-bg-panel) 94%,transparent);
+  box-shadow:inset 0 0 0 1px var(--aether-color-border),0 10px 26px #00000030;
+}
+.aui-studio-camera-content {
+  position:absolute; top:0; right:0; z-index:0; width:220px; height:220px;
+  opacity:0; visibility:hidden; pointer-events:none; transform:scale(.84); transform-origin:top right;
+  transition:opacity 120ms ease,transform 260ms cubic-bezier(.2,.8,.2,1),visibility 0s linear 260ms;
+}
+.aui-studio-camera-control[data-expanded="true"] .aui-studio-camera-content {
+  opacity:1; visibility:visible; pointer-events:auto; transform:none;
+  transition:opacity 180ms ease 70ms,transform 260ms cubic-bezier(.2,.8,.2,1),visibility 0s;
+}
+.aui-studio-camera-content .aui-viewport-cube.aui-viewport-cube {
+  position:relative; inset:auto; border:0; background:transparent; box-shadow:none;
+}
+.aui-studio-camera-toggle {
+  position:absolute; top:0; right:0; z-index:1; display:grid; place-items:center;
+  width:40px; height:40px; padding:0; border:0; border-radius:20px;
+  background:transparent; color:#c2d0d6; cursor:pointer;
+  transition:border-radius 260ms cubic-bezier(.2,.8,.2,1),background 160ms ease;
+}
+.aui-studio-camera-toggle > svg { width:24px; height:24px; }
+.aui-studio-camera-control[data-expanded="true"] .aui-studio-camera-toggle { border-radius:12px; }
+.aui-studio-camera-toggle:hover { background:var(--aether-color-bg-control-hover); color:var(--aether-color-text); }
+.aui-studio-camera-toggle:focus-visible { outline:2px solid var(--aether-color-border-focus); outline-offset:-3px; }
+.aui-studio-camera-control > .aui-studio-camera-projection {
+  position:absolute; top:45px; left:50%; transform:translateX(-50%); white-space:nowrap;
+  opacity:1; visibility:visible; transition:opacity 160ms ease 140ms,visibility 0s;
+}
+.aui-studio-camera-control[data-expanded="true"] > .aui-studio-camera-projection { opacity:0; visibility:hidden; transition:opacity 100ms ease,visibility 0s linear 100ms; }
+@media (prefers-reduced-motion:reduce) {
+  .aui-studio-camera-surface,.aui-studio-camera-content,.aui-studio-camera-toggle,
+  .aui-studio-camera-toggle > svg,.aui-studio-camera-control > .aui-studio-camera-projection { transition:none !important; }
+}

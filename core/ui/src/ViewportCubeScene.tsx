@@ -16,7 +16,7 @@ export function ViewportCubeScene({orientation,upAxis,highlight,onReady}: {
       if(stopped || !host.current) return;
       try {
         const element=host.current;
-        const renderer=module.createCubeRenderer();
+        const renderer=module.createCubeRenderer(element.clientWidth || 138);
         let scene=new module.ViewportCubeScene(upAxis,module.readCubeScenePalette(element));
         element.append(renderer.domElement);
         const render=()=>{

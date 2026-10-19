@@ -318,3 +318,4 @@ export { VersionControl, type VersionControlProps, type VersionControlEntry, typ
 export { StudioAppFrame } from "./StudioAppFrame";
 export { StudioDocumentBar, type StudioDocumentBarProps } from "./StudioDocumentBar";
 export { StudioWorkspace, type StudioWorkspaceProps } from "./StudioWorkspace";
+export { StudioCameraControl } from "./StudioCameraControl";

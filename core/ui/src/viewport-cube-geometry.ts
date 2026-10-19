@@ -2,6 +2,13 @@
  * This is UI artwork/hit geometry, never a product modeling kernel. */
 export type CubeVector = readonly [number, number, number];
 export type ViewportUpAxis = "y" | "z";
+/** One camera frame for the mesh, face targets and corner-anchored XYZ axes.
+ * Extra lens margin keeps endpoint lettering in bounds throughout a full orbit. */
+export const viewportCubeProjection = { center:54, scale:21, size:108 } as const;
+export const viewportCubeAxisOrigin: CubeVector = [-1.15,-1.15,-1.15];
+export const viewportCubeAxes = (["x","y","z"] as const).map((id,index) => ({
+  id, end: viewportCubeAxisOrigin.map((value,i) => i === index ? 1.25 : value) as unknown as CubeVector,
+}));
 /** Proper rotation about X: preserve X and handedness when choosing Z-up. */
 export function viewportVectorForUpAxis([x, y, z]: CubeVector, upAxis: ViewportUpAxis): CubeVector {
   return upAxis === "z" ? [x, -z || 0, y] : [x, y, z];
